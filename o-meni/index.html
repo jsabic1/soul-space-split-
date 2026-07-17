@@ -41,18 +41,31 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
+      background-color: var(--bg);
       padding: 70px 0 2rem;
+      overflow: hidden;
     }
-    .hero-content-left { max-width: 640px; padding: 0 2rem 0 6vw; }
-    .hero-content-left h1 { margin-bottom: 1.8rem; }
-    .hero-content-left .script { display: block; }
+    .hero-photo {
+      position: absolute;
+      top: 0; right: 0; bottom: 0;
+      width: 62%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 28%;
+      z-index: 0;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 24%, #000 48%);
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 24%, #000 48%);
+    }
+    .parallax-hero::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+    .hero-content-left { position: relative; z-index: 2; max-width: 46rem; padding: 0 2rem 0 6vw; }
+    .hero-content-left h1 { margin-bottom: 1.8rem; line-height: 1.08; }
+    .hero-content-left .script { display: block; font-size: clamp(1.2rem, 2.1vw, 1.7rem); line-height: 1.5; }
     @media (max-width: 900px) {
-      .parallax-hero { background-attachment: scroll; min-height: 90vh; padding: 80px 0 2rem; }
-      .hero-content-left { padding: 0 1.5rem; }
+      .parallax-hero { min-height: 90vh; padding: 80px 0 2rem; }
+      .hero-photo { width: 100%; object-position: center; -webkit-mask-image: none; mask-image: none; }
+      .parallax-hero::before { background: linear-gradient(rgba(31,15,10,0.5), rgba(31,15,10,0.82)); }
+      .hero-content-left { padding: 0 1.5rem; max-width: 100%; }
+      .hero-content-left h1 br, .hero-content-left .script br { display: none; }
     }
     /* Centered quote sitting over a full-bleed .section-parallax image */
     .parallax-quote {
@@ -155,11 +168,12 @@
 
   <main>
 
-    <section class="parallax-hero" style="background-image: linear-gradient(to right, rgba(31,15,10,0.9) 0%, rgba(31,15,10,0.7) 30%, rgba(31,15,10,0.35) 55%, rgba(31,15,10,0.15) 80%), url('../wp-content/uploads/soul/portret-2.JPG');">
+    <section class="parallax-hero">
+      <img class="hero-photo" src="../wp-content/uploads/soul/portret-2.JPG" alt="Diana Lendić u studiju">
       <div class="hero-content-left" data-aos="fade-up">
         <p class="eyebrow">Diana Lendić · Soul Space Split</p>
-        <h1>Tijela razgovaraju <em>prije</em> riječi.</h1>
-        <p class="script">Maserka, s temeljem u tjelesno orijentiranoj psihoterapiji.</p>
+        <h1>Tijela<br>razgovaraju<br><em>prije</em> riječi.</h1>
+        <p class="script">Maserka, s temeljem u tjelesno<br>orijentiranoj psihoterapiji.</p>
       </div>
     </section>
 
