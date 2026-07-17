@@ -59,13 +59,13 @@
     .parallax-hero::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; }
     .hero-content-left { position: relative; z-index: 2; max-width: 50rem; padding: 0 2rem 0 6vw; }
     .hero-content-left h1 { margin-bottom: 1.8rem; line-height: 1.08; }
-    .hero-content-left .script { display: block; font-size: clamp(1.2rem, 2.1vw, 1.7rem); line-height: 1.5; }
+    .hero-content-left .hero-sub-left { text-align: left; max-width: 30rem; margin: 1.5rem 0 0; }
     @media (max-width: 900px) {
       .parallax-hero { min-height: 90vh; padding: 80px 0 2rem; }
       .hero-photo { width: 100%; object-position: center; -webkit-mask-image: none; mask-image: none; }
       .parallax-hero::before { background: linear-gradient(rgba(31,15,10,0.5), rgba(31,15,10,0.82)); }
       .hero-content-left { padding: 0 1.5rem; max-width: 100%; }
-      .hero-content-left h1 br, .hero-content-left .script br { display: none; }
+      .hero-content-left h1 br { display: none; }
     }
     /* Centered quote sitting over a full-bleed .section-parallax image */
     .parallax-quote {
@@ -173,7 +173,7 @@
       <div class="hero-content-left" data-aos="fade-up">
         <p class="eyebrow">Diana Lendić · Soul Space Split</p>
         <h1>Tijela<br>razgovaraju<br><em>prije</em>&nbsp;riječi.</h1>
-        <p class="script">Maserka, s temeljem u tjelesno<br>orijentiranoj psihoterapiji.</p>
+        <p class="hero-sub hero-sub-left">Maserka, s temeljem u tjelesno orijentiranoj psihoterapiji.</p>
       </div>
     </section>
 
