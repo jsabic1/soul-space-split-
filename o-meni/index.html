@@ -38,18 +38,21 @@
     /* Parallax hero (fixed cover — restores the broken hero) */
     .parallax-hero {
       position: relative;
-      min-height: 78vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
       background-repeat: no-repeat;
-      padding: 6rem 0;
+      padding: 70px 0 2rem;
     }
-    .hero-content-left { max-width: 760px; }
+    .hero-content-left { max-width: 640px; padding: 0 2rem 0 6vw; }
+    .hero-content-left h1 { margin-bottom: 1.8rem; }
+    .hero-content-left .script { display: block; }
     @media (max-width: 900px) {
-      .parallax-hero { background-attachment: scroll; min-height: 62vh; padding: 4rem 0; }
+      .parallax-hero { background-attachment: scroll; min-height: 90vh; padding: 80px 0 2rem; }
+      .hero-content-left { padding: 0 1.5rem; }
     }
     /* Centered quote sitting over a full-bleed .section-parallax image */
     .parallax-quote {
@@ -153,7 +156,7 @@
   <main>
 
     <section class="parallax-hero" style="background-image: linear-gradient(to right, rgba(31,15,10,0.9) 0%, rgba(31,15,10,0.7) 30%, rgba(31,15,10,0.35) 55%, rgba(31,15,10,0.15) 80%), url('../wp-content/uploads/soul/portret-2.JPG');">
-      <div class="container hero-content-left" data-aos="fade-up">
+      <div class="hero-content-left" data-aos="fade-up">
         <p class="eyebrow">Diana Lendić · Soul Space Split</p>
         <h1>Tijela razgovaraju <em>prije</em> riječi.</h1>
         <p class="script">Maserka, s temeljem u tjelesno orijentiranoj psihoterapiji.</p>
