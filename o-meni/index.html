@@ -59,13 +59,14 @@
     .parallax-hero::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; }
     .hero-content-left { position: relative; z-index: 2; max-width: 50rem; padding: 0 2rem 0 6vw; }
     .hero-content-left h1 { margin-bottom: 1.8rem; line-height: 1.08; }
-    .hero-content-left .hero-sub-left { text-align: left; max-width: 30rem; margin: 1.5rem 0 0; }
+    .hero-content-left .hero-sub-left { text-align: left; max-width: none; white-space: nowrap; margin: 1.5rem 0 0; }
     @media (max-width: 900px) {
       .parallax-hero { min-height: 90vh; padding: 80px 0 2rem; }
       .hero-photo { width: 100%; object-position: center; -webkit-mask-image: none; mask-image: none; }
       .parallax-hero::before { background: linear-gradient(rgba(31,15,10,0.5), rgba(31,15,10,0.82)); }
       .hero-content-left { padding: 0 1.5rem; max-width: 100%; }
       .hero-content-left h1 br { display: none; }
+      .hero-content-left .hero-sub-left { white-space: normal; }
     }
     /* Centered quote sitting over a full-bleed .section-parallax image */
     .parallax-quote {
