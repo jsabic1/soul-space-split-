@@ -6,8 +6,8 @@
 /* ---------- CUSTOM FONT ---------- */
 @font-face {
   font-family: 'TAN Pearl';
-  src: url('../fonts/TAN-Pearl.woff2') format('woff2'),
-       url('../fonts/TAN-Pearl.woff') format('woff');
+  src: url('../fonts/TAN-PEARL.woff2') format('woff2'),
+       url('../fonts/TAN-PEARL.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
