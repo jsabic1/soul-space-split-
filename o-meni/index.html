@@ -75,6 +75,35 @@
       margin-bottom: 1rem;
     }
     .about-text p { color: var(--text-muted); }
+    /* Intro block with oversized decorative numeral (prototip B) */
+    .intro-num { text-align: center; max-width: 720px; margin: 0 auto; position: relative; }
+    .intro-num .intro-num-01 {
+      font-family: var(--font-brand);
+      font-size: clamp(7rem, 16vw, 13rem);
+      line-height: .8;
+      color: var(--accent);
+      opacity: .14;
+      display: block;
+      margin-bottom: -1.5rem;
+    }
+    .intro-num h3 {
+      font-family: var(--font-brand);
+      font-weight: 400;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      line-height: 1.1;
+      color: var(--text);
+      margin: .6rem 0 1.8rem;
+    }
+    .intro-num h3 em { color: var(--accent); font-style: normal; }
+    .intro-num .intro-lead {
+      font-family: var(--font-body);
+      font-size: 1.08rem;
+      line-height: 1.9;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .intro-num .intro-hr { width: 1px; height: 46px; background: var(--accent-soft); margin: 2rem auto 0; opacity: .6; }
   </style>
 </head>
 <body>
@@ -105,13 +134,14 @@
       </div>
     </section>
 
-    <!-- TEKST 1 -->
+    <!-- TEKST 1 — uvod s velikim brojem (prototip B) -->
     <section class="section">
-      <div class="about-story">
-        <div data-aos="fade-up">
-          <h3>Počelo je pokretom</h3>
-          <p>Cijeli život bila sam zaljubljena u pokret. Ples, kontorcionizam i istraživanje mogućnosti vlastitog tijela bili su veliki dio mog života. U tom periodu vjerovala sam da to znači da sam povezana sa svojim tijelom. Mislila sam da ga poznajem zato što sam kroz njega mogla plesati, stvarati i istraživati pokret.</p>
-        </div>
+      <div class="intro-num" data-aos="fade-up">
+        <span class="intro-num-01" aria-hidden="true">01</span>
+        <p class="eyebrow">Moja priča</p>
+        <h3>Počelo je <em>pokretom</em></h3>
+        <p class="intro-lead">Cijeli život bila sam zaljubljena u pokret. Ples, kontorcionizam i istraživanje mogućnosti vlastitog tijela bili su veliki dio mog života. U tom periodu vjerovala sam da to znači da sam povezana sa svojim tijelom. Mislila sam da ga poznajem zato što sam kroz njega mogla plesati, stvarati i istraživati pokret.</p>
+        <div class="intro-hr"></div>
       </div>
     </section>
 
