@@ -63,6 +63,16 @@
       font-style: italic;
     }
     .parallax-quote em { color: var(--accent); font-style: italic; }
+    /* Taller full-bleed parallax band so more of the photo is visible */
+    .parallax-tall {
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      padding: 9rem 0;
+    }
+    @media (max-width: 900px) {
+      .parallax-tall { min-height: 66vh; padding: 6rem 0; }
+    }
     /* Half-image split: reverse variant (image on the right) */
     .about-preview.reverse .about-image { order: 2; }
     .about-preview.reverse .about-text { order: 1; }
@@ -146,7 +156,7 @@
     </section>
 
     <!-- SLIKA PREKO CIJELE POZADINE + PARALLAX -->
-    <section class="section-parallax" style="background-image: url('../wp-content/uploads/soul/hero-1.jpg');">
+    <section class="section-parallax parallax-tall" style="background-image: url('../wp-content/uploads/soul/hero-1.jpg');">
       <div class="container">
         <p class="parallax-quote" data-aos="fade-up">Dugo sam mislila da poznajem svoje tijelo — tek kasnije sam ga počela <em>osjećati</em>.</p>
       </div>
@@ -180,7 +190,7 @@
     </section>
 
     <!-- VELIKI CITAT PREKO SLIKE + PARALLAX -->
-    <section class="section-parallax" style="background-image: url('../wp-content/uploads/soul/hero-3.jpg');">
+    <section class="section-parallax parallax-tall" style="background-image: url('../wp-content/uploads/soul/hero-3.jpg');">
       <div class="container">
         <p class="parallax-quote" data-aos="fade-up">Želim da svaka žena osjeti kako ovdje <em>ne mora</em> biti dobra, izdržljiva ili stalno pod kontrolom.</p>
       </div>
