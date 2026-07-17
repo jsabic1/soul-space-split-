@@ -125,6 +125,9 @@
       .editorial-split { grid-template-columns: 1fr; gap: 1.8rem; }
       .editorial-split .es-body { border-left: none; padding-left: 0; }
     }
+    /* Split with subtly bordered image + accent rule (prototip V3) */
+    .about-preview.framed .about-image img { border: 1px solid var(--border); display: block; }
+    .about-preview.framed .about-rule { width: 56px; height: 1px; background: var(--accent); margin: 1.2rem 0 1.5rem; }
   </style>
 </head>
 <body>
@@ -189,13 +192,14 @@
 
     <!-- POLA SLIKE (lijevo) -->
     <section class="section section-alt">
-      <div class="about-preview" data-aos="fade-up">
+      <div class="about-preview framed" data-aos="fade-up">
         <div class="about-image">
           <img src="../wp-content/uploads/soul/portret-1.JPG" alt="Diana Lendić u studiju">
         </div>
         <div class="about-text">
           <p class="eyebrow">Trenutak</p>
           <p class="about-eyebrow">kad sam popustila <em>kontrolu</em></p>
+          <div class="about-rule"></div>
           <p>Na terapiji mi je dugo trebalo da dopustim dodir. Izbjegavala sam ga i osjećala nelagodu. Odrastala sam uz iskustvo u kojem je dodir često bio grub i povređujući pa je mom tijelu trebalo vremena da povjeruje kako može postojati i drugačiji kontakt.</p>
           <p>Jedan trenutak posebno pamtim. Prvi put uspjela sam popustiti kontrolu i dopustiti terapeutici da me podrži dodirom. Ležeći na podu osjetila sam kako se moje tijelo polako opušta, kako se težina predaje podlozi i kako moj um više ne mora sve držati pod kontrolom. Osjećaj je bio kao da mirno plutam na površini mora, ali ovaj put nisam bila sama. Uz mene je bilo još jedno prisutno ljudsko biće.</p>
           <p>To iskustvo promijenilo je način na koji gledam dodir.</p>
