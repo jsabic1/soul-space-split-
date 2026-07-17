@@ -795,7 +795,7 @@ p { color: var(--text-muted); }
 
 @keyframes atmosfera-scroll {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to { transform: translateX(-25%); }
 }
 
 @media (max-width: 700px) {
