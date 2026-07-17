@@ -57,14 +57,15 @@
       mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.18) 30%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0.85) 68%, #000 82%);
     }
     .parallax-hero::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; }
-    .hero-content-left { position: relative; z-index: 2; max-width: 50rem; padding: 0 2rem 0 6vw; }
-    .hero-content-left h1 { margin-bottom: 1.8rem; line-height: 1.08; }
-    .hero-content-left .hero-sub-left { text-align: left; max-width: none; white-space: nowrap; margin: 1.5rem 0 0; }
+    .hero-content-left { position: relative; z-index: 2; max-width: 54rem; padding: 0 2rem 0 6vw; }
+    .hero-content-left .hero-sub-left { text-align: left; max-width: none; white-space: nowrap; margin: 0.7rem 0 0; }
+    .hero-content-left h1 { margin: 1.3rem 0 0; line-height: 1.06; font-size: clamp(2.6rem, 5.2vw, 4.4rem); white-space: nowrap; }
     @media (max-width: 900px) {
       .parallax-hero { min-height: 90vh; padding: 80px 0 2rem; }
       .hero-photo { width: 100%; object-position: center; -webkit-mask-image: none; mask-image: none; }
       .parallax-hero::before { background: linear-gradient(rgba(31,15,10,0.5), rgba(31,15,10,0.82)); }
       .hero-content-left { padding: 0 1.5rem; max-width: 100%; }
+      .hero-content-left h1 { white-space: normal; }
       .hero-content-left h1 br { display: none; }
       .hero-content-left .hero-sub-left { white-space: normal; }
     }
@@ -173,8 +174,8 @@
       <img class="hero-photo" src="../wp-content/uploads/soul/portret-2.JPG" alt="Diana Lendić u studiju">
       <div class="hero-content-left" data-aos="fade-up">
         <p class="eyebrow">Diana Lendić · Soul Space Split</p>
-        <h1>Tijela<br>razgovaraju<br><em>prije</em>&nbsp;riječi.</h1>
         <p class="hero-sub hero-sub-left">Maserka, s temeljem u tjelesno orijentiranoj psihoterapiji.</p>
+        <h1>Tijela razgovaraju<br><em>prije</em>&nbsp;riječi.</h1>
       </div>
     </section>
 
