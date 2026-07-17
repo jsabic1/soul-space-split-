@@ -35,27 +35,46 @@
       color: var(--text-muted);
       margin-bottom: 1.3rem;
     }
-    .big-quote {
-      font-family: var(--font-brand);
-      font-size: clamp(1.6rem, 3.2vw, 2.6rem);
-      line-height: 1.35;
-      color: var(--text);
+    /* Parallax hero (fixed cover — restores the broken hero) */
+    .parallax-hero {
+      position: relative;
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 6rem 0;
+    }
+    .hero-content-left { max-width: 760px; }
+    @media (max-width: 900px) {
+      .parallax-hero { background-attachment: scroll; min-height: 62vh; padding: 4rem 0; }
+    }
+    /* Centered quote sitting over a full-bleed .section-parallax image */
+    .parallax-quote {
       text-align: center;
-      max-width: 820px;
-      margin: 5rem auto;
-      padding: 3rem 2rem;
-      border-top: 1px solid var(--accent-soft);
-      border-bottom: 1px solid var(--accent-soft);
+      max-width: 860px;
+      margin: 0 auto;
+      font-family: var(--font-brand);
+      font-size: clamp(1.7rem, 3.4vw, 2.8rem);
+      line-height: 1.34;
+      color: var(--text);
       font-style: italic;
     }
-    .big-quote::before, .big-quote::after {
-      content: '"';
+    .parallax-quote em { color: var(--accent); font-style: italic; }
+    /* Half-image split: reverse variant (image on the right) */
+    .about-preview.reverse .about-image { order: 2; }
+    .about-preview.reverse .about-text { order: 1; }
+    .about-text .about-eyebrow {
+      font-family: var(--font-brand);
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
       color: var(--accent);
-      font-size: 3rem;
-      line-height: 0;
-      vertical-align: middle;
-      margin: 0 0.3rem;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1rem;
     }
+    .about-text p { color: var(--text-muted); }
   </style>
 </head>
 <body>
@@ -86,38 +105,75 @@
       </div>
     </section>
 
+    <!-- TEKST 1 -->
     <section class="section">
       <div class="about-story">
         <div data-aos="fade-up">
           <h3>Počelo je pokretom</h3>
           <p>Cijeli život bila sam zaljubljena u pokret. Ples, kontorcionizam i istraživanje mogućnosti vlastitog tijela bili su veliki dio mog života. U tom periodu vjerovala sam da to znači da sam povezana sa svojim tijelom. Mislila sam da ga poznajem zato što sam kroz njega mogla plesati, stvarati i istraživati pokret.</p>
         </div>
+      </div>
+    </section>
 
+    <!-- SLIKA PREKO CIJELE POZADINE + PARALLAX -->
+    <section class="section-parallax" style="background-image: url('../wp-content/uploads/soul/hero-1.jpg');">
+      <div class="container">
+        <p class="parallax-quote" data-aos="fade-up">Dugo sam mislila da poznajem svoje tijelo — tek kasnije sam ga počela <em>osjećati</em>.</p>
+      </div>
+    </section>
+
+    <!-- TEKST 2 -->
+    <section class="section">
+      <div class="about-story">
         <div data-aos="fade-up">
           <h3>Tijelo nije samo sredstvo, nego mjesto gdje živimo</h3>
           <p>Tek kasnije shvatila sam da postoji jedan potpuno drugačiji odnos s tijelom. Onaj u kojem tijelo nije samo sredstvo pokreta, nego mjesto u kojem živimo. U kojem se nalaze moje emocije, sjećanja, granice, tuga, radost i osjećaj sigurnosti.</p>
           <p>Kad sam prvi put čula za tjelesno orijentiranu psihoterapiju, nešto me odmah privuklo tom pristupu. Bio je to prirodan nastavak mog interesa za tijelo i psihu, ali sam na samom početku rada na sebi shvatila koliko je moja povezanost s tijelom zapravo bila površna.</p>
         </div>
+      </div>
+    </section>
 
-        <div data-aos="fade-up">
-          <h3>Trenutak kad sam popustila kontrolu</h3>
+    <!-- POLA SLIKE (lijevo) -->
+    <section class="section section-alt">
+      <div class="about-preview" data-aos="fade-up">
+        <div class="about-image">
+          <img src="../wp-content/uploads/soul/portret-1.JPG" alt="Diana Lendić u studiju">
+        </div>
+        <div class="about-text">
+          <p class="eyebrow">Trenutak</p>
+          <p class="about-eyebrow">kad sam popustila <em>kontrolu</em></p>
           <p>Na terapiji mi je dugo trebalo da dopustim dodir. Izbjegavala sam ga i osjećala nelagodu. Odrastala sam uz iskustvo u kojem je dodir često bio grub i povređujući pa je mom tijelu trebalo vremena da povjeruje kako može postojati i drugačiji kontakt.</p>
           <p>Jedan trenutak posebno pamtim. Prvi put uspjela sam popustiti kontrolu i dopustiti terapeutici da me podrži dodirom. Ležeći na podu osjetila sam kako se moje tijelo polako opušta, kako se težina predaje podlozi i kako moj um više ne mora sve držati pod kontrolom. Osjećaj je bio kao da mirno plutam na površini mora, ali ovaj put nisam bila sama. Uz mene je bilo još jedno prisutno ljudsko biće.</p>
           <p>To iskustvo promijenilo je način na koji gledam dodir.</p>
         </div>
       </div>
+    </section>
 
-      <blockquote class="big-quote" data-aos="fade-up">
-        Želim da svaka žena osjeti kako ovdje ne mora biti dobra, izdržljiva ili stalno pod kontrolom.
-      </blockquote>
+    <!-- VELIKI CITAT PREKO SLIKE + PARALLAX -->
+    <section class="section-parallax" style="background-image: url('../wp-content/uploads/soul/hero-3.jpg');">
+      <div class="container">
+        <p class="parallax-quote" data-aos="fade-up">Želim da svaka žena osjeti kako ovdje <em>ne mora</em> biti dobra, izdržljiva ili stalno pod kontrolom.</p>
+      </div>
+    </section>
 
-      <div class="about-story">
-        <div data-aos="fade-up">
-          <h3>Od terapije do dodira</h3>
+    <!-- POLA SLIKE (desno) -->
+    <section class="section">
+      <div class="about-preview reverse" data-aos="fade-up">
+        <div class="about-image">
+          <img src="../wp-content/uploads/soul/atmosfera-2.jpg" alt="Diana tijekom tretmana u studiju">
+        </div>
+        <div class="about-text">
+          <p class="eyebrow">Put</p>
+          <p class="about-eyebrow">Od terapije do <em>dodira</em></p>
           <p>Kasnije, tijekom tri godine edukacije iz tjelesno orijentirane psihoterapije, počela sam razumijevati zašto je taj trenutak bio toliko važan. Učila sam o ranom razvoju, privrženosti, živčanom sustavu i koregulaciji te sve više shvaćala koliko iskustva iz najranijih godina ostaju zapisana u našem tijelu. Koliko toga što danas pripisujemo stresu ili karakteru zapravo ima puno dublje korijene.</p>
           <p>Nakon nekoliko godina vlastitog terapijskog procesa i tri godine edukacije iz tjelesno orijentirane psihoterapije, poželjela sam svoje razumijevanje tijela proširiti kroz dodir. Upisala sam školu za masera, a kasnije nastavila usavršavanje kroz različite edukacije i manualne tehnike. Svaka od njih obogatila je moj način rada, ali ono što mi je od početka bilo najvažnije nije se promijenilo: stvoriti prostor u kojem se osoba može osjećati sigurno, viđeno i u kontaktu sa sobom.</p>
         </div>
+      </div>
+    </section>
 
+    <!-- TEKST 3 -->
+    <section class="section section-alt">
+      <div class="about-story">
         <div data-aos="fade-up">
           <h3>Kako radim danas</h3>
           <p>Danas na dodir gledam kao na oblik komunikacije. Vjerujem da tijela međusobno razgovaraju i prije nego što izgovorimo ijednu riječ. Ponekad dodir može prenijeti ono što je riječima teško objasniti: da smo viđeni, podržani, da ne moramo ništa dokazivati i da se možemo na trenutak odmoriti.</p>
