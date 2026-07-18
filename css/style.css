@@ -231,11 +231,104 @@ p { color: var(--text-muted); }
 .main-nav a.active {
   color: var(--accent);
 }
+/* Hamburger toggle (mobile only) */
+.nav-toggle { display: none; }
+
+/* Fullscreen mobile menu overlay */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.8rem;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .35s ease, visibility .35s ease;
+}
+body.menu-open { overflow: hidden; }
+body.menu-open .site-header { display: none; }
+body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
+.mobile-menu .m-eyebrow {
+  font-family: var(--font-brand-sub);
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+  margin-bottom: 1rem;
+}
+.mobile-menu-nav { display: flex; flex-direction: column; gap: 1.6rem; }
+.mobile-menu-nav a {
+  font-family: var(--font-brand);
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 1.2;
+  color: var(--text);
+  text-decoration: none;
+  transition: color .2s ease;
+}
+.mobile-menu-nav a:hover,
+.mobile-menu-nav a.active { color: var(--accent); }
+.mobile-menu-close {
+  position: absolute;
+  top: 1.4rem;
+  right: 1.4rem;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+}
+.mobile-menu-close::before,
+.mobile-menu-close::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 15px;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+}
+.mobile-menu-close::before { transform: rotate(45deg); }
+.mobile-menu-close::after { transform: rotate(-45deg); }
+@media (min-width: 769px) { .mobile-menu { display: none; } }
+
 @media (max-width: 768px) {
   .site-header { height: 60px; padding: 0 1rem; }
-  .header-inner { height: 40px; gap: 1rem; }
-  .main-nav { gap: 1rem; }
-  .main-nav a { font-size: 0.65rem; letter-spacing: 0.15em; }
+  .header-inner {
+    height: 40px;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    position: relative;
+  }
+  .main-nav { display: none; }
+  .brand { grid-column: 1; }
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 18px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--text);
+  }
   .brand-logo { height: 35px; max-height: 35px; }
 }
 

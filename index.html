@@ -29,8 +29,22 @@
         <a href="o-meni/">O meni</a>
         <a href="kontakt/">Kontakt</a>
       </nav>
+      <button class="nav-toggle" aria-label="Otvori izbornik" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="mobile-menu-close" aria-label="Zatvori izbornik"></button>
+    <p class="m-eyebrow">Izbornik</p>
+    <nav class="mobile-menu-nav">
+      <a href="./" class="active">Naslovna</a>
+      <a href="tretmani/">Rituali</a>
+      <a href="o-meni/">O meni</a>
+      <a href="kontakt/">Kontakt</a>
+    </nav>
+  </div>
 
   <main>
 
@@ -362,5 +376,6 @@
       updateTestimonial();
     }
   </script>
+  <script src="js/nav.js"></script>
 </body>
 </html>

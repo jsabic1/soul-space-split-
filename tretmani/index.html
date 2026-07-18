@@ -433,8 +433,22 @@ html.gsap-page, body.gsap-page { height: 100%; overflow: hidden; }
       <a href="../o-meni/">O meni</a>
       <a href="../kontakt/">Kontakt</a>
     </nav>
+    <button class="nav-toggle" aria-label="Otvori izbornik" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="mobile-menu-close" aria-label="Zatvori izbornik"></button>
+  <p class="m-eyebrow">Izbornik</p>
+  <nav class="mobile-menu-nav">
+    <a href="../">Naslovna</a>
+    <a href="./" class="active">Rituali</a>
+    <a href="../o-meni/">O meni</a>
+    <a href="../kontakt/">Kontakt</a>
+  </nav>
+</div>
 
 <!-- SEKCIJA 1: INTRO -->
 <section class="gsap-section fullbg" style="background-image: linear-gradient(rgba(31,15,10,0.55), rgba(31,15,10,0.75)), url('../wp-content/uploads/soul/hero-1.jpg'); background-size: cover; background-position: center;">
@@ -667,6 +681,7 @@ Observer.create({
 });
 gotoSection(0, 1);
 </script>
+<script src="../js/nav.js"></script>
 
 </body>
 </html>
