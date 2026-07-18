@@ -29,8 +29,22 @@
         <a href="o-meni/">O meni</a>
         <a href="kontakt/">Kontakt</a>
       </nav>
+      <button class="nav-toggle" aria-label="Otvori izbornik" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="mobile-menu-close" aria-label="Zatvori izbornik"></button>
+    <p class="m-eyebrow">Izbornik</p>
+    <nav class="mobile-menu-nav">
+      <a href="./" class="active">Naslovna</a>
+      <a href="tretmani/">Rituali</a>
+      <a href="o-meni/">O meni</a>
+      <a href="kontakt/">Kontakt</a>
+    </nav>
+  </div>
 
   <main>
 
@@ -44,7 +58,7 @@
         <div class="container">
           <div class="hero-text" data-aos="fade-up">
             <p class="hero-eyebrow">Studio za masažu · Split</p>
-            <h1>Masaža koja <em>sluša</em><br>tvoje tijelo.</h1>
+            <h1>Masaža koja sluša<br>tvoje tijelo</h1>
             <p class="script">vrati se sebi</p>
             <p class="hero-sub">Za tijelo koje je zaboravilo kako se opušta. Rad na živčanom sustavu, u tvom ritmu.</p>
             <div class="hero-buttons">
@@ -61,7 +75,7 @@
       <div class="container">
         <div class="section-head" data-aos="fade-up">
           <p class="eyebrow">Prepoznaješ se?</p>
-          <h2>Ovo je za tebe <em>ako</em>:</h2>
+          <h2>Ovo je za tebe ako:</h2>
         </div>
         <div class="for-you-grid">
           <div class="for-you-item" data-aos="fade-up" data-aos-delay="0">
@@ -89,25 +103,22 @@
       <div class="container">
         <div class="section-head" data-aos="fade-up">
           <p class="eyebrow">Pristup</p>
-          <h2>Ne <em>brzo</em>. Ne forsirano.</h2>
+          <h2>Ne brzo. Ne forsirano</h2>
         </div>
         <div class="principles-stairs">
           <div class="principle-stairs" data-aos="fade-up" data-aos-delay="0">
-            <div class="num-s">01</div>
             <p class="num-word-s">Prvi princip</p>
-            <h3>Sustav prije <em>simptoma</em></h3>
+            <h3><em>Sustav</em> prije simptoma</h3>
             <p>Tvrdi mišić ne popušta dok mu sustav ne kaže "možeš". Krećemo s regulacijom, ne s probijanjem boli.</p>
           </div>
           <div class="principle-stairs" data-aos="fade-up" data-aos-delay="150">
-            <div class="num-s">02</div>
             <p class="num-word-s">Drugi princip</p>
-            <h3>Tempo nad <em>tehnikom</em></h3>
+            <h3><em>Tempo</em> nad tehnikom</h3>
             <p>Ritam i predvidivost prenose sustavu poruku sigurnosti. Tehnika dolazi nakon toga.</p>
           </div>
           <div class="principle-stairs" data-aos="fade-up" data-aos-delay="300">
-            <div class="num-s">03</div>
             <p class="num-word-s">Treći princip</p>
-            <h3>Ne <em>forsiramo</em></h3>
+            <h3><em>Ne</em> forsiramo</h3>
             <p>Ako tijelo nije spremno otvoriti neku zonu, ne idemo tamo. Klijentica ima zadnju riječ, uvijek.</p>
           </div>
         </div>
@@ -119,7 +130,7 @@
       <div class="container">
         <div class="section-head" data-aos="fade-up">
           <p class="eyebrow">Rituali</p>
-          <h2>Po potrebi, ne po <em>formuli</em></h2>
+          <h2>Po potrebi, ne po formuli</h2>
         </div>
         <div class="rituali-grid">
           <a href="tretmani/" class="ritual-card" data-aos="fade-up" data-aos-delay="0">
@@ -182,7 +193,7 @@
       <div class="container">
         <div class="section-head" data-aos="fade-up">
           <p class="eyebrow">Kako to izgleda</p>
-          <h2>Od poruke do <em>stola</em>.</h2>
+          <h2>Od poruke do stola</h2>
         </div>
         <div class="timeline-wrap">
           <ol class="timeline-steps">
@@ -214,7 +225,7 @@
       </div>
       <div class="about-text">
         <p class="eyebrow">O meni</p>
-        <h2>Diana <em>Lendić</em></h2>
+        <h2>Diana Lendić</h2>
         <p class="script">Maserka, s temeljem u tjelesno orijentiranoj psihoterapiji.</p>
         <p>Godinama sam mislila da poznajem svoje tijelo jer sam kroz njega plesala. Tek kasnije sam shvatila da postoji drugi odnos s tijelom, onaj u kojem ono nije sredstvo, nego mjesto u kojem živimo. Danas radim sa ženama upravo iz tog mjesta.</p>
         <a href="o-meni/" class="btn btn-ghost">Cijela priča →</a>
@@ -226,7 +237,7 @@
       <div class="container">
         <div class="section-head" data-aos="fade-up">
           <p class="eyebrow">Iskustva</p>
-          <h2>Što kažu <em>klijenti</em></h2>
+          <h2>Što kažu klijenti</h2>
         </div>
         <div class="testimonial-slider" id="testimonialSlider" data-aos="fade-up">
           <figure class="testimonial-slide active">
@@ -259,7 +270,7 @@
     <section class="cta-banner" data-aos="fade-up">
       <div class="container">
         <p class="eyebrow">javi se</p>
-        <h2>Tijelo je <em>spremno</em>.</h2>
+        <h2>Tijelo je spremno</h2>
         <p class="lead">Treba mu samo prilika.</p>
         <p class="cta-sub">Napiši mi par rečenica kako se osjećaš, javljam se u roku od 24 sata i dogovaramo termin.</p>
         <a href="kontakt/" class="btn btn-primary">Dogovori termin</a>
@@ -271,7 +282,6 @@
       <div class="container">
         <div class="section-head" data-aos="fade-up">
           <p class="eyebrow">trenuci u studiju</p>
-          <h2>Atmosfera <em>iznutra</em></h2>
           <p class="lead">Mali detalji koji čine tretman onim što jest.</p>
         </div>
       </div>
@@ -283,10 +293,20 @@
           <div class="atmosfera-slide"><img src="wp-content/uploads/soul/atmosfera-5.jpg" alt="Prozor sa zavjesama u studiju"></div>
           <div class="atmosfera-slide"><img src="wp-content/uploads/soul/atmosfera-4.JPG" alt="Ruke u prirodnom svjetlu"></div>
           <!-- Set 2 (duplikat za infinity loop) -->
-          <div class="atmosfera-slide"><img src="wp-content/uploads/soul/atmosfera-2.jpg" alt=""></div>
-          <div class="atmosfera-slide"><img src="wp-content/uploads/soul/tretman-3.jpg" alt=""></div>
-          <div class="atmosfera-slide"><img src="wp-content/uploads/soul/atmosfera-5.jpg" alt=""></div>
-          <div class="atmosfera-slide"><img src="wp-content/uploads/soul/atmosfera-4.JPG" alt=""></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-2.jpg" alt=""></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/tretman-3.jpg" alt=""></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-5.jpg" alt=""></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-4.JPG" alt=""></div>
+          <!-- Set 3 (duplikat za infinity loop) -->
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-2.jpg" alt=""></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/tretman-3.jpg" alt=""></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-5.jpg" alt=""></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-4.JPG" alt=""></div>
+          <!-- Set 4 (duplikat za infinity loop) -->
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-2.jpg" alt=""></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/tretman-3.jpg" alt=""></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-5.jpg" alt=""></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-4.JPG" alt=""></div>
         </div>
       </div>
     </section>
@@ -355,5 +375,6 @@
       updateTestimonial();
     }
   </script>
+  <script src="js/nav.js"></script>
 </body>
 </html>
