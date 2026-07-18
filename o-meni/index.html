@@ -165,9 +165,8 @@
     /* Tighten vertical rhythm so text blocks don't float with too much empty space above */
     .section { padding: 2.5rem 0; }
     .about-preview { margin: 1rem auto; }
-    /* Reverse split image is taller than its text; align text to the image bottom
-       so the gap collapses toward the next section instead of floating mid-void */
-    .about-preview.reverse { align-items: end; }
+    /* Keep the reverse block's text vertically centered, parallel with the image */
+    .about-preview.reverse { align-items: center; }
     /* Seamless transitions: uniform dark bg + fade image sections into it */
     .section-alt { background: var(--bg); }
     .parallax-tall::before {
