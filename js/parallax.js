@@ -16,7 +16,10 @@
   );
   if (!els.length) return;
 
-  var EXTRA = 0.18; // sloj je 18% viši od sekcije → rezerva za pomak bez rubova
+  // Rezerva/pomak sloja: na mobitelu su sekcije niže (u px), pa isti postotak
+  // daje premalen pomak — zato na malim ekranima koristimo veći faktor,
+  // da efekt bude izražen kao na desktopu.
+  var EXTRA = (window.innerWidth <= 900) ? 0.36 : 0.18;
   var items = [];
 
   els.forEach(function (el) {
