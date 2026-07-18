@@ -70,9 +70,12 @@
     .contact-form-wrapper {
       background: var(--bg-alt);
       border: 1px solid var(--border);
-      padding: 3rem;
+      padding: 4rem 3.5rem;
       display: flex;
       flex-direction: column;
+    }
+    .contact-info {
+      background: linear-gradient(180deg, rgba(216,105,52,0.05), var(--bg-alt) 42%);
     }
     .contact-info .eyebrow,
     .contact-form-wrapper .eyebrow {
@@ -101,65 +104,54 @@
       margin-bottom: 2rem;
       max-width: 420px;
     }
-    .contact-items { margin-top: 1.6rem; }
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 1.1rem;
-      padding: 1.15rem 0;
-      border-bottom: 1px solid var(--border);
+    /* Hairline akcent ispod naslova */
+    .contact-rule {
+      width: 40px;
+      height: 1px;
+      background: var(--accent);
+      margin: 0.4rem auto 2.6rem;
     }
-    .contact-item:first-child { border-top: 1px solid var(--border); }
+    /* Ugravirana kartica — ikone i podaci na istoj osi */
+    .contact-items {
+      display: inline-grid;
+      grid-template-columns: auto auto;
+      gap: 1.7rem 1.25rem;
+      align-items: center;
+      text-align: left;
+      margin: 0 auto;
+    }
     .contact-icon {
-      flex-shrink: 0;
-      width: 26px;
-      height: 26px;
+      width: 24px;
+      height: 24px;
       display: grid;
       place-items: center;
       color: var(--accent);
     }
     .contact-icon svg {
-      width: 22px;
-      height: 22px;
+      width: 21px;
+      height: 21px;
       fill: none;
       stroke: currentColor;
       stroke-width: 1.5;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
-    .contact-item-content .contact-label {
-      font-family: var(--font-brand-sub);
-      font-size: 0.68rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--accent-soft);
-      margin-bottom: 0.25rem;
-    }
-    .contact-item-content a,
-    .contact-item-content p {
+    .contact-item-content a {
       font-family: var(--font-body);
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       color: var(--text);
       line-height: 1.35;
+      letter-spacing: 0.01em;
       margin: 0;
       text-decoration: none;
+      transition: color .25s ease;
     }
     .contact-item-content a:hover { color: var(--accent); }
-    /* Centered contact panel */
+    /* Centrirana ploča */
     .contact-info { text-align: center; align-items: center; }
     .contact-info .intro { margin-left: auto; margin-right: auto; }
-    .contact-item { justify-content: center; }
-    .contact-item-content { text-align: center; }
-    /* WhatsApp icon is a filled glyph + small "call instead" fallback */
+    /* WhatsApp ikona je ispunjeni glif */
     .contact-icon.wa-icon svg { fill: currentColor; stroke: none; }
-    .wa-fallback {
-      display: block;
-      margin-top: 0.5rem;
-      font-size: 0.8rem !important;
-      color: var(--accent-soft) !important;
-      letter-spacing: 0.03em;
-    }
-    .wa-fallback:hover { color: var(--accent) !important; }
 
     /* Forma */
     .contact-form-new {
@@ -301,55 +293,48 @@
           <p class="eyebrow">Kontakt</p>
           <h2>Soul <em>Space</em></h2>
           <p class="intro">Studio za masažu u Splitu.</p>
+          <div class="contact-rule" aria-hidden="true"></div>
 
           <div class="contact-items">
-          <div class="contact-item">
-            <div class="contact-icon wa-icon" aria-hidden="true">
+            <span class="contact-icon wa-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2m0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.24-8.22 8.24m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29"/>
               </svg>
-            </div>
-            <div class="contact-item-content">
+            </span>
+            <span class="contact-item-content">
               <a href="https://wa.me/385955363341" target="_blank" rel="noopener">+385 95 536 3341</a>
-            </div>
-          </div>
+            </span>
 
-          <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
-            <div class="contact-icon" aria-hidden="true">
+            <span class="contact-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <rect x="2" y="2" width="20" height="20" rx="5"/>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
               </svg>
-            </div>
-            <div class="contact-item-content">
+            </span>
+            <span class="contact-item-content">
               <a href="https://ig.me/m/soul.space.split" target="_blank" rel="noopener">@soul.space.split</a>
-            </div>
-          </div>
+            </span>
 
-          <div class="contact-item" data-aos="fade-up" data-aos-delay="300">
-            <div class="contact-icon" aria-hidden="true">
+            <span class="contact-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                 <polyline points="22,6 12,13 2,6"/>
               </svg>
-            </div>
-            <div class="contact-item-content">
+            </span>
+            <span class="contact-item-content">
               <a href="mailto:soul.space.split@gmail.com">soul.space.split@gmail.com</a>
-            </div>
-          </div>
+            </span>
 
-          <div class="contact-item" data-aos="fade-up" data-aos-delay="400">
-            <div class="contact-icon" aria-hidden="true">
+            <span class="contact-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                 <circle cx="12" cy="10" r="3"/>
               </svg>
-            </div>
-            <div class="contact-item-content">
+            </span>
+            <span class="contact-item-content">
               <a href="https://www.google.com/maps/search/?api=1&query=Sinjska%205%2C%2021000%20Split%2C%20Hrvatska" target="_blank" rel="noopener">Sinjska 5, 21000 Split</a>
-            </div>
-          </div>
+            </span>
           </div>
         </div>
 
