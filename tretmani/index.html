@@ -56,6 +56,7 @@ html.gsap-page, body.gsap-page { height: 100%; overflow: hidden; }
 
 .gsap-section {
   height: 100vh;
+  height: 100dvh; /* fit the actually-visible area on mobile so the bottom button isn't hidden behind the browser bar */
   width: 100%;
   top: 0;
   position: fixed;
@@ -100,6 +101,8 @@ html.gsap-page, body.gsap-page { height: 100%; overflow: hidden; }
   font-weight: 500;
 }
 .fullbg .gsap-heading em { font-style: normal; color: var(--accent); }
+.fullbg .gsap-heading .cta-line { display: block; }
+.fullbg .gsap-heading .cta-line + .cta-line { margin-top: 0.75em; }
 .fullbg .gsap-sub {
   font-family: var(--font-brand-sub);
   font-size: clamp(1.1rem, 1.6vw, 1.5rem);
@@ -594,7 +597,7 @@ html.gsap-page, body.gsap-page { height: 100%; overflow: hidden; }
   <div class="gsap-outer"><div class="gsap-inner"><div class="gsap-bg">
     <div class="gsap-content">
       <p class="gsap-eyebrow">tempo prije tehnike</p>
-      <h2 class="gsap-heading">Prvi tretman je upoznavanje.<br>Drugi je gdje krene <em>pravi rad</em>.</h2>
+      <h2 class="gsap-heading"><span class="cta-line">Prvi tretman je upoznavanje</span><span class="cta-line">Drugi je gdje krene pravi rad</span></h2>
       <a href="../kontakt/" class="btn-primary">Rezerviraj termin</a>
     </div>
   </div></div></div>
