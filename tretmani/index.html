@@ -53,6 +53,15 @@
    GSAP osnovna struktura
    ========================================================================== */
 html.gsap-page, body.gsap-page { height: 100%; overflow: hidden; background: var(--bg); }
+/* Fixed dark layer covering the whole window, behind all sections, so no bottom gap/seam can show a light line */
+body.gsap-page::before {
+  content: "";
+  position: fixed;
+  inset: -4px 0 -4px 0;
+  background: var(--bg);
+  z-index: -1;
+  pointer-events: none;
+}
 
 .gsap-section {
   height: 100vh;
