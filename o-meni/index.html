@@ -40,27 +40,28 @@
       position: relative;
       min-height: 100vh;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       background-color: var(--bg);
-      padding: 70px 0 2rem;
+      padding: 70px 0 8vh;
       overflow: hidden;
     }
     .hero-photo {
       position: absolute;
       top: 0; right: 0; bottom: 0;
-      width: 74%;
+      width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 45%;
+      object-position: center 60%;
       z-index: 0;
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.22) 18%, rgba(0,0,0,0.62) 36%, rgba(0,0,0,0.9) 50%, #000 62%);
-      mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.22) 18%, rgba(0,0,0,0.62) 36%, rgba(0,0,0,0.9) 50%, #000 62%);
     }
-    .parallax-hero::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; }
-    .hero-content-left { position: relative; z-index: 2; max-width: 54rem; padding: 0 2rem 0 6vw; }
+    .parallax-hero::before {
+      content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background: linear-gradient(to bottom, rgba(31,15,10,0.15) 0%, rgba(31,15,10,0.08) 32%, rgba(31,15,10,0.5) 66%, rgba(31,15,10,0.88) 100%);
+    }
+    .hero-content-left { position: relative; z-index: 2; max-width: 100%; margin: 0 auto; padding: 0 2rem; text-align: center; }
     .hero-content-left h1 { margin: 0; line-height: 1.06; font-size: clamp(2.8rem, 6.5vw, 5.5rem); white-space: nowrap; }
     .hero-content-left .eyebrow { display: block; margin-top: 2.9rem; margin-bottom: 0; font-size: clamp(1.05rem, 1.5vw, 1.25rem); letter-spacing: 0.18em; }
-    .hero-content-left .hero-sub-left { text-align: left; max-width: none; white-space: nowrap; margin: 0 0 0; }
+    .hero-content-left .hero-sub-left { text-align: center; max-width: none; white-space: nowrap; margin: 0 auto; }
     @media (max-width: 900px) {
       .parallax-hero { min-height: 90vh; padding: 80px 0 3rem; align-items: flex-end; }
       .hero-photo { width: 100%; object-position: center; -webkit-mask-image: none; mask-image: none; }
