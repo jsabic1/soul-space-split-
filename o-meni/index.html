@@ -100,6 +100,7 @@
     /* Half-image split: reverse variant (image on the right) */
     .about-preview.reverse .about-image { order: 2; }
     .about-preview.reverse .about-text { order: 1; }
+    .text-block .about-eyebrow,
     .about-text .about-eyebrow {
       font-family: var(--font-brand);
       font-size: clamp(1.5rem, 2.4vw, 2rem);
@@ -108,6 +109,8 @@
       line-height: 1.2;
       margin-bottom: 1rem;
     }
+    .text-block .about-eyebrow em,
+    .about-text .about-eyebrow em { color: var(--accent); font-style: normal; }
     .about-text p { color: var(--text-muted); }
     .about-text .eyebrow { font-size: 0.75rem; color: var(--accent-soft); }
     /* Intro block with oversized decorative numeral (prototip B) */
@@ -153,7 +156,12 @@
     }
     /* Split with subtly bordered image + accent rule (prototip V3) */
     .about-preview.framed .about-image img { border: 1px solid var(--border); display: block; }
-    .about-preview.framed .about-rule { width: 56px; height: 1px; background: var(--accent); margin: 1.2rem 0 1.5rem; }
+    .about-rule { width: 56px; height: 1px; background: var(--accent); margin: 1.2rem 0 1.5rem; }
+    /* Unified left-aligned text section (matches the image-split heading style) */
+    .text-block { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; text-align: left; }
+    .text-block .eyebrow { display: block; margin-bottom: 0.5rem; font-size: 0.75rem; color: var(--accent-soft); }
+    .text-block p.body { font-family: var(--font-body); font-size: 1.05rem; line-height: 1.85; color: var(--text-muted); margin: 0 0 1.3rem; }
+    .text-block p.body:last-child { margin-bottom: 0; }
   </style>
 </head>
 <body>
@@ -199,13 +207,13 @@
       </div>
     </section>
 
-    <!-- TEKST 1 — centrirani uvod -->
+    <!-- TEKST 1 -->
     <section class="section">
-      <div class="intro-num" data-aos="fade-up">
+      <div class="text-block" data-aos="fade-up">
         <p class="eyebrow">Moja priča</p>
-        <h3>Počelo je <em>pokretom</em></h3>
-        <p class="intro-lead">Cijeli život bila sam zaljubljena u pokret. Ples, kontorcionizam i istraživanje mogućnosti vlastitog tijela bili su veliki dio mog života. U tom periodu vjerovala sam da to znači da sam povezana sa svojim tijelom. Mislila sam da ga poznajem zato što sam kroz njega mogla plesati, stvarati i istraživati pokret.</p>
-        <div class="intro-hr"></div>
+        <p class="about-eyebrow">Počelo je <em>pokretom</em></p>
+        <div class="about-rule"></div>
+        <p class="body">Cijeli život bila sam zaljubljena u pokret. Ples, kontorcionizam i istraživanje mogućnosti vlastitog tijela bili su veliki dio mog života. U tom periodu vjerovala sam da to znači da sam povezana sa svojim tijelom. Mislila sam da ga poznajem zato što sam kroz njega mogla plesati, stvarati i istraživati pokret.</p>
       </div>
     </section>
 
@@ -216,17 +224,14 @@
       </div>
     </section>
 
-    <!-- TEKST 2 — editorial dvije kolone (prototip P2) -->
+    <!-- TEKST 2 -->
     <section class="section">
-      <div class="editorial-split" data-aos="fade-up">
-        <div class="es-head">
-          <p class="eyebrow">Spoznaja</p>
-          <h3>Tijelo nije samo sredstvo, nego <em>mjesto gdje živimo</em></h3>
-        </div>
-        <div class="es-body">
-          <p>Tek kasnije shvatila sam da postoji jedan potpuno drugačiji odnos s tijelom. Onaj u kojem tijelo nije samo sredstvo pokreta, nego mjesto u kojem živimo. U kojem se nalaze moje emocije, sjećanja, granice, tuga, radost i osjećaj sigurnosti.</p>
-          <p>Kad sam prvi put čula za tjelesno orijentiranu psihoterapiju, nešto me odmah privuklo tom pristupu. Bio je to prirodan nastavak mog interesa za tijelo i psihu, ali sam na samom početku rada na sebi shvatila koliko je moja povezanost s tijelom zapravo bila površna.</p>
-        </div>
+      <div class="text-block" data-aos="fade-up">
+        <p class="eyebrow">Spoznaja</p>
+        <p class="about-eyebrow">Tijelo nije samo sredstvo, nego <em>mjesto gdje živimo</em></p>
+        <div class="about-rule"></div>
+        <p class="body">Tek kasnije shvatila sam da postoji jedan potpuno drugačiji odnos s tijelom. Onaj u kojem tijelo nije samo sredstvo pokreta, nego mjesto u kojem živimo. U kojem se nalaze moje emocije, sjećanja, granice, tuga, radost i osjećaj sigurnosti.</p>
+        <p class="body">Kad sam prvi put čula za tjelesno orijentiranu psihoterapiju, nešto me odmah privuklo tom pristupu. Bio je to prirodan nastavak mog interesa za tijelo i psihu, ali sam na samom početku rada na sebi shvatila koliko je moja povezanost s tijelom zapravo bila površna.</p>
       </div>
     </section>
 
@@ -263,21 +268,22 @@
         <div class="about-text">
           <p class="eyebrow">Put</p>
           <p class="about-eyebrow">Od terapije do <em>dodira</em></p>
+          <div class="about-rule"></div>
           <p>Kasnije, tijekom tri godine edukacije iz tjelesno orijentirane psihoterapije, počela sam razumijevati zašto je taj trenutak bio toliko važan. Učila sam o ranom razvoju, privrženosti, živčanom sustavu i koregulaciji te sve više shvaćala koliko iskustva iz najranijih godina ostaju zapisana u našem tijelu. Koliko toga što danas pripisujemo stresu ili karakteru zapravo ima puno dublje korijene.</p>
           <p>Nakon nekoliko godina vlastitog terapijskog procesa i tri godine edukacije iz tjelesno orijentirane psihoterapije, poželjela sam svoje razumijevanje tijela proširiti kroz dodir. Upisala sam školu za masera, a kasnije nastavila usavršavanje kroz različite edukacije i manualne tehnike. Svaka od njih obogatila je moj način rada, ali ono što mi je od početka bilo najvažnije nije se promijenilo: stvoriti prostor u kojem se osoba može osjećati sigurno, viđeno i u kontaktu sa sobom.</p>
         </div>
       </div>
     </section>
 
-    <!-- TEKST 3 — isti centrirani stil kao blok 1 -->
+    <!-- TEKST 3 -->
     <section class="section section-alt">
-      <div class="intro-num" data-aos="fade-up">
+      <div class="text-block" data-aos="fade-up">
         <p class="eyebrow">Praksa</p>
-        <h3>Kako radim <em>danas</em></h3>
-        <p class="intro-lead">Danas na dodir gledam kao na oblik komunikacije. Vjerujem da tijela međusobno razgovaraju i prije nego što izgovorimo ijednu riječ. Ponekad dodir može prenijeti ono što je riječima teško objasniti: da smo viđeni, podržani, da ne moramo ništa dokazivati i da se možemo na trenutak odmoriti.</p>
-        <p class="intro-lead">U svom radu želim da svaka žena osjeti kako ovdje ne mora biti "dobra", izdržljiva ili stalno pod kontrolom. Želim da osjeti sigurnost, da ima slobodu reći što joj odgovara, a što ne, i da njezino tijelo dobije pažnju kakvu možda dugo nije dobilo.</p>
-        <p class="intro-lead">Danas radim upravo onako kako bih i sama voljela da je netko radio sa mnom prije mnogo godina. S puno prisutnosti, poštovanja prema granicama i povjerenja da tijelo zna svoj ritam kada mu damo dovoljno vremena, pažnje i siguran prostor.</p>
-        <div class="intro-hr"></div>
+        <p class="about-eyebrow">Kako radim <em>danas</em></p>
+        <div class="about-rule"></div>
+        <p class="body">Danas na dodir gledam kao na oblik komunikacije. Vjerujem da tijela međusobno razgovaraju i prije nego što izgovorimo ijednu riječ. Ponekad dodir može prenijeti ono što je riječima teško objasniti: da smo viđeni, podržani, da ne moramo ništa dokazivati i da se možemo na trenutak odmoriti.</p>
+        <p class="body">U svom radu želim da svaka žena osjeti kako ovdje ne mora biti "dobra", izdržljiva ili stalno pod kontrolom. Želim da osjeti sigurnost, da ima slobodu reći što joj odgovara, a što ne, i da njezino tijelo dobije pažnju kakvu možda dugo nije dobilo.</p>
+        <p class="body">Danas radim upravo onako kako bih i sama voljela da je netko radio sa mnom prije mnogo godina. S puno prisutnosti, poštovanja prema granicama i povjerenja da tijelo zna svoj ritam kada mu damo dovoljno vremena, pažnje i siguran prostor.</p>
       </div>
     </section>
 
