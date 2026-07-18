@@ -89,13 +89,13 @@
     .parallax-quote em { color: var(--accent); font-style: italic; }
     /* Taller full-bleed parallax band so more of the photo is visible */
     .parallax-tall {
-      min-height: 78vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
-      padding: 9rem 0;
+      padding: 11rem 0;
     }
     @media (max-width: 900px) {
-      .parallax-tall { min-height: 66vh; padding: 6rem 0; }
+      .parallax-tall { min-height: 88vh; padding: 7rem 0; }
     }
     /* Half-image split: reverse variant (image on the right) */
     .about-preview.reverse .about-image { order: 2; }
@@ -171,13 +171,15 @@
     .parallax-tall::before {
       background: linear-gradient(to bottom,
         #1F0F0A 0%,
-        rgba(31,15,10,0.985) 9%,
-        rgba(31,15,10,0.93) 20%,
-        rgba(31,15,10,0.86) 34%,
-        rgba(31,15,10,0.83) 50%,
-        rgba(31,15,10,0.86) 66%,
-        rgba(31,15,10,0.93) 80%,
-        rgba(31,15,10,0.985) 91%,
+        rgba(31,15,10,0.94) 7%,
+        rgba(31,15,10,0.78) 15%,
+        rgba(31,15,10,0.63) 24%,
+        rgba(31,15,10,0.57) 34%,
+        rgba(31,15,10,0.55) 50%,
+        rgba(31,15,10,0.57) 66%,
+        rgba(31,15,10,0.63) 76%,
+        rgba(31,15,10,0.78) 85%,
+        rgba(31,15,10,0.94) 93%,
         #1F0F0A 100%);
     }
     .text-block .about-rule { margin-left: auto; margin-right: auto; }
