@@ -108,15 +108,20 @@ p { color: var(--text-muted); }
   cursor: pointer;
   text-decoration: none;
   border: 1px solid transparent;
+  border-radius: 3px;
 }
 .btn-primary {
-  background: var(--accent);
-  color: var(--bg);
-  border-color: var(--accent);
+  background: linear-gradient(160deg, #E67B44 0%, #D86934 45%, #B94E22 100%);
+  color: #fff;
+  border-color: transparent;
+  border-radius: 3px;
+  box-shadow: 0 14px 38px -10px rgba(185, 78, 34, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 .btn-primary:hover {
-  background: transparent;
-  color: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow: 0 20px 48px -10px rgba(185, 78, 34, 0.66), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 .btn-ghost {
   background: transparent;
