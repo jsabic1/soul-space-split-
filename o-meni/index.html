@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Unicase:wght@300;400;500;600&family=Glass+Antiqua&family=Petit+Formal+Script&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.css?v=2">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
@@ -97,6 +97,7 @@
     }
     @media (max-width: 900px) {
       .parallax-tall { min-height: 88vh; padding: 7rem 0; }
+      .section.praksa { padding-bottom: 6rem; }
     }
     /* Half-image split: reverse variant (image on the right) */
     .about-preview.reverse .about-image { order: 2; }
@@ -165,11 +166,29 @@
     /* Tighten vertical rhythm so text blocks don't float with too much empty space above */
     .section { padding: 2.5rem 0; }
     .about-preview { margin: 1rem auto; }
-    /* Reverse split image is taller than its text; align text to the image bottom
-       so the gap collapses toward the next section instead of floating mid-void */
-    .about-preview.reverse { align-items: end; }
+    /* Keep the reverse block's text vertically centered, parallel with the image */
+    .about-preview.reverse { align-items: center; }
     /* Seamless transitions: uniform dark bg + fade image sections into it */
     .section-alt { background: var(--bg); }
+    /* Praksa: tekst nad blago utopljenom fotografijom studija (parallax preko JS-a) */
+    .section.praksa {
+      position: relative;
+      overflow: hidden;
+      background-image: url('../wp-content/uploads/soul/atmosfera-4.JPG');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding-top: 4.5rem;
+      padding-bottom: 8rem;
+    }
+    .section.praksa::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(to bottom, #1F0F0A 0%, rgba(31,15,10,0.82) 20%, rgba(31,15,10,0.82) 76%, #1F0F0A 100%);
+    }
+    .section.praksa .text-block { position: relative; z-index: 2; }
     .parallax-tall::before {
       background: linear-gradient(to bottom,
         #1F0F0A 0%,
@@ -294,7 +313,7 @@
     </section>
 
     <!-- TEKST 3 -->
-    <section class="section section-alt ">
+    <section class="section section-alt praksa">
       <div class="text-block" data-aos="fade-up">
         <p class="eyebrow">Praksa</p>
         <p class="about-eyebrow">Kako radim <em>danas</em></p>        <p class="body">Danas na dodir gledam kao na oblik komunikacije. Vjerujem da tijela međusobno razgovaraju i prije nego što izgovorimo ijednu riječ. Ponekad dodir može prenijeti ono što je riječima teško objasniti: da smo viđeni, podržani, da ne moramo ništa dokazivati i da se možemo na trenutak odmoriti.</p>
@@ -355,6 +374,7 @@
   <script>
     AOS.init({ duration: 900, once: true, easing: 'ease-out-cubic', offset: 100 });
   </script>
-  <script src="../js/nav.js"></script>
+  <script src="../js/nav.js?v=2"></script>
+  <script src="../js/parallax.js?v=2"></script>
 </body>
 </html>

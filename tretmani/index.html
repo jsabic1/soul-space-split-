@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Unicase:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/style.css?v=2">
 
 <style>
   /* OVERRIDE konflikta s .treatment iz style.css */
@@ -434,6 +434,9 @@ body.gsap-page::before {
   .meta-item .meta-value { font-size: 1.55rem; }
   .split-content .btn-primary { padding: 1rem 1.2rem; }
   .progress-nav { right: 0.8rem; }
+  .fullbg .gsap-heading { font-size: clamp(2rem, 8.5vw, 3.4rem); line-height: 1.14; }
+  .fullbg .gsap-heading .cta-line + .cta-line { margin-top: 0.9em; }
+  .fullbg .gsap-sub { font-size: clamp(1rem, 4vw, 1.2rem); }
 }
 
 @media (max-width: 480px) {
@@ -493,7 +496,7 @@ body.gsap-page::before {
 </section>
 
 <!-- SEKCIJA 2: GROUND & RELEASE -->
-<section class="gsap-section treatment">
+<section class="gsap-section treatment" id="ground-release">
   <div class="gsap-outer"><div class="gsap-inner">
     <div class="split-image" style="background-image: url('../wp-content/uploads/soul/tretman-1.jpg');"></div>
     <div class="split-content">
@@ -525,7 +528,7 @@ body.gsap-page::before {
 </section>
 
 <!-- SEKCIJA 3: FLOW & HARMONY (reverse) -->
-<section class="gsap-section treatment reverse">
+<section class="gsap-section treatment reverse" id="flow-harmony">
   <div class="gsap-outer"><div class="gsap-inner">
     <div class="split-image" style="background-image: url('../wp-content/uploads/soul/tretman-2.jpg');"></div>
     <div class="split-content">
@@ -557,7 +560,7 @@ body.gsap-page::before {
 </section>
 
 <!-- SEKCIJA 4: DEEP REST -->
-<section class="gsap-section treatment">
+<section class="gsap-section treatment" id="deep-rest">
   <div class="gsap-outer"><div class="gsap-inner">
     <div class="split-image" style="background-image: url('../wp-content/uploads/soul/tretman-3.jpg');"></div>
     <div class="split-content">
@@ -589,7 +592,7 @@ body.gsap-page::before {
 </section>
 
 <!-- SEKCIJA 5: INNER GLOW (reverse) -->
-<section class="gsap-section treatment reverse">
+<section class="gsap-section treatment reverse" id="inner-glow">
   <div class="gsap-outer"><div class="gsap-inner">
     <div class="split-image" style="background-image: url('../wp-content/uploads/soul/tretman-4.jpg');"></div>
     <div class="split-content">
@@ -625,7 +628,8 @@ body.gsap-page::before {
   <div class="gsap-outer"><div class="gsap-inner"><div class="gsap-bg" style="background-image: linear-gradient(rgba(31,15,10,0.7) 0%, rgba(31,15,10,0.9) 70%, #1F0F0A 100%), url('../wp-content/uploads/soul/hero-2.jpg');">
     <div class="gsap-content">
       <p class="gsap-eyebrow">tempo prije tehnike</p>
-      <h2 class="gsap-heading"><span class="cta-line">Prvi tretman je upoznavanje</span><span class="cta-line">Drugi je gdje krene pravi rad</span></h2>
+      <h2 class="gsap-heading"><span class="cta-line">Već prvi put tijelo popusti.</span><span class="cta-line">Svaki sljedeći ide dublje.</span></h2>
+      <p class="gsap-sub">Ovo je proces, ne brzi popravak. Ali razliku osjetiš od prvog dolaska.</p>
       <a href="../kontakt/" class="btn-primary" data-reserve>Rezerviraj termin</a>
     </div>
   </div></div></div>
@@ -682,9 +686,21 @@ Observer.create({
   tolerance: 10,
   preventDefault: true
 });
-gotoSection(0, 1);
+function indexFromHash() {
+  var h = (location.hash || "").replace("#", "");
+  if (!h) return 0;
+  var el = document.getElementById(h);
+  if (!el) return 0;
+  var idx = Array.prototype.indexOf.call(sections, el);
+  return idx < 0 ? 0 : idx;
+}
+gotoSection(indexFromHash(), 1);
+window.addEventListener("hashchange", function () {
+  var idx = indexFromHash();
+  if (!animating && idx !== currentIndex) gotoSection(idx, idx > currentIndex ? 1 : -1);
+});
 </script>
-<script src="../js/nav.js"></script>
+<script src="../js/nav.js?v=2"></script>
 
 </body>
 </html>
