@@ -65,10 +65,10 @@
       .parallax-hero { min-height: 90vh; padding: 80px 0 3rem; align-items: flex-end; }
       .hero-photo { width: 100%; object-position: center; -webkit-mask-image: none; mask-image: none; }
       .parallax-hero::before { background: linear-gradient(rgba(31,15,10,0.5), rgba(31,15,10,0.82)); }
-      .hero-content-left { padding: 0 1.5rem; max-width: 100%; }
+      .hero-content-left { padding: 0 1.5rem; max-width: 100%; text-align: center; }
       .hero-content-left h1 { white-space: normal; font-size: clamp(1.8rem, 8vw, 2.8rem); }
       .hero-content-left .eyebrow { font-size: 0.95rem; margin-top: 2rem; }
-      .hero-content-left .hero-sub-left { white-space: normal; }
+      .hero-content-left .hero-sub-left { white-space: normal; text-align: center; margin-left: auto; margin-right: auto; }
       /* Centered intro blocks: add side padding so text doesn't touch edges */
       .intro-num { padding-left: 1.5rem; padding-right: 1.5rem; }
       /* Reverse split: image on top (consistent with the other split) on mobile */
@@ -162,8 +162,11 @@
     /* Center the image-split text too, for consistency */
     .about-preview .about-text { text-align: center; }
     /* Tighten vertical rhythm so text blocks don't float with too much empty space above */
-    .section { padding: 3.5rem 0; }
-    .about-preview { margin: 2rem auto; }
+    .section { padding: 2.5rem 0; }
+    .about-preview { margin: 1rem auto; }
+    /* Reverse split image is taller than its text; align text to the image bottom
+       so the gap collapses toward the next section instead of floating mid-void */
+    .about-preview.reverse { align-items: end; }
     /* Seamless transitions: uniform dark bg + fade image sections into it */
     .section-alt { background: var(--bg); }
     .parallax-tall::before {
