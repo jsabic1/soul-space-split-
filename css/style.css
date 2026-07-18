@@ -779,6 +779,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   object-fit: cover;
   border-radius: 4px;
 }
+.about-preview .about-text { text-align: center; }
 .about-text h2 { margin-bottom: 1rem; }
 .about-text .script { display: block; margin: 1rem 0; }
 .about-text p { margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.7; }
