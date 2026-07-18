@@ -496,7 +496,7 @@ body.gsap-page::before {
 </section>
 
 <!-- SEKCIJA 2: GROUND & RELEASE -->
-<section class="gsap-section treatment">
+<section class="gsap-section treatment" id="ground-release">
   <div class="gsap-outer"><div class="gsap-inner">
     <div class="split-image" style="background-image: url('../wp-content/uploads/soul/tretman-1.jpg');"></div>
     <div class="split-content">
@@ -528,7 +528,7 @@ body.gsap-page::before {
 </section>
 
 <!-- SEKCIJA 3: FLOW & HARMONY (reverse) -->
-<section class="gsap-section treatment reverse">
+<section class="gsap-section treatment reverse" id="flow-harmony">
   <div class="gsap-outer"><div class="gsap-inner">
     <div class="split-image" style="background-image: url('../wp-content/uploads/soul/tretman-2.jpg');"></div>
     <div class="split-content">
@@ -560,7 +560,7 @@ body.gsap-page::before {
 </section>
 
 <!-- SEKCIJA 4: DEEP REST -->
-<section class="gsap-section treatment">
+<section class="gsap-section treatment" id="deep-rest">
   <div class="gsap-outer"><div class="gsap-inner">
     <div class="split-image" style="background-image: url('../wp-content/uploads/soul/tretman-3.jpg');"></div>
     <div class="split-content">
@@ -592,7 +592,7 @@ body.gsap-page::before {
 </section>
 
 <!-- SEKCIJA 5: INNER GLOW (reverse) -->
-<section class="gsap-section treatment reverse">
+<section class="gsap-section treatment reverse" id="inner-glow">
   <div class="gsap-outer"><div class="gsap-inner">
     <div class="split-image" style="background-image: url('../wp-content/uploads/soul/tretman-4.jpg');"></div>
     <div class="split-content">
@@ -686,7 +686,19 @@ Observer.create({
   tolerance: 10,
   preventDefault: true
 });
-gotoSection(0, 1);
+function indexFromHash() {
+  var h = (location.hash || "").replace("#", "");
+  if (!h) return 0;
+  var el = document.getElementById(h);
+  if (!el) return 0;
+  var idx = Array.prototype.indexOf.call(sections, el);
+  return idx < 0 ? 0 : idx;
+}
+gotoSection(indexFromHash(), 1);
+window.addEventListener("hashchange", function () {
+  var idx = indexFromHash();
+  if (!animating && idx !== currentIndex) gotoSection(idx, idx > currentIndex ? 1 : -1);
+});
 </script>
 <script src="../js/nav.js"></script>
 
