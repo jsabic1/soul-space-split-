@@ -56,7 +56,7 @@ html.gsap-page, body.gsap-page { height: 100%; overflow: hidden; background: var
 
 .gsap-section {
   height: 100vh;
-  height: 100dvh; /* fit the actually-visible area on mobile so the bottom button isn't hidden behind the browser bar */
+  height: calc(100dvh + 2px); /* fit the visible area (+2px so the section's bottom edge/hairline falls just below the fold) */
   width: 100%;
   top: 0;
   position: fixed;
