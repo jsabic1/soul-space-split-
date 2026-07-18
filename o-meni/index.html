@@ -155,12 +155,26 @@
       .editorial-split .es-body { border-left: none; padding-left: 0; }
     }
     /* Split with subtly bordered image + accent rule (prototip V3) */
-    .about-preview.framed .about-image img { border: 1px solid var(--border); display: block; }
+    .about-preview.framed .about-image img { display: block; }
+    /* Fade the split photos into the background (top & bottom) so edges blend */
+    .about-preview .about-image img {
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
+      mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
+    }
     .about-rule { width: 56px; height: 1px; background: var(--accent); margin: 1.2rem 0 1.5rem; }
     /* Unified left-aligned text section (matches the image-split heading style) */
     .text-block { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; text-align: center; }
     /* Center the image-split text too, for consistency */
     .about-preview .about-text { text-align: center; }
+    /* Seamless transitions: uniform dark bg + fade image sections into it */
+    .section-alt { background: var(--bg); }
+    .parallax-tall::before {
+      background: linear-gradient(to bottom,
+        var(--bg) 0%,
+        rgba(31,15,10,0.60) 20%,
+        rgba(31,15,10,0.60) 80%,
+        var(--bg) 100%);
+    }
     .text-block .about-rule { margin-left: auto; margin-right: auto; }
     .text-block .eyebrow { display: block; margin-bottom: 0.5rem; font-size: 0.75rem; color: var(--accent-soft); }
     .text-block p.body { font-family: var(--font-body); font-size: 1.05rem; line-height: 1.85; color: var(--text-muted); margin: 0 0 1.3rem; }
