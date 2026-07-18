@@ -188,31 +188,6 @@
     .text-block .eyebrow { display: block; margin-bottom: 0.5rem; font-size: 0.75rem; color: var(--accent-soft); }
     .text-block p.body { font-family: var(--font-body); font-size: 1.05rem; line-height: 1.85; color: var(--text-muted); margin: 0 0 1.3rem; }
     .text-block p.body:last-child { margin-bottom: 0; }
-    /* Integrated flame decoration: screen blend drops the black, varied direction per section */
-    .flame-sec { position: relative; overflow: hidden; }
-    .flame-sec > * { position: relative; z-index: 1; }
-    .flame-sec::before {
-      content: '';
-      position: absolute;
-      z-index: 0;
-      pointer-events: none;
-      background-image: url('../wp-content/uploads/soul/plamen.jpeg');
-      background-repeat: no-repeat;
-      background-size: contain;
-      mix-blend-mode: screen;
-      opacity: 0.5;
-      -webkit-mask-image: radial-gradient(68% 66% at 50% 42%, #000 52%, transparent 100%);
-      mask-image: radial-gradient(68% 66% at 50% 42%, #000 52%, transparent 100%);
-    }
-    .flame-a::before { width: 40vw; max-width: 520px; height: 128%; top: -10%; right: -6%; background-position: top right; }
-    .flame-b::before { width: 38vw; max-width: 480px; height: 128%; bottom: -12%; left: -8%; transform: scaleX(-1) rotate(-7deg); background-position: bottom left; }
-    .flame-c::before { width: 38vw; max-width: 500px; height: 122%; top: -12%; right: -4%; transform: rotate(175deg); background-position: top right; }
-    @media (max-width: 720px) {
-      .flame-sec::before { opacity: 0.4; }
-      .flame-a::before { width: 66vw; right: -20%; }
-      .flame-b::before { width: 64vw; left: -22%; }
-      .flame-c::before { width: 62vw; right: -18%; }
-    }
   </style>
 </head>
 <body>
@@ -259,7 +234,7 @@
     </section>
 
     <!-- TEKST 1 -->
-    <section class="section flame-sec flame-a">
+    <section class="section ">
       <div class="text-block" data-aos="fade-up">
         <p class="eyebrow">Moja priča</p>
         <p class="about-eyebrow">Počelo je <em>pokretom</em></p>        <p class="body">Cijeli život bila sam zaljubljena u pokret. Ples, kontorcionizam i istraživanje mogućnosti vlastitog tijela bili su veliki dio mog života. U tom periodu vjerovala sam da to znači da sam povezana sa svojim tijelom. Mislila sam da ga poznajem zato što sam kroz njega mogla plesati, stvarati i istraživati pokret.</p>
@@ -274,7 +249,7 @@
     </section>
 
     <!-- TEKST 2 -->
-    <section class="section flame-sec flame-b">
+    <section class="section ">
       <div class="text-block" data-aos="fade-up">
         <p class="eyebrow">Spoznaja</p>
         <p class="about-eyebrow">Tijelo nije samo sredstvo, nego <em>mjesto gdje živimo</em></p>        <p class="body">Tek kasnije shvatila sam da postoji jedan potpuno drugačiji odnos s tijelom. Onaj u kojem tijelo nije samo sredstvo pokreta, nego mjesto u kojem živimo. U kojem se nalaze moje emocije, sjećanja, granice, tuga, radost i osjećaj sigurnosti.</p>
@@ -319,7 +294,7 @@
     </section>
 
     <!-- TEKST 3 -->
-    <section class="section section-alt flame-sec flame-c">
+    <section class="section section-alt ">
       <div class="text-block" data-aos="fade-up">
         <p class="eyebrow">Praksa</p>
         <p class="about-eyebrow">Kako radim <em>danas</em></p>        <p class="body">Danas na dodir gledam kao na oblik komunikacije. Vjerujem da tijela međusobno razgovaraju i prije nego što izgovorimo ijednu riječ. Ponekad dodir može prenijeti ono što je riječima teško objasniti: da smo viđeni, podržani, da ne moramo ništa dokazivati i da se možemo na trenutak odmoriti.</p>
