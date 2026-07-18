@@ -529,7 +529,6 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
     border-left: none;
     border-bottom: 1px solid rgba(244, 232, 214, 0.25);
     padding: 2.5rem 0;
-    text-align: center;
   }
   .principle-stairs:last-child { border-bottom: none; }
   .principle-stairs:first-child { padding-top: 0; }
@@ -718,12 +717,38 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   color: var(--text-muted);
 }
 @media (max-width: 900px) {
-  .timeline-steps { grid-template-columns: 1fr 1fr; gap: 3rem 2rem; }
+  /* Vertical timeline: keep the line + nodes, run it top-to-bottom */
+  .timeline-wrap { padding: 0; }
   .timeline-wrap::before { display: none; }
-  .timeline-step::before { display: none; }
-}
-@media (max-width: 500px) {
-  .timeline-steps { grid-template-columns: 1fr; }
+  .timeline-steps {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-top: 0;
+    padding-left: 0;
+  }
+  .timeline-steps::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 0.5rem;
+    bottom: 0.7rem;
+    width: 1px;
+    background: var(--accent-soft);
+    opacity: 0.7;
+    z-index: 1;
+  }
+  .timeline-step {
+    padding-top: 0;
+    padding-left: 2.3rem;
+    padding-bottom: 2.6rem;
+    text-align: left;
+  }
+  .timeline-step:last-child { padding-bottom: 0; }
+  .timeline-step::before {
+    display: block;
+    top: 0.45rem;
+    left: 0;
+  }
 }
 
 /* ============================================
