@@ -458,6 +458,13 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 }
 @media (max-width: 768px) {
   .for-you-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  /* Zig-zag: even items mirror to the right (number on the right side) */
+  .for-you-item:nth-child(even) {
+    flex-direction: row-reverse;
+    text-align: right;
+    padding-left: 1rem;
+    padding-right: 0;
+  }
 }
 
 /* ============================================
@@ -523,12 +530,15 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   font-style: italic;
 }
 @media (max-width: 900px) {
-  .principles-stairs { grid-template-columns: 1fr; gap: 2rem; }
+  /* More air between the "Ne brzo" heading and the principles */
+  .section-pristup .section-head { margin-bottom: 3.5rem; }
+  .principles-stairs { grid-template-columns: 1fr; gap: 2rem; margin-top: 2.5rem; }
   .principle-stairs {
     margin-top: 0 !important;
     border-left: none;
     border-bottom: 1px solid rgba(244, 232, 214, 0.25);
     padding: 2.5rem 0;
+    text-align: center;
   }
   .principle-stairs:last-child { border-bottom: none; }
   .principle-stairs:first-child { padding-top: 0; }
