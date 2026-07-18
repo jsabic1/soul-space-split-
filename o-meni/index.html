@@ -169,6 +169,16 @@
     .about-preview.reverse { align-items: center; }
     /* Seamless transitions: uniform dark bg + fade image sections into it */
     .section-alt { background: var(--bg); }
+    /* Praksa: tekst nad blago utopljenom fotografijom studija */
+    .section.praksa {
+      background-image:
+        linear-gradient(to bottom, #1F0F0A 0%, rgba(31,15,10,0.82) 20%, rgba(31,15,10,0.82) 76%, #1F0F0A 100%),
+        url('../wp-content/uploads/soul/atmosfera-4.JPG');
+      background-size: cover;
+      background-position: center;
+      padding-top: 4.5rem;
+      padding-bottom: 8rem;
+    }
     .parallax-tall::before {
       background: linear-gradient(to bottom,
         #1F0F0A 0%,
@@ -293,7 +303,7 @@
     </section>
 
     <!-- TEKST 3 -->
-    <section class="section section-alt ">
+    <section class="section section-alt praksa">
       <div class="text-block" data-aos="fade-up">
         <p class="eyebrow">Praksa</p>
         <p class="about-eyebrow">Kako radim <em>danas</em></p>        <p class="body">Danas na dodir gledam kao na oblik komunikacije. Vjerujem da tijela međusobno razgovaraju i prije nego što izgovorimo ijednu riječ. Ponekad dodir može prenijeti ono što je riječima teško objasniti: da smo viđeni, podržani, da ne moramo ništa dokazivati i da se možemo na trenutak odmoriti.</p>
