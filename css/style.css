@@ -482,7 +482,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 5rem auto 0;
   align-items: start;
   position: relative;
 }
@@ -539,7 +539,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 @media (max-width: 900px) {
   /* More air between the "Ne brzo" heading and the principles */
   .section-pristup .section-head { margin-bottom: 3.5rem; }
-  .principles-stairs { grid-template-columns: 1fr; gap: 2rem; margin-top: 2.5rem; }
+  .principles-stairs { grid-template-columns: 1fr; gap: 2rem; margin-top: 4rem; }
   .principle-stairs {
     margin-top: 0 !important;
     border-left: none;
@@ -559,7 +559,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 4.5rem auto 0;
 }
 .ritual-card {
   position: relative;
