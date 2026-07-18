@@ -156,11 +156,6 @@
     }
     /* Split with subtly bordered image + accent rule (prototip V3) */
     .about-preview.framed .about-image img { display: block; }
-    /* Fade the split photos into the background (top & bottom) so edges blend */
-    .about-preview .about-image img {
-      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
-      mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
-    }
     .about-rule { width: 56px; height: 1px; background: var(--accent); margin: 1.2rem 0 1.5rem; }
     /* Unified left-aligned text section (matches the image-split heading style) */
     .text-block { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; text-align: center; }
