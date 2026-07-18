@@ -69,6 +69,11 @@
       .hero-content-left h1 { white-space: normal; font-size: clamp(1.8rem, 8vw, 2.8rem); }
       .hero-content-left .eyebrow { font-size: 0.95rem; margin-top: 2rem; }
       .hero-content-left .hero-sub-left { white-space: normal; }
+      /* Centered intro blocks: add side padding so text doesn't touch edges */
+      .intro-num { padding-left: 1.5rem; padding-right: 1.5rem; }
+      /* Reverse split: image on top (consistent with the other split) on mobile */
+      .about-preview.reverse .about-image { order: 0 !important; }
+      .about-preview.reverse .about-text { order: 0 !important; }
     }
     /* Centered quote sitting over a full-bleed .section-parallax image */
     .parallax-quote {
