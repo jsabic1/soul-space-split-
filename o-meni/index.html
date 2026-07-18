@@ -97,7 +97,7 @@
     }
     @media (max-width: 900px) {
       .parallax-tall { min-height: 88vh; padding: 7rem 0; }
-      .section.praksa { background-attachment: scroll; padding-bottom: 6rem; }
+      .section.praksa { padding-bottom: 6rem; }
     }
     /* Half-image split: reverse variant (image on the right) */
     .about-preview.reverse .about-image { order: 2; }
@@ -170,18 +170,25 @@
     .about-preview.reverse { align-items: center; }
     /* Seamless transitions: uniform dark bg + fade image sections into it */
     .section-alt { background: var(--bg); }
-    /* Praksa: tekst nad blago utopljenom fotografijom studija */
+    /* Praksa: tekst nad blago utopljenom fotografijom studija (parallax preko JS-a) */
     .section.praksa {
-      background-image:
-        linear-gradient(to bottom, #1F0F0A 0%, rgba(31,15,10,0.82) 20%, rgba(31,15,10,0.82) 76%, #1F0F0A 100%),
-        url('../wp-content/uploads/soul/atmosfera-4.JPG');
+      position: relative;
+      overflow: hidden;
+      background-image: url('../wp-content/uploads/soul/atmosfera-4.JPG');
       background-size: cover;
       background-position: center;
-      background-attachment: fixed;
       background-repeat: no-repeat;
       padding-top: 4.5rem;
       padding-bottom: 8rem;
     }
+    .section.praksa::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: linear-gradient(to bottom, #1F0F0A 0%, rgba(31,15,10,0.82) 20%, rgba(31,15,10,0.82) 76%, #1F0F0A 100%);
+    }
+    .section.praksa .text-block { position: relative; z-index: 1; }
     .parallax-tall::before {
       background: linear-gradient(to bottom,
         #1F0F0A 0%,
@@ -368,5 +375,6 @@
     AOS.init({ duration: 900, once: true, easing: 'ease-out-cubic', offset: 100 });
   </script>
   <script src="../js/nav.js"></script>
+  <script src="../js/parallax.js"></script>
 </body>
 </html>
