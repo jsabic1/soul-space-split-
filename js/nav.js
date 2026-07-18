@@ -6,11 +6,13 @@
 
   function open() {
     body.classList.add('menu-open');
+    document.documentElement.classList.add('menu-open');
     if (toggle) toggle.setAttribute('aria-expanded', 'true');
     if (menu) menu.setAttribute('aria-hidden', 'false');
   }
   function close() {
     body.classList.remove('menu-open');
+    document.documentElement.classList.remove('menu-open');
     if (toggle) toggle.setAttribute('aria-expanded', 'false');
     if (menu) menu.setAttribute('aria-hidden', 'true');
   }
