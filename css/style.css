@@ -1017,6 +1017,13 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   color: var(--accent);
   padding-left: 0.3rem;
 }
+/* Radno vrijeme u footeru */
+.footer-hours li {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.7;
+}
 /* Kontakt ikone u footeru — jedna do druge, bez krugova */
 .footer-icons {
   display: flex;
