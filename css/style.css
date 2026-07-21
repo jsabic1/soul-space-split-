@@ -991,7 +991,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .footer-brand address a:hover { color: var(--accent); }
 .footer-col { padding-top: 0; }
 /* Poravnaj "Radno vrijeme" s prvim retkom teksta ispod loga (Obrt za usluge) */
-.footer-col:not(:last-child) { padding-top: 45px; }
+.footer-col:not(:last-child) { padding-top: 55.6px; }
 .footer-col h4 {
   font-family: var(--font-brand-sub);
   font-size: 0.7rem;
