@@ -700,7 +700,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   position: absolute;
   top: 0.4rem;
   left: 23px;
-  right: calc(25% - 23px);
+  right: 4%;
   height: 1px;
   background: var(--accent-soft);
   opacity: 0.7;
