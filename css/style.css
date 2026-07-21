@@ -937,8 +937,6 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   margin: 0 auto 3rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  border-top: 1px solid rgba(200, 150, 92, 0.5);
-  border-bottom: 1px solid rgba(200, 150, 92, 0.5);
 }
 .cta-meta-cell {
   padding: 1.6rem 1rem;
