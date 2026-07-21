@@ -546,13 +546,12 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   font-family: var(--font-brand);
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: 400;
-  font-style: italic;
   color: var(--accent-soft);
   margin-bottom: 1rem;
   line-height: 1.2;
 }
 .principle-stairs h3 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--accent-soft);
 }
 .principle-stairs p {
@@ -560,7 +559,6 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   font-size: 1rem;
   line-height: 1.7;
   color: var(--text-muted);
-  font-style: italic;
 }
 @media (max-width: 900px) {
   /* More air between the "Ne brzo" heading and the principles */
