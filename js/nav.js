@@ -32,7 +32,13 @@
   var PHONE = '385955363341';
   var IG_USER = 'soul.space.split';
   var EMAIL = 'soul.space.split@gmail.com';
-  var MSG = 'Pozdrav! Željela bih rezervirati termin za masažu u Soul Space.';
+  // Poruke prate jezik stranice (<html lang>)
+  var isEN = ((document.documentElement.getAttribute('lang') || '')).toLowerCase().indexOf('en') === 0;
+  var MSG = isEN
+    ? "Hello! I'd like to book a massage at Soul Space."
+    : 'Pozdrav! Željela bih rezervirati termin za masažu u Soul Space.';
+  var SUBJ_RESERVE = isEN ? 'Booking — Soul Space' : 'Rezervacija termina — Soul Space';
+  var SUBJ_GIFT = isEN ? 'Gift voucher — Soul Space' : 'Poklon bon — Soul Space';
 
   function isMobile() {
     return /Android|iPhone|iPad|iPod|Windows Phone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent || '');
@@ -81,7 +87,7 @@
   document.querySelectorAll('[data-reserve]').forEach(function (el) {
     el.addEventListener('click', function (e) {
       e.preventDefault();
-      contactVia('Rezervacija termina — Soul Space', MSG);
+      contactVia(SUBJ_RESERVE, MSG);
     });
   });
 
@@ -90,8 +96,9 @@
     el.addEventListener('click', function (e) {
       e.preventDefault();
       var mins = el.getAttribute('data-gift');
-      contactVia('Poklon bon — Soul Space',
-        'Pozdrav! Željela bih kupiti poklon bon od ' + mins + ' minuta.');
+      contactVia(SUBJ_GIFT, isEN
+        ? "Hello! I'd like to buy a gift voucher for " + mins + " minutes."
+        : 'Pozdrav! Željela bih kupiti poklon bon od ' + mins + ' minuta.');
     });
   });
 })();

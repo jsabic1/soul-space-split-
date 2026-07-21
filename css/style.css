@@ -238,6 +238,32 @@ p { color: var(--text-muted); }
 .main-nav a.active {
   color: var(--accent);
 }
+/* Prekidač jezika HR | EN — gore lijevo u headeru */
+.lang-switch {
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-brand-sub);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  z-index: 1001;
+}
+.lang-switch a {
+  color: var(--text-muted);
+  opacity: 0.75;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+.lang-switch a:hover { color: var(--accent); opacity: 1; }
+.lang-switch a.active { color: var(--accent); opacity: 1; }
+.lang-switch span { color: var(--text-muted); opacity: 0.4; }
+/* Na užim desktopima gurni nav udesno da se ne sudara s prekidačem */
+@media (min-width: 901px) and (max-width: 1220px) {
+  .header-inner { padding-left: 92px; }
+}
 /* Hamburger toggle (mobile only) */
 .nav-toggle { display: none; }
 
