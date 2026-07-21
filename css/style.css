@@ -272,7 +272,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .mobile-menu-nav a {
   font-family: var(--font-brand);
   font-weight: 400;
-  font-size: 2.4rem;
+  font-size: 1.9rem;
   line-height: 1.2;
   color: var(--text);
   text-decoration: none;
