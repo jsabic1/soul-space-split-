@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Česta pitanja — Soul Space Split</title>
-  <meta name="description" content="Odgovori na najčešća pitanja o ritualima, rezervacijama i dolasku u Soul Space studio u Splitu.">
+  <title>Poklon bon — Soul Space Split</title>
+  <meta name="description" content="Pokloni nekome sat vremena za sebe. Poklon bonovi Soul Space studija za masažu u Splitu.">
 
   <!-- Open Graph (WhatsApp/Facebook/Viber link preview) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Soul Space Split">
   <meta property="og:locale" content="hr_HR">
-  <meta property="og:title" content="Česta pitanja — Soul Space Split">
-  <meta property="og:description" content="Odgovori na najčešća pitanja o ritualima, rezervacijama i dolasku u Soul Space studio u Splitu.">
-  <meta property="og:url" content="https://jsabic1.github.io/soul-space-split-/cesta-pitanja/">
-  <meta property="og:image" content="https://jsabic1.github.io/soul-space-split-/wp-content/uploads/soul/hero-2.jpg">
+  <meta property="og:title" content="Poklon bon — Soul Space Split">
+  <meta property="og:description" content="Pokloni nekome sat vremena za sebe. Poklon bonovi Soul Space studija za masažu u Splitu.">
+  <meta property="og:url" content="https://jsabic1.github.io/soul-space-split-/poklon-bon/">
+  <meta property="og:image" content="https://jsabic1.github.io/soul-space-split-/wp-content/uploads/soul/inner-glow.jpeg">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,12 +25,12 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
-    .faq-hero {
-      padding: 10rem 0 4rem;
+    .gift-hero {
+      padding: 10rem 1.5rem 2.5rem;
       text-align: center;
       background: var(--bg);
     }
-    .faq-hero .eyebrow {
+    .gift-hero .eyebrow {
       font-family: var(--font-brand-sub);
       font-size: 0.85rem;
       letter-spacing: 0.4em;
@@ -38,65 +38,115 @@
       color: var(--accent-soft);
       margin-bottom: 1rem;
     }
-    .faq-hero h1 {
+    .gift-hero h1 {
       font-family: var(--font-brand);
-      font-size: clamp(2.6rem, 6vw, 5rem);
+      font-size: clamp(2.4rem, 6vw, 5rem);
       color: var(--text);
       line-height: 1.05;
       font-weight: 400;
-      margin: 0;
+      margin: 0 0 1.4rem;
     }
-    .faq-wrap {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 5rem;
-    }
-    .faq-item { border-bottom: 1px solid var(--border); }
-    .faq-item:first-child { border-top: 1px solid var(--border); }
-    .faq-item summary {
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.5rem;
-      padding: 1.5rem 0;
-      font-family: var(--font-brand-sub);
-      font-size: 1.08rem;
-      letter-spacing: 0.04em;
-      color: var(--text);
-      transition: color .25s ease;
-    }
-    .faq-item summary:hover { color: var(--accent); }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after {
-      content: '+';
+    .gift-hero .gift-lead {
       font-family: var(--font-body);
-      font-size: 1.5rem;
-      line-height: 1;
-      color: var(--accent);
-      flex-shrink: 0;
-      transition: transform .3s ease;
-    }
-    .faq-item[open] summary::after { transform: rotate(45deg); }
-    .faq-a {
-      padding: 0 0 1.6rem;
-      font-family: var(--font-body);
-      font-size: 1rem;
+      font-size: 1.05rem;
       line-height: 1.8;
       color: var(--text-muted);
-      max-width: 660px;
+      max-width: 620px;
+      margin: 0 auto;
     }
-    .faq-a a { color: var(--accent-soft); text-decoration: none; transition: color .25s ease; }
-    .faq-a a:hover { color: var(--accent); }
-    .faq-cta {
+
+    .gift-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 3rem auto 0;
+      padding: 0 2rem;
+    }
+    .gift-card {
+      position: relative;
       text-align: center;
-      padding: 2rem 1.5rem 7rem;
+      padding: 3rem 2rem 2.6rem;
+      border: 1px solid rgba(200, 150, 92, 0.35);
+      border-radius: 6px;
+      background:
+        radial-gradient(130% 90% at 50% 0%, rgba(216, 105, 52, 0.12), transparent 62%),
+        linear-gradient(180deg, #2C1610 0%, #231108 100%);
+      overflow: hidden;
+      transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
     }
-    .faq-cta p {
+    .gift-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent);
+      box-shadow: 0 34px 60px -30px rgba(0, 0, 0, 0.85);
+    }
+    .gift-card .script { display: block; margin-bottom: 1.2rem; font-size: 1.35rem; }
+    .gift-min {
+      font-family: var(--font-brand);
+      font-size: clamp(4rem, 6vw, 5.2rem);
+      line-height: 0.9;
+      color: var(--text);
+    }
+    .gift-min-label {
+      font-family: var(--font-brand-sub);
+      font-size: 0.72rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent-soft);
+      margin-top: 0.7rem;
+    }
+    .gift-rule {
+      width: 44px;
+      height: 1px;
+      background: var(--accent);
+      margin: 1.6rem auto;
+      position: relative;
+    }
+    .gift-rule::after {
+      content: '';
+      position: absolute;
+      left: 50%; top: 50%;
+      width: 5px; height: 5px;
+      background: var(--accent);
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    .gift-price {
+      font-family: var(--font-brand-sub);
+      font-size: 1.7rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .gift-desc {
       font-family: var(--font-body);
+      font-size: 0.93rem;
+      line-height: 1.65;
       color: var(--text-muted);
       margin-bottom: 2rem;
+      min-height: 3.2em;
+    }
+    .gift-card .btn { width: 100%; }
+
+    .gift-notes {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem 2.4rem;
+      max-width: 900px;
+      margin: 3.5rem auto 0;
+      padding: 0 2rem 7rem;
+    }
+    .gift-notes span {
+      font-family: var(--font-brand-sub);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-soft);
+    }
+
+    @media (max-width: 900px) {
+      .gift-grid { grid-template-columns: 1fr; max-width: 460px; gap: 1.6rem; }
+      .gift-desc { min-height: 0; }
+      .gift-notes { flex-direction: column; align-items: center; gap: 0.8rem; padding-bottom: 5rem; }
     }
   </style>
 </head>
@@ -107,14 +157,14 @@
       <nav class="main-nav nav-left">
         <a href="../">Naslovna</a>
         <a href="../rituali/">Rituali</a>
-        <a href="../poklon-bon/">Poklon bon</a>
+        <a href="./" class="active">Poklon bon</a>
       </nav>
       <a href="../" class="brand">
         <img src="../wp-content/uploads/soul/logo.png" alt="Soul Space Split" class="brand-logo">
       </a>
       <nav class="main-nav nav-right">
         <a href="../o-meni/">O meni</a>
-        <a href="./" class="active">Česta pitanja</a>
+        <a href="../cesta-pitanja/">Česta pitanja</a>
         <a href="../kontakt/">Kontakt</a>
       </nav>
       <button class="nav-toggle" aria-label="Otvori izbornik" aria-expanded="false" aria-controls="mobileMenu">
@@ -129,77 +179,60 @@
     <nav class="mobile-menu-nav">
       <a href="../">Naslovna</a>
       <a href="../rituali/">Rituali</a>
-      <a href="../poklon-bon/">Poklon bon</a>
+      <a href="./" class="active">Poklon bon</a>
       <a href="../o-meni/">O meni</a>
-      <a href="./" class="active">Česta pitanja</a>
+      <a href="../cesta-pitanja/">Česta pitanja</a>
       <a href="../kontakt/">Kontakt</a>
     </nav>
   </div>
 
   <main>
 
-    <section class="faq-hero">
-      <p class="eyebrow" data-aos="fade-up">Pitanja</p>
-      <h1 data-aos="fade-up" data-aos-delay="150">Česta pitanja</h1>
+    <section class="gift-hero">
+      <p class="eyebrow" data-aos="fade-up">Pokloni</p>
+      <h1 data-aos="fade-up" data-aos-delay="100">Poklon bon</h1>
+      <p class="gift-lead" data-aos="fade-up" data-aos-delay="200">Pokloni nekome ono što se ne može kupiti — sat vremena samo za sebe. Bon glasi na minute, a ritual se dogovara s osobom koja dolazi, prema onome što njezino tijelo taj dan treba.</p>
     </section>
 
-    <section class="faq-wrap" data-aos="fade-up">
+    <section class="gift-grid">
 
-      <details class="faq-item">
-        <summary>Kako rezerviram termin?</summary>
-        <div class="faq-a">
-          <p>Najjednostavnije — klikni na gumb "Rezerviraj termin" bilo gdje na stranici i otvorit će ti se WhatsApp s već upisanom porukom. Možeš mi se javiti i porukom na <a href="https://ig.me/m/soul.space.split" target="_blank" rel="noopener">Instagram</a> ili na <a href="mailto:soul.space.split@gmail.com">email</a>. Javljam se u roku od 24 sata i dogovaramo termin.</p>
-        </div>
-      </details>
+      <div class="gift-card" data-aos="fade-up" data-aos-delay="0">
+        <span class="script">poklon bon</span>
+        <div class="gift-min">60</div>
+        <div class="gift-min-label">minuta masaže</div>
+        <div class="gift-rule" aria-hidden="true"></div>
+        <div class="gift-price">55 €</div>
+        <p class="gift-desc">Sat vremena predaha — ritual po izboru, u dogovoru pri dolasku.</p>
+        <a href="../kontakt/" class="btn btn-primary" data-gift="60">Kupi bon</a>
+      </div>
 
-      <details class="faq-item">
-        <summary>Ne znam koji ritual odabrati. Što da radim?</summary>
-        <div class="faq-a">
-          <p>Ne moraš znati — to je moj posao. Napiši mi par rečenica o tome kako se osjećaš i što te muči, a ja ću ti predložiti ono što tvom tijelu u ovom trenutku najviše treba. Svaki tretman ionako prilagođavam tebi, ne formuli.</p>
-        </div>
-      </details>
+      <div class="gift-card" data-aos="fade-up" data-aos-delay="150">
+        <span class="script">poklon bon</span>
+        <div class="gift-min">75</div>
+        <div class="gift-min-label">minuta masaže</div>
+        <div class="gift-rule" aria-hidden="true"></div>
+        <div class="gift-price">65 €</div>
+        <p class="gift-desc">Dublji rad i više prostora — ritual po izboru, u dogovoru pri dolasku.</p>
+        <a href="../kontakt/" class="btn btn-primary" data-gift="75">Kupi bon</a>
+      </div>
 
-      <details class="faq-item">
-        <summary>Kako da se pripremim za dolazak?</summary>
-        <div class="faq-a">
-          <p>Ne trebaš ništa posebno. Dođi kakva jesi — sve ostalo dogovaramo na licu mjesta, u tvom ritmu. Ako stigneš koju minutu ranije, imat ćeš vremena spustiti se s dana prije nego što krenemo.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Je li masaža bolna?</summary>
-        <div class="faq-a">
-          <p>Ne. Pritisak je čvrst kad tijelo to traži, ali nikad agresivan — radim tempom koji tvoj živčani sustav može pratiti. Ako tijelo nije spremno otvoriti neku zonu, ne idemo tamo. Ti imaš zadnju riječ, uvijek.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Što ako moram otkazati ili pomaknuti termin?</summary>
-        <div class="faq-a">
-          <p>Javi mi se porukom čim prije — najkasnije <strong>12 sati prije termina</strong>, i bez problema dogovaramo novi. Otkazivanje unutar 12 sati naplaćuje se 50&nbsp;% vrijednosti tretmana, a nedolazak bez najave u punom iznosu. Više u <a href="../uvjeti-otkazivanja/">uvjetima otkazivanja</a>.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Gdje se studio nalazi?</summary>
-        <div class="faq-a">
-          <p>Na adresi <a href="https://www.google.com/maps/search/?api=1&query=Sinjska%205%2C%2021000%20Split%2C%20Hrvatska" target="_blank" rel="noopener">Sinjska 5, 21000 Split</a> — klik na adresu otvara Google karte.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Koliko traje tretman?</summary>
-        <div class="faq-a">
-          <p>Ovisno o ritualu, između 60 i 90 minuta. Točno trajanje piše uz svaki ritual na stranici <a href="../rituali/">Rituali</a>. Isplaniraj si nakon tretmana malo prostora — najbolje je ne žuriti odmah dalje.</p>
-        </div>
-      </details>
+      <div class="gift-card" data-aos="fade-up" data-aos-delay="300">
+        <span class="script">poklon bon</span>
+        <div class="gift-min">90</div>
+        <div class="gift-min-label">minuta masaže</div>
+        <div class="gift-rule" aria-hidden="true"></div>
+        <div class="gift-price">75 €</div>
+        <p class="gift-desc">Potpuno iskustvo bez žurbe — ritual po izboru, u dogovoru pri dolasku.</p>
+        <a href="../kontakt/" class="btn btn-primary" data-gift="90">Kupi bon</a>
+      </div>
 
     </section>
 
-    <section class="faq-cta" data-aos="fade-up">
-      <p>Imaš pitanje koje nije ovdje? Slobodno mi piši.</p>
-      <a href="../kontakt/" class="btn btn-primary" data-reserve>Rezerviraj termin</a>
-    </section>
+    <div class="gift-notes" data-aos="fade-up">
+      <span>Vrijedi 3 mjeseca od kupnje</span>
+      <span>Bon glasi na minutažu</span>
+      <span>Ritual se dogovara pri dolasku</span>
+    </div>
 
   </main>
 

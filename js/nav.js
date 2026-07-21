@@ -38,10 +38,10 @@
     return /Android|iPhone|iPad|iPod|Windows Phone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent || '');
   }
 
-  function goEmail() {
+  function goEmail(subject, msg) {
     window.location.href = 'mailto:' + EMAIL +
-      '?subject=' + encodeURIComponent('Rezervacija termina — Soul Space') +
-      '&body=' + encodeURIComponent(MSG);
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(msg);
   }
 
   // Pokušaj otvoriti aplikaciju preko app-scheme linka; ako stranica
@@ -62,17 +62,15 @@
     catch (err) { clearTimeout(timer); fallback(); }
   }
 
-  function reserve(e) {
-    if (e) e.preventDefault();
-    // Desktop → ravno na email
-    if (!isMobile()) { goEmail(); return; }
-    // Mobitel: WhatsApp → Instagram → email
+  // Zajednički tok: desktop → email; mobitel → WhatsApp → Instagram → email
+  function contactVia(subject, msg) {
+    if (!isMobile()) { goEmail(subject, msg); return; }
     tryApp(
-      'whatsapp://send?phone=' + PHONE + '&text=' + encodeURIComponent(MSG),
+      'whatsapp://send?phone=' + PHONE + '&text=' + encodeURIComponent(msg),
       function () {
         tryApp(
           'instagram://user?username=' + IG_USER,
-          goEmail,
+          function () { goEmail(subject, msg); },
           1200
         );
       },
@@ -81,6 +79,19 @@
   }
 
   document.querySelectorAll('[data-reserve]').forEach(function (el) {
-    el.addEventListener('click', reserve);
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      contactVia('Rezervacija termina — Soul Space', MSG);
+    });
+  });
+
+  // Poklon bon: [data-gift="60"] → poruka s minutažom
+  document.querySelectorAll('[data-gift]').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      var mins = el.getAttribute('data-gift');
+      contactVia('Poklon bon — Soul Space',
+        'Pozdrav! Željela bih kupiti poklon bon od ' + mins + ' minuta.');
+    });
   });
 })();
