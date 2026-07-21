@@ -1057,17 +1057,16 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   opacity: 0.7;
 }
 @media (max-width: 900px) {
+  /* Mobilni footer: logo + radno vrijeme jedno do drugog, ikone ispod na sredini */
   .footer-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
+    gap: 2.5rem 1.5rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-  .footer-brand { grid-column: span 2; }
-}
-@media (max-width: 640px) {
-  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .footer-brand { grid-column: span 1; }
+  .footer-brand { grid-column: 1; }
+  .footer-col:last-child { grid-column: 1 / -1; }
+  .footer-col:last-child .footer-icons { justify-content: center; gap: 2.2rem; }
 }
 
 /* ---------- RESPONSIVE GLOBALNO ---------- */
