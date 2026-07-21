@@ -977,7 +977,6 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 }
 @media (max-width: 700px) {
   .cta-meta { grid-template-columns: 1fr; }
-  .cta-meta-cell + .cta-meta-cell { border-top: 1px solid rgba(200, 150, 92, 0.35); }
   .cta-note-caps { letter-spacing: 0.18em; line-height: 1.8; }
 }
 .cta-sub {
