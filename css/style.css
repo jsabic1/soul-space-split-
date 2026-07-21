@@ -272,7 +272,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .mobile-menu-nav a {
   font-family: var(--font-brand);
   font-weight: 400;
-  font-size: 2.4rem;
+  font-size: 1.9rem;
   line-height: 1.2;
   color: var(--text);
   text-decoration: none;
@@ -482,7 +482,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 5rem auto 0;
   align-items: start;
   position: relative;
 }
@@ -539,7 +539,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 @media (max-width: 900px) {
   /* More air between the "Ne brzo" heading and the principles */
   .section-pristup .section-head { margin-bottom: 3.5rem; }
-  .principles-stairs { grid-template-columns: 1fr; gap: 2rem; margin-top: 2.5rem; }
+  .principles-stairs { grid-template-columns: 1fr; gap: 2rem; margin-top: 4rem; }
   .principle-stairs {
     margin-top: 0 !important;
     border-left: none;
@@ -559,7 +559,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 4.5rem auto 0;
 }
 .ritual-card {
   position: relative;
@@ -950,8 +950,10 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  column-gap: 5.5rem;
+  row-gap: 2rem;
   padding-bottom: 2rem;
   max-width: 1100px;
   margin: 0 auto;
@@ -964,13 +966,13 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 0.5rem;
+  gap: 0;
 }
 .footer-logo {
   height: auto;
   width: auto;
-  max-width: 220px;
-  max-height: 60px;
+  max-width: 165px;
+  max-height: 45px;
   object-fit: contain;
   object-position: top left;
   display: block;
@@ -985,11 +987,21 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   line-height: 1.75;
   color: var(--text-muted);
   font-style: normal;
-  padding-top: 0.3rem;
+  padding-top: 0;
 }
 .footer-brand address a { color: var(--text); text-decoration: none; }
 .footer-brand address a:hover { color: var(--accent); }
 .footer-col { padding-top: 0; }
+/* "Soul Space" naslov u footeru — isti stil kao "Radno vrijeme", pa su prirodno u ravnini */
+.footer-brand-title {
+  font-family: var(--font-brand-sub);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  color: var(--accent-soft);
+  margin-bottom: 1.4rem;
+}
 .footer-col h4 {
   font-family: var(--font-brand-sub);
   font-size: 0.7rem;
@@ -998,14 +1010,12 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   letter-spacing: 0.32em;
   color: var(--accent-soft);
   margin-bottom: 1.4rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px solid var(--border);
 }
 .footer-col ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 0.3rem;
 }
 .footer-col a {
   font-family: var(--font-body);
@@ -1019,6 +1029,36 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   color: var(--accent);
   padding-left: 0.3rem;
 }
+/* Radno vrijeme u footeru */
+.footer-hours li {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+/* Kontakt ikone u footeru — jedna do druge, bez krugova */
+.footer-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+.footer-icons a {
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  transition: color .25s ease, transform .25s ease;
+}
+.footer-icons a:hover { color: var(--accent-soft); transform: translateY(-2px); }
+.footer-icons svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.footer-icons svg.wa { fill: currentColor; stroke: none; }
 .footer-bottom {
   border-top: 1px solid var(--border);
   padding: 1rem 0;
@@ -1029,17 +1069,16 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   opacity: 0.7;
 }
 @media (max-width: 900px) {
+  /* Mobilni footer: logo + radno vrijeme jedno do drugog, ikone ispod na sredini */
   .footer-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
+    gap: 2.5rem 1.5rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-  .footer-brand { grid-column: span 2; }
-}
-@media (max-width: 640px) {
-  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .footer-brand { grid-column: span 1; }
+  .footer-brand { grid-column: 1; }
+  .footer-col:last-child { grid-column: 1 / -1; }
+  .footer-col:last-child .footer-icons { justify-content: center; gap: 2.2rem; margin: 0.5rem 0 2rem; }
 }
 
 /* ---------- RESPONSIVE GLOBALNO ---------- */

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Poklon bon — Soul Space Split</title>
+  <meta name="description" content="Pokloni nekome sat vremena za sebe. Poklon bonovi Soul Space studija za masažu u Splitu.">
+
+  <!-- Open Graph (WhatsApp/Facebook/Viber link preview) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Soul Space Split">
+  <meta property="og:locale" content="hr_HR">
+  <meta property="og:title" content="Poklon bon — Soul Space Split">
+  <meta property="og:description" content="Pokloni nekome sat vremena za sebe. Poklon bonovi Soul Space studija za masažu u Splitu.">
+  <meta property="og:url" content="https://jsabic1.github.io/soul-space-split-/poklon-bon/">
+  <meta property="og:image" content="https://jsabic1.github.io/soul-space-split-/wp-content/uploads/soul/inner-glow.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Unicase:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css?v=15">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    .gift-hero {
+      padding: 10rem 1.5rem 2.5rem;
+      text-align: center;
+      background: var(--bg);
+    }
+    .gift-hero .eyebrow {
+      font-family: var(--font-brand-sub);
+      font-size: 0.85rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--accent-soft);
+      margin-bottom: 1rem;
+    }
+    .gift-hero h1 {
+      font-family: var(--font-brand);
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      color: var(--text);
+      line-height: 1.05;
+      font-weight: 400;
+      margin: 0 0 1.4rem;
+    }
+    .gift-hero .gift-lead {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .gift-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 3rem auto 0;
+      padding: 0 2rem;
+    }
+    .gift-card {
+      position: relative;
+      text-align: center;
+      padding: 3rem 2rem 2.6rem;
+      border: 1px solid rgba(200, 150, 92, 0.35);
+      border-radius: 6px;
+      background:
+        radial-gradient(130% 90% at 50% 0%, rgba(216, 105, 52, 0.12), transparent 62%),
+        linear-gradient(180deg, #2C1610 0%, #231108 100%);
+      overflow: hidden;
+      transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+    }
+    .gift-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent);
+      box-shadow: 0 34px 60px -30px rgba(0, 0, 0, 0.85);
+    }
+    .gift-card .script { display: block; margin-bottom: 1.2rem; font-size: 1.35rem; }
+    .gift-min {
+      font-family: var(--font-brand);
+      font-size: clamp(4rem, 6vw, 5.2rem);
+      line-height: 0.9;
+      color: var(--text);
+    }
+    .gift-min-label {
+      font-family: var(--font-brand-sub);
+      font-size: 0.72rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent-soft);
+      margin-top: 0.7rem;
+    }
+    .gift-rule {
+      width: 44px;
+      height: 1px;
+      background: var(--accent);
+      margin: 1.6rem auto;
+      position: relative;
+    }
+    .gift-rule::after {
+      content: '';
+      position: absolute;
+      left: 50%; top: 50%;
+      width: 5px; height: 5px;
+      background: var(--accent);
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    .gift-price {
+      font-family: var(--font-brand-sub);
+      font-size: 1.7rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .gift-desc {
+      font-family: var(--font-body);
+      font-size: 0.93rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      min-height: 3.2em;
+    }
+    .gift-card .btn { width: 100%; }
+
+    .gift-notes {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem 2.4rem;
+      max-width: 900px;
+      margin: 3.5rem auto 0;
+      padding: 0 2rem 7rem;
+    }
+    .gift-notes { text-align: center; }
+    .gift-notes span {
+      text-align: center;
+      font-family: var(--font-brand-sub);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-soft);
+    }
+
+    @media (max-width: 900px) {
+      .gift-grid { grid-template-columns: 1fr; max-width: 460px; gap: 1.6rem; }
+      .gift-desc { min-height: 0; }
+      .gift-notes { flex-direction: column; align-items: center; gap: 0.8rem; padding-bottom: 5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <nav class="main-nav nav-left">
+        <a href="../">Naslovna</a>
+        <a href="../rituali/">Rituali</a>
+        <a href="./" class="active">Poklon bon</a>
+      </nav>
+      <a href="../" class="brand">
+        <img src="../wp-content/uploads/soul/logo.png" alt="Soul Space Split" class="brand-logo">
+      </a>
+      <nav class="main-nav nav-right">
+        <a href="../o-meni/">O meni</a>
+        <a href="../cesta-pitanja/">Česta pitanja</a>
+        <a href="../kontakt/">Kontakt</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Otvori izbornik" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="mobile-menu-close" aria-label="Zatvori izbornik"></button>
+    <p class="m-eyebrow">Izbornik</p>
+    <nav class="mobile-menu-nav">
+      <a href="../">Naslovna</a>
+      <a href="../rituali/">Rituali</a>
+      <a href="./" class="active">Poklon bon</a>
+      <a href="../o-meni/">O meni</a>
+      <a href="../cesta-pitanja/">Česta pitanja</a>
+      <a href="../kontakt/">Kontakt</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <section class="gift-hero">
+      <p class="eyebrow" data-aos="fade-up">Pokloni</p>
+      <h1 data-aos="fade-up" data-aos-delay="100">Poklon bon</h1>
+      <p class="gift-lead" data-aos="fade-up" data-aos-delay="200">Pokloni nekome ono što se ne može kupiti — vrijeme samo za sebe.</p>
+    </section>
+
+    <section class="gift-grid">
+
+      <div class="gift-card" data-aos="fade-up" data-aos-delay="0">
+        <span class="script">poklon bon</span>
+        <div class="gift-min">60</div>
+        <div class="gift-min-label">minuta masaže</div>
+        <div class="gift-rule" aria-hidden="true"></div>
+        <div class="gift-price">55 €</div>
+        <p class="gift-desc">Vrijeme predaha — ritual po izboru.</p>
+        <a href="../kontakt/" class="btn btn-primary" data-gift="60">Kupi bon</a>
+      </div>
+
+      <div class="gift-card" data-aos="fade-up" data-aos-delay="150">
+        <span class="script">poklon bon</span>
+        <div class="gift-min">75</div>
+        <div class="gift-min-label">minuta masaže</div>
+        <div class="gift-rule" aria-hidden="true"></div>
+        <div class="gift-price">65 €</div>
+        <p class="gift-desc">Dublji rad i više prostora — ritual po izboru.</p>
+        <a href="../kontakt/" class="btn btn-primary" data-gift="75">Kupi bon</a>
+      </div>
+
+      <div class="gift-card" data-aos="fade-up" data-aos-delay="300">
+        <span class="script">poklon bon</span>
+        <div class="gift-min">90</div>
+        <div class="gift-min-label">minuta masaže</div>
+        <div class="gift-rule" aria-hidden="true"></div>
+        <div class="gift-price">75 €</div>
+        <p class="gift-desc">Potpuno iskustvo bez žurbe — ritual po izboru.</p>
+        <a href="../kontakt/" class="btn btn-primary" data-gift="90">Kupi bon</a>
+      </div>
+
+    </section>
+
+    <div class="gift-notes" data-aos="fade-up">
+      <span>Vrijedi 3 mjeseca od kupnje</span>
+      <span>Ritual se dogovara s osobom koja dolazi</span>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h4 class="footer-brand-title">Soul Space</h4>
+        <address>
+          Obrt za usluge<br>
+          OIB: 27660814727<br>
+          <a href="https://www.google.com/maps/search/?api=1&query=Sinjska%205%2C%2021000%20Split%2C%20Hrvatska" target="_blank" rel="noopener">Sinjska 5, 21000 Split</a><br>
+          <a href="mailto:soul.space.split@gmail.com">soul.space.split@gmail.com</a><br>
+          <a href="tel:+385955363341">+385 95 536 3341</a>
+        </address>
+      </div>
+      <div class="footer-col">
+        <h4>Radno vrijeme</h4>
+        <ul class="footer-hours">
+          <li>Pon – Sub: 10:00 – 21:00</li>
+          <li>Ned: po dogovoru</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-icons">
+          <a href="https://wa.me/385955363341" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg class="wa" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2m0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.24-8.22 8.24m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29"/></svg>
+          </a>
+          <a href="https://instagram.com/soul.space.split" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="mailto:soul.space.split@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Soul Space · Diana Lendić · <a href="../politika-privatnosti/">Politika privatnosti</a> · <a href="../uvjeti-otkazivanja/">Uvjeti otkazivanja</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 900,
+      once: true,
+      easing: 'ease-out-cubic',
+      offset: 100
+    });
+  </script>
+  <script src="../js/nav.js?v=3"></script>
+</body>
+</html>
