@@ -950,8 +950,10 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  column-gap: 5.5rem;
+  row-gap: 2rem;
   padding-bottom: 2rem;
   max-width: 1100px;
   margin: 0 auto;
