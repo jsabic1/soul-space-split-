@@ -413,7 +413,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   text-transform: uppercase;
   color: var(--text-muted);
   max-width: 640px;
-  line-height: 2;
+  line-height: 1.55;
   margin: 1.5rem auto 2rem;
 }
 .hero-buttons {
