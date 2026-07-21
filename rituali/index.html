@@ -465,15 +465,24 @@ body.gsap-page::before {
 }
 
 @media (max-width: 480px) {
-  .treatment .gsap-inner, .treatment.reverse .gsap-inner { padding: 5rem 1rem 2.2rem; }
+  .treatment .gsap-inner, .treatment.reverse .gsap-inner { padding: 4.6rem 1rem 1.8rem; }
   .ornament-label { font-size: 0.58rem; letter-spacing: 0.27em; }
   .editorial-ornament .line { width: 40px; }
-  .split-content .description { display: none; }
-  .ideal-for { grid-template-columns: 1fr; }
+  .treatment-topline { margin-bottom: 0.15rem; }
+  .treatment-num { font-size: clamp(2.5rem, 10vw, 3.4rem); }
+  .split-content h2 { font-size: clamp(2.2rem, 10vw, 3.4rem); margin-bottom: 0.5rem; }
+  .split-content .script { font-size: clamp(1rem, 4vw, 1.25rem); margin-bottom: 0.7rem; }
+  .split-content .description { font-size: 0.86rem; line-height: 1.45; margin-bottom: 0.75rem; }
+  .ideal-for { grid-template-columns: 1fr; padding: 0.7rem 0; }
   .ideal-icon { display: none; }
-  .treatment-meta { margin-bottom: 0.9rem; }
+  .ideal-label { margin-bottom: 0.35rem; }
+  .ideal-for p { font-size: 0.84rem; line-height: 1.4; }
+  .after-note { font-size: 0.88rem; margin-bottom: 0.7rem; }
+  .treatment-meta { margin-bottom: 0.7rem; }
+  .meta-item { padding: 0.65rem 0; }
   .meta-item + .meta-item { padding-left: 1.25rem; }
-  .split-content .btn-primary { font-size: 0.65rem; letter-spacing: 0.25em; }
+  .meta-item .meta-value { font-size: 1.4rem; }
+  .split-content .btn-primary { font-size: 0.65rem; letter-spacing: 0.25em; padding: 0.95rem 1.2rem; margin-top: 0.7rem; }
 }
 </style>
 </head>
