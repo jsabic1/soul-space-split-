@@ -253,13 +253,10 @@ p { color: var(--text-muted); }
   z-index: 1001;
 }
 .lang-switch a {
-  color: var(--text-muted);
-  opacity: 0.75;
-  transition: color 0.2s ease, opacity 0.2s ease;
+  color: var(--accent-soft);
+  transition: color 0.2s ease;
 }
-.lang-switch a:hover { color: var(--accent); opacity: 1; }
-.lang-switch a.active { color: var(--accent); opacity: 1; }
-.lang-switch span { color: var(--text-muted); opacity: 0.4; }
+.lang-switch a:hover { color: var(--accent); }
 /* Na užim desktopima gurni nav udesno da se ne sudara s prekidačem */
 @media (min-width: 901px) and (max-width: 1220px) {
   .header-inner { padding-left: 92px; }
