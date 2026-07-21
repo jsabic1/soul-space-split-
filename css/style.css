@@ -969,8 +969,8 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .footer-logo {
   height: auto;
   width: auto;
-  max-width: 220px;
-  max-height: 60px;
+  max-width: 165px;
+  max-height: 45px;
   object-fit: contain;
   object-position: top left;
   display: block;
