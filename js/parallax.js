@@ -37,7 +37,7 @@
       'position:absolute;left:0;right:0;' +
       'top:' + (-EXTRA * 50) + '%;height:' + (100 + EXTRA * 100) + '%;' +
       'background-image:url("' + m[2] + '");background-size:cover;' +
-      'background-position:center;background-repeat:no-repeat;' +
+      'background-position:' + cs.backgroundPosition + ';background-repeat:no-repeat;' +
       'z-index:0;will-change:transform;transform:translate3d(0,0,0);pointer-events:none;';
     el.insertBefore(layer, el.firstChild);
     items.push({ el: el, layer: layer, last: null });
