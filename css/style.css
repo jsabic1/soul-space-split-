@@ -998,8 +998,6 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   letter-spacing: 0.32em;
   color: var(--accent-soft);
   margin-bottom: 1.4rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px solid var(--border);
 }
 .footer-col ul {
   list-style: none;
