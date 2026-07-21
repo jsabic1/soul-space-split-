@@ -956,7 +956,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   font-size: 1.8rem;
   text-transform: none;
   letter-spacing: 0.02em;
-  color: var(--accent);
+  color: var(--accent-soft);
   margin-bottom: 0.55rem;
 }
 .cta-note-caps {
@@ -965,7 +965,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   font-weight: 500;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-soft);
   margin: 2.4rem 0 0;
 }
 @media (max-width: 700px) {
