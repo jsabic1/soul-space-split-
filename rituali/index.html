@@ -472,7 +472,7 @@ body.gsap-page::before {
   .treatment-num { font-size: clamp(2.5rem, 10vw, 3.4rem); }
   .split-content h2 { font-size: clamp(2.2rem, 10vw, 3.4rem); margin-bottom: 0.5rem; }
   .split-content .script { font-size: clamp(1rem, 4vw, 1.25rem); margin-bottom: 0.7rem; }
-  .split-content .description { font-size: 0.86rem; line-height: 1.45; margin-bottom: 0.75rem; }
+  .split-content .description { font-size: 0.92rem; line-height: 1.45; margin-bottom: 0.75rem; }
   .ideal-for { grid-template-columns: 1fr; padding: 0.7rem 0; }
   .ideal-icon { display: none; }
   .ideal-label { margin-bottom: 0.35rem; }
@@ -483,6 +483,14 @@ body.gsap-page::before {
   .meta-item + .meta-item { padding-left: 1.25rem; }
   .meta-item .meta-value { font-size: 1.4rem; }
   .split-content .btn-primary { font-size: 0.65rem; letter-spacing: 0.25em; padding: 0.95rem 1.2rem; margin-top: 1.3rem; }
+}
+
+@media (max-width: 480px) and (max-height: 700px) {
+  .treatment .gsap-inner, .treatment.reverse .gsap-inner { padding: 4rem 1rem 2rem; }
+  .split-content h2 { font-size: clamp(2rem, 9vw, 3rem); }
+  .split-content .script { margin-bottom: 0.5rem; }
+  .split-content .description { line-height: 1.4; }
+  .split-content .btn-primary { margin-top: 0.9rem; }
 }
 </style>
 </head>
