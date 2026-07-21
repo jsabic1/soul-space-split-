@@ -909,7 +909,15 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   border-bottom: 1px solid var(--border);
 }
 .cta-banner h2 { font-size: clamp(2.6rem, 6vw, 5rem); margin-bottom: 0.7rem; }
-.cta-banner .lead { font-style: italic; margin-bottom: 3rem; }
+.cta-banner .lead {
+  font-family: var(--font-brand-sub);
+  font-style: normal;
+  font-size: 0.74rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+}
 .cta-eyebrow {
   display: flex;
   align-items: center;
@@ -953,11 +961,12 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 }
 .cta-note-caps {
   font-family: var(--font-brand-sub);
-  font-size: 0.7rem;
-  letter-spacing: 0.26em;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--accent-soft);
-  margin: 2.2rem 0 0;
+  color: var(--accent);
+  margin: 2.4rem 0 0;
 }
 @media (max-width: 700px) {
   .cta-meta { grid-template-columns: 1fr; }
