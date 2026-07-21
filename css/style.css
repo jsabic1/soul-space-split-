@@ -917,6 +917,15 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   margin: 0 auto 2rem;
   line-height: 1.55;
 }
+.cta-note {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--accent-soft);
+  max-width: 480px;
+  margin: 1.7rem auto 0;
+  line-height: 1.6;
+}
 
 /* ============================================
    ATMOSFERA — Auto-slider infinity loop (bez skoka)
