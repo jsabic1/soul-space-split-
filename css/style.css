@@ -544,7 +544,8 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   font-family: var(--font-brand);
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: 400;
-  color: var(--text);
+  font-style: italic;
+  color: var(--accent-soft);
   margin-bottom: 1rem;
   line-height: 1.2;
 }
