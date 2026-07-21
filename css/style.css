@@ -958,6 +958,16 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   color: var(--accent-soft);
   margin-bottom: 0.55rem;
 }
+.cta-meta-cell.cta-meta-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  color: var(--accent-soft);
+  line-height: 1.9;
+}
 .cta-note-caps {
   font-family: var(--font-brand-sub);
   font-size: 0.85rem;
