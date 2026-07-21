@@ -514,7 +514,6 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .principle-stairs {
   padding: 2rem 1.5rem;
   position: relative;
-  border-left: 1px solid rgba(244, 232, 214, 0.25);
   transition: transform 0.4s ease;
 }
 .principle-stairs:first-child {
@@ -567,11 +566,9 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   .principle-stairs {
     margin-top: 0 !important;
     border-left: none;
-    border-bottom: 1px solid rgba(244, 232, 214, 0.25);
     padding: 2.5rem 0;
     text-align: center;
   }
-  .principle-stairs:last-child { border-bottom: none; }
   .principle-stairs:first-child { padding-top: 0; }
 }
 
