@@ -173,6 +173,26 @@
     .about-rule { width: 56px; height: 1px; background: var(--accent); margin: 1.2rem 0 1.5rem; }
     /* Unified left-aligned text section (matches the image-split heading style) */
     .text-block { max-width: 880px; margin: 0 auto; padding: 0 1.5rem; text-align: center; }
+    /* Dizajn B: veliki tihi broj + okomita linija */
+    .text-block, .about-text { position: relative; z-index: 2; }
+    .story-num {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -54%);
+      font-family: var(--font-brand);
+      font-size: clamp(12rem, 20vw, 19rem);
+      line-height: 1;
+      color: rgba(200, 150, 92, 0.07);
+      pointer-events: none;
+      user-select: none;
+      z-index: -1;
+      white-space: nowrap;
+    }
+    .section.praksa .story-num { color: rgba(200, 150, 92, 0.13); }
+    .story-hair { width: 1px; height: 52px; background: rgba(200, 150, 92, 0.6); margin: 0 auto 1.6rem; }
+    .text-block .about-eyebrow, .about-text .about-eyebrow { color: var(--text); }
+    .text-block .about-eyebrow em, .about-text .about-eyebrow em { color: var(--text); }
     main .section { padding: 12rem 0; }
     @media (max-width: 900px) { main .section { padding: 8rem 0; } }
     /* Center the image-split text too, for consistency */
@@ -266,13 +286,15 @@
       <div class="hero-content-left" data-aos="fade-up">
         <h1>Tijela<br>razgovaraju<br>prije&nbsp;riječi</h1>
         <p class="eyebrow">Diana Lendić · Soul Space · Split</p>
-        <p class="hero-sub hero-sub-left">Maserka, s temeljem u tjelesno orijentiranoj psihoterapiji.</p>
+        <p class="hero-sub hero-sub-left">Maserka, s temeljem u tjelesno orijentiranoj psihoterapiji</p>
       </div>
     </section>
 
     <!-- TEKST 1 -->
     <section class="section ">
       <div class="text-block" data-aos="fade-up">
+        <div class="story-num">01</div>
+        <div class="story-hair"></div>
         <p class="eyebrow">Moja priča</p>
         <p class="about-eyebrow">Počelo je <em>pokretom</em></p>        <p class="body">Cijeli život bila sam zaljubljena u pokret. Ples, kontorcionizam i istraživanje mogućnosti vlastitog tijela bili su veliki dio mog života. U tom periodu vjerovala sam da to znači da sam povezana sa svojim tijelom. Mislila sam da ga poznajem zato što sam kroz njega mogla plesati, stvarati i istraživati pokret.</p>
       </div>
@@ -288,6 +310,8 @@
     <!-- TEKST 2 -->
     <section class="section ">
       <div class="text-block" data-aos="fade-up">
+        <div class="story-num">02</div>
+        <div class="story-hair"></div>
         <p class="eyebrow">Spoznaja</p>
         <p class="about-eyebrow">Tijelo nije samo sredstvo, nego <em>mjesto gdje živimo</em></p>        <p class="body">Tek kasnije shvatila sam da postoji jedan potpuno drugačiji odnos s tijelom. Onaj u kojem tijelo nije samo sredstvo pokreta, nego mjesto u kojem živimo. U kojem se nalaze moje emocije, sjećanja, granice, tuga, radost i osjećaj sigurnosti.</p>
         <p class="body">Kad sam prvi put čula za tjelesno orijentiranu psihoterapiju, nešto me odmah privuklo tom pristupu. Bio je to prirodan nastavak mog interesa za tijelo i psihu, ali sam na samom početku rada na sebi shvatila koliko je moja povezanost s tijelom zapravo bila površna.</p>
@@ -301,7 +325,9 @@
           <img src="../wp-content/uploads/soul/portret-1.JPG" alt="Diana Lendić u studiju">
         </div>
         <div class="about-text">
-          <p class="eyebrow">Trenutak</p>
+          <div class="story-num">03</div>
+        <div class="story-hair"></div>
+        <p class="eyebrow">Trenutak</p>
           <p class="about-eyebrow">kad sam popustila <em>kontrolu</em></p>          <p>Na terapiji mi je dugo trebalo da dopustim dodir. Izbjegavala sam ga i osjećala nelagodu. Odrastala sam uz iskustvo u kojem je dodir često bio grub i povređujući pa je mom tijelu trebalo vremena da povjeruje kako može postojati i drugačiji kontakt.</p>
           <p>Jedan trenutak posebno pamtim. Prvi put uspjela sam popustiti kontrolu i dopustiti terapeutici da me podrži dodirom. Ležeći na podu osjetila sam kako se moje tijelo polako opušta, kako se težina predaje podlozi i kako moj um više ne mora sve držati pod kontrolom. Osjećaj je bio kao da mirno plutam na površini mora, ali ovaj put nisam bila sama. Uz mene je bilo još jedno prisutno ljudsko biće.</p>
           <p>To iskustvo promijenilo je način na koji gledam dodir.</p>
@@ -323,7 +349,9 @@
           <img src="../wp-content/uploads/soul/atmosfera-2.jpg" alt="Diana tijekom rituala u studiju">
         </div>
         <div class="about-text">
-          <p class="eyebrow">Put</p>
+          <div class="story-num">04</div>
+        <div class="story-hair"></div>
+        <p class="eyebrow">Put</p>
           <p class="about-eyebrow">Od terapije do <em>dodira</em></p>          <p>Kasnije, tijekom tri godine edukacije iz tjelesno orijentirane psihoterapije, počela sam razumijevati zašto je taj trenutak bio toliko važan. Učila sam o ranom razvoju, privrženosti, živčanom sustavu i koregulaciji te sve više shvaćala koliko iskustva iz najranijih godina ostaju zapisana u našem tijelu. Koliko toga što danas pripisujemo stresu ili karakteru zapravo ima puno dublje korijene.</p>
           <p>Nakon nekoliko godina vlastitog terapijskog procesa i tri godine edukacije iz tjelesno orijentirane psihoterapije, poželjela sam svoje razumijevanje tijela proširiti kroz dodir. Upisala sam školu za masera, a kasnije nastavila usavršavanje kroz različite edukacije i manualne tehnike. Svaka od njih obogatila je moj način rada, ali ono što mi je od početka bilo najvažnije nije se promijenilo: stvoriti prostor u kojem se osoba može osjećati sigurno, viđeno i u kontaktu sa sobom.</p>
         </div>
@@ -333,6 +361,8 @@
     <!-- TEKST 3 -->
     <section class="section section-alt praksa">
       <div class="text-block" data-aos="fade-up">
+        <div class="story-num">05</div>
+        <div class="story-hair"></div>
         <p class="eyebrow">Praksa</p>
         <p class="about-eyebrow">Kako radim <em>danas</em></p>        <p class="body">Danas na dodir gledam kao na oblik komunikacije. Vjerujem da tijela međusobno razgovaraju i prije nego što izgovorimo ijednu riječ. Ponekad dodir može prenijeti ono što je riječima teško objasniti: da smo viđeni, podržani, da ne moramo ništa dokazivati i da se možemo na trenutak odmoriti.</p>
         <p class="body">U svom radu želim da svaka žena osjeti kako ovdje ne mora biti "dobra", izdržljiva ili stalno pod kontrolom. Želim da osjeti sigurnost, da ima slobodu reći što joj odgovara, a što ne, i da njezino tijelo dobije pažnju kakvu možda dugo nije dobilo.</p>

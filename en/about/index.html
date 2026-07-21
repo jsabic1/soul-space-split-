@@ -173,6 +173,26 @@
     .about-rule { width: 56px; height: 1px; background: var(--accent); margin: 1.2rem 0 1.5rem; }
     /* Unified left-aligned text section (matches the image-split heading style) */
     .text-block { max-width: 880px; margin: 0 auto; padding: 0 1.5rem; text-align: center; }
+    /* Dizajn B: veliki tihi broj + okomita linija */
+    .text-block, .about-text { position: relative; z-index: 2; }
+    .story-num {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -54%);
+      font-family: var(--font-brand);
+      font-size: clamp(12rem, 20vw, 19rem);
+      line-height: 1;
+      color: rgba(200, 150, 92, 0.07);
+      pointer-events: none;
+      user-select: none;
+      z-index: -1;
+      white-space: nowrap;
+    }
+    .section.praksa .story-num { color: rgba(200, 150, 92, 0.13); }
+    .story-hair { width: 1px; height: 52px; background: rgba(200, 150, 92, 0.6); margin: 0 auto 1.6rem; }
+    .text-block .about-eyebrow, .about-text .about-eyebrow { color: var(--text); }
+    .text-block .about-eyebrow em, .about-text .about-eyebrow em { color: var(--text); }
     main .section { padding: 12rem 0; }
     @media (max-width: 900px) { main .section { padding: 8rem 0; } }
     /* Center the image-split text too, for consistency */
@@ -266,13 +286,15 @@
       <div class="hero-content-left" data-aos="fade-up">
         <h1>Bodies<br>speak<br>before&nbsp;words</h1>
         <p class="eyebrow">Diana Lendić · Soul Space · Split</p>
-        <p class="hero-sub hero-sub-left">A massage therapist grounded in body-oriented psychotherapy.</p>
+        <p class="hero-sub hero-sub-left">A massage therapist grounded in body-oriented psychotherapy</p>
       </div>
     </section>
 
     <!-- TEKST 1 -->
     <section class="section ">
       <div class="text-block" data-aos="fade-up">
+        <div class="story-num">01</div>
+        <div class="story-hair"></div>
         <p class="eyebrow">My story</p>
         <p class="about-eyebrow">It began with <em>movement</em></p>        <p class="body">All my life I have been in love with movement. Dance, contortion and exploring what my body could do were a huge part of my life. Back then I believed that meant I was connected to my body. I thought I knew it because through it I could dance, create and explore movement.</p>
       </div>
@@ -288,6 +310,8 @@
     <!-- TEKST 2 -->
     <section class="section ">
       <div class="text-block" data-aos="fade-up">
+        <div class="story-num">02</div>
+        <div class="story-hair"></div>
         <p class="eyebrow">Realisation</p>
         <p class="about-eyebrow">The body isn't just a tool, it's <em>the place we live in</em></p>        <p class="body">Only later did I realise there is a completely different relationship with the body. One where the body isn't just an instrument of movement, but the place we live in. Where my emotions, memories, boundaries, sadness, joy and sense of safety reside.</p>
         <p class="body">When I first heard about body-oriented psychotherapy, something drew me to it immediately. It was a natural continuation of my interest in the body and the psyche, but at the very start of my own inner work I realised how superficial my connection to my body had actually been.</p>
@@ -301,7 +325,9 @@
           <img src="../../wp-content/uploads/soul/portret-1.JPG" alt="Diana Lendić in the studio">
         </div>
         <div class="about-text">
-          <p class="eyebrow">The moment</p>
+          <div class="story-num">03</div>
+        <div class="story-hair"></div>
+        <p class="eyebrow">The moment</p>
           <p class="about-eyebrow">I let go of <em>control</em></p>          <p>In therapy, it took me a long time to allow touch. I avoided it and felt uneasy. I grew up with experiences where touch was often rough and hurtful, so my body needed time to believe that a different kind of contact could exist.</p>
           <p>There is one moment I remember especially. For the first time I managed to let go of control and allow my therapist to support me through touch. Lying on the floor, I felt my body slowly soften, its weight surrendering to the ground, my mind no longer needing to hold everything together. It felt like floating calmly on the surface of the sea, but this time I wasn't alone. There was another present human being beside me.</p>
           <p>That experience changed the way I see touch.</p>
@@ -323,7 +349,9 @@
           <img src="../../wp-content/uploads/soul/atmosfera-2.jpg" alt="Diana during a ritual in the studio">
         </div>
         <div class="about-text">
-          <p class="eyebrow">The path</p>
+          <div class="story-num">04</div>
+        <div class="story-hair"></div>
+        <p class="eyebrow">The path</p>
           <p class="about-eyebrow">From therapy to <em>touch</em></p>          <p>Later, through three years of training in body-oriented psychotherapy, I began to understand why that moment mattered so much. I learned about early development, attachment, the nervous system and co-regulation, and increasingly understood how deeply our earliest experiences stay written in the body. How much of what we attribute to stress or character today actually has far deeper roots.</p>
           <p>After several years of my own therapeutic process and three years of training in body-oriented psychotherapy, I wanted to extend my understanding of the body through touch. I enrolled in massage school and later continued refining my work through further trainings and manual techniques. Each of them enriched the way I work, but what mattered most to me from the beginning hasn't changed: creating a space where a person can feel safe, seen and in contact with herself.</p>
         </div>
@@ -333,6 +361,8 @@
     <!-- TEKST 3 -->
     <section class="section section-alt praksa">
       <div class="text-block" data-aos="fade-up">
+        <div class="story-num">05</div>
+        <div class="story-hair"></div>
         <p class="eyebrow">Practice</p>
         <p class="about-eyebrow">How I work <em>today</em></p>        <p class="body">Today I see touch as a form of communication. I believe bodies speak to each other before we say a single word. Sometimes touch can convey what words struggle to explain: that we are seen, supported, that we don't have to prove anything, and that we can rest for a moment.</p>
         <p class="body">In my work I want every woman to feel that here she doesn't have to be "good", resilient or constantly in control. I want her to feel safe, free to say what suits her and what doesn't, and for her body to receive the kind of attention it may not have received in a long time.</p>
