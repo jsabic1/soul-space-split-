@@ -964,7 +964,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 0.5rem;
+  gap: 0;
 }
 .footer-logo {
   height: auto;
@@ -985,13 +985,21 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   line-height: 1.75;
   color: var(--text-muted);
   font-style: normal;
-  padding-top: 0.3rem;
+  padding-top: 0;
 }
 .footer-brand address a { color: var(--text); text-decoration: none; }
 .footer-brand address a:hover { color: var(--accent); }
 .footer-col { padding-top: 0; }
-/* Poravnaj "Radno vrijeme" s prvim retkom teksta ispod loga (Obrt za usluge) */
-.footer-col:not(:last-child) { padding-top: 55.6px; }
+/* "Soul Space" naslov u footeru — isti stil kao "Radno vrijeme", pa su prirodno u ravnini */
+.footer-brand-title {
+  font-family: var(--font-brand-sub);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  color: var(--accent-soft);
+  margin-bottom: 1.4rem;
+}
 .footer-col h4 {
   font-family: var(--font-brand-sub);
   font-size: 0.7rem;
@@ -1068,7 +1076,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   }
   .footer-brand { grid-column: 1; }
   .footer-col:last-child { grid-column: 1 / -1; }
-  .footer-col:last-child .footer-icons { justify-content: center; gap: 2.2rem; }
+  .footer-col:last-child .footer-icons { justify-content: center; gap: 2.2rem; margin: 0.5rem 0 2rem; }
 }
 
 /* ---------- RESPONSIVE GLOBALNO ---------- */
