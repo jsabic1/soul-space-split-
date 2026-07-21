@@ -55,7 +55,7 @@ h1, h2, h3, h4 {
   letter-spacing: 0.02em;
 }
 h1 { font-size: clamp(2.8rem, 6.5vw, 5.5rem); }
-h2 { font-size: clamp(2.2rem, 4.5vw, 3.8rem); }
+h2 { font-size: clamp(1.9rem, 3.8vw, 3.1rem); }
 h3 { font-size: clamp(1.3rem, 2vw, 1.75rem); }
 em { font-style: normal; color: var(--accent); }
 p { color: var(--text-muted); }
@@ -699,8 +699,8 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   content: '';
   position: absolute;
   top: 0.4rem;
-  left: 4%;
-  right: 4%;
+  left: 23px;
+  right: calc(25% - 23px);
   height: 1px;
   background: var(--accent-soft);
   opacity: 0.7;
@@ -907,7 +907,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
-.cta-banner h2 { font-size: clamp(2.6rem, 6vw, 5rem); margin-bottom: 0.7rem; }
+.cta-banner h2 { font-size: clamp(2.2rem, 4.8vw, 3.8rem); margin-bottom: 0.7rem; }
 .cta-banner .lead {
   font-family: var(--font-brand-sub);
   font-style: normal;
