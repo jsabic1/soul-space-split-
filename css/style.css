@@ -1005,7 +1005,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 0.3rem;
 }
 .footer-col a {
   font-family: var(--font-body);
@@ -1018,6 +1018,28 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .footer-col a:hover {
   color: var(--accent);
   padding-left: 0.3rem;
+}
+/* Kontakt ikone u footeru — jedna do druge, bez krugova */
+.footer-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+.footer-icons a {
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  transition: color .25s ease, transform .25s ease;
+}
+.footer-icons a:hover { color: var(--accent-soft); transform: translateY(-2px); }
+.footer-icons svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 .footer-bottom {
   border-top: 1px solid var(--border);
