@@ -408,10 +408,12 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 }
 .hero-sub {
   font-family: var(--font-brand-sub);
-  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
   color: var(--text-muted);
-  max-width: 520px;
-  line-height: 1.5;
+  max-width: 640px;
+  line-height: 2;
   margin: 1.5rem auto 2rem;
 }
 .hero-buttons {
@@ -643,13 +645,12 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   letter-spacing: 0.01em;
 }
 .ritual-card h3 em {
-  font-style: italic;
-  color: var(--accent);
+  font-style: normal;
+  color: var(--text);
 }
 .ritual-card .ritual-desc {
   font-family: var(--font-body);
   font-size: 1.05rem;
-  font-style: italic;
   color: var(--text-muted);
   line-height: 1.5;
   margin-bottom: 1.8rem;
