@@ -444,11 +444,12 @@ body.gsap-page::before {
   .treatment .gsap-inner, .treatment.reverse .gsap-inner {
     align-items: stretch;
     justify-content: flex-start;
-    padding: 5.4rem 1.4rem 2.6rem;
+    padding: 6.2rem 1.4rem 2.6rem;
   }
   .split-content, .treatment:not(.reverse) .split-content, .treatment.reverse .split-content {
-    width: 100%; max-width: 620px; margin: 0;
+    width: 100%; max-width: 620px; margin: 0 auto;
     display: flex; flex-direction: column; flex: 1;
+    text-align: center;
   }
   .treatment:not(.reverse) .split-image::after, .treatment.reverse .split-image::after {
     background: linear-gradient(180deg, rgba(20,10,7,0.05) 0%, rgba(20,10,7,0.24) 26%, rgba(20,10,7,0.78) 54%, rgba(15,7,5,0.98) 100%);
@@ -467,7 +468,7 @@ body.gsap-page::before {
   .after-note { font-size: 1rem; }
   .meta-item { padding: 1rem 0; }
   .meta-item .meta-value { font-size: 1.55rem; }
-  .split-content .btn-primary { padding: 1rem 1.2rem; margin-top: auto; }
+  .split-content .btn-primary { padding: 1rem 1.2rem; margin-top: auto; margin-bottom: auto; }
   .progress-nav { right: 0.8rem; }
   .fullbg .gsap-heading { font-size: clamp(2rem, 8.5vw, 3.4rem); line-height: 1.14; }
   .fullbg .gsap-heading .cta-line + .cta-line { margin-top: 0.9em; }
@@ -475,7 +476,7 @@ body.gsap-page::before {
 }
 
 @media (max-width: 480px) {
-  .treatment .gsap-inner, .treatment.reverse .gsap-inner { padding: 5rem 1rem 2.4rem; }
+  .treatment .gsap-inner, .treatment.reverse .gsap-inner { padding: 5.6rem 1rem 2rem; }
   .ornament-label { font-size: 0.58rem; letter-spacing: 0.27em; }
   .editorial-ornament .line { width: 40px; }
   .treatment-topline { margin-bottom: 0.15rem; }
