@@ -500,7 +500,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   max-width: 1100px;
   margin: 0 auto;
 }
-.for-you .tebe-ako-head { text-align: left; margin-bottom: 0; }
+.for-you .tebe-ako-head { text-align: center; margin-bottom: 0; }
 .for-you .tebe-ako-head .eyebrow { margin-bottom: 0.8rem; }
 .for-you .tebe-ako-title {
   font-family: var(--font-brand);
