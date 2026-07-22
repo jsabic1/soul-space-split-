@@ -491,7 +491,38 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   color: var(--text);
   transform: translateX(-0.3rem);
 }
-.for-you-item:hover .for-you-text { color: var(--text); }
+/* Redizajn: rukopisni naslov + popis, bez crte */
+.for-you .tebe-ako-head { text-align: left; margin-bottom: 2.8rem; }
+.for-you .tebe-ako-head .eyebrow { margin-bottom: 0.6rem; }
+.for-you .tebe-ako-title {
+  font-family: var(--font-script);
+  font-weight: 400;
+  color: var(--accent);
+  font-size: clamp(2.4rem, 5.2vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+  margin: 0;
+}
+.for-you .tebe-ako-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1.6rem;
+  max-width: 780px;
+}
+.for-you .tebe-ako-list li {
+  font-family: var(--font-body);
+  font-size: clamp(1.08rem, 1.5vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--text);
+  margin-bottom: 1.7rem;
+}
+.for-you .tebe-ako-list li:last-child { margin-bottom: 0; }
+@media (max-width: 768px) {
+  .for-you .tebe-ako-list { padding-left: 0.4rem; }
+  .for-you .tebe-ako-list li { margin-bottom: 1.4rem; }
+}
+
+.for-you-text { color: var(--text); }
 .for-you-num {
   font-family: var(--font-brand-sub);
   font-size: 3rem;
