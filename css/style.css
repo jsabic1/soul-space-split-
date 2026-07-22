@@ -421,6 +421,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .hero-eyebrow {
   font-family: var(--font-brand-sub);
   font-size: 0.85rem;
+  font-weight: 600;
   letter-spacing: 0.4em;
   text-transform: uppercase;
   color: var(--accent-soft);
