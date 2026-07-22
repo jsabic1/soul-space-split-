@@ -113,7 +113,7 @@ p { color: var(--text-muted); }
   border-radius: 3px;
 }
 .btn-primary {
-  background: rgba(28, 13, 8, 0.5);
+  background: rgba(200, 150, 92, 0.16);
   color: #EBD7B4;
   border: 1px solid #D0A063;
   border-radius: 999px;
