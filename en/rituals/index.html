@@ -405,13 +405,14 @@ body.gsap-page::before {
 .meta-item:last-child .meta-value { color: var(--text); }
 
 .split-content .btn-primary {
-  display: block;
-  width: 100%;
+  display: inline-block;
+  width: auto;
+  align-self: flex-start;
   box-sizing: border-box;
   text-align: center;
   background: rgba(200,150,92,0.16);
   color: #EBD7B4;
-  padding: 1.25rem 2rem;
+  padding: 1.4rem 2.8rem;
   font-family: var(--font-brand-sub);
   font-size: 0.78rem;
   line-height: 1;
@@ -445,7 +446,7 @@ body.gsap-page::before {
   .meta-item { padding: 1rem 0; }
   .after-note .after-label { font-size: 0.82rem; }
   .gsap-section .meta-label { font-size: 0.82rem !important; }
-  .split-content .btn-primary { padding: 1rem 2rem; }
+  .split-content .btn-primary { padding: 1.4rem 2.8rem; }
 }
 
 @media (max-width: 900px) {
@@ -482,7 +483,7 @@ body.gsap-page::before {
   .after-note .after-label { font-size: 0.82rem; }
   .gsap-section .meta-label { font-size: 0.82rem !important; }
   .meta-item .meta-value { font-size: 1.55rem; }
-  .split-content .btn-primary { display: inline-block; width: auto; align-self: center; padding: 1.4rem 2.8rem; font-size: 0.78rem; letter-spacing: 0.36em; margin-top: auto; margin-bottom: auto; }
+  .split-content .btn-primary { align-self: center; padding: 1.4rem 2.8rem; font-size: 0.78rem; letter-spacing: 0.34em; margin-top: auto; margin-bottom: auto; }
   .progress-nav { right: 0.8rem; }
   .fullbg .gsap-heading { font-size: clamp(2rem, 8.5vw, 3.4rem); line-height: 1.14; }
   .fullbg .gsap-heading .cta-line + .cta-line { margin-top: 0.9em; }
@@ -507,7 +508,7 @@ body.gsap-page::before {
   .meta-item { padding: 0.65rem 0; }
   .meta-item + .meta-item { padding-left: 1.25rem; }
   .meta-item .meta-value { font-size: 1.4rem; }
-  .split-content .btn-primary { font-size: 0.72rem; letter-spacing: 0.3em; padding: 1.2rem 2.2rem; margin-top: auto; }
+  .split-content .btn-primary { font-size: 0.78rem; letter-spacing: 0.34em; padding: 1.4rem 2.8rem; margin-top: auto; }
 }
 
 @media (max-width: 480px) and (max-height: 700px) {
