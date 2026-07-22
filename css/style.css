@@ -113,22 +113,22 @@ p { color: var(--text-muted); }
   border-radius: 3px;
 }
 .btn-primary {
-  background: rgba(200, 150, 92, 0.16);
-  color: #EBD7B4;
-  border: 1px solid #D0A063;
+  background: #C8965C;
+  color: #241109;
+  border: 1px solid #C8965C;
   border-radius: 999px;
   padding: 0.95rem 2.6rem;
   letter-spacing: 0.3em;
+  box-shadow: 0 12px 32px -12px rgba(200, 150, 92, 0.55);
+}
+.btn-primary:hover {
+  background: rgba(200, 150, 92, 0.16);
+  color: #EBD7B4;
+  border-color: #D0A063;
+  letter-spacing: 0.34em;
   -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
   box-shadow: none;
-}
-.btn-primary:hover {
-  background: #C8965C;
-  color: #241109;
-  border-color: #C8965C;
-  letter-spacing: 0.34em;
-  box-shadow: 0 12px 32px -12px rgba(200, 150, 92, 0.55);
 }
 .btn-ghost {
   background: transparent;
