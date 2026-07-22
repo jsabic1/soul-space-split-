@@ -436,18 +436,19 @@ body.gsap-page::before {
   .ideal-for { padding: 0.85rem 0; }
   .treatment-meta { margin-bottom: 1rem; }
   .after-note { font-size: 1rem; }
-  .meta-item { padding: 0.85rem 0; }
+  .meta-item { padding: 1rem 0; }
   .split-content .btn-primary { padding: 1rem 2rem; }
 }
 
 @media (max-width: 900px) {
   .treatment .gsap-inner, .treatment.reverse .gsap-inner {
-    align-items: flex-end;
+    align-items: stretch;
     justify-content: flex-start;
-    padding: clamp(5rem, 11vh, 7rem) 1.4rem clamp(3.2rem, 8vh, 4.6rem);
+    padding: 5.4rem 1.4rem 2.6rem;
   }
   .split-content, .treatment:not(.reverse) .split-content, .treatment.reverse .split-content {
     width: 100%; max-width: 620px; margin: 0;
+    display: flex; flex-direction: column; flex: 1;
   }
   .treatment:not(.reverse) .split-image::after, .treatment.reverse .split-image::after {
     background: linear-gradient(180deg, rgba(20,10,7,0.05) 0%, rgba(20,10,7,0.24) 26%, rgba(20,10,7,0.78) 54%, rgba(15,7,5,0.98) 100%);
@@ -457,16 +458,16 @@ body.gsap-page::before {
   .treatment-num { font-size: clamp(3rem, 12vw, 4.2rem); }
   .split-content h2 { font-size: clamp(2rem, 8vw, 2.9rem); line-height: 1; margin-bottom: 1rem; }
   .split-content .script { font-size: 0.7rem; letter-spacing: 0.22em; line-height: 1.2; margin-bottom: 0.7rem; }
-  .split-content .description { font-size: 1rem; line-height: 1.5; margin-bottom: 0.9rem; }
-  .ideal-for { grid-template-columns: 1fr; gap: 1rem; padding: 0.85rem 0; }
+  .split-content .description { font-size: 1rem; line-height: 1.55; margin-bottom: 1.3rem; }
+  .ideal-for { grid-template-columns: 1fr; gap: 1rem; padding: 0.4rem 0 1.1rem; }
   .ideal-icon { width: 40px; height: 40px; }
   .ideal-icon svg { width: 23px; height: 23px; }
   .ideal-label { margin-bottom: 0.4rem; }
   .ideal-for p { font-size: 1rem; line-height: 1.45; }
   .after-note { font-size: 1rem; }
-  .meta-item { padding: 0.85rem 0; }
+  .meta-item { padding: 1rem 0; }
   .meta-item .meta-value { font-size: 1.55rem; }
-  .split-content .btn-primary { padding: 1rem 1.2rem; margin-top: 1.5rem; }
+  .split-content .btn-primary { padding: 1rem 1.2rem; margin-top: auto; }
   .progress-nav { right: 0.8rem; }
   .fullbg .gsap-heading { font-size: clamp(2rem, 8.5vw, 3.4rem); line-height: 1.14; }
   .fullbg .gsap-heading .cta-line + .cta-line { margin-top: 0.9em; }
@@ -474,7 +475,7 @@ body.gsap-page::before {
 }
 
 @media (max-width: 480px) {
-  .treatment .gsap-inner, .treatment.reverse .gsap-inner { padding: 4.4rem 1rem 2.8rem; }
+  .treatment .gsap-inner, .treatment.reverse .gsap-inner { padding: 5rem 1rem 2.4rem; }
   .ornament-label { font-size: 0.58rem; letter-spacing: 0.27em; }
   .editorial-ornament .line { width: 40px; }
   .treatment-topline { margin-bottom: 0.15rem; }
@@ -491,11 +492,11 @@ body.gsap-page::before {
   .meta-item { padding: 0.65rem 0; }
   .meta-item + .meta-item { padding-left: 1.25rem; }
   .meta-item .meta-value { font-size: 1.4rem; }
-  .split-content .btn-primary { font-size: 0.65rem; letter-spacing: 0.25em; padding: 0.95rem 1.2rem; margin-top: 1.3rem; }
+  .split-content .btn-primary { font-size: 0.65rem; letter-spacing: 0.25em; padding: 0.95rem 1.2rem; margin-top: auto; }
 }
 
 @media (max-width: 480px) and (max-height: 700px) {
-  .treatment .gsap-inner, .treatment.reverse .gsap-inner { padding: 3.8rem 1rem 1.5rem; }
+  .treatment .gsap-inner, .treatment.reverse .gsap-inner { padding: 4.4rem 1rem 1.6rem; }
   .split-content h2 { font-size: clamp(1.65rem, 7.4vw, 2.2rem); }
   .split-content .script { margin-bottom: 0.5rem; }
   .split-content .description { font-size: 0.92rem; line-height: 1.35; margin-bottom: 0.6rem; }
@@ -505,7 +506,7 @@ body.gsap-page::before {
   .after-note .after-label { margin-bottom: 0.3rem; }
   .treatment-meta { margin-bottom: 0.6rem; }
   .meta-item { padding: 0.5rem 0; }
-  .split-content .btn-primary { margin-top: 0.8rem; }
+  .split-content .btn-primary { margin-top: auto; }
 }
 </style>
 </head>
