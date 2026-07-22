@@ -302,7 +302,7 @@ body.gsap-page::before {
   letter-spacing: -0.035em;
   color: var(--text);
   font-weight: 500;
-  margin: 0 0 clamp(1rem, 1.6vh, 1.4rem);
+  margin: 0 0 clamp(1.7rem, 2.8vh, 2.4rem);
   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
 }
 .split-content h2 em { font-style: normal; color: var(--text); }
@@ -329,16 +329,16 @@ body.gsap-page::before {
 
 .ideal-for {
   display: grid;
-  grid-template-columns: 54px 1fr;
+  grid-template-columns: 1fr;
   align-items: center;
   gap: 1.35rem;
   padding: clamp(1.1rem, 1.8vh, 1.45rem) 0;
   margin: 0;
 }
 .ideal-icon {
+  display: none;
   width: 50px;
   height: 50px;
-  display: grid;
   place-items: center;
   border: 1px solid rgba(200, 150, 92, 0.75);
   border-radius: 50%;
@@ -457,7 +457,7 @@ body.gsap-page::before {
   .split-content .script { font-size: 0.7rem; letter-spacing: 0.22em; line-height: 1.2; margin-bottom: 0.7rem; }
   .split-content h2 { margin-bottom: 0.5rem; }
   .split-content .description { font-size: 1rem; line-height: 1.5; margin-bottom: 0.9rem; }
-  .ideal-for { grid-template-columns: 42px 1fr; gap: 1rem; padding: 0.85rem 0; }
+  .ideal-for { grid-template-columns: 1fr; gap: 1rem; padding: 0.85rem 0; }
   .ideal-icon { width: 40px; height: 40px; }
   .ideal-icon svg { width: 23px; height: 23px; }
   .ideal-label { margin-bottom: 0.4rem; }
