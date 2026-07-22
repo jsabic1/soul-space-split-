@@ -19,7 +19,7 @@
   // Rezerva/pomak sloja: na mobitelu su sekcije niže (u px), pa isti postotak
   // daje premalen pomak — zato na malim ekranima koristimo veći faktor,
   // da efekt bude izražen kao na desktopu.
-  var EXTRA = (window.innerWidth <= 900) ? 0.36 : 0.18;
+  var EXTRA = (window.innerWidth <= 900) ? 0.52 : 0.18;
   var items = [];
 
   els.forEach(function (el) {
