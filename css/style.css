@@ -575,48 +575,33 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   transform-style: preserve-3d;
   will-change: transform;
 }
+/* valoviti svijetleći krug od niti (okvir iza sadržaja) */
+.krug-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  transform: translate(-50%, -50%);
+  background: url('../wp-content/uploads/soul/wavy-ring.svg') center / contain no-repeat;
+  pointer-events: none;
+  z-index: 0;
+}
 .krug {
   position: relative;
   display: none;
   width: 340px;
   aspect-ratio: 1 / 1;
-  border-radius: 50%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 11% 11%;
-  background: rgba(244, 232, 214, 0.05);
-  -webkit-backdrop-filter: blur(9px);
-  backdrop-filter: blur(9px);
-  box-shadow: 0 22px 55px -26px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(244, 232, 214, 0.06);
+  padding: 12% 12%;
+  z-index: 1;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 .krug.active { display: flex; }
-/* živi zlatno-terakota prsten koji polako kruži */
-.krug::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  padding: 1.4px;
-  background: conic-gradient(from 0deg,
-    rgba(200, 150, 92, 0.05),
-    rgba(216, 105, 52, 0.9),
-    rgba(200, 150, 92, 0.05),
-    rgba(216, 105, 52, 0.7),
-    rgba(200, 150, 92, 0.05));
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-  animation: krug-spin 7s linear infinite;
-  pointer-events: none;
-}
-@keyframes krug-spin { to { transform: rotate(360deg); } }
-@media (prefers-reduced-motion: reduce) {
-  .krug::before { animation: none; }
-}
 .krug .k-num {
   font-family: var(--font-brand);
   font-size: 1.4rem;
@@ -684,6 +669,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   .krug h3 { font-size: 1.4rem; }
   .krug p { font-size: 0.92rem; }
   .krug-arw { width: 42px; height: 42px; }
+  .krug-ring { width: min(92vw, 390px); height: min(92vw, 390px); }
 }
 
 .for-you-text { color: var(--text); }
