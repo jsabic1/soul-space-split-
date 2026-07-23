@@ -15,18 +15,16 @@
   });
 
   var NS = 'http://www.w3.org/2000/svg';
-  var W = 56, cx = 16, N = 7;
+  var W = 56, cx = 16, N = 5, EXT = 80;   // N = broj niti; EXT = produžetak gore/dolje za fade
 
   function mulberry32(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 
-  // SVG skeleton (jednom)
   var svg = document.createElementNS(NS, 'svg');
   svg.setAttribute('class', 'tl-svg');
   svg.setAttribute('aria-hidden', 'true');
   svg.setAttribute('preserveAspectRatio', 'none');
   svg.style.position = 'absolute';
   svg.style.left = '0';
-  svg.style.top = '0';
   svg.style.overflow = 'visible';
   svg.style.zIndex = '1';
   svg.style.pointerEvents = 'none';
@@ -39,10 +37,19 @@
         '<stop class="s3" offset="0.53" stop-color="#7a3018" stop-opacity="0.26"/>' +
         '<stop class="s4" offset="1" stop-color="#5c2412" stop-opacity="0.2"/>' +
       '</linearGradient>' +
+      '<linearGradient id="tlfadegrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="0">' +
+        '<stop class="f0" offset="0" stop-color="#fff" stop-opacity="0"/>' +
+        '<stop class="f1" offset="0.12" stop-color="#fff" stop-opacity="1"/>' +
+        '<stop class="f2" offset="0.88" stop-color="#fff" stop-opacity="1"/>' +
+        '<stop class="f3" offset="1" stop-color="#fff" stop-opacity="0"/>' +
+      '</linearGradient>' +
+      '<mask id="tlfade" maskUnits="userSpaceOnUse" x="-44" y="0" width="144" height="0">' +
+        '<rect class="tlfaderect" x="-44" y="0" width="144" height="0" fill="url(#tlfadegrad)"/>' +
+      '</mask>' +
       '<filter id="tlglow" x="-80%" y="-6%" width="260%" height="112%"><feGaussianBlur stdDeviation="1.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>' +
       '<filter id="tlsoft" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>' +
     '</defs>' +
-    '<g class="tl-strands" stroke="url(#tlgrad)" fill="none" filter="url(#tlglow)"></g>' +
+    '<g class="tl-strands" stroke="url(#tlgrad)" fill="none" filter="url(#tlglow)" mask="url(#tlfade)"></g>' +
     '<g class="tl-knots"></g>' +
     '<circle class="tl-cometdot" r="5.5" fill="#F0C486" filter="url(#tlsoft)" opacity="0"/>';
   wrap.insertBefore(svg, wrap.firstChild);
@@ -51,21 +58,25 @@
   var knotsG = svg.querySelector('.tl-knots');
   var cometDot = svg.querySelector('.tl-cometdot');
   var grad = svg.querySelector('#tlgrad');
+  var fadeGrad = svg.querySelector('#tlfadegrad');
+  var faderect = svg.querySelector('.tlfaderect');
   var stops = {
     s0: svg.querySelector('.s0'), s1: svg.querySelector('.s1'),
     s2: svg.querySelector('.s2'), s3: svg.querySelector('.s3'), s4: svg.querySelector('.s4')
   };
+  var fstops = { f1: svg.querySelector('.f1'), f2: svg.querySelector('.f2') };
 
-  var ys = [], firstY = 0, lastY = 0, knots = [], H = 0;
+  var ys = [], ysSvg = [], firstY = 0, lastY = 0, knots = [], H = 0, TOTAL = 0;
 
   function pinchFactory() {
-    var lead = Math.min(52, firstY);
-    var tail = Math.min(64, H - lastY);
+    var first = ysSvg[0], last = ysSvg[ysSvg.length - 1];
+    var lead = first || 1;              // od prvog čvora do vrha (produženo)
+    var tail = (TOTAL - last) || 1;     // od zadnjeg čvora do dna (produženo)
     return function (y) {
-      if (y <= ys[0]) { var f = (ys[0] - y) / (lead || 1); return Math.sin(Math.min(1, f) * Math.PI / 2); }
-      if (y >= ys[ys.length - 1]) { var f2 = (y - ys[ys.length - 1]) / (tail || 1); return Math.sin(Math.min(1, f2) * Math.PI / 2); }
-      for (var i = 0; i < ys.length - 1; i++) {
-        if (y >= ys[i] && y <= ys[i + 1]) { var seg = (y - ys[i]) / (ys[i + 1] - ys[i]); return Math.sin(seg * Math.PI); }
+      if (y <= first) { var f = (first - y) / lead; return Math.sin(Math.min(1, f) * Math.PI / 2); }
+      if (y >= last) { var f2 = (y - last) / tail; return Math.sin(Math.min(1, f2) * Math.PI / 2); }
+      for (var i = 0; i < ysSvg.length - 1; i++) {
+        if (y >= ysSvg[i] && y <= ysSvg[i + 1]) { var seg = (y - ysSvg[i]) / (ysSvg[i + 1] - ysSvg[i]); return Math.sin(seg * Math.PI); }
       }
       return 0;
     };
@@ -81,27 +92,35 @@
     firstY = ys[0];
     lastY = ys[ys.length - 1];
     H = wrap.offsetHeight;
+    TOTAL = H + 2 * EXT;
+    ysSvg = ys.map(function (y) { return y + EXT; });
 
-    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + TOTAL);
     svg.setAttribute('width', W);
-    svg.setAttribute('height', H);
-    grad.setAttribute('y2', H);
+    svg.setAttribute('height', TOTAL);
+    svg.style.top = (-EXT) + 'px';
+    grad.setAttribute('y2', TOTAL);
+    fadeGrad.setAttribute('y2', TOTAL);
+    faderect.setAttribute('height', TOTAL);
+    svg.querySelector('#tlfade').setAttribute('height', TOTAL);
+    // fade preko produžetaka (malo unutar prvog/zadnjeg čvora)
+    var tf = (EXT + 26) / TOTAL, bf = (EXT + 26) / TOTAL;
+    fstops.f1.setAttribute('offset', tf.toFixed(3));
+    fstops.f2.setAttribute('offset', (1 - bf).toFixed(3));
 
     var pinch = pinchFactory();
-    var rnd = mulberry32(21);
-    var d = '';
+    var rnd = mulberry32(4);
     strandsG.innerHTML = '';
     for (var i = 0; i < N; i++) {
       var off = (rnd() * 2 - 1) * 9;
-      var amp = 6 + rnd() * 14;          // malo širi snop između čvorova
+      var amp = 6 + rnd() * 14;
       var freq = 1.4 + rnd() * 1.6;
       var phase = rnd() * Math.PI * 2;
       var sw = (0.7 + rnd() * 0.8).toFixed(2);
-      var op = (0.5 + rnd() * 0.5).toFixed(2);
-      var stepsN = 130;
-      d = '';
+      var op = (0.5 + rnd() * 0.45).toFixed(2);
+      var stepsN = 150, d = '';
       for (var s = 0; s <= stepsN; s++) {
-        var u = s / stepsN, y = u * H;
+        var u = s / stepsN, y = u * TOTAL;
         var x = cx + (off + amp * Math.sin(freq * u * Math.PI * 2 + phase)) * pinch(y);
         d += (s === 0 ? 'M' : 'L') + x.toFixed(1) + ' ' + y.toFixed(1) + ' ';
       }
@@ -114,14 +133,11 @@
     }
 
     knotsG.innerHTML = '';
-    knots = ys.map(function (y) {
+    knots = ysSvg.map(function (y) {
       var c = document.createElementNS(NS, 'circle');
       c.setAttribute('cx', cx);
       c.setAttribute('cy', y);
-      c.setAttribute('r', 3.5);
-      c.setAttribute('fill', '#1F0F0A');
-      c.setAttribute('stroke', 'rgba(200,150,92,.45)');
-      c.setAttribute('stroke-width', 1.5);
+      setKnotOff(c);
       knotsG.appendChild(c);
       return c;
     });
@@ -151,7 +167,6 @@
   }
 
   function setGradient(prog) {
-    // prog 0..1 (dio kičme iznad kometa je svijetao, ispod prigušen)
     var cl = function (v) { return Math.max(0, Math.min(1, v)); };
     stops.s0.setAttribute('offset', 0);
     stops.s1.setAttribute('offset', cl(prog - 0.06).toFixed(3));
@@ -168,9 +183,9 @@
     p = Math.max(0, Math.min(1, p));
 
     var cometY = firstY + p * (lastY - firstY);
-    setGradient(H > 0 ? cometY / H : 0);
+    setGradient(TOTAL > 0 ? (cometY + EXT) / TOTAL : 0);
 
-    cometDot.setAttribute('cy', cometY.toFixed(1));
+    cometDot.setAttribute('cy', (cometY + EXT).toFixed(1));
     cometDot.setAttribute('opacity', (p > 0.002 && p < 0.998) ? '1' : '0');
 
     ys.forEach(function (y, i) {
