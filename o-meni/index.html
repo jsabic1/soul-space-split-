@@ -270,6 +270,9 @@
     .about-text .about-eyebrow { margin-bottom: 1.7rem; }
     main .section.join-b { padding-bottom: 4rem; }
     main .section.join-t { padding-top: 0; }
+    /* Balansirano lomljenje teksta — samo tekstualne sekcije (ne slike/foto) */
+    main .section:not(.praksa) .text-block p.body,
+    main .section:not(.praksa) .text-block .about-eyebrow { text-wrap: balance; }
   </style>
 </head>
 <body>
