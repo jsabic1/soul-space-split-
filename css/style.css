@@ -1088,7 +1088,12 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 @media (max-width: 900px) {
   .about-preview.section-sand { padding: 4.5rem 0; }
   .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-  .about-image img { height: clamp(360px, 90vw, 480px); }
+  .about-image img {
+    height: auto;
+    aspect-ratio: 3 / 4;
+    max-height: 560px;
+    margin: 0 auto;
+  }
   .about-preview.section-sand .about-text { text-align: center; }
 }
 
