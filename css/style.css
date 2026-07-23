@@ -1013,8 +1013,29 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 /* ============================================
    ABOUT PREVIEW
    ============================================ */
-/* O meni — Sand predah sekcija (lučna slika kao ulaz u hram) */
+/* Generic about-preview (o-meni stranica: dvije kolone slika/tekst) */
+.about-preview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 6rem auto;
+  padding: 0 2rem;
+}
+.about-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+.about-preview .about-text { text-align: center; }
+
+/* O meni (naslovna) — Sand predah sekcija (lučna slika samo ovdje) */
 .about-preview.section-sand {
+  display: block;
+  max-width: none;
   background: #E8D4B8;
   color: #3A1E14;
   margin: 0;
@@ -1029,11 +1050,8 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   margin: 0 auto;
   padding: 0 2.5rem;
 }
-.about-image img {
-  width: 100%;
+.about-preview.section-sand .about-image img {
   height: clamp(420px, 52vw, 640px);
-  object-fit: cover;
-  display: block;
   border-radius: 50% 50% 5px 5px / 32% 32% 1% 1%;
   box-shadow: 0 34px 70px -34px rgba(58, 30, 20, 0.55);
 }
@@ -1086,9 +1104,10 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 }
 .btn-sand:hover { background: #3A1E14; color: #E8D4B8; }
 @media (max-width: 900px) {
+  .about-preview { grid-template-columns: 1fr; gap: 2rem; }
   .about-preview.section-sand { padding: 4.5rem 0; }
   .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-  .about-image img {
+  .about-preview.section-sand .about-image img {
     height: auto;
     aspect-ratio: 3 / 4;
     max-height: 560px;
