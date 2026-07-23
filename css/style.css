@@ -540,16 +540,19 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   .for-you .tebe-ako-list { text-align: center; }
 }
 
-/* Pristup — velike staklene kružnice, sadržaj unutar */
+/* Pristup — staklene kružnice sa živim zlatnim prstenom */
 .krug-set {
-  max-width: 1180px;
+  max-width: 1040px;
   margin: 4.5rem auto 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.2rem;
+  gap: 2rem;
 }
 .krug {
   position: relative;
+  justify-self: center;
+  width: 100%;
+  max-width: 310px;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   display: flex;
@@ -557,39 +560,62 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 12% 13%;
+  padding: 13% 14%;
   background: rgba(244, 232, 214, 0.05);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(200, 150, 92, 0.5);
-  box-shadow: 0 24px 60px -26px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(244, 232, 214, 0.06);
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
+  box-shadow: 0 22px 55px -26px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(244, 232, 214, 0.06);
+}
+/* živi zlatno-terakota prsten koji polako kruži */
+.krug::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 1.4px;
+  background: conic-gradient(from 0deg,
+    rgba(200, 150, 92, 0.05),
+    rgba(216, 105, 52, 0.9),
+    rgba(200, 150, 92, 0.05),
+    rgba(216, 105, 52, 0.7),
+    rgba(200, 150, 92, 0.05));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: krug-spin 7s linear infinite;
+  pointer-events: none;
+}
+@keyframes krug-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .krug::before { animation: none; }
 }
 .krug .k-num {
   font-family: var(--font-brand);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--accent);
   line-height: 1;
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.5rem;
 }
 .krug h3 {
   font-family: var(--font-brand);
   font-weight: 400;
   color: var(--accent-soft);
-  font-size: clamp(1.25rem, 1.7vw, 1.55rem);
+  font-size: 1.3rem;
   line-height: 1.12;
-  margin: 0 0 0.7rem;
+  margin: 0 0 0.65rem;
 }
 .krug p {
   font-family: var(--font-body);
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.86rem;
+  line-height: 1.55;
   color: var(--text-muted);
   margin: 0;
 }
 @media (max-width: 820px) {
-  .krug-set { grid-template-columns: 1fr; gap: 2.4rem; margin-top: 3rem; max-width: 420px; }
-  .krug { padding: 16% 15%; }
-  .krug p { font-size: 1rem; }
+  .krug-set { grid-template-columns: 1fr; gap: 2.4rem; margin-top: 3rem; max-width: 360px; }
+  .krug { max-width: 330px; padding: 15% 15%; }
+  .krug h3 { font-size: 1.45rem; }
+  .krug p { font-size: 0.95rem; }
 }
 
 .for-you-text { color: var(--text); }
