@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Unicase:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/style.css?v=57">
+  <link rel="stylesheet" href="../css/style.css?v=58">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
@@ -208,36 +208,39 @@
     </section>
 
     <!-- TIMELINE -->
-    <section class="section-parallax section-timeline">
-      <div class="container">
-        <div class="section-head" data-aos="fade-up">
-          <p class="eyebrow">How it works</p>
-          <h2>From message to table</h2>
-        </div>
-        <div class="timeline-wrap" id="timelineScroll">
-          <svg class="tl-svg" preserveAspectRatio="none" aria-hidden="true">
-            <path class="tl-base" d=""></path>
-            <path class="tl-fill" d=""></path>
-            <g class="tl-nodes"></g>
-          </svg>
-          <ol class="timeline-steps">
-            <li class="timeline-step">
-              <h3>You write to me</h3>
-              <p>An email or a message with a few lines about how you feel.</p>
-            </li>
-            <li class="timeline-step">
-              <h3>I suggest</h3>
-              <p>The ritual that would suit you best, and 2–3 available times.</p>
-            </li>
-            <li class="timeline-step">
-              <h3>You arrive</h3>
-              <p>The studio at Sinjska 5. One hour just for you, nothing is required of you.</p>
-            </li>
-            <li class="timeline-step">
-              <h3>You continue</h3>
-              <p>You come back as needed. Most clients visit once a month.</p>
-            </li>
-          </ol>
+    <section class="section-bg section-timeline">
+      <div class="tl-pin" id="tlPin">
+        <div class="tl-stage">
+          <div class="container">
+            <div class="section-head">
+              <p class="eyebrow">How it works</p>
+              <h2>From message to table</h2>
+            </div>
+            <div class="timeline-wrap" id="timelineScroll">
+              <span class="tl-rail" aria-hidden="true"></span>
+              <span class="tl-fill" aria-hidden="true"></span>
+              <div class="tl-nodes" aria-hidden="true"></div>
+              <span class="tl-comet" aria-hidden="true"></span>
+              <ol class="timeline-steps">
+                <li class="timeline-step">
+                  <h3>You write to me</h3>
+                  <p>An email or a message with a few lines about how you feel.</p>
+                </li>
+                <li class="timeline-step">
+                  <h3>I suggest</h3>
+                  <p>The ritual that would suit you best, and 2–3 available times.</p>
+                </li>
+                <li class="timeline-step">
+                  <h3>You arrive</h3>
+                  <p>The studio at Sinjska 5. One hour just for you, nothing is required of you.</p>
+                </li>
+                <li class="timeline-step">
+                  <h3>You continue</h3>
+                  <p>You come back as needed. Most clients visit once a month.</p>
+                </li>
+              </ol>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -465,6 +468,6 @@
   </script>
   <script src="../js/nav.js?v=4"></script>
   <script src="../js/parallax.js?v=5"></script>
-  <script src="../js/timeline.js?v=1"></script>
+  <script src="../js/timeline.js?v=2"></script>
 </body>
 </html>

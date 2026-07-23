@@ -903,44 +903,82 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 /* ============================================
    TIMELINE
    ============================================ */
-/* Od poruke do stola — serpentina scroll timeline */
+/* Static-bg sekcija (bg klizi iza pinnanog sadržaja, bez overflow:hidden) */
+.section-bg {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.section-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(31, 15, 10, 0.80) 0%,
+    rgba(31, 15, 10, 0.64) 50%,
+    rgba(31, 15, 10, 0.84) 100%);
+  z-index: 1;
+}
+.section-bg > * { position: relative; z-index: 2; }
+
+/* Od poruke do stola — pinned scroll timeline s kometom */
+.tl-pin { position: relative; height: 240vh; }
+.tl-stage {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 3rem 0;
+  box-sizing: border-box;
+}
+.section-timeline .container { width: 100%; }
+
 .timeline-wrap {
   position: relative;
-  max-width: 620px;
+  max-width: 600px;
   margin: 0 auto;
-  padding-left: 92px;
+  padding-left: 88px;
 }
-.tl-svg {
+.tl-rail { position: absolute; left: 11px; width: 1.5px; background: rgba(200, 150, 92, 0.18); z-index: 1; }
+.tl-fill { position: absolute; left: 11px; width: 1.5px; background: linear-gradient(to bottom, rgba(216, 105, 52, 0.25), var(--accent-soft)); z-index: 1; }
+.tl-nodes { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.tl-dot {
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 78px;
-  height: 100%;
-  overflow: visible;
-  z-index: 1;
-  pointer-events: none;
+  left: 4.5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid rgba(200, 150, 92, 0.4);
+  transform: translateY(-50%);
+  transition: border-color 0.4s ease, background 0.4s ease;
 }
-.tl-base { fill: none; stroke: rgba(200, 150, 92, 0.18); stroke-width: 1.4; }
-.tl-fill { fill: none; stroke: var(--accent-soft); stroke-width: 1.6; }
-.tl-node { fill: var(--bg); stroke: rgba(200, 150, 92, 0.4); stroke-width: 2; transition: stroke 0.5s ease; }
-.tl-node.on { stroke: var(--accent); }
-.tl-core { fill: transparent; transition: fill 0.5s ease; }
-.tl-core.on { fill: var(--accent); }
-.timeline-steps {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  z-index: 2;
+.tl-dot.on { border-color: var(--accent); background: var(--accent); }
+.tl-comet {
+  position: absolute;
+  left: 2.5px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 18px 5px rgba(216, 105, 52, 0.5);
+  transform: translateY(-50%);
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
+.tl-comet.show { opacity: 1; }
+.timeline-steps { list-style: none; margin: 0; padding: 0; position: relative; z-index: 2; }
 .timeline-step {
-  min-height: 152px;
+  min-height: 118px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   opacity: 0.4;
-  transform: translateY(8px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(6px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .timeline-step.on { opacity: 1; transform: none; }
 .timeline-step h3 {
@@ -960,12 +998,16 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   margin: 0;
 }
 @media (max-width: 900px) {
-  .timeline-wrap { padding-left: 76px; }
-  .timeline-step { min-height: 142px; }
-  .timeline-step p { font-size: 0.98rem; }
+  .tl-pin { height: 220vh; }
+  .timeline-wrap { padding-left: 74px; }
+  .timeline-step { min-height: 108px; }
+  .timeline-step p { font-size: 0.96rem; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .tl-pin { height: auto; }
+  .tl-stage { position: static; min-height: 0; display: block; padding: 5rem 0; }
   .timeline-step { opacity: 1; transform: none; }
+  .tl-comet { display: none; }
 }
 
 /* ============================================
