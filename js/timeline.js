@@ -50,11 +50,13 @@
       '<filter id="tlsoft" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>' +
     '</defs>' +
     '<g class="tl-strands" stroke="url(#tlgrad)" fill="none" filter="url(#tlglow)" mask="url(#tlfade)"></g>' +
+    '<g class="tl-impulses" mask="url(#tlfade)"></g>' +
     '<g class="tl-knots"></g>' +
     '<circle class="tl-cometdot" r="5.5" fill="#F0C486" filter="url(#tlsoft)" opacity="0"/>';
   wrap.insertBefore(svg, wrap.firstChild);
 
   var strandsG = svg.querySelector('.tl-strands');
+  var impG = svg.querySelector('.tl-impulses');
   var knotsG = svg.querySelector('.tl-knots');
   var cometDot = svg.querySelector('.tl-cometdot');
   var grad = svg.querySelector('#tlgrad');
@@ -125,11 +127,34 @@
         d += (s === 0 ? 'M' : 'L') + x.toFixed(1) + ' ' + y.toFixed(1) + ' ';
       }
       var p = document.createElementNS(NS, 'path');
+      p.setAttribute('id', 'tls' + i);
       p.setAttribute('d', d.trim());
       p.setAttribute('stroke-width', sw);
       p.setAttribute('stroke-linecap', 'round');
       p.setAttribute('opacity', op);
       strandsG.appendChild(p);
+    }
+
+    // impulsi koji putuju niz kičmu (živčani signal)
+    impG.innerHTML = '';
+    if (!reduce) {
+      [1, 3].forEach(function (idx, k) {
+        if (idx >= N) return;
+        var c = document.createElementNS(NS, 'circle');
+        c.setAttribute('r', '2.3');
+        c.setAttribute('fill', '#FFE9C4');
+        c.setAttribute('filter', 'url(#tlsoft)');
+        var am = document.createElementNS(NS, 'animateMotion');
+        am.setAttribute('dur', (3.6 + k * 1.1) + 's');
+        am.setAttribute('begin', (k * 1.3) + 's');
+        am.setAttribute('repeatCount', 'indefinite');
+        var mp = document.createElementNS(NS, 'mpath');
+        mp.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '#tls' + idx);
+        mp.setAttribute('href', '#tls' + idx);
+        am.appendChild(mp);
+        c.appendChild(am);
+        impG.appendChild(c);
+      });
     }
 
     knotsG.innerHTML = '';
@@ -157,6 +182,7 @@
     c.setAttribute('fill', '#F0C486');
     c.setAttribute('stroke-width', 0);
     c.setAttribute('filter', 'url(#tlsoft)');
+    if (!reduce) c.setAttribute('class', 'syn-dot');
   }
   function setKnotOff(c) {
     c.setAttribute('r', 3.5);
@@ -164,6 +190,7 @@
     c.setAttribute('stroke', 'rgba(200,150,92,.45)');
     c.setAttribute('stroke-width', 1.5);
     c.removeAttribute('filter');
+    c.setAttribute('class', '');
   }
 
   function setGradient(prog) {

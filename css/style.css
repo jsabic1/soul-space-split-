@@ -575,7 +575,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   transform-style: preserve-3d;
   will-change: transform;
 }
-/* valoviti svijetleći krug od niti (okvir iza sadržaja) */
+/* valoviti svijetleći krug od niti (okvir iza sadržaja) — "živčani sustav" */
 .krug-ring {
   position: absolute;
   top: 50%;
@@ -583,9 +583,18 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   width: 500px;
   height: 500px;
   transform: translate(-50%, -50%);
-  background: url('../wp-content/uploads/soul/wavy-ring.svg') center / contain no-repeat;
   pointer-events: none;
   z-index: 0;
+}
+.krug-ring svg { display: block; width: 100%; height: 100%; }
+/* sinapse dišu */
+.syn-dot { transform-box: fill-box; transform-origin: center; animation: syn-breathe 3.4s ease-in-out infinite; }
+@keyframes syn-breathe {
+  0%, 100% { opacity: 0.5; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.18); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .syn-dot { animation: none; opacity: 0.85; }
 }
 .krug {
   position: relative;
