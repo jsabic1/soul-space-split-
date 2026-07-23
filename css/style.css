@@ -681,6 +681,31 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   .krug-ring { width: min(92vw, 390px); height: min(92vw, 390px); }
 }
 
+/* Pristup — Venn od 3 valovita kruga (samo desktop) */
+.pristup-venn { display: none; }
+.pristup-venn svg { display: block; width: 100%; height: auto; overflow: visible; }
+.venn-lbl { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.venn-lbl h3 {
+  font-family: var(--font-brand);
+  font-weight: 400;
+  color: var(--text);
+  font-size: 1.5rem;
+  line-height: 1.1;
+  margin: 0 0 0.55rem;
+}
+.venn-tag { font-family: var(--font-body); font-size: 0.92rem; line-height: 1.5; color: var(--text-muted); }
+.venn-tag span { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-right: 7px; vertical-align: middle; }
+@media (min-width: 901px) {
+  .section-pristup .krug-slider { display: none; }
+  .pristup-venn {
+    display: block;
+    position: relative;
+    max-width: 880px;
+    margin: 1rem auto 0;
+    background: radial-gradient(circle at 50% 49%, rgba(216, 105, 52, 0.15), rgba(31, 15, 10, 0) 55%);
+  }
+}
+
 .for-you-text { color: var(--text); }
 .for-you-num {
   font-family: var(--font-brand-sub);
