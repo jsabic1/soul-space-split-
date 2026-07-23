@@ -1013,27 +1013,83 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 /* ============================================
    ABOUT PREVIEW
    ============================================ */
-.about-preview {
+/* O meni — Sand predah sekcija (lučna slika kao ulaz u hram) */
+.about-preview.section-sand {
+  background: #E8D4B8;
+  color: #3A1E14;
+  margin: 0;
+  padding: 7rem 0;
+}
+.about-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
   align-items: center;
-  max-width: 1200px;
-  margin: 6rem auto;
-  padding: 0 2rem;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
 }
 .about-image img {
   width: 100%;
-  height: auto;
+  height: clamp(420px, 52vw, 640px);
   object-fit: cover;
-  border-radius: 4px;
+  display: block;
+  border-radius: 50% 50% 5px 5px / 32% 32% 1% 1%;
+  box-shadow: 0 34px 70px -34px rgba(58, 30, 20, 0.55);
 }
-.about-preview .about-text { text-align: center; }
-.about-text h2 { margin-bottom: 1rem; }
-.about-text .script { display: block; margin: 1rem 0; }
-.about-text p { margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.7; }
+.about-preview.section-sand .about-text { text-align: left; }
+.about-preview.section-sand .eyebrow {
+  font-family: var(--font-brand-sub);
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-size: 0.74rem;
+  color: #B8451E;
+  margin-bottom: 1rem;
+}
+.about-preview.section-sand h2 {
+  font-family: var(--font-brand);
+  font-weight: 400;
+  color: #3A1E14;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  margin: 0 0 1rem;
+}
+.about-preview.section-sand .script {
+  display: block;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #B8451E;
+  margin: 0 0 1.4rem;
+}
+.about-preview.section-sand .about-text p {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #5A3A28;
+  margin: 0 0 2rem;
+}
+.btn-sand {
+  display: inline-block;
+  font-family: var(--font-brand-sub);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: #3A1E14;
+  border: 1px solid rgba(58, 30, 20, 0.4);
+  padding: 0.9rem 2rem;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.btn-sand:hover { background: #3A1E14; color: #E8D4B8; }
 @media (max-width: 900px) {
-  .about-preview { grid-template-columns: 1fr; gap: 2rem; }
+  .about-preview.section-sand { padding: 4.5rem 0; }
+  .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-image img { height: clamp(360px, 90vw, 480px); }
+  .about-preview.section-sand .about-text { text-align: center; }
 }
 
 /* ============================================
