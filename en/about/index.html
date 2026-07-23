@@ -252,13 +252,24 @@
     main .section:not(.praksa) .eyebrow { color: #B8451E; }
     main .section:not(.praksa) .about-eyebrow em,
     main .section:not(.praksa) .intro-num h3 em,
-    main .section:not(.praksa) .editorial-split .es-head h3 em { color: #B8451E; }
+    main .section:not(.praksa) .editorial-split .es-head h3 em { color: #3A1E14; }
     main .section:not(.praksa) .story-num { color: rgba(58, 30, 20, 0.09); }
     main .section:not(.praksa) .intro-num .intro-num-01 { color: #B8451E; opacity: .16; }
     main .section:not(.praksa) .story-hair,
     main .section:not(.praksa) .intro-hr,
     main .section:not(.praksa) .about-rule { background: #B8451E; }
     main .section:not(.praksa) .editorial-split .es-body { border-left-color: rgba(58, 30, 20, 0.22); }
+
+    /* Doradi: veći opisni font, više zraka ispod naslova, bez brojeva, spoj 02+03 */
+    .story-num { display: none; }
+    .text-block p.body,
+    .about-text p:not(.about-eyebrow),
+    .about-story p,
+    .editorial-split .es-body p { font-size: 1.18rem; line-height: 1.9; }
+    .text-block .about-eyebrow,
+    .about-text .about-eyebrow { margin-bottom: 1.7rem; }
+    main .section.join-b { padding-bottom: 4rem; }
+    main .section.join-t { padding-top: 0; }
   </style>
 </head>
 <body>
@@ -327,7 +338,7 @@
     </section>
 
     <!-- TEKST 2 -->
-    <section class="section ">
+    <section class="section join-b">
       <div class="text-block" data-aos="fade-up">
         <div class="story-num">02</div>
         <div class="story-hair"></div>
@@ -338,7 +349,7 @@
     </section>
 
     <!-- POLA SLIKE (lijevo) -->
-    <section class="section section-alt">
+    <section class="section section-alt join-t">
       <div class="about-preview framed" data-aos="fade-up">
         <div class="about-image">
           <img src="../../wp-content/uploads/soul/portret-1.JPG" alt="Diana Lendić in the studio">
