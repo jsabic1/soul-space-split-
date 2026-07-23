@@ -140,12 +140,12 @@
     // impulsi (sporiji)
     impG.innerHTML = '';
     if (!reduce) {
-      [1, 3].forEach(function (idx, k) {
+      [2].forEach(function (idx, k) {
         if (idx >= N) return;
         var c = document.createElementNS(NS, 'circle');
         c.setAttribute('r', '2.3'); c.setAttribute('fill', '#FFE9C4'); c.setAttribute('filter', 'url(#tlsoft)');
         var am = document.createElementNS(NS, 'animateMotion');
-        am.setAttribute('dur', (7 + k * 1.8) + 's');
+        am.setAttribute('dur', (13 + k * 2) + 's');
         am.setAttribute('begin', (k * 2.2) + 's');
         am.setAttribute('repeatCount', 'indefinite');
         var mp = document.createElementNS(NS, 'mpath');
