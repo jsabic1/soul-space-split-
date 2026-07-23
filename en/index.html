@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Unicase:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/style.css?v=53">
+  <link rel="stylesheet" href="../css/style.css?v=54">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
@@ -108,21 +108,36 @@
           <p class="eyebrow">Approach</p>
           <h2>Not fast. Not forced.</h2>
         </div>
-        <div class="krug-set">
-          <div class="krug" data-aos="fade-up" data-aos-delay="0">
-            <span class="k-num">01</span>
-            <h3>System before symptoms</h3>
-            <p>A tight muscle never lets go by force. It lets go when the system feels safe, so we begin with calming.</p>
+        <div class="krug-slider" id="krugSlider" data-aos="fade-up">
+          <div class="krug-stage">
+            <button class="krug-arw left" type="button" data-krug-dir="-1" aria-label="Previous principle">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+            </button>
+            <div class="krug-coin">
+              <div class="krug active">
+                <span class="k-num">01</span>
+                <h3>System before symptoms</h3>
+                <p>A tight muscle never lets go by force. It lets go when the system feels safe, so we begin with calming.</p>
+              </div>
+              <div class="krug">
+                <span class="k-num">02</span>
+                <h3>Tempo over technique</h3>
+                <p>Rhythm and predictability send your body a message of safety. Technique comes only after that.</p>
+              </div>
+              <div class="krug">
+                <span class="k-num">03</span>
+                <h3>The body leads</h3>
+                <p>If an area isn't ready to open, we don't go there. You have the final word, always.</p>
+              </div>
+            </div>
+            <button class="krug-arw right" type="button" data-krug-dir="1" aria-label="Next principle">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
           </div>
-          <div class="krug" data-aos="fade-up" data-aos-delay="180">
-            <span class="k-num">02</span>
-            <h3>Tempo over technique</h3>
-            <p>Rhythm and predictability send your body a message of safety. Technique comes only after that.</p>
-          </div>
-          <div class="krug" data-aos="fade-up" data-aos-delay="360">
-            <span class="k-num">03</span>
-            <h3>The body leads</h3>
-            <p>If an area isn't ready to open, we don't go there. You have the final word, always.</p>
+          <div class="krug-dots">
+            <button class="krug-dot active" type="button" data-krug-to="0" aria-label="Principle 1"></button>
+            <button class="krug-dot" type="button" data-krug-to="1" aria-label="Principle 2"></button>
+            <button class="krug-dot" type="button" data-krug-to="2" aria-label="Principle 3"></button>
           </div>
         </div>
       </div>
@@ -363,7 +378,7 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 900, once: true, easing: 'ease-out-cubic', offset: 100 });
+    if (window.AOS) AOS.init({ duration: 900, once: true, easing: 'ease-out-cubic', offset: 100 });
 
     let currentTestimonial = 0;
     const totalTestimonials = 3;
@@ -386,6 +401,61 @@
       currentTestimonial = i;
       updateTestimonial();
     }
+
+    // Pristup — coin-flip slider krugova
+    (function () {
+      const slider = document.getElementById('krugSlider');
+      if (!slider) return;
+      const coin = slider.querySelector('.krug-coin');
+      const slides = slider.querySelectorAll('.krug');
+      const dots = slider.querySelectorAll('.krug-dot');
+      const n = slides.length;
+      const HALF = 340;
+      let i = 0, busy = false;
+
+      function show(k) {
+        slides.forEach((s, x) => s.classList.toggle('active', x === k));
+        dots.forEach((d, x) => d.classList.toggle('active', x === k));
+      }
+      function flip(dir, target) {
+        if (busy || target === i) return;
+        busy = true;
+        const half = dir >= 0 ? 90 : -90;
+        coin.style.transition = 'transform ' + HALF + 'ms ease-in';
+        coin.style.transform = 'rotateY(' + half + 'deg)';
+        setTimeout(function () {
+          i = target;
+          show(i);
+          coin.style.transition = 'none';
+          coin.style.transform = 'rotateY(' + (-half) + 'deg)';
+          void coin.offsetWidth;
+          coin.style.transition = 'transform ' + HALF + 'ms ease-out';
+          coin.style.transform = 'rotateY(0deg)';
+          setTimeout(function () { busy = false; }, HALF + 20);
+        }, HALF);
+      }
+      slider.querySelectorAll('[data-krug-dir]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          const dir = parseInt(b.getAttribute('data-krug-dir'), 10);
+          flip(dir, (i + dir + n) % n);
+        });
+      });
+      dots.forEach(function (d) {
+        d.addEventListener('click', function () {
+          const t = parseInt(d.getAttribute('data-krug-to'), 10);
+          flip(t > i ? 1 : -1, t);
+        });
+      });
+      let sx = null;
+      const stage = slider.querySelector('.krug-stage');
+      stage.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+      stage.addEventListener('touchend', function (e) {
+        if (sx === null) return;
+        const dx = e.changedTouches[0].clientX - sx;
+        if (Math.abs(dx) > 45) { const dir = dx < 0 ? 1 : -1; flip(dir, (i + dir + n) % n); }
+        sx = null;
+      }, { passive: true });
+    })();
   </script>
   <script src="../js/nav.js?v=4"></script>
   <script src="../js/parallax.js?v=5"></script>
