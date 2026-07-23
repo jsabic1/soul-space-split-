@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Unicase:wght@300;400;500;600&family=Glass+Antiqua&family=Petit+Formal+Script&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../../css/style.css?v=61">
+  <link rel="stylesheet" href="../../css/style.css?v=62">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
@@ -274,6 +274,18 @@
     .text-block .about-eyebrow { text-wrap: balance; }
     .text-block p.body { text-align: justify; text-justify: inter-word; hyphens: auto; }
     @media (max-width: 900px) { main .section { padding: 5.5rem 0; } }
+
+    /* Mekani fade na spoju Sand ↔ tamno (sve glatko, bez tvrdih crta) */
+    main .section:not(.praksa) { position: relative; }
+    main .section:not(.praksa)::before,
+    main .section:not(.praksa)::after {
+      content: ""; position: absolute; left: 0; right: 0; height: 170px; z-index: 1; pointer-events: none;
+    }
+    main .section:not(.praksa)::before { top: 0; background: linear-gradient(to bottom, #1F0F0A, rgba(31,15,10,0)); }
+    main .section:not(.praksa)::after { bottom: 0; background: linear-gradient(to top, #1F0F0A, rgba(31,15,10,0)); }
+    /* ne fejdaj spoj dvije susjedne Sand sekcije (02+03) */
+    main .section.join-b::after { display: none; }
+    main .section.join-t::before { display: none; }
   </style>
 </head>
 <body>

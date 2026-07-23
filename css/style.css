@@ -1034,13 +1034,29 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 
 /* O meni (naslovna) — Sand predah sekcija (lučna slika samo ovdje) */
 .about-preview.section-sand {
+  position: relative;
   display: block;
   max-width: none;
   background: #E8D4B8;
   color: #3A1E14;
   margin: 0;
   padding: 7rem 0;
+  overflow: hidden;
 }
+/* mekani fade na spoju s tamnim sekcijama (bez tvrde crte) */
+.about-preview.section-sand::before,
+.about-preview.section-sand::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 170px;
+  z-index: 1;
+  pointer-events: none;
+}
+.about-preview.section-sand::before { top: 0; background: linear-gradient(to bottom, #1F0F0A, rgba(31, 15, 10, 0)); }
+.about-preview.section-sand::after { bottom: 0; background: linear-gradient(to top, #1F0F0A, rgba(31, 15, 10, 0)); }
+.about-preview.section-sand .about-inner { position: relative; z-index: 2; }
 .about-inner {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
