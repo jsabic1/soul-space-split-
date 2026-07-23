@@ -998,6 +998,22 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   .timeline-step { min-height: 108px; }
   .timeline-step p { font-size: 0.96rem; }
 }
+/* horizontalni timeline na desktopu */
+@media (min-width: 901px) {
+  .section-timeline .timeline-wrap { max-width: 1160px; padding-left: 0; }
+  .timeline-wrap .timeline-steps { display: flex; padding-top: 200px; }
+  .timeline-wrap .timeline-step {
+    flex: 1;
+    min-height: 0;
+    text-align: center;
+    padding: 0 22px;
+    align-items: center;
+  }
+  .timeline-wrap .timeline-step p {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   .tl-pin { height: auto; }
   .tl-stage { position: static; min-height: 0; display: block; padding: 5rem 0; }

@@ -59,8 +59,8 @@
     // impulsi koji putuju duž dijela niti
     if (!reduce) {
       for (var k = 0; k < ids.length; k += 6) {
-        var dur = (3.6 + (k % 5) * 0.8).toFixed(1);
-        var begin = ((k / 6) * 0.7).toFixed(1);
+        var dur = (7 + (k % 5) * 1.4).toFixed(1);
+        var begin = ((k / 6) * 1.1).toFixed(1);
         impulses += '<circle r="2.6" fill="#FFE9C4">'
           + '<animateMotion dur="' + dur + 's" begin="' + begin + 's" repeatCount="indefinite" rotate="auto">'
           + '<mpath xlink:href="#' + ids[k] + '" href="#' + ids[k] + '"/></animateMotion></circle>';
