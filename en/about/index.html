@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Unicase:wght@300;400;500;600&family=Glass+Antiqua&family=Petit+Formal+Script&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../../css/style.css?v=61">
+  <link rel="stylesheet" href="../../css/style.css?v=63">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
@@ -236,7 +236,9 @@
 
     /* === Sand tema: tekstualne sekcije svijetle, foto sekcije ostaju tamne === */
     main { background: #E8D4B8; }
-    main .section:not(.praksa) { background: #E8D4B8; }
+    main .section:not(.praksa) { background: linear-gradient(to bottom, #D8C09E 0%, #E8D4B8 45%, #EFE0C6 100%); }
+    /* spoj 02+03: 03 nema tamni vrh (nastavlja svijetlo, bez skoka) */
+    main .section.join-t { background: linear-gradient(to bottom, #EFE0C6 0%, #E8D4B8 55%, #EFE0C6 100%); }
     main .section:not(.praksa) h1,
     main .section:not(.praksa) h2,
     main .section:not(.praksa) h3,

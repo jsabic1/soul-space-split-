@@ -1036,7 +1036,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .about-preview.section-sand {
   display: block;
   max-width: none;
-  background: #E8D4B8;
+  background: linear-gradient(to bottom, #D8C09E 0%, #E8D4B8 45%, #EFE0C6 100%);
   color: #3A1E14;
   margin: 0;
   padding: 7rem 0;
