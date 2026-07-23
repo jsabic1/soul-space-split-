@@ -233,6 +233,32 @@
     .text-block .eyebrow { display: block; margin-bottom: 0.5rem; font-size: 0.75rem; color: var(--accent-soft); }
     .text-block p.body { font-family: var(--font-body); font-size: 1.05rem; line-height: 1.85; color: var(--text-muted); margin: 0 0 1.3rem; }
     .text-block p.body:last-child { margin-bottom: 0; }
+
+    /* === Sand tema: tekstualne sekcije svijetle, foto sekcije ostaju tamne === */
+    main { background: #E8D4B8; }
+    main .section:not(.praksa) { background: #E8D4B8; }
+    main .section:not(.praksa) h1,
+    main .section:not(.praksa) h2,
+    main .section:not(.praksa) h3,
+    main .section:not(.praksa) .about-eyebrow,
+    main .section:not(.praksa) .intro-num h3,
+    main .section:not(.praksa) .editorial-split .es-head h3 { color: #3A1E14; }
+    main .section:not(.praksa) p,
+    main .section:not(.praksa) .body,
+    main .section:not(.praksa) .intro-lead,
+    main .section:not(.praksa) .about-story p,
+    main .section:not(.praksa) .about-text p,
+    main .section:not(.praksa) .editorial-split .es-body p { color: #5A3A28; }
+    main .section:not(.praksa) .eyebrow { color: #B8451E; }
+    main .section:not(.praksa) .about-eyebrow em,
+    main .section:not(.praksa) .intro-num h3 em,
+    main .section:not(.praksa) .editorial-split .es-head h3 em { color: #B8451E; }
+    main .section:not(.praksa) .story-num { color: rgba(58, 30, 20, 0.09); }
+    main .section:not(.praksa) .intro-num .intro-num-01 { color: #B8451E; opacity: .16; }
+    main .section:not(.praksa) .story-hair,
+    main .section:not(.praksa) .intro-hr,
+    main .section:not(.praksa) .about-rule { background: #B8451E; }
+    main .section:not(.praksa) .editorial-split .es-body { border-left-color: rgba(58, 30, 20, 0.22); }
   </style>
 </head>
 <body>
@@ -416,7 +442,7 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 900, once: true, easing: 'ease-out-cubic', offset: 100 });
+    if (window.AOS) AOS.init({ duration: 900, once: true, easing: 'ease-out-cubic', offset: 100 });
   </script>
   <script src="../../js/nav.js?v=4"></script>
   <script src="../../js/parallax.js?v=5"></script>
