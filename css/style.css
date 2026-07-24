@@ -863,13 +863,17 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .rituali-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.2rem;
-  max-width: 1200px;
-  margin: 4.5rem auto 0;
+  gap: 1.4rem;
+  /* šire od uskog containera, ali centrirano na viewport, da sve 4 budu veće */
+  width: min(1680px, 94vw);
+  max-width: none;
+  margin: 5rem 0 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 .ritual-card {
   position: relative;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 5 / 7;
   overflow: hidden;
   text-decoration: none;
   color: var(--text);
@@ -906,24 +910,24 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 1.6rem 1.35rem;
+  padding: 2.1rem 1.9rem;
   z-index: 3;
 }
 .ritual-card .ritual-duration {
   font-family: var(--font-brand-sub);
-  font-size: 0.6rem;
-  letter-spacing: 0.32em;
+  font-size: 0.68rem;
+  letter-spacing: 0.34em;
   text-transform: uppercase;
   color: var(--accent-soft);
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.8rem;
 }
 .ritual-card h3 {
   font-family: var(--font-brand);
-  font-size: 1.5rem;
+  font-size: 1.95rem;
   font-weight: 400;
   color: var(--text);
   line-height: 1.05;
-  margin-bottom: 0.7rem;
+  margin-bottom: 1rem;
   letter-spacing: 0.01em;
 }
 .ritual-card h3 em {
@@ -932,54 +936,60 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 }
 .ritual-card .ritual-desc {
   font-family: var(--font-body);
-  font-size: 0.88rem;
+  font-size: 1rem;
   color: var(--text-muted);
-  line-height: 1.45;
-  margin-bottom: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.4rem;
   max-width: 100%;
 }
 .ritual-card .ritual-bottom {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding-top: 0.85rem;
+  padding-top: 1.2rem;
   border-top: 1px solid rgba(216, 105, 52, 0.4);
 }
 .ritual-card .ritual-price {
   font-family: var(--font-brand);
-  font-size: 1.7rem;
+  font-size: 2.2rem;
   color: var(--accent);
   line-height: 1;
   font-weight: 400;
 }
 .ritual-card .ritual-link {
   font-family: var(--font-brand-sub);
-  font-size: 0.58rem;
-  letter-spacing: 0.18em;
+  font-size: 0.64rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--text);
   transition: gap 0.3s ease;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
 }
-.ritual-card:hover .ritual-link { gap: 0.9rem; }
-/* tablet: 2 u redu, malo veći sadržaj */
+.ritual-card:hover .ritual-link { gap: 1rem; }
+/* tablet: 2 u redu (reset breakout) */
 @media (max-width: 1024px) {
-  .rituali-grid { grid-template-columns: 1fr 1fr; gap: 1.6rem; max-width: 720px; }
-  .ritual-card .ritual-content { padding: 2.4rem 2rem; }
-  .ritual-card .ritual-duration { font-size: 0.7rem; letter-spacing: 0.35em; margin-bottom: 0.9rem; }
-  .ritual-card h3 { font-size: 2.2rem; margin-bottom: 1.2rem; }
-  .ritual-card .ritual-desc { font-size: 1rem; margin-bottom: 1.6rem; }
-  .ritual-card .ritual-bottom { padding-top: 1.3rem; }
-  .ritual-card .ritual-price { font-size: 2.2rem; }
-  .ritual-card .ritual-link { font-size: 0.68rem; letter-spacing: 0.28em; gap: 0.6rem; }
+  .rituali-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.8rem;
+    width: auto;
+    max-width: 760px;
+    margin: 4.5rem auto 0;
+    transform: none;
+  }
+  .ritual-card { aspect-ratio: 4 / 5; }
+  .ritual-card .ritual-content { padding: 2.6rem 2.2rem; }
+  .ritual-card h3 { font-size: 2.3rem; margin-bottom: 1.3rem; }
+  .ritual-card .ritual-desc { font-size: 1.05rem; margin-bottom: 1.7rem; }
+  .ritual-card .ritual-bottom { padding-top: 1.4rem; }
+  .ritual-card .ritual-price { font-size: 2.4rem; }
+  .ritual-card .ritual-link { font-size: 0.7rem; letter-spacing: 0.28em; gap: 0.6rem; }
 }
 /* mobitel: 1 u redu */
 @media (max-width: 640px) {
-  .rituali-grid { grid-template-columns: 1fr; gap: 1.5rem; max-width: 420px; }
+  .rituali-grid { grid-template-columns: 1fr; gap: 1.5rem; max-width: 440px; }
   .ritual-card { aspect-ratio: 3 / 4; }
-  .ritual-card .ritual-content { padding: 2rem 1.6rem; }
 }
 
 /* ============================================

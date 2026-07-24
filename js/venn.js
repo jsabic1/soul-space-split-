@@ -45,20 +45,7 @@
         + 'pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" '
         + 'data-ds="' + c.ds + '" data-de="' + c.de + '"/>';
     });
-    // 2) odsjaj — kratak svijetli luk koji kruži oko prstena
-    circles.forEach(function (c) {
-      var anim = reduce ? '' :
-        '<animateTransform attributeName="transform" attributeType="XML" type="rotate" '
-        + 'from="0 ' + c.cx + ' ' + c.cy + '" to="360 ' + c.cx + ' ' + c.cy + '" '
-        + 'dur="' + c.dur + 's" repeatCount="indefinite"/>';
-      svg += '<g class="vshine-g" data-th="' + c.de.toFixed(3) + '">'
-        + '<circle cx="' + c.cx + '" cy="' + c.cy + '" r="' + c.R + '" fill="none" '
-        + 'stroke="#E6B87A" stroke-width="2" stroke-linecap="round" filter="url(#vshineglow)" '
-        + 'pathLength="1" stroke-dasharray="0.1 0.9"/>'
-        + anim + '</g>';
-    });
-
-    // 3) tekst — unutar kruga (naslov + rečenice), mekani filmski ulaz
+    // 2) tekst — unutar kruga (naslov + rečenice), mekani filmski ulaz
     P.slice(0, 3).forEach(function (p, i) {
       var c = circles[i], b = c.box;
       var tTitle = 0.72 + i * 0.05;
