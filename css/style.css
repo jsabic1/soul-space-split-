@@ -730,17 +730,20 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
     top: 0;
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     box-sizing: border-box;
-    padding: 2rem 0;
+    padding: 1rem 0;
   }
+  .pristup-stage .section-head { margin-bottom: 0.4rem; }
   .pristup-venn {
     display: block;
     position: relative;
-    max-width: 780px;
-    margin: 0.5rem auto 0;
+    width: 100%;
+    margin: 0 auto;
     background: radial-gradient(circle at 50% 49%, rgba(216, 105, 52, 0.15), rgba(31, 15, 10, 0) 55%);
   }
+  .pristup-venn svg { height: min(82vh, 860px); width: auto; max-width: 100%; margin: 0 auto; }
   @media (prefers-reduced-motion: reduce) {
     #pristupPin.section-pristup { height: auto; padding: 8rem 0; }
     .pristup-stage { position: static; min-height: 0; display: block; padding: 0; }

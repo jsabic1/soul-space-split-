@@ -64,12 +64,12 @@
     var P = principles();
     if (P.length < 3) return;
     var circles = [
-      { cx: 540, cy: 310, R: 255, rot: -40, seed: 7 },
-      { cx: 350, cy: 660, R: 255, rot: 95, seed: 14 },
-      { cx: 730, cy: 660, R: 255, rot: 215, seed: 27 }
+      { cx: 650, cy: 300, R: 268, rot: -40, seed: 7 },
+      { cx: 410, cy: 600, R: 268, rot: 95, seed: 14 },
+      { cx: 890, cy: 600, R: 268, rot: 215, seed: 27 }
     ];
-    var boxes = [[390, 210], [190, 580], [590, 580]];
-    var svg = '<svg viewBox="0 0 1080 1040" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+    var boxes = [[500, 200], [250, 560], [750, 560]];
+    var svg = '<svg viewBox="0 0 1300 900" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
       + '<defs>'
       + '<linearGradient id="vgrad" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#5c1f10"/><stop offset="0.35" stop-color="#B8451E"/><stop offset="0.65" stop-color="#D86934"/><stop offset="1" stop-color="#E6B678"/></linearGradient>'
       + '<filter id="vglow" x="-25%" y="-25%" width="150%" height="150%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>'
