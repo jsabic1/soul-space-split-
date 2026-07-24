@@ -75,6 +75,21 @@
     return 0;
   }
 
+  // Nježna serpentina: čist polu-luk između svaka dva čvora, smjer se izmjenjuje (gore/dolje).
+  // Krajevi se lagano stapaju u sredinu. Daje elegantnu vrpcu koja se provlači kroz točke.
+  function signedArch(m) {
+    var first = mainsSvg[0], last = mainsSvg[mainsSvg.length - 1];
+    if (m <= first) return -0.5 * (1 - Math.cos(Math.min(1, (first - m) / (first || 1)) * Math.PI));
+    if (m >= last) return -0.5 * (1 - Math.cos(Math.min(1, (m - last) / ((TOTAL - last) || 1)) * Math.PI));
+    for (var i = 0; i < mainsSvg.length - 1; i++) {
+      if (m >= mainsSvg[i] && m <= mainsSvg[i + 1]) {
+        var t = (m - mainsSvg[i]) / (mainsSvg[i + 1] - mainsSvg[i]);
+        return Math.sin(t * Math.PI) * (i % 2 === 0 ? 1 : -1);
+      }
+    }
+    return 0;
+  }
+
   function build() {
     horizontal = window.matchMedia && window.matchMedia('(min-width: 901px)').matches;
     var wrapRect = wrap.getBoundingClientRect();
@@ -112,22 +127,18 @@
     fstops.f1.setAttribute('offset', tf.toFixed(3));
     fstops.f2.setAttribute('offset', (1 - tf).toFixed(3));
 
-    var rnd = mulberry32(4);
     strandsG.innerHTML = '';
     for (var i = 0; i < N; i++) {
-      // samo jedna, čista valovita linija — centrirana i jasno vidljiva
-      var off = 0;
-      var amp = ampB + rnd() * ampR;
-      var freq = 1.4 + rnd() * 1.6;
-      var phase = rnd() * Math.PI * 2;
-      var sw = horizontal ? '1.7' : '1.5';
+      // jedna elegantna serpentina — nježno se provlači kroz čvorove
+      var amp = horizontal ? 15 : 10;
+      var sw = horizontal ? '1.4' : '1.3';
       var op = '0.95';
-      var stepsN = 170, d = '';
+      var stepsN = 240, d = '';
       for (var s = 0; s <= stepsN; s++) {
         var u = s / stepsN, m = u * TOTAL;
-        var cross = crossCenter + (off + amp * Math.sin(freq * u * Math.PI * 2 + phase)) * pinch(m);
+        var cross = crossCenter + amp * signedArch(m);
         var x = horizontal ? m : cross, y = horizontal ? cross : m;
-        d += (s === 0 ? 'M' : 'L') + x.toFixed(1) + ' ' + y.toFixed(1) + ' ';
+        d += (s === 0 ? 'M' : 'L') + x.toFixed(2) + ' ' + y.toFixed(2) + ' ';
       }
       var p = document.createElementNS(NS, 'path');
       p.setAttribute('id', 'tls' + i);
@@ -177,17 +188,17 @@
   }
 
   function setKnotOn(c) {
-    c.setAttribute('r', 4.5);
+    c.setAttribute('r', 3.8);
     c.setAttribute('fill', '#F0C486');
     c.setAttribute('stroke-width', 0);
     c.setAttribute('filter', 'url(#tlsoft)');
     if (!reduce) c.setAttribute('class', 'syn-dot');
   }
   function setKnotOff(c) {
-    c.setAttribute('r', 3.5);
+    c.setAttribute('r', 3);
     c.setAttribute('fill', '#1F0F0A');
-    c.setAttribute('stroke', 'rgba(200,150,92,.45)');
-    c.setAttribute('stroke-width', 1.5);
+    c.setAttribute('stroke', 'rgba(200,150,92,.4)');
+    c.setAttribute('stroke-width', 1.2);
     c.removeAttribute('filter');
     c.setAttribute('class', '');
   }
