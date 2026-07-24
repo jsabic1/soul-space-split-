@@ -436,19 +436,33 @@ body.gsap-page::before {
   backdrop-filter: blur(2px);
 }
 
-/* Desktop: text centered, button centered below and pushed a bit down */
+/* Desktop: two columns — title + subtitle left, description and everything else right */
 @media (min-width: 901px) {
-  .split-content { text-align: center; }
-  .split-content .ideal-for { justify-items: center; }
-  .split-content .treatment-meta { justify-items: center; }
-  .split-content .meta-item + .meta-item { padding-left: 0; }
-  .split-content .btn-primary { margin-top: 2.4rem; }
+  .split-content { width: min(100%, 680px); text-align: left; }
+  .split-content::after { content: ""; display: block; clear: both; }
+  .split-content > h2 {
+    float: left; clear: left; width: 40%;
+    margin: 0 0 1.1rem;
+    font-size: clamp(2.3rem, 3vw, 3.3rem);
+    white-space: normal;
+  }
+  .split-content > .script {
+    float: left; clear: left; width: 40%;
+    margin: 0; max-width: none;
+  }
+  .split-content > .description {
+    margin: 0 0 1.3rem 46%; max-width: none;
+  }
+  .split-content > .ideal-for { margin-left: 46%; }
+  .split-content > .after-note { margin-left: 46%; }
+  .split-content > .treatment-meta { margin: 0 0 1.35rem 46% !important; }
+  .split-content > .btn-primary { margin-left: 46%; margin-top: 1.6rem; }
 }
 
 @media (max-height: 820px) and (min-width: 901px) {
   .split-content { width: min(100%, 560px); }
   .treatment-num { font-size: 4.1rem; }
-  .split-content h2 { font-size: clamp(3.3rem, 4.5vw, 4.8rem); margin-bottom: 0.7rem; }
+  .split-content h2 { font-size: clamp(2rem, 2.7vw, 2.9rem); margin-bottom: 0.9rem; }
   .split-content .script { font-size: clamp(1.1rem, 1.5vw, 1.4rem); margin-bottom: 1rem; }
   .split-content .description { font-size: 0.95rem; line-height: 1.5; margin-bottom: 1rem; }
   .ideal-for { padding: 0.85rem 0; }
