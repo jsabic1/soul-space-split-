@@ -13,7 +13,7 @@
 
   var els = Array.prototype.slice.call(
     document.querySelectorAll('.section-parallax, .section.praksa')
-  );
+  ).filter(function (el) { return !el.hasAttribute('data-no-parallax'); });
   if (!els.length) return;
 
   // Rezerva/pomak sloja: na mobitelu su sekcije niže (u px), pa isti postotak

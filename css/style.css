@@ -184,6 +184,10 @@ p { color: var(--text-muted); }
 .section-pristup {
   background-image: url('../wp-content/uploads/soul/ne-brzo-ne-forsirano.jpeg');
 }
+/* ujednačeno tamno preko cijele (visoke) pin-sekcije — bez svijetle trake */
+.section-pristup::before {
+  background: rgba(31, 15, 10, 0.82);
+}
 .section-timeline {
   background-image: url('../wp-content/uploads/soul/od-poruke-do-stola.jpeg');
 }
@@ -723,7 +727,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
     padding: 0;
     overflow: visible !important;
     position: relative;
-    height: 260vh;
+    height: 380vh;
   }
   .pristup-stage {
     position: sticky;
@@ -978,10 +982,8 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom,
-    rgba(31, 15, 10, 0.80) 0%,
-    rgba(31, 15, 10, 0.64) 50%,
-    rgba(31, 15, 10, 0.84) 100%);
+  /* ujednačeno tamno preko cijele (visoke) pin-sekcije — bez svijetle trake u sredini */
+  background: rgba(31, 15, 10, 0.82);
   z-index: 1;
 }
 .section-bg > * { position: relative; z-index: 2; }

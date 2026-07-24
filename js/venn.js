@@ -25,31 +25,27 @@
   }
 
   function nativeRing(seed, ci) {
+    // Svaki krug = samo 2 trake (dvije valovite pune petlje koje se prepliću).
     var rnd = mulberry32(seed), cx = 330, cy = 330, R = 238;
-    var Z1 = -48 * Math.PI / 180, Z2 = 132 * Math.PI / 180;
+    var N = 2;
     var paths = '', dm = '';
     var cBase = 0.02 + ci * 0.135;   // scroll-progres kad ovaj krug počne crtati
-    for (var i = 0; i < 40; i++) {
-      var rBase = R + (rnd() * 2 - 1) * 20, amp = 6 + rnd() * 16, freq = 2 + Math.floor(rnd() * 4), phase = rnd() * Math.PI * 2;
-      var route = rnd() < 0.5 ? 0 : 1, j1 = (rnd() * 2 - 1) * 0.28, j2 = (rnd() * 2 - 1) * 0.28;
-      var a0 = Z1 + j1, a1; if (route === 0) { a1 = Z2 - 2 * Math.PI + j2; } else { a1 = Z2 + j2; }
-      var td0 = (rnd() < 0.5 ? -1 : 1) * (14 + rnd() * 30), td1 = (rnd() < 0.5 ? -1 : 1) * (14 + rnd() * 30), tl = 0.14 + rnd() * 0.06;
-      var steps = 120, d = '';
+    for (var i = 0; i < N; i++) {
+      var rBase = R + (i - (N - 1) / 2) * 9;              // blagi razmak među trakama
+      var amp = 12 + rnd() * 7, freq = 3 + Math.floor(rnd() * 3), phase = rnd() * Math.PI * 2;
+      var a0 = rnd() * Math.PI * 2;                        // početni kut poteza
+      var span = Math.PI * 2 * (1.02 + rnd() * 0.06);      // puna (blago prekoračena) petlja
+      var steps = 260, d = '';
       for (var s = 0; s <= steps; s++) {
-        var u = s / steps, t = a0 + (a1 - a0) * u, r = rBase + amp * Math.sin(freq * t + phase);
-        if (u < tl) r += td0 * ease((tl - u) / tl);
-        if (u > 1 - tl) r += td1 * ease((u - (1 - tl)) / tl);
+        var u = s / steps, t = a0 + span * u, r = rBase + amp * Math.sin(freq * t + phase);
         d += (s === 0 ? 'M' : 'L') + (cx + r * Math.cos(t)).toFixed(1) + ' ' + (cy + r * Math.sin(t)).toFixed(1) + ' ';
       }
-      var ds = cBase + (i / 40) * 0.075, de = ds + 0.05;
-      paths += '<path class="vstrand" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" data-ds="' + ds.toFixed(3) + '" data-de="' + de.toFixed(3) + '" d="' + d.trim() + '" stroke-width="' + (0.8 + rnd() * 1.4).toFixed(2) + '" stroke-linecap="round" opacity="' + (0.35 + rnd() * 0.55).toFixed(2) + '"/>';
-      var ends = [[a0, td0], [a1, td1]];
+      var ds = cBase + (i / N) * 0.075, de = ds + 0.075;
+      paths += '<path class="vstrand" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" data-ds="' + ds.toFixed(3) + '" data-de="' + de.toFixed(3) + '" d="' + d.trim() + '" stroke-width="' + (1.7 + rnd() * 0.7).toFixed(2) + '" stroke-linecap="round" opacity="' + (0.78 + rnd() * 0.17).toFixed(2) + '"/>';
+      // dvije nježne sinapse po traci
       for (var e = 0; e < 2; e++) {
-        var te = ends[e][0], td = ends[e][1];
-        if (rnd() < 0.72) {
-          var r2 = rBase + amp * Math.sin(freq * te + phase) + td;
-          dm += '<circle class="vdot" data-th="' + (cBase + 0.12).toFixed(3) + '" cx="' + (cx + r2 * Math.cos(te)).toFixed(1) + '" cy="' + (cy + r2 * Math.sin(te)).toFixed(1) + '" r="' + (1.6 + rnd() * 2.2).toFixed(1) + '" fill="#F0C486"/>';
-        }
+        var te = a0 + span * (0.28 + e * 0.44), r2 = rBase + amp * Math.sin(freq * te + phase);
+        dm += '<circle class="vdot" data-th="' + (cBase + 0.12).toFixed(3) + '" cx="' + (cx + r2 * Math.cos(te)).toFixed(1) + '" cy="' + (cy + r2 * Math.sin(te)).toFixed(1) + '" r="' + (2 + rnd() * 1.8).toFixed(1) + '" fill="#F0C486"/>';
       }
     }
     return '<g filter="url(#vglow)" stroke="url(#vgrad)" fill="none">' + paths + '</g><g filter="url(#vglow)">' + dm + '</g>';
