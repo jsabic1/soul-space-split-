@@ -743,10 +743,10 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   font-family: var(--font-brand);
   font-weight: 400;
   color: var(--text);
-  font-size: clamp(1.8rem, 3vw, 2.7rem);
-  line-height: 1.06;
+  font-size: clamp(1.45rem, 1.9vw, 1.9rem);
+  line-height: 1.12;
   letter-spacing: 0.01em;
-  margin: 0 0 1.2rem;
+  margin: 0 0 1rem;
 }
 .pg-text p {
   font-family: var(--font-body);
@@ -756,6 +756,11 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   margin: 0;
   max-width: 440px;
 }
+/* srednji panel svjetliji (espresso -> svijetlo -> espresso) */
+.pg-text.light { background: #E8D9C0; }
+.pg-text.light .pg-eyebrow { color: #B8451E; }
+.pg-text.light h3 { color: #3A1E14; }
+.pg-text.light p { color: #5A3A28; }
 @media (max-width: 760px) {
   .pg-row, .pg-row.reverse { grid-template-columns: 1fr; }
   .pg-row.reverse .pg-photo { order: 0; }
