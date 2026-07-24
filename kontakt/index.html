@@ -220,6 +220,39 @@
       color: var(--accent);
     }
 
+    /* Google forma */
+    .contact-form-section { padding: 0 0 6rem; background: var(--bg); }
+    .contact-form-inner { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; text-align: center; }
+    .contact-form-section .eyebrow {
+      font-family: var(--font-brand-sub);
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent-soft);
+      margin-bottom: 0.6rem;
+    }
+    .contact-form-section h2 {
+      font-family: var(--font-brand);
+      font-weight: 400;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      color: var(--text);
+      margin: 0 0 0.6rem;
+    }
+    .contact-form-section .form-intro {
+      font-family: var(--font-body);
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin: 0 auto 2.2rem;
+      max-width: 480px;
+    }
+    .contact-form-frame {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 34px 80px -34px rgba(0, 0, 0, 0.65);
+    }
+    .contact-form-frame iframe { width: 100%; height: 1050px; border: none; display: block; }
+
     /* Map */
     .contact-map-section {
       padding: 0 0 6rem;
@@ -349,6 +382,17 @@
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <section class="contact-form-section" data-aos="fade-up">
+      <div class="contact-form-inner">
+        <p class="eyebrow">Upit za termin</p>
+        <h2>Pošalji poruku</h2>
+        <p class="form-intro">Par rečenica o tome kako se osjećaš i što tražiš — javim ti se s prijedlogom rituala i slobodnim terminima.</p>
+        <div class="contact-form-frame">
+          <iframe src="https://forms.gle/hEfwF3WTqRZCiXkY8" loading="lazy" title="Kontakt forma — Soul Space Split">Učitavanje…</iframe>
+        </div>
       </div>
     </section>
 
