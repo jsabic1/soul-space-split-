@@ -1202,17 +1202,27 @@ body.home .tebe-ako-title { font-size: clamp(1.7rem, 2.9vw, 2.5rem); }
   display: inline-block;
   font-family: var(--font-brand-sub);
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   font-size: 0.8rem;
-  color: #3A1E14;
-  border: 1px solid rgba(58, 30, 20, 0.4);
-  padding: 0.9rem 2rem;
-  border-radius: 2px;
+  color: #B8451E;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(184, 69, 30, 0.5);
+  border-radius: 0;
+  padding: 0.5rem 0.25rem;
   text-decoration: none;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
 }
-.btn-sand:hover { background: #3A1E14; color: #E8D4B8; }
+.btn-sand::after {
+  content: "\203A";
+  display: inline-block;
+  margin-left: 8px;
+  font-family: Georgia, serif;
+  transition: margin-left 0.3s ease;
+}
+.btn-sand:hover { color: #7A2D12; border-bottom-color: #7A2D12; }
+.btn-sand:hover::after { margin-left: 14px; }
 @media (max-width: 900px) {
   .about-preview { grid-template-columns: 1fr; gap: 2rem; }
   .about-preview.section-sand { padding: 4.5rem 0; }

@@ -436,6 +436,15 @@ body.gsap-page::before {
   backdrop-filter: blur(2px);
 }
 
+/* Desktop: tekst centriran, botun centriran ispod i malo odmaknut od teksta */
+@media (min-width: 901px) {
+  .split-content { text-align: center; }
+  .split-content .ideal-for { justify-items: center; }
+  .split-content .treatment-meta { justify-items: center; }
+  .split-content .meta-item + .meta-item { padding-left: 0; }
+  .split-content .btn-primary { margin-top: 2.4rem; }
+}
+
 @media (max-height: 820px) and (min-width: 901px) {
   .split-content { width: min(100%, 560px); }
   .treatment-num { font-size: 4.1rem; }
