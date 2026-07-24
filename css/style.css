@@ -687,15 +687,16 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 
 /* Pristup — 3 preklapajuća kruga s riječima (iznad stupaca) */
 .principi-krugovi {
-  max-width: 640px;
+  max-width: 760px;
   margin: 3.6rem auto 0;
 }
 .principi-krugovi svg { display: block; width: 100%; height: auto; overflow: visible; }
 .principi-krugovi .pk-word {
   font-family: var(--font-brand-sub);
-  font-size: 40px;
-  fill: #EFE1CA;
-  letter-spacing: 1px;
+  font-size: 22px;
+  fill: #C8965C;
+  letter-spacing: 5px;
+  text-transform: uppercase;
 }
 
 /* Pristup — tri stupca principa s tankim okomitim linijama između */
