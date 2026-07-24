@@ -183,14 +183,10 @@ p { color: var(--text-muted); }
 }
 .section-pristup {
   background-image: url('../wp-content/uploads/soul/ne-brzo-ne-forsirano.jpeg');
-  /* viša sekcija + lakše zatamnjenje => pozadinska slika se više vidi */
-  padding: 13rem 0;
+  padding: 8rem 0;
 }
 .section-pristup::before {
-  background: rgba(31, 15, 10, 0.68);
-}
-@media (max-width: 900px) {
-  .section-pristup { padding: 8rem 0; }
+  background: rgba(31, 15, 10, 0.86);
 }
 .section-timeline {
   background-image: url('../wp-content/uploads/soul/od-poruke-do-stola.jpeg');
@@ -695,56 +691,75 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   .krug-ring { width: min(92vw, 390px); height: min(92vw, 390px); }
 }
 
-/* Pristup — tri stupca principa s tankim okomitim linijama između */
-.principi-cols {
+/* Pristup — naizmjenična mreža: slika + tekst, pa obrnuto (checkerboard) */
+.pristup-grid {
+  max-width: 1200px;
+  margin: 3.6rem auto 0;
+}
+.pg-row {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  max-width: 1120px;
-  margin: 4.5rem auto 0;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
 }
-.principi-col {
+.pg-row.reverse .pg-photo { order: 2; }
+/* prazno mjesto za sliku (placeholder) */
+.pg-photo {
   position: relative;
-  text-align: center;
-  padding: 0.5rem 2.6rem;
+  min-height: 360px;
+  background:
+    linear-gradient(135deg, rgba(74, 43, 27, 0.55), rgba(31, 15, 10, 0.68));
+  border: 1px solid rgba(200, 150, 92, 0.14);
 }
-/* tanka okomita linija između stupaca */
-.principi-col + .principi-col::before {
-  content: '';
+.pg-photo::after {
+  content: 'slika';
   position: absolute;
-  left: 0;
-  top: 8%;
-  height: 84%;
-  width: 1px;
-  background: rgba(244, 232, 214, 0.20);
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-brand-sub);
+  font-size: 0.66rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: rgba(200, 150, 92, 0.45);
 }
-.principi-col h3 {
+/* ako se doda slika, ukloni oznaku placeholdera dodavanjem klase .has-img */
+.pg-photo.has-img::after { display: none; }
+.pg-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2.4rem, 4vw, 4rem);
+  background: #241109;
+}
+.pg-text .pg-eyebrow {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--accent-soft);
+  margin-bottom: 0.85rem;
+}
+.pg-text h3 {
   font-family: var(--font-brand);
   font-weight: 400;
   color: var(--text);
-  font-size: clamp(1.75rem, 2.3vw, 2.35rem);
-  line-height: 1.14;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  line-height: 1.06;
   letter-spacing: 0.01em;
-  margin: 0 0 1.6rem;
+  margin: 0 0 1.2rem;
 }
-.principi-col p {
+.pg-text p {
   font-family: var(--font-body);
-  font-size: 1.02rem;
-  line-height: 1.62;
+  font-size: 1.05rem;
+  line-height: 1.66;
   color: var(--text-muted);
-  max-width: 270px;
-  margin: 0 auto;
+  margin: 0;
+  max-width: 440px;
 }
 @media (max-width: 760px) {
-  .principi-cols { grid-template-columns: 1fr; max-width: 440px; }
-  .principi-col { padding: 2.6rem 1rem; }
-  /* kad su jedan ispod drugog: umjesto okomite, tanka vodoravna linija */
-  .principi-col + .principi-col::before {
-    left: 12%;
-    right: 12%;
-    top: 0;
-    width: auto;
-    height: 1px;
-  }
+  .pg-row, .pg-row.reverse { grid-template-columns: 1fr; }
+  .pg-row.reverse .pg-photo { order: 0; }
+  .pg-photo { min-height: 220px; }
 }
 
 .for-you-text { color: var(--text); }
