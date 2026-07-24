@@ -237,8 +237,10 @@
     /* === Sand tema: tekstualne sekcije svijetle, foto sekcije ostaju tamne === */
     main { background: #E8D4B8; }
     main .section:not(.praksa) { background: linear-gradient(to bottom, #D8C09E 0%, #E8D4B8 45%, #EFE0C6 100%); }
-    /* spoj 02+03: jedna sekcija — ravna ista boja, bez linije na spoju */
-    main .section.join-b, main .section.join-t { background: #EFE0C6; }
+    /* spoj 02+03: jedna sekcija — ravna ista boja, bez linije na spoju.
+       display:flow-root spriječi da margina djeteta "pobjegne" i otvori
+       razmak kroz koji se vidi tamnija pozadina <main> (svijetla traka). */
+    main .section.join-b, main .section.join-t { background: #EFE0C6; display: flow-root; }
     main .section:not(.praksa) h1,
     main .section:not(.praksa) h2,
     main .section:not(.praksa) h3,
