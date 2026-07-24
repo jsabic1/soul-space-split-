@@ -730,7 +730,6 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   flex-direction: column;
   justify-content: center;
   padding: clamp(2.4rem, 4vw, 4rem);
-  background: #241109;
 }
 .pg-text .pg-eyebrow {
   font-family: var(--font-body);
@@ -756,11 +755,21 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   margin: 0;
   max-width: 440px;
 }
-/* srednji panel svjetliji (espresso -> svijetlo -> espresso) */
-.pg-text.light { background: #E8D9C0; }
-.pg-text.light .pg-eyebrow { color: #B8451E; }
-.pg-text.light h3 { color: #3A1E14; }
-.pg-text.light p { color: #5A3A28; }
+/* sva tri panela — različiti gradienti iz brend palete (bez espresa) */
+.pg-text.ember {
+  background: linear-gradient(150deg, #C24E22 0%, #6f2c15 100%);
+}
+.pg-text.ember .pg-eyebrow { color: #F0C486; }
+.pg-text.sand {
+  background: linear-gradient(150deg, #EFE0C6 0%, #D2B892 100%);
+}
+.pg-text.sand .pg-eyebrow { color: #B8451E; }
+.pg-text.sand h3 { color: #3A1E14; }
+.pg-text.sand p { color: #5A3A28; }
+.pg-text.honey {
+  background: linear-gradient(150deg, #CE9B54 0%, #6b4118 100%);
+}
+.pg-text.honey .pg-eyebrow { color: #FBEAC9; }
 
 /* Naslovna: manji naslovi sekcija + više razmaka do sadržaja ispod */
 body.home .section-head { margin-bottom: 5.5rem; }
