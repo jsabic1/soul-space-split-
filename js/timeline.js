@@ -76,15 +76,24 @@
   }
 
   // Nježna serpentina: čist polu-luk između svaka dva čvora, smjer se izmjenjuje (gore/dolje).
-  // Krajevi se lagano stapaju u sredinu. Daje elegantnu vrpcu koja se provlači kroz točke.
+  // Uzorak se nastavlja i u repove (prije prvog i poslije zadnjeg čvora) istom sinusnom formulom,
+  // pa linija prirodno prolazi kroz PRVU i zadnju točku pod istim kutom kao kroz srednje.
+  function archSign(i) { return (((i % 2) + 2) % 2 === 0) ? 1 : -1; }
   function signedArch(m) {
-    var first = mainsSvg[0], last = mainsSvg[mainsSvg.length - 1];
-    if (m <= first) return -0.5 * (1 - Math.cos(Math.min(1, (first - m) / (first || 1)) * Math.PI));
-    if (m >= last) return -0.5 * (1 - Math.cos(Math.min(1, (m - last) / ((TOTAL - last) || 1)) * Math.PI));
-    for (var i = 0; i < mainsSvg.length - 1; i++) {
-      if (m >= mainsSvg[i] && m <= mainsSvg[i + 1]) {
-        var t = (m - mainsSvg[i]) / (mainsSvg[i + 1] - mainsSvg[i]);
-        return Math.sin(t * Math.PI) * (i % 2 === 0 ? 1 : -1);
+    var arr = mainsSvg, n = arr.length;
+    var g = (arr[n - 1] - arr[0]) / (n - 1);          // prosječni razmak = širina virtualnog repnog luka
+    if (m < arr[0]) {                                  // repni luk prije prvog čvora
+      var t0 = (m - (arr[0] - g)) / g;
+      return t0 <= 0 ? 0 : Math.sin(t0 * Math.PI) * archSign(-1);
+    }
+    if (m > arr[n - 1]) {                              // repni luk poslije zadnjeg čvora
+      var t1 = (m - arr[n - 1]) / g;
+      return t1 >= 1 ? 0 : Math.sin(t1 * Math.PI) * archSign(n - 1);
+    }
+    for (var i = 0; i < n - 1; i++) {
+      if (m >= arr[i] && m <= arr[i + 1]) {
+        var t = (m - arr[i]) / (arr[i + 1] - arr[i]);
+        return Math.sin(t * Math.PI) * archSign(i);
       }
     }
     return 0;
