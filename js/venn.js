@@ -35,7 +35,7 @@
       + '<defs>'
       + '<linearGradient id="vgrad" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#5c1f10"/><stop offset="0.35" stop-color="#B8451E"/><stop offset="0.65" stop-color="#D86934"/><stop offset="1" stop-color="#E6B678"/></linearGradient>'
       + '<filter id="vglow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>'
-      + '<filter id="vshineglow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>'
+      + '<filter id="vshineglow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>'
       + '</defs>';
 
     // 1) prsteni (gradijent) — iscrtavaju se scrollom
@@ -53,8 +53,8 @@
         + 'dur="' + c.dur + 's" repeatCount="indefinite"/>';
       svg += '<g class="vshine-g" data-th="' + c.de.toFixed(3) + '">'
         + '<circle cx="' + c.cx + '" cy="' + c.cy + '" r="' + c.R + '" fill="none" '
-        + 'stroke="#F7DCA8" stroke-width="3.2" stroke-linecap="round" filter="url(#vshineglow)" '
-        + 'pathLength="1" stroke-dasharray="0.16 0.84"/>'
+        + 'stroke="#E6B87A" stroke-width="2.2" stroke-linecap="round" filter="url(#vshineglow)" '
+        + 'pathLength="1" stroke-dasharray="0.2 0.8"/>'
         + anim + '</g>';
     });
 

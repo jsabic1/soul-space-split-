@@ -715,10 +715,10 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .venn-lbl .rev.in { opacity: 1; filter: blur(0); transform: none; }
 /* odsjaj koji kruži — pojavi se tek kad je krug iscrtan */
 #pristupVenn .vshine-g { opacity: 0; transition: opacity 1.4s ease; }
-#pristupVenn .vshine-g.on { opacity: 0.9; }
+#pristupVenn .vshine-g.on { opacity: 0.3; }
 @media (prefers-reduced-motion: reduce) {
   .venn-lbl .rev { transition: none; }
-  #pristupVenn .vshine-g.on { opacity: 0.6; }
+  #pristupVenn .vshine-g.on { opacity: 0.22; }
 }
 /* pin (scroll-lock) + prikaz venna na desktopu */
 @media (min-width: 901px) {
