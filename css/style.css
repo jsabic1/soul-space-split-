@@ -456,8 +456,21 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .for-you {
   background: var(--bg);
   border-bottom: 1px solid var(--border);
+  position: relative;
 }
 .for-you .section-head { text-align: center; margin-bottom: 4rem; }
+/* valoviti prijelaz (umjesto ravne crte) iz sekcije iznad u ovu tamnu sekciju */
+.wave-top {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: clamp(42px, 6.5vw, 100px);
+  line-height: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+.wave-top svg { display: block; width: 100%; height: 100%; }
 .for-you-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -685,72 +698,55 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   .krug-ring { width: min(92vw, 390px); height: min(92vw, 390px); }
 }
 
-/* Pristup — Venn od 3 valovita kruga s filmskim otkrivanjem (samo desktop) */
-.pristup-venn { display: none; }
-.pristup-venn svg { display: block; width: 100%; height: auto; overflow: visible; }
-.venn-lbl { text-align: center; padding-top: 0.55rem; }
-.venn-lbl h3 {
+/* Pristup — tri stupca principa s tankim okomitim linijama između */
+.principi-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 1120px;
+  margin: 4.5rem auto 0;
+}
+.principi-col {
+  position: relative;
+  text-align: center;
+  padding: 0.5rem 2.6rem;
+}
+/* tanka okomita linija između stupaca */
+.principi-col + .principi-col::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8%;
+  height: 84%;
+  width: 1px;
+  background: rgba(244, 232, 214, 0.20);
+}
+.principi-col h3 {
   font-family: var(--font-brand);
   font-weight: 400;
   color: var(--text);
-  font-size: 1.62rem;
-  line-height: 1.2;
-  margin: 0 0 1.25rem;
+  font-size: clamp(1.75rem, 2.3vw, 2.35rem);
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  margin: 0 0 1.6rem;
 }
-.venn-lbl p {
+.principi-col p {
   font-family: var(--font-body);
-  font-size: 0.98rem;
-  line-height: 1.38;
+  font-size: 1.02rem;
+  line-height: 1.62;
   color: var(--text-muted);
-  margin: 0 auto 0.5rem;
-  max-width: 228px;
+  max-width: 270px;
+  margin: 0 auto;
 }
-/* mekani filmski ulaz teksta */
-.venn-lbl .rev {
-  opacity: 0;
-  filter: blur(9px);
-  transform: translateY(14px);
-  transition: opacity 1.1s ease, filter 1.1s ease, transform 1.1s cubic-bezier(.22,.61,.36,1);
-}
-.venn-lbl .rev.in { opacity: 1; filter: blur(0); transform: none; }
-/* odsjaj koji kruži — pojavi se tek kad je krug iscrtan */
-#pristupVenn .vshine-g { opacity: 0; transition: opacity 1.4s ease; }
-#pristupVenn .vshine-g.on { opacity: 0.5; }
-@media (prefers-reduced-motion: reduce) {
-  .venn-lbl .rev { transition: none; }
-  #pristupVenn .vshine-g.on { opacity: 0.35; }
-}
-/* pin (scroll-lock) + prikaz venna na desktopu */
-@media (min-width: 901px) {
-  .section-pristup .krug-slider { display: none; }
-  #pristupPin.section-pristup {
-    padding: 0;
-    overflow: visible !important;
-    position: relative;
-    height: 480vh;
-  }
-  .pristup-stage {
-    position: sticky;
+@media (max-width: 760px) {
+  .principi-cols { grid-template-columns: 1fr; max-width: 440px; }
+  .principi-col { padding: 2.6rem 1rem; }
+  /* kad su jedan ispod drugog: umjesto okomite, tanka vodoravna linija */
+  .principi-col + .principi-col::before {
+    left: 12%;
+    right: 12%;
     top: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-sizing: border-box;
-    padding: 1rem 0;
-  }
-  .pristup-stage .section-head { margin-bottom: 0.4rem; }
-  .pristup-venn {
-    display: block;
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    background: radial-gradient(circle at 50% 49%, rgba(216, 105, 52, 0.15), rgba(31, 15, 10, 0) 55%);
-  }
-  .pristup-venn svg { height: min(82vh, 860px); width: auto; max-width: 100%; margin: 0 auto; }
-  @media (prefers-reduced-motion: reduce) {
-    #pristupPin.section-pristup { height: auto; padding: 8rem 0; }
-    .pristup-stage { position: static; min-height: 0; display: block; padding: 0; }
+    width: auto;
+    height: 1px;
   }
 }
 

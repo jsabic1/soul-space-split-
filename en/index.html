@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Unicase:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/style.css?v=78">
+  <link rel="stylesheet" href="../css/style.css?v=79">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
@@ -85,6 +85,9 @@
 
     <!-- OVO JE ZA TEBE AKO -->
     <section class="section for-you">
+      <div class="wave-top" aria-hidden="true">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,64 C240,18 480,18 720,52 C960,86 1200,86 1440,44 L1440,100 L0,100 Z" fill="#1F0F0A"/></svg>
+      </div>
       <div class="container">
         <div class="tebe-ako-split">
         <div class="tebe-ako-head" data-aos="fade-up">
@@ -103,48 +106,26 @@
     </section>
 
     <!-- PRISTUP -->
-    <section class="section-parallax section-pristup" id="pristupPin" data-no-parallax>
-      <div class="pristup-stage">
+    <section class="section-parallax section-pristup">
       <div class="container">
         <div class="section-head" data-aos="fade-up">
           <p class="eyebrow">Approach</p>
           <h2>Not fast. Not forced.</h2>
         </div>
-        <div class="krug-slider" id="krugSlider" data-aos="fade-up">
-          <div class="krug-stage">
-            <div class="krug-ring" aria-hidden="true"></div>
-            <button class="krug-arw left" type="button" data-krug-dir="-1" aria-label="Previous principle">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
-            </button>
-            <div class="krug-coin">
-              <div class="krug active" data-tags="calm before technique|safety, then work">
-                <span class="k-num">01</span>
-                <h3>System before symptoms</h3>
-                <p>A tight muscle never lets go by force. It lets go when the system feels safe, so we begin with calming.</p>
-              </div>
-              <div class="krug" data-tags="rhythm, not rush|technique comes after">
-                <span class="k-num">02</span>
-                <h3>Tempo over technique</h3>
-                <p>Rhythm and predictability send your body a message of safety. Technique comes only after that.</p>
-              </div>
-              <div class="krug" data-tags="you set the pace|the last word is yours">
-                <span class="k-num">03</span>
-                <h3>The body leads</h3>
-                <p>If an area isn't ready to open, we don't go there. You have the final word, always.</p>
-              </div>
-            </div>
-            <button class="krug-arw right" type="button" data-krug-dir="1" aria-label="Next principle">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
-            </button>
+        <div class="principi-cols">
+          <div class="principi-col" data-aos="fade-up">
+            <h3>System before<br>symptoms</h3>
+            <p>A tight muscle never lets go by force. It lets go when the system feels safe, so we begin with calming.</p>
           </div>
-          <div class="krug-dots">
-            <button class="krug-dot active" type="button" data-krug-to="0" aria-label="Principle 1"></button>
-            <button class="krug-dot" type="button" data-krug-to="1" aria-label="Principle 2"></button>
-            <button class="krug-dot" type="button" data-krug-to="2" aria-label="Principle 3"></button>
+          <div class="principi-col" data-aos="fade-up" data-aos-delay="120">
+            <h3>Tempo over<br>technique</h3>
+            <p>Rhythm and predictability send your body a message of safety. Technique comes only after that.</p>
+          </div>
+          <div class="principi-col" data-aos="fade-up" data-aos-delay="240">
+            <h3>The body<br>leads</h3>
+            <p>If an area isn't ready to open, we don't go there. You have the final word, always.</p>
           </div>
         </div>
-        <div class="pristup-venn" id="pristupVenn" aria-hidden="true"></div>
-      </div>
       </div>
     </section>
 
@@ -474,8 +455,6 @@
   </script>
   <script src="../js/nav.js?v=4"></script>
   <script src="../js/parallax.js?v=6"></script>
-  <script src="../js/krug-ring.js?v=3"></script>
-  <script src="../js/venn.js?v=9"></script>
   <script src="../js/timeline.js?v=8"></script>
 </body>
 </html>
