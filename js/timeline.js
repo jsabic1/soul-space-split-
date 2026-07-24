@@ -78,7 +78,7 @@
   function build() {
     horizontal = window.matchMedia && window.matchMedia('(min-width: 901px)').matches;
     var wrapRect = wrap.getBoundingClientRect();
-    var bandCross, offR, ampB, ampR, N = 5;
+    var bandCross, offR, ampB, ampR, N = 1;
 
     if (horizontal) {
       mains = steps.map(function (s) { var r = s.getBoundingClientRect(); return (r.left - wrapRect.left) + r.width / 2; });
@@ -115,12 +115,13 @@
     var rnd = mulberry32(4);
     strandsG.innerHTML = '';
     for (var i = 0; i < N; i++) {
-      var off = (rnd() * 2 - 1) * offR;
+      // samo jedna, čista valovita linija — centrirana i jasno vidljiva
+      var off = 0;
       var amp = ampB + rnd() * ampR;
       var freq = 1.4 + rnd() * 1.6;
       var phase = rnd() * Math.PI * 2;
-      var sw = (0.7 + rnd() * 0.85).toFixed(2);
-      var op = (0.5 + rnd() * 0.45).toFixed(2);
+      var sw = horizontal ? '1.7' : '1.5';
+      var op = '0.95';
       var stepsN = 170, d = '';
       for (var s = 0; s <= stepsN; s++) {
         var u = s / stepsN, m = u * TOTAL;
@@ -140,7 +141,7 @@
     // impulsi (sporiji)
     impG.innerHTML = '';
     if (!reduce) {
-      [2].forEach(function (idx, k) {
+      [0].forEach(function (idx, k) {
         if (idx >= N) return;
         var c = document.createElementNS(NS, 'circle');
         c.setAttribute('r', '2.3'); c.setAttribute('fill', '#FFE9C4'); c.setAttribute('filter', 'url(#tlsoft)');

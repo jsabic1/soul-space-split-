@@ -688,14 +688,14 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 /* Pristup — Venn od 3 valovita kruga s filmskim otkrivanjem (samo desktop) */
 .pristup-venn { display: none; }
 .pristup-venn svg { display: block; width: 100%; height: auto; overflow: visible; }
-.venn-lbl { text-align: center; }
+.venn-lbl { text-align: center; padding-top: 0.55rem; }
 .venn-lbl h3 {
   font-family: var(--font-brand);
   font-weight: 400;
   color: var(--text);
   font-size: 1.62rem;
-  line-height: 1.06;
-  margin: 0 0 0.7rem;
+  line-height: 1.2;
+  margin: 0 0 1.25rem;
 }
 .venn-lbl p {
   font-family: var(--font-body);
@@ -715,10 +715,10 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .venn-lbl .rev.in { opacity: 1; filter: blur(0); transform: none; }
 /* odsjaj koji kruži — pojavi se tek kad je krug iscrtan */
 #pristupVenn .vshine-g { opacity: 0; transition: opacity 1.4s ease; }
-#pristupVenn .vshine-g.on { opacity: 0.3; }
+#pristupVenn .vshine-g.on { opacity: 0.5; }
 @media (prefers-reduced-motion: reduce) {
   .venn-lbl .rev { transition: none; }
-  #pristupVenn .vshine-g.on { opacity: 0.22; }
+  #pristupVenn .vshine-g.on { opacity: 0.35; }
 }
 /* pin (scroll-lock) + prikaz venna na desktopu */
 @media (min-width: 901px) {
@@ -876,8 +876,8 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   transition: transform 0.5s ease;
   cursor: pointer;
   display: block;
-  /* okvir s lukom — dojam hrama, isto kao slika ispod "o meni" na naslovnoj */
-  border-radius: 50% 50% 6px 6px / 26% 26% 1% 1%;
+  /* okvir s lukom — dojam hrama, ista dubina kao slika ispod "o meni" na naslovnoj */
+  border-radius: 50% 50% 5px 5px / 32% 32% 1% 1%;
 }
 .ritual-card img {
   position: absolute;
