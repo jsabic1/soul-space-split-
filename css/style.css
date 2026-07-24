@@ -469,6 +469,17 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   z-index: 3;
 }
 .wave-top svg { display: block; width: 100%; height: 100%; }
+.wave-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: clamp(64px, 9.5vw, 150px);
+  line-height: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+.wave-bottom svg { display: block; width: 100%; height: 100%; }
 .for-you-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1133,6 +1144,7 @@ body.home .tebe-ako-title { font-size: clamp(1.7rem, 2.9vw, 2.5rem); }
 .about-preview.section-sand {
   display: block;
   position: relative;
+  z-index: 2;
   max-width: none;
   background: linear-gradient(to bottom, #D8C09E 0%, #E8D4B8 45%, #EFE0C6 100%);
   color: #3A1E14;
