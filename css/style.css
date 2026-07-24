@@ -183,10 +183,14 @@ p { color: var(--text-muted); }
 }
 .section-pristup {
   background-image: url('../wp-content/uploads/soul/ne-brzo-ne-forsirano.jpeg');
+  /* viša sekcija + lakše zatamnjenje => pozadinska slika se više vidi */
+  padding: 13rem 0;
 }
-/* ujednačeno tamno preko cijele (visoke) pin-sekcije — bez svijetle trake */
 .section-pristup::before {
-  background: rgba(31, 15, 10, 0.82);
+  background: rgba(31, 15, 10, 0.68);
+}
+@media (max-width: 900px) {
+  .section-pristup { padding: 8rem 0; }
 }
 .section-timeline {
   background-image: url('../wp-content/uploads/soul/od-poruke-do-stola.jpeg');
