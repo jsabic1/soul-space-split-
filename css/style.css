@@ -885,13 +885,13 @@ body.home .tebe-ako-title { font-size: clamp(1.7rem, 2.9vw, 2.5rem); }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.8rem;
-  width: min(1040px, 92vw);
+  width: min(928px, 92vw);
   max-width: none;
   margin: 4.5rem auto 0;
 }
 .ritual-card {
   position: relative;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 449 / 640;
   overflow: hidden;
   text-decoration: none;
   color: var(--text);
