@@ -901,8 +901,8 @@ body.home .tebe-ako-title { font-size: clamp(1.7rem, 2.9vw, 2.5rem); }
   transition: transform 0.5s ease;
   cursor: pointer;
   display: block;
-  /* okvir s lukom — dojam hrama, malo plići luk */
-  border-radius: 50% 50% 5px 5px / 25% 25% 1% 1%;
+  /* okvir s lukom — dojam hrama */
+  border-radius: 50% 50% 5px 5px / 29% 29% 1% 1%;
 }
 .ritual-card img {
   position: absolute;
