@@ -892,8 +892,8 @@ body.home .tebe-ako-title { font-size: clamp(1.7rem, 2.9vw, 2.5rem); }
 }
 .ritual-card {
   position: relative;
-  /* identično kao "O meni" slika: ista visina i ista proporcija (449 × 640) */
-  height: clamp(420px, 52vw, 640px);
+  /* malo niže kartice */
+  height: clamp(390px, 47vw, 580px);
   width: clamp(294px, 36.48vw, 449px);
   overflow: hidden;
   text-decoration: none;
