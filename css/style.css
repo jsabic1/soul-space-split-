@@ -705,8 +705,9 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .principi-krugovi .pk-word {
   font-family: var(--font-brand-sub);
   font-size: 29px;
+  font-weight: 600;
   fill: #C8965C;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
