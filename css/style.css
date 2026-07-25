@@ -994,8 +994,8 @@ body.home .tebe-ako-title { font-size: clamp(1.7rem, 2.9vw, 2.5rem); }
 /* mobitel: 1 u redu */
 @media (max-width: 640px) {
   .rituali-grid { grid-template-columns: 1fr; gap: 1.8rem; width: min(420px, 80vw); justify-content: stretch; }
-  .ritual-card { width: auto; height: auto; aspect-ratio: 3 / 4; }
-  .ritual-card h3 { font-size: 1.7rem; }
+  .ritual-card { width: auto; height: auto; aspect-ratio: 2 / 3; }
+  .ritual-card h3 { font-size: 1.6rem; white-space: normal; }
 }
 
 /* ============================================
