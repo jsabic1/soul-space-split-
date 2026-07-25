@@ -704,9 +704,9 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .principi-krugovi svg { display: block; width: 100%; height: auto; overflow: visible; }
 .principi-krugovi .pk-word {
   font-family: var(--font-brand-sub);
-  font-size: 25px;
+  font-size: 29px;
   fill: #C8965C;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   text-transform: uppercase;
 }
 
@@ -883,15 +883,18 @@ body.home .tebe-ako-title { font-size: clamp(1.7rem, 2.9vw, 2.5rem); }
    ============================================ */
 .rituali-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto auto;
+  justify-content: center;
   gap: 1.8rem;
-  width: min(928px, 92vw);
+  width: auto;
   max-width: none;
   margin: 4.5rem auto 0;
 }
 .ritual-card {
   position: relative;
-  aspect-ratio: 449 / 640;
+  /* identično kao "O meni" slika: ista visina i ista proporcija (449 × 640) */
+  height: clamp(420px, 52vw, 640px);
+  width: clamp(294px, 36.48vw, 449px);
   overflow: hidden;
   text-decoration: none;
   color: var(--text);
@@ -989,8 +992,8 @@ body.home .tebe-ako-title { font-size: clamp(1.7rem, 2.9vw, 2.5rem); }
 .ritual-card:hover .ritual-link { gap: 1rem; }
 /* mobitel: 1 u redu */
 @media (max-width: 640px) {
-  .rituali-grid { grid-template-columns: 1fr; gap: 1.5rem; width: min(440px, 92vw); }
-  .ritual-card { aspect-ratio: 3 / 4; }
+  .rituali-grid { grid-template-columns: 1fr; gap: 1.5rem; width: min(440px, 92vw); justify-content: stretch; }
+  .ritual-card { width: auto; height: auto; aspect-ratio: 3 / 4; }
   .ritual-card h3 { font-size: 1.7rem; }
 }
 
