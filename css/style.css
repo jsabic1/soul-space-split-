@@ -762,9 +762,9 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 
 /* Naslovna: manji naslovi sekcija + više razmaka do sadržaja ispod */
 body.home .section-head { margin-bottom: 5.5rem; }
-body.home .section-head h2 { font-size: clamp(1.6rem, 2.6vw, 2.3rem); }
+body.home .section-head h2 { font-size: clamp(1.9rem, 3vw, 2.75rem); }
 body.home .tebe-ako-head { margin-bottom: 7.5rem; }
-body.home .tebe-ako-title { font-size: clamp(1.7rem, 2.9vw, 2.5rem); }
+body.home .tebe-ako-title { font-size: clamp(2rem, 3.3vw, 2.95rem); }
 
 /* Naslovi sekcija u unicase capsu (font eyebrowa) */
 body.home .section-head h2,
@@ -1223,7 +1223,7 @@ body.home .cta-banner h2 {
   font-family: var(--font-brand);
   font-weight: 400;
   color: #3A1E14;
-  font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+  font-size: clamp(1.9rem, 3vw, 2.75rem);
   line-height: 1.05;
   margin: 0 0 1rem;
 }
@@ -1370,7 +1370,7 @@ body.home .cta-banner h2 {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
-.cta-banner h2 { font-size: clamp(1.6rem, 2.6vw, 2.3rem); margin-bottom: 0.7rem; }
+.cta-banner h2 { font-size: clamp(1.9rem, 3vw, 2.75rem); margin-bottom: 0.7rem; }
 .cta-banner .lead {
   font-family: var(--font-brand-sub);
   font-style: normal;
