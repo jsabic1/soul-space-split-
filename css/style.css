@@ -195,6 +195,34 @@ p { color: var(--text-muted); }
   padding: 13rem 0;
 }
 .section-testimonials .container { max-width: 980px; }
+
+/* ============================================
+   SPOJENO: Iskustva + Javi se + Trenuci u studiju
+   -> jedna sekcija, jedna (parallax) pozadina, jedno zatamnjenje.
+   Sadržaj i raspored ostaju isti, samo bez zasebnih pozadina/okvira.
+   ============================================ */
+.combined-block {
+  background-image: url('../wp-content/uploads/soul/sto-kazu-klijenti.jpeg');
+  padding: 0;
+}
+.combined-block::before {
+  /* jedno ravnomjerno zatamnjenje preko cijele spojene sekcije */
+  background: rgba(31, 15, 10, 0.78);
+}
+.cb-testimonials { padding: 13rem 0; }
+.cb-testimonials .container { max-width: 980px; }
+.combined-block .cta-banner {
+  background: transparent;
+  border: none;
+  padding: 6rem 0;
+}
+.cb-trenuci { padding: 8rem 0; }
+@media (max-width: 900px) {
+  .combined-block { padding: 0; }
+  .cb-testimonials { padding: 7rem 0; }
+  .combined-block .cta-banner { padding: 4.5rem 0; }
+  .cb-trenuci { padding: 5rem 0; }
+}
 @media (max-width: 900px) {
   .section-parallax {
     background-attachment: scroll;
