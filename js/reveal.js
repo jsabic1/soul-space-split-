@@ -25,8 +25,19 @@
     });
   }
 
+  // opisi (kartice) — čist slide zdesna, bez fade zatamnjenja
+  var grid = document.querySelector('.tebe-ako-grid');
+  var items = document.querySelectorAll('.tebe-ako-grid .tebe-item');
+  if (items.length && !reduce) {
+    items.forEach(function (it, i) {
+      it.classList.add('slide-r');
+      it.style.transitionDelay = (0.09 * i) + 's';
+    });
+  }
+
   if (reduce || !('IntersectionObserver' in window)) {
     if (head) head.classList.add('is-in');
+    items.forEach(function (it) { it.classList.add('is-in'); });
     return;
   }
 
@@ -35,5 +46,16 @@
       es.forEach(function (e) { if (e.isIntersecting) { head.classList.add('is-in'); io.disconnect(); } });
     }, { threshold: 0.35 });
     io.observe(head);
+  }
+  if (grid && items.length) {
+    var io3 = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) {
+          items.forEach(function (it) { it.classList.add('is-in'); });
+          io3.disconnect();
+        }
+      });
+    }, { threshold: 0.15 });
+    io3.observe(grid);
   }
 })();
