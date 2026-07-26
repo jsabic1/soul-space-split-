@@ -31,7 +31,7 @@
   if (items.length && !reduce) {
     items.forEach(function (it, i) {
       it.classList.add('slide-r');
-      it.style.transitionDelay = (0.09 * i) + 's';
+      it.style.transitionDelay = (0.28 * i) + 's';
     });
   }
 

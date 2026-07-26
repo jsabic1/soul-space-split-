@@ -785,18 +785,19 @@ body.home .tebe-ako-title { font-size: clamp(2rem, 3.3vw, 2.95rem); }
 }
 .for-you .wave-top.wave-reveal.is-in { opacity: 1; transform: none; }
 
-/* opisi — čist slide zdesna, bez fade zatamnjenja */
+/* opisi — slide zdesna, jedan po jedan, jače i sporije */
 .tebe-ako-grid { overflow-x: clip; }
 .tebe-item.slide-r {
-  transform: translateX(52px);
-  transition: transform 0.75s cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
+  transform: translateX(120px);
+  transition: opacity 0.9s ease, transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-.tebe-item.slide-r.is-in { transform: none; }
+.tebe-item.slide-r.is-in { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
   .tebe-ako-head .eyebrow,
   .tebe-ako-title.reveal-letters .rl-char { opacity: 1 !important; transform: none !important; }
-  .tebe-item.slide-r { transform: none !important; }
+  .tebe-item.slide-r { opacity: 1 !important; transform: none !important; }
 }
 
 /* Naslovi sekcija u unicase capsu (font eyebrowa) */
