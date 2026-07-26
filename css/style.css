@@ -462,18 +462,21 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 /* Prepoznaješ se: velika i visoka sekcija (kao Iskustva). Sama POZADINA
    (slika) sekcije je izrezana u val — gornji i donji rub su valoviti, pa je
    pozadina dio vala. U izrezanim uglovima proviruju susjedne sekcije. */
-.for-you {
-  padding: 13rem 0;
-  /* preklapa susjedne sekcije, pa valoviti rub slike ide PREKO heroa i Pristupa
-     (u izrezanom dijelu se vidi susjedna sekcija, nikad smeđa pozadina) */
-  margin-top: -7.5rem;
-  margin-bottom: -7.5rem;
-  position: relative;
-  z-index: 2;
-  -webkit-clip-path: url(#forYouWave);
-  clip-path: url(#forYouWave);
+.for-you { padding: 11rem 0; }
+/* Val identičan onome na Iskustvima: ista krivulja i ista (fiksna) visina.
+   Ispunjen je POZADINSKOM SLIKOM Prepoznaješ se (ista slika + zatamnjenje),
+   pa se slika prelijeva preko heroa (gore) i Pristupa (dolje) — nikad smeđe. */
+.fy-wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: clamp(64px, 9.5vw, 150px);
+  line-height: 0;
+  pointer-events: none;
 }
-.wave-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+.fy-wave svg { display: block; width: 100%; height: 100%; }
+.fy-wave-top { bottom: 0; z-index: 4; }      /* dno heroa -> preko heroa */
+.fy-wave-bottom { top: 0; z-index: 1; }        /* vrh Pristupa -> preko Pristupa */
 /* valoviti prijelaz (umjesto ravne crte) iz sekcije iznad u ovu tamnu sekciju */
 .wave-top {
   position: absolute;
@@ -1710,6 +1713,5 @@ body.home .cta-banner h2 {
   .section { padding: 4rem 0; }
   .section-head { margin-bottom: 2.5rem; }
   .container { padding: 0 1.25rem; }
-  /* dovoljno prostora da val (izrezani rub) ne siječe naslov ni tekstove */
-  .for-you { padding: 10rem 0; }
+  .for-you { padding: 6rem 0; }
 }
