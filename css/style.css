@@ -462,21 +462,28 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 /* Prepoznaješ se: velika i visoka sekcija (kao Iskustva). Sama POZADINA
    (slika) sekcije je izrezana u val — gornji i donji rub su valoviti, pa je
    pozadina dio vala. U izrezanim uglovima proviruju susjedne sekcije. */
-.for-you { padding: 11rem 0; }
-/* Val identičan onome na Iskustvima: ista krivulja i ista (fiksna) visina.
-   Ispunjen je POZADINSKOM SLIKOM Prepoznaješ se (ista slika + zatamnjenje),
-   pa se slika prelijeva preko heroa (gore) i Pristupa (dolje) — nikad smeđe. */
-.fy-wave {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: clamp(64px, 9.5vw, 150px);
-  line-height: 0;
-  pointer-events: none;
+/* Val je izrezan iz VLASTITE pozadinske slike sekcije (maskom), pa se ista
+   slika neprekidno nastavlja — ne počinje ispočetka. Fiksna visina vala =
+   ista dimenzija kao na Iskustvima. Negativne margine: slika prelazi preko
+   heroa (gore) i Pristupa (dolje), a u valu proviruje susjedna sekcija. */
+.for-you {
+  --wave-h: clamp(64px, 9.5vw, 150px);
+  padding: 12rem 0;
+  /* preklop = visina vala (+mala rezerva), pa slika prelazi točno preko ruba
+     susjedne sekcije bez smeđe i bez nepotrebnog prekrivanja sadržaja */
+  margin-top: calc(-1 * var(--wave-h) - 4px);
+  margin-bottom: calc(-1 * var(--wave-h) - 4px);
+  position: relative;
+  z-index: 2;
+  -webkit-mask:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,46 C240,96 480,96 720,50 C960,4 1200,4 1440,62 L1440,100 L0,100 Z' fill='%23fff'/%3E%3C/svg%3E") top left / 100% var(--wave-h) no-repeat,
+    linear-gradient(#fff, #fff) left center / 100% calc(100% - 2 * var(--wave-h) + 4px) no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,46 C240,96 480,96 720,50 C960,4 1200,4 1440,62 L1440,0 L0,0 Z' fill='%23fff'/%3E%3C/svg%3E") bottom left / 100% var(--wave-h) no-repeat;
+  mask:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,46 C240,96 480,96 720,50 C960,4 1200,4 1440,62 L1440,100 L0,100 Z' fill='%23fff'/%3E%3C/svg%3E") top left / 100% var(--wave-h) no-repeat,
+    linear-gradient(#fff, #fff) left center / 100% calc(100% - 2 * var(--wave-h) + 4px) no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,46 C240,96 480,96 720,50 C960,4 1200,4 1440,62 L1440,0 L0,0 Z' fill='%23fff'/%3E%3C/svg%3E") bottom left / 100% var(--wave-h) no-repeat;
 }
-.fy-wave svg { display: block; width: 100%; height: 100%; }
-.fy-wave-top { bottom: 0; z-index: 4; }      /* dno heroa -> preko heroa */
-.fy-wave-bottom { top: 0; z-index: 1; }        /* vrh Pristupa -> preko Pristupa */
 /* valoviti prijelaz (umjesto ravne crte) iz sekcije iznad u ovu tamnu sekciju */
 .wave-top {
   position: absolute;
