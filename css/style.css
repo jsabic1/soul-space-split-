@@ -459,22 +459,15 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   position: relative;
 }
 .for-you .section-head { text-align: center; margin-bottom: 4rem; }
-/* Prepoznaješ se: velika i visoka sekcija (kao Iskustva), slika ispunjava
-   cijelu sekciju — bez smeđe trake. Val je dio pozadine: elegantna linija
-   koja se prelijeva iz susjednih sekcija (dno heroa i vrh Pristupa). */
-.for-you { padding: 13rem 0; }
-.fy-wave {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: clamp(80px, 10vw, 150px);
-  line-height: 0;
-  pointer-events: none;
-  z-index: 4;
+/* Prepoznaješ se: velika i visoka sekcija (kao Iskustva). Sama POZADINA
+   (slika) sekcije je izrezana u val — gornji i donji rub su valoviti, pa je
+   pozadina dio vala. U izrezanim uglovima proviruju susjedne sekcije. */
+.for-you {
+  padding: 13rem 0;
+  -webkit-clip-path: url(#forYouWave);
+  clip-path: url(#forYouWave);
 }
-.fy-wave svg { display: block; width: 100%; height: 100%; }
-.fy-wave-a { bottom: 0; z-index: 2; }   /* dno heroa -> vrh Prepoznaješ se */
-.fy-wave-b { top: 0; z-index: 1; }   /* vrh Pristupa -> dno Prepoznaješ se */
+.wave-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
 /* valoviti prijelaz (umjesto ravne crte) iz sekcije iznad u ovu tamnu sekciju */
 .wave-top {
   position: absolute;
