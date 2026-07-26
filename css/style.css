@@ -1497,34 +1497,34 @@ body.home .cta-banner h2 {
   margin: 0 auto 3rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
 }
+/* poluprozirne kartice s okvirom */
 .cta-meta-cell {
-  padding: 1.6rem 1rem;
+  padding: 2.6rem 1.4rem;
   font-family: var(--font-brand-sub);
   font-size: 0.74rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--accent-soft);
+  background: rgba(244, 232, 214, 0.045);
+  border: 1px solid rgba(200, 150, 92, 0.28);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 .cta-meta-cell strong {
   display: block;
   font-family: var(--font-brand);
   font-weight: 400;
-  font-size: 1.8rem;
+  font-size: 2rem;
   text-transform: none;
   letter-spacing: 0.02em;
-  color: var(--accent-soft);
-  margin-bottom: 0.55rem;
-}
-.cta-meta-cell.cta-meta-note {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.3em;
-  color: var(--accent-soft);
-  line-height: 1.9;
+  color: var(--text);
+  margin-bottom: 0.7rem;
 }
 .cta-note-caps {
   font-family: var(--font-brand-sub);
