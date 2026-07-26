@@ -771,7 +771,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   max-width: 1120px;
-  margin: 5.5rem auto 0;
+  margin: 8.5rem auto 0;
 }
 .principi-col {
   position: relative;
