@@ -464,6 +464,12 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
    pozadina dio vala. U izrezanim uglovima proviruju susjedne sekcije. */
 .for-you {
   padding: 13rem 0;
+  /* preklapa susjedne sekcije, pa valoviti rub slike ide PREKO heroa i Pristupa
+     (u izrezanom dijelu se vidi susjedna sekcija, nikad smeđa pozadina) */
+  margin-top: -6rem;
+  margin-bottom: -6rem;
+  position: relative;
+  z-index: 2;
   -webkit-clip-path: url(#forYouWave);
   clip-path: url(#forYouWave);
 }
