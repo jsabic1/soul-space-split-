@@ -762,9 +762,9 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 
 /* Desktop: znatno veći opisni tekstovi u svim sekcijama */
 @media (min-width: 861px) {
-  .tebe-item p { font-size: 1.7rem; max-width: 300px; line-height: 1.4; }
-  .principi-col p { font-size: 1.7rem; max-width: 360px; line-height: 1.5; }
-  .about-preview.section-sand .about-text p { font-size: 1.65rem; line-height: 1.65; }
+  .tebe-item p { font-size: 1.4rem; max-width: 290px; line-height: 1.45; }
+  .principi-col p { font-size: 1.4rem; max-width: 330px; line-height: 1.55; }
+  .about-preview.section-sand .about-text p { font-size: 1.4rem; line-height: 1.7; }
 }
 
 /* Naslovna: manji naslovi sekcija + više razmaka do sadržaja ispod */
