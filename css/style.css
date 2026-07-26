@@ -191,7 +191,10 @@ p { color: var(--text-muted); }
 }
 .section-testimonials {
   background-image: url('../wp-content/uploads/soul/sto-kazu-klijenti.jpeg');
+  /* veća sekcija: više se vidi pozadina, sadržaj nije blizu rubova */
+  padding: 13rem 0;
 }
+.section-testimonials .container { max-width: 980px; }
 @media (max-width: 900px) {
   .section-parallax {
     background-attachment: scroll;
@@ -456,6 +459,21 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   position: relative;
 }
 .for-you .section-head { text-align: center; margin-bottom: 4rem; }
+/* Val na Prepoznaješ se: sekcija ima overflow:hidden (parallax), pa val ide
+   UNUTAR sekcije uz gornji i donji rub. Isti oblik gore i dolje = paralelan.
+   Oblik je veći (dublji) lijevo, a manji desno. */
+.for-you .wave-top {
+  top: 0;
+  bottom: auto;
+  height: clamp(90px, 12vw, 160px);
+  z-index: 1;
+}
+.for-you .wave-bottom {
+  bottom: 0;
+  top: auto;
+  height: clamp(90px, 12vw, 160px);
+  z-index: 1;
+}
 /* valoviti prijelaz (umjesto ravne crte) iz sekcije iznad u ovu tamnu sekciju */
 .wave-top {
   position: absolute;
@@ -1013,20 +1031,20 @@ body.home .cta-banner h2 {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 2.1rem 1.9rem;
+  padding: 2.3rem 2.2rem;
   z-index: 3;
 }
 .ritual-card .ritual-duration {
   font-family: var(--font-brand-sub);
-  font-size: 0.68rem;
+  font-size: 0.76rem;
   letter-spacing: 0.34em;
   text-transform: uppercase;
   color: var(--accent-soft);
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.85rem;
 }
 .ritual-card h3 {
   font-family: var(--font-brand);
-  font-size: clamp(1.2rem, 1.55vw, 1.38rem);
+  font-size: clamp(1.42rem, 1.85vw, 1.7rem);
   font-weight: 400;
   color: var(--text);
   line-height: 1.05;
@@ -1040,7 +1058,7 @@ body.home .cta-banner h2 {
 }
 .ritual-card .ritual-desc {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.12rem;
   color: var(--text-muted);
   line-height: 1.5;
   margin-bottom: 1.4rem;
@@ -1055,14 +1073,14 @@ body.home .cta-banner h2 {
 }
 .ritual-card .ritual-price {
   font-family: var(--font-brand);
-  font-size: 2.2rem;
+  font-size: 2.45rem;
   color: var(--accent);
   line-height: 1;
   font-weight: 400;
 }
 .ritual-card .ritual-link {
   font-family: var(--font-brand-sub);
-  font-size: 0.64rem;
+  font-size: 0.7rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--text);
