@@ -1,9 +1,8 @@
-// Reveal efekt za sekciju ispod heroa: naslov po slovima + val koji se pojavi
+// Reveal efekt za sekciju ispod heroa: naslov se pojavljuje slovo po slovo
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var head = document.querySelector('.tebe-ako-head');
   var title = document.querySelector('.tebe-ako-title');
-  var wave = document.querySelector('.for-you .wave-top');
 
   if (title && !reduce) {
     title.classList.add('reveal-letters');
@@ -23,11 +22,9 @@
       title.appendChild(s);
     });
   }
-  if (wave) wave.classList.add('wave-reveal');
 
   if (reduce || !('IntersectionObserver' in window)) {
     if (head) head.classList.add('is-in');
-    if (wave) wave.classList.add('is-in');
     return;
   }
 
@@ -36,12 +33,5 @@
       es.forEach(function (e) { if (e.isIntersecting) { head.classList.add('is-in'); io.disconnect(); } });
     }, { threshold: 0.35 });
     io.observe(head);
-  }
-  var section = document.querySelector('.for-you');
-  if (wave && section) {
-    var io2 = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { wave.classList.add('is-in'); io2.disconnect(); } });
-    }, { threshold: 0.02 });
-    io2.observe(section);
   }
 })();
