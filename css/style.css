@@ -697,13 +697,13 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 
 /* Pristup — 3 preklapajuća kruga s riječima (iznad stupaca) */
 .principi-krugovi {
-  max-width: 760px;
+  max-width: 620px;
   margin: 6rem auto 0;
 }
 .principi-krugovi svg { display: block; width: 100%; height: auto; overflow: visible; }
 .principi-krugovi .pk-word {
   font-family: var(--font-brand-sub);
-  font-size: 36px;
+  font-size: 44px;
   font-weight: 600;
   fill: #C8965C;
   letter-spacing: 0px;
