@@ -88,7 +88,7 @@ p { color: var(--text-muted); }
   padding: 0 2rem;
 }
 .section { padding: 6rem 0; }
-.section-alt { background: var(--bg-alt); }
+.section-alt { background-image: url('../wp-content/uploads/soul/sto-kazu-klijenti.jpeg'); }
 .section-head {
   text-align: center;
   margin-bottom: 4rem;
@@ -452,7 +452,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
    "OVO JE ZA TEBE AKO"
    ============================================ */
 .for-you {
-  background: #E8D4B8;
+  background-image: url('../wp-content/uploads/soul/sto-kazu-klijenti.jpeg');
   position: relative;
 }
 .for-you .section-head { text-align: center; margin-bottom: 4rem; }
@@ -519,11 +519,11 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 /* Redizajn: rječnik/editorial — naslov lijevo, zlatna crta, popis u 2 stupca */
 /* Prepoznaješ se? — centrirani naslov + mreža ikona (tijelo, san, napetost, tempo) */
 .for-you .tebe-ako-head { text-align: center; margin: 0 auto 3.6rem; }
-.for-you .tebe-ako-head .eyebrow { margin-bottom: 1rem; color: #B8451E; }
+.for-you .tebe-ako-head .eyebrow { margin-bottom: 1rem; color: var(--accent-soft); }
 .for-you .tebe-ako-title {
   font-family: var(--font-brand);
   font-weight: 400;
-  color: #3A1E14;
+  color: var(--text);
   font-size: clamp(2.1rem, 4vw, 3.4rem);
   line-height: 1.08;
   letter-spacing: 0.02em;
@@ -542,7 +542,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.4rem;
-  color: #B8451E;
+  color: var(--accent-soft);
   transition: transform 0.4s ease;
 }
 .tebe-item:hover .tebe-ico { transform: translateY(-4px); }
@@ -554,14 +554,14 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   font-size: 0.78rem;
   letter-spacing: 0.34em;
   text-transform: uppercase;
-  color: #B8451E;
+  color: var(--accent-soft);
   margin-bottom: 0.8rem;
 }
 .tebe-item p {
   font-family: var(--font-body);
   font-size: 1.12rem;
   line-height: 1.55;
-  color: #5A3A28;
+  color: var(--text-muted);
   max-width: 240px;
   margin: 0 auto;
 }
