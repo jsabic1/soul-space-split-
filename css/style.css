@@ -893,16 +893,46 @@ body.home .cta-banner h2 {
    RITUALI — Slikovne kartice
    ============================================ */
 .rituali-grid {
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: center;
+  display: flex;
   gap: 1.8rem;
-  width: auto;
+  width: min(1000px, 92vw);
   max-width: none;
   margin: 4.5rem auto 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 2px 6px;
+  cursor: grab;
 }
+.rituali-grid::-webkit-scrollbar { display: none; }
+.rituali-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.4rem;
+}
+.rit-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(200, 150, 92, 0.4);
+  background: transparent;
+  color: var(--accent-soft);
+  font-size: 1.15rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+}
+.rit-arrow:hover { background: rgba(200, 150, 92, 0.12); border-color: var(--accent-soft); color: var(--text); }
+.rit-arrow:disabled { opacity: 0.28; cursor: default; }
 .ritual-card {
   position: relative;
+  flex: 0 0 auto;
+  scroll-snap-align: center;
   /* malo niže kartice */
   height: clamp(370px, 43vw, 530px);
   width: clamp(294px, 36.48vw, 449px);
@@ -1003,8 +1033,8 @@ body.home .cta-banner h2 {
 .ritual-card:hover .ritual-link { gap: 1rem; }
 /* mobitel: 1 u redu */
 @media (max-width: 640px) {
-  .rituali-grid { grid-template-columns: 1fr; gap: 1.8rem; width: min(420px, 80vw); justify-content: stretch; }
-  .ritual-card { width: auto; height: auto; aspect-ratio: 5 / 7; }
+  .rituali-grid { gap: 1.4rem; width: 100%; }
+  .ritual-card { flex: 0 0 80vw; width: 80vw; height: auto; aspect-ratio: 5 / 7; }
   .ritual-card h3 { font-size: clamp(1rem, 5.4vw, 1.38rem); white-space: nowrap; }
 }
 

@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Unicase:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/style.css?v=118">
+  <link rel="stylesheet" href="../css/style.css?v=119">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="home">
@@ -170,8 +170,8 @@
           <p class="eyebrow">Rituals</p>
           <h2>Your body chooses</h2>
         </div>
-        <div class="rituali-grid">
-          <a href="rituals/#ground-release" class="ritual-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="rituali-grid" id="ritualiTrack">
+          <a href="rituals/#ground-release" class="ritual-card">
             <img src="../wp-content/uploads/soul/ground-release.jpeg" alt="Ground & Release ritual">
             <div class="ritual-content">
               <div class="ritual-duration">75 min</div>
@@ -183,7 +183,7 @@
               </div>
             </div>
           </a>
-          <a href="rituals/#flow-harmony" class="ritual-card" data-aos="fade-up" data-aos-delay="150">
+          <a href="rituals/#flow-harmony" class="ritual-card">
             <img src="../wp-content/uploads/soul/flow-harmony.jpeg" alt="Flow & Harmony ritual">
             <div class="ritual-content">
               <div class="ritual-duration">90 min</div>
@@ -195,7 +195,7 @@
               </div>
             </div>
           </a>
-          <a href="rituals/#deep-rest" class="ritual-card" data-aos="fade-up" data-aos-delay="300">
+          <a href="rituals/#deep-rest" class="ritual-card">
             <img src="../wp-content/uploads/soul/deep-rest.jpeg" alt="Deep Rest ritual">
             <div class="ritual-content">
               <div class="ritual-duration">75 min</div>
@@ -207,7 +207,7 @@
               </div>
             </div>
           </a>
-          <a href="rituals/#inner-glow" class="ritual-card" data-aos="fade-up" data-aos-delay="450">
+          <a href="rituals/#inner-glow" class="ritual-card">
             <img src="../wp-content/uploads/soul/inner-glow.jpeg" alt="Inner Glow ritual">
             <div class="ritual-content">
               <div class="ritual-duration">60 min</div>
@@ -219,6 +219,10 @@
               </div>
             </div>
           </a>
+        </div>
+        <div class="rituali-nav" data-aos="fade-up" aria-hidden="true">
+          <button class="rit-arrow" type="button" data-rit="prev" aria-label="Previous ritual">←</button>
+          <button class="rit-arrow" type="button" data-rit="next" aria-label="Next ritual">→</button>
         </div>
         <div class="section-cta" data-aos="fade-up">
           <a href="contact/" class="btn btn-primary" data-reserve>Book a session</a>
@@ -493,5 +497,6 @@
   <script src="../js/nav.js?v=4"></script>
   <script src="../js/parallax.js?v=6"></script>
   <script src="../js/timeline.js?v=10"></script>
+  <script src="../js/rituali-slider.js?v=1"></script>
 </body>
 </html>
