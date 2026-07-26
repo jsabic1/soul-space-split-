@@ -1,4 +1,5 @@
 // Reveal efekt za sekciju ispod heroa: naslov se pojavljuje slovo po slovo
+// (svaka riječ ostaje cijela — prelama se samo na razmaku, nikad usred riječi)
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var head = document.querySelector('.tebe-ako-head');
@@ -6,20 +7,21 @@
 
   if (title && !reduce) {
     title.classList.add('reveal-letters');
-    var text = title.textContent;
+    var words = title.textContent.split(' ');
     title.textContent = '';
-    text.split('').forEach(function (ch, i) {
-      if (ch === ' ') {
-        var sp = document.createElement('span');
-        sp.className = 'rl-space';
-        title.appendChild(sp);
-        return;
-      }
-      var s = document.createElement('span');
-      s.className = 'rl-char';
-      s.textContent = ch;
-      s.style.transitionDelay = (0.045 * i) + 's';
-      title.appendChild(s);
+    var idx = 0;
+    words.forEach(function (word, wi) {
+      var w = document.createElement('span');
+      w.className = 'rl-word';
+      word.split('').forEach(function (ch) {
+        var s = document.createElement('span');
+        s.className = 'rl-char';
+        s.textContent = ch;
+        s.style.transitionDelay = (0.045 * idx++) + 's';
+        w.appendChild(s);
+      });
+      title.appendChild(w);
+      if (wi < words.length - 1) title.appendChild(document.createTextNode(' '));
     });
   }
 
