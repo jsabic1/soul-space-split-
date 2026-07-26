@@ -466,8 +466,8 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   padding: 13rem 0;
   /* preklapa susjedne sekcije, pa valoviti rub slike ide PREKO heroa i Pristupa
      (u izrezanom dijelu se vidi susjedna sekcija, nikad smeđa pozadina) */
-  margin-top: -6rem;
-  margin-bottom: -6rem;
+  margin-top: -7.5rem;
+  margin-bottom: -7.5rem;
   position: relative;
   z-index: 2;
   -webkit-clip-path: url(#forYouWave);
@@ -1710,4 +1710,6 @@ body.home .cta-banner h2 {
   .section { padding: 4rem 0; }
   .section-head { margin-bottom: 2.5rem; }
   .container { padding: 0 1.25rem; }
+  /* dovoljno prostora da val (izrezani rub) ne siječe naslov ni tekstove */
+  .for-you { padding: 10rem 0; }
 }
