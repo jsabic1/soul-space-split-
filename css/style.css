@@ -766,12 +766,7 @@ body.home .section-head h2 { font-size: clamp(1.6rem, 2.6vw, 2.3rem); }
 body.home .tebe-ako-head { margin-bottom: 7.5rem; }
 body.home .tebe-ako-title { font-size: clamp(1.7rem, 2.9vw, 2.5rem); }
 
-/* Naslovi sekcija: bez zlatnih eyebrowa; naslovi u unicase capsu (font eyebrowa) */
-body.home .section-head .eyebrow,
-body.home .tebe-ako-head .eyebrow,
-body.home .about-preview.section-sand .eyebrow,
-body.home .cta-banner .cta-eyebrow { display: none; }
-
+/* Naslovi sekcija u unicase capsu (font eyebrowa) */
 body.home .section-head h2,
 body.home .tebe-ako-title,
 body.home .about-preview.section-sand h2,
