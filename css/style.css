@@ -452,7 +452,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
    "OVO JE ZA TEBE AKO"
    ============================================ */
 .for-you {
-  background: linear-gradient(to bottom, #D8C09E 0%, #E8D4B8 45%, #EFE0C6 100%);
+  background: #E8D4B8;
   position: relative;
 }
 .for-you .section-head { text-align: center; margin-bottom: 4rem; }
