@@ -25,14 +25,10 @@
     });
   }
 
-  // opisi (kartice) — čist slide zdesna, bez fade zatamnjenja
-  var grid = document.querySelector('.tebe-ako-grid');
+  // opisi (kartice) — slide zdesna; svaki se otkrije tek kad doskrolamo do njega
   var items = document.querySelectorAll('.tebe-ako-grid .tebe-item');
   if (items.length && !reduce) {
-    items.forEach(function (it, i) {
-      it.classList.add('slide-r');
-      it.style.transitionDelay = (0.28 * i) + 's';
-    });
+    items.forEach(function (it) { it.classList.add('slide-r'); });
   }
 
   if (reduce || !('IntersectionObserver' in window)) {
@@ -47,15 +43,12 @@
     }, { threshold: 0.35 });
     io.observe(head);
   }
-  if (grid && items.length) {
+  if (items.length) {
     var io3 = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
-        if (e.isIntersecting) {
-          items.forEach(function (it) { it.classList.add('is-in'); });
-          io3.disconnect();
-        }
+        if (e.isIntersecting) { e.target.classList.add('is-in'); io3.unobserve(e.target); }
       });
-    }, { threshold: 0.15 });
-    io3.observe(grid);
+    }, { threshold: 0.5 });
+    items.forEach(function (it) { io3.observe(it); });
   }
 })();
