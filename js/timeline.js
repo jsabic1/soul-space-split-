@@ -158,39 +158,15 @@
       strandsG.appendChild(p);
     }
 
-    // impulsi (sporiji)
+    // bez impulsa i kuglica — samo se linija sama osvjetljava dok skrolamo
     impG.innerHTML = '';
-    if (!reduce) {
-      [0].forEach(function (idx, k) {
-        if (idx >= N) return;
-        var c = document.createElementNS(NS, 'circle');
-        c.setAttribute('r', '2.3'); c.setAttribute('fill', '#FFE9C4'); c.setAttribute('filter', 'url(#tlsoft)');
-        var am = document.createElementNS(NS, 'animateMotion');
-        am.setAttribute('dur', (13 + k * 2) + 's');
-        am.setAttribute('begin', (k * 2.2) + 's');
-        am.setAttribute('repeatCount', 'indefinite');
-        var mp = document.createElementNS(NS, 'mpath');
-        mp.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '#tls' + idx);
-        mp.setAttribute('href', '#tls' + idx);
-        am.appendChild(mp); c.appendChild(am); impG.appendChild(c);
-      });
-    }
-
     knotsG.innerHTML = '';
-    knots = mainsSvg.map(function (m) {
-      var c = document.createElementNS(NS, 'circle');
-      c.setAttribute('cx', horizontal ? m : crossCenter);
-      c.setAttribute('cy', horizontal ? crossCenter : m);
-      setKnotOff(c);
-      knotsG.appendChild(c);
-      return c;
-    });
+    knots = [];
+    cometDot.style.display = 'none';
 
     if (reduce) {
       setGradient(1);
-      knots.forEach(setKnotOn);
       steps.forEach(function (s) { s.classList.add('on'); });
-      cometDot.setAttribute('opacity', '0');
     } else {
       update();
     }
