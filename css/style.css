@@ -974,8 +974,8 @@ body.home .cta-banner h2 {
   position: relative;
   flex: 0 0 auto;
   scroll-snap-align: center;
-  /* malo niže kartice */
-  height: clamp(370px, 43vw, 530px);
+  /* identično kao "O meni" slika: ista visina, proporcija i luk */
+  height: clamp(420px, 52vw, 640px);
   width: clamp(294px, 36.48vw, 449px);
   overflow: hidden;
   text-decoration: none;
@@ -983,8 +983,8 @@ body.home .cta-banner h2 {
   transition: transform 0.5s ease;
   cursor: pointer;
   display: block;
-  /* okvir s lukom — dojam hrama */
-  border-radius: 50% 50% 5px 5px / 29% 29% 1% 1%;
+  /* okvir s lukom — dojam hrama, isti kao slika ispod "o meni" */
+  border-radius: 50% 50% 5px 5px / 32% 32% 1% 1%;
 }
 .ritual-card img {
   position: absolute;
@@ -1075,7 +1075,7 @@ body.home .cta-banner h2 {
 /* mobitel: 1 u redu */
 @media (max-width: 640px) {
   .rituali-grid { gap: 1.4rem; width: 100%; }
-  .ritual-card { flex: 0 0 80vw; width: 80vw; height: auto; aspect-ratio: 5 / 7; }
+  .ritual-card { flex: 0 0 80vw; width: 80vw; height: auto; aspect-ratio: 3 / 4; }
   .ritual-card h3 { font-size: clamp(1rem, 5.4vw, 1.38rem); white-space: nowrap; }
 }
 
