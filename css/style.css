@@ -766,6 +766,31 @@ body.home .section-head h2 { font-size: clamp(1.9rem, 3vw, 2.75rem); }
 body.home .tebe-ako-head { margin-bottom: 7.5rem; }
 body.home .tebe-ako-title { font-size: clamp(2rem, 3.3vw, 2.95rem); }
 
+/* Reveal efekt (sekcija ispod heroa): naslov po slovima + val koji se pojavi */
+.tebe-ako-head .eyebrow { opacity: 0; transition: opacity 0.8s ease; }
+.tebe-ako-title.reveal-letters .rl-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.6em);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.tebe-ako-title .rl-space { display: inline-block; width: 0.28em; }
+.tebe-ako-head.is-in .eyebrow { opacity: 1; }
+.tebe-ako-head.is-in .reveal-letters .rl-char { opacity: 1; transform: none; }
+
+.for-you .wave-top.wave-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 1s ease, transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.for-you .wave-top.wave-reveal.is-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tebe-ako-head .eyebrow,
+  .tebe-ako-title.reveal-letters .rl-char { opacity: 1 !important; transform: none !important; }
+  .for-you .wave-top.wave-reveal { opacity: 1 !important; transform: none !important; }
+}
+
 /* Naslovi sekcija u unicase capsu (font eyebrowa) */
 body.home .section-head h2,
 body.home .tebe-ako-title,
