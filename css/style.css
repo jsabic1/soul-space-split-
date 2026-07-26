@@ -459,21 +459,22 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   position: relative;
 }
 .for-you .section-head { text-align: center; margin-bottom: 4rem; }
-/* Val na Prepoznaješ se: sekcija ima overflow:hidden (parallax), pa val ide
-   UNUTAR sekcije uz gornji i donji rub. Isti oblik gore i dolje = paralelan.
-   Oblik je veći (dublji) lijevo, a manji desno. */
-.for-you .wave-top {
-  top: 0;
-  bottom: auto;
-  height: clamp(90px, 12vw, 160px);
-  z-index: 1;
+/* Prepoznaješ se: velika i visoka sekcija (kao Iskustva), slika ispunjava
+   cijelu sekciju — bez smeđe trake. Val je dio pozadine: elegantna linija
+   koja se prelijeva iz susjednih sekcija (dno heroa i vrh Pristupa). */
+.for-you { padding: 13rem 0; }
+.fy-wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: clamp(80px, 10vw, 150px);
+  line-height: 0;
+  pointer-events: none;
+  z-index: 4;
 }
-.for-you .wave-bottom {
-  bottom: 0;
-  top: auto;
-  height: clamp(90px, 12vw, 160px);
-  z-index: 1;
-}
+.fy-wave svg { display: block; width: 100%; height: 100%; }
+.fy-wave-a { bottom: 0; z-index: 2; }   /* dno heroa -> vrh Prepoznaješ se */
+.fy-wave-b { top: 0; z-index: 1; }   /* vrh Pristupa -> dno Prepoznaješ se */
 /* valoviti prijelaz (umjesto ravne crte) iz sekcije iznad u ovu tamnu sekciju */
 .wave-top {
   position: absolute;
