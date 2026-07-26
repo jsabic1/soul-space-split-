@@ -89,6 +89,41 @@ p { color: var(--text-muted); }
 }
 .section { padding: 6rem 0; }
 .section-alt { background-image: url('../wp-content/uploads/soul/sto-kazu-klijenti.jpeg'); }
+
+/* ============================================
+   NASLOVNA — jedna fiksna slika u pozadini cijele stranice.
+   Sekcije (osim heroa) prozirne: plutaju nad slikom, bez okvira, s razmakom.
+   ============================================ */
+body.home::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('../wp-content/uploads/soul/sto-kazu-klijenti.jpeg') center center / cover no-repeat;
+  z-index: -2;
+}
+body.home::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(31, 15, 10, 0.58);
+  z-index: -1;
+}
+/* Sekcije bez vlastite slike -> prozirne, plutaju nad globalnom pozadinom.
+   Sekcije koje IMAJU sliku kao pozadinu (parallax) ostavljamo kakve jesu. */
+body.home main > section:not(.video-hero):not(.section-parallax):not(.section-bg) {
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
+}
+/* O meni: tekst na svijetlo (pozadina je sad tamna slika) */
+body.home .about-preview.section-sand h2 { color: var(--text); }
+body.home .about-preview.section-sand .about-text p { color: var(--text-muted); }
+body.home .about-preview.section-sand .eyebrow,
+body.home .about-preview.section-sand .script { color: var(--accent-soft); }
+body.home .about-preview.section-sand .btn-sand { color: #E0C79F; border-bottom-color: rgba(224, 199, 159, 0.5); }
+body.home .about-preview.section-sand .btn-sand:hover { color: #F4E8D6; border-bottom-color: #E0B575; }
 .section-head {
   text-align: center;
   margin-bottom: 4rem;
