@@ -56,7 +56,9 @@ nav a:hover{color:var(--terra)}
 .hero .sub{font-size:1.12rem;color:#E8D4B8;max-width:42ch;margin:1.6rem 0 2.4rem;line-height:1.7}
 
 /* 2 · STATEMENT */
-.stmt-sec{padding:7.5rem 2rem;text-align:center;background:var(--bg)}
+.stmt-sec{position:relative;padding:7.5rem 2rem;text-align:center;background:var(--bg)}
+/* figura 2 iz tijela.eps — gornji lijevi kut, s odmakom od rubova */
+.figura{position:absolute;left:clamp(1.5rem,5vw,5rem);top:clamp(1.5rem,3.5vw,3.5rem);width:clamp(120px,15vw,210px);height:auto;pointer-events:none}
 .stmt{font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,3.1rem);line-height:1.3;color:var(--lite);max-width:24ch;margin:0 auto}
 .stmt .accent{color:var(--terra)}
 
@@ -68,7 +70,8 @@ nav a:hover{color:var(--terra)}
 .fy-item svg{width:40px;height:40px;stroke:var(--terra);margin:0 auto 1rem}
 .fy-item .lbl{font-family:var(--caps);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.6rem}
 .fy-item p{color:var(--lite-muted);font-size:1.05rem;line-height:1.55}
-@media(max-width:860px){.fy-grid{grid-template-columns:1fr;max-width:400px;gap:2rem}}
+@media(max-width:860px){.fy-grid{grid-template-columns:1fr;max-width:400px;gap:2rem}
+  .figura{width:110px;opacity:.7}}
 
 /* 4 · MOJA PRIČA — slika uz lijevi rub (parallax) + tekst u desnom stupcu */
 .story{background:var(--bg2);position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,42fr) minmax(0,58fr);align-items:stretch}
@@ -193,6 +196,7 @@ footer p{font-size:.95rem;color:var(--lite-dim)}
 </section>
 
 <section class="stmt-sec">
+  <img class="figura" src="wp-content/uploads/soul/figura-tijelo.webp" alt="" aria-hidden="true">
   <p class="stmt">tijelo pamti sve. <em class="accent">i zna kako se opustiti</em> — samo mu treba prostor.</p>
 </section>
 
