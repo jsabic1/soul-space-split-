@@ -14,6 +14,7 @@
   --cream:#F4E8D6; --cream2:#EFE0C6; --sand:#E0C79F; --clay:#D8C09E;
   --ink:#1F0F0A; --ink-soft:#3A1E14; --muted:#5A3A28;
   --terra:#C4551F; --terra-dark:#A9451A; --gold:#B8451E;
+  --burgundy:#7A2D12; --lite:#F4E8D6; --lite-muted:#E8D4B8; --gold-lite:#C8965C;
   --serif:'Cormorant Garamond',Georgia,serif;
   --caps:'Cormorant Unicase',serif;
   --body:'Alegreya',Georgia,serif;
@@ -78,10 +79,10 @@ nav a:hover{color:var(--terra)}
 .story-photo{position:relative;overflow:hidden;min-height:min(90vh,880px);z-index:1}
 .story-photo img{position:absolute;top:-14%;left:0;width:100%;height:128%;object-fit:cover;object-position:center 28%;will-change:transform}
 .story-text{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;padding:clamp(4.5rem,7vw,7.5rem) clamp(2rem,5.5vw,5.5rem)}
-.story-text .note{display:block;font-size:1.5rem;margin:0 0 .2rem -1.6rem}
+.story-text .eyebrow{display:block;margin-bottom:.9rem}
+.story-sub{font-family:var(--script);font-size:clamp(1.15rem,1.7vw,1.5rem);line-height:1.4;margin-bottom:1.7rem;color:var(--terra)}
 .story-mark{position:absolute;top:clamp(3rem,5vw,5rem);right:clamp(2rem,5.5vw,5.5rem);width:56px;height:56px;stroke:var(--gold);fill:none;opacity:.8}
 .story h2{font-size:clamp(2rem,3.3vw,3.15rem);line-height:1.14;margin-bottom:1.5rem;max-width:22ch}
-.story-meta{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;font-family:var(--caps);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);padding-bottom:1.7rem;margin-bottom:2.1rem;border-bottom:1px solid rgba(31,15,10,.16)}
 .story p{color:var(--ink-soft);text-align:justify;margin-bottom:1.2rem;max-width:64ch}
 .btn-wide{display:block;text-align:center;margin-top:1.8rem;font-family:var(--caps);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink);border:1px solid rgba(31,15,10,.45);padding:1.15rem 1rem;transition:all .3s ease}
 .btn-wide:hover{background:var(--ink);color:var(--cream)}
@@ -89,7 +90,6 @@ nav a:hover{color:var(--terra)}
   .story{grid-template-columns:1fr}
   .story-photo{min-height:66vh}
   .story-text{padding:3.5rem 2rem 4.5rem}
-  .story-text .note{margin-left:0}
   .story-mark{top:2rem;right:2rem;width:44px;height:44px}
 }
 
@@ -108,8 +108,8 @@ nav a:hover{color:var(--terra)}
 @media(max-width:960px){.rit-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.rit-grid{grid-template-columns:1fr;max-width:340px}}
 
-/* 5b · POKLON BON — kartica sa slikom lijevo, centrirani tekst desno */
-.gift{background:var(--cream2);padding:clamp(5rem,8vw,7.5rem) 2rem}
+/* 5b · POKLON BON — TAMNA (burgundy) traka iza Rituala */
+.gift{background:var(--burgundy);padding:clamp(5rem,8vw,7.5rem) 2rem}
 .gift-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,42fr) minmax(0,58fr);gap:clamp(2.5rem,5vw,5rem);align-items:center}
 .gift-card{position:relative;overflow:hidden}
 .gift-card img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .8s ease}
@@ -118,10 +118,12 @@ nav a:hover{color:var(--terra)}
 .gc-title{display:block;font-family:var(--serif);font-size:clamp(1.6rem,2.4vw,2.15rem);line-height:1.15;color:#F4E8D6;margin-bottom:.6rem}
 .gift-card figcaption p{color:#E8D4B8;font-size:.95rem;line-height:1.5;max-width:32ch;margin:0 auto}
 .gift-text{text-align:center}
-.gift-text .note{display:block;margin-bottom:.9rem}
-.gift-text h2{font-size:clamp(1.9rem,3vw,2.9rem);line-height:1.2;margin:0 auto 1.9rem;max-width:20ch}
-.gift-text p{color:var(--ink-soft);margin:0 auto 1.2rem;max-width:52ch}
-.link-arrow{display:inline-block;margin-top:1.5rem;font-family:var(--caps);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink)}
+.gift-text .eyebrow{display:block;margin-bottom:.9rem}
+.gift-text h2{font-size:clamp(1.9rem,3vw,2.9rem);line-height:1.2;margin:0 auto 1.9rem;max-width:20ch;color:var(--lite)}
+.gift-text p{color:var(--lite-muted);margin:0 auto 1.2rem;max-width:52ch}
+.gift-notes{list-style:none;margin:2rem auto 0;display:flex;flex-direction:column;gap:.55rem;font-family:var(--caps);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--lite-muted)}
+.gift-notes li::before{content:"º6";color:var(--gold-lite);margin-right:.6rem}
+.link-arrow{display:inline-block;margin-top:1.5rem;font-family:var(--caps);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--lite)}
 .link-arrow span{display:inline-block;margin-left:.55rem;transition:transform .3s ease}
 .link-arrow:hover span{transform:translateX(5px)}
 @media(max-width:900px){.gift-in{grid-template-columns:1fr;max-width:520px;gap:2.5rem}}
@@ -233,12 +235,11 @@ footer p{font-size:.95rem;color:#D8C09E}
       <path d="M23.5 45.5 C26 47 28.2 49.2 30 52"/>
       <path d="M36.5 45.5 C34 47 31.8 49.2 30 52"/>
     </svg>
-    <span class="note">moja priča</span>
-    <h2><em>od pokreta do prisutnosti</em> — put natrag u tijelo</h2>
-    <div class="story-meta"><span>ples · dodir · prisutnost</span><span>Sinjska 5, Split</span></div>
-    <p>Godinama sam mislila da poznajem svoje tijelo jer sam kroz njega plesala. Tek kasnije sam shvatila da postoji drugi odnos s tijelom — onaj u kojem ono nije sredstvo, nego mjesto u kojem živimo.</p>
-    <p>Danas radim sa ženama upravo iz tog mjesta: maserka s temeljem u tjelesno orijentiranoj psihoterapiji.</p>
-    <a class="btn-wide" href="#">Cijela priča</a>
+    <p class="eyebrow">O meni</p>
+    <h2>Diana Lendić</h2>
+    <p class="story-sub">Maserka, s temeljem u tjelesno orijentiranoj psihoterapiji.</p>
+    <p>Godinama sam mislila da poznajem svoje tijelo jer sam kroz njega plesala. Tek kasnije sam shvatila da postoji drugi odnos s tijelom, onaj u kojem ono nije sredstvo, nego mjesto u kojem živimo. Danas radim sa ženama upravo iz tog mjesta.</p>
+    <a class="btn-wide" href="o-meni/">Cijela priča</a>
   </div>
 </section>
 
@@ -293,16 +294,20 @@ footer p{font-size:.95rem;color:#D8C09E}
     <figure class="gift-card">
       <img src="wp-content/uploads/soul/poklon-bon.jpeg" alt="Poklon bon Soul Space Split">
       <figcaption>
-        <span class="gc-title">poklon bon</span>
-        <p>Ritual po izboru, u njezinom ritmu — poklon koji se ne otvara, nego doživi.</p>
+        <span class="gc-title">60 · 75 · 90</span>
+        <p>minuta masaže</p>
       </figcaption>
     </figure>
     <div class="gift-text">
-      <span class="note">poklon koji se pamti</span>
-      <h2>za nekoga tko stalno brine o drugima, <em>a rijetko o sebi</em></h2>
-      <p>Ponekad je najljepši poklon vrijeme u kojem nitko ništa ne traži. Sat i pol tišine, topline i dodira koji ne žuri — bez rokova, bez obaveza, bez "moram".</p>
-      <p>Poklon bon vrijedi godinu dana i može se iskoristiti za bilo koji ritual. Šaljem ga tiskanog ili digitalnog, spremnog za darivanje.</p>
-      <a class="link-arrow" href="#">Pokloni ritual <span aria-hidden="true">&rsaquo;</span></a>
+      <p class="eyebrow">Pokloni</p>
+      <h2>Poklon bon</h2>
+      <p>Pokloni nekome ono što se ne može kupiti, vrijeme samo za sebe.</p>
+      <ul class="gift-notes">
+        <li>Vrijedi 3 mjeseca od kupnje</li>
+        <li>Ritual se dogovara s osobom koja dolazi</li>
+        <li>Dostupan u fizičkom obliku ili kao PDF</li>
+      </ul>
+      <a class="link-arrow" href="poklon-bon/">Pogledaj poklon bonove <span aria-hidden="true">&rsaquo;</span></a>
     </div>
   </div>
 </section>
