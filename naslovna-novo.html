@@ -58,25 +58,13 @@ nav a:hover{color:var(--terra)}
 .hero .cta-side{position:absolute;right:4rem;bottom:4.5rem}
 @media(max-width:900px){.hero .cta-side{position:static;margin-top:.5rem}}
 
-/* 2+3 · FOTO-TRAKA ispod heroa (pozadina kao "prepoznaješ se" na live stranici) */
-.photo-band{position:relative;background:url('wp-content/uploads/soul/sto-kazu-klijenti.jpeg') center/cover no-repeat}
-.photo-band::before{content:"";position:absolute;inset:0;background:rgba(31,15,10,.74)}
-.photo-band>*{position:relative}
-.photo-band .stmt{color:#F6EDDC}
-.photo-band .stmt .accent{color:#D86934}
-.photo-band .note{color:#C8965C}
-.photo-band h2{color:#F6EDDC}
-.photo-band .fy-item p{color:#EAD9BD}
-.photo-band .fy-item .lbl{color:#C8965C}
-.photo-band .fy-item svg{stroke:#D86934}
-
 /* 2 · STATEMENT */
-.stmt-sec{padding:7.5rem 2rem;text-align:center}
+.stmt-sec{padding:7.5rem 2rem;text-align:center;background:var(--cream)}
 .stmt{font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,3.1rem);line-height:1.3;color:var(--ink);max-width:24ch;margin:0 auto}
 .stmt .accent{color:var(--terra)}
 
 /* 3 · PREPOZNAJEŠ SE */
-.foryou{padding:1.5rem 2rem 7rem;text-align:center}
+.foryou{background:var(--cream);padding:1.5rem 2rem 7rem;text-align:center}
 .foryou .note{display:block;margin-bottom:.7rem}
 .foryou h2{font-size:clamp(1.9rem,3vw,2.7rem);margin-bottom:3.6rem}
 .fy-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2.4rem}
@@ -85,18 +73,25 @@ nav a:hover{color:var(--terra)}
 .fy-item p{color:var(--ink-soft);font-size:1.05rem;line-height:1.55}
 @media(max-width:860px){.fy-grid{grid-template-columns:1fr;max-width:400px;gap:2rem}}
 
-/* 4 · MOJA PRIČA — izblijeđeni valoviti uzorak u pozadini */
-.story{background:var(--cream2);position:relative;padding:6.5rem 2rem;overflow:hidden}
-.story::before{content:"";position:absolute;inset:0;background:url('wp-content/uploads/soul/pattern-valovi-tamni.svg') center/640px repeat;opacity:.07;pointer-events:none}
-.story .in{position:relative}
-.story .in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:440px 1fr;gap:4.5rem;align-items:center}
-.story .photo{position:relative;margin-top:-11rem}
-.story .photo img{width:100%;height:560px;object-fit:cover;object-position:top}
-.story .note{display:block;margin-bottom:1rem}
-.story h2{font-size:clamp(1.9rem,3vw,2.8rem);margin-bottom:1.4rem;max-width:18ch}
-.story p{color:var(--ink-soft);max-width:54ch;margin-bottom:1.1rem}
-.story .btn-line{margin-top:1.2rem}
-@media(max-width:960px){.story .in{grid-template-columns:1fr}.story .photo{margin-top:-9rem;max-width:340px}.story .photo img{height:420px}}
+/* 4 · MOJA PRIČA — slika uz lijevi rub (parallax) + tekst u desnom stupcu */
+.story{background:var(--cream2);position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,42fr) minmax(0,58fr);align-items:stretch}
+.story-photo{position:relative;overflow:hidden;min-height:min(90vh,880px);z-index:1}
+.story-photo img{position:absolute;top:-14%;left:0;width:100%;height:128%;object-fit:cover;object-position:center 28%;will-change:transform}
+.story-text{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;padding:clamp(4.5rem,7vw,7.5rem) clamp(2rem,5.5vw,5.5rem)}
+.story-text .note{display:block;font-size:1.5rem;margin:0 0 .2rem -1.6rem}
+.story-mark{position:absolute;top:clamp(3rem,5vw,5rem);right:clamp(2rem,5.5vw,5.5rem);width:56px;height:56px;stroke:var(--gold);fill:none;opacity:.8}
+.story h2{font-size:clamp(2rem,3.3vw,3.15rem);line-height:1.14;margin-bottom:1.5rem;max-width:22ch}
+.story-meta{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;font-family:var(--caps);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);padding-bottom:1.7rem;margin-bottom:2.1rem;border-bottom:1px solid rgba(46,29,18,.16)}
+.story p{color:var(--ink-soft);text-align:justify;margin-bottom:1.2rem;max-width:64ch}
+.btn-wide{display:block;text-align:center;margin-top:1.8rem;font-family:var(--caps);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink);border:1px solid rgba(46,29,18,.45);padding:1.15rem 1rem;transition:all .3s ease}
+.btn-wide:hover{background:var(--ink);color:var(--cream)}
+@media(max-width:960px){
+  .story{grid-template-columns:1fr}
+  .story-photo{min-height:66vh}
+  .story-text{padding:3.5rem 2rem 4.5rem}
+  .story-text .note{margin-left:0}
+  .story-mark{top:2rem;right:2rem;width:44px;height:44px}
+}
 
 /* 5 · RITUALI */
 .rituals{background:var(--cream);padding:7rem 2rem}
@@ -112,6 +107,24 @@ nav a:hover{color:var(--terra)}
 .rit-card .go{display:inline-block;margin-top:.9rem;font-family:var(--caps);font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--terra);border-bottom:1px solid rgba(196,85,31,.45);padding-bottom:.2rem}
 @media(max-width:960px){.rit-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.rit-grid{grid-template-columns:1fr;max-width:340px}}
+
+/* 5b · POKLON BON — kartica sa slikom lijevo, centrirani tekst desno */
+.gift{background:var(--cream2);padding:clamp(5rem,8vw,7.5rem) 2rem}
+.gift-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,42fr) minmax(0,58fr);gap:clamp(2.5rem,5vw,5rem);align-items:center}
+.gift-card{position:relative;overflow:hidden}
+.gift-card img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .8s ease}
+.gift-card:hover img{transform:scale(1.03)}
+.gift-card figcaption{position:absolute;inset:auto 0 0 0;padding:4rem 1.6rem 2.4rem;text-align:center;background:linear-gradient(rgba(24,13,8,0),rgba(24,13,8,.62))}
+.gc-title{display:block;font-family:var(--serif);font-size:clamp(1.6rem,2.4vw,2.15rem);line-height:1.15;color:#F6EDDC;margin-bottom:.6rem}
+.gift-card figcaption p{color:#EAD9BD;font-size:.95rem;line-height:1.5;max-width:32ch;margin:0 auto}
+.gift-text{text-align:center}
+.gift-text .note{display:block;margin-bottom:.9rem}
+.gift-text h2{font-size:clamp(1.9rem,3vw,2.9rem);line-height:1.2;margin:0 auto 1.9rem;max-width:20ch}
+.gift-text p{color:var(--ink-soft);margin:0 auto 1.2rem;max-width:52ch}
+.link-arrow{display:inline-block;margin-top:1.5rem;font-family:var(--caps);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink)}
+.link-arrow span{display:inline-block;margin-left:.55rem;transition:transform .3s ease}
+.link-arrow:hover span{transform:translateX(5px)}
+@media(max-width:900px){.gift-in{grid-template-columns:1fr;max-width:520px;gap:2.5rem}}
 
 /* 6 · IMAGE BREAK */
 .break{position:relative;min-height:74vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem}
@@ -187,8 +200,6 @@ footer p{font-size:.95rem;color:#C9AE8C}
   </div>
 </section>
 
-<!-- 2+3 · FOTO-TRAKA -->
-<div class="photo-band">
 <section class="stmt-sec">
   <p class="stmt">tijelo pamti sve. <em class="accent">i zna kako se opustiti</em> — samo mu treba prostor.</p>
 </section>
@@ -220,19 +231,27 @@ footer p{font-size:.95rem;color:#C9AE8C}
     </div>
   </div>
 </section>
-</div>
 
 <!-- 4 · MOJA PRIČA -->
 <section class="story">
-  <div class="in">
-    <div class="photo"><img src="wp-content/uploads/soul/portret-1.JPG" alt="Diana Lendić"></div>
-    <div>
-      <span class="note">moja priča</span>
-      <h2>od pokreta do prisutnosti — <em>put natrag u tijelo</em></h2>
-      <p>Godinama sam mislila da poznajem svoje tijelo jer sam kroz njega plesala. Tek kasnije sam shvatila da postoji drugi odnos s tijelom — onaj u kojem ono nije sredstvo, nego mjesto u kojem živimo.</p>
-      <p>Danas radim sa ženama upravo iz tog mjesta: maserka s temeljem u tjelesno orijentiranoj psihoterapiji.</p>
-      <a class="btn-line dark" href="#">Cijela priča</a>
-    </div>
+  <div class="story-photo">
+    <img src="wp-content/uploads/soul/portret-1.JPG" alt="Diana Lendić">
+  </div>
+  <div class="story-text">
+    <svg class="story-mark" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M30 8 C24 17 24 26 30 33 C36 26 36 17 30 8Z"/>
+      <path d="M30 33 C22 28 13 29 9 35 C16 40.5 25 39 30 33Z"/>
+      <path d="M30 33 C38 28 47 29 51 35 C44 40.5 35 39 30 33Z"/>
+      <path d="M30 33 V52"/>
+      <path d="M23.5 45.5 C26 47 28.2 49.2 30 52"/>
+      <path d="M36.5 45.5 C34 47 31.8 49.2 30 52"/>
+    </svg>
+    <span class="note">moja priča</span>
+    <h2><em>od pokreta do prisutnosti</em> — put natrag u tijelo</h2>
+    <div class="story-meta"><span>ples · dodir · prisutnost</span><span>Sinjska 5, Split</span></div>
+    <p>Godinama sam mislila da poznajem svoje tijelo jer sam kroz njega plesala. Tek kasnije sam shvatila da postoji drugi odnos s tijelom — onaj u kojem ono nije sredstvo, nego mjesto u kojem živimo.</p>
+    <p>Danas radim sa ženama upravo iz tog mjesta: maserka s temeljem u tjelesno orijentiranoj psihoterapiji.</p>
+    <a class="btn-wide" href="#">Cijela priča</a>
   </div>
 </section>
 
@@ -278,6 +297,26 @@ footer p{font-size:.95rem;color:#C9AE8C}
         <span class="go">Pogledaj</span>
       </div>
     </a>
+  </div>
+</section>
+
+<!-- 5b · POKLON BON -->
+<section class="gift">
+  <div class="gift-in">
+    <figure class="gift-card">
+      <img src="wp-content/uploads/soul/poklon-bon.jpeg" alt="Poklon bon Soul Space Split">
+      <figcaption>
+        <span class="gc-title">poklon bon</span>
+        <p>Ritual po izboru, u njezinom ritmu — poklon koji se ne otvara, nego doživi.</p>
+      </figcaption>
+    </figure>
+    <div class="gift-text">
+      <span class="note">poklon koji se pamti</span>
+      <h2>za nekoga tko stalno brine o drugima, <em>a rijetko o sebi</em></h2>
+      <p>Ponekad je najljepši poklon vrijeme u kojem nitko ništa ne traži. Sat i pol tišine, topline i dodira koji ne žuri — bez rokova, bez obaveza, bez "moram".</p>
+      <p>Poklon bon vrijedi godinu dana i može se iskoristiti za bilo koji ritual. Šaljem ga tiskanog ili digitalnog, spremnog za darivanje.</p>
+      <a class="link-arrow" href="#">Pokloni ritual <span aria-hidden="true">&rsaquo;</span></a>
+    </div>
   </div>
 </section>
 
@@ -359,6 +398,25 @@ footer p{font-size:.95rem;color:#C9AE8C}
   <a href="naslovna-novo-2.html">2</a>
   <a href="naslovna-novo-3.html">3</a>
 </div>
+
+<script>
+/* Parallax na fotografiji "Moja priča" — slika se sporije pomiče od skrolanja. */
+(function(){
+  var wrap = document.querySelector('.story-photo');
+  if (!wrap || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var img = wrap.querySelector('img'), tick = false;
+  function update(){
+    tick = false;
+    var r = wrap.getBoundingClientRect(), vh = window.innerHeight;
+    if (r.bottom < 0 || r.top > vh) return;
+    var p = (r.top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2);
+    img.style.transform = 'translate3d(0,' + (p * 9).toFixed(2) + '%,0)';
+  }
+  window.addEventListener('scroll', function(){ if (!tick) { tick = true; requestAnimationFrame(update); } }, {passive: true});
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 
 </body>
 </html>
