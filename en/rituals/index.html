@@ -405,9 +405,8 @@ body.gsap-page::before {
 }
 .meta-item:last-child .meta-value { color: var(--text); }
 /* Editorial split (varijanta B): kartica cijena + oznake bez ikone */
-.split-image { position: relative; }
 .split-content .ideal-for .ideal-icon { display: none; }
-.price-card { border: 1px solid rgba(200,150,92,0.3); border-radius: 16px; padding: 1.15rem 1.5rem; max-width: 380px; margin: 0 0 1.5rem; }
+.price-card { max-width: 400px; margin: 0 0 1.5rem; }
 .pc-row { display: flex; justify-content: space-between; align-items: baseline; padding: 0.5rem 0; }
 .pc-row + .pc-row { border-top: 1px solid rgba(216,105,52,0.28); }
 .pc-d { font-family: var(--font-brand-sub); letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.82rem; color: var(--text-muted); }
@@ -462,8 +461,10 @@ body.gsap-page::before {
   }
   .split-content > .script { margin: 0 0 1.2rem; max-width: none; }
   .split-content > .description { margin: 0 0 1.6rem; max-width: 560px; }
-  .split-content > .ideal-for { display: inline-block; width: 46%; margin: 0 0 1.7rem; vertical-align: top; }
-  .split-content > .after-note { display: inline-block; width: 46%; margin: 0 0 1.7rem; vertical-align: top; }
+  .split-content > .ideal-for { display: inline-block; width: 46%; margin: 0 0 1.7rem; padding: 0; vertical-align: top; }
+  .split-content > .after-note { display: inline-block; width: 46%; margin: 0 0 1.7rem; padding: 0; vertical-align: top; }
+  .split-content > .ideal-for .ideal-label,
+  .split-content > .after-note .after-label { display: block; margin-bottom: 0.65rem; }
 }
 
 @media (max-height: 820px) and (min-width: 901px) {
