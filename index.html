@@ -129,19 +129,20 @@
 
   /* 6 · POKLON BON — okvir desno, tekst lijevo */
   .nn .gift{position:relative;display:block;padding:clamp(4rem,6vw,6.5rem) 2rem;background:var(--cream);overflow:hidden}
-  .nn .gwrap{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:auto auto;justify-content:center;align-items:center;gap:clamp(2rem,5vw,5.5rem)}
-  .nn .gcopy{width:fit-content;max-width:min(460px,34vw)}
+  .nn .gwrap{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:clamp(2rem,5vw,5.5rem)}
+  .nn .gcopy{justify-self:start;width:fit-content;max-width:min(460px,34vw)}
   .nn .gcopy .eyebrow{display:block;font-size:.74rem;color:var(--terra);margin-bottom:.9rem}
   .nn .gcopy h2{font-size:clamp(2.2rem,4vw,3.3rem);line-height:1.04;margin-bottom:1.1rem;color:var(--ink)}
   .nn .gcopy p{font-size:clamp(1rem,1.3vw,1.14rem);line-height:1.65;color:var(--ink-soft);max-width:34ch;margin-bottom:1.5rem}
-  .nn .gframe{position:relative;width:min(440px,34vw);aspect-ratio:900/1248;justify-self:center;
+  .nn .gframe{position:relative;width:min(460px,35vw);aspect-ratio:1030/1248;justify-self:center;
     display:flex;align-items:center;justify-content:center;
-    background:url('wp-content/uploads/soul/luk-terakota.webp') center/contain no-repeat}
-  .nn .gframe::before,.nn .gframe::after{content:"";position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:80%;aspect-ratio:955/1245;background-position:center;background-size:contain;background-repeat:no-repeat;pointer-events:none}
+    background-image:linear-gradient(rgba(244,232,214,.68),rgba(244,232,214,.68)),url('wp-content/uploads/soul/luk-terakota.webp');
+    background-size:100% 100%;background-position:center;background-repeat:no-repeat}
+  .nn .gframe::before,.nn .gframe::after{content:"";position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);width:76%;aspect-ratio:955/1245;background-position:center;background-size:contain;background-repeat:no-repeat;pointer-events:none}
   /* akvarel ostaje iza kruznog vektora */
-  .nn .gframe::before{background-image:url('wp-content/uploads/soul/motiv-a4-2-wash.webp');opacity:.4;mix-blend-mode:multiply;z-index:0}
+  .nn .gframe::before{background-image:url('wp-content/uploads/soul/motiv-a4-2-wash.webp');opacity:.3;mix-blend-mode:multiply;z-index:0}
   /* grancica ide preko kruznog vektora */
-  .nn .gframe::after{background-image:url('wp-content/uploads/soul/motiv-a4-2-line.webp');opacity:.6;z-index:1}
+  .nn .gframe::after{background-image:url('wp-content/uploads/soul/motiv-a4-2-line.webp');opacity:.42;z-index:1}
   .nn .v-mins{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:.6rem;margin:1.9rem 0 .8rem}
   .nn .vm{display:flex;flex-direction:row;align-items:baseline;gap:.28rem;padding:.46rem 1.05rem;
     border:1px solid rgba(196,85,31,.4);border-radius:999px}
@@ -166,7 +167,7 @@
     .nn .gcopy h2{white-space:nowrap}
     .nn .gcopy p{max-width:30ch}
     .nn .gift-cta{white-space:nowrap;letter-spacing:.14em;font-size:.72rem;padding:.8rem 1.2rem}
-    .nn .gframe{width:min(330px,86vw)}
+    .nn .gframe{width:min(340px,88vw)}
     .nn .gframe::before,.nn .gframe::after{width:98%}
     .nn .gframe::before{opacity:.3}
     .nn .gdivide{width:clamp(90px,26vw,140px);right:0}
@@ -194,7 +195,7 @@
   /* 8b · KORACI — lukovi na dubljem krem tonu */
   .nn .steps{background:var(--cream2);padding:8rem 2rem 8.5rem;text-align:center}
   .nn .steps .eyebrow{display:block;color:var(--terra);margin-bottom:.9rem}
-  .nn .steps h2{font-size:clamp(2rem,3.4vw,3rem);color:var(--ink);margin-bottom:7rem}
+  .nn .steps h2{font-size:clamp(2rem,3.4vw,3rem);color:var(--ink);margin-bottom:14rem}
   .nn .st-grid{position:relative;max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(2.6rem,5vw,5rem)}
     background:linear-gradient(90deg,transparent,rgba(196,85,31,.35) 12%,rgba(196,85,31,.35) 88%,transparent)}
   .nn .st{position:relative}
@@ -214,7 +215,7 @@
 }
   @media(max-width:480px){
     .nn .steps{padding:5.5rem 1.6rem 6rem}
-    .nn .steps h2{margin-bottom:3rem}
+    .nn .steps h2{margin-bottom:6rem}
     .nn .st p{font-size:.98rem;max-width:18ch}}
   /* 9 · TRENUCI U STUDIJU — tamno, galerija koja se vrti */
   .nn .atmo{background:var(--dark);padding:6.5rem 0 7.5rem;text-align:center}
