@@ -76,9 +76,9 @@
   .nn .fy-item::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
     height:82%;opacity:.1;margin-top:6%;pointer-events:none;z-index:0;
     background:center/contain no-repeat}
-  .nn .fy-item:nth-child(1)::before{background-image:url('../wp-content/uploads/soul/motiv-a7-1.webp');aspect-ratio:361/391}
+  .nn .fy-item:nth-child(1)::before{background-image:url('../wp-content/uploads/soul/motiv-a7-1.webp');aspect-ratio:361/365}
   .nn .fy-item:nth-child(2)::before{background-image:url('../wp-content/uploads/soul/motiv-a7-2.webp');aspect-ratio:326/479}
-  .nn .fy-item:nth-child(3)::before{background-image:url('../wp-content/uploads/soul/motiv-a7-3.webp');aspect-ratio:369/479}
+  .nn .fy-item:nth-child(3)::before{background-image:url('../wp-content/uploads/soul/motiv-a7-3.webp');aspect-ratio:369/456}
   .nn .fy-item:nth-child(4)::before{background-image:url('../wp-content/uploads/soul/motiv-a7-4.webp');aspect-ratio:308/426}
   .nn .fy-item svg,.nn .fy-item .lbl,.nn .fy-item p{position:relative;z-index:1}
   @media(max-width:860px){
@@ -129,20 +129,25 @@
   /* 6 · POKLON BON — okvir desno, tekst lijevo */
   .nn .gift{position:relative;display:block;padding:clamp(4rem,6vw,6.5rem) 2rem;background:var(--cream);overflow:hidden}
   .nn .gwrap{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:auto auto auto;justify-content:center;align-items:center;gap:clamp(1.5rem,4vw,4rem)}
-  .nn .gdivide{position:relative;z-index:2;right:clamp(-120px,-8vw,-54px);width:min(230px,16vw);aspect-ratio:302/548;justify-self:center;background:url('../wp-content/uploads/soul/motiv-a6-4.webp') center/contain no-repeat;align-self:center}
+  .nn .gdivide{position:relative;z-index:2;right:clamp(-165px,-11vw,-74px);width:min(230px,16vw);aspect-ratio:302/548;justify-self:center;background:url('../wp-content/uploads/soul/motiv-a6-4.webp') center/contain no-repeat;align-self:center}
   .nn .gcopy{width:fit-content;max-width:min(460px,34vw)}
   .nn .gcopy .eyebrow{display:block;font-size:.74rem;color:var(--terra);margin-bottom:.9rem}
   .nn .gcopy h2{font-size:clamp(2.2rem,4vw,3.3rem);line-height:1.04;margin-bottom:1.1rem;color:var(--ink)}
   .nn .gcopy p{font-size:clamp(1rem,1.3vw,1.14rem);line-height:1.65;color:var(--ink-soft);max-width:34ch;margin-bottom:1.5rem}
-  .nn .gframe{position:relative;width:min(400px,30vw);aspect-ratio:900/1060;justify-self:center;display:flex;align-items:center;justify-content:center;text-align:center}
-  .nn .gframe::after{content:"";position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);width:114%;aspect-ratio:955/1245;background:url('../wp-content/uploads/soul/motiv-a4-2.webp') center/contain no-repeat;opacity:.34;mix-blend-mode:multiply;pointer-events:none;z-index:0}
-  .nn .gin{position:relative;z-index:1;width:100%;margin-top:14%}
-  .nn .v-mins{display:flex;align-items:stretch;justify-content:center;gap:clamp(1rem,1.6vw,1.6rem);margin-bottom:.9rem}
-  .nn .vm{display:flex;flex-direction:column;align-items:center;gap:.3rem;padding:0 clamp(.4rem,.8vw,.8rem)}
+  .nn .gframe{position:relative;width:min(400px,30vw);aspect-ratio:900/1060;justify-self:center}
+  .nn .gframe::before,.nn .gframe::after{content:"";position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);width:114%;aspect-ratio:955/1245;background-position:center;background-size:contain;background-repeat:no-repeat;pointer-events:none}
+  /* akvarel ostaje iza kruznog vektora */
+  .nn .gframe::before{background-image:url('../wp-content/uploads/soul/motiv-a4-2-wash.webp');opacity:.34;mix-blend-mode:multiply;z-index:0}
+  /* grancica ide preko kruznog vektora */
+  .nn .gframe::after{background-image:url('../wp-content/uploads/soul/motiv-a4-2-line.webp');opacity:.55;z-index:3}
+  .nn .v-rule{display:block;width:100%;max-width:230px;height:1px;background:rgba(196,85,31,.32);margin:1.8rem 0 1.5rem}
+  .nn .v-mins{display:flex;align-items:stretch;justify-content:flex-start;gap:clamp(1rem,1.6vw,1.6rem);margin-bottom:.75rem}
+  .nn .vm{display:flex;flex-direction:column;align-items:center;gap:.3rem;padding:0 clamp(.5rem,1vw,1rem)}
+  .nn .vm:first-child{padding-left:0}
   .nn .vm+.vm{border-left:1px solid rgba(196,85,31,.32)}
   .nn .vm-n{font-family:var(--serif);font-size:clamp(1.9rem,2.9vw,2.6rem);line-height:1;color:var(--terra)}
   .nn .vm-u{font-family:var(--caps);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
-  .nn .v-unit{font-family:var(--caps);font-size:clamp(.66rem,1vw,.84rem);letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--ink-soft);margin:.7rem 0 0}
+  .nn .v-unit{font-family:var(--caps);font-size:clamp(.66rem,1vw,.84rem);letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--ink-soft);margin:0 0 1.9rem}
   .nn .gin .rule{display:block;width:52px;height:1px;margin:1.5rem auto;background:rgba(196,85,31,.45)}
   .nn .gift-notes{list-style:none;margin:0;padding:0;display:inline-flex;flex-direction:column;align-items:flex-start;text-align:left;gap:.55rem;font-family:var(--caps);font-size:clamp(.6rem,.9vw,.76rem);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft)}
   .nn .gift-notes li::before{content:"\2726";color:var(--terra);margin-right:.4rem}
@@ -152,12 +157,16 @@
   @media(max-width:820px){
     .nn .gift{padding:4.5rem 1.6rem 5rem}
     .nn .gwrap{grid-template-columns:1fr;gap:2.2rem;text-align:center;justify-items:center;justify-content:stretch}
+    .nn .v-mins{justify-content:center}
+    .nn .v-rule{margin-left:auto;margin-right:auto}
+    .nn .vm:first-child{padding-left:clamp(.5rem,1vw,1rem)}
     .nn .gcopy{width:100%;max-width:none}
     .nn .gcopy h2{white-space:nowrap}
     .nn .gcopy p{max-width:30ch}
     .nn .link-arrow{white-space:nowrap;letter-spacing:.14em;font-size:.74rem}
     .nn .gframe{width:min(320px,84vw)}
-    .nn .gframe::after{width:98%;opacity:.3}
+    .nn .gframe::before,.nn .gframe::after{width:98%}
+    .nn .gframe::before{opacity:.3}
     .nn .gdivide{width:clamp(90px,26vw,140px);right:0}
     .nn .gcopy{justify-self:center}
     .nn .gcopy p{margin-left:auto;margin-right:auto}
@@ -183,15 +192,15 @@
   /* 8b · KORACI — lukovi na dubljem krem tonu */
   .nn .steps{background:var(--cream2);padding:8rem 2rem 8.5rem;text-align:center}
   .nn .steps .eyebrow{display:block;color:var(--terra);margin-bottom:.9rem}
-  .nn .steps h2{font-size:clamp(2rem,3.4vw,3rem);color:var(--ink);margin-bottom:4.5rem}
+  .nn .steps h2{font-size:clamp(2rem,3.4vw,3rem);color:var(--ink);margin-bottom:7rem}
   .nn .st-grid{position:relative;max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(2.6rem,5vw,5rem)}
     background:linear-gradient(90deg,transparent,rgba(196,85,31,.35) 12%,rgba(196,85,31,.35) 88%,transparent)}
   .nn .st{position:relative}
   .nn .st-mark{position:relative;height:clamp(120px,13vw,178px);width:auto;margin:0 auto 1.7rem;
     background:center/contain no-repeat}
-  .nn .st:nth-child(1) .st-mark{aspect-ratio:361/391;background-image:url('../wp-content/uploads/soul/motiv-a7-1.webp')}
+  .nn .st:nth-child(1) .st-mark{aspect-ratio:361/365;background-image:url('../wp-content/uploads/soul/motiv-a7-1.webp')}
   .nn .st:nth-child(2) .st-mark{aspect-ratio:326/479;background-image:url('../wp-content/uploads/soul/motiv-a7-2.webp')}
-  .nn .st:nth-child(3) .st-mark{aspect-ratio:369/479;background-image:url('../wp-content/uploads/soul/motiv-a7-3.webp')}
+  .nn .st:nth-child(3) .st-mark{aspect-ratio:369/456;background-image:url('../wp-content/uploads/soul/motiv-a7-3.webp')}
   .nn .st:nth-child(4) .st-mark{aspect-ratio:308/426;background-image:url('../wp-content/uploads/soul/motiv-a7-4.webp')}
   .nn .st h3{font-family:var(--serif);font-weight:700;font-size:1.35rem;color:var(--ink);margin-bottom:.5rem}
   .nn .st p{font-family:var(--bodyf);font-size:1.04rem;line-height:1.6;color:var(--ink-soft);max-width:23ch;margin:0 auto}
@@ -388,19 +397,17 @@
           <p class="eyebrow">A gift</p>
           <h2>Gift voucher</h2>
           <p>Give someone what can't usually be bought, time just for themselves.</p>
+          <span class="v-rule" aria-hidden="true"></span>
+          <div class="v-mins">
+            <div class="vm"><span class="vm-n">60</span><span class="vm-u">min</span></div>
+            <div class="vm"><span class="vm-n">75</span><span class="vm-u">min</span></div>
+            <div class="vm"><span class="vm-n">90</span><span class="vm-u">min</span></div>
+          </div>
+          <p class="v-unit">minutes of your ritual</p>
           <a class="link-arrow" href="gift-voucher/">See gift vouchers <span aria-hidden="true">&rsaquo;</span></a>
         </div>
         <div class="gdivide" aria-hidden="true"></div>
-        <div class="gframe">
-          <div class="gin">
-            <div class="v-mins">
-              <div class="vm"><span class="vm-n">60</span><span class="vm-u">min</span></div>
-              <div class="vm"><span class="vm-n">75</span><span class="vm-u">min</span></div>
-              <div class="vm"><span class="vm-n">90</span><span class="vm-u">min</span></div>
-            </div>
-            <p class="v-unit">minutes of your ritual</p>
-          </div>
-        </div>
+        <div class="gframe" aria-hidden="true"></div>
       </div>
     </section>
 
