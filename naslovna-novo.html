@@ -14,7 +14,7 @@
   --cream:#F4E8D6; --cream2:#EFE0C6; --sand:#E0C79F; --clay:#D8C09E;
   --ink:#1F0F0A; --ink-soft:#3A1E14; --muted:#5A3A28;
   --terra:#C4551F; --terra-dark:#A9451A; --gold:#B8451E;
-  --burgundy:#7A2D12; --lite:#F4E8D6; --lite-muted:#E8D4B8; --gold-lite:#C8965C;
+  --lite:#F4E8D6; --lite-muted:#E8D4B8; --gold-lite:#C8965C;
   --serif:'Cormorant Garamond',Georgia,serif;
   --caps:'Cormorant Unicase',serif;
   --body:'Alegreya',Georgia,serif;
@@ -107,8 +107,10 @@ nav a:hover{color:var(--terra)}
 @media(max-width:960px){.rit-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.rit-grid{grid-template-columns:1fr;max-width:340px}}
 
-/* 5b · POKLON BON — TAMNA (burgundy) traka iza Rituala */
-.gift{background:var(--burgundy);padding:clamp(5rem,8vw,7.5rem) 2rem}
+/* 5b · POKLON BON — fotografija u pozadini (kao 'Prepoznajes se' na zivoj stranici) */
+.gift{position:relative;background:url('wp-content/uploads/soul/sto-kazu-klijenti.jpeg') center/cover no-repeat;padding:clamp(5rem,8vw,7.5rem) 2rem}
+.gift::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(31,15,10,.78) 0%,rgba(31,15,10,.62) 50%,rgba(31,15,10,.82) 100%)}
+.gift>*{position:relative}
 .gift-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,42fr) minmax(0,58fr);gap:clamp(2.5rem,5vw,5rem);align-items:center}
 .gift-card{position:relative;overflow:hidden}
 .gift-card img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .8s ease}
@@ -121,7 +123,7 @@ nav a:hover{color:var(--terra)}
 .gift-text h2{font-size:clamp(1.9rem,3vw,2.9rem);line-height:1.2;margin:0 auto 1.9rem;max-width:20ch;color:var(--lite)}
 .gift-text p{color:var(--lite-muted);margin:0 auto 1.2rem;max-width:52ch}
 .gift-notes{list-style:none;margin:2rem auto 0;display:flex;flex-direction:column;gap:.55rem;font-family:var(--caps);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--lite-muted)}
-.gift-notes li::before{content:"º6";color:var(--gold-lite);margin-right:.6rem}
+.gift-notes li::before{content:"✦";color:var(--gold-lite);margin-right:.6rem}
 .link-arrow{display:inline-block;margin-top:1.5rem;font-family:var(--caps);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--lite)}
 .link-arrow span{display:inline-block;margin-left:.55rem;transition:transform .3s ease}
 .link-arrow:hover span{transform:translateX(5px)}
