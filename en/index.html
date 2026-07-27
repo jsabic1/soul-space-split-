@@ -41,7 +41,7 @@
   .nn img{max-width:100%;display:block}
   .nn a{color:inherit;text-decoration:none}
   .nn h2{font-family:var(--serif);font-weight:400;line-height:1.12;color:var(--ink);letter-spacing:.005em}
-  .nn h2 em,.nn .stmt em{font-style:normal;font-weight:400;color:var(--terra-bright)}
+  .nn h2 em,.nn .stmt em{font-style:normal;font-weight:400;color:inherit}
   .nn .eyebrow{font-family:var(--caps);font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
   .nn .note{font-family:var(--script);font-size:1.25rem;color:var(--ink-soft)}
   .nn .btn-line{display:inline-block;font-family:var(--caps);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--lite);border:1px solid rgba(244,232,214,.75);padding:1.1rem 2.4rem;transition:all .3s ease}
@@ -55,16 +55,26 @@
   .nn .stmt-sec{position:relative;padding:11rem 2rem 7.5rem;text-align:center;background:var(--cream)}
   .nn .figura{position:absolute;left:clamp(1.5rem,5vw,5rem);top:clamp(3.5rem,6vw,6.5rem);width:clamp(120px,15vw,210px);height:auto;pointer-events:none}
   .nn .stmt{font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,3.1rem);line-height:1.3;color:var(--ink);max-width:24ch;margin:0 auto}
-  .nn .stmt .accent{color:var(--terra)}
+  .nn .stmt .accent{color:inherit}
 
   /* 3 · PREPOZNAJEŠ SE */
   .nn .foryou{background:var(--cream);padding:1.5rem 2rem 7rem;text-align:center}
-  .nn .foryou .note{display:block;margin-bottom:.7rem}
-  .nn .foryou h2{font-size:clamp(1.9rem,3vw,2.7rem);margin-bottom:3.6rem}
+  .nn .foryou .note{display:block;margin-bottom:1.5rem}
+  .nn .foryou h2{font-size:clamp(1.9rem,3vw,2.7rem);margin-bottom:4.6rem}
   .nn .fy-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2.4rem}
   .nn .fy-item svg{width:40px;height:40px;stroke:var(--terra);margin:0 auto 1rem}
   .nn .fy-item .lbl{font-family:var(--caps);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.6rem}
   .nn .fy-item p{color:var(--ink-soft);font-size:1.05rem;line-height:1.55}
+  /* 4 poster-motiva (abstrakt-5) kao izblijedjena pozadina iza svake stavke */
+  .nn .fy-item{position:relative;padding-top:.5rem}
+  .nn .fy-item::before{content:"";position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);
+    width:min(100%,220px);aspect-ratio:352/490;opacity:.16;pointer-events:none;z-index:0;
+    background:center/contain no-repeat}
+  .nn .fy-item:nth-child(1)::before{background-image:url('../wp-content/uploads/soul/motiv-a5-1.webp')}
+  .nn .fy-item:nth-child(2)::before{background-image:url('../wp-content/uploads/soul/motiv-a5-2.webp')}
+  .nn .fy-item:nth-child(3)::before{background-image:url('../wp-content/uploads/soul/motiv-a5-3.webp')}
+  .nn .fy-item:nth-child(4)::before{background-image:url('../wp-content/uploads/soul/motiv-a5-4.webp')}
+  .nn .fy-item svg,.nn .fy-item .lbl,.nn .fy-item p{position:relative;z-index:1}
   @media(max-width:860px){.nn .fy-grid{grid-template-columns:1fr;max-width:400px;gap:2rem}
     .nn .stmt-sec{padding:6.5rem 1.6rem 5.5rem}
     .nn .figura{position:static;width:120px;margin:0 auto 2rem;opacity:.85}}
@@ -101,32 +111,29 @@
   @media(max-width:560px){.nn .rit-grid{grid-template-columns:1fr;max-width:340px}
   .nn .rit-card .nm{font-size:min(6.4vw,1.55rem)}}
 
-  /* 6 · POKLON BON — luk + kompozicija (abstrakt-4 br. 2) */
-  .nn .gift{position:relative;display:flex;align-items:center;justify-content:center;min-height:min(58vw,860px);padding:clamp(3rem,5vw,4rem) 2rem;background:var(--cream);overflow:hidden}
-  .nn .gift::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);height:min(90%,1000px);aspect-ratio:900/1248;background:url('../wp-content/uploads/soul/luk-terakota.webp') center/contain no-repeat;opacity:.28;pointer-events:none}
-  .nn .gift::after{content:"";position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);height:min(84%,940px);aspect-ratio:955/1245;background:url('../wp-content/uploads/soul/motiv-a4-2.webp') center/contain no-repeat;opacity:.3;mix-blend-mode:multiply;pointer-events:none}
-  .nn .v-in{position:relative;z-index:1;max-width:40ch;text-align:center}
-  .nn .v-in .eyebrow{display:block;font-size:.78rem;margin-bottom:.85rem;color:var(--terra)}
-  .nn .gift h2{font-size:clamp(2.3rem,4.4vw,3.6rem);line-height:1.05;margin-bottom:1rem;color:var(--ink)}
-  .nn .v-lead{font-size:clamp(1rem,1.35vw,1.18rem);line-height:1.6;color:var(--ink-soft);max-width:30ch;margin:0 auto 1.3rem}
-  .nn .v-mins{display:flex;align-items:baseline;justify-content:center;gap:clamp(.6rem,2vw,1.2rem);font-family:var(--serif);font-size:clamp(2.5rem,4.6vw,3.8rem);line-height:1;color:var(--terra)}
-  .nn .v-mins i{font-style:normal;font-size:.45em;color:var(--gold);transform:translateY(-.35em)}
-  .nn .v-unit{font-family:var(--caps);font-size:.76rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin:.7rem 0 1.2rem}
-  .nn .gift-notes{list-style:none;margin:0;display:flex;flex-direction:column;gap:.45rem;font-family:var(--caps);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-  .nn .gift-notes li::before{content:"\2726";color:var(--terra);margin-right:.5rem}
-  .nn .link-arrow{display:inline-block;margin-top:1.4rem;font-family:var(--caps);font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
+  /* 6 · POKLON BON — okvir desno, tekst lijevo */
+  .nn .gift{position:relative;display:block;padding:clamp(4rem,6vw,6.5rem) 2rem;background:var(--cream);overflow:hidden}
+  .nn .gwrap{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:clamp(2rem,5vw,4.5rem)}
+  .nn .gcopy .eyebrow{display:block;font-size:.74rem;color:var(--terra);margin-bottom:.9rem}
+  .nn .gcopy h2{font-size:clamp(2.2rem,4vw,3.3rem);line-height:1.04;margin-bottom:1.1rem;color:var(--ink)}
+  .nn .gcopy p{font-size:clamp(1rem,1.3vw,1.14rem);line-height:1.65;color:var(--ink-soft);max-width:34ch;margin-bottom:1.5rem}
+  .nn .gframe{position:relative;width:100%;max-width:430px;justify-self:center;aspect-ratio:900/1248;display:flex;align-items:center;justify-content:center;text-align:center}
+  .nn .gframe::before{content:"";position:absolute;inset:0;background:url('../wp-content/uploads/soul/luk-terakota.webp') center/contain no-repeat;opacity:.42;pointer-events:none}
+  .nn .gframe::after{content:"";position:absolute;inset:6% 8%;background:url('../wp-content/uploads/soul/motiv-a4-2.webp') center/contain no-repeat;opacity:.26;mix-blend-mode:multiply;pointer-events:none}
+  .nn .gin{position:relative;z-index:1;padding:0 13%}
+  .nn .v-mins{display:flex;align-items:baseline;justify-content:center;gap:.7rem;font-family:var(--serif);font-size:clamp(2rem,3vw,2.7rem);line-height:1;color:var(--terra)}
+  .nn .v-mins i{font-style:normal;font-size:.45em;color:var(--gold);transform:translateY(-.3em)}
+  .nn .v-unit{font-family:var(--caps);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin:.6rem 0 0}
+  .nn .gift-notes{list-style:none;margin:1.3rem 0 0;padding:0;display:flex;flex-direction:column;gap:.42rem;font-family:var(--caps);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .nn .gift-notes li::before{content:"\2726";color:var(--terra);margin-right:.4rem}
+  .nn .link-arrow{display:inline-block;font-family:var(--caps);font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
   .nn .link-arrow span{display:inline-block;margin-left:.55rem;transition:transform .3s ease}
   .nn .link-arrow:hover span{transform:translateX(5px)}
-  @media(max-width:700px){
-    .nn .gift{min-height:auto;padding:5rem 1.4rem 5.5rem}
-    .nn .gift::before{width:92%;height:96%;aspect-ratio:auto;background-size:100% 100%}
-    .nn .gift::after{width:76%;height:auto;top:50%}
-    .nn .v-in{max-width:none;padding:0 1.6rem}
-    .nn .gift h2{font-size:clamp(1.85rem,8vw,2.5rem)}
-    .nn .v-lead{font-size:.98rem;max-width:24ch}
-    .nn .gift-notes{font-size:.62rem;letter-spacing:.07em}
-    .nn .v-unit{font-size:.72rem;letter-spacing:.22em}
-    .nn .link-arrow{font-size:.74rem;letter-spacing:.16em}}
+  @media(max-width:820px){
+    .nn .gift{padding:4.5rem 1.6rem 5rem}
+    .nn .gwrap{grid-template-columns:1fr;gap:2.6rem;text-align:center}
+    .nn .gcopy p{margin-left:auto;margin-right:auto}
+    .nn .gframe{max-width:340px}}
 
   /* 7 · ZA ŽENU KOJA ZNA — tamna foto s parallaxom */
   .nn .break{position:relative;overflow:hidden;min-height:74vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem}
@@ -317,18 +324,24 @@
 
     <!-- GIFT VOUCHER -->
     <section class="gift">
-      <div class="v-in">
-        <p class="eyebrow">A gift</p>
-        <h2>Gift voucher</h2>
-        <p class="v-lead">Give someone what can't usually be bought, time just for themselves.</p>
-        <div class="v-mins"><span>60</span><i>·</i><span>75</span><i>·</i><span>90</span></div>
-        <p class="v-unit">minutes of massage</p>
-        <ul class="gift-notes">
-          <li>Valid for 3 months from purchase</li>
-          <li>The ritual is chosen with the person who comes</li>
-          <li>Available as a physical voucher or as a PDF</li>
-        </ul>
-        <a class="link-arrow" href="gift-voucher/">See gift vouchers <span aria-hidden="true">&rsaquo;</span></a>
+      <div class="gwrap">
+        <div class="gcopy">
+          <p class="eyebrow">A gift</p>
+          <h2>Gift voucher</h2>
+          <p>Give someone what can't usually be bought, time just for themselves.</p>
+          <a class="link-arrow" href="gift-voucher/">See gift vouchers <span aria-hidden="true">&rsaquo;</span></a>
+        </div>
+        <div class="gframe">
+          <div class="gin">
+            <div class="v-mins"><span>60</span><i>·</i><span>75</span><i>·</i><span>90</span></div>
+            <p class="v-unit">minutes of your ritual</p>
+            <ul class="gift-notes">
+              <li>Valid for 3 months</li>
+              <li>The ritual is chosen with the person who comes</li>
+              <li>Physical or PDF</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
