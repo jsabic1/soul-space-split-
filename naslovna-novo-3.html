@@ -33,8 +33,8 @@ h1,h2{font-family:var(--serif);font-weight:400;line-height:1.12;color:var(--lite
 h1 em,h2 em,.stmt em{font-style:normal;font-weight:400;color:inherit}
 .btn-line{display:inline-block;font-family:var(--caps);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--lite);border:1px solid rgba(244,232,214,.7);padding:1.1rem 2.4rem;transition:all .3s ease;background:rgba(31,15,10,.14);backdrop-filter:blur(2px)}
 .btn-line:hover{background:var(--lite);color:#1F0F0A}
-.btn-terra{display:inline-block;background:transparent;color:var(--lite);font-family:var(--caps);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;font-weight:600;padding:1.1rem 2.6rem;border:1px solid rgba(244,232,214,.75);border-radius:999px;transition:background .3s ease,border-color .3s ease,color .3s ease}
-.btn-terra:hover,.btn-terra:focus-visible{background:var(--terra-btn);border-color:var(--terra-btn);color:#F7ECDD}
+.btn-terra{display:inline-block;background:transparent;color:var(--terra);font-family:var(--caps);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;font-weight:600;padding:1.1rem 2.6rem;border:1px solid var(--terra);border-radius:999px;transition:background .3s ease,border-color .3s ease,color .3s ease}
+.btn-terra:hover,.btn-terra:focus-visible,.btn-terra:active{background:var(--terra);border-color:var(--terra);color:#F7ECDD;box-shadow:0 12px 32px -12px rgba(196,85,31,.55)}
 
 /* header */
 header{position:fixed;inset:0 0 auto 0;height:74px;z-index:100;display:flex;align-items:center;background:rgba(31,15,10,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
@@ -56,9 +56,9 @@ nav a:hover{color:var(--terra)}
 .hero .sub{font-size:1.12rem;color:#E8D4B8;max-width:42ch;margin:1.6rem 0 2.4rem;line-height:1.7}
 
 /* 2 · STATEMENT */
-.stmt-sec{position:relative;padding:11rem 2rem 7.5rem;text-align:center;background:var(--bg)}
+.stmt-sec{position:relative;padding:22rem 2rem 15rem;text-align:center;background:var(--bg)}
 /* figura 2 iz tijela.eps — gornji lijevi kut, s odmakom od rubova */
-.figura{position:absolute;left:clamp(1.5rem,5vw,5rem);top:clamp(1.5rem,3.5vw,3.5rem);width:clamp(120px,15vw,210px);height:auto;pointer-events:none}
+.figura{position:absolute;left:clamp(1.5rem,5vw,5rem);top:clamp(7rem,12vw,13rem);width:clamp(120px,15vw,210px);height:auto;pointer-events:none}
 .stmt{font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,3.1rem);line-height:1.3;color:var(--lite);max-width:24ch;margin:0 auto}
 .stmt .accent{color:inherit}
 
@@ -71,7 +71,7 @@ nav a:hover{color:var(--terra)}
 .fy-item .lbl{font-family:var(--caps);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.6rem}
 .fy-item p{color:var(--lite-muted);font-size:1.05rem;line-height:1.55}
 @media(max-width:860px){.fy-grid{grid-template-columns:1fr;max-width:400px;gap:2rem}
-  .stmt-sec{padding:4.5rem 1.6rem 5.5rem}
+  .stmt-sec{padding:9.5rem 1.6rem 8rem}
   .figura{position:static;width:120px;margin:0 auto 2rem;opacity:.85}}
 
 /* 4 · MOJA PRIČA — slika uz lijevi rub (parallax) + tekst u desnom stupcu */
@@ -100,7 +100,7 @@ nav a:hover{color:var(--terra)}
 .rit-card{background:var(--bg2);border:1px solid var(--border)}
 .rit-card img{width:100%;aspect-ratio:3/4;object-fit:cover}
 .rit-card .body{padding:1.3rem 1.35rem 1.6rem}
-.rit-card .nm{font-family:var(--serif);font-size:clamp(.85rem,calc(2.3vw - 8px),1.27rem);line-height:1.25;white-space:nowrap;color:var(--lite);margin-bottom:.45rem}
+.rit-card .nm{font-family:var(--serif);font-weight:700;font-size:clamp(.85rem,calc(2.3vw - 8px),1.27rem);line-height:1.25;white-space:nowrap;color:var(--lite);margin-bottom:.45rem}
 .rit-card .pr{font-family:var(--caps);font-size:clamp(.7rem,.8vw,.88rem);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;color:var(--lite-muted)}
 .rit-card .go{display:inline-block;margin-top:1rem;font-family:var(--caps);font-size:clamp(.76rem,.88vw,.9rem);letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--terra);border-bottom:1px solid rgba(216,105,52,.8);padding-bottom:.24rem}
 @media(max-width:960px){.rit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
