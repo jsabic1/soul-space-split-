@@ -75,9 +75,7 @@ nav a:hover{color:var(--terra)}
 .story-photo{position:relative;overflow:hidden;min-height:min(90vh,880px);z-index:1}
 .story-photo img{position:absolute;top:-14%;left:0;width:100%;height:128%;object-fit:cover;object-position:center 28%;will-change:transform}
 .story-text{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;padding:clamp(4.5rem,7vw,7.5rem) clamp(2rem,5.5vw,5.5rem)}
-.story-text::before,.story-text::after{content:"";position:absolute;pointer-events:none;z-index:-1;opacity:.13;background-repeat:no-repeat}
-.story-text::before{top:0;right:0;width:min(46%,380px);aspect-ratio:775/749;background-image:url('wp-content/uploads/soul/ornament-grana-gore-svijetla.svg');background-size:contain;background-position:right top}
-.story-text::after{bottom:0;left:0;width:min(44%,360px);aspect-ratio:818/725;background-image:url('wp-content/uploads/soul/ornament-grana-dolje-svijetla.svg');background-size:contain;background-position:left bottom}
+.story-text::before{content:"";position:absolute;inset:0;transform:scaleX(-1);background:url('wp-content/uploads/soul/ornament-botanika-svijetla.svg') right center/auto 100% no-repeat;opacity:.12;pointer-events:none;z-index:-1}
 .story-text .eyebrow{display:block;margin-bottom:.9rem}
 .story-sub{font-family:var(--script);font-size:clamp(1.15rem,1.7vw,1.5rem);line-height:1.4;margin-bottom:1.7rem;color:var(--terra)}
 .story h2{font-size:clamp(2rem,3.3vw,3.15rem);line-height:1.14;margin-bottom:1.5rem;max-width:22ch}
