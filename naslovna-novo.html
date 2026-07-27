@@ -76,13 +76,12 @@ nav a:hover{color:var(--terra)}
 
 /* 4 · MOJA PRIČA — slika uz lijevi rub (parallax) + tekst u desnom stupcu */
 .story{background:var(--cream2);position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,42fr) minmax(0,58fr);align-items:stretch}
-.story::before{content:"";position:absolute;inset:0;background:url('wp-content/uploads/soul/pattern-botanika-tamna.svg') center/620px repeat;opacity:.085;pointer-events:none;z-index:0}
 .story-photo{position:relative;overflow:hidden;min-height:min(90vh,880px);z-index:1}
 .story-photo img{position:absolute;top:-14%;left:0;width:100%;height:128%;object-fit:cover;object-position:center 28%;will-change:transform}
 .story-text{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;padding:clamp(4.5rem,7vw,7.5rem) clamp(2rem,5.5vw,5.5rem)}
+.story-text::before{content:"";position:absolute;inset:0;background:url('wp-content/uploads/soul/ornament-botanika-tamna.svg') right center/auto 100% no-repeat;opacity:.14;pointer-events:none;z-index:-1}
 .story-text .eyebrow{display:block;margin-bottom:.9rem}
 .story-sub{font-family:var(--script);font-size:clamp(1.15rem,1.7vw,1.5rem);line-height:1.4;margin-bottom:1.7rem;color:var(--terra)}
-.story-mark{position:absolute;top:clamp(3rem,5vw,5rem);right:clamp(2rem,5.5vw,5.5rem);width:56px;height:56px;stroke:var(--gold);fill:none;opacity:.8}
 .story h2{font-size:clamp(2rem,3.3vw,3.15rem);line-height:1.14;margin-bottom:1.5rem;max-width:22ch}
 .story p{color:var(--ink-soft);text-align:justify;margin-bottom:1.2rem;max-width:64ch}
 .btn-wide{display:block;text-align:center;margin-top:1.8rem;font-family:var(--caps);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink);border:1px solid rgba(31,15,10,.45);padding:1.15rem 1rem;transition:all .3s ease}
@@ -91,7 +90,6 @@ nav a:hover{color:var(--terra)}
   .story{grid-template-columns:1fr}
   .story-photo{min-height:66vh}
   .story-text{padding:3.5rem 2rem 4.5rem}
-  .story-mark{top:2rem;right:2rem;width:44px;height:44px}
 }
 
 /* 5 · RITUALI */
@@ -228,14 +226,6 @@ footer p{font-size:.95rem;color:#D8C09E}
     <img src="wp-content/uploads/soul/portret-1.JPG" alt="Diana Lendić">
   </div>
   <div class="story-text">
-    <svg class="story-mark" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M30 8 C24 17 24 26 30 33 C36 26 36 17 30 8Z"/>
-      <path d="M30 33 C22 28 13 29 9 35 C16 40.5 25 39 30 33Z"/>
-      <path d="M30 33 C38 28 47 29 51 35 C44 40.5 35 39 30 33Z"/>
-      <path d="M30 33 V52"/>
-      <path d="M23.5 45.5 C26 47 28.2 49.2 30 52"/>
-      <path d="M36.5 45.5 C34 47 31.8 49.2 30 52"/>
-    </svg>
     <p class="eyebrow">O meni</p>
     <h2>Diana Lendić</h2>
     <p class="story-sub">Maserka, s temeljem u tjelesno orijentiranoj psihoterapiji.</p>
