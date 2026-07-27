@@ -11,11 +11,11 @@
 <style>
 @font-face{font-family:'TAN Pearl';src:url('fonts/TAN-PEARL.woff2') format('woff2'),url('fonts/TAN-PEARL.woff') format('woff');font-display:swap;}
 :root{
-  --cream:#F1EADB; --cream2:#EAE0CC; --sand:#E2D4B8;
+  --cream:#F4E8D6; --cream2:#EFE0C6; --sand:#E0C79F;
   --dark:#1F0F0A; --dark2:#2C1610;
-  --ink:#2E1D12; --ink-soft:#5A4432; --muted:#7A6650;
-  --lite:#F4E8D6; --lite-muted:#E8D4B8; --lite-dim:#C9AE8C;
-  --terra:#C4551F; --terra-bright:#D86934; --terra-dark:#A9451A; --gold:#A97F52; --gold-lite:#C8965C;
+  --ink:#1F0F0A; --ink-soft:#3A1E14; --muted:#5A3A28;
+  --lite:#F4E8D6; --lite-muted:#E8D4B8; --lite-dim:#D8C09E;
+  --terra:#C4551F; --terra-bright:#D86934; --terra-dark:#A9451A; --gold:#B8451E; --gold-lite:#C8965C;
   --serif:'Cormorant Garamond',Georgia,serif;
   --caps:'Cormorant Unicase',serif;
   --body:'Alegreya',Georgia,serif;
@@ -34,7 +34,7 @@ h1,h2{font-family:var(--serif);font-weight:400;line-height:1.12;color:var(--ink)
 h1 em,h2 em,.stmt em{font-style:italic;font-weight:400;color:inherit}
 .btn-line{display:inline-block;font-family:var(--caps);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--lite);border:1px solid rgba(244,232,214,.75);padding:1.1rem 2.4rem;transition:all .3s ease}
 .btn-line:hover{background:var(--lite);color:var(--dark)}
-.btn-line.dark{color:var(--ink);border-color:rgba(46,29,18,.55)}
+.btn-line.dark{color:var(--ink);border-color:rgba(31,15,10,.55)}
 .btn-line.dark:hover{background:var(--ink);color:var(--cream)}
 .btn-terra{display:inline-block;background:var(--terra);color:#F7ECDD;font-family:var(--caps);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;font-weight:600;padding:1.1rem 2.6rem;border-radius:999px;box-shadow:0 12px 32px -12px rgba(196,85,31,.55);transition:background .3s}
 .btn-terra:hover{background:var(--terra-dark)}
@@ -87,9 +87,9 @@ nav a:hover{color:var(--terra-bright)}
 .story-text .note{display:block;font-size:1.5rem;margin:0 0 .2rem -1.6rem}
 .story-mark{position:absolute;top:clamp(3rem,5vw,5rem);right:clamp(2rem,5.5vw,5.5rem);width:56px;height:56px;stroke:var(--gold);fill:none;opacity:.8}
 .story h2{font-size:clamp(2rem,3.3vw,3.15rem);line-height:1.14;margin-bottom:1.5rem;max-width:22ch}
-.story-meta{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;font-family:var(--caps);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);padding-bottom:1.7rem;margin-bottom:2.1rem;border-bottom:1px solid rgba(46,29,18,.16)}
+.story-meta{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;font-family:var(--caps);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);padding-bottom:1.7rem;margin-bottom:2.1rem;border-bottom:1px solid rgba(31,15,10,.16)}
 .story p{color:var(--ink-soft);text-align:justify;margin-bottom:1.2rem;max-width:64ch}
-.btn-wide{display:block;text-align:center;margin-top:1.8rem;font-family:var(--caps);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink);border:1px solid rgba(46,29,18,.45);padding:1.15rem 1rem;transition:all .3s ease}
+.btn-wide{display:block;text-align:center;margin-top:1.8rem;font-family:var(--caps);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink);border:1px solid rgba(31,15,10,.45);padding:1.15rem 1rem;transition:all .3s ease}
 .btn-wide:hover{background:var(--ink);color:var(--cream)}
 @media(max-width:960px){
   .story{grid-template-columns:1fr}
@@ -120,9 +120,9 @@ nav a:hover{color:var(--terra-bright)}
 .gift-card{position:relative;overflow:hidden}
 .gift-card img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .8s ease}
 .gift-card:hover img{transform:scale(1.03)}
-.gift-card figcaption{position:absolute;inset:auto 0 0 0;padding:4rem 1.6rem 2.4rem;text-align:center;background:linear-gradient(rgba(24,13,8,0),rgba(24,13,8,.62))}
-.gc-title{display:block;font-family:var(--serif);font-size:clamp(1.6rem,2.4vw,2.15rem);line-height:1.15;color:#F6EDDC;margin-bottom:.6rem}
-.gift-card figcaption p{color:#EAD9BD;font-size:.95rem;line-height:1.5;max-width:32ch;margin:0 auto}
+.gift-card figcaption{position:absolute;inset:auto 0 0 0;padding:4rem 1.6rem 2.4rem;text-align:center;background:linear-gradient(rgba(31,15,10,0),rgba(31,15,10,.62))}
+.gc-title{display:block;font-family:var(--serif);font-size:clamp(1.6rem,2.4vw,2.15rem);line-height:1.15;color:#F4E8D6;margin-bottom:.6rem}
+.gift-card figcaption p{color:#E8D4B8;font-size:.95rem;line-height:1.5;max-width:32ch;margin:0 auto}
 .gift-text{text-align:center}
 .gift-text .note{display:block;margin-bottom:.9rem}
 .gift-text h2{font-size:clamp(1.9rem,3vw,2.9rem);line-height:1.2;margin:0 auto 1.9rem;max-width:20ch}
@@ -134,10 +134,10 @@ nav a:hover{color:var(--terra-bright)}
 
 /* 6 · IMAGE BREAK — tamno */
 .break{position:relative;min-height:74vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem}
-.break::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(24,13,8,.5),rgba(24,13,8,.6)),url('wp-content/uploads/soul/hero-3.jpg') center/cover}
+.break::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(31,15,10,.5),rgba(31,15,10,.6)),url('wp-content/uploads/soul/hero-3.jpg') center/cover}
 .break .in{position:relative;max-width:820px}
 .break .stmt{color:var(--lite);max-width:26ch}
-.break .link{display:inline-block;margin-top:2.4rem;font-family:var(--caps);font-size:.74rem;letter-spacing:.32em;text-transform:uppercase;color:#F0DFC2;border-bottom:1px solid rgba(240,223,194,.6);padding-bottom:.35rem}
+.break .btn-terra{margin-top:2.4rem}
 
 /* 7 · ISKUSTVA — tamno */
 .quotes{background:var(--dark2);padding:7rem 2rem;text-align:center}
@@ -147,19 +147,6 @@ nav a:hover{color:var(--terra-bright)}
 .q-card blockquote{font-family:var(--serif);font-style:italic;font-size:1.22rem;line-height:1.55;color:var(--lite);margin-bottom:1.1rem}
 .q-card figcaption{font-family:var(--caps);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--lite-dim)}
 @media(max-width:900px){.q-grid{grid-template-columns:1fr;max-width:460px}}
-
-/* 8 · JAVI SE (pozadina kao "Pristup" na live stranici) */
-.cta{position:relative;background:url('wp-content/uploads/soul/ne-brzo-ne-forsirano.jpeg') center/cover no-repeat;padding:7.5rem 2rem;text-align:center}
-.cta::before{content:"";position:absolute;inset:0;background:rgba(31,15,10,.74)}
-.cta>*{position:relative}
-.cta .eyebrow{margin-bottom:1.2rem;display:block;color:var(--gold-lite)}
-.cta h2{font-size:clamp(2.2rem,3.8vw,3.4rem);margin-bottom:.6rem;color:var(--lite)}
-.cta .lead{font-family:var(--caps);font-size:.76rem;letter-spacing:.3em;text-transform:uppercase;color:var(--lite-muted);margin-bottom:3rem}
-.cta-meta{max-width:920px;margin:0 auto 3rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.4rem}
-.cta-cell{border:1px solid rgba(244,232,214,.32);border-radius:18px;padding:2.2rem 1.3rem;background:rgba(31,15,10,.28)}
-.cta-cell strong{display:block;font-family:var(--serif);font-size:1.7rem;font-weight:500;color:var(--lite);margin-bottom:.5rem}
-.cta-cell span{font-family:var(--caps);font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-lite)}
-@media(max-width:760px){.cta-meta{grid-template-columns:1fr;max-width:380px}}
 
 /* footer */
 footer{background:var(--dark);color:var(--lite-muted);padding:4rem 2rem;text-align:center}
@@ -331,7 +318,7 @@ footer p{font-size:.95rem;color:var(--lite-dim)}
 <section class="break">
   <div class="in">
     <p class="stmt">za ženu koja zna da može bolje — <em>i dovoljno je hrabra da si to da.</em></p>
-    <a class="link" href="#">Rezerviraj termin</a>
+    <a class="btn-terra" href="#">Rezerviraj termin</a>
   </div>
 </section>
 
@@ -353,19 +340,6 @@ footer p{font-size:.95rem;color:var(--lite-dim)}
       <figcaption>Frankolinna</figcaption>
     </figure>
   </div>
-</section>
-
-<!-- 8 · JAVI SE -->
-<section class="cta">
-  <span class="eyebrow">javi se</span>
-  <h2>tijelo je <em>spremno.</em></h2>
-  <p class="lead">treba mu samo prilika</p>
-  <div class="cta-meta">
-    <div class="cta-cell"><strong>24 h</strong><span>odgovor na poruku</span></div>
-    <div class="cta-cell"><strong>Tvoj tempo</strong><span>ništa se ne forsira</span></div>
-    <div class="cta-cell"><strong>Malo mjesta</strong><span>javi se na vrijeme</span></div>
-  </div>
-  <a class="btn-terra" href="#">Rezerviraj termin</a>
 </section>
 
 <!-- 9 · TRENUCI U STUDIJU (galerija s trenutne naslovnice, malo veće slike) -->
