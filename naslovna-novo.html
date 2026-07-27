@@ -107,8 +107,10 @@ nav a:hover{color:var(--terra)}
 @media(max-width:960px){.rit-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.rit-grid{grid-template-columns:1fr;max-width:340px}}
 
-/* 5b · POKLON BON — jednobojna burgundy ploha */
-.gift{background:var(--burgundy);padding:clamp(5rem,8vw,7.5rem) 2rem}
+/* 5b · POKLON BON — burgundy ploha + izblijeđena vrpca-srce u pozadini */
+.gift{position:relative;overflow:hidden;background:var(--burgundy);padding:clamp(5rem,8vw,7.5rem) 2rem}
+.gift::before{content:"";position:absolute;inset:0;transform:scaleX(-1);background:url('wp-content/uploads/soul/ribbon-heart.webp') center/auto 118% no-repeat;opacity:.13;pointer-events:none}
+.gift>*{position:relative}
 .gift-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,53fr) minmax(0,47fr);gap:clamp(2rem,4vw,4rem);align-items:center}
 .gift-text{text-align:left}
 .gift-text .eyebrow{display:block;margin-bottom:.9rem}
@@ -127,9 +129,7 @@ nav a:hover{color:var(--terra)}
 /* dvije fotografije koje se preklapaju: veca straga (ruke), manja sprijeda (poklon bon) */
 .gift-photos{position:relative;aspect-ratio:1/1.3}
 .gift-photos img{position:absolute;object-fit:cover}
-.gp-big{right:0;top:0;width:74%;height:100%;object-position:25% 50%}
-/* manja je okomito centrirana na veću i prelazi preko njezinog lijevog dijela */
-.gp-small{left:2%;top:50%;transform:translateY(-50%);width:52%;aspect-ratio:780/1113;object-fit:contain;filter:drop-shadow(0 26px 40px rgba(31,15,10,.55))}
+.gp-big{right:0;top:0;width:100%;height:100%;object-position:35% 50%}
 @media(max-width:900px){
   .gift-in{grid-template-columns:1fr;max-width:520px;gap:2.5rem}
   .gift-photos{aspect-ratio:1/1.15}
@@ -308,7 +308,6 @@ footer p{font-size:.95rem;color:#D8C09E}
     </div>
     <div class="gift-photos">
       <img class="gp-big" src="wp-content/uploads/soul/atmosfera-4.JPG" alt="Dianine ruke u prirodnom svjetlu">
-      <img class="gp-small" src="wp-content/uploads/soul/ribbon-web.webp" alt="Poklon bon zamotan vrpcom">
     </div>
   </div>
 </section>
