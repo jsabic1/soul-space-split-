@@ -64,11 +64,11 @@
   .nn .fy-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2.4rem}
   .nn .fy-item svg{width:40px;height:40px;stroke:var(--terra);margin:0 auto 1rem}
   .nn .fy-item .lbl{font-family:var(--caps);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.6rem}
-  .nn .fy-item p{color:var(--ink-soft);font-size:1.05rem;line-height:1.55}
+  .nn .fy-item p{color:var(--ink-soft);font-size:1.05rem;line-height:1.6;max-width:19ch;margin:0 auto}
   /* 4 poster-motiva (abstrakt-5) kao izblijedjena pozadina iza svake stavke */
   .nn .fy-item{position:relative;padding-top:.5rem}
-  .nn .fy-item::before{content:"";position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);
-    width:min(100%,220px);aspect-ratio:352/490;opacity:.16;pointer-events:none;z-index:0;
+  .nn .fy-item::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    height:118%;aspect-ratio:352/490;opacity:.16;pointer-events:none;z-index:0;
     background:center/contain no-repeat}
   .nn .fy-item:nth-child(1)::before{background-image:url('../wp-content/uploads/soul/motiv-a5-1.webp')}
   .nn .fy-item:nth-child(2)::before{background-image:url('../wp-content/uploads/soul/motiv-a5-2.webp')}
