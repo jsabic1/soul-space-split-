@@ -140,14 +140,12 @@
   .nn .gframe::before{background-image:url('../wp-content/uploads/soul/motiv-a4-2-wash.webp');opacity:.34;mix-blend-mode:multiply;z-index:0}
   /* grancica ide preko kruznog vektora */
   .nn .gframe::after{background-image:url('../wp-content/uploads/soul/motiv-a4-2-line.webp');opacity:.55;z-index:3}
-  .nn .v-rule{display:block;width:100%;max-width:230px;height:1px;background:rgba(196,85,31,.32);margin:1.8rem 0 1.5rem}
-  .nn .v-mins{display:flex;align-items:stretch;justify-content:flex-start;gap:clamp(1rem,1.6vw,1.6rem);margin-bottom:.75rem}
-  .nn .vm{display:flex;flex-direction:column;align-items:center;gap:.3rem;padding:0 clamp(.5rem,1vw,1rem)}
-  .nn .vm:first-child{padding-left:0}
-  .nn .vm+.vm{border-left:1px solid rgba(196,85,31,.32)}
-  .nn .vm-n{font-family:var(--serif);font-size:clamp(1.9rem,2.9vw,2.6rem);line-height:1;color:var(--terra)}
-  .nn .vm-u{font-family:var(--caps);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
-  .nn .v-unit{font-family:var(--caps);font-size:clamp(.66rem,1vw,.84rem);letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--ink-soft);margin:0 0 1.9rem}
+  .nn .v-mins{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:.6rem;margin:1.9rem 0 .8rem}
+  .nn .vm{display:flex;flex-direction:row;align-items:baseline;gap:.28rem;padding:.46rem 1.05rem;
+    border:1px solid rgba(196,85,31,.4);border-radius:999px}
+  .nn .vm-n{font-family:var(--serif);font-size:1.2rem;line-height:1;color:var(--terra)}
+  .nn .vm-u{font-family:var(--caps);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .nn .v-unit{font-family:var(--caps);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin:0 0 1.9rem}
   .nn .gin .rule{display:block;width:52px;height:1px;margin:1.5rem auto;background:rgba(196,85,31,.45)}
   .nn .gift-notes{list-style:none;margin:0;padding:0;display:inline-flex;flex-direction:column;align-items:flex-start;text-align:left;gap:.55rem;font-family:var(--caps);font-size:clamp(.6rem,.9vw,.76rem);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft)}
   .nn .gift-notes li::before{content:"\2726";color:var(--terra);margin-right:.4rem}
@@ -158,8 +156,6 @@
     .nn .gift{padding:4.5rem 1.6rem 5rem}
     .nn .gwrap{grid-template-columns:1fr;gap:2.2rem;text-align:center;justify-items:center;justify-content:stretch}
     .nn .v-mins{justify-content:center}
-    .nn .v-rule{margin-left:auto;margin-right:auto}
-    .nn .vm:first-child{padding-left:clamp(.5rem,1vw,1rem)}
     .nn .gcopy{width:100%;max-width:none}
     .nn .gcopy h2{white-space:nowrap}
     .nn .gcopy p{max-width:30ch}
@@ -397,7 +393,6 @@
           <p class="eyebrow">A gift</p>
           <h2>Gift voucher</h2>
           <p>Give someone what can't usually be bought, time just for themselves.</p>
-          <span class="v-rule" aria-hidden="true"></span>
           <div class="v-mins">
             <div class="vm"><span class="vm-n">60</span><span class="vm-u">min</span></div>
             <div class="vm"><span class="vm-n">75</span><span class="vm-u">min</span></div>
