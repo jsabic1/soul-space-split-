@@ -75,12 +75,12 @@
   /* 4 poster-motiva (abstrakt-5) kao izblijedjena pozadina iza svake stavke */
   .nn .fy-item{position:relative;padding-top:.5rem}
   .nn .fy-item::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-    height:74%;aspect-ratio:352/490;opacity:.16;margin-top:6%;pointer-events:none;z-index:0;
+    height:82%;opacity:.1;margin-top:6%;pointer-events:none;z-index:0;
     background:center/contain no-repeat}
-  .nn .fy-item:nth-child(1)::before{background-image:url('wp-content/uploads/soul/motiv-a5-1.webp')}
-  .nn .fy-item:nth-child(2)::before{background-image:url('wp-content/uploads/soul/motiv-a5-2.webp')}
-  .nn .fy-item:nth-child(3)::before{background-image:url('wp-content/uploads/soul/motiv-a5-3.webp')}
-  .nn .fy-item:nth-child(4)::before{background-image:url('wp-content/uploads/soul/motiv-a5-4.webp')}
+  .nn .fy-item:nth-child(1)::before{background-image:url('wp-content/uploads/soul/motiv-a7-1.webp');aspect-ratio:361/391}
+  .nn .fy-item:nth-child(2)::before{background-image:url('wp-content/uploads/soul/motiv-a7-2.webp');aspect-ratio:326/479}
+  .nn .fy-item:nth-child(3)::before{background-image:url('wp-content/uploads/soul/motiv-a7-3.webp');aspect-ratio:369/479}
+  .nn .fy-item:nth-child(4)::before{background-image:url('wp-content/uploads/soul/motiv-a7-4.webp');aspect-ratio:308/426}
   .nn .fy-item svg,.nn .fy-item .lbl,.nn .fy-item p{position:relative;z-index:1}
   @media(max-width:860px){
     .nn .fy-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:440px;gap:2.6rem 1.2rem}
@@ -137,7 +137,7 @@
   .nn .gcopy p{font-size:clamp(1rem,1.3vw,1.14rem);line-height:1.65;color:var(--ink-soft);max-width:34ch;margin-bottom:1.5rem}
   .nn .gframe{position:relative;width:min(400px,30vw);aspect-ratio:900/1060;justify-self:center;display:flex;align-items:center;justify-content:center;text-align:center}
   .nn .gframe::after{content:"";position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);width:114%;aspect-ratio:955/1245;background:url('wp-content/uploads/soul/motiv-a4-2.webp') center/contain no-repeat;opacity:.34;mix-blend-mode:multiply;pointer-events:none;z-index:0}
-  .nn .gin{position:relative;z-index:1;width:100%;margin-top:36%}
+  .nn .gin{position:relative;z-index:1;width:100%;margin-top:14%}
   .nn .v-mins{display:flex;align-items:stretch;justify-content:center;gap:clamp(1rem,1.6vw,1.6rem);margin-bottom:.9rem}
   .nn .vm{display:flex;flex-direction:column;align-items:center;gap:.3rem;padding:0 clamp(.4rem,.8vw,.8rem)}
   .nn .vm+.vm{border-left:1px solid rgba(196,85,31,.32)}
@@ -186,22 +186,22 @@
   .nn .steps .eyebrow{display:block;color:var(--terra);margin-bottom:.9rem}
   .nn .steps h2{font-size:clamp(2rem,3.4vw,3rem);color:var(--ink);margin-bottom:4.5rem}
   .nn .st-grid{position:relative;max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(2.6rem,5vw,5rem)}
-  .nn .st-grid::before{content:"";position:absolute;left:6%;right:6%;top:188px;height:1px;
     background:linear-gradient(90deg,transparent,rgba(196,85,31,.35) 12%,rgba(196,85,31,.35) 88%,transparent)}
   .nn .st{position:relative}
-  .nn .st-mark{position:relative;width:132px;aspect-ratio:349/497;margin:0 auto 1.6rem;
-    background:url('wp-content/uploads/soul/luk-koraci.webp') center/contain no-repeat;
-    display:flex;align-items:center;justify-content:center}
-  .nn .st-num{font-family:var(--serif);font-size:2.1rem;line-height:1;color:var(--terra);transform:translateY(-8%)}
+  .nn .st-mark{position:relative;height:clamp(120px,13vw,178px);width:auto;margin:0 auto 1.7rem;
+    background:center/contain no-repeat}
+  .nn .st:nth-child(1) .st-mark{aspect-ratio:361/391;background-image:url('wp-content/uploads/soul/motiv-a7-1.webp')}
+  .nn .st:nth-child(2) .st-mark{aspect-ratio:326/479;background-image:url('wp-content/uploads/soul/motiv-a7-2.webp')}
+  .nn .st:nth-child(3) .st-mark{aspect-ratio:369/479;background-image:url('wp-content/uploads/soul/motiv-a7-3.webp')}
+  .nn .st:nth-child(4) .st-mark{aspect-ratio:308/426;background-image:url('wp-content/uploads/soul/motiv-a7-4.webp')}
   .nn .st h3{font-family:var(--serif);font-weight:700;font-size:1.35rem;color:var(--ink);margin-bottom:.5rem}
   .nn .st p{font-family:var(--bodyf);font-size:1.04rem;line-height:1.6;color:var(--ink-soft);max-width:23ch;margin:0 auto}
   .nn .steps .btn-terra{margin-top:4rem;color:var(--terra);border-color:var(--terra)}
   .nn .steps .btn-terra:hover,.nn .steps .btn-terra:focus-visible,.nn .steps .btn-terra:active{background:var(--terra);border-color:var(--terra);color:#FFF3E5}
   @media(max-width:900px){
     .nn .st-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:3.4rem 2.4rem;max-width:540px}
-    .nn .st-grid::before{display:none}
-    .nn .st-mark{width:108px}
-    .nn .st-num{font-size:1.8rem}}
+    .nn .st-mark{height:clamp(104px,26vw,150px)}
+}
   @media(max-width:480px){
     .nn .steps{padding:5.5rem 1.6rem 6rem}
     .nn .steps h2{margin-bottom:3rem}
@@ -400,12 +400,6 @@
               <div class="vm"><span class="vm-n">90</span><span class="vm-u">min</span></div>
             </div>
             <p class="v-unit">minuta tvog rituala</p>
-            <span class="rule" aria-hidden="true"></span>
-            <ul class="gift-notes">
-              <li>Vrijedi 3 mjeseca</li>
-              <li>Ritual se bira s osobom koja dolazi</li>
-              <li>Fizički ili PDF</li>
-            </ul>
           </div>
         </div>
       </div>
@@ -446,22 +440,22 @@
       <h2>Od poruke do stola</h2>
       <div class="st-grid">
         <div class="st">
-          <div class="st-mark" aria-hidden="true"><span class="st-num">01</span></div>
+          <div class="st-mark" aria-hidden="true"></div>
           <h3>Pišeš mi</h3>
           <p>Mail ili poruka s par rečenica o tome kako se osjećaš.</p>
         </div>
         <div class="st">
-          <div class="st-mark" aria-hidden="true"><span class="st-num">02</span></div>
+          <div class="st-mark" aria-hidden="true"></div>
           <h3>Predlažem</h3>
           <p>Ritual koji bi ti najbolje sjeo i 2-3 slobodna termina.</p>
         </div>
         <div class="st">
-          <div class="st-mark" aria-hidden="true"><span class="st-num">03</span></div>
+          <div class="st-mark" aria-hidden="true"></div>
           <h3>Dolaziš</h3>
           <p>Studio na Sinjskoj 5. Jedan sat za tebe, ništa ne moraš.</p>
         </div>
         <div class="st">
-          <div class="st-mark" aria-hidden="true"><span class="st-num">04</span></div>
+          <div class="st-mark" aria-hidden="true"></div>
           <h3>Nastavljaš</h3>
           <p>Vraćaš se prema potrebi. Većina dolazi jedanput mjesečno.</p>
         </div>
