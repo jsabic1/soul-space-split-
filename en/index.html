@@ -135,10 +135,13 @@
   .nn .gcopy h2{font-size:clamp(2.2rem,4vw,3.3rem);line-height:1.04;margin-bottom:1.1rem;color:var(--ink)}
   .nn .gcopy p{font-size:clamp(1rem,1.3vw,1.14rem);line-height:1.65;color:var(--ink-soft);max-width:34ch;margin-bottom:1.5rem}
   .nn .gframe{position:relative;width:min(400px,30vw);aspect-ratio:900/1060;justify-self:center;display:flex;align-items:center;justify-content:center;text-align:center}
-  .nn .gframe::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:114%;aspect-ratio:955/1245;background:url('../wp-content/uploads/soul/motiv-a4-2.webp') center/contain no-repeat;opacity:.34;mix-blend-mode:multiply;pointer-events:none;z-index:0}
-  .nn .gin{position:relative;z-index:1;width:100%}
-  .nn .v-mins{display:flex;align-items:baseline;justify-content:center;gap:.7rem;font-family:var(--serif);font-size:clamp(2.1rem,3.2vw,2.9rem);line-height:1;color:var(--terra)}
-  .nn .v-mins i{font-style:normal;font-size:.45em;color:var(--gold);transform:translateY(-.3em)}
+  .nn .gframe::after{content:"";position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);width:114%;aspect-ratio:955/1245;background:url('../wp-content/uploads/soul/motiv-a4-2.webp') center/contain no-repeat;opacity:.34;mix-blend-mode:multiply;pointer-events:none;z-index:0}
+  .nn .gin{position:relative;z-index:1;width:100%;margin-top:36%}
+  .nn .v-mins{display:flex;align-items:stretch;justify-content:center;gap:clamp(1rem,1.6vw,1.6rem);margin-bottom:.9rem}
+  .nn .vm{display:flex;flex-direction:column;align-items:center;gap:.3rem;padding:0 clamp(.4rem,.8vw,.8rem)}
+  .nn .vm+.vm{border-left:1px solid rgba(196,85,31,.32)}
+  .nn .vm-n{font-family:var(--serif);font-size:clamp(1.9rem,2.9vw,2.6rem);line-height:1;color:var(--terra)}
+  .nn .vm-u{font-family:var(--caps);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
   .nn .v-unit{font-family:var(--caps);font-size:clamp(.66rem,1vw,.84rem);letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--ink-soft);margin:.7rem 0 0}
   .nn .gin .rule{display:block;width:52px;height:1px;margin:1.5rem auto;background:rgba(196,85,31,.45)}
   .nn .gift-notes{list-style:none;margin:0;padding:0;display:inline-flex;flex-direction:column;align-items:flex-start;text-align:left;gap:.55rem;font-family:var(--caps);font-size:clamp(.6rem,.9vw,.76rem);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft)}
@@ -390,7 +393,11 @@
         <div class="gdivide" aria-hidden="true"></div>
         <div class="gframe">
           <div class="gin">
-            <div class="v-mins"><span>60</span><i>·</i><span>75</span><i>·</i><span>90</span></div>
+            <div class="v-mins">
+              <div class="vm"><span class="vm-n">60</span><span class="vm-u">min</span></div>
+              <div class="vm"><span class="vm-n">75</span><span class="vm-u">min</span></div>
+              <div class="vm"><span class="vm-n">90</span><span class="vm-u">min</span></div>
+            </div>
             <p class="v-unit">minutes of your ritual</p>
             <span class="rule" aria-hidden="true"></span>
             <ul class="gift-notes">
