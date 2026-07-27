@@ -112,39 +112,28 @@ nav a:hover{color:var(--terra-bright)}
 @media(max-width:960px){.rit-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.rit-grid{grid-template-columns:1fr;max-width:340px}}
 
-/* 5b · POKLON BON — svijetla ploha */
-.gift{background:var(--sand);padding:clamp(5rem,8vw,7.5rem) 2rem}
-/* kartica poklon bona — izgleda kao pravi voucher */
-.voucher{position:relative;overflow:hidden;max-width:940px;margin:0 auto;background:var(--cream);
-  padding:clamp(3.2rem,5.5vw,5rem) clamp(2rem,5vw,4.5rem);text-align:center;
-  box-shadow:0 30px 70px -35px rgba(31,15,10,.45)}
-.v-blob{position:absolute;pointer-events:none}
-.v-a{left:-18%;bottom:-46%;width:64%;aspect-ratio:1.5;background:rgba(196,85,31,.30);
-  border-radius:52% 48% 40% 60%/58% 44% 56% 42%}
-.v-b{left:-26%;bottom:-34%;width:52%;aspect-ratio:1.35;background:rgba(224,199,159,.75);
-  border-radius:44% 56% 62% 38%/48% 62% 38% 52%}
-.v-c{right:-20%;top:-44%;width:54%;aspect-ratio:1.4;background:rgba(196,85,31,.18);
-  border-radius:58% 42% 46% 54%/44% 56% 44% 56%}
-.v-leaf{position:absolute;width:clamp(90px,13%,150px);opacity:.75;pointer-events:none}
-.v-leaf-l{left:3%;top:6%;transform:rotate(-18deg)}
-.v-leaf-r{right:3%;bottom:6%;transform:rotate(160deg)}
-.v-in{position:relative}
+/* 5b · POKLON BON — cijela sekcija je voucher */
+.gift{position:relative;overflow:hidden;background:var(--cream2);padding:clamp(4.5rem,8vw,7rem) 2rem}
+.v-motif{position:absolute;left:clamp(-40px,-2vw,0px);bottom:0;height:min(100%,620px);width:auto;
+  opacity:.9;pointer-events:none;user-select:none}
+.v-in{position:relative;max-width:760px;margin:0 auto;text-align:center}
 .v-in .eyebrow{display:block;margin-bottom:.9rem}
-.voucher h2{font-size:clamp(2.1rem,4vw,3.4rem);line-height:1.1;margin-bottom:1rem;color:var(--ink)}
+.gift h2{font-size:clamp(2.1rem,4vw,3.4rem);line-height:1.1;margin-bottom:1rem;color:var(--ink)}
 .v-lead{color:var(--ink-soft);max-width:44ch;margin:0 auto 2.2rem}
 .v-mins{display:flex;align-items:baseline;justify-content:center;gap:clamp(.7rem,2vw,1.4rem);
   font-family:var(--serif);font-size:clamp(2.6rem,6vw,4.6rem);line-height:1;color:var(--terra)}
 .v-mins i{font-style:normal;font-size:.45em;color:var(--muted);transform:translateY(-.35em)}
 .v-unit{font-family:var(--caps);font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;
   color:var(--muted);margin:.9rem 0 2rem}
-.voucher .gift-notes{list-style:none;margin:0;display:flex;flex-direction:column;gap:.55rem;font-family:var(--caps);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
-.voucher .gift-notes li::before{content:"✦";color:var(--terra);margin-right:.6rem}
-.voucher .link-arrow{display:inline-block;margin-top:2rem;font-family:var(--caps);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink)}
-.voucher .link-arrow span{display:inline-block;margin-left:.55rem;transition:transform .3s ease}
-.voucher .link-arrow:hover span{transform:translateX(5px)}
-@media(max-width:700px){
-  .voucher{padding:2.8rem 1.6rem}
-  .v-leaf{width:74px}
+.gift-notes{list-style:none;margin:0;display:flex;flex-direction:column;gap:.55rem;
+  font-family:var(--caps);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.gift-notes li::before{content:"✦";color:var(--gold);margin-right:.6rem}
+.link-arrow{display:inline-block;margin-top:2rem;font-family:var(--caps);font-size:.74rem;
+  letter-spacing:.3em;text-transform:uppercase;color:var(--ink)}
+.link-arrow span{display:inline-block;margin-left:.55rem;transition:transform .3s ease}
+.link-arrow:hover span{transform:translateX(5px)}
+@media(max-width:900px){
+  .v-motif{height:min(60%,340px);opacity:.5}
 }
 
 
@@ -301,27 +290,21 @@ footer p{font-size:.95rem;color:var(--lite-dim)}
   </div>
 </section>
 
-<!-- 5b · POKLON BON -->
+<!-- 5b · POKLON BON — cijela sekcija je voucher -->
 <section class="gift">
-  <div class="voucher">
-    <span class="v-blob v-a" aria-hidden="true"></span>
-    <span class="v-blob v-b" aria-hidden="true"></span>
-    <span class="v-blob v-c" aria-hidden="true"></span>
-    <img class="v-leaf v-leaf-l" src="wp-content/uploads/soul/motiv-palma.webp" alt="" aria-hidden="true">
-    <img class="v-leaf v-leaf-r" src="wp-content/uploads/soul/motiv-palma.webp" alt="" aria-hidden="true">
-    <div class="v-in">
-      <p class="eyebrow">Pokloni</p>
-      <h2>Poklon bon</h2>
-      <p class="v-lead">Pokloni nekome ono što se ne može kupiti, vrijeme samo za sebe.</p>
-      <div class="v-mins"><span>60</span><i>·</i><span>75</span><i>·</i><span>90</span></div>
-      <p class="v-unit">minuta masaže</p>
-      <ul class="gift-notes">
-        <li>Vrijedi 3 mjeseca od kupnje</li>
-        <li>Ritual se dogovara s osobom koja dolazi</li>
-        <li>Dostupan u fizičkom obliku ili kao PDF</li>
-      </ul>
-      <a class="link-arrow" href="poklon-bon/">Pogledaj poklon bonove <span aria-hidden="true">&rsaquo;</span></a>
-    </div>
+  <img class="v-motif" src="wp-content/uploads/soul/motiv-a2-1.webp" alt="" aria-hidden="true">
+  <div class="v-in">
+    <p class="eyebrow">Pokloni</p>
+    <h2>Poklon bon</h2>
+    <p class="v-lead">Pokloni nekome ono što se ne može kupiti, vrijeme samo za sebe.</p>
+    <div class="v-mins"><span>60</span><i>·</i><span>75</span><i>·</i><span>90</span></div>
+    <p class="v-unit">minuta masaže</p>
+    <ul class="gift-notes">
+      <li>Vrijedi 3 mjeseca od kupnje</li>
+      <li>Ritual se dogovara s osobom koja dolazi</li>
+      <li>Dostupan u fizičkom obliku ili kao PDF</li>
+    </ul>
+    <a class="link-arrow" href="poklon-bon/">Pogledaj poklon bonove <span aria-hidden="true">&rsaquo;</span></a>
   </div>
 </section>
 
