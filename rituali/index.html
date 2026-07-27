@@ -124,7 +124,7 @@ body.gsap-page::before {
 }
 .fullbg .gsap-heading {
   font-family: var(--font-brand);
-  font-size: clamp(2.8rem, 7vw, 6rem);
+  font-size: clamp(2rem, 4.6vw, 4.2rem);
   line-height: 1.1;
   margin-bottom: 1.5rem;
   color: var(--text);
@@ -146,8 +146,8 @@ body.gsap-page::before {
 .fullbg .btn-primary {
   display: inline-block;
   margin-top: 2.5rem;
-  background: #C8965C;
-  color: #241109;
+  background: #C4551F;
+  color: #F7ECDD;
   padding: 1.25rem 2.8rem;
   font-family: var(--font-brand-sub);
   font-size: 0.78rem;
@@ -155,16 +155,16 @@ body.gsap-page::before {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 500;
-  border: 1px solid #C8965C;
+  border: 1px solid #C4551F;
   border-radius: 999px;
-  box-shadow: 0 12px 32px -12px rgba(200, 150, 92, 0.55);
+  box-shadow: 0 12px 32px -12px rgba(196, 85, 31, 0.55);
   font-weight: 600;
   transition: background .35s ease, color .35s ease, letter-spacing .35s ease, border-color .35s ease;
 }
 .fullbg .btn-primary:hover {
-  background: rgba(200,150,92,0.16);
-  color: #EBD7B4;
-  border-color: #D0A063;
+  background: #A9451A;
+  color: #FFF3E5;
+  border-color: #A9451A;
   letter-spacing: 0.38em;
   -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
@@ -404,6 +404,14 @@ body.gsap-page::before {
   color: var(--text);
 }
 .meta-item:last-child .meta-value { color: var(--text); }
+/* Editorial split (varijanta B): kartica cijena + oznake bez ikone */
+.split-content .ideal-for .ideal-icon { display: none; }
+.price-card { max-width: 400px; margin: 0 0 1.5rem; }
+.pc-row { display: flex; justify-content: space-between; align-items: baseline; padding: 0.5rem 0; }
+.pc-row + .pc-row { border-top: 1px solid rgba(216,105,52,0.28); }
+.pc-d { font-family: var(--font-brand-sub); letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.82rem; color: var(--text-muted); }
+.pc-p { font-family: var(--font-brand); font-size: 1.4rem; color: var(--accent); line-height: 1; }
+.meta-item .meta-value.meta-multi { font-size: clamp(1.15rem, 1.55vw, 1.55rem); line-height: 1.55; }
 
 .split-content .btn-primary {
   display: inline-block;
@@ -411,8 +419,8 @@ body.gsap-page::before {
   align-self: flex-start;
   box-sizing: border-box;
   text-align: center;
-  background: #C8965C;
-  color: #241109;
+  background: #C4551F;
+  color: #F7ECDD;
   padding: 1.4rem 2.8rem;
   font-family: var(--font-brand-sub);
   font-size: 0.78rem;
@@ -421,16 +429,16 @@ body.gsap-page::before {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 500;
-  border: 1px solid #C8965C;
+  border: 1px solid #C4551F;
   border-radius: 999px;
-  box-shadow: 0 12px 32px -12px rgba(200, 150, 92, 0.55);
+  box-shadow: 0 12px 32px -12px rgba(196, 85, 31, 0.55);
   font-weight: 600;
   transition: background .35s ease, color .35s ease, letter-spacing .35s ease, border-color .35s ease;
 }
 .split-content .btn-primary:hover {
-  background: rgba(200,150,92,0.16);
-  color: #EBD7B4;
-  border-color: #D0A063;
+  background: #A9451A;
+  color: #FFF3E5;
+  border-color: #A9451A;
   letter-spacing: 0.36em;
   -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
@@ -438,25 +446,25 @@ body.gsap-page::before {
 
 /* Desktop: dvije kolone — naslov + podnaslov lijevo, opis i sve ostalo desno */
 @media (min-width: 901px) {
-  .split-content { width: min(100%, 680px); text-align: left; }
-  .split-content::after { content: ""; display: block; clear: both; }
+  /* Editorial split: sadrzaj u jednoj koloni desno, broj na slici lijevo */
+  .split-content { width: min(100%, 620px); text-align: left; }
+  .split-content::before {
+    content: "Rituali"; display: block;
+    font-family: var(--font-brand-sub); font-size: 0.72rem;
+    letter-spacing: 0.34em; text-transform: uppercase; color: var(--accent-soft);
+    margin-bottom: 0.9rem;
+  }
   .split-content > h2 {
-    float: left; clear: left; width: 40%;
-    margin: 0 0 1.1rem;
-    font-size: clamp(2.3rem, 3vw, 3.3rem);
-    white-space: normal;
+    white-space: nowrap; width: auto;
+    margin: 0 0 1rem;
+    font-size: clamp(2rem, 2.7vw, 2.85rem);
   }
-  .split-content > .script {
-    float: left; clear: left; width: 40%;
-    margin: 0; max-width: none;
-  }
-  .split-content > .description {
-    margin: 0 0 1.3rem 46%; max-width: none;
-  }
-  .split-content > .ideal-for { margin-left: 46%; }
-  .split-content > .after-note { margin-left: 46%; }
-  .split-content > .treatment-meta { margin: 0 0 1.35rem 46% !important; }
-  .split-content > .btn-primary { margin-left: 46%; margin-top: 1.6rem; }
+  .split-content > .script { margin: 0 0 1.2rem; max-width: none; }
+  .split-content > .description { margin: 0 0 1.6rem; max-width: 560px; }
+  .split-content > .ideal-for { display: inline-block; width: 46%; margin: 0 0 1.7rem; padding: 0; vertical-align: top; }
+  .split-content > .after-note { display: inline-block; width: 46%; margin: 0 0 1.7rem; padding: 0; vertical-align: top; }
+  .split-content > .ideal-for .ideal-label,
+  .split-content > .after-note .after-label { display: block; margin-bottom: 0.65rem; }
 }
 
 @media (max-height: 820px) and (min-width: 901px) {
@@ -623,9 +631,10 @@ body.gsap-page::before {
         </div>
       </div>
       <p class="after-note"><span class="after-label">Poslije</span>odlaziš lakša, s tijelom koje je konačno spustilo obrane.</p>
-      <div class="treatment-meta">
-        <div class="meta-item"><span class="meta-label">Trajanje</span><span class="meta-value">75 min</span></div>
-        <div class="meta-item"><span class="meta-label">Cijena</span><span class="meta-value">60 €</span></div>
+      <div class="price-card">
+        <div class="pc-row"><span class="pc-d">65 min</span><span class="pc-p">75 €</span></div>
+        <div class="pc-row"><span class="pc-d">90 min</span><span class="pc-p">95 €</span></div>
+        <div class="pc-row"><span class="pc-d">120 min</span><span class="pc-p">125 €</span></div>
       </div>
       <a href="../kontakt/" class="btn-primary" data-reserve>Rezerviraj termin</a>
     </div>
@@ -656,9 +665,10 @@ body.gsap-page::before {
         </div>
       </div>
       <p class="after-note"><span class="after-label">Poslije</span>odlaziš sporija, s dubljim dahom i tišom glavom.</p>
-      <div class="treatment-meta">
-        <div class="meta-item"><span class="meta-label">Trajanje</span><span class="meta-value">90 min</span></div>
-        <div class="meta-item"><span class="meta-label">Cijena</span><span class="meta-value">75 €</span></div>
+      <div class="price-card">
+        <div class="pc-row"><span class="pc-d">65 min</span><span class="pc-p">75 €</span></div>
+        <div class="pc-row"><span class="pc-d">90 min</span><span class="pc-p">95 €</span></div>
+        <div class="pc-row"><span class="pc-d">120 min</span><span class="pc-p">125 €</span></div>
       </div>
       <a href="../kontakt/" class="btn-primary" data-reserve>Rezerviraj termin</a>
     </div>
@@ -689,9 +699,9 @@ body.gsap-page::before {
         </div>
       </div>
       <p class="after-note"><span class="after-label">Poslije</span>odlaziš smirena, s glavom koja je utihnula i tijelom bez napetosti.</p>
-      <div class="treatment-meta">
-        <div class="meta-item"><span class="meta-label">Trajanje</span><span class="meta-value">75 min</span></div>
-        <div class="meta-item"><span class="meta-label">Cijena</span><span class="meta-value">65 €</span></div>
+      <div class="price-card">
+        <div class="pc-row"><span class="pc-d">30 min</span><span class="pc-p">55 €</span></div>
+        <div class="pc-row"><span class="pc-d">45 min</span><span class="pc-p">65 €</span></div>
       </div>
       <a href="../kontakt/" class="btn-primary" data-reserve>Rezerviraj termin</a>
     </div>
@@ -722,9 +732,9 @@ body.gsap-page::before {
         </div>
       </div>
       <p class="after-note"><span class="after-label">Poslije</span>odlaziš s budnijim, mekšim licem i odmornijim izrazom.</p>
-      <div class="treatment-meta">
-        <div class="meta-item"><span class="meta-label">Trajanje</span><span class="meta-value">60 min</span></div>
-        <div class="meta-item"><span class="meta-label">Cijena</span><span class="meta-value">55 €</span></div>
+      <div class="price-card">
+        <div class="pc-row"><span class="pc-d">30 min</span><span class="pc-p">55 €</span></div>
+        <div class="pc-row"><span class="pc-d">45 min</span><span class="pc-p">65 €</span></div>
       </div>
       <a href="../kontakt/" class="btn-primary" data-reserve>Rezerviraj termin</a>
     </div>
@@ -736,7 +746,7 @@ body.gsap-page::before {
   <div class="gsap-outer"><div class="gsap-inner"><div class="gsap-bg" style="background-image: linear-gradient(rgba(31,15,10,0.7) 0%, rgba(31,15,10,0.9) 70%, #1F0F0A 100%), url('../wp-content/uploads/soul/hero-2.jpg');">
     <div class="gsap-content">
       <p class="gsap-eyebrow">tempo prije tehnike</p>
-      <h2 class="gsap-heading"><span class="cta-line">Već prvi put tijelo popusti.</span><span class="cta-line">Svaki sljedeći ide dublje.</span></h2>
+      <h2 class="gsap-heading"><span class="cta-line">Već prvi put tijelo popusti.</span><span class="cta-line">Svaki sljedeći ide korak dalje.</span></h2>
       <p class="gsap-sub">Ovo je proces, ne brzi popravak. Ali razliku osjetiš od prvog dolaska.</p>
       <a href="../kontakt/" class="btn-primary" data-reserve>Rezerviraj termin</a>
     </div>

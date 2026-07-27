@@ -191,6 +191,37 @@ p { color: var(--text-muted); }
 }
 .section-testimonials {
   background-image: url('../wp-content/uploads/soul/sto-kazu-klijenti.jpeg');
+  /* veća sekcija: više se vidi pozadina, sadržaj nije blizu rubova */
+  padding: 13rem 0;
+}
+.section-testimonials .container { max-width: 980px; }
+
+/* ============================================
+   SPOJENO: Iskustva + Javi se + Trenuci u studiju
+   -> jedna sekcija, jedna (parallax) pozadina, jedno zatamnjenje.
+   Sadržaj i raspored ostaju isti, samo bez zasebnih pozadina/okvira.
+   ============================================ */
+.combined-block {
+  background-image: url('../wp-content/uploads/soul/sto-kazu-klijenti.jpeg');
+  padding: 0;
+}
+.combined-block::before {
+  /* jedno ravnomjerno zatamnjenje preko cijele spojene sekcije */
+  background: rgba(31, 15, 10, 0.78);
+}
+.cb-testimonials { padding: 13rem 0; }
+.cb-testimonials .container { max-width: 980px; }
+.combined-block .cta-banner {
+  background: transparent;
+  border: none;
+  padding: 6rem 0;
+}
+.cb-trenuci { padding: 8rem 0; }
+@media (max-width: 900px) {
+  .combined-block { padding: 0; }
+  .cb-testimonials { padding: 7rem 0; }
+  .combined-block .cta-banner { padding: 4.5rem 0; }
+  .cb-trenuci { padding: 5rem 0; }
 }
 @media (max-width: 900px) {
   .section-parallax {
@@ -456,6 +487,31 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   position: relative;
 }
 .for-you .section-head { text-align: center; margin-bottom: 4rem; }
+/* Prepoznaješ se: velika i visoka sekcija (kao Iskustva). Sama POZADINA
+   (slika) sekcije je izrezana u val — gornji i donji rub su valoviti, pa je
+   pozadina dio vala. U izrezanim uglovima proviruju susjedne sekcije. */
+/* Val je izrezan iz VLASTITE pozadinske slike sekcije (maskom), pa se ista
+   slika neprekidno nastavlja — ne počinje ispočetka. Fiksna visina vala =
+   ista dimenzija kao na Iskustvima. Negativne margine: slika prelazi preko
+   heroa (gore) i Pristupa (dolje), a u valu proviruje susjedna sekcija. */
+.for-you {
+  --wave-h: clamp(64px, 9.5vw, 150px);
+  padding: 12rem 0;
+  /* preklop = visina vala (+mala rezerva), pa slika prelazi točno preko ruba
+     susjedne sekcije bez smeđe i bez nepotrebnog prekrivanja sadržaja */
+  margin-top: calc(-1 * var(--wave-h) - 4px);
+  margin-bottom: calc(-1 * var(--wave-h) - 4px);
+  position: relative;
+  z-index: 2;
+  -webkit-mask:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,46 C240,96 480,96 720,50 C960,4 1200,4 1440,62 L1440,100 L0,100 Z' fill='%23fff'/%3E%3C/svg%3E") top left / 100% var(--wave-h) no-repeat,
+    linear-gradient(#fff, #fff) left center / 100% calc(100% - 2 * var(--wave-h) + 4px) no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,46 C240,96 480,96 720,50 C960,4 1200,4 1440,62 L1440,0 L0,0 Z' fill='%23fff'/%3E%3C/svg%3E") bottom left / 100% var(--wave-h) no-repeat;
+  mask:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,46 C240,96 480,96 720,50 C960,4 1200,4 1440,62 L1440,100 L0,100 Z' fill='%23fff'/%3E%3C/svg%3E") top left / 100% var(--wave-h) no-repeat,
+    linear-gradient(#fff, #fff) left center / 100% calc(100% - 2 * var(--wave-h) + 4px) no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,46 C240,96 480,96 720,50 C960,4 1200,4 1440,62 L1440,0 L0,0 Z' fill='%23fff'/%3E%3C/svg%3E") bottom left / 100% var(--wave-h) no-repeat;
+}
 /* valoviti prijelaz (umjesto ravne crte) iz sekcije iznad u ovu tamnu sekciju */
 .wave-top {
   position: absolute;
@@ -715,7 +771,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   max-width: 1120px;
-  margin: 5.5rem auto 0;
+  margin: 8.5rem auto 0;
 }
 .principi-col {
   position: relative;
@@ -974,8 +1030,8 @@ body.home .cta-banner h2 {
   position: relative;
   flex: 0 0 auto;
   scroll-snap-align: center;
-  /* malo niže kartice */
-  height: clamp(370px, 43vw, 530px);
+  /* identično kao "O meni" slika: ista visina, proporcija i luk */
+  height: clamp(420px, 52vw, 640px);
   width: clamp(294px, 36.48vw, 449px);
   overflow: hidden;
   text-decoration: none;
@@ -983,8 +1039,8 @@ body.home .cta-banner h2 {
   transition: transform 0.5s ease;
   cursor: pointer;
   display: block;
-  /* okvir s lukom — dojam hrama */
-  border-radius: 50% 50% 5px 5px / 29% 29% 1% 1%;
+  /* okvir s lukom — dojam hrama, isti kao slika ispod "o meni" */
+  border-radius: 50% 50% 5px 5px / 32% 32% 1% 1%;
 }
 .ritual-card img {
   position: absolute;
@@ -1013,20 +1069,20 @@ body.home .cta-banner h2 {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 2.1rem 1.9rem;
+  padding: 2.3rem 2.2rem;
   z-index: 3;
 }
 .ritual-card .ritual-duration {
   font-family: var(--font-brand-sub);
-  font-size: 0.68rem;
+  font-size: 0.76rem;
   letter-spacing: 0.34em;
   text-transform: uppercase;
   color: var(--accent-soft);
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.85rem;
 }
 .ritual-card h3 {
   font-family: var(--font-brand);
-  font-size: clamp(1.2rem, 1.55vw, 1.38rem);
+  font-size: clamp(1.42rem, 1.85vw, 1.7rem);
   font-weight: 400;
   color: var(--text);
   line-height: 1.05;
@@ -1040,11 +1096,13 @@ body.home .cta-banner h2 {
 }
 .ritual-card .ritual-desc {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.12rem;
   color: var(--text-muted);
   line-height: 1.5;
   margin-bottom: 1.4rem;
   max-width: 100%;
+  /* fiksna visina (2 retka) da se naslovi poravnaju na svim karticama */
+  min-height: 3.4rem;
 }
 .ritual-card .ritual-bottom {
   display: flex;
@@ -1055,14 +1113,14 @@ body.home .cta-banner h2 {
 }
 .ritual-card .ritual-price {
   font-family: var(--font-brand);
-  font-size: 2.2rem;
+  font-size: 2.45rem;
   color: var(--accent);
   line-height: 1;
   font-weight: 400;
 }
 .ritual-card .ritual-link {
   font-family: var(--font-brand-sub);
-  font-size: 0.64rem;
+  font-size: 0.7rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--text);
@@ -1072,11 +1130,41 @@ body.home .cta-banner h2 {
   gap: 0.5rem;
 }
 .ritual-card:hover .ritual-link { gap: 1rem; }
+/* cijene po trajanju — popis tarifa na kartici */
+.ritual-card .ritual-tiers { margin: 0.4rem 0 1.15rem; min-height: 7.9rem; }
+.ritual-card .rt-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  border-top: 1px solid rgba(216, 105, 52, 0.32);
+}
+.ritual-card .rt-row span:first-child {
+  font-family: var(--font-brand-sub);
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.ritual-card .rt-row span:last-child {
+  font-family: var(--font-brand);
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--accent);
+}
 /* mobitel: 1 u redu */
 @media (max-width: 640px) {
   .rituali-grid { gap: 1.4rem; width: 100%; }
-  .ritual-card { flex: 0 0 80vw; width: 80vw; height: auto; aspect-ratio: 5 / 7; }
+  /* prošla visina kartice + manji font sadržaja (da tarife stanu) */
+  .ritual-card { flex: 0 0 80vw; width: 80vw; height: auto; aspect-ratio: 3 / 4; }
   .ritual-card h3 { font-size: clamp(1rem, 5.4vw, 1.38rem); white-space: nowrap; }
+  .ritual-card .ritual-content { padding: 1.9rem 1.6rem; }
+  .ritual-card .ritual-desc { font-size: 0.92rem; margin-bottom: 1rem; min-height: 0; }
+  .ritual-card .ritual-tiers { min-height: 0; }
+  .ritual-card .rt-row { padding: 0.42rem 0; }
+  .ritual-card .rt-row span:first-child { font-size: 0.7rem; letter-spacing: 0.1em; }
+  .ritual-card .rt-row span:last-child { font-size: 1.12rem; }
+  .ritual-card .ritual-tiers { margin: 0.3rem 0 0.9rem; }
 }
 
 /* ============================================
@@ -1441,34 +1529,41 @@ body.home .cta-banner h2 {
   margin: 0 auto 3rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
 }
+/* poluprozirne kartice s okvirom */
 .cta-meta-cell {
-  padding: 1.6rem 1rem;
+  padding: 2.6rem 1.4rem;
   font-family: var(--font-brand-sub);
   font-size: 0.74rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--accent-soft);
+  background: rgba(244, 232, 214, 0.045);
+  border: 1px solid rgba(200, 150, 92, 0.28);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 .cta-meta-cell strong {
   display: block;
   font-family: var(--font-brand);
   font-weight: 400;
-  font-size: 1.8rem;
+  font-size: 1.55rem;
   text-transform: none;
   letter-spacing: 0.02em;
-  color: var(--accent-soft);
-  margin-bottom: 0.55rem;
+  color: var(--text);
+  margin-bottom: 0.6rem;
 }
+/* treća kartica je napomena (originalni tekst) — unutar istog okvira */
 .cta-meta-cell.cta-meta-note {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.3em;
   color: var(--accent-soft);
-  line-height: 1.9;
+  font-size: 0.8rem;
+  letter-spacing: 0.26em;
+  line-height: 2;
 }
 .cta-note-caps {
   font-family: var(--font-brand-sub);
@@ -1692,4 +1787,5 @@ body.home .cta-banner h2 {
   .section { padding: 4rem 0; }
   .section-head { margin-bottom: 2.5rem; }
   .container { padding: 0 1.25rem; }
+  .for-you { padding: 6rem 0; }
 }
