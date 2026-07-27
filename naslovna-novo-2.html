@@ -117,6 +117,8 @@ nav a:hover{color:var(--terra-bright)}
 .v-motif,.v-bg{position:absolute;pointer-events:none;user-select:none}
 /* abstrakt2 · 1 — lijevi kut */
 .v-left{left:clamp(1.5rem,4vw,4.5rem);bottom:0;height:min(96%,600px);width:auto;opacity:.92}
+/* abstrakt2 · 8 — odmah do biljke */
+.v-left2{left:calc(clamp(1.5rem,4vw,4.5rem) + min(15vw,265px));bottom:0;height:min(30%,200px);width:auto;opacity:.92}
 /* abstrakt3 · 3 — vrh, izmedju lijevog motiva i teksta */
 .v-top{left:23%;top:-3%;width:min(10%,132px);height:auto;opacity:.9}
 /* abstrakt3 · 11 — iza slova, izblijedjeno */
@@ -139,6 +141,7 @@ nav a:hover{color:var(--terra-bright)}
 .link-arrow:hover span{transform:translateX(5px)}
 @media(max-width:900px){
   .v-left{height:min(52%,300px);opacity:.55}
+  .v-left2{display:none}
   .v-top{display:none}
   .v-bg{opacity:.1}
 }
@@ -301,6 +304,7 @@ footer p{font-size:.95rem;color:var(--lite-dim)}
 <section class="gift">
   <img class="v-bg" src="wp-content/uploads/soul/motiv-a3-11.webp" alt="" aria-hidden="true">
   <img class="v-motif v-left" src="wp-content/uploads/soul/motiv-a2-1.webp" alt="" aria-hidden="true">
+  <img class="v-motif v-left2" src="wp-content/uploads/soul/motiv-a2-8.webp" alt="" aria-hidden="true">
   <img class="v-motif v-top" src="wp-content/uploads/soul/motiv-a3-3.webp" alt="" aria-hidden="true">
   <div class="v-in">
     <p class="eyebrow">Pokloni</p>
