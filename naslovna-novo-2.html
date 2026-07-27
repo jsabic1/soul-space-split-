@@ -54,24 +54,35 @@ nav a:hover{color:var(--terra-bright)}
 .hero .eyebrow{color:var(--gold-lite);margin-bottom:1.4rem}
 .hero h1{font-size:clamp(2.9rem,5vw,4.8rem);color:var(--lite);max-width:14ch}
 .hero .sub{font-size:1.12rem;color:var(--lite-muted);max-width:42ch;margin:1.6rem 0 2.6rem;line-height:1.7}
-.hero .pic{position:relative;overflow:hidden}
+/* fotografija u omjeru 3:2 — vidi se cijela slika, bez rezanja i pretapanja */
+.hero .pic{position:relative;align-self:center;aspect-ratio:3/2;margin-right:clamp(1rem,4vw,4rem)}
 .hero .pic img{width:100%;height:100%;object-fit:cover}
-.hero .pic::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--dark) 0%,rgba(31,15,10,0) 26%)}
 .hero .note{color:var(--gold-lite);margin-bottom:.8rem}
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;min-height:auto}
   .hero .txt{padding:120px 2rem 3.5rem}
-  .hero .pic{height:56vh}
-  .hero .pic::after{background:linear-gradient(180deg,var(--dark) 0%,rgba(31,15,10,0) 24%)}
+  .hero .pic{margin:0 1rem 2.5rem}
 }
 
-/* 2 · STATEMENT — svijetlo */
-.stmt-sec{padding:7.5rem 2rem;text-align:center;background:var(--cream)}
+/* 2+3 · FOTO-TRAKA ispod heroa (pozadina kao "prepoznaješ se" na live stranici) */
+.photo-band{position:relative;background:url('wp-content/uploads/soul/sto-kazu-klijenti.jpeg') center/cover no-repeat}
+.photo-band::before{content:"";position:absolute;inset:0;background:rgba(31,15,10,.74)}
+.photo-band>*{position:relative}
+.photo-band .stmt{color:var(--lite)}
+.photo-band .stmt .accent{color:var(--terra-bright)}
+.photo-band .note{color:var(--gold-lite)}
+.photo-band h2{color:var(--lite)}
+.photo-band .fy-item p{color:var(--lite-muted)}
+.photo-band .fy-item .lbl{color:var(--gold-lite)}
+.photo-band .fy-item svg{stroke:var(--terra-bright)}
+
+/* 2 · STATEMENT */
+.stmt-sec{padding:7.5rem 2rem;text-align:center}
 .stmt{font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,3.1rem);line-height:1.3;color:var(--ink);max-width:24ch;margin:0 auto}
 .stmt .accent{color:var(--terra)}
 
-/* 3 · PREPOZNAJEŠ SE — svijetlo */
-.foryou{background:var(--cream);padding:1.5rem 2rem 7rem;text-align:center}
+/* 3 · PREPOZNAJEŠ SE */
+.foryou{padding:1.5rem 2rem 7rem;text-align:center}
 .foryou .note{display:block;margin-bottom:.7rem}
 .foryou h2{font-size:clamp(1.9rem,3vw,2.7rem);margin-bottom:3.6rem}
 .fy-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2.4rem}
@@ -80,8 +91,10 @@ nav a:hover{color:var(--terra-bright)}
 .fy-item p{color:var(--ink-soft);font-size:1.05rem;line-height:1.55}
 @media(max-width:860px){.fy-grid{grid-template-columns:1fr;max-width:400px;gap:2rem}}
 
-/* 4 · MOJA PRIČA — svijetlo, topliji ton */
-.story{background:var(--cream2);position:relative;padding:6.5rem 2rem}
+/* 4 · MOJA PRIČA — svijetlo, izblijeđeni valoviti uzorak u pozadini */
+.story{background:var(--cream2);position:relative;padding:6.5rem 2rem;overflow:hidden}
+.story::before{content:"";position:absolute;inset:0;background:url('wp-content/uploads/soul/pattern-valovi-tamni.svg') center/640px repeat;opacity:.07;pointer-events:none}
+.story .in{position:relative}
 .story .in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:440px 1fr;gap:4.5rem;align-items:center}
 .story .photo img{width:100%;height:560px;object-fit:cover;object-position:top}
 .story .note{display:block;margin-bottom:1rem}
@@ -121,21 +134,37 @@ nav a:hover{color:var(--terra-bright)}
 .q-card figcaption{font-family:var(--caps);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--lite-dim)}
 @media(max-width:900px){.q-grid{grid-template-columns:1fr;max-width:460px}}
 
-/* 8 · JAVI SE — svijetlo */
-.cta{background:var(--cream);padding:7.5rem 2rem;text-align:center}
-.cta .eyebrow{margin-bottom:1.2rem;display:block}
-.cta h2{font-size:clamp(2.2rem,3.8vw,3.4rem);margin-bottom:.6rem}
-.cta .lead{font-family:var(--caps);font-size:.76rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:3rem}
+/* 8 · JAVI SE (pozadina kao "Pristup" na live stranici) */
+.cta{position:relative;background:url('wp-content/uploads/soul/ne-brzo-ne-forsirano.jpeg') center/cover no-repeat;padding:7.5rem 2rem;text-align:center}
+.cta::before{content:"";position:absolute;inset:0;background:rgba(31,15,10,.74)}
+.cta>*{position:relative}
+.cta .eyebrow{margin-bottom:1.2rem;display:block;color:var(--gold-lite)}
+.cta h2{font-size:clamp(2.2rem,3.8vw,3.4rem);margin-bottom:.6rem;color:var(--lite)}
+.cta .lead{font-family:var(--caps);font-size:.76rem;letter-spacing:.3em;text-transform:uppercase;color:var(--lite-muted);margin-bottom:3rem}
 .cta-meta{max-width:920px;margin:0 auto 3rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.4rem}
-.cta-cell{border:1px solid rgba(46,29,18,.18);border-radius:18px;padding:2.2rem 1.3rem;background:rgba(255,255,255,.25)}
-.cta-cell strong{display:block;font-family:var(--serif);font-size:1.7rem;font-weight:500;color:var(--ink);margin-bottom:.5rem}
-.cta-cell span{font-family:var(--caps);font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+.cta-cell{border:1px solid rgba(244,232,214,.32);border-radius:18px;padding:2.2rem 1.3rem;background:rgba(31,15,10,.28)}
+.cta-cell strong{display:block;font-family:var(--serif);font-size:1.7rem;font-weight:500;color:var(--lite);margin-bottom:.5rem}
+.cta-cell span{font-family:var(--caps);font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-lite)}
 @media(max-width:760px){.cta-meta{grid-template-columns:1fr;max-width:380px}}
 
 /* footer */
 footer{background:var(--dark);color:var(--lite-muted);padding:4rem 2rem;text-align:center}
 footer .logo{color:var(--lite);font-size:1.3rem;margin-bottom:1.2rem}
 footer p{font-size:.95rem;color:var(--lite-dim)}
+
+
+/* 9 · TRENUCI U STUDIJU — galerija s trenutne naslovnice (malo vece slike) */
+.atmo{background:var(--cream);padding:6.5rem 0 7.5rem;text-align:center}
+.atmo .note{display:block;margin-bottom:.7rem}
+.atmo h2{font-size:clamp(1.9rem,3vw,2.7rem);margin-bottom:3rem;padding:0 2rem}
+.atmo-wrap{overflow:hidden;position:relative;padding:1rem 0;mask-image:linear-gradient(to right,transparent 0%,#000 4%,#000 96%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 4%,#000 96%,transparent 100%)}
+.atmo-track{display:flex;width:max-content;animation:atmo-scroll 60s linear infinite}
+.atmo-wrap:hover .atmo-track{animation-play-state:paused}
+.atmo-slide{flex:0 0 auto;width:clamp(260px,26vw,400px);aspect-ratio:4/5;overflow:hidden;border-radius:2px;margin-right:1.2rem}
+.atmo-slide img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.atmo-slide:hover img{transform:scale(1.05)}
+@keyframes atmo-scroll{from{transform:translateX(0)}to{transform:translateX(-25%)}}
+@media(max-width:700px){.atmo-slide{width:64vw}.atmo-track{animation-duration:45s}}
 
 /* preklopnik skica */
 .skice{position:fixed;right:1rem;bottom:1rem;z-index:200;display:flex;gap:.4rem;background:rgba(31,15,10,.85);border:1px solid rgba(244,232,214,.25);border-radius:999px;padding:.45rem .7rem;backdrop-filter:blur(6px)}
@@ -164,7 +193,8 @@ footer p{font-size:.95rem;color:var(--lite-dim)}
   <div class="pic"><img src="wp-content/uploads/soul/hero-2.jpg" alt="Soul Space Split studio"></div>
 </section>
 
-<!-- 2 · STATEMENT -->
+<!-- 2+3 · FOTO-TRAKA -->
+<div class="photo-band">
 <section class="stmt-sec">
   <p class="stmt">tijelo pamti sve. <em class="accent">i zna kako se opustiti</em> — samo mu treba prostor.</p>
 </section>
@@ -196,6 +226,7 @@ footer p{font-size:.95rem;color:var(--lite-dim)}
     </div>
   </div>
 </section>
+</div>
 
 <!-- 4 · MOJA PRIČA -->
 <section class="story">
@@ -297,7 +328,34 @@ footer p{font-size:.95rem;color:var(--lite-dim)}
   <a class="btn-terra" href="#">Rezerviraj termin</a>
 </section>
 
+<!-- 9 · TRENUCI U STUDIJU (galerija s trenutne naslovnice, malo veće slike) -->
+<section class="atmo">
+  <span class="note">trenuci u studiju</span>
+  <h2>mali detalji koji čine <em>ritual</em></h2>
+  <div class="atmo-wrap">
+    <div class="atmo-track">
+      <div class="atmo-slide"><img src="wp-content/uploads/soul/atmosfera-2.jpg" alt="Diana radi u studiju"></div>
+      <div class="atmo-slide"><img src="wp-content/uploads/soul/tretman-3.jpg" alt="Ruke tijekom masaže uz biljku"></div>
+      <div class="atmo-slide"><img src="wp-content/uploads/soul/atmosfera-5.jpg" alt="Prozor sa zavjesama u studiju"></div>
+      <div class="atmo-slide"><img src="wp-content/uploads/soul/atmosfera-4.JPG" alt="Ruke u prirodnom svjetlu"></div>
+      <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-2.jpg" alt=""></div>
+      <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/tretman-3.jpg" alt=""></div>
+      <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-5.jpg" alt=""></div>
+      <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-4.JPG" alt=""></div>
+      <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-2.jpg" alt=""></div>
+      <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/tretman-3.jpg" alt=""></div>
+      <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-5.jpg" alt=""></div>
+      <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-4.JPG" alt=""></div>
+      <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-2.jpg" alt=""></div>
+      <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/tretman-3.jpg" alt=""></div>
+      <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-5.jpg" alt=""></div>
+      <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-4.JPG" alt=""></div>
+    </div>
+  </div>
+</section>
+
 <footer>
+
   <div class="logo">Soul Space</div>
   <p>Sinjska 5, Split · Utorak–subota · soulspacesplit@gmail.com</p>
 </footer>
