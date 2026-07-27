@@ -13,7 +13,7 @@
 :root{
   --cream:#F4E8D6; --cream2:#EFE0C6; --sand:#E0C79F; --clay:#D8C09E;
   --ink:#1F0F0A; --ink-soft:#3A1E14; --muted:#5A3A28;
-  --terra:#C4551F; --terra-dark:#A9451A; --gold:#B8451E;
+  --terra:#C4551F; --terra-dark:#A9451A; --gold:#B8451E; --burgundy:#7A2D12;
   --lite:#F4E8D6; --lite-muted:#E8D4B8; --gold-lite:#C8965C;
   --serif:'Cormorant Garamond',Georgia,serif;
   --caps:'Cormorant Unicase',serif;
@@ -107,10 +107,8 @@ nav a:hover{color:var(--terra)}
 @media(max-width:960px){.rit-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.rit-grid{grid-template-columns:1fr;max-width:340px}}
 
-/* 5b · POKLON BON — fotografija u pozadini (kao 'Prepoznajes se' na zivoj stranici) */
-.gift{position:relative;background:url('wp-content/uploads/soul/sto-kazu-klijenti.jpeg') center/cover no-repeat;padding:clamp(5rem,8vw,7.5rem) 2rem}
-.gift::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(31,15,10,.78) 0%,rgba(31,15,10,.62) 50%,rgba(31,15,10,.82) 100%)}
-.gift>*{position:relative}
+/* 5b · POKLON BON — jednobojna burgundy ploha */
+.gift{background:var(--burgundy);padding:clamp(5rem,8vw,7.5rem) 2rem}
 .gift-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,53fr) minmax(0,47fr);gap:clamp(2rem,4vw,4rem);align-items:center}
 .gift-text{text-align:left}
 .gift-text .eyebrow{display:block;margin-bottom:.9rem}
