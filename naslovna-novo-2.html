@@ -130,13 +130,14 @@ nav a:hover{color:var(--terra-bright)}
 .link-arrow span{display:inline-block;margin-left:.55rem;transition:transform .3s ease}
 .link-arrow:hover span{transform:translateX(5px)}
 /* dvije fotografije koje se preklapaju: veca straga (ruke), manja sprijeda (poklon bon) */
-.gift-photos{position:relative;aspect-ratio:1/1.12}
+.gift-photos{position:relative;aspect-ratio:1/1.3}
 .gift-photos img{position:absolute;object-fit:cover}
-.gp-big{right:0;top:0;width:76%;height:88%}
-.gp-small{left:0;bottom:0;width:58%;aspect-ratio:3/4;box-shadow:0 24px 60px -24px rgba(31,15,10,.85)}
+.gp-big{right:0;top:0;width:74%;height:100%}
+/* manja je okomito centrirana na veću i prelazi preko njezinog lijevog dijela */
+.gp-small{left:0;top:50%;transform:translateY(-50%);width:58%;aspect-ratio:3/4;box-shadow:0 24px 60px -24px rgba(31,15,10,.85)}
 @media(max-width:900px){
   .gift-in{grid-template-columns:1fr;max-width:520px;gap:2.5rem}
-  .gift-photos{aspect-ratio:1/1}
+  .gift-photos{aspect-ratio:1/1.15}
 }
 
 /* 6 · IMAGE BREAK — tamno */
