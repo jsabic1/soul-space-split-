@@ -52,8 +52,14 @@
   .nn .btn-terra:hover,.btn-terra:focus-visible,.btn-terra:active{background:var(--terra);border-color:var(--terra);color:#F7ECDD;box-shadow:0 12px 32px -12px rgba(196,85,31,.55)}
 
   /* 2 · TIJELO PAMTI SVE */
-  .nn .stmt-sec{position:relative;padding:25rem 2rem 15rem;background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(1.6rem,3vw,2.8rem);text-align:center}
-  .nn .figura{position:static;flex:0 0 auto;width:clamp(120px,15vw,210px);height:auto;pointer-events:none}
+  .nn .stmt-sec{position:relative;padding:21rem 2rem 15rem;background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(2.5rem,5vw,5rem);text-align:center}
+  .nn .figura-wrap{position:relative;flex:0 0 auto;display:flex;align-items:center;justify-content:center}
+  .nn .figura-wrap::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:clamp(240px,28vw,410px);aspect-ratio:451/684;opacity:.5;pointer-events:none;z-index:0;
+    mask-image:linear-gradient(#000 52%,rgba(0,0,0,.35) 74%,transparent 92%);
+    -webkit-mask-image:linear-gradient(#000 52%,rgba(0,0,0,.35) 74%,transparent 92%);
+    background:url('../wp-content/uploads/soul/motiv-a6-3.webp') center/contain no-repeat}
+  .nn .figura{position:relative;z-index:1;display:block;width:clamp(120px,15vw,210px);height:auto;pointer-events:none}
   .nn .stmt{font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,3.1rem);line-height:1.3;color:var(--ink);max-width:24ch;margin:0 auto}
   .nn .stmt .accent{color:inherit}
 
@@ -80,9 +86,10 @@
     .nn .fy-item p{font-size:.95rem;max-width:17ch}
     .nn .fy-item svg{width:34px;height:34px}
     .nn .fy-item .lbl{font-size:.66rem;letter-spacing:.24em}
-    .nn .stmt-sec{padding:11rem 1.6rem 8rem}
+    .nn .stmt-sec{padding:9.5rem 1.6rem 8rem}
     .nn .foryou{padding:3rem 1.6rem 5rem}
-    .nn .figura{width:120px;opacity:.85}}
+    .nn .figura{width:120px;opacity:.85}
+    .nn .figura-wrap::before{width:clamp(210px,62vw,300px)}}
 
   /* 4 · MOJA PRIČA — tamno, slika uz lijevi rub s parallaxom */
   .nn .story{background:var(--dark2);position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,42fr) minmax(0,58fr);align-items:stretch}
@@ -122,19 +129,19 @@
   /* 6 · POKLON BON — okvir desno, tekst lijevo */
   .nn .gift{position:relative;display:block;padding:clamp(4rem,6vw,6.5rem) 2rem;background:var(--cream);overflow:hidden}
   .nn .gwrap{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:auto auto auto;justify-content:center;align-items:center;gap:clamp(1.5rem,4vw,4rem)}
-  .nn .gdivide{width:clamp(120px,14vw,230px);aspect-ratio:302/548;justify-self:center;background:url('../wp-content/uploads/soul/motiv-a6-4.webp') center/contain no-repeat;align-self:center}
-  .nn .gcopy{max-width:min(100%,460px)}
+  .nn .gdivide{width:min(230px,16vw);aspect-ratio:302/548;justify-self:center;background:url('../wp-content/uploads/soul/motiv-a6-4.webp') center/contain no-repeat;align-self:center}
+  .nn .gcopy{width:min(460px,34vw)}
   .nn .gcopy .eyebrow{display:block;font-size:.74rem;color:var(--terra);margin-bottom:.9rem}
   .nn .gcopy h2{font-size:clamp(2.2rem,4vw,3.3rem);line-height:1.04;margin-bottom:1.1rem;color:var(--ink)}
   .nn .gcopy p{font-size:clamp(1rem,1.3vw,1.14rem);line-height:1.65;color:var(--ink-soft);max-width:34ch;margin-bottom:1.5rem}
-  .nn .gframe{position:relative;width:100%;max-width:430px;justify-self:center;aspect-ratio:900/1248;display:flex;align-items:center;justify-content:center;text-align:center}
+  .nn .gframe{position:relative;width:min(430px,31vw);justify-self:center;aspect-ratio:900/1248;display:flex;align-items:center;justify-content:center;text-align:center}
   .nn .gframe::before{content:"";position:absolute;inset:0;background:url('../wp-content/uploads/soul/luk-terakota.webp') center/contain no-repeat;opacity:.42;pointer-events:none}
   .nn .gframe::after{content:"";position:absolute;inset:6% 8%;background:url('../wp-content/uploads/soul/motiv-a4-2.webp') center/contain no-repeat;opacity:.26;mix-blend-mode:multiply;pointer-events:none}
-  .nn .gin{position:relative;z-index:1;padding:0 10%}
+  .nn .gin{position:relative;z-index:1;width:78%;max-width:78%}
   .nn .v-mins{display:flex;align-items:baseline;justify-content:center;gap:.7rem;font-family:var(--serif);font-size:clamp(2.1rem,3.2vw,2.9rem);line-height:1;color:var(--terra)}
   .nn .v-mins i{font-style:normal;font-size:.45em;color:var(--gold);transform:translateY(-.3em)}
-  .nn .v-unit{font-family:var(--caps);font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin:.7rem 0 0}
-  .nn .gift-notes{list-style:none;margin:1.4rem 0 0;padding:0;display:flex;flex-direction:column;gap:.5rem;font-family:var(--caps);font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft)}
+  .nn .v-unit{font-family:var(--caps);font-size:clamp(.66rem,1vw,.84rem);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:.7rem 0 0}
+  .nn .gift-notes{list-style:none;margin:1.4rem 0 0;padding:0;display:flex;flex-direction:column;gap:.5rem;font-family:var(--caps);font-size:clamp(.6rem,.9vw,.76rem);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft)}
   .nn .gift-notes li::before{content:"\2726";color:var(--terra);margin-right:.4rem}
   .nn .link-arrow{display:inline-block;font-family:var(--caps);font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
   .nn .link-arrow span{display:inline-block;margin-left:.55rem;transition:transform .3s ease}
@@ -142,6 +149,8 @@
   @media(max-width:820px){
     .nn .gift{padding:4.5rem 1.6rem 5rem}
     .nn .gwrap{grid-template-columns:1fr;gap:2.2rem;text-align:center;justify-items:center;justify-content:stretch}
+    .nn .gcopy{width:100%}
+    .nn .gframe{width:min(340px,88vw)}
     .nn .gdivide{width:clamp(90px,26vw,140px)}
     .nn .gcopy{justify-self:center}
     .nn .gcopy p{margin-left:auto;margin-right:auto}
@@ -243,7 +252,9 @@
 
     <!-- YOUR BODY REMEMBERS -->
     <section class="stmt-sec">
-      <img class="figura" src="../wp-content/uploads/soul/figura-tijelo.webp" alt="" aria-hidden="true">
+      <div class="figura-wrap" aria-hidden="true">
+        <img class="figura" src="../wp-content/uploads/soul/figura-tijelo.webp" alt="" aria-hidden="true">
+      </div>
       <p class="stmt">Your body remembers everything <em class="accent">and knows how to relax</em>. It only needs a chance.</p>
     </section>
 
