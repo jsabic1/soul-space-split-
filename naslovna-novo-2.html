@@ -114,9 +114,16 @@ nav a:hover{color:var(--terra-bright)}
 
 /* 5b · POKLON BON — cijela sekcija je voucher */
 .gift{position:relative;overflow:hidden;background:var(--cream2);padding:clamp(4.5rem,8vw,7rem) 2rem}
-.v-motif{position:absolute;left:clamp(-40px,-2vw,0px);bottom:0;height:min(100%,620px);width:auto;
-  opacity:.9;pointer-events:none;user-select:none}
-.v-in{position:relative;max-width:760px;margin:0 auto;text-align:center}
+.v-motif,.v-bg{position:absolute;pointer-events:none;user-select:none}
+/* abstrakt2 · 1 — lijevi kut */
+.v-left{left:clamp(-40px,-2vw,0px);bottom:0;height:min(100%,620px);width:auto;opacity:.92}
+/* abstrakt2 · 3 — desni kut */
+.v-right{right:clamp(-26px,-1.4vw,0px);bottom:8%;width:min(23%,300px);height:auto;opacity:.92}
+/* abstrakt3 · 3 — vrh, izmedju lijevog motiva i teksta */
+.v-top{left:23%;top:-3%;width:min(10%,132px);height:auto;opacity:.9}
+/* abstrakt3 · 11 — iza slova, izblijedjeno */
+.v-bg{left:50%;top:50%;transform:translate(-50%,-50%);height:min(96%,560px);width:auto;opacity:.15}
+.v-in{position:relative;z-index:1;max-width:760px;margin:0 auto;text-align:center}
 .v-in .eyebrow{display:block;margin-bottom:.9rem}
 .gift h2{font-size:clamp(2.1rem,4vw,3.4rem);line-height:1.1;margin-bottom:1rem;color:var(--ink)}
 .v-lead{color:var(--ink-soft);max-width:44ch;margin:0 auto 2.2rem}
@@ -133,7 +140,10 @@ nav a:hover{color:var(--terra-bright)}
 .link-arrow span{display:inline-block;margin-left:.55rem;transition:transform .3s ease}
 .link-arrow:hover span{transform:translateX(5px)}
 @media(max-width:900px){
-  .v-motif{height:min(60%,340px);opacity:.5}
+  .v-left{height:min(52%,300px);opacity:.55}
+  .v-right{width:26%;opacity:.55}
+  .v-top{display:none}
+  .v-bg{opacity:.1}
 }
 
 
@@ -292,7 +302,10 @@ footer p{font-size:.95rem;color:var(--lite-dim)}
 
 <!-- 5b · POKLON BON — cijela sekcija je voucher -->
 <section class="gift">
-  <img class="v-motif" src="wp-content/uploads/soul/motiv-a2-1.webp" alt="" aria-hidden="true">
+  <img class="v-bg" src="wp-content/uploads/soul/motiv-a3-11.webp" alt="" aria-hidden="true">
+  <img class="v-motif v-left" src="wp-content/uploads/soul/motiv-a2-1.webp" alt="" aria-hidden="true">
+  <img class="v-motif v-right" src="wp-content/uploads/soul/motiv-a2-3.webp" alt="" aria-hidden="true">
+  <img class="v-motif v-top" src="wp-content/uploads/soul/motiv-a3-3.webp" alt="" aria-hidden="true">
   <div class="v-in">
     <p class="eyebrow">Pokloni</p>
     <h2>Poklon bon</h2>
