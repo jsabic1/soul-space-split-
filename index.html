@@ -70,8 +70,8 @@
   .nn .foryou h2{font-size:clamp(1.9rem,3vw,2.7rem);margin-bottom:4.6rem}
   .nn .fy-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2.4rem}
   .nn .fy-item svg{width:40px;height:40px;stroke:var(--terra);margin:0 auto 1rem}
-  .nn .fy-item .lbl{font-family:var(--caps);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.6rem}
-  .nn .fy-item p{color:var(--ink-soft);font-size:1.05rem;line-height:1.6;max-width:17ch;margin:0 auto}
+  .nn .fy-item .lbl{font-family:var(--caps);font-size:.86rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.6rem}
+  .nn .fy-item p{color:var(--ink-soft);font-size:1.16rem;line-height:1.6;max-width:16ch;margin:0 auto}
   /* 4 poster-motiva (abstrakt-5) kao izblijedjena pozadina iza svake stavke */
   .nn .fy-item{position:relative;padding-top:.5rem}
   .nn .fy-item::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
@@ -84,9 +84,9 @@
   .nn .fy-item svg,.nn .fy-item .lbl,.nn .fy-item p{position:relative;z-index:1}
   @media(max-width:860px){
     .nn .fy-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:440px;gap:2.6rem 1.2rem}
-    .nn .fy-item p{font-size:.95rem;max-width:15ch}
+    .nn .fy-item p{font-size:1.02rem;max-width:15ch}
     .nn .fy-item svg{width:34px;height:34px}
-    .nn .fy-item .lbl{font-size:.66rem;letter-spacing:.24em}
+    .nn .fy-item .lbl{font-size:.76rem;letter-spacing:.2em}
     .nn .stmt-sec{padding:9.5rem 1.6rem 8rem}
     .nn .foryou{padding:3rem 1.6rem 5rem}
     .nn .figura{width:120px;opacity:.85}
@@ -131,18 +131,18 @@
   .nn .gift{position:relative;display:block;padding:clamp(4rem,6vw,6.5rem) 2rem;background:var(--cream);overflow:hidden}
   .nn .gwrap{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:auto auto auto;justify-content:center;align-items:center;gap:clamp(1.5rem,4vw,4rem)}
   .nn .gdivide{width:min(230px,16vw);aspect-ratio:302/548;justify-self:center;background:url('wp-content/uploads/soul/motiv-a6-4.webp') center/contain no-repeat;align-self:center}
-  .nn .gcopy{width:min(460px,34vw)}
+  .nn .gcopy{width:fit-content;max-width:min(460px,34vw)}
   .nn .gcopy .eyebrow{display:block;font-size:.74rem;color:var(--terra);margin-bottom:.9rem}
   .nn .gcopy h2{font-size:clamp(2.2rem,4vw,3.3rem);line-height:1.04;margin-bottom:1.1rem;color:var(--ink)}
   .nn .gcopy p{font-size:clamp(1rem,1.3vw,1.14rem);line-height:1.65;color:var(--ink-soft);max-width:34ch;margin-bottom:1.5rem}
   .nn .gframe{position:relative;width:min(430px,31vw);justify-self:center;aspect-ratio:900/1248;display:flex;align-items:center;justify-content:center;text-align:center}
   .nn .gframe::before{content:"";position:absolute;inset:0;background:url('wp-content/uploads/soul/luk-terakota.webp') center/contain no-repeat;opacity:.42;pointer-events:none}
   .nn .gframe::after{content:"";position:absolute;inset:6% 8%;background:url('wp-content/uploads/soul/motiv-a4-2.webp') center/contain no-repeat;opacity:.26;mix-blend-mode:multiply;pointer-events:none}
-  .nn .gin{position:relative;z-index:1;width:78%;max-width:78%}
+  .nn .gin{position:relative;z-index:1;width:78%;max-width:78%;margin-top:14%}
   .nn .v-mins{display:flex;align-items:baseline;justify-content:center;gap:.7rem;font-family:var(--serif);font-size:clamp(2.1rem,3.2vw,2.9rem);line-height:1;color:var(--terra)}
   .nn .v-mins i{font-style:normal;font-size:.45em;color:var(--gold);transform:translateY(-.3em)}
-  .nn .v-unit{font-family:var(--caps);font-size:clamp(.66rem,1vw,.84rem);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:.7rem 0 0}
-  .nn .gift-notes{list-style:none;margin:1.4rem 0 0;padding:0;display:flex;flex-direction:column;gap:.5rem;font-family:var(--caps);font-size:clamp(.6rem,.9vw,.76rem);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft)}
+  .nn .v-unit{font-family:var(--caps);font-size:clamp(.66rem,1vw,.84rem);letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--ink-soft);margin:.7rem 0 0}
+  .nn .gift-notes{list-style:none;margin:1.4rem 0 0;padding:0;display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:.5rem;font-family:var(--caps);font-size:clamp(.6rem,.9vw,.76rem);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft)}
   .nn .gift-notes li::before{content:"\2726";color:var(--terra);margin-right:.4rem}
   .nn .link-arrow{display:inline-block;font-family:var(--caps);font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
   .nn .link-arrow span{display:inline-block;margin-left:.55rem;transition:transform .3s ease}
