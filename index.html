@@ -138,11 +138,11 @@
   .nn .gframe{position:relative;width:min(430px,31vw);justify-self:center;aspect-ratio:900/1248;display:flex;align-items:center;justify-content:center;text-align:center}
   .nn .gframe::before{content:"";position:absolute;inset:0;background:url('wp-content/uploads/soul/luk-terakota.webp') center/contain no-repeat;opacity:.42;pointer-events:none}
   .nn .gframe::after{content:"";position:absolute;inset:6% 8%;background:url('wp-content/uploads/soul/motiv-a4-2.webp') center/contain no-repeat;opacity:.26;mix-blend-mode:multiply;pointer-events:none}
-  .nn .gin{position:relative;z-index:1;width:78%;max-width:78%;margin-top:14%}
+  .nn .gin{position:relative;z-index:1;width:74%;max-width:74%;margin-top:22%}
   .nn .v-mins{display:flex;align-items:baseline;justify-content:center;gap:.7rem;font-family:var(--serif);font-size:clamp(2.1rem,3.2vw,2.9rem);line-height:1;color:var(--terra)}
   .nn .v-mins i{font-style:normal;font-size:.45em;color:var(--gold);transform:translateY(-.3em)}
   .nn .v-unit{font-family:var(--caps);font-size:clamp(.66rem,1vw,.84rem);letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--ink-soft);margin:.7rem 0 0}
-  .nn .gift-notes{list-style:none;margin:1.4rem 0 0;padding:0;display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:.5rem;font-family:var(--caps);font-size:clamp(.6rem,.9vw,.76rem);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft)}
+  .nn .gift-notes{list-style:none;margin:1.4rem 0 0;padding:0;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:.5rem;font-family:var(--caps);font-size:clamp(.6rem,.9vw,.76rem);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft)}
   .nn .gift-notes li::before{content:"\2726";color:var(--terra);margin-right:.4rem}
   .nn .link-arrow{display:inline-block;font-family:var(--caps);font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
   .nn .link-arrow span{display:inline-block;margin-left:.55rem;transition:transform .3s ease}
@@ -174,6 +174,31 @@
   .nn .q-card figcaption{font-family:var(--caps);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
   @media(max-width:900px){.nn .q-grid{grid-template-columns:1fr;max-width:460px}}
 
+  /* 8b · KORACI — lukovi na dubljem krem tonu */
+  .nn .steps{background:var(--cream2);padding:8rem 2rem 8.5rem;text-align:center}
+  .nn .steps .eyebrow{display:block;color:var(--terra);margin-bottom:.9rem}
+  .nn .steps h2{font-size:clamp(2rem,3.4vw,3rem);color:var(--ink);margin-bottom:4.5rem}
+  .nn .st-grid{position:relative;max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2.2rem}
+  .nn .st-grid::before{content:"";position:absolute;left:6%;right:6%;top:188px;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(196,85,31,.35) 12%,rgba(196,85,31,.35) 88%,transparent)}
+  .nn .st{position:relative}
+  .nn .st-mark{position:relative;width:132px;aspect-ratio:349/497;margin:0 auto 1.6rem;
+    background:url('wp-content/uploads/soul/luk-koraci.webp') center/contain no-repeat;
+    display:flex;align-items:center;justify-content:center}
+  .nn .st-num{font-family:var(--serif);font-size:2.1rem;line-height:1;color:var(--terra);transform:translateY(-8%)}
+  .nn .st h3{font-family:var(--serif);font-weight:700;font-size:1.35rem;color:var(--ink);margin-bottom:.5rem}
+  .nn .st p{font-family:var(--bodyf);font-size:1.04rem;line-height:1.6;color:var(--ink-soft);max-width:23ch;margin:0 auto}
+  .nn .steps .btn-terra{margin-top:4rem;color:var(--terra);border-color:var(--terra)}
+  .nn .steps .btn-terra:hover,.nn .steps .btn-terra:focus-visible,.nn .steps .btn-terra:active{background:var(--terra);border-color:var(--terra);color:#FFF3E5}
+  @media(max-width:900px){
+    .nn .st-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:3rem 1.5rem;max-width:520px}
+    .nn .st-grid::before{display:none}
+    .nn .st-mark{width:108px}
+    .nn .st-num{font-size:1.8rem}}
+  @media(max-width:480px){
+    .nn .steps{padding:5.5rem 1.6rem 6rem}
+    .nn .steps h2{margin-bottom:3rem}
+    .nn .st p{font-size:.98rem;max-width:18ch}}
   /* 9 · TRENUCI U STUDIJU — tamno, galerija koja se vrti */
   .nn .atmo{background:var(--dark);padding:6.5rem 0 7.5rem;text-align:center}
   .nn .atmo .note{display:block;margin-bottom:.7rem;color:var(--gold-lite)}
@@ -401,6 +426,35 @@
           <figcaption>Frankolinna</figcaption>
         </figure>
       </div>
+    </section>
+
+    <!-- KORACI -->
+    <section class="steps">
+      <span class="eyebrow">Kako to izgleda</span>
+      <h2>Od poruke do stola</h2>
+      <div class="st-grid">
+        <div class="st">
+          <div class="st-mark" aria-hidden="true"><span class="st-num">01</span></div>
+          <h3>Pišeš mi</h3>
+          <p>Mail ili poruka s par rečenica o tome kako se osjećaš.</p>
+        </div>
+        <div class="st">
+          <div class="st-mark" aria-hidden="true"><span class="st-num">02</span></div>
+          <h3>Predlažem</h3>
+          <p>Ritual koji bi ti najbolje sjeo i 2-3 slobodna termina.</p>
+        </div>
+        <div class="st">
+          <div class="st-mark" aria-hidden="true"><span class="st-num">03</span></div>
+          <h3>Dolaziš</h3>
+          <p>Studio na Sinjskoj 5. Jedan sat za tebe, ništa ne moraš.</p>
+        </div>
+        <div class="st">
+          <div class="st-mark" aria-hidden="true"><span class="st-num">04</span></div>
+          <h3>Nastavljaš</h3>
+          <p>Vraćaš se prema potrebi. Većina dolazi jedanput mjesečno.</p>
+        </div>
+      </div>
+      <a class="btn-terra" href="kontakt/" data-reserve>Rezerviraj termin</a>
     </section>
 
     <!-- TRENUCI U STUDIJU -->
