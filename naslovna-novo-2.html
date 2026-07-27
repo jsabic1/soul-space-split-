@@ -112,39 +112,31 @@ nav a:hover{color:var(--terra-bright)}
 @media(max-width:960px){.rit-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.rit-grid{grid-template-columns:1fr;max-width:340px}}
 
-/* 5b · POKLON BON — kartica u sredini sekcije, podloga kao Rituali */
+/* 5b · POKLON BON — okomiti voucher, dizajn iz abstrakt-pozadina1 br. 3 */
 .gift{background:var(--cream);padding:clamp(4rem,7vw,6.5rem) 2rem}
-.voucher{position:relative;overflow:hidden;max-width:940px;margin:0 auto;background:var(--burgundy);
-  aspect-ratio:1.6;display:flex;align-items:center;justify-content:center;
-  padding:clamp(2.4rem,4vw,3.6rem) clamp(2rem,5vw,4.5rem);
-  box-shadow:0 30px 70px -35px rgba(31,15,10,.5)}
-.v-motif{position:absolute;pointer-events:none;user-select:none}
-/* abstrakt2 · 1 — dolje lijevo, izlazi iz kartice */
-.v-left{left:-34px;bottom:-46px;height:min(88%,360px);width:auto;opacity:.9}
-/* abstrakt2 · 8 — odmah do biljke */
-.v-left2{left:calc(-34px + min(15vw,150px));bottom:-24px;height:min(38%,150px);width:auto;opacity:.9}
-/* abstrakt3 · 1 — gore desno, izlazi iz kartice */
-.v-right{right:-30px;top:-40px;height:min(62%,260px);width:auto;opacity:.9}
-.v-in{position:relative;z-index:1;max-width:520px;text-align:center}
-.v-in .eyebrow{display:block;font-size:.82rem;margin-bottom:1rem;color:var(--gold-lite)}
-.gift h2{font-size:clamp(2.8rem,5.2vw,4.4rem);line-height:1.06;margin-bottom:1.1rem;color:var(--gold-lite)}
-.v-lead{font-size:clamp(1rem,1.3vw,1.15rem);line-height:1.6;color:var(--lite-muted);max-width:38ch;margin:0 auto 1.8rem}
-.v-mins{display:flex;align-items:baseline;justify-content:center;gap:clamp(.7rem,2vw,1.3rem);
-  font-family:var(--serif);font-size:clamp(2.6rem,5.4vw,4.2rem);line-height:1;color:var(--gold-lite)}
-.v-mins i{font-style:normal;font-size:.45em;color:var(--gold-lite);transform:translateY(-.35em)}
-.v-unit{font-family:var(--caps);font-size:.78rem;letter-spacing:.34em;text-transform:uppercase;
-  color:var(--lite-dim);margin:.8rem 0 1.6rem}
-.gift-notes{list-style:none;margin:0;display:flex;flex-direction:column;gap:.5rem;
-  font-family:var(--caps);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--lite-muted)}
-.gift-notes li::before{content:"✦";color:var(--gold-lite);margin-right:.6rem}
-.link-arrow{display:inline-block;margin-top:1.7rem;font-family:var(--caps);font-size:.8rem;
-  letter-spacing:.3em;text-transform:uppercase;color:var(--lite)}
+.voucher{position:relative;overflow:hidden;width:min(100%,560px);margin:0 auto;aspect-ratio:1100/1676;
+  background:var(--burgundy) url('wp-content/uploads/soul/voucher-pozadina.webp') center/cover no-repeat;
+  display:flex;align-items:center;justify-content:center;
+  padding:9% 9% 26% 9%;
+  box-shadow:0 30px 70px -35px rgba(31,15,10,.55)}
+.v-in{position:relative;z-index:1;max-width:30ch;text-align:center}
+.v-in .eyebrow{display:block;font-size:.78rem;margin-bottom:.9rem;color:var(--gold-lite)}
+.gift h2{font-size:clamp(2.4rem,6vw,3.4rem);line-height:1.06;margin-bottom:1rem;color:var(--gold-lite)}
+.v-lead{font-size:clamp(.95rem,1.9vw,1.05rem);line-height:1.6;color:var(--lite-muted);max-width:27ch;margin:0 auto 1.5rem}
+.v-mins{display:flex;align-items:baseline;justify-content:center;gap:clamp(.6rem,2.4vw,1.1rem);
+  font-family:var(--serif);font-size:clamp(2.4rem,7vw,3.6rem);line-height:1;color:var(--gold-lite)}
+.v-mins i{font-style:normal;font-size:.45em;color:var(--lite-dim);transform:translateY(-.35em)}
+.v-unit{font-family:var(--caps);font-size:.74rem;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--lite-dim);margin:.8rem 0 1.5rem}
+.gift-notes{list-style:none;margin:0;display:flex;flex-direction:column;gap:.4rem;
+  font-family:var(--caps);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--lite-muted)}
+.gift-notes li::before{content:"✦";color:var(--gold-lite);margin-right:.5rem}
+.link-arrow{display:inline-block;margin-top:1.3rem;font-family:var(--caps);font-size:.74rem;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--lite)}
 .link-arrow span{display:inline-block;margin-left:.55rem;transition:transform .3s ease}
 .link-arrow:hover span{transform:translateX(5px)}
-@media(max-width:820px){
+@media(max-width:600px){
   .voucher{aspect-ratio:auto;padding:3rem 1.6rem}
-  .v-left{height:min(46%,190px);opacity:.5}
-  .v-left2,.v-right{display:none}
 }
 
 
@@ -301,12 +293,9 @@ footer p{font-size:.95rem;color:var(--lite-dim)}
   </div>
 </section>
 
-<!-- 5b · POKLON BON — kartica u sredini sekcije -->
+<!-- 5b · POKLON BON — okomiti voucher -->
 <section class="gift">
   <div class="voucher">
-    <img class="v-motif v-left" src="wp-content/uploads/soul/motiv-a2-1-svijetli.webp" alt="" aria-hidden="true">
-    <img class="v-motif v-left2" src="wp-content/uploads/soul/motiv-a2-8-svijetli.webp" alt="" aria-hidden="true">
-    <img class="v-motif v-right" src="wp-content/uploads/soul/motiv-a3-1-svijetli.webp" alt="" aria-hidden="true">
     <div class="v-in">
       <p class="eyebrow">Pokloni</p>
       <h2>Poklon bon</h2>
