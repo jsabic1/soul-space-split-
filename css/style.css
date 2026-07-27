@@ -1128,11 +1128,40 @@ body.home .cta-banner h2 {
   gap: 0.5rem;
 }
 .ritual-card:hover .ritual-link { gap: 1rem; }
+/* cijene po trajanju — popis tarifa na kartici */
+.ritual-card .ritual-tiers { margin: 0.4rem 0 1.15rem; }
+.ritual-card .rt-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  border-top: 1px solid rgba(216, 105, 52, 0.32);
+}
+.ritual-card .rt-row span:first-child {
+  font-family: var(--font-brand-sub);
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.ritual-card .rt-row span:last-child {
+  font-family: var(--font-brand);
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--accent);
+}
 /* mobitel: 1 u redu */
 @media (max-width: 640px) {
   .rituali-grid { gap: 1.4rem; width: 100%; }
-  .ritual-card { flex: 0 0 80vw; width: 80vw; height: auto; aspect-ratio: 3 / 4; }
+  /* duže kartice da stanu sve tarife + manji font sadržaja */
+  .ritual-card { flex: 0 0 80vw; width: 80vw; height: auto; aspect-ratio: 5 / 8; }
   .ritual-card h3 { font-size: clamp(1rem, 5.4vw, 1.38rem); white-space: nowrap; }
+  .ritual-card .ritual-content { padding: 1.9rem 1.6rem; }
+  .ritual-card .ritual-desc { font-size: 0.92rem; margin-bottom: 1rem; }
+  .ritual-card .rt-row { padding: 0.42rem 0; }
+  .ritual-card .rt-row span:first-child { font-size: 0.7rem; letter-spacing: 0.1em; }
+  .ritual-card .rt-row span:last-child { font-size: 1.12rem; }
+  .ritual-card .ritual-tiers { margin: 0.3rem 0 0.9rem; }
 }
 
 /* ============================================
