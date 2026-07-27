@@ -107,23 +107,30 @@ nav a:hover{color:var(--terra)}
 .gift{position:relative;background:url('wp-content/uploads/soul/sto-kazu-klijenti.jpeg') center/cover no-repeat;padding:clamp(5rem,8vw,7.5rem) 2rem}
 .gift::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(31,15,10,.78) 0%,rgba(31,15,10,.62) 50%,rgba(31,15,10,.82) 100%)}
 .gift>*{position:relative}
-.gift-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,42fr) minmax(0,58fr);gap:clamp(2.5rem,5vw,5rem);align-items:center}
-.gift-card{position:relative;overflow:hidden}
-.gift-card img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .8s ease}
-.gift-card:hover img{transform:scale(1.03)}
-.gift-card figcaption{position:absolute;inset:auto 0 0 0;padding:4rem 1.6rem 2.4rem;text-align:center;background:linear-gradient(rgba(31,15,10,0),rgba(31,15,10,.62))}
-.gc-title{display:block;font-family:var(--serif);font-size:clamp(1.6rem,2.4vw,2.15rem);line-height:1.15;color:#F4E8D6;margin-bottom:.6rem}
-.gift-card figcaption p{color:#E8D4B8;font-size:.95rem;line-height:1.5;max-width:32ch;margin:0 auto}
-.gift-text{text-align:center}
+.gift-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,53fr) minmax(0,47fr);gap:clamp(2rem,4vw,4rem);align-items:center}
+.gift-text{text-align:left}
 .gift-text .eyebrow{display:block;margin-bottom:.9rem}
-.gift-text h2{font-size:clamp(1.9rem,3vw,2.9rem);line-height:1.2;margin:0 auto 1.9rem;max-width:20ch}
-.gift-text p{color:var(--lite-muted);margin:0 auto 1.2rem;max-width:52ch}
-.gift-notes{list-style:none;margin:2rem auto 0;display:flex;flex-direction:column;gap:.55rem;font-family:var(--caps);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--lite-muted)}
-.gift-notes li::before{content:"✦";color:var(--gold);margin-right:.6rem}
-.link-arrow{display:inline-block;margin-top:1.5rem;font-family:var(--caps);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--lite)}
+.gift-text h2{font-size:clamp(1.9rem,3vw,2.9rem);line-height:1.2;margin-bottom:1rem;max-width:20ch;color:var(--lite)}
+.gift-text>p{color:var(--lite-muted);max-width:46ch;margin-bottom:.6rem}
+.gift-list{list-style:none;margin:1.8rem 0 0}
+.gift-list li{display:flex;align-items:baseline;gap:clamp(1rem,2vw,1.8rem);padding:1rem 0;border-bottom:1px solid rgba(244,232,214,.2)}
+.gl-num{font-family:var(--serif);font-style:italic;font-size:1.1rem;letter-spacing:.06em;color:var(--gold-lite);min-width:2rem}
+.gl-name{font-family:var(--serif);font-size:clamp(1.45rem,2.3vw,2.05rem);line-height:1.15;color:var(--lite)}
+.gl-name em{font-style:italic}
+.gift-notes{list-style:none;margin:1.8rem 0 0;display:flex;flex-direction:column;gap:.55rem;font-family:var(--caps);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--lite-muted)}
+.gift-notes li::before{content:"✦";color:var(--gold-lite);margin-right:.6rem}
+.link-arrow{display:inline-block;margin-top:1.8rem;font-family:var(--caps);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--lite)}
 .link-arrow span{display:inline-block;margin-left:.55rem;transition:transform .3s ease}
 .link-arrow:hover span{transform:translateX(5px)}
-@media(max-width:900px){.gift-in{grid-template-columns:1fr;max-width:520px;gap:2.5rem}}
+/* dvije fotografije koje se preklapaju: veca straga (ruke), manja sprijeda (poklon bon) */
+.gift-photos{position:relative;aspect-ratio:1/1.12}
+.gift-photos img{position:absolute;object-fit:cover}
+.gp-big{right:0;top:0;width:76%;height:88%}
+.gp-small{left:0;bottom:0;width:58%;aspect-ratio:3/4;box-shadow:0 24px 60px -24px rgba(31,15,10,.85)}
+@media(max-width:900px){
+  .gift-in{grid-template-columns:1fr;max-width:520px;gap:2.5rem}
+  .gift-photos{aspect-ratio:1/1}
+}
 
 /* 6 · IMAGE BREAK */
 .break{position:relative;min-height:74vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem}
@@ -280,23 +287,25 @@ footer p{font-size:.95rem;color:var(--lite-dim)}
 <!-- 5b · POKLON BON -->
 <section class="gift">
   <div class="gift-in">
-    <figure class="gift-card">
-      <img src="wp-content/uploads/soul/poklon-bon.jpeg" alt="Poklon bon Soul Space Split">
-      <figcaption>
-        <span class="gc-title">60 · 75 · 90</span>
-        <p>minuta masaže</p>
-      </figcaption>
-    </figure>
     <div class="gift-text">
       <p class="eyebrow">Pokloni</p>
       <h2>Poklon bon</h2>
       <p>Pokloni nekome ono što se ne može kupiti, vrijeme samo za sebe.</p>
+      <ol class="gift-list">
+        <li><span class="gl-num">01</span><span class="gl-name">60 minuta <em>masaže</em></span></li>
+        <li><span class="gl-num">02</span><span class="gl-name">75 minuta <em>masaže</em></span></li>
+        <li><span class="gl-num">03</span><span class="gl-name">90 minuta <em>masaže</em></span></li>
+      </ol>
       <ul class="gift-notes">
         <li>Vrijedi 3 mjeseca od kupnje</li>
         <li>Ritual se dogovara s osobom koja dolazi</li>
         <li>Dostupan u fizičkom obliku ili kao PDF</li>
       </ul>
       <a class="link-arrow" href="poklon-bon/">Pogledaj poklon bonove <span aria-hidden="true">&rsaquo;</span></a>
+    </div>
+    <div class="gift-photos">
+      <img class="gp-big" src="wp-content/uploads/soul/atmosfera-4.JPG" alt="Dianine ruke u prirodnom svjetlu">
+      <img class="gp-small" src="wp-content/uploads/soul/inner-glow.jpeg" alt="Ritual Inner Glow">
     </div>
   </div>
 </section>
