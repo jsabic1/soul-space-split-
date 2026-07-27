@@ -1153,8 +1153,8 @@ body.home .cta-banner h2 {
 /* mobitel: 1 u redu */
 @media (max-width: 640px) {
   .rituali-grid { gap: 1.4rem; width: 100%; }
-  /* duže kartice da stanu sve tarife + manji font sadržaja */
-  .ritual-card { flex: 0 0 80vw; width: 80vw; height: auto; aspect-ratio: 5 / 8; }
+  /* prošla visina kartice + manji font sadržaja (da tarife stanu) */
+  .ritual-card { flex: 0 0 80vw; width: 80vw; height: auto; aspect-ratio: 3 / 4; }
   .ritual-card h3 { font-size: clamp(1rem, 5.4vw, 1.38rem); white-space: nowrap; }
   .ritual-card .ritual-content { padding: 1.9rem 1.6rem; }
   .ritual-card .ritual-desc { font-size: 0.92rem; margin-bottom: 1rem; }
