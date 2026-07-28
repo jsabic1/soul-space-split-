@@ -74,8 +74,8 @@
   .nn .foryou{background:var(--cream);padding:5rem 2rem 7rem;text-align:center;overflow:hidden}
   /* Tijelo / San / Napetost / Tempo — svaki ulazi zdesna, jedan po jedan. */
   .nn .fy-grid .fy-item{opacity:0}
-  .nn .fy-grid.is-in .fy-item{animation:nn-slide-right 1.33s cubic-bezier(.19,1,.22,1) both;
-    animation-delay:calc(var(--fi) * .2s)}
+  .nn .fy-grid.is-in .fy-item{animation:nn-slide-right 1.6s cubic-bezier(.19,1,.22,1) both;
+    animation-delay:calc(var(--fi) * .24s)}
   @keyframes nn-slide-right{from{opacity:0;transform:translateX(3.5rem)}to{opacity:1;transform:none}}
   @media(prefers-reduced-motion:reduce){
     .nn .fy-grid .fy-item,.nn .fy-grid.is-in .fy-item{opacity:1;animation:none}}
@@ -110,8 +110,8 @@
   .nn .story-text .eyebrow{display:block;margin-bottom:.9rem;color:var(--gold-lite)}
   /* "O meni" blok — svaki redak spušta se odozgo, jedan za drugim. */
   .nn .story-text > *{opacity:0}
-  .nn .story-text.is-in > *{animation:nn-slide-down 1.33s cubic-bezier(.19,1,.22,1) both;
-    animation-delay:calc(var(--si) * .2s)}
+  .nn .story-text.is-in > *{animation:nn-slide-down 1.73s cubic-bezier(.19,1,.22,1) both;
+    animation-delay:calc(var(--si) * .26s)}
   @keyframes nn-slide-down{from{opacity:0;transform:translateY(-2.2rem)}to{opacity:1;transform:none}}
   @media(prefers-reduced-motion:reduce){
     .nn .story-text > *,.nn .story-text.is-in > *{opacity:1;animation:none}}
@@ -147,16 +147,20 @@
   /* 6 · POKLON BON — okvir desno, tekst lijevo */
   .nn .gift{position:relative;display:block;padding:clamp(4rem,6vw,6.5rem) 2rem calc(clamp(4rem,6vw,6.5rem) + 7rem);background:var(--cream);overflow:hidden}
   .nn .gwrap{position:relative;left:0;max-width:1020px;margin:0 auto;display:grid;grid-template-columns:auto auto;justify-content:center;align-items:center;
-    gap:clamp(.5rem,1.2vw,1.2rem);border-radius:3px;overflow:hidden;background:linear-gradient(rgba(31,15,10,.58),rgba(31,15,10,.66)),url('../wp-content/uploads/soul/od-poruke-do-stola.jpeg') center 42%/cover no-repeat;
-    padding:clamp(1.4rem,2vw,2rem) clamp(1.4rem,2.4vw,2.4rem)}
+    gap:clamp(.5rem,1.2vw,1.2rem);border-radius:3px;overflow:hidden;background:transparent;
+    padding:clamp(2.2rem,3.2vw,3.2rem) clamp(1.4rem,2.4vw,2.4rem)}
   /* zlatni obrub uvucen od ruba kartice */
   .nn .gwrap::before{content:"";position:absolute;inset:0;
-    border:1px solid rgba(224,199,159,.55);border-radius:2px;pointer-events:none;z-index:0}
-  .nn .gcopy{position:relative;left:calc(6% + 2.5rem);width:fit-content;max-width:min(380px,27vw);text-align:center;justify-self:center}
+    border:1px solid rgba(224,199,159,.55);border-radius:2px;pointer-events:none;z-index:2}
+  /* Fotografija u zasebnom sloju — širi je od okvira pa se može pomicati lijevo-desno. */
+  .nn .gwrap::after{content:"";position:absolute;top:0;bottom:0;left:-18%;width:136%;z-index:0;
+    pointer-events:none;will-change:transform;transform:translate3d(var(--gx,0),0,0);
+    background:linear-gradient(rgba(31,15,10,.58),rgba(31,15,10,.66)),url('../wp-content/uploads/soul/od-poruke-do-stola.jpeg') center 42%/cover no-repeat}
+  .nn .gcopy{position:relative;z-index:1;left:calc(6% + 2.5rem);width:fit-content;max-width:min(380px,27vw);text-align:center;justify-self:center}
   .nn .gcopy .eyebrow{display:block;font-size:.7rem;color:var(--gold-lite);margin-bottom:.7rem}
-  .nn .gcopy h2{font-size:clamp(1.7rem,2.7vw,2.4rem);line-height:1.06;margin-bottom:2.2rem;white-space:nowrap;text-transform:uppercase;letter-spacing:.06em;color:#FFF3E5}
+  .nn .gcopy h2{font-size:clamp(1.7rem,2.7vw,2.4rem);line-height:1.06;margin-bottom:2.2rem;white-space:nowrap;text-transform:uppercase;letter-spacing:.06em;color:var(--gold-lite)}
   .nn .gcopy p{font-size:clamp(.94rem,1.15vw,1.05rem);line-height:1.6;color:var(--lite-muted);max-width:30ch;margin:0 auto}
-  .nn .gframe{position:relative;width:min(620px,44vw);aspect-ratio:755/440;justify-self:center;left:.5rem;
+  .nn .gframe{position:relative;z-index:1;width:min(620px,44vw);aspect-ratio:755/440;justify-self:center;left:.5rem;
     background:url('../wp-content/uploads/soul/motiv-gift-gold.webp') 26px 92%/contain no-repeat}
   .nn .v-mins{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(.9rem,1.8vw,1.7rem);margin:1.1rem 0 .1rem}
   .nn .vm{display:flex;flex-direction:row;align-items:baseline;gap:.28rem}
@@ -720,7 +724,8 @@
       var photo = document.querySelector('.nn .story-photo');
       var brk = document.querySelector('.nn .break');
       var heroImg = document.querySelector('.video-hero .hero-video');
-      if (!photo && !brk && !heroImg) return;
+      var gwrap = document.querySelector('.nn .gwrap');
+      if (!photo && !brk && !heroImg && !gwrap) return;
       var img = photo ? photo.querySelector('img') : null;
       var tick = false;
       function shift(el, vh) {
@@ -733,6 +738,15 @@
         var vh = window.innerHeight;
         if (img) { var a = shift(photo, vh); if (a) img.style.transform = 'translate3d(0,' + a + ',0)'; }
         if (brk) { var b = shift(brk, vh); if (b) brk.style.setProperty('--par', b); }
+        // Poklon bon: fotografija klizi lijevo-desno dok sekcija prolazi ekranom.
+        if (gwrap) {
+          var r = gwrap.getBoundingClientRect();
+          if (r.bottom > -200 && r.top < vh + 200) {
+            var pr = (r.top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2);
+            if (pr < -1) pr = -1; else if (pr > 1) pr = 1;
+            gwrap.style.setProperty('--gx', (pr * 11).toFixed(2) + '%');
+          }
+        }
         // Hero: slika zaostaje za skrolom (kreće od vrha stranice).
         if (heroImg) {
           var y = window.pageYOffset || document.documentElement.scrollTop || 0;
