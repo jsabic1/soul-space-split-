@@ -53,7 +53,9 @@
 
   /* 2 · TIJELO PAMTI SVE */
   .nn .stmt-sec{position:relative;padding:21rem 2rem 15rem;
-    background:linear-gradient(rgba(244,232,214,.82),rgba(244,232,214,.82)),
+    /* Donji rub se stapa s idućom sekcijom (ista krem boja). */
+    background:linear-gradient(to bottom,rgba(244,232,214,0) 52%,rgba(244,232,214,.55) 78%,var(--cream) 97%),
+               linear-gradient(rgba(244,232,214,.82),rgba(244,232,214,.82)),
                url('../wp-content/uploads/soul/pozadina-tijelo.webp') center bottom/cover no-repeat var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(2.5rem,5vw,5rem);text-align:center}
   .nn .figura-wrap{position:relative;flex:0 0 auto;display:flex;align-items:center;justify-content:center}
   .nn .figura-wrap::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
