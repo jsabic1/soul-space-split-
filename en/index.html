@@ -264,7 +264,12 @@
     background:linear-gradient(90deg,transparent,rgba(196,85,31,.35) 12%,rgba(196,85,31,.35) 88%,transparent)}
   .nn .st{position:relative}
   .nn .st-mark{position:relative;height:clamp(120px,13vw,178px);width:100%;margin:0 auto 1.7rem;
-    background:center/contain no-repeat}
+    background:center/contain no-repeat;
+    /* Vektor se pojavljuje istovremeno s natpisom ispod sebe. */
+    opacity:0;transition:opacity .9s ease;transition-delay:calc(var(--lstart, 0) * 1s)}
+  .nn .st-grid.is-in .st-mark{opacity:1}
+  @media(prefers-reduced-motion:reduce){
+    .nn .st-mark{opacity:1;transition:none}}
   .nn .st:nth-child(1) .st-mark{background-image:url('../wp-content/uploads/soul/motiv-typing.webp');background-size:auto 88%}
   .nn .st:nth-child(2) .st-mark{background-image:url('../wp-content/uploads/soul/motiv-suggest.webp');background-size:auto 120%}
   .nn .st:nth-child(3) .st-mark{background-image:url('../wp-content/uploads/soul/motiv-arrival.webp')}
