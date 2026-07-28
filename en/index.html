@@ -185,7 +185,10 @@
   /* Fotografija u zasebnom sloju — širi je od okvira pa se može pomicati lijevo-desno. */
   .nn .gwrap::after{content:"";position:absolute;top:0;bottom:0;left:-18%;width:136%;z-index:0;
     pointer-events:none;will-change:transform;transform:translate3d(var(--gx,0),0,0);
-    background:linear-gradient(rgba(31,15,10,.58),rgba(31,15,10,.66)),url('../wp-content/uploads/soul/od-poruke-do-stola.jpeg') center 42%/cover no-repeat}
+    /* lagani svijetli veo povrh fotografije, da voucher ne bude pretaman */
+    background:linear-gradient(rgba(244,232,214,.10),rgba(244,232,214,.05)),
+               linear-gradient(rgba(31,15,10,.46),rgba(31,15,10,.55)),
+               url('../wp-content/uploads/soul/od-poruke-do-stola.jpeg') center 42%/cover no-repeat}
   .nn .gcopy{position:relative;z-index:1;left:calc(6% + 2.5rem);width:fit-content;max-width:min(380px,27vw);text-align:center;justify-self:center}
   .nn .gcopy .eyebrow{display:block;font-size:.7rem;color:var(--gold-lite);margin-bottom:.7rem}
   /* Naslov vouchera se ispisuje slijeva nadesno, isto kao natpisi koraka. */
