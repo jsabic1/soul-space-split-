@@ -76,10 +76,7 @@
   .nn .fy-item::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
     height:82%;opacity:.1;margin-top:6%;pointer-events:none;z-index:0;
     background:center/contain no-repeat}
-  .nn .fy-item:nth-child(1)::before{background-image:url('../wp-content/uploads/soul/motiv-a7-1.webp');aspect-ratio:361/365}
-  .nn .fy-item:nth-child(2)::before{background-image:url('../wp-content/uploads/soul/motiv-a7-2.webp');aspect-ratio:326/479}
-  .nn .fy-item:nth-child(3)::before{background-image:url('../wp-content/uploads/soul/motiv-a7-3.webp');aspect-ratio:369/456}
-  .nn .fy-item:nth-child(4)::before{background-image:url('../wp-content/uploads/soul/motiv-a7-4.webp');aspect-ratio:308/426}
+  .nn .fy-item::before{background-image:url('../wp-content/uploads/soul/motiv-a7-4.webp');aspect-ratio:308/426}
   .nn .fy-item svg,.nn .fy-item .lbl,.nn .fy-item p{position:relative;z-index:1}
   @media(max-width:860px){
     .nn .fy-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:440px;gap:2.6rem 1.2rem}
@@ -127,7 +124,7 @@
   .nn .rit-card .nm{font-size:min(6.4vw,1.55rem)}}
 
   /* 6 · POKLON BON — okvir desno, tekst lijevo */
-  .nn .gift{position:relative;display:block;padding:clamp(4rem,6vw,6.5rem) 2rem;background:var(--cream);overflow:hidden}
+  .nn .gift{position:relative;display:block;padding:clamp(4rem,6vw,6.5rem) 2rem calc(clamp(4rem,6vw,6.5rem) + 7rem);background:var(--cream);overflow:hidden}
   .nn .gwrap{position:relative;left:0;max-width:1020px;margin:0 auto;display:grid;grid-template-columns:auto auto;justify-content:center;align-items:center;
     gap:clamp(.5rem,1.2vw,1.2rem);background:transparent;border-radius:3px;
     padding:clamp(1.4rem,2vw,2rem) clamp(1.4rem,2.4vw,2.4rem)}
@@ -150,10 +147,10 @@
     background:transparent;border:1px solid var(--dark2);border-radius:999px;
     padding:.95rem 2.6rem;transition:background .3s ease,color .3s ease,border-color .3s ease}
   .nn .gift-cta span{display:inline-block;margin-left:.5rem;transition:transform .3s ease}
-  .nn .gift-cta:hover{background:var(--dark2);border-color:var(--dark2);color:#FFF3E5}
+  .nn .gift-cta:hover,.nn .gift-cta:focus-visible,.nn .gift-cta:active{background:var(--terra);border-color:var(--terra);color:#F7ECDD;box-shadow:0 12px 32px -12px rgba(196,85,31,.55)}
   .nn .gift-cta:hover span{transform:translateX(5px)}
   @media(max-width:820px){
-    .nn .gift{padding:3.5rem 1rem 4rem}
+    .nn .gift{padding:3.5rem 1rem calc(3.5rem + 7rem)}
     .nn .gwrap{grid-template-columns:1fr;gap:2.4rem;text-align:center;justify-items:center;justify-content:stretch;left:0;padding-top:3.4rem}
     .nn .gcopy{width:100%;max-width:400px;margin:0 auto;justify-self:center;left:0}
     .nn .gframe{left:0}
@@ -194,7 +191,7 @@
   .nn .st{position:relative}
   .nn .st-mark{position:relative;height:clamp(120px,13vw,178px);width:100%;margin:0 auto 1.7rem;
     background:center/contain no-repeat}
-  .nn .st:nth-child(1) .st-mark{background-image:url('../wp-content/uploads/soul/motiv-typing.webp')}
+  .nn .st:nth-child(1) .st-mark{background-image:url('../wp-content/uploads/soul/motiv-typing.webp');background-size:auto 88%}
   .nn .st:nth-child(2) .st-mark{background-image:url('../wp-content/uploads/soul/motiv-suggest.webp');background-size:auto 120%}
   .nn .st:nth-child(3) .st-mark{background-image:url('../wp-content/uploads/soul/motiv-arrival.webp')}
   .nn .st:nth-child(4) .st-mark{background-image:url('../wp-content/uploads/soul/motiv-infinity.webp')}
