@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Unicase:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/style.css?v=152">
+  <link rel="stylesheet" href="../css/style.css?v=153">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style id="nn-home">
   /* ===== NASLOVNA — sekcije ispod heroa (skica 2, miješano svijetlo/tamno) ===== */
@@ -74,12 +74,12 @@
   /* 4 poster-motiva (abstrakt-5) kao izblijedjena pozadina iza svake stavke */
   .nn .fy-item{position:relative;padding-top:.5rem}
   .nn .fy-item::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-    height:74%;aspect-ratio:352/490;opacity:.16;margin-top:6%;pointer-events:none;z-index:0;
+    height:82%;opacity:.1;margin-top:6%;pointer-events:none;z-index:0;
     background:center/contain no-repeat}
-  .nn .fy-item:nth-child(1)::before{background-image:url('../wp-content/uploads/soul/motiv-a5-1.webp')}
-  .nn .fy-item:nth-child(2)::before{background-image:url('../wp-content/uploads/soul/motiv-a5-2.webp')}
-  .nn .fy-item:nth-child(3)::before{background-image:url('../wp-content/uploads/soul/motiv-a5-3.webp')}
-  .nn .fy-item:nth-child(4)::before{background-image:url('../wp-content/uploads/soul/motiv-a5-4.webp')}
+  .nn .fy-item:nth-child(1)::before{background-image:url('../wp-content/uploads/soul/motiv-a7-1.webp');aspect-ratio:361/365}
+  .nn .fy-item:nth-child(2)::before{background-image:url('../wp-content/uploads/soul/motiv-a7-2.webp');aspect-ratio:326/479}
+  .nn .fy-item:nth-child(3)::before{background-image:url('../wp-content/uploads/soul/motiv-a7-3.webp');aspect-ratio:369/456}
+  .nn .fy-item:nth-child(4)::before{background-image:url('../wp-content/uploads/soul/motiv-a7-4.webp');aspect-ratio:308/426}
   .nn .fy-item svg,.nn .fy-item .lbl,.nn .fy-item p{position:relative;z-index:1}
   @media(max-width:860px){
     .nn .fy-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:440px;gap:2.6rem 1.2rem}
@@ -128,33 +128,49 @@
 
   /* 6 · POKLON BON — okvir desno, tekst lijevo */
   .nn .gift{position:relative;display:block;padding:clamp(4rem,6vw,6.5rem) 2rem;background:var(--cream);overflow:hidden}
-  .nn .gwrap{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:auto auto auto;justify-content:center;align-items:center;gap:clamp(1.5rem,4vw,4rem)}
-  .nn .gdivide{position:relative;z-index:2;right:clamp(-120px,-8vw,-54px);width:min(230px,16vw);aspect-ratio:302/548;justify-self:center;background:url('../wp-content/uploads/soul/motiv-a6-4.webp') center/contain no-repeat;align-self:center}
-  .nn .gcopy{width:fit-content;max-width:min(460px,34vw)}
+  .nn .gwrap{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:clamp(3rem,7vw,7.5rem)}
+  .nn .gcopy{order:2;justify-self:start;width:fit-content;max-width:min(460px,34vw)}
   .nn .gcopy .eyebrow{display:block;font-size:.74rem;color:var(--terra);margin-bottom:.9rem}
   .nn .gcopy h2{font-size:clamp(2.2rem,4vw,3.3rem);line-height:1.04;margin-bottom:1.1rem;color:var(--ink)}
   .nn .gcopy p{font-size:clamp(1rem,1.3vw,1.14rem);line-height:1.65;color:var(--ink-soft);max-width:34ch;margin-bottom:1.5rem}
-  .nn .gframe{position:relative;width:min(400px,30vw);aspect-ratio:900/1060;justify-self:center;display:flex;align-items:center;justify-content:center;text-align:center}
-  .nn .gframe::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:114%;aspect-ratio:955/1245;background:url('../wp-content/uploads/soul/motiv-a4-2.webp') center/contain no-repeat;opacity:.34;mix-blend-mode:multiply;pointer-events:none;z-index:0}
-  .nn .gin{position:relative;z-index:1;width:100%}
-  .nn .v-mins{display:flex;align-items:baseline;justify-content:center;gap:.7rem;font-family:var(--serif);font-size:clamp(2.1rem,3.2vw,2.9rem);line-height:1;color:var(--terra)}
-  .nn .v-mins i{font-style:normal;font-size:.45em;color:var(--gold);transform:translateY(-.3em)}
-  .nn .v-unit{font-family:var(--caps);font-size:clamp(.66rem,1vw,.84rem);letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--ink-soft);margin:.7rem 0 0}
+  .nn .gframe{order:1;position:relative;width:min(510px,38vw);aspect-ratio:1090/1248;justify-self:start;
+    display:flex;align-items:center;justify-content:center;
+    background-image:linear-gradient(rgba(244,232,214,.68),rgba(244,232,214,.68)),url('../wp-content/uploads/soul/luk-terakota.webp');
+    background-size:100% 100%;background-position:center;background-repeat:no-repeat}
+  .nn .gframe::before,.nn .gframe::after{content:"";position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);width:82%;aspect-ratio:955/1245;background-position:center;background-size:contain;background-repeat:no-repeat;pointer-events:none}
+  /* akvarel ostaje iza kruznog vektora */
+  .nn .gframe::before{background-image:url('../wp-content/uploads/soul/motiv-a4-2-wash.webp');opacity:.3;mix-blend-mode:multiply;z-index:0}
+  /* grancica ide preko kruznog vektora */
+  .nn .gframe::after{background-image:url('../wp-content/uploads/soul/motiv-a4-2-line.webp');opacity:.42;z-index:1}
+  .nn .v-mins{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:.6rem;margin:1.9rem 0 .8rem}
+  .nn .vm{display:flex;flex-direction:row;align-items:baseline;gap:.28rem;padding:.46rem 1.05rem;
+    border:1px solid rgba(196,85,31,.4);border-radius:999px}
+  .nn .vm-n{font-family:var(--serif);font-size:1.2rem;line-height:1;color:var(--terra)}
+  .nn .vm-u{font-family:var(--caps);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .nn .v-unit{font-family:var(--caps);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin:0 0 1.9rem}
   .nn .gin .rule{display:block;width:52px;height:1px;margin:1.5rem auto;background:rgba(196,85,31,.45)}
   .nn .gift-notes{list-style:none;margin:0;padding:0;display:inline-flex;flex-direction:column;align-items:flex-start;text-align:left;gap:.55rem;font-family:var(--caps);font-size:clamp(.6rem,.9vw,.76rem);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft)}
   .nn .gift-notes li::before{content:"\2726";color:var(--terra);margin-right:.4rem}
-  .nn .link-arrow{display:inline-block;font-family:var(--caps);font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
-  .nn .link-arrow span{display:inline-block;margin-left:.55rem;transition:transform .3s ease}
-  .nn .link-arrow:hover span{transform:translateX(5px)}
+  .nn .gift-cta{position:relative;z-index:3;display:inline-block;font-family:var(--caps);font-weight:700;
+    font-size:clamp(.76rem,.9vw,.88rem);letter-spacing:.22em;text-transform:uppercase;color:var(--terra);
+    background:rgba(244,232,214,.85);border:1px solid rgba(196,85,31,.55);border-radius:999px;
+    padding:.85rem 1.6rem;transition:background .3s ease,color .3s ease,border-color .3s ease}
+  .nn .gift-cta span{display:inline-block;margin-left:.5rem;transition:transform .3s ease}
+  .nn .gift-cta:hover{background:var(--terra);border-color:var(--terra);color:#FFF3E5}
+  .nn .gift-cta:hover span{transform:translateX(5px)}
   @media(max-width:820px){
     .nn .gift{padding:4.5rem 1.6rem 5rem}
     .nn .gwrap{grid-template-columns:1fr;gap:2.2rem;text-align:center;justify-items:center;justify-content:stretch}
+    .nn .gcopy{order:1;justify-self:center}
+    .nn .gframe{order:2;justify-self:center}
+    .nn .v-mins{justify-content:center}
     .nn .gcopy{width:100%;max-width:none}
     .nn .gcopy h2{white-space:nowrap}
     .nn .gcopy p{max-width:30ch}
-    .nn .link-arrow{white-space:nowrap;letter-spacing:.14em;font-size:.74rem}
-    .nn .gframe{width:min(320px,84vw)}
-    .nn .gframe::after{width:98%;opacity:.3}
+    .nn .gift-cta{white-space:nowrap;letter-spacing:.14em;font-size:.72rem;padding:.8rem 1.2rem}
+    .nn .gframe{width:min(340px,88vw)}
+    .nn .gframe::before,.nn .gframe::after{width:98%}
+    .nn .gframe::before{opacity:.3}
     .nn .gdivide{width:clamp(90px,26vw,140px);right:0}
     .nn .gcopy{justify-self:center}
     .nn .gcopy p{margin-left:auto;margin-right:auto}
@@ -180,27 +196,27 @@
   /* 8b · KORACI — lukovi na dubljem krem tonu */
   .nn .steps{background:var(--cream2);padding:8rem 2rem 8.5rem;text-align:center}
   .nn .steps .eyebrow{display:block;color:var(--terra);margin-bottom:.9rem}
-  .nn .steps h2{font-size:clamp(2rem,3.4vw,3rem);color:var(--ink);margin-bottom:4.5rem}
+  .nn .steps h2{font-size:clamp(2rem,3.4vw,3rem);color:var(--ink);margin-bottom:14rem}
   .nn .st-grid{position:relative;max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(2.6rem,5vw,5rem)}
-  .nn .st-grid::before{content:"";position:absolute;left:6%;right:6%;top:188px;height:1px;
     background:linear-gradient(90deg,transparent,rgba(196,85,31,.35) 12%,rgba(196,85,31,.35) 88%,transparent)}
   .nn .st{position:relative}
-  .nn .st-mark{position:relative;width:132px;aspect-ratio:349/497;margin:0 auto 1.6rem;
-    background:url('../wp-content/uploads/soul/luk-koraci.webp') center/contain no-repeat;
-    display:flex;align-items:center;justify-content:center}
-  .nn .st-num{font-family:var(--serif);font-size:2.1rem;line-height:1;color:var(--terra);transform:translateY(-8%)}
+  .nn .st-mark{position:relative;height:clamp(120px,13vw,178px);width:auto;margin:0 auto 1.7rem;
+    background:center/contain no-repeat}
+  .nn .st:nth-child(1) .st-mark{aspect-ratio:361/365;background-image:url('../wp-content/uploads/soul/motiv-a7-1.webp')}
+  .nn .st:nth-child(2) .st-mark{aspect-ratio:326/479;background-image:url('../wp-content/uploads/soul/motiv-a7-2.webp')}
+  .nn .st:nth-child(3) .st-mark{aspect-ratio:369/456;background-image:url('../wp-content/uploads/soul/motiv-a7-3.webp')}
+  .nn .st:nth-child(4) .st-mark{aspect-ratio:308/426;background-image:url('../wp-content/uploads/soul/motiv-a7-4.webp')}
   .nn .st h3{font-family:var(--serif);font-weight:700;font-size:1.35rem;color:var(--ink);margin-bottom:.5rem}
   .nn .st p{font-family:var(--bodyf);font-size:1.04rem;line-height:1.6;color:var(--ink-soft);max-width:23ch;margin:0 auto}
   .nn .steps .btn-terra{margin-top:4rem;color:var(--terra);border-color:var(--terra)}
   .nn .steps .btn-terra:hover,.nn .steps .btn-terra:focus-visible,.nn .steps .btn-terra:active{background:var(--terra);border-color:var(--terra);color:#FFF3E5}
   @media(max-width:900px){
     .nn .st-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:3.4rem 2.4rem;max-width:540px}
-    .nn .st-grid::before{display:none}
-    .nn .st-mark{width:108px}
-    .nn .st-num{font-size:1.8rem}}
+    .nn .st-mark{height:clamp(104px,26vw,150px)}
+}
   @media(max-width:480px){
     .nn .steps{padding:5.5rem 1.6rem 6rem}
-    .nn .steps h2{margin-bottom:3rem}
+    .nn .steps h2{margin-bottom:6rem}
     .nn .st p{font-size:.98rem;max-width:18ch}}
   /* 9 · TRENUCI U STUDIJU — tamno, galerija koja se vrti */
   .nn .atmo{background:var(--dark);padding:6.5rem 0 7.5rem;text-align:center}
@@ -385,20 +401,15 @@
           <p class="eyebrow">A gift</p>
           <h2>Gift voucher</h2>
           <p>Give someone what can't usually be bought, time just for themselves.</p>
-          <a class="link-arrow" href="gift-voucher/">See gift vouchers <span aria-hidden="true">&rsaquo;</span></a>
-        </div>
-        <div class="gdivide" aria-hidden="true"></div>
-        <div class="gframe">
-          <div class="gin">
-            <div class="v-mins"><span>60</span><i>·</i><span>75</span><i>·</i><span>90</span></div>
-            <p class="v-unit">minutes of your ritual</p>
-            <span class="rule" aria-hidden="true"></span>
-            <ul class="gift-notes">
-              <li>Valid for 3 months</li>
-              <li>The ritual is chosen with the person who comes</li>
-              <li>Physical or PDF</li>
-            </ul>
+          <div class="v-mins">
+            <div class="vm"><span class="vm-n">60</span><span class="vm-u">min</span></div>
+            <div class="vm"><span class="vm-n">75</span><span class="vm-u">min</span></div>
+            <div class="vm"><span class="vm-n">90</span><span class="vm-u">min</span></div>
           </div>
+          <p class="v-unit">minutes of your ritual</p>
+        </div>
+        <div class="gframe">
+          <a class="gift-cta" href="gift-voucher/">See gift vouchers <span aria-hidden="true">&rsaquo;</span></a>
         </div>
       </div>
     </section>
@@ -438,22 +449,22 @@
       <h2>From message to table</h2>
       <div class="st-grid">
         <div class="st">
-          <div class="st-mark" aria-hidden="true"><span class="st-num">01</span></div>
+          <div class="st-mark" aria-hidden="true"></div>
           <h3>You write to me</h3>
           <p>An email or a message with a few lines about how you feel.</p>
         </div>
         <div class="st">
-          <div class="st-mark" aria-hidden="true"><span class="st-num">02</span></div>
+          <div class="st-mark" aria-hidden="true"></div>
           <h3>I suggest</h3>
           <p>The ritual that would suit you best, and 2–3 available times.</p>
         </div>
         <div class="st">
-          <div class="st-mark" aria-hidden="true"><span class="st-num">03</span></div>
+          <div class="st-mark" aria-hidden="true"></div>
           <h3>You arrive</h3>
           <p>The studio at Sinjska 5. One hour just for you, nothing is required of you.</p>
         </div>
         <div class="st">
-          <div class="st-mark" aria-hidden="true"><span class="st-num">04</span></div>
+          <div class="st-mark" aria-hidden="true"></div>
           <h3>You continue</h3>
           <p>You come back as needed. Most clients visit once a month.</p>
         </div>
