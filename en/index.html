@@ -138,7 +138,8 @@
   .nn .gcopy .eyebrow{display:block;font-size:.7rem;color:var(--terra);margin-bottom:.7rem}
   .nn .gcopy h2{font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.04;margin-bottom:.9rem;color:var(--ink)}
   .nn .gcopy p{font-size:clamp(.94rem,1.15vw,1.05rem);line-height:1.6;color:var(--ink-soft);max-width:30ch;margin:0 auto}
-  .nn .gframe{position:relative;width:min(430px,32vw);aspect-ratio:955/1245;justify-self:center}
+  .nn .gframe{position:relative;width:min(430px,32vw);aspect-ratio:955/1245;justify-self:center;
+    display:flex;align-items:center;justify-content:center;text-align:center}
   .nn .gframe::before,.nn .gframe::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:100%;aspect-ratio:955/1245;background-position:center;background-size:contain;background-repeat:no-repeat;pointer-events:none}
   /* akvarel ostaje iza kruznog vektora */
   .nn .gframe::before{background-image:url('../wp-content/uploads/soul/motiv-a4-2-wash.webp');opacity:.3;mix-blend-mode:multiply;z-index:0}
@@ -413,9 +414,10 @@
             <div class="vm"><span class="vm-n">90</span><span class="vm-u">min</span></div>
           </div>
           <p class="v-unit">minutes of your ritual</p>
+        </div>
+        <div class="gframe">
           <a class="gift-cta" href="gift-voucher/">See gift vouchers <span aria-hidden="true">&rsaquo;</span></a>
         </div>
-        <div class="gframe" aria-hidden="true"></div>
       </div>
     </section>
 
