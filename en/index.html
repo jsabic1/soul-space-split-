@@ -189,33 +189,32 @@
   @media(max-width:560px){.nn .rit-grid{grid-template-columns:1fr;max-width:340px}
   .nn .rit-card .nm{font-size:min(6.4vw,1.55rem)}}
 
-  /* 6 · POKLON BON — okvir desno, tekst lijevo */
+  /* 6 · POKLON BON — sve centrirano na jednoj osi */
   .nn .gift{position:relative;display:block;padding:clamp(4rem,6vw,6.5rem) 2rem calc(clamp(4rem,6vw,6.5rem) + 7rem);background:var(--cream);overflow:hidden}
-  .nn .gwrap{position:relative;left:0;max-width:1020px;margin:0 auto;display:grid;grid-template-columns:auto auto;justify-content:center;align-items:center;
-    gap:clamp(.5rem,1.2vw,1.2rem);border-radius:3px;overflow:hidden;background:transparent;
-    padding:clamp(3.4rem,4.8vw,4.8rem) clamp(1.4rem,2.4vw,2.4rem) clamp(2.2rem,3.2vw,3.2rem)}
+  .nn .gwrap{position:relative;max-width:1020px;margin:0 auto;border-radius:3px;overflow:hidden;background:transparent;
+    padding:clamp(3.2rem,4.6vw,4.4rem) clamp(1.6rem,4vw,4rem)}
   /* zlatni obrub uvucen od ruba kartice */
   .nn .gwrap::before{content:"";position:absolute;inset:0;
     border:1px solid rgba(224,199,159,.55);border-radius:2px;pointer-events:none;z-index:2}
-  /* Fotografija u zasebnom sloju — širi je od okvira pa se može pomicati lijevo-desno. */
+  /* Fotografija u zasebnom sloju — šira je od okvira pa se može pomicati lijevo-desno. */
   .nn .gwrap::after{content:"";position:absolute;top:0;bottom:0;left:-18%;width:136%;z-index:0;
     pointer-events:none;will-change:transform;transform:translate3d(var(--gx,0),0,0);
     /* lagani svijetli veo povrh fotografije, da voucher ne bude pretaman */
     background:linear-gradient(rgba(244,232,214,.16),rgba(244,232,214,.08)),
                linear-gradient(rgba(31,15,10,.36),rgba(31,15,10,.46)),
                url('../wp-content/uploads/soul/od-poruke-do-stola.jpeg') center 42%/cover no-repeat}
-  .nn .gcopy{position:relative;z-index:1;left:calc(6% + 2.5rem);width:fit-content;max-width:min(380px,27vw);text-align:center;justify-self:center}
-  .nn .gcopy .eyebrow{display:block;font-size:.7rem;color:var(--gold-lite);margin-bottom:.7rem}
-  .nn .gcopy h2{font-family:var(--script);font-weight:400;-webkit-text-stroke:.6px currentColor;font-size:clamp(2.3rem,3.9vw,3.5rem);line-height:1.25;margin-bottom:2.2rem;white-space:nowrap;text-transform:none;letter-spacing:normal;color:var(--gold-lite)}
-  .nn .gcopy p{font-size:clamp(.94rem,1.15vw,1.05rem);line-height:1.6;color:var(--lite-muted);max-width:30ch;margin:0 auto}
-  .nn .gframe{position:relative;z-index:1;width:min(685px,48vw);aspect-ratio:755/440;justify-self:center;left:.55rem;
-    background:url('../wp-content/uploads/soul/motiv-gift-gold.webp') 46px 92%/contain no-repeat}
-  .nn .v-mins{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(.9rem,1.8vw,1.7rem);margin:1.1rem 0 .1rem}
-  .nn .vm{display:flex;flex-direction:row;align-items:baseline;gap:.28rem}
-  .nn .vm-n{font-family:var(--serif);font-size:1.25rem;line-height:1;color:var(--terra-bright)}
-  .nn .vm-u{font-family:var(--caps);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lite-dim)}
-  .nn .v-unit{font-family:var(--bodyf);font-style:italic;font-size:.95rem;letter-spacing:.02em;text-transform:none;white-space:nowrap;color:var(--lite-dim);margin:0 0 1.7rem}
-  .nn .gift-cta{position:relative;z-index:3;margin-top:1.4rem;display:inline-block;white-space:nowrap;min-width:17.3rem;text-align:center;font-family:var(--caps);font-weight:600;
+  .nn .gcopy{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .nn .gcopy h2{font-family:var(--script);font-weight:400;-webkit-text-stroke:.7px currentColor;
+    font-size:clamp(2.6rem,5.4vw,4.6rem);line-height:1.15;margin-bottom:2.6rem;white-space:nowrap;
+    text-transform:none;letter-spacing:normal;color:var(--gold-lite)}
+  .nn .v-mins{display:flex;align-items:baseline;justify-content:center;gap:clamp(1.3rem,2.6vw,2.3rem);margin:0 0 1.7rem}
+  .nn .vm{display:flex;flex-direction:row;align-items:baseline;gap:.3rem}
+  .nn .vm-n{font-family:var(--serif);font-size:clamp(1.7rem,2.5vw,2.2rem);line-height:1;color:var(--terra-bright)}
+  .nn .vm-u{font-family:var(--caps);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--lite-dim)}
+  .nn .v-sep{align-self:center;width:1px;height:1.25rem;background:rgba(224,199,159,.38)}
+  .nn .gcopy p{font-size:clamp(1rem,1.24vw,1.12rem);line-height:1.7;color:var(--lite-muted);max-width:34ch;margin:0 0 2.4rem}
+  .nn .v-hair{display:block;width:64px;height:1px;background:rgba(224,199,159,.32);margin:0 0 2.2rem}
+  .nn .gift-cta{position:relative;z-index:3;display:inline-block;white-space:nowrap;min-width:17.3rem;text-align:center;font-family:var(--caps);font-weight:600;
     font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:#FFF3E5;
     background:transparent;border:1px solid #FFF3E5;border-radius:999px;
     padding:.95rem 2.6rem;transition:background .3s ease,color .3s ease,border-color .3s ease}
@@ -224,20 +223,19 @@
   .nn .gift-cta:hover span{transform:translateX(5px)}
   @media(max-width:820px){
     .nn .gift{padding:3.5rem 1rem calc(3.5rem + 7rem)}
-    .nn .gwrap{grid-template-columns:1fr;gap:1.5rem;text-align:center;justify-items:center;justify-content:stretch;left:0;padding-top:6.6rem;padding-bottom:0}
-    .nn .gcopy{width:100%;max-width:400px;margin:0 auto;justify-self:center;left:0}
-    .nn .gframe{left:0}
-    .nn .gcopy h2{white-space:nowrap;margin-bottom:3.2rem;font-size:min(2.85rem,11.6vw)}
-    .nn .gcopy p{max-width:30ch;margin-left:auto;margin-right:auto;font-size:1.12rem}
-    .nn .vm{gap:.22rem}
-    .nn .vm-n{font-size:1.25rem}
-    .nn .vm-u{font-size:.68rem}
-    .nn .v-mins{gap:.42rem;flex-wrap:nowrap;justify-content:center}
-    .nn .v-unit{font-size:1.05rem;letter-spacing:.02em}
-    .nn .gframe{justify-self:stretch;width:112%;max-width:none;margin-left:-6%;margin-top:2.2rem;
-      /* Rez pada samo na tanke repove: glavni dio ruke je od 29. do 583. piksela crteža. */
-      aspect-ratio:755/290;background-size:115% auto;background-position:20% top}
-    .nn .gift-cta{white-space:nowrap;min-width:min(17.3rem,100%);margin-top:2.9rem}}
+    .nn .gwrap{padding:clamp(3rem,9vw,4rem) 1.2rem}
+    .nn .gcopy h2{font-size:min(2.85rem,11.6vw);margin-bottom:2.2rem}
+    .nn .v-mins{gap:1.1rem;margin-bottom:1.5rem}
+    .nn .vm{gap:.24rem}
+    .nn .vm-n{font-size:1.7rem}
+    .nn .vm-u{font-size:.64rem}
+    .nn .gcopy p{font-size:1.08rem;max-width:28ch;margin-bottom:2.1rem}
+    .nn .gift-cta{white-space:nowrap;min-width:min(17.3rem,100%)}}
+  @media(max-width:380px){
+    .nn .v-mins{gap:.8rem}
+    .nn .vm-n{font-size:1.42rem}
+    .nn .vm-u{font-size:.58rem;letter-spacing:.12em}
+    .nn .v-sep{height:1.05rem}}
   @media(max-width:360px){
     .nn .gift-cta{font-size:.66rem;letter-spacing:.14em;padding:.85rem 1rem}}
 
@@ -486,16 +484,17 @@
       <div class="gwrap">
         <div class="gcopy">
           <h2>Gift voucher</h2>
-          <p>Give someone what can't usually be bought, time just for themselves.</p>
           <div class="v-mins">
             <div class="vm"><span class="vm-n">60</span><span class="vm-u">min</span></div>
+            <span class="v-sep" aria-hidden="true"></span>
             <div class="vm"><span class="vm-n">75</span><span class="vm-u">min</span></div>
+            <span class="v-sep" aria-hidden="true"></span>
             <div class="vm"><span class="vm-n">90</span><span class="vm-u">min</span></div>
           </div>
-          <p class="v-unit">minutes of your ritual</p>
+          <p>Give someone what can't usually be bought, time just for themselves.</p>
+          <span class="v-hair" aria-hidden="true"></span>
           <a class="gift-cta" href="gift-voucher/">See vouchers</a>
         </div>
-        <div class="gframe" aria-hidden="true"></div>
       </div>
     </section>
 
