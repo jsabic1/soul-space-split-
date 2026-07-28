@@ -144,21 +144,21 @@
   .nn .rit-card .go{display:inline-block;margin-top:1rem;font-family:var(--caps);font-size:clamp(.76rem,.88vw,.9rem);letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--terra);border-bottom:1px solid rgba(196,85,31,.75);padding-bottom:.24rem}
   @media(max-width:960px){.nn .rit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .nn .rit-card .nm{font-size:clamp(.95rem,calc(4.35vw - 7.5px),1.7rem)}.nn .rit-card .pr{font-size:.88rem}.nn .rit-card .go{font-size:.86rem}}
-  /* Ritual kartice na mobitelu ulaze naizmjenično zdesna pa slijeva. */
+  /* Ritual kartice se otkrivaju rastezanjem slijeva nadesno (scale-in-hor-left). */
+  .nn .rituals{overflow:hidden}
+  .nn .rit-grid .rit-card{opacity:0;will-change:transform}
+  @keyframes nn-scale-in-hor-left{
+    0%{transform:scaleX(0);transform-origin:0% 0%;opacity:1}
+    100%{transform:scaleX(1);transform-origin:0% 0%;opacity:1}}
+  /* Mobitel: svaka kartica kreće kad doskrolamo do nje. */
   @media(max-width:700px){
-    .nn .rituals{overflow:hidden}
-    .nn .rit-grid .rit-card{opacity:0}
-    /* Pomak ide brzim izlazom, a prozirnost blago kroz cijelo trajanje — meki ulazak.
-       Svaka kartica kreće za sebe, tek kad doskrolamo do nje. */
-    .nn .rit-card.is-in{
-      animation:nn-move-right 1.86s cubic-bezier(.19,1,.22,1) both,
-                nn-fade-soft 1.86s ease-out both}
-    .nn .rit-card:nth-child(even).is-in{animation-name:nn-move-left,nn-fade-soft}}
-  @keyframes nn-move-right{from{transform:translateX(3.5rem)}to{transform:none}}
-  @keyframes nn-move-left{from{transform:translateX(-3.5rem)}to{transform:none}}
-  @keyframes nn-fade-soft{from{opacity:0}to{opacity:1}}
-  @media(max-width:700px) and (prefers-reduced-motion:reduce){
-    .nn .rit-grid .rit-card,.nn .rit-card.is-in{opacity:1;animation:none}}
+    .nn .rit-card.is-in{animation:nn-scale-in-hor-left .7s cubic-bezier(.25,.46,.45,.94) both}}
+  /* Desktop: jedna za drugom, sljedeća kreće kad prethodna završi. */
+  @media(min-width:701px){
+    .nn .rit-grid.is-in .rit-card{animation:nn-scale-in-hor-left .7s cubic-bezier(.25,.46,.45,.94) both;
+      animation-delay:calc(var(--ri) * .8s)}}
+  @media(prefers-reduced-motion:reduce){
+    .nn .rit-grid .rit-card,.nn .rit-card.is-in,.nn .rit-grid.is-in .rit-card{opacity:1;animation:none}}
   @media(max-width:560px){.nn .rit-grid{grid-template-columns:1fr;max-width:340px}
   .nn .rit-card .nm{font-size:min(6.4vw,1.55rem)}}
 
@@ -266,11 +266,15 @@
   /* Koraci se pojavljuju redom, jedan stupac za drugim (--col).
      Natpis se "ispisuje" slijeva nadesno, pa opis iskoči slovo po slovo. */
   .nn .st h3 .fw,.nn .st p .fw{display:inline-block}
+  /* Slovo dobiva zračni prostor lijevo i desno (padding poništen marginom, raspored
+     ostaje isti) da potezi rukopisa stanu unutra. Tako rez prije ispisa ne pokazuje
+     ništa, a poslije ne odsijeca ništa. */
   .nn .st h3 .fc{display:inline-block;
-    clip-path:inset(-1000% 100% -1000% -1000%);
+    padding-left:.6em;margin-left:-.6em;padding-right:.6em;margin-right:-.6em;
+    clip-path:inset(-1000% 100% -1000% 0);
     transition:clip-path .34s linear;
     transition-delay:calc(var(--lstart, 0) * 1s + var(--ci) * .17s)}
-  .nn .st-grid.is-in h3 .fc{clip-path:inset(-1000% -1000% -1000% -1000%)}
+  .nn .st-grid.is-in h3 .fc{clip-path:inset(-1000% 0 -1000% 0)}
   .nn .st p .fb{display:inline-block;opacity:0}
   .nn .st-grid.is-in p .fb{animation:nn-bubbly calc(var(--i) * 1.3s) ease-in-out both;
     animation-delay:calc(var(--dstart, 0) * 1s)}
@@ -946,8 +950,15 @@
     /* Ritual kartice — na mobitelu ulaze naizmjenično zdesna pa slijeva.
        Svaka se okida zasebno, kad doskrolamo do nje. */
     (function () {
-      var cards = document.querySelectorAll('.nn .rit-grid .rit-card');
-      Array.prototype.forEach.call(cards, function (c) { revealOnScroll(c); });
+      var grid = document.querySelector('.nn .rit-grid');
+      if (!grid) return;
+      // Mobitel gleda .rit-card.is-in, desktop .rit-grid.is-in — postavimo oboje,
+      // a media upit odlučuje koje pravilo vrijedi.
+      Array.prototype.forEach.call(grid.querySelectorAll('.rit-card'), function (c, n) {
+        c.style.setProperty('--ri', n);
+        revealOnScroll(c);
+      });
+      revealOnScroll(grid);
     })();
 
     /* "O meni" blok — naslović, ime, rečenica, opis i link ulaze odozgo. */
