@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Unicase:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/style.css?v=157">
+  <link rel="stylesheet" href="../css/style.css?v=158">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style id="nn-home">
   /* ===== NASLOVNA — sekcije ispod heroa (skica 2, miješano svijetlo/tamno) ===== */
@@ -143,6 +143,21 @@
   .nn .rit-card .go{display:inline-block;margin-top:1rem;font-family:var(--caps);font-size:clamp(.76rem,.88vw,.9rem);letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--terra);border-bottom:1px solid rgba(196,85,31,.75);padding-bottom:.24rem}
   @media(max-width:960px){.nn .rit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .nn .rit-card .nm{font-size:clamp(.95rem,calc(4.35vw - 7.5px),1.7rem)}.nn .rit-card .pr{font-size:.88rem}.nn .rit-card .go{font-size:.86rem}}
+  /* Ritual kartice na mobitelu ulaze naizmjenično zdesna pa slijeva. */
+  @media(max-width:700px){
+    .nn .rituals{overflow:hidden}
+    .nn .rit-grid .rit-card{opacity:0}
+    /* Pomak ide brzim izlazom, a prozirnost blago kroz cijelo trajanje — meki ulazak. */
+    .nn .rit-grid.is-in .rit-card{
+      animation:nn-move-right 1.86s cubic-bezier(.19,1,.22,1) both,
+                nn-fade-soft 1.86s ease-out both;
+      animation-delay:calc(var(--ri) * .28s)}
+    .nn .rit-grid.is-in .rit-card:nth-child(even){animation-name:nn-move-left,nn-fade-soft}}
+  @keyframes nn-move-right{from{transform:translateX(3.5rem)}to{transform:none}}
+  @keyframes nn-move-left{from{transform:translateX(-3.5rem)}to{transform:none}}
+  @keyframes nn-fade-soft{from{opacity:0}to{opacity:1}}
+  @media(max-width:700px) and (prefers-reduced-motion:reduce){
+    .nn .rit-grid .rit-card,.nn .rit-grid.is-in .rit-card{opacity:1;animation:none}}
   @media(max-width:560px){.nn .rit-grid{grid-template-columns:1fr;max-width:340px}
   .nn .rit-card .nm{font-size:min(6.4vw,1.55rem)}}
 
@@ -178,19 +193,19 @@
   .nn .gift-cta:hover span{transform:translateX(5px)}
   @media(max-width:820px){
     .nn .gift{padding:3.5rem 1rem calc(3.5rem + 7rem)}
-    .nn .gwrap{grid-template-columns:1fr;gap:2.4rem;text-align:center;justify-items:center;justify-content:stretch;left:0;padding-top:6.6rem;padding-bottom:1.2rem}
+    .nn .gwrap{grid-template-columns:1fr;gap:1.5rem;text-align:center;justify-items:center;justify-content:stretch;left:0;padding-top:6.6rem;padding-bottom:0}
     .nn .gcopy{width:100%;max-width:400px;margin:0 auto;justify-self:center;left:0}
     .nn .gframe{left:0}
-    .nn .gcopy h2{white-space:nowrap;margin-bottom:1rem}
-    .nn .gcopy p{max-width:30ch;margin-left:auto;margin-right:auto}
+    .nn .gcopy h2{white-space:nowrap;margin-bottom:1rem;font-size:min(2.85rem,11.6vw)}
+    .nn .gcopy p{max-width:30ch;margin-left:auto;margin-right:auto;font-size:1.12rem}
     .nn .vm{gap:.22rem}
-    .nn .vm-n{font-size:1.02rem}
-    .nn .vm-u{font-size:.55rem}
+    .nn .vm-n{font-size:1.25rem}
+    .nn .vm-u{font-size:.68rem}
     .nn .v-mins{gap:.42rem;flex-wrap:nowrap;justify-content:center}
-    .nn .v-unit{font-size:.9rem;letter-spacing:.02em}
-    .nn .gframe{justify-self:stretch;width:112%;max-width:none;margin-left:-6%;margin-top:7.7rem;
+    .nn .v-unit{font-size:1.05rem;letter-spacing:.02em}
+    .nn .gframe{justify-self:stretch;width:112%;max-width:none;margin-left:-6%;margin-top:4.4rem;
       /* Rez pada samo na tanke repove: glavni dio ruke je od 29. do 583. piksela crteža. */
-      aspect-ratio:755/400;background-size:115% auto;background-position:20% top}
+      aspect-ratio:755/290;background-size:115% auto;background-position:20% top}
     .nn .gift-cta{white-space:nowrap;min-width:min(17.3rem,100%);margin-top:2.9rem}}
   @media(max-width:360px){
     .nn .gift-cta{font-size:.66rem;letter-spacing:.14em;padding:.85rem 1rem}}
@@ -204,7 +219,8 @@
 
   /* 8 · ISKUSTVA — svijetlo */
   .nn .quotes{background:var(--cream);padding:7rem 2rem;text-align:center}
-  .nn .quotes .note{display:block;margin-bottom:.8rem;color:var(--ink-soft)}
+  /* "iskustva" — isti font kao naslović "O meni". */
+  .nn .quotes .eyebrow{display:block;margin-bottom:.9rem}
   .nn .quotes h2{font-size:clamp(1.9rem,3vw,2.7rem);margin-bottom:1.6rem;color:var(--ink)}
   .nn .q-mark{width:clamp(90px,9vw,120px);height:auto;margin:0 auto 3rem;opacity:.85}
   .nn .q-grid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2.6rem}
@@ -454,7 +470,7 @@
 
     <!-- EXPERIENCES -->
     <section class="quotes">
-      <span class="note">experiences</span>
+      <span class="eyebrow">experiences</span>
       <h2>what clients say</h2>
       <img class="q-mark" src="../wp-content/uploads/soul/motiv-grancica.webp" alt="" aria-hidden="true">
       <div class="q-grid">
@@ -659,16 +675,16 @@
        a ne dok tek proviruje s dna ekrana. */
     function revealOnScroll(el) {
       if (!('IntersectionObserver' in window)) { el.classList.add('is-in'); return; }
+      // Okida kad vrh elementa dođe na ~72% visine ekrana. Radi i za vrlo visoke
+      // elemente (npr. mreža rituala na mobitelu), gdje postotak vidljivosti
+      // nikad ne naraste dovoljno.
       var io = new IntersectionObserver(function (es) {
         es.forEach(function (e) {
           if (!e.isIntersecting) return;
-          var vh = window.innerHeight || document.documentElement.clientHeight;
-          if (e.intersectionRatio >= 0.55 || e.boundingClientRect.top < vh * 0.6) {
-            el.classList.add('is-in');
-            io.disconnect();
-          }
+          el.classList.add('is-in');
+          io.disconnect();
         });
-      }, { threshold: [0, 0.55], rootMargin: '0px 0px -18% 0px' });
+      }, { rootMargin: '0px 0px -28% 0px' });
       io.observe(el);
     }
   </script>
@@ -812,6 +828,16 @@
       }
     })();
 
+    /* Ritual kartice — na mobitelu ulaze naizmjenično zdesna pa slijeva. */
+    (function () {
+      var grid = document.querySelector('.nn .rit-grid');
+      if (!grid) return;
+      Array.prototype.forEach.call(grid.querySelectorAll('.rit-card'), function (c, n) {
+        c.style.setProperty('--ri', n);
+      });
+      revealOnScroll(grid);
+    })();
+
     /* "O meni" blok — naslović, ime, rečenica, opis i link ulaze odozgo. */
     (function () {
       var box = document.querySelector('.nn .story-text');
@@ -852,10 +878,14 @@
             gwrap.style.setProperty('--gx', (pr * 11).toFixed(2) + '%');
           }
         }
-        // Hero: slika zaostaje za skrolom (kreće od vrha stranice).
+        // Hero: slika klizi lijevo dok skrolamo (pomak je razmjeran širini, pa nikad ne otkrije rub).
         if (heroImg) {
           var y = window.pageYOffset || document.documentElement.scrollTop || 0;
-          if (y < vh * 1.3) heroImg.style.transform = 'translate3d(0,' + (y * 0.22).toFixed(1) + 'px,0)';
+          if (y < vh * 1.3) {
+            var maxX = heroImg.parentNode.offsetWidth * 0.14;
+            var dx = -Math.min(y / vh, 1) * maxX;
+            heroImg.style.transform = 'translate3d(' + dx.toFixed(1) + 'px,0,0)';
+          }
         }
       }
       window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(update); } }, { passive: true });
