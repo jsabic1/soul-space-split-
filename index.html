@@ -657,11 +657,17 @@
       })(stmt);
 
       if (!('IntersectionObserver' in window)) { stmt.classList.add('is-in'); return; }
+      // Kreće tek kad rečenica stvarno uđe u kadar, a ne dok tek proviruje s dna.
       var io = new IntersectionObserver(function (es) {
         es.forEach(function (e) {
-          if (e.isIntersecting) { stmt.classList.add('is-in'); io.disconnect(); }
+          if (!e.isIntersecting) return;
+          var vh = window.innerHeight || document.documentElement.clientHeight;
+          if (e.intersectionRatio >= 0.55 || e.boundingClientRect.top < vh * 0.6) {
+            stmt.classList.add('is-in');
+            io.disconnect();
+          }
         });
-      }, { threshold: 0.35 });
+      }, { threshold: [0, 0.55], rootMargin: '0px 0px -18% 0px' });
       io.observe(stmt);
     })();
   </script>
