@@ -148,17 +148,17 @@
   @media(max-width:700px){
     .nn .rituals{overflow:hidden}
     .nn .rit-grid .rit-card{opacity:0}
-    /* Pomak ide brzim izlazom, a prozirnost blago kroz cijelo trajanje — meki ulazak. */
-    .nn .rit-grid.is-in .rit-card{
+    /* Pomak ide brzim izlazom, a prozirnost blago kroz cijelo trajanje — meki ulazak.
+       Svaka kartica kreće za sebe, tek kad doskrolamo do nje. */
+    .nn .rit-card.is-in{
       animation:nn-move-right 1.86s cubic-bezier(.19,1,.22,1) both,
-                nn-fade-soft 1.86s ease-out both;
-      animation-delay:calc(var(--ri) * .28s)}
-    .nn .rit-grid.is-in .rit-card:nth-child(even){animation-name:nn-move-left,nn-fade-soft}}
+                nn-fade-soft 1.86s ease-out both}
+    .nn .rit-card:nth-child(even).is-in{animation-name:nn-move-left,nn-fade-soft}}
   @keyframes nn-move-right{from{transform:translateX(3.5rem)}to{transform:none}}
   @keyframes nn-move-left{from{transform:translateX(-3.5rem)}to{transform:none}}
   @keyframes nn-fade-soft{from{opacity:0}to{opacity:1}}
   @media(max-width:700px) and (prefers-reduced-motion:reduce){
-    .nn .rit-grid .rit-card,.nn .rit-grid.is-in .rit-card{opacity:1;animation:none}}
+    .nn .rit-grid .rit-card,.nn .rit-card.is-in{opacity:1;animation:none}}
   @media(max-width:560px){.nn .rit-grid{grid-template-columns:1fr;max-width:340px}
   .nn .rit-card .nm{font-size:min(6.4vw,1.55rem)}}
 
@@ -830,14 +830,11 @@
       }
     })();
 
-    /* Ritual kartice — na mobitelu ulaze naizmjenično zdesna pa slijeva. */
+    /* Ritual kartice — na mobitelu ulaze naizmjenično zdesna pa slijeva.
+       Svaka se okida zasebno, kad doskrolamo do nje. */
     (function () {
-      var grid = document.querySelector('.nn .rit-grid');
-      if (!grid) return;
-      Array.prototype.forEach.call(grid.querySelectorAll('.rit-card'), function (c, n) {
-        c.style.setProperty('--ri', n);
-      });
-      revealOnScroll(grid);
+      var cards = document.querySelectorAll('.nn .rit-grid .rit-card');
+      Array.prototype.forEach.call(cards, function (c) { revealOnScroll(c); });
     })();
 
     /* "O meni" blok — naslović, ime, rečenica, opis i link ulaze odozgo. */
