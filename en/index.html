@@ -136,24 +136,16 @@
     background-image:linear-gradient(rgba(244,232,214,.68),rgba(244,232,214,.68)),url('../wp-content/uploads/soul/luk-terakota.webp');
     background-size:100% 100%;background-position:center;background-repeat:no-repeat}
   .nn .gcopy .eyebrow{display:block;font-size:.7rem;color:var(--terra);margin-bottom:.7rem}
-  .nn .gcopy h2{font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.04;margin-bottom:.9rem;color:var(--ink)}
+  .nn .gcopy h2{font-size:clamp(1.55rem,2.5vw,2.15rem);line-height:1.06;margin-bottom:.8rem;color:var(--ink)}
   .nn .gcopy p{font-size:clamp(.94rem,1.15vw,1.05rem);line-height:1.6;color:var(--ink-soft);max-width:30ch;margin:0 auto}
-  .nn .gframe{position:relative;width:min(430px,32vw);aspect-ratio:955/1245;justify-self:center;
-    display:flex;align-items:center;justify-content:center;text-align:center}
-  .nn .gframe::before,.nn .gframe::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:100%;aspect-ratio:955/1245;background-position:center;background-size:contain;background-repeat:no-repeat;pointer-events:none}
-  /* akvarel ostaje iza kruznog vektora */
-  .nn .gframe::before{background-image:url('../wp-content/uploads/soul/motiv-a4-2-wash.webp');opacity:.3;mix-blend-mode:multiply;z-index:0}
-  /* grancica ide preko kruznog vektora */
-  .nn .gframe::after{background-image:url('../wp-content/uploads/soul/motiv-a4-2-line.webp');opacity:.42;z-index:1}
-  .nn .v-mins{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin:1.4rem 0 .7rem}
-  .nn .vm{display:flex;flex-direction:row;align-items:baseline;gap:.28rem;padding:.46rem 1.05rem;
-    border:1px solid rgba(196,85,31,.4);border-radius:999px}
-  .nn .vm-n{font-family:var(--serif);font-size:1.2rem;line-height:1;color:var(--terra)}
+  .nn .gframe{position:relative;width:min(540px,40vw);aspect-ratio:1297/1010;justify-self:center;
+    display:flex;align-items:flex-end;justify-content:center;text-align:center;padding-bottom:1.5%;
+    background:url('../wp-content/uploads/soul/motiv-gift.webp') center top/contain no-repeat}
+  .nn .v-mins{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(.9rem,1.8vw,1.7rem);margin:1.5rem 0 .7rem}
+  .nn .vm{display:flex;flex-direction:row;align-items:baseline;gap:.28rem}
+  .nn .vm-n{font-family:var(--serif);font-size:1.25rem;line-height:1;color:var(--terra)}
   .nn .vm-u{font-family:var(--caps);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
   .nn .v-unit{font-family:var(--caps);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--muted);margin:0 0 1.4rem}
-  .nn .gin .rule{display:block;width:52px;height:1px;margin:1.5rem auto;background:rgba(196,85,31,.45)}
-  .nn .gift-notes{list-style:none;margin:0;padding:0;display:inline-flex;flex-direction:column;align-items:flex-start;text-align:left;gap:.55rem;font-family:var(--caps);font-size:clamp(.6rem,.9vw,.76rem);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft)}
-  .nn .gift-notes li::before{content:"\2726";color:var(--terra);margin-right:.4rem}
   .nn .gift-cta{position:relative;z-index:3;display:inline-block;font-family:var(--caps);font-weight:700;
     font-size:clamp(.76rem,.9vw,.88rem);letter-spacing:.22em;text-transform:uppercase;color:var(--terra);
     background:rgba(244,232,214,.85);border:1px solid rgba(196,85,31,.55);border-radius:999px;
@@ -165,19 +157,17 @@
     .nn .gift{padding:4.5rem 1.6rem 5rem}
     .nn .gwrap{grid-template-columns:1fr;gap:2.2rem;text-align:center;justify-items:center;justify-content:stretch}
     .nn .gcopy{width:min(340px,92vw);aspect-ratio:1090/1560;padding:16% 9% 18%}
-    .nn .vm{padding:.4rem .7rem;gap:.22rem}
+    .nn .vm{gap:.22rem}
     .nn .vm-n{font-size:1.02rem}
     .nn .vm-u{font-size:.55rem}
     .nn .v-mins{gap:.42rem;flex-wrap:nowrap}
     .nn .v-unit{font-size:.64rem;letter-spacing:.14em}
-    .nn .gframe{width:min(300px,80vw)}
+    .nn .gframe{width:min(340px,92vw)}
     .nn .v-mins{justify-content:center}
     .nn .gcopy h2{white-space:nowrap}
     .nn .gcopy p{max-width:30ch}
     .nn .gift-cta{white-space:nowrap;letter-spacing:.14em;font-size:.72rem;padding:.8rem 1.2rem}
     .nn .gframe{width:min(340px,88vw)}
-    .nn .gframe::before,.nn .gframe::after{width:98%}
-    .nn .gframe::before{opacity:.3}
     .nn .gdivide{width:clamp(90px,26vw,140px);right:0}
     .nn .gcopy{justify-self:center}
     .nn .gcopy p{margin-left:auto;margin-right:auto}
