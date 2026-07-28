@@ -267,7 +267,11 @@
   .nn .q-type figcaption.is-on{opacity:1}
 
   /* 8b · KORACI — lukovi na dubljem krem tonu */
-  .nn .steps{background:var(--cream2);padding:8rem 2rem 8.5rem;text-align:center}
+  .nn .steps{padding:8rem 2rem 8.5rem;text-align:center;
+    /* Gornji rub se stapa sa sekcijom iznad (krem), pozadina je izblijedjena kao gore. */
+    background:linear-gradient(to bottom,var(--cream) 0%,rgba(244,232,214,.6) 18%,rgba(244,232,214,0) 44%),
+               linear-gradient(rgba(239,224,198,.82),rgba(239,224,198,.82)),
+               url('../wp-content/uploads/soul/pozadina-koraci.webp') center bottom/cover no-repeat var(--cream2)}
   .nn .steps .eyebrow{display:block;color:var(--terra);margin-bottom:.9rem}
   .nn .steps h2{font-size:clamp(2rem,3.4vw,3rem);color:var(--ink);margin-bottom:14rem}
   .nn .st-grid{position:relative;max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(2.6rem,5vw,5rem)}
