@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Unicase:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style.css?v=153">
+  <link rel="stylesheet" href="css/style.css?v=158">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style id="nn-home">
@@ -49,24 +49,42 @@
   .nn .btn-line:hover{background:var(--lite);color:var(--dark)}
   .nn .btn-line.dark{color:var(--ink);border-color:rgba(31,15,10,.55)}
   .nn .btn-line.dark:hover{background:var(--ink);color:var(--cream)}
-  .nn .btn-terra{display:inline-block;background:transparent;color:#FFF3E5;font-family:var(--caps);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;font-weight:600;padding:1.1rem 2.6rem;border:1px solid #FFF3E5;border-radius:999px;transition:background .3s ease,border-color .3s ease,color .3s ease}
+  .nn .btn-terra{display:inline-block;background:transparent;color:#FFF3E5;font-family:var(--caps);font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;font-weight:600;padding:.95rem 2.6rem;border:1px solid #FFF3E5;border-radius:999px;transition:background .3s ease,border-color .3s ease,color .3s ease}
   .nn .btn-terra:hover,.btn-terra:focus-visible,.btn-terra:active{background:var(--terra);border-color:var(--terra);color:#F7ECDD;box-shadow:0 12px 32px -12px rgba(196,85,31,.55)}
 
   /* 2 · TIJELO PAMTI SVE */
   .nn .stmt-sec{position:relative;padding:21rem 2rem 15rem;background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(2.5rem,5vw,5rem);text-align:center}
   .nn .figura-wrap{position:relative;flex:0 0 auto;display:flex;align-items:center;justify-content:center}
   .nn .figura-wrap::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-    width:clamp(240px,28vw,410px);aspect-ratio:451/684;opacity:.5;pointer-events:none;z-index:0;
+    width:clamp(280px,33vw,480px);aspect-ratio:813/900;opacity:.13;pointer-events:none;z-index:0;
     mask-image:linear-gradient(#000 52%,rgba(0,0,0,.35) 74%,transparent 92%);
     -webkit-mask-image:linear-gradient(#000 52%,rgba(0,0,0,.35) 74%,transparent 92%);
-    background:url('wp-content/uploads/soul/motiv-a6-3.webp') center/contain no-repeat}
+    background:url('wp-content/uploads/soul/motiv-a2-6.webp') center/contain no-repeat}
   .nn .figura{position:relative;z-index:1;display:block;width:clamp(120px,15vw,210px);height:auto;pointer-events:none}
   .nn .stmt{font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,3.1rem);line-height:1.3;color:var(--ink);max-width:24ch;margin:0 auto}
   .nn .stmt .accent{color:inherit}
+  /* "Tijelo pamti sve" — ispisuje se slijeva nadesno, isto kao natpisi koraka. */
+  .nn .stmt-sec .stmt .fw{display:inline-block}
+  .nn .stmt-sec .stmt .fc{display:inline-block;
+    padding-left:.6em;margin-left:-.6em;padding-right:.6em;margin-right:-.6em;
+    clip-path:inset(-1000% 100% -1000% 0);
+    transition:clip-path .26s linear;
+    transition-delay:calc(var(--ci) * .11s)}
+  .nn .stmt-sec .stmt.is-in .fc{clip-path:inset(-1000% 0 -1000% 0)}
+  @media(prefers-reduced-motion:reduce){
+    .nn .stmt-sec .stmt .fc{clip-path:none;transition:none}}
 
   /* 3 · PREPOZNAJEŠ SE */
-  .nn .foryou{background:var(--cream);padding:5rem 2rem 7rem;text-align:center}
-  .nn .foryou .note{display:block;margin-bottom:1.5rem}
+  .nn .foryou{background:var(--cream);padding:5rem 2rem 7rem;text-align:center;overflow:hidden}
+  /* Tijelo / San / Napetost / Tempo — svaki ulazi zdesna, jedan po jedan. */
+  .nn .fy-grid .fy-item{opacity:0}
+  .nn .fy-grid.is-in .fy-item{animation:nn-slide-right 2.24s cubic-bezier(.19,1,.22,1) both;
+    animation-delay:calc(var(--fi) * .34s)}
+  @keyframes nn-slide-right{from{opacity:0;transform:translateX(3.5rem)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){
+    .nn .fy-grid .fy-item,.nn .fy-grid.is-in .fy-item{opacity:1;animation:none}}
+  /* "prepoznaješ se?" — isti font kao naslović "O meni". */
+  .nn .foryou .eyebrow{display:block;margin-bottom:1.5rem}
   .nn .foryou h2{font-size:clamp(1.9rem,3vw,2.7rem);margin-bottom:4.6rem}
   .nn .fy-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2.4rem}
   .nn .fy-item svg{width:40px;height:40px;stroke:var(--terra);margin:0 auto 1rem}
@@ -77,10 +95,7 @@
   .nn .fy-item::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
     height:82%;opacity:.1;margin-top:6%;pointer-events:none;z-index:0;
     background:center/contain no-repeat}
-  .nn .fy-item:nth-child(1)::before{background-image:url('wp-content/uploads/soul/motiv-a7-1.webp');aspect-ratio:361/365}
-  .nn .fy-item:nth-child(2)::before{background-image:url('wp-content/uploads/soul/motiv-a7-2.webp');aspect-ratio:326/479}
-  .nn .fy-item:nth-child(3)::before{background-image:url('wp-content/uploads/soul/motiv-a7-3.webp');aspect-ratio:369/456}
-  .nn .fy-item:nth-child(4)::before{background-image:url('wp-content/uploads/soul/motiv-a7-4.webp');aspect-ratio:308/426}
+  .nn .fy-item::before{background-image:url('wp-content/uploads/soul/motiv-a7-4.webp');aspect-ratio:308/426}
   .nn .fy-item svg,.nn .fy-item .lbl,.nn .fy-item p{position:relative;z-index:1}
   @media(max-width:860px){
     .nn .fy-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:440px;gap:2.6rem 1.2rem}
@@ -95,10 +110,17 @@
   /* 4 · MOJA PRIČA — tamno, slika uz lijevi rub s parallaxom */
   .nn .story{background:var(--dark2);position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,42fr) minmax(0,58fr);align-items:stretch}
   .nn .story-photo{position:relative;overflow:hidden;min-height:min(90vh,880px);z-index:1}
-  .nn .story-photo img{position:absolute;top:-14%;left:0;width:100%;height:128%;object-fit:cover;object-position:center 28%;will-change:transform;transform:translate3d(0,var(--par,0),0)}
+  .nn .story-photo img{position:absolute;top:-22%;left:0;width:100%;height:144%;object-fit:cover;object-position:center 28%;will-change:transform;transform:translate3d(0,var(--par,0),0)}
   .nn .story-text{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;padding:clamp(4.5rem,7vw,7.5rem) clamp(2rem,5.5vw,5.5rem)}
   .nn .story-text .eyebrow{display:block;margin-bottom:.9rem;color:var(--gold-lite)}
-  .nn .story-sub{font-family:var(--script);font-size:clamp(1.15rem,1.7vw,1.5rem);line-height:1.4;margin-bottom:1.7rem;color:var(--terra-bright)}
+  /* "O meni" blok — svaki redak spušta se odozgo, jedan za drugim. */
+  .nn .story-text > *{opacity:0}
+  .nn .story-text.is-in > *{animation:nn-slide-down 1.73s cubic-bezier(.19,1,.22,1) both;
+    animation-delay:calc(var(--si) * .26s)}
+  @keyframes nn-slide-down{from{opacity:0;transform:translateY(-2.2rem)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){
+    .nn .story-text > *,.nn .story-text.is-in > *{opacity:1;animation:none}}
+  .nn .story-sub{font-family:var(--script);font-size:clamp(1.15rem,1.7vw,1.5rem);line-height:1.4;margin-bottom:1.7rem;text-align:left;color:var(--terra-bright)}
   .nn .story h2{font-size:clamp(2rem,3.3vw,3.15rem);line-height:1.14;margin-bottom:1.5rem;max-width:22ch;color:var(--lite)}
   .nn .story p{color:var(--lite-muted);text-align:justify;margin-bottom:1.2rem;max-width:64ch}
   .nn .btn-wide{display:inline-block;align-self:flex-start;margin-top:2rem;background:transparent;font-family:var(--caps);font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:#E0C79F;border:none;border-bottom:1px solid rgba(214,168,106,.5);border-radius:0;padding:.5rem .25rem;transition:color .3s ease,border-color .3s ease}
@@ -116,7 +138,7 @@
   .nn .rituals h2{font-size:clamp(2rem,3.4vw,3rem)}
   .nn .rit-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.6rem;align-items:start}
   .nn .rit-card{background:var(--cream2)}
-  .nn .rit-card img{width:100%;aspect-ratio:3/4;object-fit:cover}
+  .nn .rit-card img{width:100%;aspect-ratio:15/17;object-fit:cover}
   .nn .rit-card .body{padding:1.3rem 1.35rem 1.6rem}
   .nn .rit-card .nm{font-family:var(--serif);font-weight:700;font-size:clamp(.85rem,calc(2.3vw - 8px),1.27rem);line-height:1.25;white-space:nowrap;color:var(--ink);margin-bottom:.45rem}
   .nn .rit-card .ds{font-family:var(--bodyf);font-size:.95rem;line-height:1.5;color:var(--ink-soft);margin:.15rem 0 .55rem;max-width:26ch}
@@ -124,82 +146,119 @@
   .nn .rit-card .go{display:inline-block;margin-top:1rem;font-family:var(--caps);font-size:clamp(.76rem,.88vw,.9rem);letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--terra);border-bottom:1px solid rgba(196,85,31,.75);padding-bottom:.24rem}
   @media(max-width:960px){.nn .rit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .nn .rit-card .nm{font-size:clamp(.95rem,calc(4.35vw - 7.5px),1.7rem)}.nn .rit-card .pr{font-size:.88rem}.nn .rit-card .go{font-size:.86rem}}
+  /* Ritual kartice se otkrivaju rastezanjem slijeva nadesno (scale-in-hor-left). */
+  .nn .rituals{overflow:hidden}
+  .nn .rit-grid .rit-card{opacity:0;will-change:transform}
+  @keyframes nn-scale-in-hor-left{
+    0%{transform:scaleX(0);transform-origin:0% 0%;opacity:1}
+    100%{transform:scaleX(1);transform-origin:0% 0%;opacity:1}}
+  @keyframes nn-scale-in-hor-right{
+    0%{transform:scaleX(0);transform-origin:100% 100%;opacity:1}
+    100%{transform:scaleX(1);transform-origin:100% 100%;opacity:1}}
+  @keyframes nn-scale-in-ver-top{
+    0%{transform:scaleY(0);transform-origin:100% 0%;opacity:1}
+    100%{transform:scaleY(1);transform-origin:100% 0%;opacity:1}}
+  /* Mobitel: svaka kartica kreće kad doskrolamo do nje, naizmjenično slijeva pa zdesna. */
+  @media(max-width:700px){
+    .nn .rit-card.is-in{animation:nn-scale-in-hor-left .77s cubic-bezier(.25,.46,.45,.94) both}
+    .nn .rit-card:nth-child(even).is-in{animation-name:nn-scale-in-hor-right}}
+  /* Desktop: otkrivaju se od vrha prema dolje, jedna za drugom. */
+  @media(min-width:701px){
+    .nn .rit-grid.is-in .rit-card{animation:nn-scale-in-ver-top .77s cubic-bezier(.25,.46,.45,.94) both;
+      animation-delay:calc(var(--ri) * .88s)}}
+  @media(prefers-reduced-motion:reduce){
+    .nn .rit-grid .rit-card,.nn .rit-card.is-in,.nn .rit-grid.is-in .rit-card{opacity:1;animation:none}}
   @media(max-width:560px){.nn .rit-grid{grid-template-columns:1fr;max-width:340px}
   .nn .rit-card .nm{font-size:min(6.4vw,1.55rem)}}
 
   /* 6 · POKLON BON — okvir desno, tekst lijevo */
-  .nn .gift{position:relative;display:block;padding:clamp(4rem,6vw,6.5rem) 2rem;background:var(--cream);overflow:hidden}
-  .nn .gwrap{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:auto auto;justify-content:center;align-items:center;gap:clamp(2rem,5vw,5rem)}
-  /* luk kao okvir oko teksta */
-  .nn .gcopy{position:relative;width:min(500px,37vw);aspect-ratio:1090/1248;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
-    padding:15% 12% 13%;
-    background-image:linear-gradient(rgba(244,232,214,.68),rgba(244,232,214,.68)),url('wp-content/uploads/soul/luk-terakota.webp');
-    background-size:100% 100%;background-position:center;background-repeat:no-repeat}
-  .nn .gcopy .eyebrow{display:block;font-size:.7rem;color:var(--terra);margin-bottom:.7rem}
-  .nn .gcopy h2{font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.04;margin-bottom:.9rem;color:var(--ink)}
-  .nn .gcopy p{font-size:clamp(.94rem,1.15vw,1.05rem);line-height:1.6;color:var(--ink-soft);max-width:30ch;margin:0 auto}
-  .nn .gframe{position:relative;width:min(430px,32vw);aspect-ratio:955/1245;justify-self:center;
-    display:flex;align-items:center;justify-content:center;text-align:center}
-  .nn .gframe::before,.nn .gframe::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:100%;aspect-ratio:955/1245;background-position:center;background-size:contain;background-repeat:no-repeat;pointer-events:none}
-  /* akvarel ostaje iza kruznog vektora */
-  .nn .gframe::before{background-image:url('wp-content/uploads/soul/motiv-a4-2-wash.webp');opacity:.3;mix-blend-mode:multiply;z-index:0}
-  /* grancica ide preko kruznog vektora */
-  .nn .gframe::after{background-image:url('wp-content/uploads/soul/motiv-a4-2-line.webp');opacity:.42;z-index:1}
-  .nn .v-mins{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin:1.4rem 0 .7rem}
-  .nn .vm{display:flex;flex-direction:row;align-items:baseline;gap:.28rem;padding:.46rem 1.05rem;
-    border:1px solid rgba(196,85,31,.4);border-radius:999px}
-  .nn .vm-n{font-family:var(--serif);font-size:1.2rem;line-height:1;color:var(--terra)}
-  .nn .vm-u{font-family:var(--caps);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-  .nn .v-unit{font-family:var(--caps);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:var(--muted);margin:0 0 1.4rem}
-  .nn .gin .rule{display:block;width:52px;height:1px;margin:1.5rem auto;background:rgba(196,85,31,.45)}
-  .nn .gift-notes{list-style:none;margin:0;padding:0;display:inline-flex;flex-direction:column;align-items:flex-start;text-align:left;gap:.55rem;font-family:var(--caps);font-size:clamp(.6rem,.9vw,.76rem);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft)}
-  .nn .gift-notes li::before{content:"\2726";color:var(--terra);margin-right:.4rem}
-  .nn .gift-cta{position:relative;z-index:3;display:inline-block;font-family:var(--caps);font-weight:700;
-    font-size:clamp(.76rem,.9vw,.88rem);letter-spacing:.22em;text-transform:uppercase;color:var(--terra);
-    background:rgba(244,232,214,.85);border:1px solid rgba(196,85,31,.55);border-radius:999px;
-    padding:.85rem 1.6rem;transition:background .3s ease,color .3s ease,border-color .3s ease}
+  .nn .gift{position:relative;display:block;padding:clamp(4rem,6vw,6.5rem) 2rem calc(clamp(4rem,6vw,6.5rem) + 7rem);background:var(--cream);overflow:hidden}
+  .nn .gwrap{position:relative;left:0;max-width:1020px;margin:0 auto;display:grid;grid-template-columns:auto auto;justify-content:center;align-items:center;
+    gap:clamp(.5rem,1.2vw,1.2rem);border-radius:3px;overflow:hidden;background:transparent;
+    padding:clamp(3.4rem,4.8vw,4.8rem) clamp(1.4rem,2.4vw,2.4rem) clamp(2.2rem,3.2vw,3.2rem)}
+  /* zlatni obrub uvucen od ruba kartice */
+  .nn .gwrap::before{content:"";position:absolute;inset:0;
+    border:1px solid rgba(224,199,159,.55);border-radius:2px;pointer-events:none;z-index:2}
+  /* Fotografija u zasebnom sloju — širi je od okvira pa se može pomicati lijevo-desno. */
+  .nn .gwrap::after{content:"";position:absolute;top:0;bottom:0;left:-18%;width:136%;z-index:0;
+    pointer-events:none;will-change:transform;transform:translate3d(var(--gx,0),0,0);
+    background:linear-gradient(rgba(31,15,10,.58),rgba(31,15,10,.66)),url('wp-content/uploads/soul/od-poruke-do-stola.jpeg') center 42%/cover no-repeat}
+  .nn .gcopy{position:relative;z-index:1;left:calc(6% + 2.5rem);width:fit-content;max-width:min(380px,27vw);text-align:center;justify-self:center}
+  .nn .gcopy .eyebrow{display:block;font-size:.7rem;color:var(--gold-lite);margin-bottom:.7rem}
+  /* Naslov vouchera se ispisuje slijeva nadesno, isto kao natpisi koraka. */
+  .nn .gcopy h2 .fw{display:inline-block}
+  .nn .gcopy h2 .fc{display:inline-block;
+    padding-left:.6em;margin-left:-.6em;padding-right:.6em;margin-right:-.6em;
+    clip-path:inset(-1000% 100% -1000% 0);
+    transition:clip-path .26s linear;
+    transition-delay:calc(var(--ci) * .11s)}
+  .nn .gcopy h2.is-in .fc{clip-path:inset(-1000% 0 -1000% 0)}
+  @media(prefers-reduced-motion:reduce){
+    .nn .gcopy h2 .fc{clip-path:none;transition:none}}
+  .nn .gcopy h2{font-family:var(--script);font-weight:400;font-size:clamp(2.3rem,3.9vw,3.5rem);line-height:1.25;margin-bottom:2.2rem;white-space:nowrap;text-transform:none;letter-spacing:normal;color:var(--gold-lite)}
+  .nn .gcopy p{font-size:clamp(.94rem,1.15vw,1.05rem);line-height:1.6;color:var(--lite-muted);max-width:30ch;margin:0 auto}
+  .nn .gframe{position:relative;z-index:1;width:min(685px,48vw);aspect-ratio:755/440;justify-self:center;left:-.8rem;
+    background:url('wp-content/uploads/soul/motiv-gift-gold.webp') 46px 92%/contain no-repeat}
+  .nn .v-mins{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(.9rem,1.8vw,1.7rem);margin:1.1rem 0 .1rem}
+  .nn .vm{display:flex;flex-direction:row;align-items:baseline;gap:.28rem}
+  .nn .vm-n{font-family:var(--serif);font-size:1.25rem;line-height:1;color:var(--terra-bright)}
+  .nn .vm-u{font-family:var(--caps);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lite-dim)}
+  .nn .v-unit{font-family:var(--bodyf);font-style:italic;font-size:.95rem;letter-spacing:.02em;text-transform:none;white-space:nowrap;color:var(--lite-dim);margin:0 0 1.7rem}
+  .nn .gift-cta{position:relative;z-index:3;margin-top:1.4rem;display:inline-block;white-space:nowrap;min-width:17.3rem;text-align:center;font-family:var(--caps);font-weight:600;
+    font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:#FFF3E5;
+    background:transparent;border:1px solid #FFF3E5;border-radius:999px;
+    padding:.95rem 2.6rem;transition:background .3s ease,color .3s ease,border-color .3s ease}
   .nn .gift-cta span{display:inline-block;margin-left:.5rem;transition:transform .3s ease}
-  .nn .gift-cta:hover{background:var(--terra);border-color:var(--terra);color:#FFF3E5}
+  .nn .gift-cta:hover,.nn .gift-cta:focus-visible,.nn .gift-cta:active{background:var(--terra);border-color:var(--terra);color:#F7ECDD;box-shadow:0 12px 32px -12px rgba(196,85,31,.55)}
   .nn .gift-cta:hover span{transform:translateX(5px)}
   @media(max-width:820px){
-    .nn .gift{padding:4.5rem 1.6rem 5rem}
-    .nn .gwrap{grid-template-columns:1fr;gap:2.2rem;text-align:center;justify-items:center;justify-content:stretch}
-    .nn .gcopy{width:min(340px,92vw);aspect-ratio:1090/1560;padding:16% 9% 18%}
-    .nn .vm{padding:.4rem .7rem;gap:.22rem}
-    .nn .vm-n{font-size:1.02rem}
-    .nn .vm-u{font-size:.55rem}
-    .nn .v-mins{gap:.42rem;flex-wrap:nowrap}
-    .nn .v-unit{font-size:.64rem;letter-spacing:.14em}
-    .nn .gframe{width:min(300px,80vw)}
-    .nn .v-mins{justify-content:center}
-    .nn .gcopy h2{white-space:nowrap}
-    .nn .gcopy p{max-width:30ch}
-    .nn .gift-cta{white-space:nowrap;letter-spacing:.14em;font-size:.72rem;padding:.8rem 1.2rem}
-    .nn .gframe{width:min(340px,88vw)}
-    .nn .gframe::before,.nn .gframe::after{width:98%}
-    .nn .gframe::before{opacity:.3}
-    .nn .gdivide{width:clamp(90px,26vw,140px);right:0}
-    .nn .gcopy{justify-self:center}
-    .nn .gcopy p{margin-left:auto;margin-right:auto}
-    .nn .gframe{max-width:340px}}
+    .nn .gift{padding:3.5rem 1rem calc(3.5rem + 7rem)}
+    .nn .gwrap{grid-template-columns:1fr;gap:1.5rem;text-align:center;justify-items:center;justify-content:stretch;left:0;padding-top:6.6rem;padding-bottom:0}
+    .nn .gcopy{width:100%;max-width:400px;margin:0 auto;justify-self:center;left:0}
+    .nn .gframe{left:0}
+    .nn .gcopy h2{white-space:nowrap;margin-bottom:1rem;font-size:min(2.85rem,11.6vw)}
+    .nn .gcopy p{max-width:30ch;margin-left:auto;margin-right:auto;font-size:1.12rem}
+    .nn .vm{gap:.22rem}
+    .nn .vm-n{font-size:1.25rem}
+    .nn .vm-u{font-size:.68rem}
+    .nn .v-mins{gap:.42rem;flex-wrap:nowrap;justify-content:center}
+    .nn .v-unit{font-size:1.05rem;letter-spacing:.02em}
+    .nn .gframe{justify-self:stretch;width:112%;max-width:none;margin-left:-6%;margin-top:4.4rem;
+      /* Rez pada samo na tanke repove: glavni dio ruke je od 29. do 583. piksela crteža. */
+      aspect-ratio:755/290;background-size:115% auto;background-position:20% top}
+    .nn .gift-cta{white-space:nowrap;min-width:min(17.3rem,100%);margin-top:2.9rem}}
+  @media(max-width:360px){
+    .nn .gift-cta{font-size:.66rem;letter-spacing:.14em;padding:.85rem 1rem}}
 
   /* 7 · ZA ŽENU KOJA ZNA — tamna foto s parallaxom */
   .nn .break{position:relative;overflow:hidden;min-height:74vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem}
-  .nn .break::before{content:"";position:absolute;inset:-12% 0;height:124%;background:linear-gradient(rgba(31,15,10,.5),rgba(31,15,10,.6)),url('wp-content/uploads/soul/hero-3.jpg') center/cover;will-change:transform;transform:translate3d(0,var(--par,0),0)}
+  .nn .break::before{content:"";position:absolute;inset:-22% 0;height:144%;background:linear-gradient(rgba(31,15,10,.42),rgba(31,15,10,.55)),url('wp-content/uploads/soul/ne-brzo-ne-forsirano.jpeg') center 38%/cover;will-change:transform;transform:translate3d(0,var(--par,0),0)}
   .nn .break .in{position:relative;max-width:820px}
   .nn .break .stmt{color:var(--lite);max-width:26ch}
-  .nn .break .btn-terra{margin-top:2.4rem}
+  .nn .break .btn-terra{margin-top:4.2rem}
 
   /* 8 · ISKUSTVA — svijetlo */
   .nn .quotes{background:var(--cream);padding:7rem 2rem;text-align:center}
-  .nn .quotes .note{display:block;margin-bottom:.8rem;color:var(--ink-soft)}
+  /* "iskustva" — isti font kao naslović "O meni". */
+  .nn .quotes .eyebrow{display:block;margin-bottom:.9rem}
   .nn .quotes h2{font-size:clamp(1.9rem,3vw,2.7rem);margin-bottom:1.6rem;color:var(--ink)}
-  .nn .q-mark{width:clamp(90px,9vw,120px);height:auto;margin:0 auto 3rem;opacity:.85}
+  .nn .q-mark{width:clamp(108px,11vw,146px);height:auto;margin:0 auto 3rem;opacity:.5}
   .nn .q-grid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2.6rem}
   .nn .q-card blockquote{font-family:'Alegreya',Georgia,serif;font-style:italic;font-size:1.22rem;line-height:1.55;color:var(--ink);margin-bottom:1.1rem}
   .nn .q-card figcaption{font-family:var(--caps);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
   @media(max-width:900px){.nn .q-grid{grid-template-columns:1fr;max-width:460px}}
+  /* Iskustva se ispisuju jedno po jedno, kao na pisaćem stroju. */
+  .nn .q-grid.is-typed{display:none}
+  .nn .q-type{max-width:760px;margin:0 auto;min-height:var(--qh,8em);
+    display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
+  .nn .q-type blockquote{font-family:'Alegreya',Georgia,serif;font-style:italic;
+    font-size:clamp(1.25rem,2vw,1.68rem);line-height:1.55;color:var(--ink);margin:0 0 1.2rem}
+  .nn .q-caret{display:inline-block;width:1px;height:1.05em;margin-left:.12em;
+    background:var(--terra);vertical-align:-.15em;animation:nn-caret 1.05s steps(1) infinite}
+  @keyframes nn-caret{0%,49%{opacity:1}50%,100%{opacity:0}}
+  .nn .q-type figcaption{font-family:var(--caps);font-size:.7rem;letter-spacing:.3em;
+    text-transform:uppercase;color:var(--muted);opacity:0;transition:opacity .7s ease}
+  .nn .q-type figcaption.is-on{opacity:1}
 
   /* 8b · KORACI — lukovi na dubljem krem tonu */
   .nn .steps{background:var(--cream2);padding:8rem 2rem 8.5rem;text-align:center}
@@ -209,18 +268,50 @@
     background:linear-gradient(90deg,transparent,rgba(196,85,31,.35) 12%,rgba(196,85,31,.35) 88%,transparent)}
   .nn .st{position:relative}
   .nn .st-mark{position:relative;height:clamp(120px,13vw,178px);width:100%;margin:0 auto 1.7rem;
-    background:center/contain no-repeat}
-  .nn .st:nth-child(1) .st-mark{background-image:url('wp-content/uploads/soul/motiv-typing.webp')}
-  .nn .st:nth-child(2) .st-mark{background-image:url('wp-content/uploads/soul/motiv-suggest.webp')}
+    background:center/contain no-repeat;
+    /* Vektor se spusti odozgo i pojavi istovremeno s natpisom ispod sebe. */
+    opacity:0}
+  .nn .st-grid.is-in .st-mark{animation:nn-fade-in-top .9s cubic-bezier(.39,.575,.565,1) both;
+    animation-delay:calc(var(--lstart, 0) * 1s)}
+  @keyframes nn-fade-in-top{
+    0%{transform:translateY(-50px);opacity:0}
+    100%{transform:translateY(0);opacity:1}}
+  @media(prefers-reduced-motion:reduce){
+    .nn .st-mark,.nn .st-grid.is-in .st-mark{opacity:1;animation:none}}
+  .nn .st:nth-child(1) .st-mark{background-image:url('wp-content/uploads/soul/motiv-typing.webp');background-size:auto 88%}
+  .nn .st:nth-child(2) .st-mark{background-image:url('wp-content/uploads/soul/motiv-suggest.webp');background-size:auto 120%}
   .nn .st:nth-child(3) .st-mark{background-image:url('wp-content/uploads/soul/motiv-arrival.webp')}
   .nn .st:nth-child(4) .st-mark{background-image:url('wp-content/uploads/soul/motiv-infinity.webp')}
-  .nn .st h3{font-family:var(--serif);font-weight:700;font-size:1.35rem;color:var(--ink);margin-bottom:.5rem}
+  .nn .st h3{font-family:var(--script);font-weight:400;font-size:clamp(1.2rem,1.72vw,1.55rem);line-height:1.35;color:var(--ink);margin-bottom:.6rem}
+  /* Koraci se pojavljuju redom, jedan stupac za drugim (--col).
+     Natpis se "ispisuje" slijeva nadesno, pa opis iskoči slovo po slovo. */
+  .nn .st h3 .fw,.nn .st p .fw{display:inline-block}
+  /* Slovo dobiva zračni prostor lijevo i desno (padding poništen marginom, raspored
+     ostaje isti) da potezi rukopisa stanu unutra. Tako rez prije ispisa ne pokazuje
+     ništa, a poslije ne odsijeca ništa. */
+  .nn .st h3 .fc{display:inline-block;
+    padding-left:.6em;margin-left:-.6em;padding-right:.6em;margin-right:-.6em;
+    clip-path:inset(-1000% 100% -1000% 0);
+    transition:clip-path .26s linear;
+    transition-delay:calc(var(--lstart, 0) * 1s + var(--ci) * .11s)}
+  .nn .st-grid.is-in h3 .fc{clip-path:inset(-1000% 0 -1000% 0)}
+  .nn .st p .fb{display:inline-block;opacity:0}
+  .nn .st-grid.is-in p .fb{animation:nn-bubbly calc(var(--i) * .95s) ease-in-out both;
+    animation-delay:calc(var(--dstart, 0) * 1s)}
+  @keyframes nn-bubbly{
+    0%{opacity:0;transform:scale(0)}
+    70%{opacity:1;transform:scale(1.5)}
+    100%{opacity:1;transform:scale(1)}}
+  @media(prefers-reduced-motion:reduce){
+    .nn .st h3 .fc{clip-path:none;transition:none}
+    .nn .st p .fb,.nn .st-grid.is-in p .fb{opacity:1;animation:none}}
   .nn .st p{font-family:var(--bodyf);font-size:1.04rem;line-height:1.6;color:var(--ink-soft);max-width:23ch;margin:0 auto}
   .nn .steps .btn-terra{margin-top:4rem;color:var(--terra);border-color:var(--terra)}
   .nn .steps .btn-terra:hover,.nn .steps .btn-terra:focus-visible,.nn .steps .btn-terra:active{background:var(--terra);border-color:var(--terra);color:#FFF3E5}
   @media(max-width:900px){
     .nn .st-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:3.4rem 2.4rem;max-width:540px}
     .nn .st-mark{height:clamp(104px,26vw,150px)}
+    .nn .st h3{font-size:clamp(1rem,5.1vw,1.55rem)}
 }
   @media(max-width:480px){
     .nn .steps{padding:5.5rem 1.6rem 6rem}
@@ -228,7 +319,7 @@
     .nn .st p{font-size:.98rem;max-width:18ch}}
   /* 9 · TRENUCI U STUDIJU — tamno, galerija koja se vrti */
   .nn .atmo{background:var(--dark);padding:6.5rem 0 7.5rem;text-align:center}
-  .nn .atmo .note{display:block;margin-bottom:.7rem;color:var(--gold-lite)}
+  .nn .atmo .eyebrow{display:block;margin-bottom:.9rem;color:var(--gold-lite)}
   .nn .atmo h2{font-size:clamp(1.9rem,3vw,2.7rem);margin-bottom:3rem;padding:0 2rem;color:var(--lite)}
   .nn .atmo-wrap{overflow:hidden;position:relative;padding:1rem 0;mask-image:linear-gradient(to right,transparent 0%,#000 4%,#000 96%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 4%,#000 96%,transparent 100%)}
   .nn .atmo-track{display:flex;width:max-content;animation:nn-atmo-scroll 60s linear infinite}
@@ -288,7 +379,7 @@
         <div class="container">
           <div class="hero-text" data-aos="fade-up">
             <p class="hero-eyebrow">Studio za masažu · Split</p>
-            <h1>Masaža koja sluša<br>tvoje tijelo</h1>
+            <h1 aria-label="Masaža koja sluša tvoje tijelo"><span aria-hidden="true"><span class="hw"><span class="ch" style="--i:0" data-c="M">M</span><span class="ch" style="--i:1" data-c="a">a</span><span class="ch" style="--i:2" data-c="s">s</span><span class="ch" style="--i:3" data-c="a">a</span><span class="ch" style="--i:4" data-c="ž">ž</span><span class="ch" style="--i:5" data-c="a">a</span></span> <span class="hw"><span class="ch" style="--i:7" data-c="k">k</span><span class="ch" style="--i:8" data-c="o">o</span><span class="ch" style="--i:9" data-c="j">j</span><span class="ch" style="--i:10" data-c="a">a</span></span> <span class="hw"><span class="ch" style="--i:12" data-c="s">s</span><span class="ch" style="--i:13" data-c="l">l</span><span class="ch" style="--i:14" data-c="u">u</span><span class="ch" style="--i:15" data-c="š">š</span><span class="ch" style="--i:16" data-c="a">a</span></span><br><span class="hw"><span class="ch" style="--i:18" data-c="t">t</span><span class="ch" style="--i:19" data-c="v">v</span><span class="ch" style="--i:20" data-c="o">o</span><span class="ch" style="--i:21" data-c="j">j</span><span class="ch" style="--i:22" data-c="e">e</span></span> <span class="hw"><span class="ch" style="--i:24" data-c="t">t</span><span class="ch" style="--i:25" data-c="i">i</span><span class="ch" style="--i:26" data-c="j">j</span><span class="ch" style="--i:27" data-c="e">e</span><span class="ch" style="--i:28" data-c="l">l</span><span class="ch" style="--i:29" data-c="o">o</span></span></span></h1>
             <p class="script">vrati se sebi</p>
             <p class="hero-sub">Za tijelo koje je zaboravilo kako se opušta. Rad na živčanom sustavu, u tvom ritmu.</p>
             <div class="hero-buttons">
@@ -313,7 +404,7 @@
 
     <!-- OVO JE ZA TEBE AKO -->
     <section class="foryou">
-      <span class="note">prepoznaješ se?</span>
+      <span class="eyebrow">prepoznaješ se?</span>
       <h2>ovo je za tebe ako</h2>
       <div class="fy-grid">
       <div class="fy-item">
@@ -347,7 +438,7 @@
       <div class="story-text">
         <p class="eyebrow">O meni</p>
         <h2>Diana Lendić</h2>
-        <p class="story-sub">Maserka, s temeljem u tjelesno orijentiranoj psihoterapiji.</p>
+        <p class="story-sub">Maserka s temeljem u tjelesno orijentiranoj psihoterapiji.</p>
         <p>Godinama sam mislila da poznajem svoje tijelo jer sam kroz njega plesala. Tek kasnije sam shvatila da postoji drugi odnos s tijelom, onaj u kojem ono nije sredstvo, nego mjesto u kojem živimo. Danas radim sa ženama upravo iz tog mjesta.</p>
         <a class="btn-wide" href="o-meni/">Cijela priča</a>
       </div>
@@ -406,7 +497,6 @@
     <section class="gift">
       <div class="gwrap">
         <div class="gcopy">
-          <p class="eyebrow">Pokloni</p>
           <h2>Poklon bon</h2>
           <p>Pokloni nekome ono što se ne može kupiti, vrijeme samo za sebe.</p>
           <div class="v-mins">
@@ -415,10 +505,9 @@
             <div class="vm"><span class="vm-n">90</span><span class="vm-u">min</span></div>
           </div>
           <p class="v-unit">minuta tvog rituala</p>
+          <a class="gift-cta" href="poklon-bon/">Pogledaj bonove</a>
         </div>
-        <div class="gframe">
-          <a class="gift-cta" href="poklon-bon/">Pogledaj poklon bonove <span aria-hidden="true">&rsaquo;</span></a>
-        </div>
+        <div class="gframe" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -432,9 +521,9 @@
 
     <!-- ISKUSTVA -->
     <section class="quotes">
-      <span class="note">iskustva</span>
+      <span class="eyebrow">iskustva</span>
       <h2>što kažu klijentice</h2>
-      <img class="q-mark" src="wp-content/uploads/soul/motiv-grancica.webp" alt="" aria-hidden="true">
+      <img class="q-mark" src="wp-content/uploads/soul/motiv-a3-5.webp" alt="" aria-hidden="true">
       <div class="q-grid">
         <figure class="q-card">
           <blockquote>"Rame me nije boljelo prvi put u tri godine. Nije bilo 'wow' trenutka tijekom rituala, ali tijelo je samo znalo."</blockquote>
@@ -482,7 +571,7 @@
 
     <!-- TRENUCI U STUDIJU -->
     <section class="atmo">
-      <span class="note">trenuci u studiju</span>
+      <span class="eyebrow">trenuci u studiju</span>
       <h2>mali detalji koji čine <em>ritual</em></h2>
       <div class="atmo-wrap">
         <div class="atmo-track">
@@ -634,24 +723,320 @@
     })();
   </script>
   <script>
+    /* Zajednički okidač: element dobiva klasu "is-in" tek kad stvarno uđe u kadar,
+       a ne dok tek proviruje s dna ekrana. */
+    function revealOnScroll(el) {
+      if (!('IntersectionObserver' in window)) { el.classList.add('is-in'); return; }
+      // Okida kad vrh elementa dođe na ~72% visine ekrana. Radi i za vrlo visoke
+      // elemente (npr. mreža rituala na mobitelu), gdje postotak vidljivosti
+      // nikad ne naraste dovoljno.
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          el.classList.add('is-in');
+          io.disconnect();
+        });
+      }, { rootMargin: '0px 0px -28% 0px' });
+      io.observe(el);
+    }
+  </script>
+  <script>
+    /* Tekst se razlomi na riječi pa svaka izranja za sebe. */
+    function splitWords(root) {
+      var i = 0, last = null, afterSpace = true;
+      (function wrap(node) {
+        Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+          if (n.nodeType === 3) {
+            var frag = document.createDocumentFragment();
+            n.nodeValue.split(/(\s+)/).forEach(function (part) {
+              if (!part) return;
+              if (/^\s+$/.test(part)) {
+                frag.appendChild(document.createTextNode(part));
+                afterSpace = true;
+                return;
+              }
+              // Nije bilo razmaka ispred (npr. zarez odmah iza </em>) — zalijepi
+              // na prethodnu riječ da se ne može prelomiti u novi red.
+              if (!afterSpace && last) { last.textContent += part; return; }
+              var s = document.createElement('span');
+              s.className = 'fw';
+              s.style.setProperty('--wi', i++);
+              s.textContent = part;
+              frag.appendChild(s);
+              last = s;
+              afterSpace = false;
+            });
+            node.replaceChild(frag, n);
+          } else if (n.nodeType === 1) {
+            wrap(n);
+          }
+        });
+      })(root);
+    }
+
+    /* Isto, ali slovo po slovo — riječi ostaju cijele, prelama se samo na razmaku.
+       cls = klasa slova, prop = CSS varijabla, val(i) = njena vrijednost. */
+    function splitChars(root, cls, prop, val) {
+      cls = cls || 'fc'; prop = prop || '--ci'; val = val || function (n) { return n; };
+      var i = 0, lastWord = null, afterSpace = true;
+      (function wrap(node) {
+        Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+          if (n.nodeType === 3) {
+            var frag = document.createDocumentFragment();
+            n.nodeValue.split(/(\s+)/).forEach(function (part) {
+              if (!part) return;
+              if (/^\s+$/.test(part)) {
+                frag.appendChild(document.createTextNode(part));
+                afterSpace = true;
+                return;
+              }
+              var word = (!afterSpace && lastWord) ? lastWord : document.createElement('span');
+              if (word !== lastWord) { word.className = 'fw'; frag.appendChild(word); }
+              part.split('').forEach(function (ch) {
+                var s = document.createElement('span');
+                s.className = cls;
+                s.style.setProperty(prop, val(i++));
+                s.textContent = ch;
+                word.appendChild(s);
+              });
+              lastWord = word;
+              afterSpace = false;
+            });
+            node.replaceChild(frag, n);
+          } else if (n.nodeType === 1) {
+            wrap(n);
+          }
+        });
+      })(root);
+    }
+
+    /* Koraci — natpis se ispisuje rukom, opis ispod iskoči slovo po slovo.
+       Stupci kreću jedan za drugim. */
+    (function () {
+      var grid = document.querySelector('.nn .st-grid');
+      if (!grid) return;
+      function prep(el, cls, prop, val) {
+        var full = el.textContent.replace(/\s+/g, ' ').trim();
+        var inner = document.createElement('span');
+        inner.setAttribute('aria-hidden', 'true');
+        while (el.firstChild) inner.appendChild(el.firstChild);
+        el.appendChild(inner);
+        el.setAttribute('aria-label', full);
+        splitChars(inner, cls, prop, val);
+      }
+      // Strogi redoslijed: naslov se ispiše, pa opis, pa tek onda sljedeći korak.
+      var L_DUR = 0.26, L_STEP = 0.11;   // trajanje i razmak slova naslova
+      var D_STEP = 0.024, D_MUL = 0.95;  // rast trajanja po slovu opisa
+      var GAP_IN = 0.12, GAP_OUT = 0.25; // pauza naslov→opis i korak→korak
+      var t = 0;
+      Array.prototype.forEach.call(grid.querySelectorAll('.st'), function (st) {
+        var h = st.querySelector('h3'), p = st.querySelector('p');
+        if (h) prep(h, 'fc', '--ci', function (i) { return i; });
+        // Duže trajanje za svako sljedeće slovo — slova iskaču jedno za drugim.
+        if (p) prep(p, 'fb', '--i', function (i) { return (1 + i * D_STEP).toFixed(3); });
+
+        var nL = h ? h.querySelectorAll('.fc').length : 0;
+        var nP = p ? p.querySelectorAll('.fb').length : 0;
+        var lStart = t;
+        var lDur = nL ? (nL - 1) * L_STEP + L_DUR : 0;
+        var dStart = lStart + lDur + (nP ? GAP_IN : 0);
+        var dDur = nP ? (1 + (nP - 1) * D_STEP) * D_MUL : 0;
+        st.style.setProperty('--lstart', lStart.toFixed(2));
+        st.style.setProperty('--dstart', dStart.toFixed(2));
+        t = dStart + dDur + GAP_OUT;
+      });
+      revealOnScroll(grid);
+    })();
+
+    /* Naslov poklon bona — ispisuje se kao natpisi koraka. */
+    (function () {
+      var h = document.querySelector('.nn .gcopy h2');
+      if (!h) return;
+      var full = h.textContent.replace(/\s+/g, ' ').trim();
+      var inner = document.createElement('span');
+      inner.setAttribute('aria-hidden', 'true');
+      while (h.firstChild) inner.appendChild(h.firstChild);
+      h.appendChild(inner);
+      h.setAttribute('aria-label', full);
+      splitChars(inner, 'fc', '--ci', function (i) { return i; });
+      revealOnScroll(h);
+    })();
+
+    /* Rečenica "Tijelo pamti sve" — ispisuje se slovo po slovo. */
+    (function () {
+      var el = document.querySelector('.nn .stmt-sec .stmt');
+      if (!el) return;
+      var full = el.textContent.replace(/\s+/g, ' ').trim();
+      var inner = document.createElement('span');
+      inner.setAttribute('aria-hidden', 'true');
+      while (el.firstChild) inner.appendChild(el.firstChild);
+      el.appendChild(inner);
+      el.setAttribute('aria-label', full);
+      splitChars(inner, 'fc', '--ci', function (i) { return i; });
+      revealOnScroll(el);
+    })();
+
+    /* Kartice "ovo je za tebe ako" — ulaze zdesna, jedna za drugom. */
+    (function () {
+      var grid = document.querySelector('.nn .fy-grid');
+      if (!grid) return;
+      Array.prototype.forEach.call(grid.querySelectorAll('.fy-item'), function (it, n) {
+        it.style.setProperty('--fi', n);
+      });
+      revealOnScroll(grid);
+    })();
+
+    /* Iskustva — tekst se sam ispisuje pa briše, i tako u krug kroz sve klijentice. */
+    (function () {
+      var grid = document.querySelector('.nn .q-grid');
+      if (!grid) return;
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      var items = Array.prototype.map.call(grid.querySelectorAll('.q-card'), function (c) {
+        return {
+          text: c.querySelector('blockquote').textContent.trim(),
+          who: c.querySelector('figcaption').textContent.trim()
+        };
+      });
+      if (items.length < 2) return;
+
+      var TYPE = 48, DEL = 26, HOLD = 3000, GAP = 500;
+
+      var fig = document.createElement('figure');
+      fig.className = 'q-type';
+      fig.setAttribute('aria-hidden', 'true');
+      var bq = document.createElement('blockquote');
+      var txt = document.createElement('span');
+      var caret = document.createElement('span');
+      caret.className = 'q-caret';
+      bq.appendChild(txt); bq.appendChild(caret);
+      var cap = document.createElement('figcaption');
+      fig.appendChild(bq); fig.appendChild(cap);
+      grid.parentNode.insertBefore(fig, grid.nextSibling);
+
+      // Rezerviraj visinu najduljeg citata da se stranica ne trza dok se tekst ispisuje.
+      function reserve() {
+        var keepT = txt.textContent, keepC = cap.textContent;
+        fig.style.setProperty('--qh', '0px');
+        var tallest = 0;
+        items.forEach(function (it) {
+          txt.textContent = it.text;
+          cap.textContent = it.who;
+          var hh = fig.getBoundingClientRect().height;
+          if (hh > tallest) tallest = hh;
+        });
+        txt.textContent = keepT;
+        cap.textContent = keepC;
+        fig.style.setProperty('--qh', Math.ceil(tallest) + 'px');
+      }
+      reserve();
+      window.addEventListener('resize', reserve);
+      // Alegreya se učitava s mreže — kad stigne, mjere se mijenjaju, pa premjeri.
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(reserve);
+
+      grid.classList.add('is-typed');
+
+      var i = 0, n = 0, del = false, timer = null, live = true;
+      function step() {
+        var cur = items[i];
+        if (!del) {
+          if (n === 0) { cap.textContent = cur.who; cap.classList.remove('is-on'); }
+          txt.textContent = cur.text.slice(0, ++n);
+          if (n >= cur.text.length) {
+            cap.classList.add('is-on');
+            del = true;
+            return schedule(HOLD);
+          }
+          return schedule(TYPE);
+        }
+        if (n === cur.text.length) cap.classList.remove('is-on');
+        txt.textContent = cur.text.slice(0, --n);
+        if (n <= 0) {
+          del = false;
+          i = (i + 1) % items.length;
+          return schedule(GAP);
+        }
+        return schedule(DEL);
+      }
+      function schedule(ms) { timer = setTimeout(function () { if (live) step(); }, ms); }
+
+      // Vrti se samo dok je sekcija na ekranu.
+      if ('IntersectionObserver' in window) {
+        live = false;
+        new IntersectionObserver(function (es) {
+          es.forEach(function (e) {
+            if (e.isIntersecting && !live) { live = true; step(); }
+            else if (!e.isIntersecting && live) { live = false; clearTimeout(timer); }
+          });
+        }, { rootMargin: '80px 0px' }).observe(fig);
+      } else {
+        step();
+      }
+    })();
+
+    /* Ritual kartice — na mobitelu ulaze naizmjenično zdesna pa slijeva.
+       Svaka se okida zasebno, kad doskrolamo do nje. */
+    (function () {
+      var grid = document.querySelector('.nn .rit-grid');
+      if (!grid) return;
+      // Mobitel gleda .rit-card.is-in, desktop .rit-grid.is-in — postavimo oboje,
+      // a media upit odlučuje koje pravilo vrijedi.
+      Array.prototype.forEach.call(grid.querySelectorAll('.rit-card'), function (c, n) {
+        c.style.setProperty('--ri', n);
+        revealOnScroll(c);
+      });
+      revealOnScroll(grid);
+    })();
+
+    /* "O meni" blok — naslović, ime, rečenica, opis i link ulaze odozgo. */
+    (function () {
+      var box = document.querySelector('.nn .story-text');
+      if (!box) return;
+      Array.prototype.forEach.call(box.children, function (el, n) {
+        el.style.setProperty('--si', n);
+      });
+      revealOnScroll(box);
+    })();
+  </script>
+  <script>
     /* Parallax: fotografija u "Moja priča" i pozadina sekcije "za ženu koja zna". */
     (function () {
       if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       var photo = document.querySelector('.nn .story-photo');
       var brk = document.querySelector('.nn .break');
-      if (!photo && !brk) return;
+      var heroImg = document.querySelector('.video-hero .hero-video');
+      var gwrap = document.querySelector('.nn .gwrap');
+      if (!photo && !brk && !heroImg && !gwrap) return;
       var img = photo ? photo.querySelector('img') : null;
       var tick = false;
       function shift(el, vh) {
         var r = el.getBoundingClientRect();
         if (r.bottom < 0 || r.top > vh) return null;
-        return ((r.top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2) * 9).toFixed(2) + '%';
+        return ((r.top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2) * 14).toFixed(2) + '%';
       }
       function update() {
         tick = false;
         var vh = window.innerHeight;
         if (img) { var a = shift(photo, vh); if (a) img.style.transform = 'translate3d(0,' + a + ',0)'; }
         if (brk) { var b = shift(brk, vh); if (b) brk.style.setProperty('--par', b); }
+        // Poklon bon: fotografija klizi lijevo-desno dok sekcija prolazi ekranom.
+        if (gwrap) {
+          var r = gwrap.getBoundingClientRect();
+          if (r.bottom > -200 && r.top < vh + 200) {
+            var pr = (r.top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2);
+            if (pr < -1) pr = -1; else if (pr > 1) pr = 1;
+            gwrap.style.setProperty('--gx', (pr * 11).toFixed(2) + '%');
+          }
+        }
+        // Hero: slika klizi lijevo dok skrolamo (pomak je razmjeran širini, pa nikad ne otkrije rub).
+        if (heroImg) {
+          var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+          if (y < vh * 1.3) {
+            var maxX = heroImg.parentNode.offsetWidth * 0.14;
+            var dx = -Math.min(y / vh, 1) * maxX;
+            heroImg.style.transform = 'translate3d(' + dx.toFixed(1) + 'px,0,0)';
+          }
+        }
       }
       window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(update); } }, { passive: true });
       window.addEventListener('resize', update);
@@ -659,7 +1044,7 @@
     })();
   </script>
   <script src="js/nav.js?v=4"></script>
-  <script src="js/parallax.js?v=6"></script>
+  <script src="js/parallax.js?v=7"></script>
   <script src="js/timeline.js?v=11"></script>
   <script src="js/rituali-slider.js?v=1"></script>
   <script src="js/reveal.js?v=6"></script>
