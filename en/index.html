@@ -129,8 +129,11 @@
   /* 6 · POKLON BON — okvir desno, tekst lijevo */
   .nn .gift{position:relative;display:block;padding:clamp(4rem,6vw,6.5rem) 2rem;background:var(--cream);overflow:hidden}
   .nn .gwrap{position:relative;left:-5rem;max-width:1120px;margin:0 auto;display:grid;grid-template-columns:auto auto;justify-content:center;align-items:center;
-    gap:clamp(.5rem,1.2vw,1.2rem);background:var(--dark2);border:1px solid var(--gold-lite);border-radius:3px;
+    gap:clamp(.5rem,1.2vw,1.2rem);background:var(--dark2);border-radius:3px;
     padding:clamp(2rem,3vw,3rem) clamp(1.6rem,3.5vw,3.5rem)}
+  /* zlatni obrub uvucen od ruba kartice */
+  .nn .gwrap::before{content:"";position:absolute;inset:clamp(9px,1.1vw,17px);
+    border:1px solid var(--gold-lite);border-radius:2px;pointer-events:none;z-index:0}
   .nn .gcopy{position:relative;left:calc(6% + 2.5rem);width:fit-content;max-width:min(380px,27vw);text-align:center;justify-self:center}
   .nn .gcopy .eyebrow{display:block;font-size:.7rem;color:var(--gold-lite);margin-bottom:.7rem}
   .nn .gcopy h2{font-size:clamp(2rem,3.4vw,3rem);line-height:1.06;margin-bottom:1rem;white-space:nowrap;color:var(--gold-lite)}
