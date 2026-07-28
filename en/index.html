@@ -139,6 +139,16 @@
   .nn .rituals .head{max-width:1180px;margin:0 auto 3.2rem;display:flex;align-items:end;justify-content:space-between;gap:2rem;flex-wrap:wrap}
   .nn .rituals .meta-line{font-family:var(--caps);font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:.9rem}
   .nn .rituals h2{font-size:clamp(2rem,3.4vw,3rem)}
+  /* "Svi rituali" dobiva izgled linka "Cijela priča", ali ostaje u svojoj boji. */
+  .nn .rituals .btn-line.dark{background:transparent;border:none;border-radius:0;
+    border-bottom:1px solid rgba(31,15,10,.45);padding:.5rem .25rem;
+    font-size:.75rem;letter-spacing:.22em;color:var(--ink);
+    transition:color .3s ease,border-color .3s ease}
+  .nn .rituals .btn-line.dark::after{content:"\203A";display:inline-block;margin-left:8px;
+    font-family:Georgia,serif;transition:margin-left .3s ease}
+  .nn .rituals .btn-line.dark:hover,
+  .nn .rituals .btn-line.dark:focus-visible{background:transparent;color:var(--terra);border-bottom-color:var(--terra)}
+  .nn .rituals .btn-line.dark:hover::after{margin-left:14px}
   .nn .rit-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.6rem;align-items:start}
   .nn .rit-card{background:var(--cream2)}
   /* Naziv rituala prelazi u terakotu na prelazak misem, tipkovnicu i klik. */
