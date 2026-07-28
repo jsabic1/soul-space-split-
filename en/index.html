@@ -64,8 +64,8 @@
   .nn .stmt .accent{color:inherit}
   /* Fade-in rečenice "Tijelo pamti sve" — riječ po riječ, kad doskrolamo do nje. */
   .nn .stmt-sec .stmt .fw{display:inline-block;opacity:0;transform:translateY(.4em);
-    transition:opacity .95s cubic-bezier(.19,1,.22,1),transform .95s cubic-bezier(.19,1,.22,1);
-    transition-delay:calc(var(--wi) * .075s)}
+    transition:opacity 1.33s cubic-bezier(.19,1,.22,1),transform 1.33s cubic-bezier(.19,1,.22,1);
+    transition-delay:calc(var(--wi) * .105s)}
   .nn .stmt-sec .stmt.is-in .fw{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){
     .nn .stmt-sec .stmt .fw{opacity:1;transform:none;transition:none}}
