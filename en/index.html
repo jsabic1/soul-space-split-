@@ -215,6 +215,14 @@
   .nn .break::before{content:"";position:absolute;inset:-22% 0;height:144%;background:linear-gradient(rgba(31,15,10,.42),rgba(31,15,10,.55)),url('../wp-content/uploads/soul/ne-brzo-ne-forsirano.jpeg') center 38%/cover;will-change:transform;transform:translate3d(0,var(--par,0),0)}
   .nn .break .in{position:relative;max-width:820px}
   .nn .break .stmt{color:var(--lite);max-width:26ch}
+  /* "Za ženu koja zna..." — slova ulaze jedno za drugim kad dođemo do sekcije. */
+  .nn .break .stmt .fw{display:inline-block}
+  .nn .break .stmt .fc{display:inline-block;opacity:0;transform:translateY(.5em);
+    transition:opacity 1.12s cubic-bezier(.19,1,.22,1),transform 1.12s cubic-bezier(.19,1,.22,1);
+    transition-delay:calc(var(--ci) * .042s)}
+  .nn .break .stmt.is-in .fc{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .nn .break .stmt .fc{opacity:1;transform:none;transition:none}}
   .nn .break .btn-terra{margin-top:4.2rem}
 
   /* 8 · ISKUSTVA — svijetlo */
@@ -721,6 +729,53 @@
         });
       })(root);
     }
+
+    /* Isto, ali slovo po slovo — riječi ostaju cijele, prelama se samo na razmaku. */
+    function splitChars(root) {
+      var i = 0, lastWord = null, afterSpace = true;
+      (function wrap(node) {
+        Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+          if (n.nodeType === 3) {
+            var frag = document.createDocumentFragment();
+            n.nodeValue.split(/(\s+)/).forEach(function (part) {
+              if (!part) return;
+              if (/^\s+$/.test(part)) {
+                frag.appendChild(document.createTextNode(part));
+                afterSpace = true;
+                return;
+              }
+              var word = (!afterSpace && lastWord) ? lastWord : document.createElement('span');
+              if (word !== lastWord) { word.className = 'fw'; frag.appendChild(word); }
+              part.split('').forEach(function (ch) {
+                var s = document.createElement('span');
+                s.className = 'fc';
+                s.style.setProperty('--ci', i++);
+                s.textContent = ch;
+                word.appendChild(s);
+              });
+              lastWord = word;
+              afterSpace = false;
+            });
+            node.replaceChild(frag, n);
+          } else if (n.nodeType === 1) {
+            wrap(n);
+          }
+        });
+      })(root);
+    }
+
+    (function () {
+      var el = document.querySelector('.nn .break .stmt');
+      if (!el) return;
+      var full = el.textContent.replace(/\s+/g, ' ').trim();
+      var inner = document.createElement('span');
+      inner.setAttribute('aria-hidden', 'true');
+      while (el.firstChild) inner.appendChild(el.firstChild);
+      el.appendChild(inner);
+      el.setAttribute('aria-label', full);
+      splitChars(inner);
+      revealOnScroll(el);
+    })();
 
     /* Rečenica "Tijelo pamti sve" i naslov "što kažu klijentice". */
     ['.nn .stmt-sec .stmt', '.nn .quotes h2'].forEach(function (sel) {
