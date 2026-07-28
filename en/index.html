@@ -150,24 +150,18 @@
   .nn .gift-cta:hover span{transform:translateX(5px)}
   @media(max-width:820px){
     .nn .gift{padding:4.5rem 1.6rem 5rem}
-    .nn .gwrap{grid-template-columns:1fr;gap:2.2rem;text-align:center;justify-items:center;justify-content:stretch}
-    .nn .gcopy{width:min(400px,94vw)}
+    .nn .gwrap{grid-template-columns:1fr;gap:2.4rem;text-align:center;justify-items:center;justify-content:stretch}
+    .nn .gcopy{width:100%;max-width:400px;margin:0 auto;justify-self:center}
+    .nn .gcopy h2{white-space:nowrap}
+    .nn .gcopy p{max-width:30ch;margin-left:auto;margin-right:auto}
     .nn .vm{gap:.22rem}
     .nn .vm-n{font-size:1.02rem}
     .nn .vm-u{font-size:.55rem}
-    .nn .v-mins{gap:.42rem;flex-wrap:nowrap}
+    .nn .v-mins{gap:.42rem;flex-wrap:nowrap;justify-content:center}
     .nn .v-unit{font-size:.64rem;letter-spacing:.14em}
-    .nn .gframe{width:min(360px,94vw);aspect-ratio:1297/1080;align-items:flex-end;
-      background-position:center top}
-    .nn .v-mins{justify-content:center}
-    .nn .gcopy h2{white-space:nowrap}
-    .nn .gcopy p{max-width:30ch}
-    .nn .gift-cta{white-space:nowrap;letter-spacing:.14em;font-size:.72rem;padding:.8rem 1.2rem}
-    .nn .gframe{width:min(340px,88vw)}
-    .nn .gdivide{width:clamp(90px,26vw,140px);right:0}
-    .nn .gcopy{justify-self:center}
-    .nn .gcopy p{margin-left:auto;margin-right:auto}
-    .nn .gframe{max-width:340px}}
+    .nn .gframe{width:100vw;max-width:none;margin-left:calc(50% - 50vw);
+      aspect-ratio:1297/1030;align-items:flex-end;background-position:center top}
+    .nn .gift-cta{white-space:nowrap;letter-spacing:.14em;font-size:.72rem;padding:.8rem 1.2rem}}
 
   /* 7 · ZA ŽENU KOJA ZNA — tamna foto s parallaxom */
   .nn .break{position:relative;overflow:hidden;min-height:74vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem}
