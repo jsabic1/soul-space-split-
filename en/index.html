@@ -268,11 +268,11 @@
   .nn .st h3 .fc{display:inline-block;
     clip-path:inset(-1000% 100% -1000% -1000%);
     transition:clip-path .34s linear;
-    transition-delay:calc(var(--col) * .8s + var(--ci) * .17s)}
+    transition-delay:calc(var(--lstart, 0) * 1s + var(--ci) * .17s)}
   .nn .st-grid.is-in h3 .fc{clip-path:inset(-1000% -1000% -1000% -1000%)}
   .nn .st p .fb{display:inline-block;opacity:0}
   .nn .st-grid.is-in p .fb{animation:nn-bubbly calc(var(--i) * 1.3s) ease-in-out both;
-    animation-delay:calc(var(--col) * .8s + .6s)}
+    animation-delay:calc(var(--dstart, 0) * 1s)}
   @keyframes nn-bubbly{
     0%{opacity:0;transform:scale(0)}
     70%{opacity:1;transform:scale(1.5)}
@@ -798,12 +798,26 @@
         el.setAttribute('aria-label', full);
         splitChars(inner, cls, prop, val);
       }
-      Array.prototype.forEach.call(grid.querySelectorAll('.st'), function (st, n) {
-        st.style.setProperty('--col', n);
+      // Strogi redoslijed: naslov se ispiše, pa opis, pa tek onda sljedeći korak.
+      var L_DUR = 0.34, L_STEP = 0.17;   // trajanje i razmak slova naslova
+      var D_STEP = 0.055, D_MUL = 1.3;   // rast trajanja po slovu opisa
+      var GAP_IN = 0.15, GAP_OUT = 0.3;  // pauza naslov→opis i korak→korak
+      var t = 0;
+      Array.prototype.forEach.call(grid.querySelectorAll('.st'), function (st) {
         var h = st.querySelector('h3'), p = st.querySelector('p');
         if (h) prep(h, 'fc', '--ci', function (i) { return i; });
         // Duže trajanje za svako sljedeće slovo — slova iskaču jedno za drugim.
-        if (p) prep(p, 'fb', '--i', function (i) { return (1 + i * 0.055).toFixed(3); });
+        if (p) prep(p, 'fb', '--i', function (i) { return (1 + i * D_STEP).toFixed(3); });
+
+        var nL = h ? h.querySelectorAll('.fc').length : 0;
+        var nP = p ? p.querySelectorAll('.fb').length : 0;
+        var lStart = t;
+        var lDur = nL ? (nL - 1) * L_STEP + L_DUR : 0;
+        var dStart = lStart + lDur + (nP ? GAP_IN : 0);
+        var dDur = nP ? (1 + (nP - 1) * D_STEP) * D_MUL : 0;
+        st.style.setProperty('--lstart', lStart.toFixed(2));
+        st.style.setProperty('--dstart', dStart.toFixed(2));
+        t = dStart + dDur + GAP_OUT;
       });
       revealOnScroll(grid);
     })();
