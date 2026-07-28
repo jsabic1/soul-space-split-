@@ -265,11 +265,15 @@
   .nn .st{position:relative}
   .nn .st-mark{position:relative;height:clamp(120px,13vw,178px);width:100%;margin:0 auto 1.7rem;
     background:center/contain no-repeat;
-    /* Vektor se pojavljuje istovremeno s natpisom ispod sebe. */
-    opacity:0;transition:opacity .9s ease;transition-delay:calc(var(--lstart, 0) * 1s)}
-  .nn .st-grid.is-in .st-mark{opacity:1}
+    /* Vektor se spusti odozgo i pojavi istovremeno s natpisom ispod sebe. */
+    opacity:0}
+  .nn .st-grid.is-in .st-mark{animation:nn-fade-in-top .9s cubic-bezier(.39,.575,.565,1) both;
+    animation-delay:calc(var(--lstart, 0) * 1s)}
+  @keyframes nn-fade-in-top{
+    0%{transform:translateY(-50px);opacity:0}
+    100%{transform:translateY(0);opacity:1}}
   @media(prefers-reduced-motion:reduce){
-    .nn .st-mark{opacity:1;transition:none}}
+    .nn .st-mark,.nn .st-grid.is-in .st-mark{opacity:1;animation:none}}
   .nn .st:nth-child(1) .st-mark{background-image:url('../wp-content/uploads/soul/motiv-typing.webp');background-size:auto 88%}
   .nn .st:nth-child(2) .st-mark{background-image:url('../wp-content/uploads/soul/motiv-suggest.webp');background-size:auto 120%}
   .nn .st:nth-child(3) .st-mark{background-image:url('../wp-content/uploads/soul/motiv-arrival.webp')}
