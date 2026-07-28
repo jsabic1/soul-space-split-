@@ -128,29 +128,29 @@
 
   /* 6 · POKLON BON — okvir desno, tekst lijevo */
   .nn .gift{position:relative;display:block;padding:clamp(4rem,6vw,6.5rem) 2rem;background:var(--cream);overflow:hidden}
-  .nn .gwrap{position:relative;left:-5rem;max-width:1020px;margin:0 auto;display:grid;grid-template-columns:auto auto;justify-content:center;align-items:center;
-    gap:clamp(.5rem,1.2vw,1.2rem);background:var(--dark2);border-radius:3px;
+  .nn .gwrap{position:relative;left:calc(-1 * min(5rem, max(0px, (100vw - 1020px - 4rem)/2)));max-width:1020px;margin:0 auto;display:grid;grid-template-columns:auto auto;justify-content:center;align-items:center;
+    gap:clamp(.5rem,1.2vw,1.2rem);background:transparent;border-radius:3px;
     padding:clamp(1.4rem,2vw,2rem) clamp(1.4rem,2.4vw,2.4rem)}
   /* zlatni obrub uvucen od ruba kartice */
-  .nn .gwrap::before{content:"";position:absolute;inset:clamp(9px,1.1vw,17px);
-    border:1px solid var(--gold-lite);border-radius:2px;pointer-events:none;z-index:0}
+  .nn .gwrap::before{content:"";position:absolute;inset:0;
+    border:1px solid var(--dark2);border-radius:2px;pointer-events:none;z-index:0}
   .nn .gcopy{position:relative;left:calc(6% + 2.5rem);width:fit-content;max-width:min(380px,27vw);text-align:center;justify-self:center}
   .nn .gcopy .eyebrow{display:block;font-size:.7rem;color:var(--gold-lite);margin-bottom:.7rem}
-  .nn .gcopy h2{font-size:clamp(1.7rem,2.7vw,2.4rem);line-height:1.06;margin-bottom:1rem;white-space:nowrap;text-transform:uppercase;letter-spacing:.06em;color:var(--gold-lite)}
-  .nn .gcopy p{font-size:clamp(.94rem,1.15vw,1.05rem);line-height:1.6;color:var(--lite);max-width:30ch;margin:0 auto}
-  .nn .gframe{position:relative;width:min(620px,44vw);aspect-ratio:755/440;justify-self:center;left:2.5rem;
-    background:url('../wp-content/uploads/soul/motiv-gift-gold.webp') 88% 92%/contain no-repeat}
+  .nn .gcopy h2{font-size:clamp(1.7rem,2.7vw,2.4rem);line-height:1.06;margin-bottom:1rem;white-space:nowrap;text-transform:uppercase;letter-spacing:.06em;color:var(--burgundy)}
+  .nn .gcopy p{font-size:clamp(.94rem,1.15vw,1.05rem);line-height:1.6;color:var(--burgundy);max-width:30ch;margin:0 auto}
+  .nn .gframe{position:relative;width:min(620px,44vw);aspect-ratio:755/440;justify-self:center;left:.5rem;
+    background:url('../wp-content/uploads/soul/motiv-gift-burgundy.webp') 88% 92%/contain no-repeat}
   .nn .v-mins{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(.9rem,1.8vw,1.7rem);margin:1.1rem 0 .1rem}
   .nn .vm{display:flex;flex-direction:row;align-items:baseline;gap:.28rem}
-  .nn .vm-n{font-family:var(--serif);font-size:1.25rem;line-height:1;color:var(--terra-bright)}
-  .nn .vm-u{font-family:var(--caps);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lite-dim)}
-  .nn .v-unit{font-family:var(--bodyf);font-style:italic;font-size:.95rem;letter-spacing:.02em;text-transform:none;white-space:nowrap;color:var(--lite-dim);margin:0 0 1.7rem}
+  .nn .vm-n{font-family:var(--serif);font-size:1.25rem;line-height:1;color:var(--terra)}
+  .nn .vm-u{font-family:var(--caps);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .nn .v-unit{font-family:var(--bodyf);font-style:italic;font-size:.95rem;letter-spacing:.02em;text-transform:none;white-space:nowrap;color:var(--muted);margin:0 0 1.7rem}
   .nn .gift-cta{position:relative;z-index:3;margin-top:1.4rem;display:inline-block;white-space:nowrap;min-width:17.3rem;text-align:center;font-family:var(--caps);font-weight:600;
-    font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:#FFF3E5;
-    background:var(--dark2);border:1px solid #FFF3E5;border-radius:999px;
+    font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--dark2);
+    background:transparent;border:1px solid var(--dark2);border-radius:999px;
     padding:.95rem 2.6rem;transition:background .3s ease,color .3s ease,border-color .3s ease}
   .nn .gift-cta span{display:inline-block;margin-left:.5rem;transition:transform .3s ease}
-  .nn .gift-cta:hover{background:#FFF3E5;border-color:#FFF3E5;color:var(--dark2)}
+  .nn .gift-cta:hover{background:var(--dark2);border-color:var(--dark2);color:#FFF3E5}
   .nn .gift-cta:hover span{transform:translateX(5px)}
   @media(max-width:820px){
     .nn .gift{padding:3.5rem 1rem 4rem}
@@ -164,9 +164,9 @@
     .nn .vm-u{font-size:.55rem}
     .nn .v-mins{gap:.42rem;flex-wrap:nowrap;justify-content:center}
     .nn .v-unit{font-size:.9rem;letter-spacing:.02em}
-    .nn .gframe{justify-self:stretch;width:calc(100% + 3.2rem);max-width:none;margin-left:-1.6rem;
+    .nn .gframe{justify-self:stretch;width:100%;max-width:none;margin-left:0;
       aspect-ratio:755/400;background-size:contain;background-position:center center}
-    .nn .gift-cta{white-space:nowrap;letter-spacing:.1em;font-size:.64rem;padding:.72rem 1rem}}
+    .nn .gift-cta{white-space:nowrap;letter-spacing:.1em;font-size:.64rem;padding:.72rem 1rem;min-width:min(17.3rem,100%)}}
 
   /* 7 · ZA ŽENU KOJA ZNA — tamna foto s parallaxom */
   .nn .break{position:relative;overflow:hidden;min-height:74vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem}
