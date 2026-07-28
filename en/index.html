@@ -141,6 +141,11 @@
   .nn .rituals h2{font-size:clamp(2rem,3.4vw,3rem)}
   .nn .rit-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.6rem;align-items:start}
   .nn .rit-card{background:var(--cream2)}
+  /* Naziv rituala prelazi u terakotu na prelazak misem, tipkovnicu i klik. */
+  .nn .rit-card .nm{transition:color .3s ease}
+  .nn .rit-card:hover .nm,
+  .nn .rit-card:focus-visible .nm,
+  .nn .rit-card:active .nm{color:var(--terra)}
   .nn .rit-card img{width:100%;aspect-ratio:15/17;object-fit:cover}
   .nn .rit-card .body{padding:1.3rem 1.35rem 1.6rem}
   .nn .rit-card .nm{font-family:var(--serif);font-weight:700;font-size:clamp(.85rem,calc(2.3vw - 8px),1.27rem);line-height:1.25;white-space:nowrap;color:var(--ink);margin-bottom:.45rem}
@@ -270,7 +275,7 @@
   .nn .steps{padding:8rem 2rem 8.5rem;text-align:center;
     /* Gornji rub se stapa sa sekcijom iznad (krem), pozadina je izblijedjena kao gore. */
     background:linear-gradient(to bottom,var(--cream) 0%,rgba(244,232,214,.6) 18%,rgba(244,232,214,0) 44%),
-               linear-gradient(rgba(239,224,198,.94),rgba(239,224,198,.94)),
+               linear-gradient(rgba(239,224,198,.93),rgba(239,224,198,.93)),
                url('../wp-content/uploads/soul/pozadina-koraci.webp') center bottom/cover no-repeat var(--cream2)}
   .nn .steps .eyebrow{display:block;color:var(--terra);margin-bottom:.9rem}
   .nn .steps h2{font-size:clamp(2rem,3.4vw,3rem);color:var(--ink);margin-bottom:14rem}
@@ -316,7 +321,7 @@
     .nn .st h3 .fc{clip-path:none;transition:none}
     .nn .st p .fb,.nn .st-grid.is-in p .fb{opacity:1;animation:none}}
   .nn .st p{font-family:var(--bodyf);font-size:1.04rem;line-height:1.6;color:var(--ink-soft);max-width:23ch;margin:0 auto}
-  .nn .steps .btn-terra{margin-top:4rem;color:var(--terra);border-color:var(--terra)}
+  .nn .steps .btn-terra{margin-top:4rem;color:var(--terra);border-color:var(--terra);-webkit-text-stroke:.45px currentColor}
   .nn .steps .btn-terra:hover,.nn .steps .btn-terra:focus-visible,.nn .steps .btn-terra:active{background:var(--terra);border-color:var(--terra);color:#FFF3E5}
   @media(max-width:900px){
     .nn .st-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:3.4rem 2.4rem;max-width:540px}
