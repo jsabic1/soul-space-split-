@@ -263,15 +263,24 @@
   .nn .st:nth-child(3) .st-mark{background-image:url('wp-content/uploads/soul/motiv-arrival.webp')}
   .nn .st:nth-child(4) .st-mark{background-image:url('wp-content/uploads/soul/motiv-infinity.webp')}
   .nn .st h3{font-family:var(--script);font-weight:400;font-size:clamp(1.2rem,1.72vw,1.55rem);line-height:1.35;color:var(--ink);margin-bottom:.6rem}
-  /* Natpisi koraka se "ispisuju" slijeva nadesno, kao da ih netko piše rukom. */
-  .nn .st h3 .fw{display:inline-block}
+  /* Koraci se pojavljuju redom, jedan stupac za drugim (--col).
+     Natpis se "ispisuje" slijeva nadesno, pa opis iskoči slovo po slovo. */
+  .nn .st h3 .fw,.nn .st p .fw{display:inline-block}
   .nn .st h3 .fc{display:inline-block;
     clip-path:inset(-1000% 100% -1000% -1000%);
-    transition:clip-path .26s linear;
-    transition-delay:calc(var(--ci) * .13s)}
-  .nn .st h3.is-in .fc{clip-path:inset(-1000% -1000% -1000% -1000%)}
+    transition:clip-path .34s linear;
+    transition-delay:calc(var(--col) * .8s + var(--ci) * .17s)}
+  .nn .st-grid.is-in h3 .fc{clip-path:inset(-1000% -1000% -1000% -1000%)}
+  .nn .st p .fb{display:inline-block;opacity:0}
+  .nn .st-grid.is-in p .fb{animation:nn-bubbly calc(var(--i) * 1.3s) ease-in-out both;
+    animation-delay:calc(var(--col) * .8s + .6s)}
+  @keyframes nn-bubbly{
+    0%{opacity:0;transform:scale(0)}
+    70%{opacity:1;transform:scale(1.5)}
+    100%{opacity:1;transform:scale(1)}}
   @media(prefers-reduced-motion:reduce){
-    .nn .st h3 .fc{clip-path:none;transition:none}}
+    .nn .st h3 .fc{clip-path:none;transition:none}
+    .nn .st p .fb,.nn .st-grid.is-in p .fb{opacity:1;animation:none}}
   .nn .st p{font-family:var(--bodyf);font-size:1.04rem;line-height:1.6;color:var(--ink-soft);max-width:23ch;margin:0 auto}
   .nn .steps .btn-terra{margin-top:4rem;color:var(--terra);border-color:var(--terra)}
   .nn .steps .btn-terra:hover,.nn .steps .btn-terra:focus-visible,.nn .steps .btn-terra:active{background:var(--terra);border-color:var(--terra);color:#FFF3E5}
@@ -741,8 +750,10 @@
       })(root);
     }
 
-    /* Isto, ali slovo po slovo — riječi ostaju cijele, prelama se samo na razmaku. */
-    function splitChars(root) {
+    /* Isto, ali slovo po slovo — riječi ostaju cijele, prelama se samo na razmaku.
+       cls = klasa slova, prop = CSS varijabla, val(i) = njena vrijednost. */
+    function splitChars(root, cls, prop, val) {
+      cls = cls || 'fc'; prop = prop || '--ci'; val = val || function (n) { return n; };
       var i = 0, lastWord = null, afterSpace = true;
       (function wrap(node) {
         Array.prototype.slice.call(node.childNodes).forEach(function (n) {
@@ -759,8 +770,8 @@
               if (word !== lastWord) { word.className = 'fw'; frag.appendChild(word); }
               part.split('').forEach(function (ch) {
                 var s = document.createElement('span');
-                s.className = 'fc';
-                s.style.setProperty('--ci', i++);
+                s.className = cls;
+                s.style.setProperty(prop, val(i++));
                 s.textContent = ch;
                 word.appendChild(s);
               });
@@ -775,17 +786,29 @@
       })(root);
     }
 
-    /* Natpisi koraka — svaki se ispisuje slijeva nadesno kad dođe u kadar. */
-    Array.prototype.forEach.call(document.querySelectorAll('.nn .st h3'), function (h) {
-      var full = h.textContent.replace(/\s+/g, ' ').trim();
-      var inner = document.createElement('span');
-      inner.setAttribute('aria-hidden', 'true');
-      while (h.firstChild) inner.appendChild(h.firstChild);
-      h.appendChild(inner);
-      h.setAttribute('aria-label', full);
-      splitChars(inner);
-      revealOnScroll(h);
-    });
+    /* Koraci — natpis se ispisuje rukom, opis ispod iskoči slovo po slovo.
+       Stupci kreću jedan za drugim. */
+    (function () {
+      var grid = document.querySelector('.nn .st-grid');
+      if (!grid) return;
+      function prep(el, cls, prop, val) {
+        var full = el.textContent.replace(/\s+/g, ' ').trim();
+        var inner = document.createElement('span');
+        inner.setAttribute('aria-hidden', 'true');
+        while (el.firstChild) inner.appendChild(el.firstChild);
+        el.appendChild(inner);
+        el.setAttribute('aria-label', full);
+        splitChars(inner, cls, prop, val);
+      }
+      Array.prototype.forEach.call(grid.querySelectorAll('.st'), function (st, n) {
+        st.style.setProperty('--col', n);
+        var h = st.querySelector('h3'), p = st.querySelector('p');
+        if (h) prep(h, 'fc', '--ci', function (i) { return i; });
+        // Duže trajanje za svako sljedeće slovo — slova iskaču jedno za drugim.
+        if (p) prep(p, 'fb', '--i', function (i) { return (1 + i * 0.055).toFixed(3); });
+      });
+      revealOnScroll(grid);
+    })();
 
     (function () {
       var el = document.querySelector('.nn .break .stmt');
