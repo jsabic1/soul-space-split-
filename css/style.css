@@ -118,6 +118,8 @@ p { color: var(--text-muted); }
   border: 1px solid #FFF3E5;
   border-radius: 999px;
   padding: 0.95rem 2.6rem;
+  min-width: 17.3rem;
+  text-align: center;
   letter-spacing: 0.3em;
   font-weight: 600;
 }
