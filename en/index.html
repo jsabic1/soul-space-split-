@@ -206,16 +206,6 @@
                url('../wp-content/uploads/soul/od-poruke-do-stola.jpeg') center 42%/cover no-repeat}
   .nn .gcopy{position:relative;z-index:1;left:calc(6% + 2.5rem);width:fit-content;max-width:min(380px,27vw);text-align:center;justify-self:center}
   .nn .gcopy .eyebrow{display:block;font-size:.7rem;color:var(--gold-lite);margin-bottom:.7rem}
-  /* Naslov vouchera se ispisuje slijeva nadesno, isto kao natpisi koraka. */
-  .nn .gcopy h2 .fw{display:inline-block}
-  .nn .gcopy h2 .fc{display:inline-block;
-    padding-left:.6em;margin-left:-.6em;padding-right:.6em;margin-right:-.6em;
-    clip-path:inset(-1000% 100% -1000% 0);
-    transition:clip-path .26s linear;
-    transition-delay:calc(var(--ci) * .11s)}
-  .nn .gcopy h2.is-in .fc{clip-path:inset(-1000% 0 -1000% 0)}
-  @media(prefers-reduced-motion:reduce){
-    .nn .gcopy h2 .fc{clip-path:none;transition:none}}
   .nn .gcopy h2{font-family:var(--script);font-weight:400;-webkit-text-stroke:.6px currentColor;font-size:clamp(2.3rem,3.9vw,3.5rem);line-height:1.25;margin-bottom:2.2rem;white-space:nowrap;text-transform:none;letter-spacing:normal;color:var(--gold-lite)}
   .nn .gcopy p{font-size:clamp(.94rem,1.15vw,1.05rem);line-height:1.6;color:var(--lite-muted);max-width:30ch;margin:0 auto}
   .nn .gframe{position:relative;z-index:1;width:min(685px,48vw);aspect-ratio:755/440;justify-self:center;left:.55rem;
@@ -291,45 +281,22 @@
   .nn .steps h2{font-size:clamp(2rem,3.4vw,3rem);color:var(--ink);margin-bottom:14rem}
   .nn .st-grid{position:relative;max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(2.6rem,5vw,5rem)}
     background:linear-gradient(90deg,transparent,rgba(196,85,31,.35) 12%,rgba(196,85,31,.35) 88%,transparent)}
-  .nn .st{position:relative}
-  .nn .st-mark{position:relative;height:clamp(120px,13vw,178px);width:100%;margin:0 auto 1.7rem;
-    background:center/contain no-repeat;
-    /* Vektor se spusti odozgo i pojavi istovremeno s natpisom ispod sebe. */
-    opacity:0}
-  .nn .st-grid.is-in .st-mark{animation:nn-fade-in-top .9s cubic-bezier(.39,.575,.565,1) both;
-    animation-delay:calc(var(--lstart, 0) * 1s)}
+  /* Cijeli korak (vektor, natpis i opis zajedno) spusti se odozgo, jedan za drugim. */
+  .nn .st{position:relative;opacity:0}
+  .nn .st-grid.is-in .st{animation:nn-fade-in-top .9s cubic-bezier(.39,.575,.565,1) both;
+    animation-delay:calc(var(--col, 0) * .55s)}
   @keyframes nn-fade-in-top{
     0%{transform:translateY(-50px);opacity:0}
     100%{transform:translateY(0);opacity:1}}
   @media(prefers-reduced-motion:reduce){
-    .nn .st-mark,.nn .st-grid.is-in .st-mark{opacity:1;animation:none}}
+    .nn .st,.nn .st-grid.is-in .st{opacity:1;animation:none}}
+  .nn .st-mark{position:relative;height:clamp(120px,13vw,178px);width:100%;margin:0 auto 1.7rem;
+    background:center/contain no-repeat}
   .nn .st:nth-child(1) .st-mark{background-image:url('../wp-content/uploads/soul/motiv-typing-deblji.webp');background-size:auto 88%}
   .nn .st:nth-child(2) .st-mark{background-image:url('../wp-content/uploads/soul/motiv-suggest-deblji.webp');background-size:auto 120%}
   .nn .st:nth-child(3) .st-mark{background-image:url('../wp-content/uploads/soul/motiv-arrival-kratka.webp');background-size:auto 72%}
   .nn .st:nth-child(4) .st-mark{background-image:url('../wp-content/uploads/soul/motiv-infinity-deblji.webp')}
   .nn .st h3{font-family:var(--script);font-weight:400;-webkit-text-stroke:.55px currentColor;font-size:clamp(1.2rem,1.72vw,1.55rem);line-height:1.35;color:var(--ink);margin-bottom:.6rem}
-  /* Koraci se pojavljuju redom, jedan stupac za drugim (--col).
-     Natpis se "ispisuje" slijeva nadesno, pa opis iskoči slovo po slovo. */
-  .nn .st h3 .fw,.nn .st p .fw{display:inline-block}
-  /* Slovo dobiva zračni prostor lijevo i desno (padding poništen marginom, raspored
-     ostaje isti) da potezi rukopisa stanu unutra. Tako rez prije ispisa ne pokazuje
-     ništa, a poslije ne odsijeca ništa. */
-  .nn .st h3 .fc{display:inline-block;
-    padding-left:.6em;margin-left:-.6em;padding-right:.6em;margin-right:-.6em;
-    clip-path:inset(-1000% 100% -1000% 0);
-    transition:clip-path .26s linear;
-    transition-delay:calc(var(--lstart, 0) * 1s + var(--ci) * .11s)}
-  .nn .st-grid.is-in h3 .fc{clip-path:inset(-1000% 0 -1000% 0)}
-  .nn .st p .fb{display:inline-block;opacity:0}
-  .nn .st-grid.is-in p .fb{animation:nn-bubbly calc(var(--i) * .95s) ease-in-out both;
-    animation-delay:calc(var(--dstart, 0) * 1s)}
-  @keyframes nn-bubbly{
-    0%{opacity:0;transform:scale(0)}
-    70%{opacity:1;transform:scale(1.5)}
-    100%{opacity:1;transform:scale(1)}}
-  @media(prefers-reduced-motion:reduce){
-    .nn .st h3 .fc{clip-path:none;transition:none}
-    .nn .st p .fb,.nn .st-grid.is-in p .fb{opacity:1;animation:none}}
   .nn .st p{font-family:var(--bodyf);font-size:1.04rem;line-height:1.6;color:var(--ink-soft);max-width:23ch;margin:0 auto}
   .nn .steps .btn-terra{margin-top:4rem;color:var(--terra);border-color:var(--terra);-webkit-text-stroke:.45px currentColor}
   .nn .steps .btn-terra:hover,.nn .steps .btn-terra:focus-visible,.nn .steps .btn-terra:active{background:var(--terra);border-color:var(--terra);color:#FFF3E5}
@@ -830,56 +797,14 @@
       })(root);
     }
 
-    /* Koraci — natpis se ispisuje rukom, opis ispod iskoči slovo po slovo.
-       Stupci kreću jedan za drugim. */
+    /* Koraci — svaki se korak u cijelosti spusti odozgo, jedan za drugim. */
     (function () {
       var grid = document.querySelector('.nn .st-grid');
       if (!grid) return;
-      function prep(el, cls, prop, val) {
-        var full = el.textContent.replace(/\s+/g, ' ').trim();
-        var inner = document.createElement('span');
-        inner.setAttribute('aria-hidden', 'true');
-        while (el.firstChild) inner.appendChild(el.firstChild);
-        el.appendChild(inner);
-        el.setAttribute('aria-label', full);
-        splitChars(inner, cls, prop, val);
-      }
-      // Strogi redoslijed: naslov se ispiše, pa opis, pa tek onda sljedeći korak.
-      var L_DUR = 0.26, L_STEP = 0.11;   // trajanje i razmak slova naslova
-      var D_STEP = 0.024, D_MUL = 0.95;  // rast trajanja po slovu opisa
-      var GAP_IN = 0.12, GAP_OUT = 0.25; // pauza naslov→opis i korak→korak
-      var t = 0;
-      Array.prototype.forEach.call(grid.querySelectorAll('.st'), function (st) {
-        var h = st.querySelector('h3'), p = st.querySelector('p');
-        if (h) prep(h, 'fc', '--ci', function (i) { return i; });
-        // Duže trajanje za svako sljedeće slovo — slova iskaču jedno za drugim.
-        if (p) prep(p, 'fb', '--i', function (i) { return (1 + i * D_STEP).toFixed(3); });
-
-        var nL = h ? h.querySelectorAll('.fc').length : 0;
-        var nP = p ? p.querySelectorAll('.fb').length : 0;
-        var lStart = t;
-        var lDur = nL ? (nL - 1) * L_STEP + L_DUR : 0;
-        var dStart = lStart + lDur + (nP ? GAP_IN : 0);
-        var dDur = nP ? (1 + (nP - 1) * D_STEP) * D_MUL : 0;
-        st.style.setProperty('--lstart', lStart.toFixed(2));
-        st.style.setProperty('--dstart', dStart.toFixed(2));
-        t = dStart + dDur + GAP_OUT;
+      Array.prototype.forEach.call(grid.querySelectorAll('.st'), function (st, n) {
+        st.style.setProperty('--col', n);
       });
       revealOnScroll(grid);
-    })();
-
-    /* Naslov poklon bona — ispisuje se kao natpisi koraka. */
-    (function () {
-      var h = document.querySelector('.nn .gcopy h2');
-      if (!h) return;
-      var full = h.textContent.replace(/\s+/g, ' ').trim();
-      var inner = document.createElement('span');
-      inner.setAttribute('aria-hidden', 'true');
-      while (h.firstChild) inner.appendChild(h.firstChild);
-      h.appendChild(inner);
-      h.setAttribute('aria-label', full);
-      splitChars(inner, 'fc', '--ci', function (i) { return i; });
-      revealOnScroll(h);
     })();
 
     /* Rečenica "Tijelo pamti sve" — ispisuje se slovo po slovo. */
