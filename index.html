@@ -263,6 +263,15 @@
   .nn .st:nth-child(3) .st-mark{background-image:url('wp-content/uploads/soul/motiv-arrival.webp')}
   .nn .st:nth-child(4) .st-mark{background-image:url('wp-content/uploads/soul/motiv-infinity.webp')}
   .nn .st h3{font-family:var(--script);font-weight:400;font-size:clamp(1.2rem,1.72vw,1.55rem);line-height:1.35;color:var(--ink);margin-bottom:.6rem}
+  /* Natpisi koraka se "ispisuju" slijeva nadesno, kao da ih netko piše rukom. */
+  .nn .st h3 .fw{display:inline-block}
+  .nn .st h3 .fc{display:inline-block;
+    clip-path:inset(-1000% 100% -1000% -1000%);
+    transition:clip-path .26s linear;
+    transition-delay:calc(var(--ci) * .13s)}
+  .nn .st h3.is-in .fc{clip-path:inset(-1000% -1000% -1000% -1000%)}
+  @media(prefers-reduced-motion:reduce){
+    .nn .st h3 .fc{clip-path:none;transition:none}}
   .nn .st p{font-family:var(--bodyf);font-size:1.04rem;line-height:1.6;color:var(--ink-soft);max-width:23ch;margin:0 auto}
   .nn .steps .btn-terra{margin-top:4rem;color:var(--terra);border-color:var(--terra)}
   .nn .steps .btn-terra:hover,.nn .steps .btn-terra:focus-visible,.nn .steps .btn-terra:active{background:var(--terra);border-color:var(--terra);color:#FFF3E5}
@@ -765,6 +774,18 @@
         });
       })(root);
     }
+
+    /* Natpisi koraka — svaki se ispisuje slijeva nadesno kad dođe u kadar. */
+    Array.prototype.forEach.call(document.querySelectorAll('.nn .st h3'), function (h) {
+      var full = h.textContent.replace(/\s+/g, ' ').trim();
+      var inner = document.createElement('span');
+      inner.setAttribute('aria-hidden', 'true');
+      while (h.firstChild) inner.appendChild(h.firstChild);
+      h.appendChild(inner);
+      h.setAttribute('aria-label', full);
+      splitChars(inner);
+      revealOnScroll(h);
+    });
 
     (function () {
       var el = document.querySelector('.nn .break .stmt');
