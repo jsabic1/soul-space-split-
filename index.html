@@ -149,7 +149,7 @@
   .nn .gift{position:relative;display:block;padding:clamp(4rem,6vw,6.5rem) 2rem calc(clamp(4rem,6vw,6.5rem) + 7rem);background:var(--cream);overflow:hidden}
   .nn .gwrap{position:relative;left:0;max-width:1020px;margin:0 auto;display:grid;grid-template-columns:auto auto;justify-content:center;align-items:center;
     gap:clamp(.5rem,1.2vw,1.2rem);border-radius:3px;overflow:hidden;background:transparent;
-    padding:clamp(2.2rem,3.2vw,3.2rem) clamp(1.4rem,2.4vw,2.4rem)}
+    padding:clamp(3.4rem,4.8vw,4.8rem) clamp(1.4rem,2.4vw,2.4rem) clamp(2.2rem,3.2vw,3.2rem)}
   /* zlatni obrub uvucen od ruba kartice */
   .nn .gwrap::before{content:"";position:absolute;inset:0;
     border:1px solid rgba(224,199,159,.55);border-radius:2px;pointer-events:none;z-index:2}
@@ -159,7 +159,7 @@
     background:linear-gradient(rgba(31,15,10,.58),rgba(31,15,10,.66)),url('wp-content/uploads/soul/od-poruke-do-stola.jpeg') center 42%/cover no-repeat}
   .nn .gcopy{position:relative;z-index:1;left:calc(6% + 2.5rem);width:fit-content;max-width:min(380px,27vw);text-align:center;justify-self:center}
   .nn .gcopy .eyebrow{display:block;font-size:.7rem;color:var(--gold-lite);margin-bottom:.7rem}
-  .nn .gcopy h2{font-size:clamp(1.7rem,2.7vw,2.4rem);line-height:1.06;margin-bottom:2.2rem;white-space:nowrap;text-transform:uppercase;letter-spacing:.06em;color:var(--gold-lite)}
+  .nn .gcopy h2{font-family:var(--script);font-weight:400;font-size:clamp(1.7rem,2.7vw,2.4rem);line-height:1.25;margin-bottom:2.2rem;white-space:nowrap;text-transform:none;letter-spacing:normal;color:var(--gold-lite)}
   .nn .gcopy p{font-size:clamp(.94rem,1.15vw,1.05rem);line-height:1.6;color:var(--lite-muted);max-width:30ch;margin:0 auto}
   .nn .gframe{position:relative;z-index:1;width:min(620px,44vw);aspect-ratio:755/440;justify-self:center;left:.5rem;
     background:url('wp-content/uploads/soul/motiv-gift-gold.webp') 26px 92%/contain no-repeat}
@@ -236,7 +236,7 @@
     .nn .st p{font-size:.98rem;max-width:18ch}}
   /* 9 · TRENUCI U STUDIJU — tamno, galerija koja se vrti */
   .nn .atmo{background:var(--dark);padding:6.5rem 0 7.5rem;text-align:center}
-  .nn .atmo .note{display:block;margin-bottom:.7rem;color:var(--gold-lite)}
+  .nn .atmo .eyebrow{display:block;margin-bottom:.9rem;color:var(--gold-lite)}
   .nn .atmo h2{font-size:clamp(1.9rem,3vw,2.7rem);margin-bottom:3rem;padding:0 2rem;color:var(--lite)}
   .nn .atmo-wrap{overflow:hidden;position:relative;padding:1rem 0;mask-image:linear-gradient(to right,transparent 0%,#000 4%,#000 96%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 4%,#000 96%,transparent 100%)}
   .nn .atmo-track{display:flex;width:max-content;animation:nn-atmo-scroll 60s linear infinite}
@@ -488,7 +488,7 @@
 
     <!-- TRENUCI U STUDIJU -->
     <section class="atmo">
-      <span class="note">trenuci u studiju</span>
+      <span class="eyebrow">trenuci u studiju</span>
       <h2>mali detalji koji čine <em>ritual</em></h2>
       <div class="atmo-wrap">
         <div class="atmo-track">
