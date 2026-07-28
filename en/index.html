@@ -63,15 +63,22 @@
   .nn .stmt{font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,3.1rem);line-height:1.3;color:var(--ink);max-width:24ch;margin:0 auto}
   .nn .stmt .accent{color:inherit}
   /* Fade-in rečenice "Tijelo pamti sve" — riječ po riječ, kad doskrolamo do nje. */
-  .nn .stmt-sec .stmt .fw{display:inline-block;opacity:0;transform:translateY(.4em);
+  .nn .stmt-sec .stmt .fw,.nn .quotes h2 .fw{display:inline-block;opacity:0;transform:translateY(.4em);
     transition:opacity 1.33s cubic-bezier(.19,1,.22,1),transform 1.33s cubic-bezier(.19,1,.22,1);
     transition-delay:calc(var(--wi) * .105s)}
-  .nn .stmt-sec .stmt.is-in .fw{opacity:1;transform:none}
+  .nn .stmt-sec .stmt.is-in .fw,.nn .quotes h2.is-in .fw{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){
-    .nn .stmt-sec .stmt .fw{opacity:1;transform:none;transition:none}}
+    .nn .stmt-sec .stmt .fw,.nn .quotes h2 .fw{opacity:1;transform:none;transition:none}}
 
   /* 3 · PREPOZNAJEŠ SE */
-  .nn .foryou{background:var(--cream);padding:5rem 2rem 7rem;text-align:center}
+  .nn .foryou{background:var(--cream);padding:5rem 2rem 7rem;text-align:center;overflow:hidden}
+  /* Tijelo / San / Napetost / Tempo — svaki ulazi zdesna, jedan po jedan. */
+  .nn .fy-grid .fy-item{opacity:0}
+  .nn .fy-grid.is-in .fy-item{animation:nn-slide-right 1.33s cubic-bezier(.19,1,.22,1) both;
+    animation-delay:calc(var(--fi) * .2s)}
+  @keyframes nn-slide-right{from{opacity:0;transform:translateX(3.5rem)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){
+    .nn .fy-grid .fy-item,.nn .fy-grid.is-in .fy-item{opacity:1;animation:none}}
   .nn .foryou .note{display:block;margin-bottom:1.5rem}
   .nn .foryou h2{font-size:clamp(1.9rem,3vw,2.7rem);margin-bottom:4.6rem}
   .nn .fy-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2.4rem}
@@ -101,6 +108,13 @@
   .nn .story-photo img{position:absolute;top:-22%;left:0;width:100%;height:144%;object-fit:cover;object-position:center 28%;will-change:transform;transform:translate3d(0,var(--par,0),0)}
   .nn .story-text{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;padding:clamp(4.5rem,7vw,7.5rem) clamp(2rem,5.5vw,5.5rem)}
   .nn .story-text .eyebrow{display:block;margin-bottom:.9rem;color:var(--gold-lite)}
+  /* "O meni" blok — svaki redak spušta se odozgo, jedan za drugim. */
+  .nn .story-text > *{opacity:0}
+  .nn .story-text.is-in > *{animation:nn-slide-down 1.33s cubic-bezier(.19,1,.22,1) both;
+    animation-delay:calc(var(--si) * .2s)}
+  @keyframes nn-slide-down{from{opacity:0;transform:translateY(-2.2rem)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){
+    .nn .story-text > *,.nn .story-text.is-in > *{opacity:1;animation:none}}
   .nn .story-sub{font-family:var(--script);font-size:clamp(1.15rem,1.7vw,1.5rem);line-height:1.4;margin-bottom:1.7rem;text-align:left;color:var(--terra-bright)}
   .nn .story h2{font-size:clamp(2rem,3.3vw,3.15rem);line-height:1.14;margin-bottom:1.5rem;max-width:22ch;color:var(--lite)}
   .nn .story p{color:var(--lite-muted);text-align:justify;margin-bottom:1.2rem;max-width:64ch}
@@ -620,10 +634,26 @@
     })();
   </script>
   <script>
-    /* Rečenica "Tijelo pamti sve" — riječi izranjaju jedna za drugom kad dođu u kadar. */
-    (function () {
-      var stmt = document.querySelector('.nn .stmt-sec .stmt');
-      if (!stmt) return;
+    /* Zajednički okidač: element dobiva klasu "is-in" tek kad stvarno uđe u kadar,
+       a ne dok tek proviruje s dna ekrana. */
+    function revealOnScroll(el) {
+      if (!('IntersectionObserver' in window)) { el.classList.add('is-in'); return; }
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var vh = window.innerHeight || document.documentElement.clientHeight;
+          if (e.intersectionRatio >= 0.55 || e.boundingClientRect.top < vh * 0.6) {
+            el.classList.add('is-in');
+            io.disconnect();
+          }
+        });
+      }, { threshold: [0, 0.55], rootMargin: '0px 0px -18% 0px' });
+      io.observe(el);
+    }
+  </script>
+  <script>
+    /* Tekst se razlomi na riječi pa svaka izranja za sebe. */
+    function splitWords(root) {
       var i = 0, last = null, afterSpace = true;
       (function wrap(node) {
         Array.prototype.slice.call(node.childNodes).forEach(function (n) {
@@ -652,21 +682,35 @@
             wrap(n);
           }
         });
-      })(stmt);
+      })(root);
+    }
 
-      if (!('IntersectionObserver' in window)) { stmt.classList.add('is-in'); return; }
-      // Kreće tek kad rečenica stvarno uđe u kadar, a ne dok tek proviruje s dna.
-      var io = new IntersectionObserver(function (es) {
-        es.forEach(function (e) {
-          if (!e.isIntersecting) return;
-          var vh = window.innerHeight || document.documentElement.clientHeight;
-          if (e.intersectionRatio >= 0.55 || e.boundingClientRect.top < vh * 0.6) {
-            stmt.classList.add('is-in');
-            io.disconnect();
-          }
-        });
-      }, { threshold: [0, 0.55], rootMargin: '0px 0px -18% 0px' });
-      io.observe(stmt);
+    /* Rečenica "Tijelo pamti sve" i naslov "što kažu klijentice". */
+    ['.nn .stmt-sec .stmt', '.nn .quotes h2'].forEach(function (sel) {
+      var el = document.querySelector(sel);
+      if (!el) return;
+      splitWords(el);
+      revealOnScroll(el);
+    });
+
+    /* Kartice "ovo je za tebe ako" — ulaze zdesna, jedna za drugom. */
+    (function () {
+      var grid = document.querySelector('.nn .fy-grid');
+      if (!grid) return;
+      Array.prototype.forEach.call(grid.querySelectorAll('.fy-item'), function (it, n) {
+        it.style.setProperty('--fi', n);
+      });
+      revealOnScroll(grid);
+    })();
+
+    /* "O meni" blok — naslović, ime, rečenica, opis i link ulaze odozgo. */
+    (function () {
+      var box = document.querySelector('.nn .story-text');
+      if (!box) return;
+      Array.prototype.forEach.call(box.children, function (el, n) {
+        el.style.setProperty('--si', n);
+      });
+      revealOnScroll(box);
     })();
   </script>
   <script>
