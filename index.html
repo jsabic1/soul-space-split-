@@ -21,308 +21,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Unicase:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style.css?v=159">
+  <link rel="stylesheet" href="css/home.css?v=1">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <style id="nn-home">
-  /* ===== NASLOVNA — sekcije ispod heroa (skica 2, miješano svijetlo/tamno) ===== */
-  .nn,.nn *{margin:0;padding:0;box-sizing:border-box}
-  .nn{
-    --cream:#F4E8D6; --cream2:#EFE0C6; --sand:#E0C79F;
-    --dark:#1F0F0A; --dark2:#2C1610;
-    --ink:#1F0F0A; --ink-soft:#3A1E14; --muted:#5A3A28;
-    --lite:#F4E8D6; --lite-muted:#E8D4B8; --lite-dim:#D8C09E;
-    --terra:#C4551F; --terra-bright:#D86934; --terra-dark:#A9451A;
-    --gold:#B8451E; --gold-lite:#C8965C;
-    --serif:'TAN Pearl','Cormorant Unicase',serif;
-    --caps:'Cormorant Unicase',serif;
-    --bodyf:'Alegreya',Georgia,serif;
-    --script:'Petit Formal Script',cursive;
-    background:var(--cream);color:var(--ink);font-family:var(--bodyf);line-height:1.6}
-  .nn img{max-width:100%;display:block}
-  .nn a{color:inherit;text-decoration:none}
-  .nn h2{font-family:var(--serif);font-weight:400;line-height:1.12;color:var(--ink);letter-spacing:.005em}
-  .nn h2 em,.nn .stmt em{font-style:normal;font-weight:400;color:inherit}
-  .nn .eyebrow{font-family:var(--caps);font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
-  .nn .note{font-family:var(--script);font-size:1.25rem;color:var(--ink-soft)}
-  .nn .btn-line{display:inline-block;font-family:var(--caps);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--lite);border:1px solid rgba(244,232,214,.75);padding:1.1rem 2.4rem;transition:all .3s ease}
-  .nn .btn-line:hover{background:var(--lite);color:var(--dark)}
-  .nn .btn-line.dark{color:var(--ink);border-color:rgba(31,15,10,.55)}
-  .nn .btn-line.dark:hover{background:var(--ink);color:var(--cream)}
-  .nn .btn-terra{display:inline-block;background:transparent;color:#FFF3E5;font-family:var(--caps);font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;font-weight:600;padding:.95rem 2.6rem;border:1px solid #FFF3E5;border-radius:999px;transition:background .3s ease,border-color .3s ease,color .3s ease}
-  .nn .btn-terra:hover,.btn-terra:focus-visible,.btn-terra:active{background:var(--terra);border-color:var(--terra);color:#F7ECDD;box-shadow:0 12px 32px -12px rgba(196,85,31,.55)}
-
-  /* 2 · TIJELO PAMTI SVE */
-  .nn .stmt-sec{position:relative;padding:21rem 2rem 15rem;
-    /* Donji rub se stapa s idućom sekcijom (ista krem boja). */
-    background:linear-gradient(to bottom,rgba(244,232,214,0) 52%,rgba(244,232,214,.55) 78%,var(--cream) 97%),
-               linear-gradient(rgba(244,232,214,.82),rgba(244,232,214,.82)),
-               url('wp-content/uploads/soul/pozadina-tijelo.webp') center bottom/cover no-repeat var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(2.5rem,5vw,5rem);text-align:center}
-  .nn .figura-wrap{position:relative;flex:0 0 auto;display:flex;align-items:center;justify-content:center}
-  .nn .figura-wrap::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-    width:clamp(280px,33vw,480px);aspect-ratio:813/900;opacity:.13;pointer-events:none;z-index:0;
-    mask-image:linear-gradient(#000 52%,rgba(0,0,0,.35) 74%,transparent 92%);
-    -webkit-mask-image:linear-gradient(#000 52%,rgba(0,0,0,.35) 74%,transparent 92%);
-    background:url('wp-content/uploads/soul/motiv-a2-6.webp') center/contain no-repeat}
-  .nn .figura{position:relative;z-index:1;display:block;width:clamp(96px,11.6vw,162px);height:auto;pointer-events:none}
-  .nn .stmt{font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,3.1rem);line-height:1.3;color:var(--ink);max-width:24ch;margin:0 auto}
-  .nn .stmt .accent{color:inherit}
-  /* "Tijelo pamti sve" — ispisuje se slijeva nadesno, isto kao natpisi koraka. */
-  .nn .stmt-sec .stmt .fw{display:inline-block}
-  .nn .stmt-sec .stmt .fc{display:inline-block;
-    padding-left:.6em;margin-left:-.6em;padding-right:.6em;margin-right:-.6em;
-    clip-path:inset(-1000% 100% -1000% 0);
-    transition:clip-path .26s linear;
-    transition-delay:calc(var(--ci) * .11s)}
-  .nn .stmt-sec .stmt.is-in .fc{clip-path:inset(-1000% 0 -1000% 0)}
-  @media(prefers-reduced-motion:reduce){
-    .nn .stmt-sec .stmt .fc{clip-path:none;transition:none}}
-
-  /* 3 · PREPOZNAJEŠ SE — vektor lijevo, naslov i cetiri stavke desno */
-  .nn .foryou{background:var(--cream);padding:5rem 2rem 11rem;text-align:center;overflow:hidden}
-  .nn .fy-wrap{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr .34fr;
-    column-gap:clamp(2.5rem,5vw,5rem);row-gap:0;align-items:center;text-align:left}
-  .nn .fy-head{grid-column:1;grid-row:1}
-  .nn .fy-grid{grid-column:1;grid-row:2}
-  /* Vektor stoji uz mrezu, po sredini izmedju gornjeg i donjeg reda. */
-  .nn .fy-vek{grid-column:2;grid-row:2}
-  .nn .fy-vek{aspect-ratio:470/466;width:clamp(190px,21vw,300px);justify-self:center;align-self:center;
-    opacity:.15;pointer-events:none;
-    background:url('wp-content/uploads/soul/motiv-krugovi.webp') center/contain no-repeat}
-  /* Tijelo / San / Napetost / Tempo — svaki ulazi zdesna, jedan po jedan. */
-  .nn .fy-grid .fy-item{opacity:0}
-  .nn .fy-grid.is-in .fy-item{animation:nn-slide-right 2.24s cubic-bezier(.19,1,.22,1) both;
-    animation-delay:calc(var(--fi) * .34s)}
-  @keyframes nn-slide-right{from{opacity:0;transform:translateX(3.5rem)}to{opacity:1;transform:none}}
-  @media(prefers-reduced-motion:reduce){
-    .nn .fy-grid .fy-item,.nn .fy-grid.is-in .fy-item{opacity:1;animation:none}}
-  /* "prepoznaješ se?" — isti font kao naslović "O meni". */
-  .nn .foryou .eyebrow{display:block;margin-bottom:1.5rem}
-  .nn .foryou h2{font-size:clamp(1.9rem,3vw,2.7rem);margin-bottom:3.4rem}
-  .nn .fy-grid{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3rem 2.4rem}
-  .nn .fy-item .lbl{font-family:var(--caps);font-size:1rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.75rem}
-  .nn .fy-item p{color:var(--ink-soft);font-size:1.36rem;line-height:1.6;max-width:20ch;margin:0}
-  .nn .fy-item{position:relative;padding-top:.5rem}
-  @media(max-width:860px){
-    /* Na mobitelu vektor stoji izblijedjen iza teksta, raspored ostaje isti. */
-    .nn .fy-wrap{position:relative;grid-template-columns:1fr;column-gap:0;text-align:center;justify-items:center}
-    /* Vektor lezi tocno preko mreze, po sredini izmedju gornjeg i donjeg reda. */
-    .nn .fy-vek{grid-column:1;grid-row:2;justify-self:center;align-self:center;
-      width:min(250px,62vw);opacity:.15;z-index:0}
-    .nn .fy-head,.nn .fy-grid{position:relative;z-index:1;width:100%;grid-column:1}
-    .nn .fy-head{grid-row:1}
-    .nn .fy-grid{grid-row:2}
-    .nn .fy-grid{max-width:440px;gap:3.8rem 1.2rem}
-    .nn .fy-item p{font-size:1.02rem;max-width:15ch;margin:0 auto}
-    .nn .fy-item .lbl{font-size:.76rem;letter-spacing:.2em}
-    .nn .stmt-sec{padding:9.5rem 1.6rem 8rem}
-    .nn .foryou{padding:3rem 1.6rem 7.5rem}
-    .nn .figura{width:120px;opacity:.85}
-    .nn .figura-wrap::before{width:clamp(210px,62vw,300px)}}
-
-  /* 4 · MOJA PRIČA — tamno, slika uz lijevi rub s parallaxom */
-  .nn .story{background:var(--dark2);position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,42fr) minmax(0,58fr);align-items:stretch}
-  .nn .story-photo{position:relative;overflow:hidden;min-height:min(90vh,880px);z-index:1}
-  .nn .story-photo img{position:absolute;top:-22%;left:0;width:100%;height:144%;object-fit:cover;object-position:center 28%;will-change:transform;transform:translate3d(0,var(--par,0),0)}
-  .nn .story-text{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;padding:clamp(4.5rem,7vw,7.5rem) clamp(2rem,5.5vw,5.5rem)}
-  .nn .story-text .eyebrow{display:block;margin-bottom:.9rem;color:var(--gold-lite)}
-  /* "O meni" blok — svaki redak spušta se odozgo, jedan za drugim. */
-  .nn .story-text > *{opacity:0}
-  .nn .story-text.is-in > *{animation:nn-slide-down 1.73s cubic-bezier(.19,1,.22,1) both;
-    animation-delay:calc(var(--si) * .26s)}
-  @keyframes nn-slide-down{from{opacity:0;transform:translateY(-2.2rem)}to{opacity:1;transform:none}}
-  @media(prefers-reduced-motion:reduce){
-    .nn .story-text > *,.nn .story-text.is-in > *{opacity:1;animation:none}}
-  .nn .story-sub{font-family:var(--script);font-size:clamp(1.15rem,1.7vw,1.5rem);line-height:1.4;margin-bottom:1.7rem;text-align:left;color:var(--terra-bright)}
-  .nn .story h2{font-size:clamp(2rem,3.3vw,3.15rem);line-height:1.14;margin-bottom:1.5rem;max-width:22ch;color:var(--lite)}
-  .nn .story p{color:var(--lite-muted);text-align:justify;margin-bottom:1.2rem;max-width:64ch}
-  .nn .btn-wide{display:inline-block;align-self:flex-start;margin-top:2rem;background:transparent;font-family:var(--caps);font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:#E0C79F;border:none;border-bottom:1px solid rgba(214,168,106,.5);border-radius:0;padding:.5rem .25rem;transition:color .3s ease,border-color .3s ease}
-  .nn .btn-wide::after{content:"\203A";display:inline-block;margin-left:8px;font-family:Georgia,serif;transition:margin-left .3s ease}
-  .nn .btn-wide:hover{color:#F4E8D6;border-bottom-color:#E0B575}
-  .nn .btn-wide:hover::after{margin-left:14px}
-  @media(max-width:960px){.nn .story{grid-template-columns:1fr}
-    .nn .story-photo{min-height:66vh}
-    .nn .story-text{padding:3.5rem 2rem 4.5rem}}
-
-  /* 5 · RITUALI — svijetlo */
-  .nn .rituals{background:var(--cream);padding:7rem 2rem}
-  .nn .rituals .head{max-width:1180px;margin:0 auto 3.2rem;display:flex;align-items:end;justify-content:space-between;gap:2rem;flex-wrap:wrap}
-  .nn .rituals .meta-line{font-family:var(--caps);font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:.9rem}
-  .nn .rituals h2{font-size:clamp(2rem,3.4vw,3rem)}
-  /* "Svi rituali" dobiva izgled linka "Cijela priča", ali ostaje u svojoj boji. */
-  .nn .rituals .btn-line.dark{background:transparent;border:none;border-radius:0;
-    border-bottom:1px solid rgba(31,15,10,.45);padding:.5rem .25rem;
-    font-size:.75rem;letter-spacing:.22em;color:var(--ink);
-    transition:color .3s ease,border-color .3s ease}
-  .nn .rituals .btn-line.dark::after{content:"\203A";display:inline-block;margin-left:8px;
-    font-family:Georgia,serif;transition:margin-left .3s ease}
-  .nn .rituals .btn-line.dark:hover,
-  .nn .rituals .btn-line.dark:focus-visible{background:transparent;color:var(--terra);border-bottom-color:var(--terra)}
-  .nn .rituals .btn-line.dark:hover::after{margin-left:14px}
-  .nn .rit-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.6rem;align-items:start}
-  .nn .rit-card{background:var(--cream2)}
-  /* Naziv rituala prelazi u terakotu na prelazak misem, tipkovnicu i klik. */
-  .nn .rit-card .nm{transition:color .3s ease}
-  .nn .rit-card:hover .nm,
-  .nn .rit-card:focus-visible .nm,
-  .nn .rit-card:active .nm{color:var(--terra)}
-  .nn .rit-card img{width:100%;aspect-ratio:15/17;object-fit:cover}
-  .nn .rit-card .body{padding:1.3rem 1.35rem 1.6rem}
-  .nn .rit-card .nm{font-family:var(--serif);font-weight:700;font-size:clamp(.85rem,calc(2.3vw - 8px),1.27rem);line-height:1.25;white-space:nowrap;color:var(--ink);margin-bottom:.45rem}
-  .nn .rit-card .ds{font-family:var(--bodyf);font-size:.95rem;line-height:1.5;color:var(--ink-soft);margin:.15rem 0 .55rem;max-width:26ch}
-  .nn .rit-card .pr{font-family:var(--caps);font-size:clamp(.7rem,.8vw,.88rem);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;color:var(--ink-soft)}
-  .nn .rit-card .go{display:inline-block;margin-top:1rem;font-family:var(--caps);font-size:clamp(.76rem,.88vw,.9rem);letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--terra);border-bottom:1px solid rgba(196,85,31,.75);padding-bottom:.24rem}
-  @media(max-width:960px){.nn .rit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .nn .rit-card .nm{font-size:clamp(.95rem,calc(4.35vw - 7.5px),1.7rem)}.nn .rit-card .pr{font-size:.88rem}.nn .rit-card .go{font-size:.86rem}}
-  /* Ritual kartice se otkrivaju rastezanjem slijeva nadesno (scale-in-hor-left). */
-  .nn .rituals{overflow:hidden}
-  .nn .rit-grid .rit-card{opacity:0;will-change:transform}
-  @keyframes nn-scale-in-hor-left{
-    0%{transform:scaleX(0);transform-origin:0% 0%;opacity:1}
-    100%{transform:scaleX(1);transform-origin:0% 0%;opacity:1}}
-  @keyframes nn-scale-in-hor-right{
-    0%{transform:scaleX(0);transform-origin:100% 100%;opacity:1}
-    100%{transform:scaleX(1);transform-origin:100% 100%;opacity:1}}
-  @keyframes nn-scale-in-ver-top{
-    0%{transform:scaleY(0);transform-origin:100% 0%;opacity:1}
-    100%{transform:scaleY(1);transform-origin:100% 0%;opacity:1}}
-  /* Mobitel: svaka kartica kreće kad doskrolamo do nje, naizmjenično slijeva pa zdesna. */
-  @media(max-width:700px){
-    .nn .rit-card.is-in{animation:nn-scale-in-hor-left .77s cubic-bezier(.25,.46,.45,.94) both}
-    .nn .rit-card:nth-child(even).is-in{animation-name:nn-scale-in-hor-right}}
-  /* Desktop: otkrivaju se od vrha prema dolje, jedna za drugom. */
-  @media(min-width:701px){
-    .nn .rit-grid.is-in .rit-card{animation:nn-scale-in-ver-top .77s cubic-bezier(.25,.46,.45,.94) both;
-      animation-delay:calc(var(--ri) * .88s)}}
-  @media(prefers-reduced-motion:reduce){
-    .nn .rit-grid .rit-card,.nn .rit-card.is-in,.nn .rit-grid.is-in .rit-card{opacity:1;animation:none}}
-  @media(max-width:560px){.nn .rit-grid{grid-template-columns:1fr;max-width:340px}
-  .nn .rit-card .nm{font-size:min(6.4vw,1.55rem)}}
-
-  /* 6 · POKLON BON — zasad samo tekst na krem podlozi */
-  .nn .gift{position:relative;display:block;padding:clamp(4rem,6vw,6.5rem) 2rem calc(clamp(4rem,6vw,6.5rem) + 7rem);background:var(--cream);overflow:hidden}
-  .nn .gwrap{position:relative;max-width:1020px;margin:0 auto;padding:clamp(2rem,3vw,3rem) clamp(1rem,3vw,3rem)}
-  .nn .gcopy{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center}
-  .nn .gcopy h2{font-family:var(--script);font-weight:400;
-    font-size:clamp(2.6rem,5.4vw,4.6rem);line-height:1.15;margin-bottom:4.2rem;white-space:nowrap;
-    text-transform:none;letter-spacing:normal;color:var(--ink)}
-  .nn .v-mins{display:flex;align-items:baseline;justify-content:center;gap:clamp(1.9rem,3.6vw,3.2rem);margin:0 0 1.8rem}
-  .nn .vm{display:flex;flex-direction:row;align-items:baseline;gap:.3rem}
-  .nn .vm-n{font-family:var(--serif);font-size:clamp(1.7rem,2.5vw,2.2rem);line-height:1;color:var(--terra)}
-  .nn .vm-u{font-family:var(--caps);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
-  .nn .gcopy p{font-size:clamp(1rem,1.24vw,1.12rem);line-height:1.7;color:var(--ink-soft);max-width:34ch;margin:0 0 1.9rem}
-  .nn .v-hair{display:block;width:64px;height:1px;background:rgba(122,45,18,.22);margin:0 0 1.9rem}
-  .nn .gift-cta{position:relative;z-index:3;display:inline-block;white-space:nowrap;min-width:17.3rem;text-align:center;font-family:var(--caps);font-weight:600;
-    font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--terra);
-    -webkit-text-stroke:.45px currentColor;
-    background:transparent;border:1px solid var(--terra);border-radius:999px;
-    padding:.95rem 2.6rem;transition:background .3s ease,color .3s ease,border-color .3s ease}
-  .nn .gift-cta span{display:inline-block;margin-left:.5rem;transition:transform .3s ease}
-  .nn .gift-cta:hover,.nn .gift-cta:focus-visible,.nn .gift-cta:active{background:var(--terra);border-color:var(--terra);color:#F7ECDD;box-shadow:0 12px 32px -12px rgba(196,85,31,.55)}
-  .nn .gift-cta:hover span{transform:translateX(5px)}
-  @media(max-width:820px){
-    .nn .gift{padding:3.5rem 1rem calc(3.5rem + 7rem)}
-    .nn .gwrap{max-width:none;margin:0;padding:1.5rem .4rem}
-    .nn .gcopy h2{font-size:min(2.85rem,11.6vw);margin-bottom:4rem}
-    .nn .v-mins{gap:1.6rem;margin-bottom:2rem}
-    .nn .vm{gap:.24rem}
-    .nn .vm-n{font-size:1.7rem}
-    .nn .vm-u{font-size:.64rem}
-    .nn .gcopy p{font-size:1.08rem;max-width:28ch;margin-bottom:2rem}
-    .nn .v-hair{margin-bottom:2.4rem}
-    .nn .gift-cta{white-space:nowrap;min-width:min(17.3rem,100%)}}
-  @media(max-width:380px){
-    .nn .v-mins{gap:1.25rem}
-    .nn .vm-n{font-size:1.42rem}
-    .nn .vm-u{font-size:.58rem;letter-spacing:.12em}}
-  @media(max-width:360px){
-    .nn .gift-cta{font-size:.66rem;letter-spacing:.14em;padding:.85rem 1rem}}
-
-  /* 7 · ZA ŽENU KOJA ZNA — tamna foto s parallaxom */
-  .nn .break{position:relative;overflow:hidden;min-height:74vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem}
-  .nn .break::before{content:"";position:absolute;inset:-22% 0;height:144%;background:linear-gradient(rgba(31,15,10,.42),rgba(31,15,10,.55)),url('wp-content/uploads/soul/ne-brzo-ne-forsirano.jpeg') center 38%/cover;will-change:transform;transform:translate3d(0,var(--par,0),0)}
-  .nn .break .in{position:relative;max-width:820px}
-  .nn .break .stmt{color:var(--lite);max-width:26ch}
-  .nn .break .btn-terra{margin-top:4.2rem}
-  /* Napomena ispod gumba preuzima boju teksta oko sebe, da ostane citljiva i tiha. */
-  /* .nn reset gasi margin-top, pa ga ovdje vracamo na vrijednost iz .cta-note */
-  .nn .break .cta-note,.nn .steps .cta-note{margin-top:.75rem;margin-inline:auto;text-align:center}
-  .nn .break .cta-note{color:var(--lite)}
-  .nn .steps .cta-note{color:var(--ink-soft)}
-
-  /* 8 · ISKUSTVA — svijetlo */
-  .nn .quotes{background:var(--cream);padding:7rem 2rem;text-align:center}
-  /* "iskustva" — isti font kao naslović "O meni". */
-  .nn .quotes .eyebrow{display:block;margin-bottom:.9rem}
-  .nn .quotes h2{font-size:clamp(1.9rem,3vw,2.7rem);margin-bottom:1.6rem;color:var(--ink)}
-  .nn .q-mark{width:clamp(108px,11vw,146px);height:auto;margin:0 auto 3rem;opacity:.5}
-  .nn .q-grid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2.6rem}
-  .nn .q-card blockquote{font-family:'Alegreya',Georgia,serif;font-style:italic;font-size:1.22rem;line-height:1.55;color:var(--ink);margin-bottom:1.1rem}
-  .nn .q-card figcaption{font-family:var(--caps);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
-  @media(max-width:900px){.nn .q-grid{grid-template-columns:1fr;max-width:460px}}
-  /* Iskustva se ispisuju jedno po jedno, kao na pisaćem stroju. */
-  .nn .q-grid.is-typed{display:none}
-  .nn .q-type{max-width:760px;margin:0 auto;min-height:var(--qh,8em);
-    display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
-  .nn .q-type blockquote{font-family:'Alegreya',Georgia,serif;font-style:italic;
-    font-size:clamp(1.25rem,2vw,1.68rem);line-height:1.55;color:var(--ink);margin:0 0 1.2rem}
-  .nn .q-caret{display:inline-block;width:1px;height:1.05em;margin-left:.12em;
-    background:var(--terra);vertical-align:-.15em;animation:nn-caret 1.05s steps(1) infinite}
-  @keyframes nn-caret{0%,49%{opacity:1}50%,100%{opacity:0}}
-  .nn .q-type figcaption{font-family:var(--caps);font-size:.7rem;letter-spacing:.3em;
-    text-transform:uppercase;color:var(--muted);opacity:0;transition:opacity .7s ease}
-  .nn .q-type figcaption.is-on{opacity:1}
-
-  /* 8b · KORACI — lukovi na dubljem krem tonu */
-  .nn .steps{padding:8rem 2rem 8.5rem;text-align:center;background:var(--cream)}
-  .nn .steps .eyebrow{display:block;color:var(--terra);margin-bottom:.9rem}
-  .nn .steps h2{font-size:clamp(2rem,3.4vw,3rem);color:var(--ink);margin-bottom:14rem}
-  .nn .st-grid{position:relative;max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(2.6rem,5vw,5rem)}
-    background:linear-gradient(90deg,transparent,rgba(196,85,31,.35) 12%,rgba(196,85,31,.35) 88%,transparent)}
-  /* Cijeli korak (vektor, natpis i opis zajedno) spusti se odozgo, jedan za drugim. */
-  .nn .st{position:relative;opacity:0}
-  .nn .st-grid.is-in .st{animation:nn-fade-in-top .9s cubic-bezier(.39,.575,.565,1) both;
-    animation-delay:calc(var(--col, 0) * .55s)}
-  @keyframes nn-fade-in-top{
-    0%{transform:translateY(-50px);opacity:0}
-    100%{transform:translateY(0);opacity:1}}
-  @media(prefers-reduced-motion:reduce){
-    .nn .st,.nn .st-grid.is-in .st{opacity:1;animation:none}}
-  .nn .st-mark{position:relative;height:clamp(120px,13vw,178px);width:100%;margin:0 auto 1.7rem;
-    background:center/contain no-repeat}
-  .nn .st:nth-child(1) .st-mark{background-image:url('wp-content/uploads/soul/motiv-typing-deblji.webp');background-size:auto 88%}
-  .nn .st:nth-child(2) .st-mark{background-image:url('wp-content/uploads/soul/motiv-suggest-deblji.webp');background-size:auto 120%}
-  .nn .st:nth-child(3) .st-mark{background-image:url('wp-content/uploads/soul/motiv-arrival-kratka.webp');background-size:auto 72%}
-  .nn .st:nth-child(4) .st-mark{background-image:url('wp-content/uploads/soul/motiv-infinity-deblji.webp')}
-  .nn .st h3{font-family:var(--script);font-weight:400;-webkit-text-stroke:.55px currentColor;font-size:clamp(1.2rem,1.72vw,1.55rem);line-height:1.35;color:var(--ink);margin-bottom:.6rem}
-  .nn .st p{font-family:var(--bodyf);font-size:1.04rem;line-height:1.6;color:var(--ink-soft);max-width:23ch;margin:0 auto}
-  .nn .steps .btn-terra{margin-top:4rem;color:var(--terra);border-color:var(--terra);-webkit-text-stroke:.45px currentColor}
-  .nn .steps .btn-terra:hover,.nn .steps .btn-terra:focus-visible,.nn .steps .btn-terra:active{background:var(--terra);border-color:var(--terra);color:#FFF3E5}
-  @media(max-width:900px){
-    .nn .st-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:3.4rem 2.4rem;max-width:540px}
-    .nn .st-mark{height:clamp(104px,26vw,150px)}
-    .nn .st h3{font-size:clamp(1rem,5.1vw,1.55rem)}
-}
-  @media(max-width:480px){
-    .nn .steps{padding:5.5rem 1.6rem 6rem}
-    .nn .steps h2{margin-bottom:6rem}
-    .nn .st p{font-size:.98rem;max-width:18ch}}
-  /* 9 · TRENUCI U STUDIJU — tamno, galerija koja se vrti */
-  .nn .atmo{background:var(--dark);padding:6.5rem 0 7.5rem;text-align:center}
-  .nn .atmo .eyebrow{display:block;margin-bottom:.9rem;color:var(--gold-lite)}
-  .nn .atmo h2{font-size:clamp(1.9rem,3vw,2.7rem);margin-bottom:3rem;padding:0 2rem;color:var(--lite)}
-  .nn .atmo-wrap{overflow:hidden;position:relative;padding:1rem 0;mask-image:linear-gradient(to right,transparent 0%,#000 4%,#000 96%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 4%,#000 96%,transparent 100%)}
-  .nn .atmo-track{display:flex;width:max-content;animation:nn-atmo-scroll 60s linear infinite}
-  .nn .atmo-wrap:hover .atmo-track{animation-play-state:paused}
-  .nn .atmo-slide{flex:0 0 auto;width:clamp(260px,26vw,400px);aspect-ratio:4/5;overflow:hidden;border-radius:2px;margin-right:1.2rem}
-  .nn .atmo-slide img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
-  .nn .atmo-slide:hover img{transform:scale(1.05)}
-  @keyframes nn-atmo-scroll{from{transform:translateX(0)}to{transform:translateX(-25%)}}
-  @media(max-width:700px){.nn .atmo-slide{width:64vw}.nn .atmo-track{animation-duration:45s}}
-  @media(prefers-reduced-motion:reduce){.nn .atmo-track{animation:none}}
-  </style>
 </head>
-<body class="home">
+<body>
 
   <header class="site-header">
     <div class="lang-switch"><a href="en/" aria-label="Switch to English">EN</a></div>
@@ -363,13 +66,14 @@
 
     <!-- HERO -->
     <section class="video-hero">
-      <img class="hero-video" src="wp-content/uploads/soul/hero-2.jpg" alt="Soul Space Split, studio za masažu u Splitu">
+      <img class="hero-video" src="wp-content/uploads/soul/hero-2.jpg" alt="Soul Space Split — studio za masažu u Splitu">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <div class="container">
           <div class="hero-text" data-aos="fade-up">
             <p class="hero-eyebrow">Studio za masažu · Split</p>
-            <h1 aria-label="Masaža koja sluša tvoje tijelo"><span aria-hidden="true"><span class="hw"><span class="ch" style="--i:0" data-c="M">M</span><span class="ch" style="--i:1" data-c="a">a</span><span class="ch" style="--i:2" data-c="s">s</span><span class="ch" style="--i:3" data-c="a">a</span><span class="ch" style="--i:4" data-c="ž">ž</span><span class="ch" style="--i:5" data-c="a">a</span></span> <span class="hw"><span class="ch" style="--i:7" data-c="k">k</span><span class="ch" style="--i:8" data-c="o">o</span><span class="ch" style="--i:9" data-c="j">j</span><span class="ch" style="--i:10" data-c="a">a</span></span> <span class="hw"><span class="ch" style="--i:12" data-c="s">s</span><span class="ch" style="--i:13" data-c="l">l</span><span class="ch" style="--i:14" data-c="u">u</span><span class="ch" style="--i:15" data-c="š">š</span><span class="ch" style="--i:16" data-c="a">a</span></span><br><span class="hw"><span class="ch" style="--i:18" data-c="t">t</span><span class="ch" style="--i:19" data-c="v">v</span><span class="ch" style="--i:20" data-c="o">o</span><span class="ch" style="--i:21" data-c="j">j</span><span class="ch" style="--i:22" data-c="e">e</span></span> <span class="hw"><span class="ch" style="--i:24" data-c="t">t</span><span class="ch" style="--i:25" data-c="i">i</span><span class="ch" style="--i:26" data-c="j">j</span><span class="ch" style="--i:27" data-c="e">e</span><span class="ch" style="--i:28" data-c="l">l</span><span class="ch" style="--i:29" data-c="o">o</span></span></span></h1>
+            <h1>Masaža koja sluša<br>tvoje tijelo</h1>
+            <p class="script">vrati se sebi</p>
             <p class="hero-sub">Za tijelo koje je zaboravilo kako se opušta. Rad na živčanom sustavu, u tvom ritmu.</p>
             <div class="hero-buttons">
               <a href="kontakt/" class="btn btn-primary" data-reserve>Rezerviraj termin</a>
@@ -380,213 +84,247 @@
       </div>
     </section>
 
-
-    <div class="nn">
-
-    <!-- TIJELO PAMTI SVE -->
-    <section class="stmt-sec">
-      <div class="figura-wrap" aria-hidden="true">
-        <img class="figura" src="wp-content/uploads/soul/figura-profil.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      </div>
-      <p class="stmt">Tijelo pamti sve <em class="accent">i zna kako se opustiti</em>, samo mu treba prilika.</p>
-    </section>
-
     <!-- OVO JE ZA TEBE AKO -->
-    <section class="foryou">
-      <div class="fy-wrap">
-        <div class="fy-head">
-          <span class="eyebrow">prepoznaješ se?</span>
-          <h2>ovo je za tebe ako</h2>
+    <section class="section for-you">
+      <div class="container">
+        <div class="section-head" data-aos="fade-up">
+          <p class="eyebrow">Prepoznaješ se?</p>
+          <h2>Ovo je za tebe ako:</h2>
         </div>
-      <div class="fy-grid">
-      <div class="fy-item">
-        <span class="lbl">Tijelo</span>
-        <p>ti je vrat kamen od ekrana i telefona</p>
-      </div>
-      <div class="fy-item">
-        <span class="lbl">San</span>
-        <p>ležiš budna u tri ujutro iako si mrtva umorna</p>
-      </div>
-      <div class="fy-item">
-        <span class="lbl">Napetost</span>
-        <p>iz masaža izlaziš smirena, pa se za tjedan sve vrati</p>
-      </div>
-      <div class="fy-item">
-        <span class="lbl">Tempo</span>
-        <p>se ne sjećaš kad si zadnji put stvarno stala</p>
-      </div>
-      </div>
-        <div class="fy-vek" aria-hidden="true"></div>
+        <div class="for-you-grid">
+          <div class="for-you-item" data-aos="fade-up" data-aos-delay="0">
+            <div class="for-you-num">01</div>
+            <div class="for-you-text">Vrat ti je kamen od ekrana i telefona.</div>
+          </div>
+          <div class="for-you-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="for-you-num">02</div>
+            <div class="for-you-text">Ležiš budna u tri ujutro iako si mrtva umorna.</div>
+          </div>
+          <div class="for-you-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="for-you-num">03</div>
+            <div class="for-you-text">Iz masaža izlaziš smirena, pa se za tjedan sve vrati.</div>
+          </div>
+          <div class="for-you-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="for-you-num">04</div>
+            <div class="for-you-text">Ne sjećaš se kad si zadnji put stvarno stala.</div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- MOJA PRIČA -->
-    <section class="story">
-      <div class="story-photo">
-        <img src="wp-content/uploads/soul/portret-2.JPG" alt="Diana Lendić u studiju" loading="lazy" decoding="async">
-      </div>
-      <div class="story-text">
-        <p class="eyebrow">O meni</p>
-        <h2>Diana Lendić</h2>
-        <p class="story-sub">Maserka s temeljem u tjelesno orijentiranoj psihoterapiji.</p>
-        <p>Godinama sam mislila da poznajem svoje tijelo jer sam kroz njega plesala. Tek kasnije sam shvatila da postoji drugi odnos s tijelom, onaj u kojem ono nije sredstvo, nego mjesto u kojem živimo. Danas radim sa ženama upravo iz tog mjesta.</p>
-        <a class="btn-wide" href="o-meni/">Cijela priča</a>
+    <!-- PRISTUP -->
+    <section class="section-parallax section-pristup">
+      <div class="container">
+        <div class="section-head" data-aos="fade-up">
+          <p class="eyebrow">Pristup</p>
+          <h2>Ne brzo. Ne forsirano</h2>
+        </div>
+        <div class="principles-stairs">
+          <div class="principle-stairs" data-aos="fade-up" data-aos-delay="0">
+            <p class="num-word-s">Prvi princip</p>
+            <h3><em>Sustav</em> prije simptoma</h3>
+            <p>Tvrdi mišić ne popušta dok mu sustav ne kaže "možeš". Krećemo s regulacijom, ne s probijanjem boli.</p>
+          </div>
+          <div class="principle-stairs" data-aos="fade-up" data-aos-delay="150">
+            <p class="num-word-s">Drugi princip</p>
+            <h3><em>Tempo</em> nad tehnikom</h3>
+            <p>Ritam i predvidivost prenose sustavu poruku sigurnosti. Tehnika dolazi nakon toga.</p>
+          </div>
+          <div class="principle-stairs" data-aos="fade-up" data-aos-delay="300">
+            <p class="num-word-s">Treći princip</p>
+            <h3><em>Ne</em> forsiramo</h3>
+            <p>Ako tijelo nije spremno otvoriti neku zonu, ne idemo tamo. Klijentica ima zadnju riječ, uvijek.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- RITUALI -->
-    <section class="rituals">
-      <div class="head">
-        <div>
-          <p class="meta-line">prilagođeno tvom tijelu &#10022; u tvom ritmu</p>
-          <h2>odaberi svoj <em>ritual</em></h2>
+    <section class="section">
+      <div class="container">
+        <div class="section-head" data-aos="fade-up">
+          <p class="eyebrow">Rituali</p>
+          <h2>Po potrebi, ne po formuli</h2>
         </div>
-        <a class="btn-line dark" href="rituali/">Svi rituali</a>
-      </div>
-      <div class="rit-grid">
-      <a class="rit-card" href="rituali/#ground-release">
-        <img src="wp-content/uploads/soul/ground-release.jpeg" alt="Ground & Release ritual" loading="lazy" decoding="async">
-        <div class="body">
-          <div class="nm">Ground &amp; Release</div>
-          <p class="ds">Dubok ritual za napetosti koje se ne otpuštaju same.</p>
-          <div class="pr">65–120 min · od 75 €</div>
-          <span class="go">Pogledaj</span>
+        <div class="rituali-grid">
+          <a href="rituali/#ground-release" class="ritual-card" data-aos="fade-up" data-aos-delay="0">
+            <img src="wp-content/uploads/soul/ground-release.jpeg" alt="Ground & Release ritual" loading="lazy" decoding="async">
+            <div class="ritual-content">
+              <div class="ritual-duration">65 min</div>
+              <h3>Ground &amp; <em>Release</em></h3>
+              <p class="ritual-desc">Duboka masaža za napetosti koje se ne otpuštaju same.</p>
+              <div class="ritual-bottom">
+                <div class="ritual-price">75 €</div>
+                <span class="ritual-link">Pogledaj →</span>
+              </div>
+            </div>
+          </a>
+          <a href="rituali/#flow-harmony" class="ritual-card" data-aos="fade-up" data-aos-delay="150">
+            <img src="wp-content/uploads/soul/flow-harmony.jpeg" alt="Flow & Harmony ritual" loading="lazy" decoding="async">
+            <div class="ritual-content">
+              <div class="ritual-duration">65 min</div>
+              <h3>Flow &amp; <em>Harmony</em></h3>
+              <p class="ritual-desc">Polagana masaža za živčani sustav koji ne staje.</p>
+              <div class="ritual-bottom">
+                <div class="ritual-price">75 €</div>
+                <span class="ritual-link">Pogledaj →</span>
+              </div>
+            </div>
+          </a>
+          <a href="rituali/#deep-rest" class="ritual-card" data-aos="fade-up" data-aos-delay="300">
+            <img src="wp-content/uploads/soul/deep-rest.jpeg" alt="Deep Rest ritual" loading="lazy" decoding="async">
+            <div class="ritual-content">
+              <div class="ritual-duration">30 min</div>
+              <h3>Deep <em>Rest</em></h3>
+              <p class="ritual-desc">Restorativni tretman za povratak pravom snu.</p>
+              <div class="ritual-bottom">
+                <div class="ritual-price">55 €</div>
+                <span class="ritual-link">Pogledaj →</span>
+              </div>
+            </div>
+          </a>
+          <a href="rituali/#inner-glow" class="ritual-card" data-aos="fade-up" data-aos-delay="450">
+            <img src="wp-content/uploads/soul/inner-glow.jpeg" alt="Inner Glow ritual" loading="lazy" decoding="async">
+            <div class="ritual-content">
+              <div class="ritual-duration">30 min</div>
+              <h3>Inner <em>Glow</em></h3>
+              <p class="ritual-desc">Tretman lica i limfe, bez agresije.</p>
+              <div class="ritual-bottom">
+                <div class="ritual-price">55 €</div>
+                <span class="ritual-link">Pogledaj →</span>
+              </div>
+            </div>
+          </a>
         </div>
-      </a>
-      <a class="rit-card" href="rituali/#flow-harmony">
-        <img src="wp-content/uploads/soul/flow-harmony.jpeg" alt="Flow & Harmony ritual" loading="lazy" decoding="async">
-        <div class="body">
-          <div class="nm">Flow &amp; Harmony</div>
-          <p class="ds">Polagan ritual za živčani sustav koji ne staje.</p>
-          <div class="pr">65–120 min · od 75 €</div>
-          <span class="go">Pogledaj</span>
+        <div class="section-cta" data-aos="fade-up">
+          <a href="rituali/" class="btn btn-ghost">Svi rituali →</a>
         </div>
-      </a>
-      <a class="rit-card" href="rituali/#deep-rest">
-        <img src="wp-content/uploads/soul/deep-rest.jpeg" alt="Deep Rest ritual" loading="lazy" decoding="async">
-        <div class="body">
-          <div class="nm">Deep Rest</div>
-          <p class="ds">Restorativni ritual za povratak pravom snu.</p>
-          <div class="pr">30–45 min · od 55 €</div>
-          <span class="go">Pogledaj</span>
-        </div>
-      </a>
-      <a class="rit-card" href="rituali/#inner-glow">
-        <img src="wp-content/uploads/soul/inner-glow.jpeg" alt="Inner Glow ritual" loading="lazy" decoding="async">
-        <div class="body">
-          <div class="nm">Inner Glow</div>
-          <p class="ds">Ritual za lice i limfu, nježno i polako.</p>
-          <div class="pr">30–45 min · od 55 €</div>
-          <span class="go">Pogledaj</span>
-        </div>
-      </a>
       </div>
     </section>
 
-    <!-- POKLON BON -->
-    <section class="gift">
-      <div class="gwrap">
-        <div class="gcopy">
-          <h2>Poklon bon</h2>
-          <div class="v-mins">
-            <div class="vm"><span class="vm-n">60</span><span class="vm-u">min</span></div>
-            <div class="vm"><span class="vm-n">75</span><span class="vm-u">min</span></div>
-            <div class="vm"><span class="vm-n">90</span><span class="vm-u">min</span></div>
+    <!-- TIMELINE -->
+    <section class="section-parallax section-timeline">
+      <div class="container">
+        <div class="section-head" data-aos="fade-up">
+          <p class="eyebrow">Kako to izgleda</p>
+          <h2>Od poruke do stola</h2>
+        </div>
+        <div class="timeline-wrap">
+          <ol class="timeline-steps">
+            <li class="timeline-step" data-aos="fade-up" data-aos-delay="0">
+              <h3>Pišeš mi</h3>
+              <p>Mail ili poruka s par rečenica o tome kako se osjećaš.</p>
+            </li>
+            <li class="timeline-step" data-aos="fade-up" data-aos-delay="150">
+              <h3>Predlažem</h3>
+              <p>Ritual koji bi ti najbolje sjeo i 2-3 slobodna termina.</p>
+            </li>
+            <li class="timeline-step" data-aos="fade-up" data-aos-delay="300">
+              <h3>Dolaziš</h3>
+              <p>Studio na Sinjskoj 5. Jedan sat za tebe, ništa ne moraš.</p>
+            </li>
+            <li class="timeline-step" data-aos="fade-up" data-aos-delay="450">
+              <h3>Nastavljaš</h3>
+              <p>Vraćaš se prema potrebi. Većina dolazi jedanput mjesečno.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT PREVIEW -->
+    <section class="about-preview" data-aos="fade-up">
+      <div class="about-image">
+        <img src="wp-content/uploads/soul/portret-2.JPG" alt="Portret Diane Lendić u studiju" loading="lazy" decoding="async">
+      </div>
+      <div class="about-text">
+        <p class="eyebrow">O meni</p>
+        <h2>Diana Lendić</h2>
+        <p class="script">Maserka, s temeljem u tjelesno orijentiranoj psihoterapiji.</p>
+        <p>Godinama sam mislila da poznajem svoje tijelo jer sam kroz njega plesala. Tek kasnije sam shvatila da postoji drugi odnos s tijelom, onaj u kojem ono nije sredstvo, nego mjesto u kojem živimo. Danas radim sa ženama upravo iz tog mjesta.</p>
+        <a href="o-meni/" class="btn btn-ghost">Cijela priča →</a>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section-parallax section-testimonials">
+      <div class="container">
+        <div class="section-head" data-aos="fade-up">
+          <p class="eyebrow">Iskustva</p>
+          <h2>Što kažu klijenti</h2>
+        </div>
+        <div class="testimonial-slider" id="testimonialSlider" data-aos="fade-up">
+          <figure class="testimonial-slide active">
+            <blockquote>"Rame me nije boljelo prvi put u tri godine. Nije bilo 'wow' trenutka tijekom tretmana, ali tijelo je samo znalo."</blockquote>
+            <figcaption>Ana, 38</figcaption>
+          </figure>
+          <figure class="testimonial-slide">
+            <blockquote>"Prvi put u godinama mi je netko stvarno bio prisutan u sobi sa mnom. To je bilo važnije od tehnike."</blockquote>
+            <figcaption>Marina, 41</figcaption>
+          </figure>
+          <figure class="testimonial-slide">
+            <blockquote>"Tijelo kao da nemam, toliko je opušteno, osjećaj kao da plutam na suho. Svaka preporuka."</blockquote>
+            <figcaption>Frankolinna</figcaption>
+          </figure>
+
+          <div class="testimonial-nav">
+            <button class="arrow-btn" onclick="prevTestimonial()" aria-label="Prošli">←</button>
+            <div class="testimonial-dots">
+              <button class="testimonial-dot active" onclick="goToTestimonial(0)" aria-label="1"></button>
+              <button class="testimonial-dot" onclick="goToTestimonial(1)" aria-label="2"></button>
+              <button class="testimonial-dot" onclick="goToTestimonial(2)" aria-label="3"></button>
+            </div>
+            <button class="arrow-btn" onclick="nextTestimonial()" aria-label="Sljedeći">→</button>
           </div>
-          <p>Pokloni nekome ono što se ne može kupiti, vrijeme samo za sebe.</p>
-          <span class="v-hair" aria-hidden="true"></span>
-          <a class="gift-cta" href="poklon-bon/">Pogledaj bonove</a>
         </div>
       </div>
     </section>
 
-    <!-- ZA ŽENU KOJA ZNA -->
-    <section class="break">
-      <div class="in">
-        <p class="stmt">Za ženu koja zna da može bolje <em>i dovoljno je hrabra da si to da.</em></p>
-        <a class="btn-terra" href="kontakt/" data-reserve>Rezerviraj termin</a>
+    <!-- CTA BANNER -->
+    <section class="cta-banner" data-aos="fade-up">
+      <div class="container">
+        <p class="eyebrow">javi se</p>
+        <h2>Tijelo je spremno</h2>
+        <p class="lead">Treba mu samo prilika.</p>
+        <p class="cta-sub">Napiši mi par rečenica kako se osjećaš, javljam se u roku od 24 sata i dogovaramo termin.</p>
+        <a href="kontakt/" class="btn btn-primary" data-reserve>Rezerviraj termin</a>
         <p class="cta-note">Radim sama i držim mali broj termina tjedno.</p>
       </div>
     </section>
 
-    <!-- ISKUSTVA -->
-    <section class="quotes">
-      <span class="eyebrow">iskustva</span>
-      <h2>što kažu klijentice</h2>
-      <img class="q-mark" src="wp-content/uploads/soul/motiv-duga.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <div class="q-grid">
-        <figure class="q-card">
-          <blockquote>"Rame me nije boljelo prvi put u tri godine. Nije bilo 'wow' trenutka tijekom rituala, ali tijelo je samo znalo."</blockquote>
-          <figcaption>Ana, 38</figcaption>
-        </figure>
-        <figure class="q-card">
-          <blockquote>"Prvi put u godinama mi je netko stvarno bio prisutan u sobi sa mnom. To je bilo važnije od tehnike."</blockquote>
-          <figcaption>Marina, 41</figcaption>
-        </figure>
-        <figure class="q-card">
-          <blockquote>"Tijelo kao da nemam, toliko je opušteno, osjećaj kao da plutam na suho. Svaka preporuka."</blockquote>
-          <figcaption>Frankolinna</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- KORACI -->
-    <section class="steps">
-      <span class="eyebrow">Kako to izgleda</span>
-      <h2>Od poruke do stola</h2>
-      <div class="st-grid">
-        <div class="st">
-          <div class="st-mark" aria-hidden="true"></div>
-          <h3>Pišeš mi</h3>
-          <p>Mail ili poruka s par rečenica o tome kako se osjećaš.</p>
-        </div>
-        <div class="st">
-          <div class="st-mark" aria-hidden="true"></div>
-          <h3>Predlažem</h3>
-          <p>Ritual koji bi ti najbolje sjeo i 2-3 slobodna termina.</p>
-        </div>
-        <div class="st">
-          <div class="st-mark" aria-hidden="true"></div>
-          <h3>Dolaziš</h3>
-          <p>Studio na Sinjskoj 5. Jedan sat za tebe, ništa ne moraš.</p>
-        </div>
-        <div class="st">
-          <div class="st-mark" aria-hidden="true"></div>
-          <h3>Nastavljaš</h3>
-          <p>Vraćaš se prema potrebi. Većina dolazi jedanput mjesečno.</p>
+    <!-- ATMOSFERA — infinity loop bez skoka -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head" data-aos="fade-up">
+          <p class="eyebrow">trenuci u studiju</p>
+          <p class="lead">Mali detalji koji čine tretman onim što jest.</p>
         </div>
       </div>
-      <a class="btn-terra" href="kontakt/" data-reserve>Rezerviraj termin</a>
-      <p class="cta-note">Radim sama i držim mali broj termina tjedno. Ako ti odgovara određeni dan, javi se koji dan ranije.</p>
-    </section>
-
-    <!-- TRENUCI U STUDIJU -->
-    <section class="atmo">
-      <span class="eyebrow">trenuci u studiju</span>
-      <h2>mali detalji koji čine <em>ritual</em></h2>
-      <div class="atmo-wrap">
-        <div class="atmo-track">
-        <div class="atmo-slide"><img src="wp-content/uploads/soul/atmosfera-2.jpg" alt="Diana radi u studiju" loading="lazy" decoding="async"></div>
-        <div class="atmo-slide"><img src="wp-content/uploads/soul/tretman-3.jpg" alt="Ruke tijekom masaže uz biljku" loading="lazy" decoding="async"></div>
-        <div class="atmo-slide"><img src="wp-content/uploads/soul/atmosfera-5.jpg" alt="Prozor sa zavjesama u studiju" loading="lazy" decoding="async"></div>
-        <div class="atmo-slide"><img src="wp-content/uploads/soul/atmosfera-4.JPG" alt="Ruke u prirodnom svjetlu" loading="lazy" decoding="async"></div>
-        <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-2.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/tretman-3.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-5.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-4.JPG" alt="" loading="lazy" decoding="async"></div>
-        <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-2.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/tretman-3.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-5.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-4.JPG" alt="" loading="lazy" decoding="async"></div>
-        <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-2.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/tretman-3.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-5.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="atmo-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-4.JPG" alt="" loading="lazy" decoding="async"></div>
+      <div class="atmosfera-slider-wrap" data-aos="fade-up">
+        <div class="atmosfera-slider-track">
+          <!-- Set 1 (original) -->
+          <div class="atmosfera-slide"><img src="wp-content/uploads/soul/atmosfera-2.jpg" alt="Diana radi u studiju" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide"><img src="wp-content/uploads/soul/tretman-3.jpg" alt="Ruke tijekom masaže uz biljku" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide"><img src="wp-content/uploads/soul/atmosfera-5.jpg" alt="Prozor sa zavjesama u studiju" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide"><img src="wp-content/uploads/soul/atmosfera-4.JPG" alt="Ruke u prirodnom svjetlu" loading="lazy" decoding="async"></div>
+          <!-- Set 2 (duplikat za infinity loop) -->
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-2.jpg" alt="" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/tretman-3.jpg" alt="" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-5.jpg" alt="" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-4.JPG" alt="" loading="lazy" decoding="async"></div>
+          <!-- Set 3 (duplikat za infinity loop) -->
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-2.jpg" alt="" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/tretman-3.jpg" alt="" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-5.jpg" alt="" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-4.JPG" alt="" loading="lazy" decoding="async"></div>
+          <!-- Set 4 (duplikat za infinity loop) -->
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-2.jpg" alt="" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/tretman-3.jpg" alt="" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-5.jpg" alt="" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="wp-content/uploads/soul/atmosfera-4.JPG" alt="" loading="lazy" decoding="async"></div>
         </div>
       </div>
     </section>
-
-    </div>
 
   </main>
 
@@ -656,336 +394,8 @@
       currentTestimonial = i;
       updateTestimonial();
     }
-
-    // Pristup — coin-flip slider krugova
-    (function () {
-      const slider = document.getElementById('krugSlider');
-      if (!slider) return;
-      const coin = slider.querySelector('.krug-coin');
-      const slides = slider.querySelectorAll('.krug');
-      const dots = slider.querySelectorAll('.krug-dot');
-      const n = slides.length;
-      const HALF = 340; // trajanje pola okreta (ms)
-      let i = 0, busy = false;
-
-      function show(k) {
-        slides.forEach((s, x) => s.classList.toggle('active', x === k));
-        dots.forEach((d, x) => d.classList.toggle('active', x === k));
-      }
-      function flip(dir, target) {
-        if (busy || target === i) return;
-        busy = true;
-        const half = dir >= 0 ? 90 : -90;
-        coin.style.transition = 'transform ' + HALF + 'ms ease-in';
-        coin.style.transform = 'rotateY(' + half + 'deg)';
-        setTimeout(function () {
-          i = target;
-          show(i);
-          coin.style.transition = 'none';
-          coin.style.transform = 'rotateY(' + (-half) + 'deg)';
-          void coin.offsetWidth; // reflow
-          coin.style.transition = 'transform ' + HALF + 'ms ease-out';
-          coin.style.transform = 'rotateY(0deg)';
-          setTimeout(function () { busy = false; }, HALF + 20);
-        }, HALF);
-      }
-      slider.querySelectorAll('[data-krug-dir]').forEach(function (b) {
-        b.addEventListener('click', function () {
-          const dir = parseInt(b.getAttribute('data-krug-dir'), 10);
-          flip(dir, (i + dir + n) % n);
-        });
-      });
-      dots.forEach(function (d) {
-        d.addEventListener('click', function () {
-          const t = parseInt(d.getAttribute('data-krug-to'), 10);
-          flip(t > i ? 1 : -1, t);
-        });
-      });
-      // povlačenje prstom / mišem
-      let sx = null;
-      const stage = slider.querySelector('.krug-stage');
-      stage.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
-      stage.addEventListener('touchend', function (e) {
-        if (sx === null) return;
-        const dx = e.changedTouches[0].clientX - sx;
-        if (Math.abs(dx) > 45) { const dir = dx < 0 ? 1 : -1; flip(dir, (i + dir + n) % n); }
-        sx = null;
-      }, { passive: true });
-    })();
-  </script>
-  <script>
-    /* Zajednički okidač: element dobiva klasu "is-in" tek kad stvarno uđe u kadar,
-       a ne dok tek proviruje s dna ekrana. */
-    function revealOnScroll(el) {
-      if (!('IntersectionObserver' in window)) { el.classList.add('is-in'); return; }
-      // Okida kad vrh elementa dođe na ~72% visine ekrana. Radi i za vrlo visoke
-      // elemente (npr. mreža rituala na mobitelu), gdje postotak vidljivosti
-      // nikad ne naraste dovoljno.
-      var io = new IntersectionObserver(function (es) {
-        es.forEach(function (e) {
-          if (!e.isIntersecting) return;
-          el.classList.add('is-in');
-          io.disconnect();
-        });
-      }, { rootMargin: '0px 0px -28% 0px' });
-      io.observe(el);
-    }
-  </script>
-  <script>
-    /* Tekst se razlomi na riječi pa svaka izranja za sebe. */
-    function splitWords(root) {
-      var i = 0, last = null, afterSpace = true;
-      (function wrap(node) {
-        Array.prototype.slice.call(node.childNodes).forEach(function (n) {
-          if (n.nodeType === 3) {
-            var frag = document.createDocumentFragment();
-            n.nodeValue.split(/(\s+)/).forEach(function (part) {
-              if (!part) return;
-              if (/^\s+$/.test(part)) {
-                frag.appendChild(document.createTextNode(part));
-                afterSpace = true;
-                return;
-              }
-              // Nije bilo razmaka ispred (npr. zarez odmah iza </em>) — zalijepi
-              // na prethodnu riječ da se ne može prelomiti u novi red.
-              if (!afterSpace && last) { last.textContent += part; return; }
-              var s = document.createElement('span');
-              s.className = 'fw';
-              s.style.setProperty('--wi', i++);
-              s.textContent = part;
-              frag.appendChild(s);
-              last = s;
-              afterSpace = false;
-            });
-            node.replaceChild(frag, n);
-          } else if (n.nodeType === 1) {
-            wrap(n);
-          }
-        });
-      })(root);
-    }
-
-    /* Isto, ali slovo po slovo — riječi ostaju cijele, prelama se samo na razmaku.
-       cls = klasa slova, prop = CSS varijabla, val(i) = njena vrijednost. */
-    function splitChars(root, cls, prop, val) {
-      cls = cls || 'fc'; prop = prop || '--ci'; val = val || function (n) { return n; };
-      var i = 0, lastWord = null, afterSpace = true;
-      (function wrap(node) {
-        Array.prototype.slice.call(node.childNodes).forEach(function (n) {
-          if (n.nodeType === 3) {
-            var frag = document.createDocumentFragment();
-            n.nodeValue.split(/(\s+)/).forEach(function (part) {
-              if (!part) return;
-              if (/^\s+$/.test(part)) {
-                frag.appendChild(document.createTextNode(part));
-                afterSpace = true;
-                return;
-              }
-              var word = (!afterSpace && lastWord) ? lastWord : document.createElement('span');
-              if (word !== lastWord) { word.className = 'fw'; frag.appendChild(word); }
-              part.split('').forEach(function (ch) {
-                var s = document.createElement('span');
-                s.className = cls;
-                s.style.setProperty(prop, val(i++));
-                s.textContent = ch;
-                word.appendChild(s);
-              });
-              lastWord = word;
-              afterSpace = false;
-            });
-            node.replaceChild(frag, n);
-          } else if (n.nodeType === 1) {
-            wrap(n);
-          }
-        });
-      })(root);
-    }
-
-    /* Koraci — svaki se korak u cijelosti spusti odozgo, jedan za drugim. */
-    (function () {
-      var grid = document.querySelector('.nn .st-grid');
-      if (!grid) return;
-      Array.prototype.forEach.call(grid.querySelectorAll('.st'), function (st, n) {
-        st.style.setProperty('--col', n);
-      });
-      revealOnScroll(grid);
-    })();
-
-    /* Rečenica "Tijelo pamti sve" — ispisuje se slovo po slovo. */
-    (function () {
-      var el = document.querySelector('.nn .stmt-sec .stmt');
-      if (!el) return;
-      var full = el.textContent.replace(/\s+/g, ' ').trim();
-      var inner = document.createElement('span');
-      inner.setAttribute('aria-hidden', 'true');
-      while (el.firstChild) inner.appendChild(el.firstChild);
-      el.appendChild(inner);
-      el.setAttribute('aria-label', full);
-      splitChars(inner, 'fc', '--ci', function (i) { return i; });
-      revealOnScroll(el);
-    })();
-
-    /* Kartice "ovo je za tebe ako" — ulaze zdesna, jedna za drugom. */
-    (function () {
-      var grid = document.querySelector('.nn .fy-grid');
-      if (!grid) return;
-      Array.prototype.forEach.call(grid.querySelectorAll('.fy-item'), function (it, n) {
-        it.style.setProperty('--fi', n);
-      });
-      revealOnScroll(grid);
-    })();
-
-    /* Iskustva — tekst se sam ispisuje pa briše, i tako u krug kroz sve klijentice. */
-    (function () {
-      var grid = document.querySelector('.nn .q-grid');
-      if (!grid) return;
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-      var items = Array.prototype.map.call(grid.querySelectorAll('.q-card'), function (c) {
-        return {
-          text: c.querySelector('blockquote').textContent.trim(),
-          who: c.querySelector('figcaption').textContent.trim()
-        };
-      });
-      if (items.length < 2) return;
-
-      var TYPE = 48, DEL = 26, HOLD = 3000, GAP = 500;
-
-      var fig = document.createElement('figure');
-      fig.className = 'q-type';
-      fig.setAttribute('aria-hidden', 'true');
-      var bq = document.createElement('blockquote');
-      var txt = document.createElement('span');
-      var caret = document.createElement('span');
-      caret.className = 'q-caret';
-      bq.appendChild(txt); bq.appendChild(caret);
-      var cap = document.createElement('figcaption');
-      fig.appendChild(bq); fig.appendChild(cap);
-      grid.parentNode.insertBefore(fig, grid.nextSibling);
-
-      // Rezerviraj visinu najduljeg citata da se stranica ne trza dok se tekst ispisuje.
-      function reserve() {
-        var keepT = txt.textContent, keepC = cap.textContent;
-        fig.style.setProperty('--qh', '0px');
-        var tallest = 0;
-        items.forEach(function (it) {
-          txt.textContent = it.text;
-          cap.textContent = it.who;
-          var hh = fig.getBoundingClientRect().height;
-          if (hh > tallest) tallest = hh;
-        });
-        txt.textContent = keepT;
-        cap.textContent = keepC;
-        fig.style.setProperty('--qh', Math.ceil(tallest) + 'px');
-      }
-      reserve();
-      window.addEventListener('resize', reserve);
-      // Alegreya se učitava s mreže — kad stigne, mjere se mijenjaju, pa premjeri.
-      if (document.fonts && document.fonts.ready) document.fonts.ready.then(reserve);
-
-      grid.classList.add('is-typed');
-
-      var i = 0, n = 0, del = false, timer = null, live = true;
-      function step() {
-        var cur = items[i];
-        if (!del) {
-          if (n === 0) { cap.textContent = cur.who; cap.classList.remove('is-on'); }
-          txt.textContent = cur.text.slice(0, ++n);
-          if (n >= cur.text.length) {
-            cap.classList.add('is-on');
-            del = true;
-            return schedule(HOLD);
-          }
-          return schedule(TYPE);
-        }
-        if (n === cur.text.length) cap.classList.remove('is-on');
-        txt.textContent = cur.text.slice(0, --n);
-        if (n <= 0) {
-          del = false;
-          i = (i + 1) % items.length;
-          return schedule(GAP);
-        }
-        return schedule(DEL);
-      }
-      function schedule(ms) { timer = setTimeout(function () { if (live) step(); }, ms); }
-
-      // Vrti se samo dok je sekcija na ekranu.
-      if ('IntersectionObserver' in window) {
-        live = false;
-        new IntersectionObserver(function (es) {
-          es.forEach(function (e) {
-            if (e.isIntersecting && !live) { live = true; step(); }
-            else if (!e.isIntersecting && live) { live = false; clearTimeout(timer); }
-          });
-        }, { rootMargin: '80px 0px' }).observe(fig);
-      } else {
-        step();
-      }
-    })();
-
-    /* Ritual kartice — na mobitelu ulaze naizmjenično zdesna pa slijeva.
-       Svaka se okida zasebno, kad doskrolamo do nje. */
-    (function () {
-      var grid = document.querySelector('.nn .rit-grid');
-      if (!grid) return;
-      // Mobitel gleda .rit-card.is-in, desktop .rit-grid.is-in — postavimo oboje,
-      // a media upit odlučuje koje pravilo vrijedi.
-      Array.prototype.forEach.call(grid.querySelectorAll('.rit-card'), function (c, n) {
-        c.style.setProperty('--ri', n);
-        revealOnScroll(c);
-      });
-      revealOnScroll(grid);
-    })();
-
-    /* "O meni" blok — naslović, ime, rečenica, opis i link ulaze odozgo. */
-    (function () {
-      var box = document.querySelector('.nn .story-text');
-      if (!box) return;
-      Array.prototype.forEach.call(box.children, function (el, n) {
-        el.style.setProperty('--si', n);
-      });
-      revealOnScroll(box);
-    })();
-  </script>
-  <script>
-    /* Parallax: fotografija u "Moja priča" i pozadina sekcije "za ženu koja zna". */
-    (function () {
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      var photo = document.querySelector('.nn .story-photo');
-      var brk = document.querySelector('.nn .break');
-      var heroImg = document.querySelector('.video-hero .hero-video');
-      if (!photo && !brk && !heroImg) return;
-      var img = photo ? photo.querySelector('img') : null;
-      var tick = false;
-      function shift(el, vh) {
-        var r = el.getBoundingClientRect();
-        if (r.bottom < 0 || r.top > vh) return null;
-        return ((r.top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2) * 14).toFixed(2) + '%';
-      }
-      function update() {
-        tick = false;
-        var vh = window.innerHeight;
-        if (img) { var a = shift(photo, vh); if (a) img.style.transform = 'translate3d(0,' + a + ',0)'; }
-        if (brk) { var b = shift(brk, vh); if (b) brk.style.setProperty('--par', b); }
-        // Hero: slika klizi lijevo dok skrolamo (pomak je razmjeran širini, pa nikad ne otkrije rub).
-        if (heroImg) {
-          var y = window.pageYOffset || document.documentElement.scrollTop || 0;
-          if (y < vh * 1.3) {
-            var maxX = heroImg.parentNode.offsetWidth * 0.14;
-            var dx = -Math.min(y / vh, 1) * maxX;
-            heroImg.style.transform = 'translate3d(' + dx.toFixed(1) + 'px,0,0)';
-          }
-        }
-      }
-      window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(update); } }, { passive: true });
-      window.addEventListener('resize', update);
-      update();
-    })();
   </script>
   <script src="js/nav.js?v=4"></script>
   <script src="js/parallax.js?v=7"></script>
-  <script src="js/timeline.js?v=11"></script>
-  <script src="js/rituali-slider.js?v=1"></script>
-  <script src="js/reveal.js?v=6"></script>
 </body>
 </html>

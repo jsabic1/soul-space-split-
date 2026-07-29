@@ -407,7 +407,7 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({
+    if (window.AOS) AOS.init({
       duration: 900,
       once: true,
       easing: 'ease-out-cubic',
