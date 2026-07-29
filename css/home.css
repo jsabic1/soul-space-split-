@@ -1494,3 +1494,41 @@ body.home .cta-banner h2 {
 @media (prefers-reduced-motion: reduce) {
   .timeline-wrap { --tl: 1 !important; }
 }
+
+/* Naslovi koraka u skript fontu, kao na proslom deployu. */
+.timeline-step h3 {
+  font-family: var(--font-script);
+  -webkit-text-stroke: 0.55px currentColor;
+  font-size: clamp(1.2rem, 1.72vw, 1.55rem);
+  line-height: 1.35;
+}
+@media (max-width: 860px) {
+  .timeline-step h3 { font-size: clamp(1rem, 5.1vw, 1.55rem); }
+}
+
+/* Napomena ispod gumba na kraju sekcije koraka je centrirana. */
+.section-cta .cta-note { margin-left: auto; margin-right: auto; text-align: center; }
+
+/* Oznake Tijelo / San / Napetost / Tempo umjesto brojeva 01-04. */
+.for-you-num {
+  font-family: var(--font-brand-sub);
+  font-size: 1rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+  font-weight: 400;
+  line-height: 1.4;
+  min-width: 0;
+  white-space: nowrap;
+}
+@media (max-width: 900px) {
+  .for-you-num { font-size: 0.76rem; letter-spacing: 0.2em; }
+}
+
+/* Na uskim ekranima oznaka ide iznad teksta, da nista ne strsi. */
+@media (max-width: 600px) {
+  .for-you-item,
+  .for-you-item:nth-child(even) { flex-direction: column; gap: 0.5rem; }
+  .for-you-num { white-space: normal; }
+  .for-you-text { overflow-wrap: break-word; }
+}
