@@ -1689,7 +1689,7 @@ h3,
    naslov i mreza 2x2 lijevo, bez vektora.
    ============================================================ */
 .for-you-wrap {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
@@ -1994,12 +1994,19 @@ h3,
    "Ovo je za tebe ako" — desktop dobiva vise zraka, tanku crtu
    ispod svake stavke, i malu kvadratnu sliku desno, centriranu
    po visini cijelog bloka (naslov + mreza), kao kod Rituala.
-   Mobitel ostaje centriran, bez slike.
+   Na mobitelu ista slika (drugi <img>, isti src) stoji kao
+   pozadina iza same mreze od cetiri stavke, centrirana i bez
+   ruba se gubi prema gore i dolje, isto kao slike rituala.
+   Dvije zasebne oznake (-d/-m) jer im je roditelj u DOM-u razlicit,
+   pa im rjesenje pozicioniranja ne moze biti isto.
    ============================================================ */
 .for-you-pic { display: none; }
+.for-you-pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.for-you-grid-wrap { position: relative; }
+
 @media (min-width: 861px) {
   .for-you-wrap {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 200px);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
     column-gap: clamp(2.5rem, 5vw, 4rem);
     align-items: center;
     text-align: left;
@@ -2010,7 +2017,7 @@ h3,
   .for-you-item { text-align: left; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
   .for-you-num { margin-bottom: 1.1rem; }
   .for-you-text { margin-left: 0; margin-right: 0; }
-  .for-you-pic {
+  .for-you-pic-d {
     display: block;
     align-self: center;
     width: 100%;
@@ -2018,30 +2025,17 @@ h3,
     border-radius: 4px;
     overflow: hidden;
   }
-  .for-you-pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
 }
 
-/* Ovo je za tebe ako: na mobitelu slika se vraca, ali kao pozadina
-   iza teksta, centrirana i bez ruba se gubi prema gore i dolje,
-   isto kao slike rituala na mobitelu. */
 @media (max-width: 860px) {
-  .for-you { position: relative; overflow: hidden; }
-  .for-you-pic {
+  .for-you-pic-m {
     display: block;
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    height: clamp(320px, 90vw, 440px);
-    aspect-ratio: auto;
-    border-radius: 0;
-    opacity: 0.5;
+    inset: 0;
     z-index: 0;
+    opacity: 0.5;
     pointer-events: none;
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.55) 22%, #000 46%, #000 54%, rgba(0, 0, 0, 0.55) 78%, transparent 100%);
-            mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.55) 22%, #000 46%, #000 54%, rgba(0, 0, 0, 0.55) 78%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.55) 18%, #000 42%, #000 58%, rgba(0, 0, 0, 0.55) 82%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.55) 18%, #000 42%, #000 58%, rgba(0, 0, 0, 0.55) 82%, transparent 100%);
   }
-  .for-you-pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
 }
