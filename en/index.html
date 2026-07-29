@@ -79,10 +79,10 @@
 
   /* 3 · PREPOZNAJEŠ SE — vektor lijevo, naslov i cetiri stavke desno */
   .nn .foryou{background:var(--cream);padding:5rem 2rem 11rem;text-align:center;overflow:hidden}
-  .nn .fy-wrap{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:.72fr 1fr;
+  .nn .fy-wrap{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr .52fr;
     gap:clamp(2.5rem,5vw,5rem);align-items:center;text-align:left}
-  .nn .fy-vek{aspect-ratio:556/783;opacity:.34;pointer-events:none;
-    background:url('../wp-content/uploads/soul/motiv-palma.webp') center/contain no-repeat}
+  .nn .fy-vek{aspect-ratio:534/842;opacity:.34;pointer-events:none;
+    background:url('../wp-content/uploads/soul/motiv-luk-krug.webp') center/contain no-repeat}
   /* Tijelo / San / Napetost / Tempo — svaki ulazi zdesna, jedan po jedan. */
   .nn .fy-grid .fy-item{opacity:0}
   .nn .fy-grid.is-in .fy-item{animation:nn-slide-right 2.24s cubic-bezier(.19,1,.22,1) both;
@@ -98,7 +98,7 @@
   .nn .fy-item p{color:var(--ink-soft);font-size:1.36rem;line-height:1.6;max-width:20ch;margin:0}
   .nn .fy-item{position:relative;padding-top:.5rem}
   @media(max-width:860px){
-    /* Na mobitelu list stoji izblijedjen iza teksta, raspored ostaje isti. */
+    /* Na mobitelu vektor stoji izblijedjen iza teksta, raspored ostaje isti. */
     .nn .fy-wrap{position:relative;grid-template-columns:1fr;gap:0;text-align:center;justify-items:center}
     .nn .fy-vek{position:absolute;left:50%;top:60%;transform:translate(-50%,-50%);
       width:min(320px,76vw);opacity:.14;z-index:0}
@@ -222,8 +222,10 @@
   .nn .gift-cta:hover,.nn .gift-cta:focus-visible,.nn .gift-cta:active{background:var(--terra);border-color:var(--terra);color:#F7ECDD;box-shadow:0 12px 32px -12px rgba(196,85,31,.55)}
   .nn .gift-cta:hover span{transform:translateX(5px)}
   @media(max-width:820px){
-    .nn .gift{padding:3.5rem 1rem calc(3.5rem + 7rem)}
-    .nn .gwrap{padding:clamp(4.4rem,12.5vw,5.6rem) 1.2rem}
+    .nn .gift{padding:3.5rem 0 calc(3.5rem + 7rem)}
+    /* Na mobitelu fotografija ide od ruba do ruba ekrana, bez okvira. */
+    .nn .gwrap{max-width:none;margin:0;border-radius:0;padding:clamp(4.4rem,12.5vw,5.6rem) 1.4rem}
+    .nn .gwrap::before{display:none}
     .nn .gcopy h2{font-size:min(2.85rem,11.6vw);margin-bottom:6.2rem}
     .nn .v-mins{gap:1.6rem;margin-bottom:2rem}
     .nn .vm{gap:.24rem}
@@ -270,9 +272,7 @@
   .nn .q-type figcaption.is-on{opacity:1}
 
   /* 8b · KORACI — lukovi na dubljem krem tonu */
-  .nn .steps{padding:8rem 2rem 8.5rem;text-align:center;
-    /* Gornji rub se meko stapa sa sekcijom iznad (krem). */
-    background:linear-gradient(to bottom,var(--cream) 0%,var(--cream2) 24%) var(--cream2)}
+  .nn .steps{padding:8rem 2rem 8.5rem;text-align:center;background:var(--cream)}
   .nn .steps .eyebrow{display:block;color:var(--terra);margin-bottom:.9rem}
   .nn .steps h2{font-size:clamp(2rem,3.4vw,3rem);color:var(--ink);margin-bottom:14rem}
   .nn .st-grid{position:relative;max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(2.6rem,5vw,5rem)}
@@ -393,7 +393,6 @@
     <!-- THIS IS FOR YOU IF -->
     <section class="foryou">
       <div class="fy-wrap">
-        <div class="fy-vek" aria-hidden="true"></div>
         <div class="fy-body">
       <span class="eyebrow">sound familiar?</span>
       <h2>this is for you if</h2>
@@ -416,6 +415,7 @@
       </div>
       </div>
         </div>
+        <div class="fy-vek" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -511,7 +511,7 @@
     <section class="quotes">
       <span class="eyebrow">experiences</span>
       <h2>what clients say</h2>
-      <img class="q-mark" src="../wp-content/uploads/soul/motiv-a3-5.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img class="q-mark" src="../wp-content/uploads/soul/motiv-duga.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
       <div class="q-grid">
         <figure class="q-card">
           <blockquote>"My shoulder didn't hurt for the first time in three years. There was no 'wow' moment during the ritual, my body simply knew."</blockquote>
