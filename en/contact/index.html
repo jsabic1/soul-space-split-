@@ -106,6 +106,7 @@
     }
     .contact-info h2 em,
     .contact-form-wrapper h2 em { font-style: normal; color: var(--accent); }
+    .contact-logo { height: clamp(2.2rem, 3.6vw, 3rem); width: auto; max-width: 220px; object-fit: contain; display: block; margin: 0 0 1.2rem; }
     .contact-info .intro {
       font-family: var(--font-body);
       color: var(--text-muted);
@@ -329,7 +330,6 @@
 
     <section class="contact-hero" style="background-image: url('../../wp-content/uploads/soul/atmosfera-2.jpg');">
       <div class="container">
-        <p class="eyebrow" data-aos="fade-up">Say hello</p>
         <h1 data-aos="fade-up" data-aos-delay="150">Write to me</h1>
       </div>
     </section>
@@ -337,12 +337,9 @@
     <section class="contact-main">
       <div class="contact-main-grid">
         <div class="contact-info" data-aos="fade-up">
-          <p class="eyebrow">Contact</p>
-          <h2><em>Soul Space</em></h2>
+          <img src="../../wp-content/uploads/soul/logo.png" alt="Soul Space" class="contact-logo">
           <p class="intro">A massage studio in Split</p>
           <div class="contact-rule" aria-hidden="true"></div>
-
-          <p class="cta-note">I work alone and keep a small number of appointments each week. If a particular day suits you, get in touch a day or two ahead.</p>
 
           <div class="contact-items">
             <span class="contact-icon wa-icon" aria-hidden="true">
