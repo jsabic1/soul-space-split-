@@ -277,9 +277,10 @@ html, body { overflow-x: hidden; }
 }
 
 /* ============================================================
-   MOBILNA VERZIJA — carousel: svaki ritual je jedan "red" u
-   uspravnom swipeu (svajp dolje = iduci ritual), a unutar reda
-   dvije stranice vodoravno (slika s nazivom/gumbom, pa opis).
+   MOBILNA VERZIJA — rituali stoje normalno jedan ispod drugog
+   (obican vertikalni scroll stranice, bez snapa). Svaki ritual
+   je dvije stranice vodoravno (slika s nazivom/gumbom, pa opis),
+   svajp udesno (ili "Procitaj vise") otkriva opis.
    Desktop raspored (.ritual) ostaje netaknut, samo se sakriva.
    ============================================================ */
 .rit-mob { display: none; }
@@ -287,22 +288,9 @@ html, body { overflow-x: hidden; }
   .ritual { display: none; }
   .rit-mob { display: block; }
 
-  .rit-mob-stage {
-    height: 100vh;
-    height: 100svh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    scroll-snap-type: y mandatory;
-    scrollbar-width: none;
-    margin: 0 calc(-1 * var(--rit-pad));
-  }
-  .rit-mob-stage::-webkit-scrollbar { display: none; }
-
   .rit-mob-row {
-    height: 100%;
     width: 100%;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+    margin: 0 0 clamp(3.5rem, 11vw, 5rem);
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
@@ -310,10 +298,10 @@ html, body { overflow-x: hidden; }
     scrollbar-width: none;
   }
   .rit-mob-row::-webkit-scrollbar { display: none; }
+  .rit-mob-row:last-child { margin-bottom: 0.5rem; }
 
   .rit-mob-panel {
     width: 100%;
-    height: 100%;
     flex-shrink: 0;
     scroll-snap-align: start;
     scroll-snap-stop: always;
@@ -321,7 +309,7 @@ html, body { overflow-x: hidden; }
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: clamp(5.5rem, 18vw, 7rem) var(--rit-pad) 2rem;
+    padding: 0 var(--rit-pad);
     position: relative;
     box-sizing: border-box;
   }
@@ -416,71 +404,19 @@ html, body { overflow-x: hidden; }
     cursor: pointer;
     animation: ritNudgeRight 1.8s ease-in-out infinite;
   }
-  .rit-mob-arrow-down {
-    position: absolute;
-    left: 50%;
-    bottom: 4.7rem;
-    transform: translateX(-50%);
-    z-index: 2;
-    color: var(--accent-soft);
-    font-size: 1.1rem;
-    line-height: 1;
-    opacity: 0.8;
-    animation: ritNudgeDown 1.8s ease-in-out infinite;
-  }
   @keyframes ritNudgeRight {
     0%, 100% { transform: translateY(-50%) translateX(0); }
     50% { transform: translateY(-50%) translateX(5px); }
   }
-  @keyframes ritNudgeDown {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(5px); }
-  }
 
   .rit-mob-dots {
-    position: absolute;
-    bottom: 5.9rem;
-    left: 0;
-    right: 0;
+    margin-top: 1.1rem;
     display: flex;
     justify-content: center;
     gap: 0.4rem;
   }
   .rit-mob-dots span { width: 5px; height: 5px; border-radius: 50%; background: var(--border); display: block; }
   .rit-mob-dots span.on { background: var(--accent-soft); }
-
-  .rit-mob-peek {
-    position: absolute;
-    left: 2.4rem;
-    right: 2.4rem;
-    bottom: 0;
-    height: 64px;
-    border-radius: 10px 10px 0 0;
-    background-size: cover;
-    background-position: center top;
-    box-shadow: 0 -10px 24px rgba(0, 0, 0, 0.4);
-    opacity: 0.9;
-  }
-  .rit-mob-peek::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 10px 10px 0 0;
-    background: linear-gradient(rgba(20, 9, 5, 0.1), rgba(20, 9, 5, 0.55));
-  }
-  .rit-mob-peek span {
-    position: absolute;
-    top: 0.5rem;
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-family: var(--font-brand-sub);
-    font-size: 0.6rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--text);
-    opacity: 0.85;
-  }
 
   .rit-mob-desc { align-items: flex-start; text-align: left; }
   .rit-mob-desc .rit-script { margin: 0 0 0.9rem; }
@@ -680,7 +616,6 @@ html, body { overflow-x: hidden; }
   </article>
 
   <div class="rit-mob">
-    <div class="rit-mob-stage" id="ritMobStage">
 
       <div class="rit-mob-row">
         <div class="rit-mob-panel">
@@ -696,8 +631,6 @@ html, body { overflow-x: hidden; }
             <span class="rit-mob-arrow-right" aria-hidden="true">&#8250;</span>
           </div>
           <div class="rit-mob-dots"><span class="on"></span><span></span></div>
-          <span class="rit-mob-arrow-down" aria-hidden="true">&#8964;</span>
-          <div class="rit-mob-peek" style="background-image: url('../../wp-content/uploads/soul/flow-harmony.jpeg')"><span>Flow &amp; Harmony</span></div>
         </div>
         <div class="rit-mob-panel rit-mob-desc">
           <p class="rit-script">deep massage for tension that won't release on its own</p>
@@ -726,8 +659,6 @@ html, body { overflow-x: hidden; }
             <span class="rit-mob-arrow-right" aria-hidden="true">&#8250;</span>
           </div>
           <div class="rit-mob-dots"><span class="on"></span><span></span></div>
-          <span class="rit-mob-arrow-down" aria-hidden="true">&#8964;</span>
-          <div class="rit-mob-peek" style="background-image: url('../../wp-content/uploads/soul/deep-rest.jpeg')"><span>Deep Rest</span></div>
         </div>
         <div class="rit-mob-panel rit-mob-desc">
           <p class="rit-script">slow massage for a nervous system that never stops</p>
@@ -756,8 +687,6 @@ html, body { overflow-x: hidden; }
             <span class="rit-mob-arrow-right" aria-hidden="true">&#8250;</span>
           </div>
           <div class="rit-mob-dots"><span class="on"></span><span></span></div>
-          <span class="rit-mob-arrow-down" aria-hidden="true">&#8964;</span>
-          <div class="rit-mob-peek" style="background-image: url('../../wp-content/uploads/soul/inner-glow.jpeg')"><span>Inner Glow</span></div>
         </div>
         <div class="rit-mob-panel rit-mob-desc">
           <p class="rit-script">a restorative ritual to bring back real sleep</p>
@@ -798,7 +727,6 @@ html, body { overflow-x: hidden; }
         </div>
       </div>
 
-    </div>
   </div>
 
   <section class="rit-close">
