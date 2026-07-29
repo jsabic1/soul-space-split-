@@ -277,49 +277,24 @@ html, body { overflow-x: hidden; }
 }
 
 /* ============================================================
-   MOBILNA VERZIJA — rituali stoje normalno jedan ispod drugog
-   (obican vertikalni scroll stranice, bez snapa). Svaki ritual
-   je dvije stranice vodoravno (slika s nazivom/gumbom, pa opis),
-   svajp udesno (ili "Procitaj vise") otkriva opis.
-   Desktop raspored (.ritual) ostaje netaknut, samo se sakriva.
+   MOBILNA VERZIJA — rituali stoje normalno jedan ispod drugog,
+   obican vertikalni scroll prstom, bez swipea/snapa. Slika pa
+   odmah ispod nje opis. Desktop raspored (.ritual) se samo sakriva.
    ============================================================ */
 .rit-mob { display: none; }
 @media (max-width: 860px) {
   .ritual { display: none; }
   .rit-mob { display: block; }
 
-  .rit-mob-row {
-    width: 100%;
-    margin: 0 0 clamp(3.5rem, 11vw, 5rem);
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-  }
-  .rit-mob-row::-webkit-scrollbar { display: none; }
-  .rit-mob-row:last-child { margin-bottom: 0.5rem; }
+  .rit-mob-item { margin: 0 0 clamp(3.5rem, 11vw, 5rem); }
+  .rit-mob-item:last-child { margin-bottom: 0.5rem; }
 
-  .rit-mob-panel {
-    width: 100%;
-    flex-shrink: 0;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0 var(--rit-pad);
-    position: relative;
-    box-sizing: border-box;
-  }
-
-  .rit-mob-card-wrap { position: relative; width: 100%; max-width: 320px; }
+  /* Slika ide od ruba do ruba ekrana, lijevo i desno, ne gore. */
+  .rit-mob-card-wrap { position: relative; margin: 0 calc(-1 * var(--rit-pad)) 1.7rem; }
   .rit-mob-card {
     position: relative;
     width: 100%;
-    aspect-ratio: 4 / 5;
-    border-radius: 6px;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
     background-size: cover;
     background-position: center;
@@ -368,60 +343,13 @@ html, body { overflow-x: hidden; }
     font-size: 0.64rem;
     letter-spacing: 0.24em;
   }
-  .rit-mob-more {
-    margin-top: 0.9rem;
-    display: inline-block;
-    background: none;
-    border: none;
-    padding: 0;
-    color: var(--accent-soft);
-    font-family: var(--font-brand-sub);
-    font-size: 0.62rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    cursor: pointer;
-  }
 
-  .rit-mob-arrow-right {
-    position: absolute;
-    right: -0.6rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 2.2rem;
-    height: 2.2rem;
-    border-radius: 50%;
-    z-index: 2;
-    background: rgba(20, 9, 5, 0.55);
-    border: 1px solid rgba(244, 232, 214, 0.35);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text);
-    font-size: 1rem;
-    line-height: 1;
-    cursor: pointer;
-    animation: ritNudgeRight 1.8s ease-in-out infinite;
-  }
-  @keyframes ritNudgeRight {
-    0%, 100% { transform: translateY(-50%) translateX(0); }
-    50% { transform: translateY(-50%) translateX(5px); }
-  }
-
-  .rit-mob-dots {
-    margin-top: 1.1rem;
-    display: flex;
-    justify-content: center;
-    gap: 0.4rem;
-  }
-  .rit-mob-dots span { width: 5px; height: 5px; border-radius: 50%; background: var(--border); display: block; }
-  .rit-mob-dots span.on { background: var(--accent-soft); }
-
-  .rit-mob-desc { align-items: flex-start; text-align: left; }
-  .rit-mob-desc .rit-script { margin: 0 0 0.9rem; }
-  .rit-mob-desc .rit-body { margin: 0 0 1.1rem; font-size: 0.98rem; }
-  .rit-mob-desc .rit-meta { margin: 0 0 1rem; }
+  .rit-mob-desc { padding: 0 var(--rit-pad); text-align: left; }
+  .rit-mob-desc .rit-script { margin: 0 0 1rem; font-size: 0.85rem; }
+  .rit-mob-desc .rit-body { margin: 0 0 1.3rem; font-size: 1.12rem; line-height: 1.65; }
+  .rit-mob-desc .rit-meta { margin: 0 0 1.2rem; }
+  .rit-mob-desc .rit-meta .lb { font-size: 0.78rem; }
+  .rit-mob-desc .rit-meta p { font-size: 1.08rem; }
   .rit-mob-desc .rit-rates { margin: 1rem 0; max-width: 100%; }
 }
 
@@ -617,115 +545,95 @@ html, body { overflow-x: hidden; }
 
   <div class="rit-mob">
 
-      <div class="rit-mob-row">
-        <div class="rit-mob-panel">
-          <div class="rit-mob-card-wrap">
-            <div class="rit-mob-card" style="background-image: url('../../wp-content/uploads/soul/ground-release.jpeg')">
-              <div class="rit-mob-card-in">
-                <h2>Ground &amp; Release</h2>
-                <p class="rit-mob-cap">deep intuitive ritual</p>
-                <a href="../contact/" class="rit-btn" data-reserve>Book a session</a>
-                <button type="button" class="rit-mob-more">Read more</button>
-              </div>
-            </div>
-            <span class="rit-mob-arrow-right" aria-hidden="true">&#8250;</span>
-          </div>
-          <div class="rit-mob-dots"><span class="on"></span><span></span></div>
-        </div>
-        <div class="rit-mob-panel rit-mob-desc">
-          <p class="rit-script">deep massage for tension that won't release on its own</p>
-          <p class="rit-body">A deep, intuitive massage that guides the body toward release with firm but never rough pressure and long, flowing strokes. It goes where tension sits deepest, the neck, shoulders and back, but slowly, so your system can follow. Touch that brings you back into your body and into a sense of ground.</p>
-          <div class="rit-meta"><span class="lb">For you</span><p>when your days are spent at a desk and in front of screens, and tension has made itself at home in your neck and shoulders</p></div>
-          <div class="rit-meta"><span class="lb">Afterwards</span><p>you leave lighter, with a body that has finally lowered its guard</p></div>
-          <div class="rit-rates">
-            <div><span class="t">65 min</span><span class="p">75 €</span></div>
-            <div><span class="t">90 min</span><span class="p">95 €</span></div>
-            <div><span class="t">120 min</span><span class="p">125 €</span></div>
+    <div class="rit-mob-item">
+      <div class="rit-mob-card-wrap">
+        <div class="rit-mob-card" style="background-image: url('../../wp-content/uploads/soul/ground-release.jpeg')">
+          <div class="rit-mob-card-in">
+            <h2>Ground &amp; Release</h2>
+            <p class="rit-mob-cap">deep intuitive ritual</p>
+            <a href="../contact/" class="rit-btn" data-reserve>Book a session</a>
           </div>
         </div>
       </div>
+      <div class="rit-mob-desc">
+        <p class="rit-script">deep massage for tension that won't release on its own</p>
+        <p class="rit-body">A deep, intuitive massage that guides the body toward release with firm but never rough pressure and long, flowing strokes. It goes where tension sits deepest, the neck, shoulders and back, but slowly, so your system can follow. Touch that brings you back into your body and into a sense of ground.</p>
+        <div class="rit-meta"><span class="lb">For you</span><p>when your days are spent at a desk and in front of screens, and tension has made itself at home in your neck and shoulders</p></div>
+        <div class="rit-meta"><span class="lb">Afterwards</span><p>you leave lighter, with a body that has finally lowered its guard</p></div>
+        <div class="rit-rates">
+          <div><span class="t">65 min</span><span class="p">75 €</span></div>
+          <div><span class="t">90 min</span><span class="p">95 €</span></div>
+          <div><span class="t">120 min</span><span class="p">125 €</span></div>
+        </div>
+      </div>
+    </div>
 
-      <div class="rit-mob-row">
-        <div class="rit-mob-panel">
-          <div class="rit-mob-card-wrap">
-            <div class="rit-mob-card" style="background-image: url('../../wp-content/uploads/soul/flow-harmony.jpeg')">
-              <div class="rit-mob-card-in">
-                <h2>Flow &amp; Harmony</h2>
-                <p class="rit-mob-cap">ritual for the nervous system</p>
-                <a href="../contact/" class="rit-btn" data-reserve>Book a session</a>
-                <button type="button" class="rit-mob-more">Read more</button>
-              </div>
-            </div>
-            <span class="rit-mob-arrow-right" aria-hidden="true">&#8250;</span>
-          </div>
-          <div class="rit-mob-dots"><span class="on"></span><span></span></div>
-        </div>
-        <div class="rit-mob-panel rit-mob-desc">
-          <p class="rit-script">slow massage for a nervous system that never stops</p>
-          <p class="rit-body">A slow massage whose long, connected strokes let the body settle on its own. Nothing is pushed or forced, the touch calms the nervous system and opens space for balance. Time in which you don't have to go anywhere, except back to yourself.</p>
-          <div class="rit-meta"><span class="lb">For you</span><p>when you "hold everything together" and can't switch off, when you sleep but never feel rested</p></div>
-          <div class="rit-meta"><span class="lb">Afterwards</span><p>you leave slower, with a deeper breath and a quieter mind</p></div>
-          <div class="rit-rates">
-            <div><span class="t">65 min</span><span class="p">75 €</span></div>
-            <div><span class="t">90 min</span><span class="p">95 €</span></div>
-            <div><span class="t">120 min</span><span class="p">125 €</span></div>
+    <div class="rit-mob-item">
+      <div class="rit-mob-card-wrap">
+        <div class="rit-mob-card" style="background-image: url('../../wp-content/uploads/soul/flow-harmony.jpeg')">
+          <div class="rit-mob-card-in">
+            <h2>Flow &amp; Harmony</h2>
+            <p class="rit-mob-cap">ritual for the nervous system</p>
+            <a href="../contact/" class="rit-btn" data-reserve>Book a session</a>
           </div>
         </div>
       </div>
+      <div class="rit-mob-desc">
+        <p class="rit-script">slow massage for a nervous system that never stops</p>
+        <p class="rit-body">A slow massage whose long, connected strokes let the body settle on its own. Nothing is pushed or forced, the touch calms the nervous system and opens space for balance. Time in which you don't have to go anywhere, except back to yourself.</p>
+        <div class="rit-meta"><span class="lb">For you</span><p>when you "hold everything together" and can't switch off, when you sleep but never feel rested</p></div>
+        <div class="rit-meta"><span class="lb">Afterwards</span><p>you leave slower, with a deeper breath and a quieter mind</p></div>
+        <div class="rit-rates">
+          <div><span class="t">65 min</span><span class="p">75 €</span></div>
+          <div><span class="t">90 min</span><span class="p">95 €</span></div>
+          <div><span class="t">120 min</span><span class="p">125 €</span></div>
+        </div>
+      </div>
+    </div>
 
-      <div class="rit-mob-row">
-        <div class="rit-mob-panel">
-          <div class="rit-mob-card-wrap">
-            <div class="rit-mob-card" style="background-image: url('../../wp-content/uploads/soul/deep-rest.jpeg')">
-              <div class="rit-mob-card-in">
-                <h2>Deep Rest</h2>
-                <p class="rit-mob-cap">a restorative ritual</p>
-                <a href="../contact/" class="rit-btn" data-reserve>Book a session</a>
-                <button type="button" class="rit-mob-more">Read more</button>
-              </div>
-            </div>
-            <span class="rit-mob-arrow-right" aria-hidden="true">&#8250;</span>
-          </div>
-          <div class="rit-mob-dots"><span class="on"></span><span></span></div>
-        </div>
-        <div class="rit-mob-panel rit-mob-desc">
-          <p class="rit-script">a restorative ritual to bring back real sleep</p>
-          <p class="rit-body">A quiet, restorative ritual focused on the head, neck and décolleté, with touch that gives the body permission to surrender. It soothes the places where fatigue gathers and guides you into deep relaxation, the state from which sleep comes more easily. Nothing sudden, nothing forced.</p>
-          <div class="rit-meta"><span class="lb">For you</span><p>when sleep doesn't come easily and you need to slow your engine down</p></div>
-          <div class="rit-meta"><span class="lb">Afterwards</span><p>you leave calm, with a quiet mind and a body free of tension</p></div>
-          <div class="rit-rates">
-            <div><span class="t">30 min</span><span class="p">55 €</span></div>
-            <div><span class="t">45 min</span><span class="p">65 €</span></div>
+    <div class="rit-mob-item">
+      <div class="rit-mob-card-wrap">
+        <div class="rit-mob-card" style="background-image: url('../../wp-content/uploads/soul/deep-rest.jpeg')">
+          <div class="rit-mob-card-in">
+            <h2>Deep Rest</h2>
+            <p class="rit-mob-cap">a restorative ritual</p>
+            <a href="../contact/" class="rit-btn" data-reserve>Book a session</a>
           </div>
         </div>
       </div>
+      <div class="rit-mob-desc">
+        <p class="rit-script">a restorative ritual to bring back real sleep</p>
+        <p class="rit-body">A quiet, restorative ritual focused on the head, neck and décolleté, with touch that gives the body permission to surrender. It soothes the places where fatigue gathers and guides you into deep relaxation, the state from which sleep comes more easily. Nothing sudden, nothing forced.</p>
+        <div class="rit-meta"><span class="lb">For you</span><p>when sleep doesn't come easily and you need to slow your engine down</p></div>
+        <div class="rit-meta"><span class="lb">Afterwards</span><p>you leave calm, with a quiet mind and a body free of tension</p></div>
+        <div class="rit-rates">
+          <div><span class="t">30 min</span><span class="p">55 €</span></div>
+          <div><span class="t">45 min</span><span class="p">65 €</span></div>
+        </div>
+      </div>
+    </div>
 
-      <div class="rit-mob-row">
-        <div class="rit-mob-panel">
-          <div class="rit-mob-card-wrap">
-            <div class="rit-mob-card" style="background-image: url('../../wp-content/uploads/soul/inner-glow.jpeg')">
-              <div class="rit-mob-card-in">
-                <h2>Inner Glow</h2>
-                <p class="rit-mob-cap">a ritual for face and lymph</p>
-                <a href="../contact/" class="rit-btn" data-reserve>Book a session</a>
-                <button type="button" class="rit-mob-more">Read more</button>
-              </div>
-            </div>
-            <span class="rit-mob-arrow-right" aria-hidden="true">&#8250;</span>
-          </div>
-          <div class="rit-mob-dots"><span class="on"></span><span></span></div>
-        </div>
-        <div class="rit-mob-panel rit-mob-desc">
-          <p class="rit-script">a ritual for face and lymph, gentle and slow</p>
-          <p class="rit-body">A gentle massage devoted to the face, which remembers emotions and everything we hold through the day, and to the neck and décolleté. Restorative touch that moves the lymph, releases tension and returns softness to the face. Everything slow, no hurry.</p>
-          <div class="rit-meta"><span class="lb">For you</span><p>when your face feels tired and tight, and needs calm and a little vitality returned</p></div>
-          <div class="rit-meta"><span class="lb">Afterwards</span><p>you leave with a brighter, softer face and a more rested look</p></div>
-          <div class="rit-rates">
-            <div><span class="t">30 min</span><span class="p">55 €</span></div>
-            <div><span class="t">45 min</span><span class="p">65 €</span></div>
+    <div class="rit-mob-item">
+      <div class="rit-mob-card-wrap">
+        <div class="rit-mob-card" style="background-image: url('../../wp-content/uploads/soul/inner-glow.jpeg')">
+          <div class="rit-mob-card-in">
+            <h2>Inner Glow</h2>
+            <p class="rit-mob-cap">a ritual for face and lymph</p>
+            <a href="../contact/" class="rit-btn" data-reserve>Book a session</a>
           </div>
         </div>
       </div>
+      <div class="rit-mob-desc">
+        <p class="rit-script">a ritual for face and lymph, gentle and slow</p>
+        <p class="rit-body">A gentle massage devoted to the face, which remembers emotions and everything we hold through the day, and to the neck and décolleté. Restorative touch that moves the lymph, releases tension and returns softness to the face. Everything slow, no hurry.</p>
+        <div class="rit-meta"><span class="lb">For you</span><p>when your face feels tired and tight, and needs calm and a little vitality returned</p></div>
+        <div class="rit-meta"><span class="lb">Afterwards</span><p>you leave with a brighter, softer face and a more rested look</p></div>
+        <div class="rit-rates">
+          <div><span class="t">30 min</span><span class="p">55 €</span></div>
+          <div><span class="t">45 min</span><span class="p">65 €</span></div>
+        </div>
+      </div>
+    </div>
 
   </div>
 
@@ -777,23 +685,6 @@ html, body { overflow-x: hidden; }
   </footer>
 
 <script src="../../js/nav.js?v=4"></script>
-<script>
-(function () {
-  var rows = document.querySelectorAll('.rit-mob-row');
-  rows.forEach(function (row) {
-    var dots = row.querySelectorAll('.rit-mob-dots span');
-    row.addEventListener('scroll', function () {
-      var i = Math.round(row.scrollLeft / row.clientWidth);
-      dots.forEach(function (d, idx) { d.classList.toggle('on', idx === i); });
-    });
-    row.querySelectorAll('.rit-mob-arrow-right, .rit-mob-more').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        row.scrollTo({ left: row.clientWidth, behavior: 'smooth' });
-      });
-    });
-  });
-})();
-</script>
 
 </body>
 </html>
