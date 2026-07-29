@@ -172,7 +172,7 @@
     .about-preview.framed .about-image img { display: block; }
     .about-rule { width: 56px; height: 1px; background: var(--accent); margin: 1.2rem 0 1.5rem; }
     /* Unified left-aligned text section (matches the image-split heading style) */
-    .text-block { max-width: 700px; margin: 0 auto; padding: 0 1.5rem; text-align: center; }
+    .text-block { max-width: 700px; margin: 0 auto; padding: 0 1.5rem; text-align: left; }
     /* Dizajn B: veliki tihi broj + okomita linija */
     .text-block, .about-text { position: relative; z-index: 2; }
     .story-num {
@@ -198,8 +198,8 @@
     .text-block .about-eyebrow em, .about-text .about-eyebrow em { color: var(--text); }
     main .section { padding: 12rem 0; }
     @media (max-width: 900px) { main .section { padding: 8rem 0; } }
-    /* Center the image-split text too, for consistency */
-    .about-preview .about-text { text-align: center; }
+    /* Tekst uz sliku poravnat ulijevo, isto kao i tekst-blokovi. */
+    .about-preview .about-text { text-align: left; }
     /* Tighten vertical rhythm so text blocks don't float with too much empty space above */
     .section { padding: 2.5rem 0; }
     .about-preview { margin: 1rem auto; }
