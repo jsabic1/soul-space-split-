@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Unicase:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/home.css?v=17">
+  <link rel="stylesheet" href="../css/home.css?v=19">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
@@ -206,7 +206,9 @@
     </section>
 
     <!-- TIMELINE -->
-    <section class="section-parallax section-timeline">
+    <section class="section-parallax section-timeline" data-no-parallax>
+      <div class="tl-track">
+        <div class="tl-stage">
       <div class="container">
         <div class="section-head" data-aos="fade-up">
           <p class="eyebrow">How it works</p>
@@ -215,19 +217,19 @@
         <div class="timeline-wrap">
           <span class="tl-curve" aria-hidden="true"></span>
           <ol class="timeline-steps">
-            <li class="timeline-step" data-aos="fade-up" data-aos-delay="0">
+            <li class="timeline-step">
               <h3>You write to me</h3>
               <p>An email or a message with a few lines about how you feel.</p>
             </li>
-            <li class="timeline-step" data-aos="fade-up" data-aos-delay="150">
+            <li class="timeline-step">
               <h3>I suggest</h3>
               <p>The ritual that would suit you best, and 2–3 available times.</p>
             </li>
-            <li class="timeline-step" data-aos="fade-up" data-aos-delay="300">
+            <li class="timeline-step">
               <h3>You arrive</h3>
               <p>The studio at Sinjska 5. One hour just for you, nothing is required of you.</p>
             </li>
-            <li class="timeline-step" data-aos="fade-up" data-aos-delay="450">
+            <li class="timeline-step">
               <h3>You continue</h3>
               <p>You come back as needed. Most clients visit once a month.</p>
             </li>
@@ -236,6 +238,8 @@
         <div class="section-cta" data-aos="fade-up">
           <a href="contact/" class="btn btn-primary" data-reserve>Book a session</a>
           <p class="cta-note">I work alone and keep a small number of appointments each week. If a particular day suits you, get in touch a day or two ahead.</p>
+        </div>
+      </div>
         </div>
       </div>
     </section>
@@ -295,7 +299,6 @@
           <p class="eyebrow">say hello</p>
           <h2>Your body is ready</h2>
           <p class="cta-sub">It only needs a chance. Write me a few lines about how you feel, I reply within 24 hours and we arrange your session.</p>
-          <span class="cta-rule" aria-hidden="true"></span>
           <a href="contact/" class="btn btn-primary" data-reserve>Book a session</a>
           <p class="cta-note">I work alone and keep a small number of appointments each week.</p>
         </div>
@@ -406,6 +409,6 @@
   </script>
   <script src="../js/nav.js?v=4"></script>
   <script src="../js/parallax.js?v=8"></script>
-  <script src="../js/tl-fill.js?v=2"></script>
+  <script src="../js/tl-fill.js?v=3"></script>
 </body>
 </html>
