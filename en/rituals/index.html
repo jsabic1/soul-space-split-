@@ -108,6 +108,45 @@ html, body { overflow-x: hidden; }
   /* Slika stoji po sredini teksta uz sebe. */
   aspect-ratio: 4 / 5;
   border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+.rit-name-in-pic { display: none; }
+@media (min-width: 861px) {
+  /* Naziv rituala unutar slike, po sredini, umjesto uz tekst. */
+  .rit-ph::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 9, 5, 0.32);
+  }
+  .rit-name-in-pic {
+    display: flex;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    font-family: var(--font-brand);
+    font-weight: 400;
+    font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+    line-height: 1.14;
+    color: #fff;
+    white-space: normal;
+  }
+  .rit-txt h2 {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
 }
 .ritual h2 {
   font-family: var(--font-brand);
@@ -350,7 +389,7 @@ html, body { overflow-x: hidden; }
       </div>
       <a href="../contact/" class="rit-btn" data-reserve>Book a session</a>
     </div>
-    <div class="rit-ph" style="background-image: url('../../wp-content/uploads/soul/ground-release.jpeg')" role="img" aria-label="Ground &amp; Release ritual"></div>
+    <div class="rit-ph" style="background-image: url('../../wp-content/uploads/soul/ground-release.jpeg')" role="img" aria-label="Ground &amp; Release ritual"><h2 class="rit-name-in-pic">Ground &amp; Release</h2></div>
   </article>
 
   <article class="ritual" id="flow-harmony">
@@ -367,7 +406,7 @@ html, body { overflow-x: hidden; }
       </div>
       <a href="../contact/" class="rit-btn" data-reserve>Book a session</a>
     </div>
-    <div class="rit-ph" style="background-image: url('../../wp-content/uploads/soul/flow-harmony.jpeg')" role="img" aria-label="Flow &amp; Harmony ritual"></div>
+    <div class="rit-ph" style="background-image: url('../../wp-content/uploads/soul/flow-harmony.jpeg')" role="img" aria-label="Flow &amp; Harmony ritual"><h2 class="rit-name-in-pic">Flow &amp; Harmony</h2></div>
   </article>
 
   <article class="ritual" id="deep-rest">
@@ -383,7 +422,7 @@ html, body { overflow-x: hidden; }
       </div>
       <a href="../contact/" class="rit-btn" data-reserve>Book a session</a>
     </div>
-    <div class="rit-ph" style="background-image: url('../../wp-content/uploads/soul/deep-rest.jpeg')" role="img" aria-label="Deep Rest ritual"></div>
+    <div class="rit-ph" style="background-image: url('../../wp-content/uploads/soul/deep-rest.jpeg')" role="img" aria-label="Deep Rest ritual"><h2 class="rit-name-in-pic">Deep Rest</h2></div>
   </article>
 
   <article class="ritual" id="inner-glow">
@@ -399,7 +438,7 @@ html, body { overflow-x: hidden; }
       </div>
       <a href="../contact/" class="rit-btn" data-reserve>Book a session</a>
     </div>
-    <div class="rit-ph" style="background-image: url('../../wp-content/uploads/soul/inner-glow.jpeg')" role="img" aria-label="Inner Glow ritual"></div>
+    <div class="rit-ph" style="background-image: url('../../wp-content/uploads/soul/inner-glow.jpeg')" role="img" aria-label="Inner Glow ritual"><h2 class="rit-name-in-pic">Inner Glow</h2></div>
   </article>
 
   <section class="rit-close">
