@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Unicase:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style.css?v=158">
+  <link rel="stylesheet" href="css/style.css?v=159">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style id="nn-home">
@@ -244,6 +244,11 @@
   .nn .break .in{position:relative;max-width:820px}
   .nn .break .stmt{color:var(--lite);max-width:26ch}
   .nn .break .btn-terra{margin-top:4.2rem}
+  /* Napomena ispod gumba preuzima boju teksta oko sebe, da ostane citljiva i tiha. */
+  /* .nn reset gasi margin-top, pa ga ovdje vracamo na vrijednost iz .cta-note */
+  .nn .break .cta-note,.nn .steps .cta-note{margin-top:.75rem;margin-inline:auto;text-align:center}
+  .nn .break .cta-note{color:var(--lite)}
+  .nn .steps .cta-note{color:var(--ink-soft)}
 
   /* 8 · ISKUSTVA — svijetlo */
   .nn .quotes{background:var(--cream);padding:7rem 2rem;text-align:center}
@@ -500,6 +505,7 @@
       <div class="in">
         <p class="stmt">Za ženu koja zna da može bolje <em>i dovoljno je hrabra da si to da.</em></p>
         <a class="btn-terra" href="kontakt/" data-reserve>Rezerviraj termin</a>
+        <p class="cta-note">Radim sama i držim mali broj termina tjedno.</p>
       </div>
     </section>
 
@@ -551,6 +557,7 @@
         </div>
       </div>
       <a class="btn-terra" href="kontakt/" data-reserve>Rezerviraj termin</a>
+      <p class="cta-note">Radim sama i držim mali broj termina tjedno. Ako ti odgovara određeni dan, javi se koji dan ranije.</p>
     </section>
 
     <!-- TRENUCI U STUDIJU -->
