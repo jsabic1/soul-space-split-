@@ -384,7 +384,8 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 @media (min-width: 769px) { .mobile-menu { display: none; } }
 
 @media (max-width: 768px) {
-  .site-header { height: 60px; padding: 0 1rem; }
+  /* backdrop-filter je skup za skrolanje na mobitelu; pozadina je vec dovoljno neprozirna. */
+  .site-header { height: 60px; padding: 0 1rem; backdrop-filter: none; -webkit-backdrop-filter: none; }
   .header-inner {
     height: 40px;
     grid-template-columns: 1fr;
