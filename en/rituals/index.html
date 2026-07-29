@@ -105,14 +105,10 @@ html, body { overflow-x: hidden; }
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 460px;
-  /* Slika ide preko ruba omotaca, sve do ruba ekrana na svojoj strani. */
-  margin-top: calc(-1 * clamp(3rem, 6vw, 5.5rem));
-  margin-bottom: calc(-1 * clamp(3rem, 6vw, 5.5rem));
+  /* Slika je visoka koliko i tekst uz nju, unutar omotaca. */
+  min-height: 320px;
+  border-radius: 4px;
 }
-.ritual:nth-of-type(odd) .rit-ph { margin-right: calc(-1 * var(--rit-bleed)); }
-.ritual:nth-of-type(even) .rit-ph { margin-left: calc(-1 * var(--rit-bleed)); }
-.rit-num { margin-bottom: 0.9rem; }
 .ritual h2 {
   font-family: var(--font-brand);
   font-weight: 400;
@@ -188,7 +184,7 @@ html, body { overflow-x: hidden; }
 /* --- zavrsni poziv --- */
 .rit-close {
   background: var(--bg-alt);
-  text-align: center;
+  text-align: left;
   padding: clamp(3.5rem, 6vw, 5.5rem) clamp(1.5rem, 5vw, 4rem);
   margin-top: 4rem;
 }
@@ -200,18 +196,13 @@ html, body { overflow-x: hidden; }
   color: var(--text);
   margin: 0 0 1.2rem;
 }
-.rit-close .rit-body { max-width: 44ch; margin: 0 auto 2rem; }
-.rit-close .cta-note { margin: 1.1rem auto 0; text-align: center; }
+.rit-close .rit-body { max-width: 44ch; margin: 0 0 2rem; }
+.rit-close .cta-note { margin: 1.1rem 0 0; text-align: left; }
 
 @media (max-width: 860px) {
   .ritual { grid-template-columns: 1fr; gap: 1.75rem; }
   .ritual:nth-of-type(even) .rit-txt { order: 0; }
-  .rit-ph {
-    min-height: 300px;
-    margin: 0 calc(-1 * var(--rit-pad));
-  }
-  .ritual:nth-of-type(odd) .rit-ph,
-  .ritual:nth-of-type(even) .rit-ph { margin-left: calc(-1 * var(--rit-pad)); margin-right: calc(-1 * var(--rit-pad)); }
+  .rit-ph { min-height: 300px; }
   .rit-rates { max-width: 100%; }
 }
 @media (max-width: 420px) {
@@ -220,11 +211,14 @@ html, body { overflow-x: hidden; }
 
 /* --- podnaslov rituala i blokovi Za tebe / Poslije --- */
 .rit-script {
-  font-family: var(--font-script);
-  font-size: clamp(0.92rem, 1.1vw, 1.02rem);
-  line-height: 1.4;
+  font-family: var(--font-brand-sub);
+  font-size: 0.78rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1.5;
   color: var(--accent-soft);
-  margin: 0.7rem 0 0;
+  margin: 0.8rem 0 0;
 }
 .rit-meta { margin: 1.4rem 0 0; }
 .rit-meta .lb {
@@ -300,7 +294,6 @@ html, body { overflow-x: hidden; }
 
   <article class="ritual" id="ground-release">
     <div class="rit-txt">
-      <p class="rit-eyebrow rit-num">01</p>
       <h2>Ground &amp; Release</h2>
       <p class="rit-script">deep massage for tension that won't release on its own</p>
       <p class="rit-body">A deep, intuitive massage that guides the body toward release with firm but never rough pressure and long, flowing strokes. It goes where tension sits deepest, the neck, shoulders and back, but slowly, so your system can follow. Touch that brings you back into your body and into a sense of ground.</p>
@@ -318,7 +311,6 @@ html, body { overflow-x: hidden; }
 
   <article class="ritual" id="flow-harmony">
     <div class="rit-txt">
-      <p class="rit-eyebrow rit-num">02</p>
       <h2>Flow &amp; Harmony</h2>
       <p class="rit-script">slow massage for a nervous system that never stops</p>
       <p class="rit-body">A slow massage whose long, connected strokes let the body settle on its own. Nothing is pushed or forced, the touch calms the nervous system and opens space for balance. Time in which you don't have to go anywhere, except back to yourself.</p>
@@ -336,7 +328,6 @@ html, body { overflow-x: hidden; }
 
   <article class="ritual" id="deep-rest">
     <div class="rit-txt">
-      <p class="rit-eyebrow rit-num">03</p>
       <h2>Deep Rest</h2>
       <p class="rit-script">a restorative ritual to bring back real sleep</p>
       <p class="rit-body">A quiet, restorative ritual focused on the head, neck and décolleté, with touch that gives the body permission to surrender. It soothes the places where fatigue gathers and guides you into deep relaxation, the state from which sleep comes more easily. Nothing sudden, nothing forced.</p>
@@ -353,7 +344,6 @@ html, body { overflow-x: hidden; }
 
   <article class="ritual" id="inner-glow">
     <div class="rit-txt">
-      <p class="rit-eyebrow rit-num">04</p>
       <h2>Inner Glow</h2>
       <p class="rit-script">a ritual for face and lymph, gentle and slow</p>
       <p class="rit-body">A gentle massage devoted to the face, which remembers emotions and everything we hold through the day, and to the neck and décolleté. Restorative touch that moves the lymph, releases tension and returns softness to the face. Everything slow, no hurry.</p>
