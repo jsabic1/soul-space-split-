@@ -135,25 +135,24 @@ html, body { overflow-x: hidden; }
   margin: 1.2rem 0 0;
 }
 
-/* --- cjenik: trajanje lijevo, cijena desno --- */
+/* --- cjenik: minute u jednom redu, cijena ispod, isti font --- */
 .rit-rates { width: 100%; max-width: 22rem; margin: 1.8rem 0; }
 .rit-rates div {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1.25rem;
-  padding: 0.7rem 0;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.9rem 0;
   border-bottom: 1px solid var(--border);
 }
 .rit-rates div:first-child { border-top: 1px solid var(--border); }
-.rit-rates .t {
+.rit-rates .t,
+.rit-rates .p {
   font-family: var(--font-brand-sub);
-  font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--text-muted);
 }
-.rit-rates .p { font-family: var(--font-brand); font-size: 1.35rem; color: var(--text); }
+.rit-rates .t { font-size: 0.92rem; color: var(--text-muted); }
+.rit-rates .p { font-size: 0.92rem; color: var(--text); }
 
 /* --- gumb, isti kao na naslovnici --- */
 .rit-btn {
