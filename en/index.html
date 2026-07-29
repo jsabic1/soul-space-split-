@@ -79,11 +79,15 @@
 
   /* 3 · PREPOZNAJEŠ SE — vektor lijevo, naslov i cetiri stavke desno */
   .nn .foryou{background:var(--cream);padding:5rem 2rem 11rem;text-align:center;overflow:hidden}
-  .nn .fy-wrap{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr .30fr;
-    gap:clamp(2.5rem,5vw,5rem);align-items:center;text-align:left}
-  .nn .fy-vek{aspect-ratio:540/863;width:clamp(130px,13.5vw,196px);justify-self:center;align-self:center;
+  .nn .fy-wrap{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr .34fr;
+    column-gap:clamp(2.5rem,5vw,5rem);row-gap:0;align-items:center;text-align:left}
+  .nn .fy-head{grid-column:1;grid-row:1}
+  .nn .fy-grid{grid-column:1;grid-row:2}
+  /* Vektor stoji uz mrezu, po sredini izmedju gornjeg i donjeg reda. */
+  .nn .fy-vek{grid-column:2;grid-row:2}
+  .nn .fy-vek{aspect-ratio:470/466;width:clamp(190px,21vw,300px);justify-self:center;align-self:center;
     opacity:.15;pointer-events:none;
-    background:url('../wp-content/uploads/soul/motiv-mjesec.webp') center/contain no-repeat}
+    background:url('../wp-content/uploads/soul/motiv-krugovi.webp') center/contain no-repeat}
   /* Tijelo / San / Napetost / Tempo — svaki ulazi zdesna, jedan po jedan. */
   .nn .fy-grid .fy-item{opacity:0}
   .nn .fy-grid.is-in .fy-item{animation:nn-slide-right 2.24s cubic-bezier(.19,1,.22,1) both;
@@ -100,10 +104,13 @@
   .nn .fy-item{position:relative;padding-top:.5rem}
   @media(max-width:860px){
     /* Na mobitelu vektor stoji izblijedjen iza teksta, raspored ostaje isti. */
-    .nn .fy-wrap{position:relative;grid-template-columns:1fr;gap:0;text-align:center;justify-items:center}
-    .nn .fy-vek{position:absolute;left:50%;top:60%;transform:translate(-50%,-50%);
-      width:min(196px,48vw);opacity:.15;z-index:0}
-    .nn .fy-body{position:relative;z-index:1;width:100%}
+    .nn .fy-wrap{position:relative;grid-template-columns:1fr;column-gap:0;text-align:center;justify-items:center}
+    /* Vektor lezi tocno preko mreze, po sredini izmedju gornjeg i donjeg reda. */
+    .nn .fy-vek{grid-column:1;grid-row:2;justify-self:center;align-self:center;
+      width:min(250px,62vw);opacity:.15;z-index:0}
+    .nn .fy-head,.nn .fy-grid{position:relative;z-index:1;width:100%;grid-column:1}
+    .nn .fy-head{grid-row:1}
+    .nn .fy-grid{grid-row:2}
     .nn .fy-grid{max-width:440px;gap:3.8rem 1.2rem}
     .nn .fy-item p{font-size:1.02rem;max-width:15ch;margin:0 auto}
     .nn .fy-item .lbl{font-size:.76rem;letter-spacing:.2em}
@@ -382,9 +389,10 @@
     <!-- THIS IS FOR YOU IF -->
     <section class="foryou">
       <div class="fy-wrap">
-        <div class="fy-body">
-      <span class="eyebrow">sound familiar?</span>
-      <h2>this is for you if</h2>
+        <div class="fy-head">
+          <span class="eyebrow">sound familiar?</span>
+          <h2>this is for you if</h2>
+        </div>
       <div class="fy-grid">
       <div class="fy-item">
         <span class="lbl">Body</span>
@@ -403,7 +411,6 @@
         <p>you can't remember the last time you truly stopped</p>
       </div>
       </div>
-        </div>
         <div class="fy-vek" aria-hidden="true"></div>
       </div>
     </section>
