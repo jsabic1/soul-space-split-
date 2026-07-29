@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Unicase:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="../css/style.css?v=90">
+<link rel="stylesheet" href="../css/style.css?v=91">
 
 <style>
 /* ============================================================
@@ -161,7 +161,7 @@ html, body { overflow-x: hidden; }
   background: transparent;
   color: #FFF3E5;
   border: 1px solid #FFF3E5;
-  border-radius: 999px;
+  border-radius: 0;
   padding: 0.95rem 2.6rem;
   min-width: 17.3rem;
   text-align: center;
@@ -213,15 +213,17 @@ html, body { overflow-x: hidden; }
     position: absolute;
     left: calc(-1 * var(--rit-pad));
     right: calc(-1 * var(--rit-pad));
-    bottom: 0;
-    height: clamp(300px, 82vw, 400px);
+    top: 50%;
+    transform: translateY(-50%);
+    height: clamp(340px, 92vw, 460px);
     aspect-ratio: auto;
     border-radius: 0;
     opacity: 0.5;
     z-index: 0;
     pointer-events: none;
-    -webkit-mask-image: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0.9) 26%, rgba(0, 0, 0, 0.45) 62%, transparent 100%);
-            mask-image: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0.9) 26%, rgba(0, 0, 0, 0.45) 62%, transparent 100%);
+    /* Vidi se po sredini, a gore i dolje se bez ruba gubi u pozadinu. */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.55) 22%, #000 46%, #000 54%, rgba(0, 0, 0, 0.55) 78%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.55) 22%, #000 46%, #000 54%, rgba(0, 0, 0, 0.55) 78%, transparent 100%);
   }
   .rit-rates { max-width: 100%; }
 }
