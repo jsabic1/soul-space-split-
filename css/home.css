@@ -1841,3 +1841,9 @@ h3,
   .tl-stage { position: static; height: auto; padding: 0; }
   .timeline-step { opacity: 1; }
 }
+
+/* Vise zraka izmedju cetiri koraka i gumba. */
+.section-timeline .section-cta { margin-top: clamp(4.5rem, 7vw, 7rem); }
+@media (max-width: 860px) {
+  .section-timeline .section-cta { margin-top: 3.5rem; }
+}
