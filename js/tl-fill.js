@@ -6,28 +6,46 @@
   if (!wrap) return;
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  var tick = false;
+  var target = 0;
+  var shown = 0;
+  var running = false;
 
-  function update() {
-    tick = false;
+  function measure() {
     var r = wrap.getBoundingClientRect();
     var vh = window.innerHeight || document.documentElement.clientHeight;
-    /* 0 kad vrh niti dođe na 82% visine ekrana, 1 kad dno dođe na 58%. */
-    var start = vh * 0.82;
-    var end = vh * 0.58;
+    /* Nit kreće čim vrh uđe u kadar i puni se sve do dna ekrana,
+       pa je put dulji, a punjenje sporije nego prije. */
+    var start = vh * 1.05;
+    var end = vh * 0.05;
     var p = (start - r.top) / Math.max(1, (r.height + start - end));
     if (p < 0) p = 0; else if (p > 1) p = 1;
-    wrap.style.setProperty('--tl', p.toFixed(3));
+    target = p;
+  }
+
+  /* Prikazana vrijednost polako stiže ciljanu, pa nit klizi umjesto da skače. */
+  function loop() {
+    var d = target - shown;
+    if (Math.abs(d) < 0.001) {
+      shown = target;
+      running = false;
+    } else {
+      shown += d * 0.06;
+      requestAnimationFrame(loop);
+    }
+    wrap.style.setProperty('--tl', shown.toFixed(3));
   }
 
   function onScroll() {
-    if (tick) return;
-    tick = true;
-    requestAnimationFrame(update);
+    measure();
+    if (!running) {
+      running = true;
+      requestAnimationFrame(loop);
+    }
   }
 
   wrap.style.setProperty('--tl', '0');
-  update();
+  measure();
+  onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
 })();
