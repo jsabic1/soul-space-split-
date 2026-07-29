@@ -111,30 +111,46 @@ html, body { overflow-x: hidden; }
   position: relative;
   overflow: hidden;
 }
-.rit-name-in-pic { display: none; }
+.rit-in-pic { display: none; }
+.rit-script-desktop { display: none; }
 @media (min-width: 861px) {
-  /* Naziv rituala unutar slike, po sredini, umjesto uz tekst. */
+  /* Naziv, kratki opis i gumb unutar slike, po sredini, umjesto uz tekst. */
   .rit-ph::before {
     content: "";
     position: absolute;
     inset: 0;
     background: rgba(20, 9, 5, 0.32);
   }
-  .rit-name-in-pic {
+  .rit-in-pic {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     inset: 0;
     z-index: 1;
-    align-items: center;
-    justify-content: center;
     text-align: center;
     padding: 2rem;
+  }
+  .rit-in-pic h2 {
     font-family: var(--font-brand);
     font-weight: 400;
     font-size: clamp(1.8rem, 2.8vw, 2.4rem);
     line-height: 1.14;
     color: #fff;
     white-space: normal;
+    margin: 0;
+  }
+  .rit-in-pic-cap {
+    font-family: var(--font-brand-sub);
+    font-size: 0.74rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    margin: 0.7rem 0 0;
+  }
+  .rit-in-pic-btn {
+    margin-top: 1.3rem;
   }
   .rit-txt h2 {
     position: absolute !important;
@@ -147,6 +163,9 @@ html, body { overflow-x: hidden; }
     white-space: nowrap;
     border: 0;
   }
+  .rit-txt .rit-btn { display: none; }
+  .rit-script-mobile { display: none; }
+  .rit-script-desktop { display: block; }
 }
 .ritual h2 {
   font-family: var(--font-brand);
@@ -378,7 +397,8 @@ html, body { overflow-x: hidden; }
   <article class="ritual" id="ground-release">
     <div class="rit-txt">
       <h2>Ground &amp; Release</h2>
-      <p class="rit-script">duboka masaža za napetosti koje se ne otpuštaju same</p>
+      <p class="rit-script rit-script-mobile">duboka masaža za napetosti koje se ne otpuštaju same</p>
+      <p class="rit-script rit-script-desktop">za napetosti koje se ne otpuštaju same</p>
       <p class="rit-body">Duboka, intuitivna masaža koja čvrstim ali nikad grubim pritiskom i dugim, protočnim pokretima vodi tijelo prema otpuštanju. Ide tamo gdje napetost sjedi najdublje, u vratu, ramenima i leđima, ali polako, da je sustav stigne pratiti. Dodir koji te vraća u tijelo i u osjećaj uzemljenja.</p>
       <div class="rit-meta"><span class="lb">Za tebe</span><p>kad dane provodiš za stolom i pred ekranom, a napetost se već udomaćila u vratu i ramenima</p></div>
       <div class="rit-meta"><span class="lb">Poslije</span><p>odlaziš lakša, s tijelom koje je konačno spustilo obrane</p></div>
@@ -389,13 +409,20 @@ html, body { overflow-x: hidden; }
       </div>
       <a href="../kontakt/" class="rit-btn" data-reserve>Rezerviraj termin</a>
     </div>
-    <div class="rit-ph" style="background-image: url('../wp-content/uploads/soul/ground-release.jpeg')" role="img" aria-label="Ground &amp; Release ritual"><h2 class="rit-name-in-pic">Ground &amp; Release</h2></div>
+    <div class="rit-ph" style="background-image: url('../wp-content/uploads/soul/ground-release.jpeg')">
+      <div class="rit-in-pic">
+        <h2 aria-hidden="true">Ground &amp; Release</h2>
+        <p class="rit-in-pic-cap">duboki intuitivni ritual</p>
+        <a href="../kontakt/" class="rit-btn rit-in-pic-btn" data-reserve>Rezerviraj termin</a>
+      </div>
+    </div>
   </article>
 
   <article class="ritual" id="flow-harmony">
     <div class="rit-txt">
       <h2>Flow &amp; Harmony</h2>
-      <p class="rit-script">polagana masaža za živčani sustav<br>koji ne staje</p>
+      <p class="rit-script rit-script-mobile">polagana masaža za živčani sustav<br>koji ne staje</p>
+      <p class="rit-script rit-script-desktop">polagana masaža koja ne staje</p>
       <p class="rit-body">Polagana masaža koja dugim, povezanim pokretima dopušta tijelu da se spusti samo od sebe. Ništa se ne probija ni ne forsira, dodir umiruje živčani sustav i otvara prostor za ravnotežu. Vrijeme u kojem ne moraš nikamo, osim natrag k sebi.</p>
       <div class="rit-meta"><span class="lb">Za tebe</span><p>kad "držiš sve" i ne znaš se isključiti, kad spavaš ali se ne odmaraš</p></div>
       <div class="rit-meta"><span class="lb">Poslije</span><p>odlaziš sporija, s dubljim dahom i tišom glavom</p></div>
@@ -406,13 +433,20 @@ html, body { overflow-x: hidden; }
       </div>
       <a href="../kontakt/" class="rit-btn" data-reserve>Rezerviraj termin</a>
     </div>
-    <div class="rit-ph" style="background-image: url('../wp-content/uploads/soul/flow-harmony.jpeg')" role="img" aria-label="Flow &amp; Harmony ritual"><h2 class="rit-name-in-pic">Flow &amp; Harmony</h2></div>
+    <div class="rit-ph" style="background-image: url('../wp-content/uploads/soul/flow-harmony.jpeg')">
+      <div class="rit-in-pic">
+        <h2 aria-hidden="true">Flow &amp; Harmony</h2>
+        <p class="rit-in-pic-cap">ritual za živčani sustav</p>
+        <a href="../kontakt/" class="rit-btn rit-in-pic-btn" data-reserve>Rezerviraj termin</a>
+      </div>
+    </div>
   </article>
 
   <article class="ritual" id="deep-rest">
     <div class="rit-txt">
       <h2>Deep Rest</h2>
-      <p class="rit-script">restorativni ritual<br>za povratak pravom snu</p>
+      <p class="rit-script rit-script-mobile">restorativni ritual<br>za povratak pravom snu</p>
+      <p class="rit-script rit-script-desktop">za povratak pravom snu</p>
       <p class="rit-body">Tih, restorativan ritual s naglaskom na glavu, vrat i dekolte, dodirom koji tijelu daje dopuštenje da se preda. Umiruje mjesta gdje se skuplja umor i vodi te u duboku relaksaciju, ono stanje iz kojeg san dolazi lakše. Ništa naglo, ništa forsirano.</p>
       <div class="rit-meta"><span class="lb">Za tebe</span><p>kad san ne dolazi lako i kad ti treba spustiti obrtaje</p></div>
       <div class="rit-meta"><span class="lb">Poslije</span><p>odlaziš smirena, s glavom koja je utihnula i tijelom bez napetosti</p></div>
@@ -422,13 +456,20 @@ html, body { overflow-x: hidden; }
       </div>
       <a href="../kontakt/" class="rit-btn" data-reserve>Rezerviraj termin</a>
     </div>
-    <div class="rit-ph" style="background-image: url('../wp-content/uploads/soul/deep-rest.jpeg')" role="img" aria-label="Deep Rest ritual"><h2 class="rit-name-in-pic">Deep Rest</h2></div>
+    <div class="rit-ph" style="background-image: url('../wp-content/uploads/soul/deep-rest.jpeg')">
+      <div class="rit-in-pic">
+        <h2 aria-hidden="true">Deep Rest</h2>
+        <p class="rit-in-pic-cap">restorativni ritual</p>
+        <a href="../kontakt/" class="rit-btn rit-in-pic-btn" data-reserve>Rezerviraj termin</a>
+      </div>
+    </div>
   </article>
 
   <article class="ritual" id="inner-glow">
     <div class="rit-txt">
       <h2>Inner Glow</h2>
-      <p class="rit-script">ritual za lice i limfu,<br>nježno i polako</p>
+      <p class="rit-script rit-script-mobile">ritual za lice i limfu,<br>nježno i polako</p>
+      <p class="rit-script rit-script-desktop">nježno i polako</p>
       <p class="rit-body">Nježna masaža usmjerena na lice, koje pamti emocije i sve što danju držimo, te na vrat i dekolte. Restorativan dodir koji pokreće limfu, otpušta napetost i licu vraća mekoću. Sve polako, bez žurbe.</p>
       <div class="rit-meta"><span class="lb">Za tebe</span><p>kad ti je lice umorno i stegnuto, a treba mu mir i malo vraćene vitalnosti</p></div>
       <div class="rit-meta"><span class="lb">Poslije</span><p>odlaziš s budnijim, mekšim licem i odmornijim izrazom</p></div>
@@ -438,7 +479,13 @@ html, body { overflow-x: hidden; }
       </div>
       <a href="../kontakt/" class="rit-btn" data-reserve>Rezerviraj termin</a>
     </div>
-    <div class="rit-ph" style="background-image: url('../wp-content/uploads/soul/inner-glow.jpeg')" role="img" aria-label="Inner Glow ritual"><h2 class="rit-name-in-pic">Inner Glow</h2></div>
+    <div class="rit-ph" style="background-image: url('../wp-content/uploads/soul/inner-glow.jpeg')">
+      <div class="rit-in-pic">
+        <h2 aria-hidden="true">Inner Glow</h2>
+        <p class="rit-in-pic-cap">ritual za lice i limfu</p>
+        <a href="../kontakt/" class="rit-btn rit-in-pic-btn" data-reserve>Rezerviraj termin</a>
+      </div>
+    </div>
   </article>
 
   <section class="rit-close">
