@@ -31,9 +31,33 @@
    ============================================================ */
 body { background: var(--bg); }
 
-.rit-wrap { max-width: 1180px; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3.5rem); }
+.rit-wrap {
+  --rit-pad: clamp(1.25rem, 5vw, 3.5rem);
+  /* Razmak od ruba sadrzaja do ruba ekrana, za slike preko cijele strane. */
+  --rit-bleed: calc((100vw - min(1180px, 100vw)) / 2 + var(--rit-pad));
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 var(--rit-pad);
+}
+/* Slike izlaze do ruba ekrana, pa se vodoravni visak odsijeca. */
+html, body { overflow-x: hidden; }
 
-.rit-hero { padding: clamp(7rem, 11vw, 11rem) 0 clamp(3rem, 6vw, 5rem); }
+.rit-hero {
+  position: relative;
+  min-height: min(72vh, 620px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(7rem, 11vw, 11rem) 0 clamp(3rem, 6vw, 5rem);
+  margin: 0 calc(-1 * var(--rit-bleed)) clamp(2rem, 4vw, 3.5rem);
+  padding-left: var(--rit-bleed);
+  padding-right: var(--rit-bleed);
+  background-image: linear-gradient(to bottom, rgba(31, 15, 10, 0.55) 0%, rgba(31, 15, 10, 0.72) 60%, var(--bg) 100%),
+    url('../wp-content/uploads/soul/hero-1.jpg');
+  background-size: cover;
+  background-position: center 42%;
+  background-repeat: no-repeat;
+}
 .rit-hero .rit-eyebrow { margin-bottom: 1rem; }
 .rit-hero h1 {
   font-family: var(--font-brand);
@@ -70,11 +94,11 @@ body { background: var(--bg); }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(1.75rem, 5vw, 4.5rem);
-  align-items: center;
+  align-items: stretch;
   padding: clamp(3rem, 6vw, 5.5rem) 0;
-  border-top: 1px solid var(--border);
   scroll-margin-top: 96px;
 }
+.rit-txt { align-self: center; }
 .ritual:nth-of-type(even) .rit-txt { order: 2; }
 .rit-ph {
   background-color: var(--bg-alt);
@@ -82,16 +106,21 @@ body { background: var(--bg); }
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 460px;
-  border-radius: 4px;
+  /* Slika ide preko ruba omotaca, sve do ruba ekrana na svojoj strani. */
+  margin-top: calc(-1 * clamp(3rem, 6vw, 5.5rem));
+  margin-bottom: calc(-1 * clamp(3rem, 6vw, 5.5rem));
 }
+.ritual:nth-of-type(odd) .rit-ph { margin-right: calc(-1 * var(--rit-bleed)); }
+.ritual:nth-of-type(even) .rit-ph { margin-left: calc(-1 * var(--rit-bleed)); }
 .rit-num { margin-bottom: 0.9rem; }
 .ritual h2 {
   font-family: var(--font-brand);
   font-weight: 400;
-  font-size: clamp(1.9rem, 3.4vw, 3.1rem);
+  font-size: clamp(1.5rem, 2.6vw, 2.5rem);
   line-height: 1.14;
   color: var(--text);
   margin: 0;
+  white-space: nowrap;
 }
 .rit-tagline {
   font-family: var(--font-brand-sub);
@@ -177,7 +206,12 @@ body { background: var(--bg); }
 @media (max-width: 860px) {
   .ritual { grid-template-columns: 1fr; gap: 1.75rem; }
   .ritual:nth-of-type(even) .rit-txt { order: 0; }
-  .rit-ph { min-height: 260px; }
+  .rit-ph {
+    min-height: 300px;
+    margin: 0 calc(-1 * var(--rit-pad));
+  }
+  .ritual:nth-of-type(odd) .rit-ph,
+  .ritual:nth-of-type(even) .rit-ph { margin-left: calc(-1 * var(--rit-pad)); margin-right: calc(-1 * var(--rit-pad)); }
   .rit-rates { max-width: 100%; }
 }
 @media (max-width: 420px) {
@@ -187,12 +221,12 @@ body { background: var(--bg); }
 /* --- podnaslov rituala i blokovi Za tebe / Poslije --- */
 .rit-script {
   font-family: var(--font-script);
-  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  font-size: clamp(0.92rem, 1.1vw, 1.02rem);
   line-height: 1.4;
   color: var(--accent-soft);
   margin: 0.7rem 0 0;
 }
-.rit-meta { margin: 1.4rem 0 0; padding-left: 1.4rem; border-left: 1px solid var(--border); }
+.rit-meta { margin: 1.4rem 0 0; }
 .rit-meta .lb {
   display: block;
   font-family: var(--font-brand-sub);
