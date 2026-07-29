@@ -119,8 +119,14 @@ html, body { overflow-x: hidden; }
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(20, 9, 5, 0.32);
+    background:
+      radial-gradient(120% 100% at 50% 50%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.45) 100%),
+      rgba(20, 9, 5, 0.38);
   }
+  .rit-txt { text-align: left; align-self: start; }
+  .rit-txt .rit-body,
+  .rit-txt .rit-meta,
+  .rit-txt .rit-rates { margin-left: 0; margin-right: 0; }
   .rit-in-pic {
     display: flex;
     flex-direction: column;
@@ -274,7 +280,7 @@ html, body { overflow-x: hidden; }
     display: block;
     padding-bottom: clamp(5rem, 16vw, 7rem);
   }
-  .rit-txt { position: relative; z-index: 1; }
+  .rit-txt { position: relative; z-index: 1; text-align: center; }
   .rit-ph {
     position: absolute;
     left: calc(-1 * var(--rit-pad));
@@ -337,9 +343,8 @@ html, body { overflow-x: hidden; }
   color: var(--text-muted);
 }
 
-/* --- sav tekst po sredini, osim redaka cjenika --- */
+/* --- sav tekst po sredini, osim redaka cjenika; rit-txt na desktopu ide ulijevo --- */
 .rit-hero,
-.rit-txt,
 .rit-close { text-align: center; }
 .rit-lede,
 .rit-body,
@@ -412,7 +417,7 @@ html, body { overflow-x: hidden; }
     <div class="rit-ph" style="background-image: url('../wp-content/uploads/soul/ground-release.jpeg')">
       <div class="rit-in-pic">
         <h2 aria-hidden="true">Ground &amp; Release</h2>
-        <p class="rit-in-pic-cap">duboki intuitivni ritual</p>
+        <p class="rit-in-pic-cap">duboka intuitivna masaža</p>
         <a href="../kontakt/" class="rit-btn rit-in-pic-btn" data-reserve>Rezerviraj termin</a>
       </div>
     </div>
@@ -436,7 +441,7 @@ html, body { overflow-x: hidden; }
     <div class="rit-ph" style="background-image: url('../wp-content/uploads/soul/flow-harmony.jpeg')">
       <div class="rit-in-pic">
         <h2 aria-hidden="true">Flow &amp; Harmony</h2>
-        <p class="rit-in-pic-cap">ritual za živčani sustav</p>
+        <p class="rit-in-pic-cap">masaža za živčani sustav</p>
         <a href="../kontakt/" class="rit-btn rit-in-pic-btn" data-reserve>Rezerviraj termin</a>
       </div>
     </div>
@@ -459,7 +464,7 @@ html, body { overflow-x: hidden; }
     <div class="rit-ph" style="background-image: url('../wp-content/uploads/soul/deep-rest.jpeg')">
       <div class="rit-in-pic">
         <h2 aria-hidden="true">Deep Rest</h2>
-        <p class="rit-in-pic-cap">restorativni ritual</p>
+        <p class="rit-in-pic-cap">restorativna masaža</p>
         <a href="../kontakt/" class="rit-btn rit-in-pic-btn" data-reserve>Rezerviraj termin</a>
       </div>
     </div>
@@ -482,14 +487,13 @@ html, body { overflow-x: hidden; }
     <div class="rit-ph" style="background-image: url('../wp-content/uploads/soul/inner-glow.jpeg')">
       <div class="rit-in-pic">
         <h2 aria-hidden="true">Inner Glow</h2>
-        <p class="rit-in-pic-cap">ritual za lice i limfu</p>
+        <p class="rit-in-pic-cap">masaža za lice i limfu</p>
         <a href="../kontakt/" class="rit-btn rit-in-pic-btn" data-reserve>Rezerviraj termin</a>
       </div>
     </div>
   </article>
 
   <section class="rit-close">
-    <p class="rit-eyebrow">tempo prije tehnike</p>
     <h2>Već prvi put tijelo popusti. Svaki sljedeći ide korak dalje.</h2>
     <p class="rit-body">Ovo je proces, ne brzi popravak. Ali razliku osjetiš od prvog dolaska.</p>
     <a href="../kontakt/" class="rit-btn" data-reserve>Rezerviraj termin</a>
