@@ -270,6 +270,19 @@ html, body { overflow-x: hidden; }
   max-width: 34ch;
   color: var(--text-muted);
 }
+
+/* --- sav tekst po sredini, osim redaka cjenika --- */
+.rit-hero,
+.rit-txt,
+.rit-close { text-align: center; }
+.rit-lede,
+.rit-body,
+.rit-meta { margin-left: auto; margin-right: auto; }
+.rit-close .rit-body { margin-left: auto; margin-right: auto; }
+.rit-close .cta-note { margin-left: auto; margin-right: auto; text-align: center; }
+/* Cjenik ostaje trajanje lijevo, cijena desno, ali blok stoji po sredini. */
+.rit-rates { margin-left: auto; margin-right: auto; }
+.rit-rates div { text-align: left; }
 </style>
 </head>
 <body>
