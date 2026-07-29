@@ -135,16 +135,24 @@ html, body { overflow-x: hidden; }
   margin: 1.2rem 0 0;
 }
 
-/* --- cjenik: minute u jednom redu, cijena ispod, isti font --- */
-.rit-rates { width: 100%; max-width: 22rem; margin: 1.8rem 0; }
+/* --- cjenik: sve minute u jednom redu, sve cijene u drugom, ukupno 2 reda --- */
+.rit-rates {
+  display: flex;
+  width: 100%;
+  max-width: 22rem;
+  margin: 1.8rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
 .rit-rates div {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
-  padding: 0.9rem 0;
-  border-bottom: 1px solid var(--border);
+  padding: 0.9rem 0.5rem;
+  border-right: 1px solid var(--border);
 }
-.rit-rates div:first-child { border-top: 1px solid var(--border); }
+.rit-rates div:last-child { border-right: none; }
 .rit-rates .t,
 .rit-rates .p {
   font-family: var(--font-brand-sub);
@@ -281,7 +289,7 @@ html, body { overflow-x: hidden; }
 .rit-close .cta-note { margin-left: auto; margin-right: auto; text-align: center; }
 /* Cjenik ostaje trajanje lijevo, cijena desno, ali blok stoji po sredini. */
 .rit-rates { margin-left: auto; margin-right: auto; }
-.rit-rates div { text-align: left; }
+.rit-rates div { text-align: center; }
 </style>
 </head>
 <body>
