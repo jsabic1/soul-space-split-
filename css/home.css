@@ -1991,61 +1991,14 @@ h3,
 }
 
 /* ============================================================
-   "Ovo je za tebe ako" — desktop dobiva vise zraka, tanku crtu
-   ispod svake stavke, i malu kvadratnu sliku desno, centriranu
-   po visini cijelog bloka (naslov + mreza), kao kod Rituala.
-   Na mobitelu ista slika (drugi <img>, isti src) stoji kao
-   pozadina iza same mreze od cetiri stavke, centrirana i bez
-   ruba se gubi prema gore i dolje, isto kao slike rituala.
-   Dvije zasebne oznake (-d/-m) jer im je roditelj u DOM-u razlicit,
-   pa im rjesenje pozicioniranja ne moze biti isto.
+   "Ovo je za tebe ako" — desktop dobiva vise zraka i tanku
+   crtu ispod svake stavke, bez slike.
    ============================================================ */
-.for-you-pic { display: none; }
-.for-you-pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.for-you-grid-wrap { position: relative; }
-.for-you-pic-m img { object-position: center 35%; }
-
 @media (min-width: 861px) {
-  .for-you-wrap {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
-    column-gap: clamp(2.5rem, 5vw, 4rem);
-    align-items: center;
-    text-align: left;
-    justify-items: stretch;
-  }
+  .for-you-wrap { justify-items: stretch; }
   .for-you .section-head { text-align: left; margin-bottom: 6rem; }
   .for-you-grid { justify-items: stretch; gap: 5.5rem 4rem; }
   .for-you-item { text-align: left; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
   .for-you-num { margin-bottom: 1.1rem; }
   .for-you-text { margin-left: 0; margin-right: 0; }
-  .for-you-pic-d {
-    display: block;
-    align-self: center;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    border-radius: 4px;
-    overflow: hidden;
-  }
-}
-
-@media (max-width: 860px) {
-  /* Slika ide od ruba do ruba ekrana, izlazi izvan containerova
-     razmaka (2rem, ili 1.25rem ispod 768px). Gubi se samo gore
-     i dolje, lijevo i desno ide do samog ruba, bez fade-a. */
-  .for-you-pic-m {
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -2rem;
-    right: -2rem;
-    z-index: 0;
-    opacity: 0.5;
-    pointer-events: none;
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.55) 18%, #000 42%, #000 58%, rgba(0, 0, 0, 0.55) 82%, transparent 100%);
-            mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.55) 18%, #000 42%, #000 58%, rgba(0, 0, 0, 0.55) 82%, transparent 100%);
-  }
-}
-@media (max-width: 768px) {
-  .for-you-pic-m { left: -1.25rem; right: -1.25rem; }
 }
