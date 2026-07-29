@@ -1435,3 +1435,22 @@ body.home .cta-banner h2 {
 
 /* Napomena ispod gumba je centrirana jer je i sam gumb centriran. */
 .cta-banner .cta-note { margin-left: auto; margin-right: auto; text-align: center; }
+
+/* ============================================================
+   Meka svjetlucava nit iznad koraka (Od poruke do stola).
+   Cisti ukras: bez skripte, bez animacije i bez dodatnog
+   skrolanja — samo zamjenjuje ravnu crtu koja je bila prije.
+   ============================================================ */
+.timeline-wrap::before { display: none; }
+.tl-curve {
+  display: block;
+  width: 100%;
+  height: clamp(38px, 4.4vw, 62px);
+  margin: 0 0 2.2rem;
+  pointer-events: none;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='0'><stop offset='0' stop-color='%23D86934' stop-opacity='0'/><stop offset='0.16' stop-color='%23D86934' stop-opacity='0.85'/><stop offset='0.3' stop-color='%23FFC08A' stop-opacity='1'/><stop offset='0.5' stop-color='%23C8965C' stop-opacity='0.75'/><stop offset='0.78' stop-color='%23C8965C' stop-opacity='0.45'/><stop offset='1' stop-color='%23C8965C' stop-opacity='0'/></linearGradient><filter id='b' x='-10%25' y='-200%25' width='120%25' height='500%25'><feGaussianBlur stdDeviation='4'/></filter></defs><path d='M0,40 C160,54 300,16 520,26 C740,36 900,10 1200,30' fill='none' stroke='url(%23g)' stroke-width='5' opacity='0.5' filter='url(%23b)'/><path d='M0,40 C160,54 300,16 520,26 C740,36 900,10 1200,30' fill='none' stroke='url(%23g)' stroke-width='1.4'/></svg>") center / 100% 100% no-repeat;
+}
+/* Na mobitelu koraci idu u stupac s uspravnom crtom, pa nit ne treba. */
+@media (max-width: 860px) {
+  .tl-curve { display: none; }
+}
