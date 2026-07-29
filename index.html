@@ -78,8 +78,12 @@
   @media(prefers-reduced-motion:reduce){
     .nn .stmt-sec .stmt .fc{clip-path:none;transition:none}}
 
-  /* 3 · PREPOZNAJEŠ SE */
+  /* 3 · PREPOZNAJEŠ SE — vektor lijevo, naslov i cetiri stavke desno */
   .nn .foryou{background:var(--cream);padding:5rem 2rem 11rem;text-align:center;overflow:hidden}
+  .nn .fy-wrap{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:.72fr 1fr;
+    gap:clamp(2.5rem,5vw,5rem);align-items:center;text-align:left}
+  .nn .fy-vek{aspect-ratio:556/783;opacity:.34;pointer-events:none;
+    background:url('wp-content/uploads/soul/motiv-palma.webp') center/contain no-repeat}
   /* Tijelo / San / Napetost / Tempo — svaki ulazi zdesna, jedan po jedan. */
   .nn .fy-grid .fy-item{opacity:0}
   .nn .fy-grid.is-in .fy-item{animation:nn-slide-right 2.24s cubic-bezier(.19,1,.22,1) both;
@@ -89,16 +93,19 @@
     .nn .fy-grid .fy-item,.nn .fy-grid.is-in .fy-item{opacity:1;animation:none}}
   /* "prepoznaješ se?" — isti font kao naslović "O meni". */
   .nn .foryou .eyebrow{display:block;margin-bottom:1.5rem}
-  .nn .foryou h2{font-size:clamp(1.9rem,3vw,2.7rem);margin-bottom:4.6rem}
-  .nn .fy-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:3.6rem}
-  .nn .fy-item svg{width:48px;height:48px;stroke:var(--terra);margin:0 auto 1.2rem}
+  .nn .foryou h2{font-size:clamp(1.9rem,3vw,2.7rem);margin-bottom:3.4rem}
+  .nn .fy-grid{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3rem 2.4rem}
   .nn .fy-item .lbl{font-family:var(--caps);font-size:1rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.75rem}
-  .nn .fy-item p{color:var(--ink-soft);font-size:1.36rem;line-height:1.6;max-width:16ch;margin:0 auto}
+  .nn .fy-item p{color:var(--ink-soft);font-size:1.36rem;line-height:1.6;max-width:20ch;margin:0}
   .nn .fy-item{position:relative;padding-top:.5rem}
   @media(max-width:860px){
-    .nn .fy-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:440px;gap:3.8rem 1.2rem}
-    .nn .fy-item p{font-size:1.02rem;max-width:15ch}
-    .nn .fy-item svg{width:34px;height:34px}
+    /* Na mobitelu list stoji izblijedjen iza teksta, raspored ostaje isti. */
+    .nn .fy-wrap{position:relative;grid-template-columns:1fr;gap:0;text-align:center;justify-items:center}
+    .nn .fy-vek{position:absolute;left:50%;top:60%;transform:translate(-50%,-50%);
+      width:min(320px,76vw);opacity:.14;z-index:0}
+    .nn .fy-body{position:relative;z-index:1;width:100%}
+    .nn .fy-grid{max-width:440px;gap:3.8rem 1.2rem}
+    .nn .fy-item p{font-size:1.02rem;max-width:15ch;margin:0 auto}
     .nn .fy-item .lbl{font-size:.76rem;letter-spacing:.2em}
     .nn .stmt-sec{padding:9.5rem 1.6rem 8rem}
     .nn .foryou{padding:3rem 1.6rem 7.5rem}
@@ -199,7 +206,7 @@
                linear-gradient(rgba(31,15,10,.36),rgba(31,15,10,.46)),
                url('wp-content/uploads/soul/od-poruke-do-stola.jpeg') center 42%/cover no-repeat}
   .nn .gcopy{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center}
-  .nn .gcopy h2{font-family:var(--script);font-weight:400;-webkit-text-stroke:.7px currentColor;
+  .nn .gcopy h2{font-family:var(--script);font-weight:400;
     font-size:clamp(2.6rem,5.4vw,4.6rem);line-height:1.15;margin-bottom:4.2rem;white-space:nowrap;
     text-transform:none;letter-spacing:normal;color:var(--gold-lite)}
   .nn .v-mins{display:flex;align-items:baseline;justify-content:center;gap:clamp(1.9rem,3.6vw,3.2rem);margin:0 0 1.8rem}
@@ -265,10 +272,8 @@
 
   /* 8b · KORACI — lukovi na dubljem krem tonu */
   .nn .steps{padding:8rem 2rem 8.5rem;text-align:center;
-    /* Gornji rub se stapa sa sekcijom iznad (krem), pozadina je izblijedjena kao gore. */
-    background:linear-gradient(to bottom,var(--cream) 0%,rgba(244,232,214,.6) 18%,rgba(244,232,214,0) 44%),
-               linear-gradient(rgba(239,224,198,.93),rgba(239,224,198,.93)),
-               url('wp-content/uploads/soul/pozadina-koraci.webp') center bottom/cover no-repeat var(--cream2)}
+    /* Gornji rub se meko stapa sa sekcijom iznad (krem). */
+    background:linear-gradient(to bottom,var(--cream) 0%,var(--cream2) 24%) var(--cream2)}
   .nn .steps .eyebrow{display:block;color:var(--terra);margin-bottom:.9rem}
   .nn .steps h2{font-size:clamp(2rem,3.4vw,3rem);color:var(--ink);margin-bottom:14rem}
   .nn .st-grid{position:relative;max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(2.6rem,5vw,5rem)}
@@ -388,6 +393,9 @@
 
     <!-- OVO JE ZA TEBE AKO -->
     <section class="foryou">
+      <div class="fy-wrap">
+        <div class="fy-vek" aria-hidden="true"></div>
+        <div class="fy-body">
       <span class="eyebrow">prepoznaješ se?</span>
       <h2>ovo je za tebe ako</h2>
       <div class="fy-grid">
@@ -407,6 +415,8 @@
         <span class="lbl">Tempo</span>
         <p>se ne sjećaš kad si zadnji put stvarno stala</p>
       </div>
+      </div>
+        </div>
       </div>
     </section>
 
