@@ -1686,16 +1686,14 @@ h3,
 
 /* ============================================================
    "OVO JE ZA TEBE AKO" — raspored kao na proslom deployu:
-   naslov i mreza 2x2 lijevo, vektor desno po sredini stavki.
+   naslov i mreza 2x2 lijevo, bez vektora.
    ============================================================ */
 .for-you-wrap {
-  max-width: 1120px;
+  max-width: 900px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 0.34fr;
-  column-gap: clamp(2.5rem, 5vw, 5rem);
+  grid-template-columns: 1fr;
   row-gap: 0;
-  align-items: center;
   text-align: left;
 }
 .for-you .section-head { grid-column: 1; grid-row: 1; text-align: left; margin-bottom: 3.4rem; }
@@ -1707,17 +1705,6 @@ h3,
   gap: 3rem 2.4rem;
   max-width: none;
   margin: 0;
-}
-.for-you-vek {
-  grid-column: 2;
-  grid-row: 2;
-  aspect-ratio: 470/466;
-  width: clamp(190px, 21vw, 300px);
-  justify-self: center;
-  align-self: center;
-  opacity: 0.15;
-  pointer-events: none;
-  background: url('../wp-content/uploads/soul/motiv-krugovi.webp') center/contain no-repeat;
 }
 /* Oznaka stoji iznad opisa, bez crte ispod stavke. */
 .for-you-item {
@@ -1747,9 +1734,6 @@ h3,
 @media (max-width: 860px) {
   /* Mobitel: jedan stupac po sredini, vektor izblijedjen iza stavki. */
   .for-you-wrap {
-    position: relative;
-    grid-template-columns: 1fr;
-    column-gap: 0;
     text-align: center;
     justify-items: center;
   }
@@ -1757,11 +1741,5 @@ h3,
   .for-you-grid { position: relative; z-index: 1; width: 100%; grid-column: 1; }
   .for-you .section-head { grid-row: 1; text-align: center; }
   .for-you-grid { grid-row: 2; max-width: 440px; gap: 3.8rem 1.2rem; }
-  .for-you-vek {
-    grid-column: 1;
-    grid-row: 2;
-    width: min(250px, 62vw);
-    z-index: 0;
-  }
   .for-you-text { max-width: 15ch; margin: 0 auto; }
 }
