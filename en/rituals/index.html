@@ -287,7 +287,7 @@ html, body { overflow-x: hidden; }
   .rit-mob { display: block; }
   .rit-hero { margin-bottom: clamp(5.5rem, 15vw, 7rem); }
 
-  .rit-mob-item { margin: 0 0 clamp(4.5rem, 13vw, 6rem); }
+  .rit-mob-item { margin: 0 0 clamp(4.5rem, 13vw, 6rem); scroll-margin-top: 76px; }
   .rit-mob-item:last-child { margin-bottom: 0.5rem; }
 
   /* Slika ide od ruba do ruba ekrana, lijevo i desno, ne gore. */
@@ -541,7 +541,7 @@ html, body { overflow-x: hidden; }
 
   <div class="rit-mob">
 
-    <div class="rit-mob-item">
+    <div class="rit-mob-item" id="m-ground-release">
       <div class="rit-mob-card-wrap">
         <div class="rit-mob-card" style="background-image: url('../../wp-content/uploads/soul/ground-release.jpeg')">
           <div class="rit-mob-card-in">
@@ -564,7 +564,7 @@ html, body { overflow-x: hidden; }
       </div>
     </div>
 
-    <div class="rit-mob-item">
+    <div class="rit-mob-item" id="m-flow-harmony">
       <div class="rit-mob-card-wrap">
         <div class="rit-mob-card" style="background-image: url('../../wp-content/uploads/soul/flow-harmony.jpeg')">
           <div class="rit-mob-card-in">
@@ -587,7 +587,7 @@ html, body { overflow-x: hidden; }
       </div>
     </div>
 
-    <div class="rit-mob-item">
+    <div class="rit-mob-item" id="m-deep-rest">
       <div class="rit-mob-card-wrap">
         <div class="rit-mob-card" style="background-image: url('../../wp-content/uploads/soul/deep-rest.jpeg')">
           <div class="rit-mob-card-in">
@@ -609,7 +609,7 @@ html, body { overflow-x: hidden; }
       </div>
     </div>
 
-    <div class="rit-mob-item">
+    <div class="rit-mob-item" id="m-inner-glow">
       <div class="rit-mob-card-wrap">
         <div class="rit-mob-card" style="background-image: url('../../wp-content/uploads/soul/inner-glow.jpeg')">
           <div class="rit-mob-card-in">
@@ -681,6 +681,23 @@ html, body { overflow-x: hidden; }
   </footer>
 
 <script src="../../js/nav.js?v=4"></script>
+<script>
+(function () {
+  // Na mobitelu je .ritual (desktop verzija) skrivena, pa link tipa
+  // #ground-release s naslovnice ne moze skrolati do nje. Umjesto toga
+  // odemo na odgovarajuci mobilni blok (#m-ground-release).
+  function goToRitual() {
+    var hash = location.hash.slice(1);
+    if (!hash) return;
+    var desktopEl = document.getElementById(hash);
+    if (desktopEl && desktopEl.offsetParent !== null) return; // vidljivo, native scroll je vec odradio posao
+    var mobileEl = document.getElementById('m-' + hash);
+    if (mobileEl) mobileEl.scrollIntoView({ block: 'start' });
+  }
+  if (document.readyState === 'complete') goToRitual();
+  else window.addEventListener('load', goToRitual);
+})();
+</script>
 
 </body>
 </html>
