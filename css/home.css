@@ -1450,8 +1450,8 @@ body.home .cta-banner h2 {
   position: relative;
   display: block;
   width: 100%;
-  height: clamp(38px, 4.4vw, 62px);
-  margin: 0 0 2.2rem;
+  height: clamp(46px, 5.4vw, 76px);
+  margin: 0 0 2.4rem;
   pointer-events: none;
 }
 .tl-curve::before,
@@ -1466,11 +1466,11 @@ body.home .cta-banner h2 {
 /* blijedi trag cijelim putem */
 .tl-curve::before {
   opacity: 0.22;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'><path d='M0,40 C160,54 300,16 520,26 C740,36 900,10 1200,30' fill='none' stroke='%23C8965C' stroke-width='1.4'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'><path d='M0,44 C200,8 400,8 600,34 C800,60 1000,60 1200,26' fill='none' stroke='%23C8965C' stroke-width='1.4'/></svg>");
 }
 /* svijetla nit, otkriva se slijeva nadesno */
 .tl-curve::after {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'><defs><filter id='b' x='-5%25' y='-300%25' width='110%25' height='700%25'><feGaussianBlur stdDeviation='3.5'/></filter></defs><path d='M0,40 C160,54 300,16 520,26 C740,36 900,10 1200,30' fill='none' stroke='%23D86934' stroke-width='4' opacity='0.55' filter='url(%23b)'/><path d='M0,40 C160,54 300,16 520,26 C740,36 900,10 1200,30' fill='none' stroke='%23FFC08A' stroke-width='1.4'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'><defs><filter id='b' x='-5%25' y='-300%25' width='110%25' height='700%25'><feGaussianBlur stdDeviation='3.5'/></filter></defs><path d='M0,44 C200,8 400,8 600,34 C800,60 1000,60 1200,26' fill='none' stroke='%23D86934' stroke-width='4' opacity='0.55' filter='url(%23b)'/><path d='M0,44 C200,8 400,8 600,34 C800,60 1000,60 1200,26' fill='none' stroke='%23FFC08A' stroke-width='1.4'/></svg>");
   -webkit-mask-image: linear-gradient(to right, #000 calc(var(--tl) * 100%), transparent calc(var(--tl) * 100%));
           mask-image: linear-gradient(to right, #000 calc(var(--tl) * 100%), transparent calc(var(--tl) * 100%));
 }
@@ -1605,14 +1605,163 @@ h2 { font-size: clamp(1.9rem, 3.8vw, 3.1rem); }
   .btn-primary { min-width: min(17.3rem, 100%); }
 }
 
-/* Opisi u "ovo je za tebe ako" — Alegreya, kao na proslom deployu. */
-.for-you-text {
-  font-family: var(--font-body);
-  font-size: 1.36rem;
-  line-height: 1.6;
-  max-width: 20ch;
+/* ============================================================
+   USKLADENA TIPOGRAFIJA NASLOVNICE
+   Jedna velicina po razini: naslov, podnaslov, nadnaslov, opis.
+   Tekst je u jednoj boji, bez naglasene rijeci u drugoj boji.
+   ============================================================ */
+
+/* Naglasena rijec vise ne mijenja boju. */
+em,
+.principle-stairs h3 em,
+.ritual-card h3 em,
+.cta-banner h2 em,
+.section-head h2 em,
+h1 em,
+h2 em,
+h3 em,
+p em {
+  font-style: normal;
+  color: inherit;
+  font-weight: inherit;
+}
+
+/* Nadnaslovi i sitne oznake — sve isto. */
+.eyebrow,
+.hero-eyebrow,
+.for-you-num,
+.principle-stairs .num-word-s,
+.ritual-card .ritual-duration {
+  font-family: var(--font-brand-sub);
+  font-size: 0.78rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Naslovi sekcija — svi iste velicine. */
+h2,
+body.home .section-head h2,
+body.home .cta-banner h2,
+body.home .tebe-ako-title,
+.rituali-section h2,
+.section-testimonials h2,
+.for-you h2 {
+  font-family: var(--font-brand);
+  font-size: clamp(1.9rem, 3.4vw, 3.1rem);
+  line-height: 1.14;
   font-weight: 400;
 }
+
+/* Podnaslovi — svi iste velicine. */
+h3,
+.principle-stairs h3,
+.ritual-card h3,
+.timeline-step h3 {
+  font-size: clamp(1.35rem, 1.9vw, 1.7rem);
+  line-height: 1.25;
+}
+
+/* Opisni tekst — svugdje Alegreya, ista velicina. */
+.hero-sub,
+.for-you-text,
+.principle-stairs p,
+.ritual-card .ritual-desc,
+.timeline-step p,
+.testimonial-slide blockquote,
+.cta-banner .lead,
+.cta-sub,
+.about-preview p:not(.script) {
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  line-height: 1.6;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 400;
+  font-style: normal;
+}
+.testimonial-slide blockquote { font-style: italic; }
+.hero-sub { font-size: clamp(1.05rem, 1.4vw, 1.22rem); }
+
+/* ============================================================
+   "OVO JE ZA TEBE AKO" — raspored kao na proslom deployu:
+   naslov i mreza 2x2 lijevo, vektor desno po sredini stavki.
+   ============================================================ */
+.for-you-wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 0.34fr;
+  column-gap: clamp(2.5rem, 5vw, 5rem);
+  row-gap: 0;
+  align-items: center;
+  text-align: left;
+}
+.for-you .section-head { grid-column: 1; grid-row: 1; text-align: left; margin-bottom: 3.4rem; }
+.for-you-grid {
+  grid-column: 1;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem 2.4rem;
+  max-width: none;
+  margin: 0;
+}
+.for-you-vek {
+  grid-column: 2;
+  grid-row: 2;
+  aspect-ratio: 470/466;
+  width: clamp(190px, 21vw, 300px);
+  justify-self: center;
+  align-self: center;
+  opacity: 0.15;
+  pointer-events: none;
+  background: url('../wp-content/uploads/soul/motiv-krugovi.webp') center/contain no-repeat;
+}
+/* Oznaka stoji iznad opisa, bez crte ispod stavke. */
+.for-you-item {
+  display: block;
+  padding: 0.5rem 0 0;
+  border-bottom: none;
+  gap: 0;
+  cursor: default;
+}
+.for-you-item:hover { padding-left: 0; border-bottom-color: transparent; }
+.for-you-item::before { display: none; }
+.for-you-item:hover .for-you-num { transform: none; color: var(--accent-soft); }
+.for-you-num {
+  display: block;
+  color: var(--accent-soft);
+  margin-bottom: 0.75rem;
+  min-width: 0;
+  white-space: normal;
+}
+.for-you-text {
+  color: var(--text-muted);
+  max-width: 20ch;
+  padding-top: 0;
+  margin: 0;
+}
+
 @media (max-width: 860px) {
-  .for-you-text { font-size: 1.02rem; max-width: 15ch; }
+  /* Mobitel: jedan stupac po sredini, vektor izblijedjen iza stavki. */
+  .for-you-wrap {
+    position: relative;
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    text-align: center;
+    justify-items: center;
+  }
+  .for-you .section-head,
+  .for-you-grid { position: relative; z-index: 1; width: 100%; grid-column: 1; }
+  .for-you .section-head { grid-row: 1; text-align: center; }
+  .for-you-grid { grid-row: 2; max-width: 440px; gap: 3.8rem 1.2rem; }
+  .for-you-vek {
+    grid-column: 1;
+    grid-row: 2;
+    width: min(250px, 62vw);
+    z-index: 0;
+  }
+  .for-you-text { max-width: 15ch; margin: 0 auto; }
 }
