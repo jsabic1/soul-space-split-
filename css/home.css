@@ -465,13 +465,6 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 }
 @media (max-width: 768px) {
   .for-you-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-  /* Zig-zag: even items mirror to the right (number on the right side) */
-  .for-you-item:nth-child(even) {
-    flex-direction: row-reverse;
-    text-align: right;
-    padding-left: 1rem;
-    padding-right: 0;
-  }
 }
 
 /* ============================================
@@ -2024,6 +2017,31 @@ h3,
     aspect-ratio: 1 / 1;
     border-radius: 4px;
     overflow: hidden;
+  }
+  .for-you-pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
+}
+
+/* Ovo je za tebe ako: na mobitelu slika se vraca, ali kao pozadina
+   iza teksta, centrirana i bez ruba se gubi prema gore i dolje,
+   isto kao slike rituala na mobitelu. */
+@media (max-width: 860px) {
+  .for-you { position: relative; overflow: hidden; }
+  .for-you-pic {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: clamp(320px, 90vw, 440px);
+    aspect-ratio: auto;
+    border-radius: 0;
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.55) 22%, #000 46%, #000 54%, rgba(0, 0, 0, 0.55) 78%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.55) 22%, #000 46%, #000 54%, rgba(0, 0, 0, 0.55) 78%, transparent 100%);
   }
   .for-you-pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
 }
