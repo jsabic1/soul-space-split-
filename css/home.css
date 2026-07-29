@@ -1838,8 +1838,11 @@ h3,
   position: absolute;
   left: 0;
   right: 0;
-  top: -18%;
-  height: 136%;
+  /* Rezerva gore i dolje mora biti veca od najveceg pomaka,
+     inace se pri kraju otvori traka ispod slike.
+     Pomak = 18% visine sloja = 29,5% visine pozornice, rezerva je 32%. */
+  top: -32%;
+  height: 164%;
   background-image: inherit;
   background-size: cover;
   background-position: center;
@@ -1884,7 +1887,8 @@ h3,
   /* Koraci idu 2x2 da cijela sekcija stane u kadar. */
   .timeline-steps { grid-template-columns: repeat(2, 1fr); gap: 1.2rem 1.2rem; }
   .timeline-steps::before, .timeline-steps::after { display: none; }
-  .tl-curve { display: block; height: clamp(30px, 9vw, 44px); margin-bottom: 1.4rem; }
+  /* Bez zlatne niti na mobitelu, tekst se i dalje otkriva skrolanjem. */
+  .tl-curve { display: none; }
   .section-timeline .section-cta { margin-top: 2.2rem; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1898,3 +1902,13 @@ h3,
 @media (max-width: 860px) {
   .section-timeline .section-cta { margin-top: 3.5rem; }
 }
+
+/* Pristup: bez uspravnih crta izmedju principa. */
+.principle-stairs { border-left: none; }
+
+/* "Prepoznajes se": naslov i stavke po sredini. */
+.for-you-wrap { text-align: center; justify-items: center; }
+.for-you .section-head { text-align: center; }
+.for-you-grid { justify-items: center; }
+.for-you-item { text-align: center; }
+.for-you-text { margin-left: auto; margin-right: auto; }
