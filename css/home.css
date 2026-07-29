@@ -1905,9 +1905,9 @@ h3,
 }
 
 /* Vise zraka izmedju cetiri koraka i gumba. */
-.section-timeline .section-cta { margin-top: clamp(4.5rem, 7vw, 7rem); }
+.section-timeline .section-cta { margin-top: clamp(9rem, 14vw, 14rem); }
 @media (max-width: 860px) {
-  .section-timeline .section-cta { margin-top: 3.5rem; }
+  .section-timeline .section-cta { margin-top: 6.4rem; }
 }
 
 /* Pristup: bez uspravnih crta izmedju principa. */
