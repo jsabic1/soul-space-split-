@@ -1532,3 +1532,75 @@ body.home .cta-banner h2 {
   .for-you-num { white-space: normal; }
   .for-you-text { overflow-wrap: break-word; }
 }
+
+/* ============================================================
+   Tipografija uskladjena sa zadnjim deployem prije povratka
+   dizajna: manji naslovi, podnaslov heroa u Alegreyi, uspravni
+   naglasci umjesto kurziva.
+   ============================================================ */
+h2 { font-size: clamp(1.9rem, 3.8vw, 3.1rem); }
+
+.hero-eyebrow { font-weight: 600; }
+.hero-sub {
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 1.4vw, 1.22rem);
+  letter-spacing: 0.01em;
+  text-transform: none;
+  line-height: 1.5;
+}
+
+.ritual-card h3 {
+  font-size: clamp(1.42rem, 1.85vw, 1.7rem);
+  line-height: 1.05;
+}
+.ritual-card h3 em { font-style: normal; }
+.principle-stairs h3 em { font-style: normal; }
+
+/* Oblik gumba kao na zadnjem deployu: obrisna pilula, a sporedni
+   gumb je linija s ugaonom strelicom. */
+.btn-primary {
+  background: transparent;
+  color: #FFF3E5;
+  border: 1px solid #FFF3E5;
+  border-radius: 999px;
+  padding: 0.95rem 2.6rem;
+  min-width: 17.3rem;
+  text-align: center;
+  letter-spacing: 0.3em;
+  font-weight: 600;
+  box-shadow: none;
+}
+.btn-primary:hover,
+.btn-primary:focus-visible,
+.btn-primary:active {
+  background: #C4551F;
+  color: #F7ECDD;
+  border-color: #C4551F;
+  transform: none;
+  filter: none;
+  box-shadow: 0 12px 32px -12px rgba(196, 85, 31, 0.55);
+}
+.btn-ghost {
+  background: transparent;
+  color: #E0C79F;
+  border: none;
+  border-bottom: 1px solid rgba(214, 168, 106, 0.5);
+  border-radius: 0;
+  padding: 0.5rem 0.25rem;
+  letter-spacing: 0.22em;
+}
+.btn-ghost::after {
+  content: "\203A";
+  display: inline-block;
+  margin-left: 8px;
+  font-family: Georgia, serif;
+  transition: margin-left 0.3s ease;
+}
+.btn-ghost:hover {
+  color: #F4E8D6;
+  border-bottom-color: #E0B575;
+}
+.btn-ghost:hover::after { margin-left: 14px; }
+@media (max-width: 420px) {
+  .btn-primary { min-width: min(17.3rem, 100%); }
+}
