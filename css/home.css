@@ -1604,3 +1604,15 @@ h2 { font-size: clamp(1.9rem, 3.8vw, 3.1rem); }
 @media (max-width: 420px) {
   .btn-primary { min-width: min(17.3rem, 100%); }
 }
+
+/* Opisi u "ovo je za tebe ako" — Alegreya, kao na proslom deployu. */
+.for-you-text {
+  font-family: var(--font-body);
+  font-size: 1.36rem;
+  line-height: 1.6;
+  max-width: 20ch;
+  font-weight: 400;
+}
+@media (max-width: 860px) {
+  .for-you-text { font-size: 1.02rem; max-width: 15ch; }
+}
