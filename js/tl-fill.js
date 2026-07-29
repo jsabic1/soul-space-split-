@@ -49,7 +49,7 @@
       shown += d * 0.045;
       requestAnimationFrame(loop);
     }
-    wrap.style.setProperty('--tl', shown.toFixed(4));
+    stage.style.setProperty('--tl', shown.toFixed(4));
     paint(shown);
   }
 
@@ -69,7 +69,7 @@
     }
   }
 
-  wrap.style.setProperty('--tl', '0');
+  stage.style.setProperty('--tl', '0');
   paint(0);
   measure();
   onScroll();

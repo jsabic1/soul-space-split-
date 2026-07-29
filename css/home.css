@@ -1442,7 +1442,7 @@ body.home .cta-banner h2 {
    kako koraci ulaze u kadar. Napredak dolazi iz --tl (0-1),
    koji postavlja js/tl-fill.js. Bez skripte nit je puna.
    ============================================================ */
-.timeline-wrap { --tl: 1; }
+/* --tl zivi na .tl-stage, .timeline-wrap ga nasljedjuje. */
 .timeline-wrap::before { display: none; }
 .timeline-step::before { display: none !important; }
 
@@ -1830,11 +1830,62 @@ h3,
 }
 .timeline-step.is-lit { opacity: 1; }
 
+/* Slika se pomice dok je zaslon zadrzan, pa pin ne djeluje mrtvo.
+   Pomak dolazi iz --tl, koji postavlja js/tl-fill.js. */
+.tl-stage { --tl: 1; }
+.tl-stage::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -18%;
+  height: 136%;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translate3d(0, calc(var(--tl) * -18%), 0);
+  will-change: transform;
+  z-index: 0;
+}
+.tl-stage {
+  background-image: url('../wp-content/uploads/soul/od-poruke-do-stola.jpeg');
+  background-color: var(--bg);
+}
+.section-timeline { background-image: none; }
+.tl-stage > .container { position: relative; z-index: 2; }
+.tl-stage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(31, 15, 10, 0.62);
+  z-index: 1;
+}
+
 @media (max-width: 860px) {
-  /* Na mobitelu nema zadrzavanja, koraci se i dalje pale redom. */
+  /* Mobitel: zaslon se zadrzi samo ako sadrzaj stane u kadar. */
   .section-timeline { padding: 5rem 0; }
   .tl-track { height: auto; }
   .tl-stage { position: static; height: auto; padding: 0; overflow: visible; }
+  .tl-stage::before, .tl-stage::after { display: none; }
+  .section-timeline { background-image: url('../wp-content/uploads/soul/od-poruke-do-stola.jpeg'); }
+}
+@media (max-width: 860px) and (min-height: 700px) {
+  /* Dovoljno visok ekran: zadrzavanje i pomicanje slike rade i ovdje. */
+  .section-timeline { padding: 0; background-image: none; }
+  .tl-track { height: 300vh; }
+  .tl-stage {
+    position: sticky;
+    height: 100vh;
+    padding: 88px 0 1.2rem;
+    overflow: hidden;
+  }
+  .tl-stage::before, .tl-stage::after { display: block; }
+  /* Koraci idu 2x2 da cijela sekcija stane u kadar. */
+  .timeline-steps { grid-template-columns: repeat(2, 1fr); gap: 1.2rem 1.2rem; }
+  .timeline-steps::before, .timeline-steps::after { display: none; }
+  .tl-curve { display: block; height: clamp(30px, 9vw, 44px); margin-bottom: 1.4rem; }
+  .section-timeline .section-cta { margin-top: 2.2rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   .tl-track { height: auto; }

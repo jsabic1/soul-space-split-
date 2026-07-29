@@ -185,8 +185,9 @@ html, body { overflow-x: hidden; }
 .rit-close {
   background: var(--bg-alt);
   text-align: left;
-  padding: clamp(3.5rem, 6vw, 5.5rem) clamp(1.5rem, 5vw, 4rem);
-  margin-top: 4rem;
+  padding: clamp(5rem, 9vw, 8.5rem) clamp(1.5rem, 5vw, 4rem);
+  /* Razmak prema podnozju, koje je iste smedje boje. */
+  margin: 4rem 0 clamp(4rem, 7vw, 7rem);
 }
 .rit-close h2 {
   font-family: var(--font-brand);
@@ -200,9 +201,28 @@ html, body { overflow-x: hidden; }
 .rit-close .cta-note { margin: 1.1rem 0 0; text-align: left; }
 
 @media (max-width: 860px) {
-  .ritual { grid-template-columns: 1fr; gap: 1.75rem; }
-  .ritual:nth-of-type(even) .rit-txt { order: 0; }
-  .rit-ph { aspect-ratio: 4 / 3; }
+  /* Mobitel: slika stoji iza teksta, vidi se samo pri dnu
+     i bez ruba se gubi prema gore. Pocinje otprilike kod cjenika. */
+  .ritual {
+    position: relative;
+    display: block;
+    padding-bottom: clamp(5rem, 16vw, 7rem);
+  }
+  .rit-txt { position: relative; z-index: 1; }
+  .rit-ph {
+    position: absolute;
+    left: calc(-1 * var(--rit-pad));
+    right: calc(-1 * var(--rit-pad));
+    bottom: 0;
+    height: clamp(300px, 82vw, 400px);
+    aspect-ratio: auto;
+    border-radius: 0;
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0.9) 26%, rgba(0, 0, 0, 0.45) 62%, transparent 100%);
+            mask-image: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0.9) 26%, rgba(0, 0, 0, 0.45) 62%, transparent 100%);
+  }
   .rit-rates { max-width: 100%; }
 }
 @media (max-width: 420px) {
@@ -213,12 +233,14 @@ html, body { overflow-x: hidden; }
 .rit-script {
   font-family: var(--font-brand-sub);
   font-size: 0.78rem;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.7;
   color: var(--accent-soft);
   margin: 0.8rem 0 0;
+  /* Redci se lome na jednake duljine, da drugi red ne visi kratak. */
+  text-wrap: balance;
 }
 .rit-meta { margin: 1.4rem 0 0; }
 .rit-meta .lb {
@@ -287,7 +309,6 @@ html, body { overflow-x: hidden; }
 
 <main class="rit-wrap">
   <header class="rit-hero">
-    <p class="rit-eyebrow">Rituali</p>
     <h1>Tvoje tijelo bira</h1>
     <p class="rit-lede">Svaki ritual prilagođen tvom tijelu i tempu. Rad ide ritmom tvog daha, ne mog rasporeda.</p>
   </header>
