@@ -1437,20 +1437,60 @@ body.home .cta-banner h2 {
 .cta-banner .cta-note { margin-left: auto; margin-right: auto; text-align: center; }
 
 /* ============================================================
-   Meka svjetlucava nit iznad koraka (Od poruke do stola).
-   Cisti ukras: bez skripte, bez animacije i bez dodatnog
-   skrolanja — samo zamjenjuje ravnu crtu koja je bila prije.
+   Nit iznad koraka (Od poruke do stola).
+   Blijedi trag pokazuje cijeli put, a svijetla nit se puni
+   kako koraci ulaze u kadar. Napredak dolazi iz --tl (0-1),
+   koji postavlja js/tl-fill.js. Bez skripte nit je puna.
    ============================================================ */
+.timeline-wrap { --tl: 1; }
 .timeline-wrap::before { display: none; }
+.timeline-step::before { display: none !important; }
+
 .tl-curve {
+  position: relative;
   display: block;
   width: 100%;
   height: clamp(38px, 4.4vw, 62px);
   margin: 0 0 2.2rem;
   pointer-events: none;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='0'><stop offset='0' stop-color='%23D86934' stop-opacity='0'/><stop offset='0.16' stop-color='%23D86934' stop-opacity='0.85'/><stop offset='0.3' stop-color='%23FFC08A' stop-opacity='1'/><stop offset='0.5' stop-color='%23C8965C' stop-opacity='0.75'/><stop offset='0.78' stop-color='%23C8965C' stop-opacity='0.45'/><stop offset='1' stop-color='%23C8965C' stop-opacity='0'/></linearGradient><filter id='b' x='-10%25' y='-200%25' width='120%25' height='500%25'><feGaussianBlur stdDeviation='4'/></filter></defs><path d='M0,40 C160,54 300,16 520,26 C740,36 900,10 1200,30' fill='none' stroke='url(%23g)' stroke-width='5' opacity='0.5' filter='url(%23b)'/><path d='M0,40 C160,54 300,16 520,26 C740,36 900,10 1200,30' fill='none' stroke='url(%23g)' stroke-width='1.4'/></svg>") center / 100% 100% no-repeat;
 }
-/* Na mobitelu koraci idu u stupac s uspravnom crtom, pa nit ne treba. */
+.tl-curve::before,
+.tl-curve::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+/* blijedi trag cijelim putem */
+.tl-curve::before {
+  opacity: 0.22;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'><path d='M0,40 C160,54 300,16 520,26 C740,36 900,10 1200,30' fill='none' stroke='%23C8965C' stroke-width='1.4'/></svg>");
+}
+/* svijetla nit, otkriva se slijeva nadesno */
+.tl-curve::after {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'><defs><filter id='b' x='-5%25' y='-300%25' width='110%25' height='700%25'><feGaussianBlur stdDeviation='3.5'/></filter></defs><path d='M0,40 C160,54 300,16 520,26 C740,36 900,10 1200,30' fill='none' stroke='%23D86934' stroke-width='4' opacity='0.55' filter='url(%23b)'/><path d='M0,40 C160,54 300,16 520,26 C740,36 900,10 1200,30' fill='none' stroke='%23FFC08A' stroke-width='1.4'/></svg>");
+  -webkit-mask-image: linear-gradient(to right, #000 calc(var(--tl) * 100%), transparent calc(var(--tl) * 100%));
+          mask-image: linear-gradient(to right, #000 calc(var(--tl) * 100%), transparent calc(var(--tl) * 100%));
+}
+
+/* Mobitel: koraci idu u stupac, pa se puni uspravna crta. */
 @media (max-width: 860px) {
   .tl-curve { display: none; }
+  .timeline-steps::before { opacity: 0.22; }
+  .timeline-steps::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 0.5rem;
+    width: 1px;
+    height: calc(var(--tl) * (100% - 1.2rem));
+    background: linear-gradient(to bottom, rgba(216, 105, 52, 0.55), #FFC08A);
+    box-shadow: 0 0 6px 1px rgba(216, 105, 52, 0.35);
+    z-index: 2;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .timeline-wrap { --tl: 1 !important; }
 }
