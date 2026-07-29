@@ -94,7 +94,7 @@ html, body { overflow-x: hidden; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(1.75rem, 5vw, 4.5rem);
-  align-items: stretch;
+  align-items: center;
   padding: clamp(3rem, 6vw, 5.5rem) 0;
   scroll-margin-top: 96px;
 }
@@ -105,8 +105,8 @@ html, body { overflow-x: hidden; }
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  /* Slika je visoka koliko i tekst uz nju, unutar omotaca. */
-  min-height: 320px;
+  /* Slika stoji po sredini teksta uz sebe. */
+  aspect-ratio: 4 / 5;
   border-radius: 4px;
 }
 .ritual h2 {
@@ -202,7 +202,7 @@ html, body { overflow-x: hidden; }
 @media (max-width: 860px) {
   .ritual { grid-template-columns: 1fr; gap: 1.75rem; }
   .ritual:nth-of-type(even) .rit-txt { order: 0; }
-  .rit-ph { min-height: 300px; }
+  .rit-ph { aspect-ratio: 4 / 3; }
   .rit-rates { max-width: 100%; }
 }
 @media (max-width: 420px) {
