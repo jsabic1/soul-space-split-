@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hr" class="gsap-page">
+<html lang="hr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,542 +24,203 @@
 <link rel="stylesheet" href="../css/style.css?v=90">
 
 <style>
-  /* OVERRIDE konflikta s .treatment iz style.css */
-.gsap-section.treatment {
-  display: block !important;
-  grid-template-columns: none !important;
-  padding: 0 !important;
-  gap: 0 !important;
-  border: none !important;
-  background: none !important;
-  align-items: normal !important;
-  transition: none !important;
-}
-.gsap-section.treatment:hover {
-  border: none !important;
-}
-.gsap-section .treatment-meta {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 0 !important;
-  padding: 0 !important;
-  margin: 0 0 1.35rem !important;
-  border-top: none !important;
-  font-family: inherit !important;
-  font-size: inherit !important;
-  color: inherit !important;
-}
-.gsap-section .meta-label {
-  display: block !important;
-  font-family: var(--font-brand-sub) !important;
-  font-size: 0.66rem !important;
-  font-weight: 600 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.32em !important;
-  color: var(--accent-soft) !important;
-  margin-bottom: 0.5rem !important;
-}
-/* ==========================================================================
-   GSAP osnovna struktura
-   ========================================================================== */
-html.gsap-page, body.gsap-page { height: 100%; overflow: hidden; background: var(--bg); }
-/* Fixed dark layer covering the whole window, behind all sections, so no bottom gap/seam can show a light line */
-body.gsap-page::before {
-  content: "";
-  position: fixed;
-  inset: -4px 0 -4px 0;
-  background: var(--bg);
-  z-index: -1;
-  pointer-events: none;
-}
+/* ============================================================
+   RITUALI — mirni editorijal, u jeziku naslovnice.
+   Struktura po prototipu: hero, cetiri naizmjenicna bloka, zavrsni poziv.
+   Boje, fontovi i razmaci dolaze iz brend palete.
+   ============================================================ */
+body { background: var(--bg); }
 
-.gsap-section {
-  height: 100vh;
-  height: calc(100dvh + 2px); /* fit the visible area (+2px so the section's bottom edge/hairline falls just below the fold) */
-  width: 100%;
-  top: 0;
-  position: fixed;
-  visibility: hidden;
-}
-/* Dark filler below each section so the mobile browser-bar gap under 100dvh never shows a seam/line */
-.gsap-section::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: calc(100% - 3px);
-  height: 220px;
-  background: var(--bg);
-  pointer-events: none;
-}
-.gsap-outer, .gsap-inner {
-  width: 100%;
-  height: 100%;
-  overflow-y: hidden;
-}
-.gsap-bg {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  background-position: center;
-}
+.rit-wrap { max-width: 1180px; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3.5rem); }
 
-/* Full-width (intro + CTA) */
-.fullbg .gsap-content {
-  z-index: 5;
-  text-align: center;
-  padding: 0 2rem;
-  max-width: 900px;
-}
-.fullbg .gsap-eyebrow {
-  font-family: var(--font-brand-sub);
-  font-size: 0.85rem;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  color: var(--accent-soft);
-  margin-bottom: 1.5rem;
-}
-.fullbg .gsap-heading {
+.rit-hero { padding: clamp(7rem, 11vw, 11rem) 0 clamp(3rem, 6vw, 5rem); }
+.rit-hero .rit-eyebrow { margin-bottom: 1rem; }
+.rit-hero h1 {
   font-family: var(--font-brand);
-  font-size: clamp(2rem, 4.6vw, 4.2rem);
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
+  font-weight: 400;
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  line-height: 1.06;
+  letter-spacing: 0.005em;
   color: var(--text);
-  font-weight: 500;
+  margin: 0;
 }
-.fullbg .gsap-heading em { font-style: normal; color: var(--text); }
-.fullbg .gsap-heading .cta-line { display: block; }
-.fullbg .gsap-heading .cta-line + .cta-line { margin-top: 0.75em; }
-.fullbg .gsap-sub {
-  font-family: var(--font-brand-sub);
-  font-size: 0.85rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
+.rit-lede {
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
   color: var(--text-muted);
-  line-height: 1.7;
-  max-width: 680px;
-  margin: 0 auto 2rem;
+  max-width: 46ch;
+  margin: 1.4rem 0 0;
 }
-.fullbg .btn-primary {
-  display: inline-block;
-  margin-top: 2.5rem;
-  background: transparent;
-  color: #FFF3E5;
-  padding: 1.25rem 2.8rem;
+
+.rit-eyebrow {
+  display: block;
   font-family: var(--font-brand-sub);
   font-size: 0.78rem;
-  letter-spacing: 0.34em;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: 500;
-  border: 1px solid #FFF3E5;
-  border-radius: 999px;
-  font-weight: 600;
-  transition: background .35s ease, color .35s ease, letter-spacing .35s ease, border-color .35s ease;
-}
-.fullbg .btn-primary:hover {
-  background: #C4551F;
-  box-shadow: 0 12px 32px -12px rgba(196, 85, 31, 0.55);
-  color: #F7ECDD;
-  border-color: #C4551F;
-  letter-spacing: 0.38em;
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
-}
-
-.after-note {
-  font-family: var(--font-body);
-  font-size: clamp(1.05rem, 1.12vw, 1.18rem);
-  font-style: normal;
-  color: var(--text);
-  line-height: 1.55;
-  margin-bottom: 1.1rem;
-}
-.after-note .after-label {
-  display: block;
-  font-family: var(--font-brand-sub);
-  font-style: normal;
-  font-weight: 600;
-  font-size: 0.68rem;
-  line-height: 1;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.7rem;
-}
-/* Progress dots */
-.progress-nav {
-  position: fixed;
-  right: 2rem;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 50;
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-}
-.progress-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(244, 232, 214, 0.25);
-  transition: all 0.4s ease;
-  cursor: pointer;
-  border: none;
-  padding: 0;
-}
-.progress-dot.active {
-  background: var(--accent);
-  transform: scale(1.4);
-}
-
-/* ==========================================================================
-   REDIZAJN TEKSTUALNOG DIJELA RITUALA
-   ========================================================================== */
-.treatment .gsap-inner {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0 clamp(2rem, 6vw, 7rem);
-  position: relative;
-  box-sizing: border-box;
-}
-.treatment.reverse .gsap-inner { justify-content: flex-end; }
-
-.split-image {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background-size: cover;
-  background-position: center;
-}
-.treatment:not(.reverse) .split-image::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(15,7,5,0.98) 0%, rgba(22,10,7,0.94) 25%, rgba(31,15,10,0.74) 46%, rgba(31,15,10,0.26) 67%, rgba(31,15,10,0.03) 100%),
-    linear-gradient(0deg, rgba(12,6,4,0.38) 0%, rgba(12,6,4,0) 45%);
-}
-.treatment.reverse .split-image::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(31,15,10,0.02) 0%, rgba(31,15,10,0.15) 34%, rgba(31,15,10,0.68) 58%, rgba(22,10,7,0.94) 78%, rgba(15,7,5,0.99) 100%),
-    linear-gradient(0deg, rgba(12,6,4,0.38) 0%, rgba(12,6,4,0) 45%);
-}
-
-.split-content {
-  position: relative;
-  z-index: 5;
-  width: min(100%, 590px);
-  color: var(--text);
-  box-sizing: border-box;
-}
-.treatment:not(.reverse) .split-content { margin-right: auto; margin-left: clamp(0rem, 2vw, 2rem); }
-.treatment.reverse .split-content { margin-left: auto; margin-right: clamp(0rem, 2vw, 2rem); }
-
-.treatment-topline {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: start;
-  gap: clamp(1.5rem, 3vw, 3rem);
-  margin-bottom: clamp(0.3rem, 1vh, 0.8rem);
-}
-.editorial-ornament {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin: 1.1rem 0 0;
-}
-.ornament-label {
-  font-family: var(--font-brand-sub);
-  font-size: 0.7rem;
-  line-height: 1;
-  letter-spacing: 0.38em;
-  text-transform: uppercase;
-  color: var(--accent-soft);
-  white-space: nowrap;
-}
-.editorial-ornament .line {
-  width: clamp(55px, 6vw, 100px);
-  height: 1px;
-  background: rgba(200, 150, 92, 0.7);
-}
-.treatment-num {
-  display: block;
-  margin: 0;
-  font-family: var(--font-brand);
-  font-size: clamp(4rem, 5.4vw, 6rem);
-  font-style: italic;
-  font-weight: 300;
-  line-height: 0.85;
-  color: var(--accent);
-}
-.split-content h2 {
-  font-family: var(--font-brand);
-  font-size: clamp(3.7rem, 5vw, 5.8rem);
-  line-height: 0.94;
-  letter-spacing: -0.035em;
-  color: var(--text);
-  font-weight: 500;
-  margin: 0 0 clamp(1.7rem, 2.8vh, 2.4rem);
-  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
-}
-.split-content h2 em { font-style: normal; color: var(--text); }
-.split-content .script {
-  font-family: var(--font-brand-sub);
-  font-size: 0.8rem;
-  font-weight: 600;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  line-height: 1.2;
-  text-wrap: balance;
-  color: var(--accent-soft);
-  max-width: 480px;
-  margin: 0 0 clamp(1.4rem, 2.4vh, 2rem);
-}
-.split-content .description {
-  font-family: var(--font-body);
-  font-size: clamp(1.1rem, 1.2vw, 1.25rem);
-  line-height: 1.65;
-  color: var(--text-muted);
-  max-width: 540px;
-  margin: 0 0 clamp(1.3rem, 2.2vh, 1.8rem);
-}
-
-.ideal-for {
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  gap: 1.35rem;
-  padding: clamp(1.1rem, 1.8vh, 1.45rem) 0;
-  margin: 0;
-}
-.ideal-icon {
-  display: none;
-  width: 50px;
-  height: 50px;
-  place-items: center;
-  border: 1px solid rgba(200, 150, 92, 0.75);
-  border-radius: 50%;
-}
-.ideal-icon svg {
-  width: 28px;
-  height: 28px;
-  fill: none;
-  stroke: var(--accent-soft);
-  stroke-width: 1.3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-.ideal-copy { min-width: 0; }
-.ideal-label {
-  display: block;
-  font-family: var(--font-brand-sub);
   font-weight: 600;
-  font-size: 0.68rem;
-  line-height: 1;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.7rem;
-}
-.ideal-for p {
-  font-family: var(--font-body);
-  font-size: clamp(1.05rem, 1.12vw, 1.18rem);
-  line-height: 1.55;
-  color: var(--text);
+  line-height: 1.4;
+  color: var(--accent-soft);
   margin: 0;
 }
 
-.treatment-meta {
+/* --- cetiri rituala, slika i tekst naizmjenicno --- */
+.ritual {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 0 0 1.35rem;
+  gap: clamp(1.75rem, 5vw, 4.5rem);
+  align-items: center;
+  padding: clamp(3rem, 6vw, 5.5rem) 0;
+  border-top: 1px solid var(--border);
+  scroll-margin-top: 96px;
 }
-.meta-item { padding: clamp(1rem, 1.8vh, 1.35rem) 0; }
-.meta-item + .meta-item {
-  padding-left: clamp(1.6rem, 3vw, 3rem);
+.ritual:nth-of-type(even) .rit-txt { order: 2; }
+.rit-ph {
+  background-color: var(--bg-alt);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 460px;
+  border-radius: 4px;
 }
-.meta-item .meta-label {
-  display: block;
-  font-family: var(--font-brand-sub);
-  font-size: 0.66rem;
-  text-transform: uppercase;
-  letter-spacing: 0.32em;
-  color: var(--accent-soft);
-  margin-bottom: 0.5rem;
-}
-.meta-item .meta-value {
-  display: block;
+.rit-num { margin-bottom: 0.9rem; }
+.ritual h2 {
   font-family: var(--font-brand);
-  font-size: clamp(1.75rem, 2.1vw, 2.25rem);
-  line-height: 1;
-  font-weight: 500;
+  font-weight: 400;
+  font-size: clamp(1.9rem, 3.4vw, 3.1rem);
+  line-height: 1.14;
   color: var(--text);
+  margin: 0;
 }
-.meta-item:last-child .meta-value { color: var(--text); }
-/* Editorial split (varijanta B): kartica cijena + oznake bez ikone */
-.split-content .ideal-for .ideal-icon { display: none; }
-.price-card { max-width: 400px; margin: 0 0 1.5rem; }
-.pc-row { display: flex; justify-content: space-between; align-items: baseline; padding: 0.5rem 0; }
-.pc-row + .pc-row { border-top: 1px solid rgba(216,105,52,0.28); }
-.pc-d { font-family: var(--font-brand-sub); letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.82rem; color: var(--text-muted); }
-.pc-p { font-family: var(--font-brand); font-size: 1.4rem; color: var(--accent); line-height: 1; }
-.meta-item .meta-value.meta-multi { font-size: clamp(1.15rem, 1.55vw, 1.55rem); line-height: 1.55; }
+.rit-tagline {
+  font-family: var(--font-brand-sub);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+  margin: 0.8rem 0 0;
+}
+.rit-body {
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 46ch;
+  margin: 1.2rem 0 0;
+}
 
-.split-content .btn-primary {
+/* --- cjenik: trajanje lijevo, cijena desno --- */
+.rit-rates { width: 100%; max-width: 22rem; margin: 1.8rem 0; }
+.rit-rates div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.rit-rates div:first-child { border-top: 1px solid var(--border); }
+.rit-rates .t {
+  font-family: var(--font-brand-sub);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.rit-rates .p { font-family: var(--font-brand); font-size: 1.35rem; color: var(--text); }
+
+/* --- gumb, isti kao na naslovnici --- */
+.rit-btn {
   display: inline-block;
-  width: auto;
-  align-self: flex-start;
-  box-sizing: border-box;
-  text-align: center;
   background: transparent;
   color: #FFF3E5;
-  padding: 1.4rem 2.8rem;
-  font-family: var(--font-brand-sub);
-  font-size: 0.78rem;
-  line-height: 1;
-  letter-spacing: 0.34em;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: 500;
   border: 1px solid #FFF3E5;
   border-radius: 999px;
+  padding: 0.95rem 2.6rem;
+  min-width: 17.3rem;
+  text-align: center;
+  font-family: var(--font-brand-sub);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
   font-weight: 600;
-  transition: background .35s ease, color .35s ease, letter-spacing .35s ease, border-color .35s ease;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
-.split-content .btn-primary:hover {
-  background: #C4551F;
-  box-shadow: 0 12px 32px -12px rgba(196, 85, 31, 0.55);
+.rit-btn:hover,
+.rit-btn:focus-visible {
+  background: var(--terra, #C4551F);
+  border-color: var(--terra, #C4551F);
   color: #F7ECDD;
-  border-color: #C4551F;
-  letter-spacing: 0.36em;
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
 }
 
-/* Desktop: dvije kolone — naslov + podnaslov lijevo, opis i sve ostalo desno */
-@media (min-width: 901px) {
-  /* Editorial split: sadrzaj u jednoj koloni desno, broj na slici lijevo */
-  .split-content { width: min(100%, 620px); text-align: left; }
-  .split-content::before {
-    content: "Rituali"; display: block;
-    font-family: var(--font-brand-sub); font-size: 0.72rem;
-    letter-spacing: 0.34em; text-transform: uppercase; color: var(--accent-soft);
-    margin-bottom: 0.9rem;
-  }
-  .split-content > h2 {
-    white-space: nowrap; width: auto;
-    margin: 0 0 1rem;
-    font-size: clamp(2rem, 2.7vw, 2.85rem);
-  }
-  .split-content > .script { margin: 0 0 1.2rem; max-width: none; }
-  .split-content > .description { margin: 0 0 1.6rem; max-width: 560px; }
-  .split-content > .ideal-for { display: inline-block; width: 46%; margin: 0 0 1.7rem; padding: 0; vertical-align: top; }
-  .split-content > .after-note { display: inline-block; width: 46%; margin: 0 0 1.7rem; padding: 0; vertical-align: top; }
-  .split-content > .ideal-for .ideal-label,
-  .split-content > .after-note .after-label { display: block; margin-bottom: 0.65rem; }
+/* --- zavrsni poziv --- */
+.rit-close {
+  background: var(--bg-alt);
+  text-align: center;
+  padding: clamp(3.5rem, 6vw, 5.5rem) clamp(1.5rem, 5vw, 4rem);
+  margin-top: 4rem;
+}
+.rit-close h2 {
+  font-family: var(--font-brand);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 3.4vw, 3.1rem);
+  line-height: 1.14;
+  color: var(--text);
+  margin: 0 0 1.2rem;
+}
+.rit-close .rit-body { max-width: 44ch; margin: 0 auto 2rem; }
+.rit-close .cta-note { margin: 1.1rem auto 0; text-align: center; }
+
+@media (max-width: 860px) {
+  .ritual { grid-template-columns: 1fr; gap: 1.75rem; }
+  .ritual:nth-of-type(even) .rit-txt { order: 0; }
+  .rit-ph { min-height: 260px; }
+  .rit-rates { max-width: 100%; }
+}
+@media (max-width: 420px) {
+  .rit-btn { min-width: min(17.3rem, 100%); padding: 0.95rem 1.4rem; }
 }
 
-@media (max-height: 820px) and (min-width: 901px) {
-  .split-content { width: min(100%, 560px); }
-  .treatment-num { font-size: 4.1rem; }
-  .split-content h2 { font-size: clamp(2rem, 2.7vw, 2.9rem); margin-bottom: 0.9rem; }
-  .split-content .script { font-size: clamp(1.1rem, 1.5vw, 1.4rem); margin-bottom: 1rem; }
-  .split-content .description { font-size: 0.95rem; line-height: 1.5; margin-bottom: 1rem; }
-  .ideal-for { padding: 0.85rem 0; }
-  .treatment-meta { margin-bottom: 1rem; }
-  .after-note { font-size: 1rem; }
-  .meta-item { padding: 1rem 0; }
-  .after-note .after-label { font-size: 0.82rem; }
-  .gsap-section .meta-label { font-size: 0.82rem !important; }
-  .split-content .btn-primary { padding: 1.4rem 2.8rem; }
+/* --- podnaslov rituala i blokovi Za tebe / Poslije --- */
+.rit-script {
+  font-family: var(--font-script);
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.4;
+  color: var(--accent-soft);
+  margin: 0.7rem 0 0;
 }
-
-@media (max-width: 900px) {
-  .treatment .gsap-inner, .treatment.reverse .gsap-inner {
-    align-items: stretch;
-    justify-content: flex-start;
-    padding: 7rem 1.4rem 2.6rem;
-  }
-  .split-content, .treatment:not(.reverse) .split-content, .treatment.reverse .split-content {
-    width: 100%; max-width: 620px; margin: 0 auto;
-    display: flex; flex-direction: column; flex: 1;
-    text-align: center;
-  }
-  .treatment:not(.reverse) .split-image::after, .treatment.reverse .split-image::after {
-    background: rgba(20, 10, 7, 0.55);
-  }
-  .treatment-topline { margin-bottom: 0.25rem; }
-  .editorial-ornament { margin-top: 0.7rem; }
-  .treatment-num { font-size: clamp(3rem, 12vw, 4.2rem); }
-  .split-content h2 { font-size: clamp(2rem, 8vw, 2.9rem); line-height: 1; margin-bottom: 1rem; }
-  .split-content .script { font-size: 0.7rem; letter-spacing: 0.22em; line-height: 1.2; margin-bottom: 0.7rem; }
-  .split-content .description { font-size: 1.08rem; line-height: 1.55; margin-top: auto; margin-bottom: 2.2rem; }
-  #ground-release .split-content .description { padding-top: 0.4rem; font-size: 1.02rem; line-height: 1.4; margin-bottom: 0.8rem; }
-  #ground-release .ideal-for { padding-bottom: 0.8rem; }
-  #ground-release .after-note { margin-bottom: 0.8rem; }
-  #ground-release .treatment-meta { margin-bottom: 0.5rem; }
-  .ideal-for { grid-template-columns: 1fr; gap: 1rem; padding: 0 0 2.2rem; }
-  .ideal-icon { width: 40px; height: 40px; }
-  .ideal-icon svg { width: 23px; height: 23px; }
-  .ideal-label { font-size: 0.82rem; margin-bottom: 0.5rem; }
-  .ideal-for p { font-size: 1.08rem; line-height: 1.5; }
-  .after-note { font-size: 1.08rem; margin-bottom: 2.2rem; }
-  .meta-item { padding: 1rem 0; }
-  .after-note .after-label { font-size: 0.82rem; }
-  .gsap-section .meta-label { font-size: 0.82rem !important; }
-  .meta-item .meta-value { font-size: 1.55rem; }
-  .split-content .btn-primary { align-self: center; padding: 1.4rem 2.8rem; font-size: 0.78rem; letter-spacing: 0.34em; margin-top: auto; margin-bottom: auto; }
-  .progress-nav { right: 0.8rem; }
-  .fullbg .gsap-heading { font-size: clamp(2rem, 8.5vw, 3.4rem); line-height: 1.14; }
-  .fullbg .gsap-heading .cta-line + .cta-line { margin-top: 0.9em; }
-  .fullbg .gsap-sub { font-size: 0.78rem; letter-spacing: 0.28em; }
+.rit-meta { margin: 1.4rem 0 0; padding-left: 1.4rem; border-left: 1px solid var(--border); }
+.rit-meta .lb {
+  display: block;
+  font-family: var(--font-brand-sub);
+  font-size: 0.72rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+  margin-bottom: 0.35rem;
 }
-
-@media (max-width: 480px) {
-  .treatment .gsap-inner, .treatment.reverse .gsap-inner { padding: 6.2rem 1rem 2rem; }
-  .ornament-label { font-size: 0.58rem; letter-spacing: 0.27em; }
-  .editorial-ornament .line { width: 40px; }
-  .treatment-topline { margin-bottom: 0.15rem; }
-  .treatment-num { font-size: clamp(2.5rem, 10vw, 3.4rem); }
-  .split-content h2 { font-size: clamp(1.75rem, 7.8vw, 2.4rem); margin-bottom: 1rem; }
-  .split-content .script { font-size: clamp(1rem, 4vw, 1.25rem); margin-bottom: 0.7rem; }
-  .split-content .description { font-size: 1.08rem; line-height: 1.5; margin-bottom: 0.75rem; }
-  .ideal-for { grid-template-columns: 1fr; padding: 0.7rem 0; }
-  .ideal-icon { display: none; }
-  .ideal-label { margin-bottom: 0.35rem; }
-  .ideal-for p { font-size: 1.08rem; line-height: 1.5; }
-  .after-note { font-size: 1.08rem; margin-bottom: 2.2rem; }
-  .treatment-meta { margin-bottom: 0.7rem; }
-  .meta-item { padding: 0.65rem 0; }
-  .meta-item + .meta-item { padding-left: 1.25rem; }
-  .meta-item .meta-value { font-size: 1.4rem; }
-  .split-content .btn-primary { font-size: 0.78rem; letter-spacing: 0.34em; padding: 1.4rem 2.8rem; margin-top: auto; }
+.rit-meta p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
 }
-
-@media (max-width: 480px) and (max-height: 700px) {
-  .treatment .gsap-inner, .treatment.reverse .gsap-inner { padding: 4.4rem 1rem 1.6rem; }
-  .split-content h2 { font-size: clamp(1.65rem, 7.4vw, 2.2rem); }
-  .split-content .script { margin-bottom: 0.5rem; }
-  .split-content .description { font-size: 0.92rem; line-height: 1.35; margin-bottom: 0.6rem; }
-  .ideal-for { padding: 0.5rem 0; }
-  .ideal-for p { font-size: 0.92rem; line-height: 1.35; }
-  .after-note { font-size: 0.92rem; line-height: 1.35; margin-bottom: 0.5rem; }
-  .after-note .after-label { margin-bottom: 0.3rem; }
-  .treatment-meta { margin-bottom: 0.6rem; }
-  .meta-item { padding: 0.5rem 0; }
-  .split-content .btn-primary { margin-top: auto; }
+.rit-close .rit-eyebrow { margin-bottom: 1.2rem; }
+.rit-close .cta-note {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  opacity: 0.65;
+  max-width: 34ch;
+  color: var(--text-muted);
 }
 </style>
 </head>
-<body class="gsap-page">
+<body>
 
 <header class="site-header">
   <div class="lang-switch"><a href="../en/rituals/" aria-label="Switch to English">EN</a></div>
@@ -596,228 +257,132 @@ body.gsap-page::before {
   </nav>
 </div>
 
-<!-- SEKCIJA 1: INTRO -->
-<section class="gsap-section fullbg">
-  <div class="gsap-outer"><div class="gsap-inner"><div class="gsap-bg" style="background-image: linear-gradient(rgba(31,15,10,0.55) 0%, rgba(31,15,10,0.75) 72%, #1F0F0A 100%), url('../wp-content/uploads/soul/hero-1.jpg');">
-    <div class="gsap-content">
-      <p class="gsap-eyebrow">Rituali</p>
-      <h2 class="gsap-heading">Tvoje tijelo <em>bira</em></h2>
-      <p class="gsap-sub">Svaki ritual prilagođen tvom tijelu i tempu. Rad ide ritmom tvog daha, ne mog rasporeda.</p>
+<main class="rit-wrap">
+  <header class="rit-hero">
+    <p class="rit-eyebrow">Rituali</p>
+    <h1>Tvoje tijelo bira</h1>
+    <p class="rit-lede">Svaki ritual prilagođen tvom tijelu i tempu. Rad ide ritmom tvog daha, ne mog rasporeda.</p>
+  </header>
+
+  <article class="ritual" id="ground-release">
+    <div class="rit-txt">
+      <p class="rit-eyebrow rit-num">01</p>
+      <h2>Ground &amp; Release</h2>
+      <p class="rit-script">duboka masaža za napetosti koje se ne otpuštaju same</p>
+      <p class="rit-body">Duboka, intuitivna masaža koja čvrstim ali nikad grubim pritiskom i dugim, protočnim pokretima vodi tijelo prema otpuštanju. Ide tamo gdje napetost sjedi najdublje, u vratu, ramenima i leđima, ali polako, da je sustav stigne pratiti. Dodir koji te vraća u tijelo i u osjećaj uzemljenja.</p>
+      <div class="rit-meta"><span class="lb">Za tebe</span><p>kad dane provodiš za stolom i pred ekranom, a napetost se već udomaćila u vratu i ramenima.</p></div>
+      <div class="rit-meta"><span class="lb">Poslije</span><p>odlaziš lakša, s tijelom koje je konačno spustilo obrane.</p></div>
+      <div class="rit-rates">
+        <div><span class="t">65 min</span><span class="p">75 €</span></div>
+        <div><span class="t">90 min</span><span class="p">95 €</span></div>
+        <div><span class="t">120 min</span><span class="p">125 €</span></div>
+      </div>
+      <a href="../kontakt/" class="rit-btn" data-reserve>Rezerviraj termin</a>
     </div>
-  </div></div></div>
-</section>
+    <div class="rit-ph" style="background-image: url('../wp-content/uploads/soul/ground-release.jpeg')" role="img" aria-label="Ground &amp; Release ritual"></div>
+  </article>
 
-<!-- SEKCIJA 2: GROUND & RELEASE -->
-<section class="gsap-section treatment" id="ground-release">
-  <div class="gsap-outer"><div class="gsap-inner">
-    <div class="split-image" style="background-image: url('../wp-content/uploads/soul/ground-release.jpeg');"></div>
-    <div class="split-content">
-      <h2>Ground &amp; <em>Release</em></h2>
-      <p class="script">duboka masaža za napetosti koje se ne otpuštaju same</p>
-      <p class="description">Duboka, intuitivna masaža koja čvrstim ali nikad grubim pritiskom i dugim, protočnim pokretima vodi tijelo prema otpuštanju. Ide tamo gdje napetost sjedi najdublje, u vratu, ramenima i leđima, ali polako, da je sustav stigne pratiti. Dodir koji te vraća u tijelo i u osjećaj uzemljenja.</p>
-      <div class="ideal-for">
-        <div class="ideal-icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 39V13"/>
-            <path d="M24 27C17 27 13 23 13 17C20 17 24 21 24 27Z"/>
-            <path d="M24 22C31 22 35 18 35 12C28 12 24 16 24 22Z"/>
-            <path d="M24 34C18 34 15 31 15 26C21 26 24 29 24 34Z"/>
-            <path d="M24 31C30 31 33 28 33 23C27 23 24 26 24 31Z"/>
-          </svg>
-        </div>
-        <div class="ideal-copy">
-          <span class="ideal-label">Za tebe</span>
-          <p>kad dane provodiš za stolom i pred ekranom, a napetost se već udomaćila u vratu i ramenima.</p>
-        </div>
+  <article class="ritual" id="flow-harmony">
+    <div class="rit-txt">
+      <p class="rit-eyebrow rit-num">02</p>
+      <h2>Flow &amp; Harmony</h2>
+      <p class="rit-script">polagana masaža za živčani sustav koji ne staje</p>
+      <p class="rit-body">Polagana masaža koja dugim, povezanim pokretima dopušta tijelu da se spusti samo od sebe. Ništa se ne probija ni ne forsira, dodir umiruje živčani sustav i otvara prostor za ravnotežu. Vrijeme u kojem ne moraš nikamo, osim natrag k sebi.</p>
+      <div class="rit-meta"><span class="lb">Za tebe</span><p>kad "držiš sve" i ne znaš se isključiti, kad spavaš ali se ne odmaraš.</p></div>
+      <div class="rit-meta"><span class="lb">Poslije</span><p>odlaziš sporija, s dubljim dahom i tišom glavom.</p></div>
+      <div class="rit-rates">
+        <div><span class="t">65 min</span><span class="p">75 €</span></div>
+        <div><span class="t">90 min</span><span class="p">95 €</span></div>
+        <div><span class="t">120 min</span><span class="p">125 €</span></div>
       </div>
-      <p class="after-note"><span class="after-label">Poslije</span>odlaziš lakša, s tijelom koje je konačno spustilo obrane.</p>
-      <div class="price-card">
-        <div class="pc-row"><span class="pc-d">65 min</span><span class="pc-p">75 €</span></div>
-        <div class="pc-row"><span class="pc-d">90 min</span><span class="pc-p">95 €</span></div>
-        <div class="pc-row"><span class="pc-d">120 min</span><span class="pc-p">125 €</span></div>
-      </div>
-      <a href="../kontakt/" class="btn-primary" data-reserve>Rezerviraj termin</a>
+      <a href="../kontakt/" class="rit-btn" data-reserve>Rezerviraj termin</a>
     </div>
-  </div></div>
-</section>
+    <div class="rit-ph" style="background-image: url('../wp-content/uploads/soul/flow-harmony.jpeg')" role="img" aria-label="Flow &amp; Harmony ritual"></div>
+  </article>
 
-<!-- SEKCIJA 3: FLOW & HARMONY (reverse) -->
-<section class="gsap-section treatment reverse" id="flow-harmony">
-  <div class="gsap-outer"><div class="gsap-inner">
-    <div class="split-image" style="background-image: url('../wp-content/uploads/soul/flow-harmony.jpeg');"></div>
-    <div class="split-content">
-      <h2>Flow &amp; <em>Harmony</em></h2>
-      <p class="script">polagana masaža za živčani sustav koji ne staje</p>
-      <p class="description">Polagana masaža koja dugim, povezanim pokretima dopušta tijelu da se spusti samo od sebe. Ništa se ne probija ni ne forsira, dodir umiruje živčani sustav i otvara prostor za ravnotežu. Vrijeme u kojem ne moraš nikamo, osim natrag k sebi.</p>
-      <div class="ideal-for">
-        <div class="ideal-icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 39V13"/>
-            <path d="M24 27C17 27 13 23 13 17C20 17 24 21 24 27Z"/>
-            <path d="M24 22C31 22 35 18 35 12C28 12 24 16 24 22Z"/>
-            <path d="M24 34C18 34 15 31 15 26C21 26 24 29 24 34Z"/>
-            <path d="M24 31C30 31 33 28 33 23C27 23 24 26 24 31Z"/>
-          </svg>
-        </div>
-        <div class="ideal-copy">
-          <span class="ideal-label">Za tebe</span>
-          <p>kad "držiš sve" i ne znaš se isključiti, kad spavaš ali se ne odmaraš.</p>
-        </div>
+  <article class="ritual" id="deep-rest">
+    <div class="rit-txt">
+      <p class="rit-eyebrow rit-num">03</p>
+      <h2>Deep Rest</h2>
+      <p class="rit-script">restorativni ritual za povratak pravom snu</p>
+      <p class="rit-body">Tih, restorativan ritual s naglaskom na glavu, vrat i dekolte, dodirom koji tijelu daje dopuštenje da se preda. Umiruje mjesta gdje se skuplja umor i vodi te u duboku relaksaciju, ono stanje iz kojeg san dolazi lakše. Ništa naglo, ništa forsirano.</p>
+      <div class="rit-meta"><span class="lb">Za tebe</span><p>kad san ne dolazi lako i kad ti treba spustiti obrtaje.</p></div>
+      <div class="rit-meta"><span class="lb">Poslije</span><p>odlaziš smirena, s glavom koja je utihnula i tijelom bez napetosti.</p></div>
+      <div class="rit-rates">
+        <div><span class="t">30 min</span><span class="p">55 €</span></div>
+        <div><span class="t">45 min</span><span class="p">65 €</span></div>
       </div>
-      <p class="after-note"><span class="after-label">Poslije</span>odlaziš sporija, s dubljim dahom i tišom glavom.</p>
-      <div class="price-card">
-        <div class="pc-row"><span class="pc-d">65 min</span><span class="pc-p">75 €</span></div>
-        <div class="pc-row"><span class="pc-d">90 min</span><span class="pc-p">95 €</span></div>
-        <div class="pc-row"><span class="pc-d">120 min</span><span class="pc-p">125 €</span></div>
-      </div>
-      <a href="../kontakt/" class="btn-primary" data-reserve>Rezerviraj termin</a>
+      <a href="../kontakt/" class="rit-btn" data-reserve>Rezerviraj termin</a>
     </div>
-  </div></div>
-</section>
+    <div class="rit-ph" style="background-image: url('../wp-content/uploads/soul/deep-rest.jpeg')" role="img" aria-label="Deep Rest ritual"></div>
+  </article>
 
-<!-- SEKCIJA 4: DEEP REST -->
-<section class="gsap-section treatment" id="deep-rest">
-  <div class="gsap-outer"><div class="gsap-inner">
-    <div class="split-image" style="background-image: url('../wp-content/uploads/soul/deep-rest.jpeg');"></div>
-    <div class="split-content">
-      <h2>Deep <em>Rest</em></h2>
-      <p class="script">restorativni ritual za povratak pravom snu</p>
-      <p class="description">Tih, restorativan ritual s naglaskom na glavu, vrat i dekolte, dodirom koji tijelu daje dopuštenje da se preda. Umiruje mjesta gdje se skuplja umor i vodi te u duboku relaksaciju, ono stanje iz kojeg san dolazi lakše. Ništa naglo, ništa forsirano.</p>
-      <div class="ideal-for">
-        <div class="ideal-icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 39V13"/>
-            <path d="M24 27C17 27 13 23 13 17C20 17 24 21 24 27Z"/>
-            <path d="M24 22C31 22 35 18 35 12C28 12 24 16 24 22Z"/>
-            <path d="M24 34C18 34 15 31 15 26C21 26 24 29 24 34Z"/>
-            <path d="M24 31C30 31 33 28 33 23C27 23 24 26 24 31Z"/>
-          </svg>
-        </div>
-        <div class="ideal-copy">
-          <span class="ideal-label">Za tebe</span>
-          <p>kad san ne dolazi lako i kad ti treba spustiti obrtaje.</p>
-        </div>
+  <article class="ritual" id="inner-glow">
+    <div class="rit-txt">
+      <p class="rit-eyebrow rit-num">04</p>
+      <h2>Inner Glow</h2>
+      <p class="rit-script">ritual za lice i limfu, nježno i polako</p>
+      <p class="rit-body">Nježna masaža usmjerena na lice, koje pamti emocije i sve što danju držimo, te na vrat i dekolte. Restorativan dodir koji pokreće limfu, otpušta napetost i licu vraća mekoću. Sve polako, bez žurbe.</p>
+      <div class="rit-meta"><span class="lb">Za tebe</span><p>kad ti je lice umorno i stegnuto, a treba mu mir i malo vraćene vitalnosti.</p></div>
+      <div class="rit-meta"><span class="lb">Poslije</span><p>odlaziš s budnijim, mekšim licem i odmornijim izrazom.</p></div>
+      <div class="rit-rates">
+        <div><span class="t">30 min</span><span class="p">55 €</span></div>
+        <div><span class="t">45 min</span><span class="p">65 €</span></div>
       </div>
-      <p class="after-note"><span class="after-label">Poslije</span>odlaziš smirena, s glavom koja je utihnula i tijelom bez napetosti.</p>
-      <div class="price-card">
-        <div class="pc-row"><span class="pc-d">30 min</span><span class="pc-p">55 €</span></div>
-        <div class="pc-row"><span class="pc-d">45 min</span><span class="pc-p">65 €</span></div>
-      </div>
-      <a href="../kontakt/" class="btn-primary" data-reserve>Rezerviraj termin</a>
+      <a href="../kontakt/" class="rit-btn" data-reserve>Rezerviraj termin</a>
     </div>
-  </div></div>
-</section>
+    <div class="rit-ph" style="background-image: url('../wp-content/uploads/soul/inner-glow.jpeg')" role="img" aria-label="Inner Glow ritual"></div>
+  </article>
 
-<!-- SEKCIJA 5: INNER GLOW (reverse) -->
-<section class="gsap-section treatment reverse" id="inner-glow">
-  <div class="gsap-outer"><div class="gsap-inner">
-    <div class="split-image" style="background-image: url('../wp-content/uploads/soul/inner-glow.jpeg');"></div>
-    <div class="split-content">
-      <h2>Inner <em>Glow</em></h2>
-      <p class="script">ritual za lice i limfu, nježno i polako</p>
-      <p class="description">Nježna masaža usmjerena na lice, koje pamti emocije i sve što danju držimo, te na vrat i dekolte. Restorativan dodir koji pokreće limfu, otpušta napetost i licu vraća mekoću. Sve polako, bez žurbe.</p>
-      <div class="ideal-for">
-        <div class="ideal-icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 39V13"/>
-            <path d="M24 27C17 27 13 23 13 17C20 17 24 21 24 27Z"/>
-            <path d="M24 22C31 22 35 18 35 12C28 12 24 16 24 22Z"/>
-            <path d="M24 34C18 34 15 31 15 26C21 26 24 29 24 34Z"/>
-            <path d="M24 31C30 31 33 28 33 23C27 23 24 26 24 31Z"/>
-          </svg>
-        </div>
-        <div class="ideal-copy">
-          <span class="ideal-label">Za tebe</span>
-          <p>kad ti je lice umorno i stegnuto, a treba mu mir i malo vraćene vitalnosti.</p>
+  <section class="rit-close">
+    <p class="rit-eyebrow">tempo prije tehnike</p>
+    <h2>Već prvi put tijelo popusti. Svaki sljedeći ide korak dalje.</h2>
+    <p class="rit-body">Ovo je proces, ne brzi popravak. Ali razliku osjetiš od prvog dolaska.</p>
+    <a href="../kontakt/" class="rit-btn" data-reserve>Rezerviraj termin</a>
+    <p class="cta-note">Radim sama i držim mali broj termina tjedno. Ako ti odgovara određeni dan, javi se koji dan ranije.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h4 class="footer-brand-title">Soul Space</h4>
+        <address>
+          Obrt za usluge<br>
+          OIB: 27660814727<br>
+          <a href="https://www.google.com/maps/search/?api=1&query=Sinjska%205%2C%2021000%20Split%2C%20Hrvatska" target="_blank" rel="noopener">Sinjska 5, 21000 Split</a><br>
+          <a href="mailto:soul.space.split@gmail.com">soul.space.split@gmail.com</a><br>
+          <a href="tel:+385955363341">+385 95 536 3341</a>
+        </address>
+      </div>
+      <div class="footer-col">
+        <h4>Radno vrijeme</h4>
+        <ul class="footer-hours">
+          <li>Pon – Sub: 10:00 – 21:00</li>
+          <li>Ned: po dogovoru</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-icons">
+          <a href="https://wa.me/385955363341" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg class="wa" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2m0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.24-8.22 8.24m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29"/></svg>
+          </a>
+          <a href="https://instagram.com/soul.space.split" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="mailto:soul.space.split@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
         </div>
       </div>
-      <p class="after-note"><span class="after-label">Poslije</span>odlaziš s budnijim, mekšim licem i odmornijim izrazom.</p>
-      <div class="price-card">
-        <div class="pc-row"><span class="pc-d">30 min</span><span class="pc-p">55 €</span></div>
-        <div class="pc-row"><span class="pc-d">45 min</span><span class="pc-p">65 €</span></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Soul Space · Diana Lendić · <a href="../politika-privatnosti/">Politika privatnosti</a> · <a href="../uvjeti-otkazivanja/">Uvjeti otkazivanja</a></p>
       </div>
-      <a href="../kontakt/" class="btn-primary" data-reserve>Rezerviraj termin</a>
     </div>
-  </div></div>
-</section>
+  </footer>
 
-<!-- SEKCIJA 6: CTA -->
-<section class="gsap-section fullbg">
-  <div class="gsap-outer"><div class="gsap-inner"><div class="gsap-bg" style="background-image: linear-gradient(rgba(31,15,10,0.7) 0%, rgba(31,15,10,0.9) 70%, #1F0F0A 100%), url('../wp-content/uploads/soul/hero-2.jpg');">
-    <div class="gsap-content">
-      <p class="gsap-eyebrow">tempo prije tehnike</p>
-      <h2 class="gsap-heading"><span class="cta-line">Već prvi put tijelo popusti.</span><span class="cta-line">Svaki sljedeći ide korak dalje.</span></h2>
-      <p class="gsap-sub">Ovo je proces, ne brzi popravak. Ali razliku osjetiš od prvog dolaska.</p>
-      <a href="../kontakt/" class="btn-primary" data-reserve>Rezerviraj termin</a>
-    </div>
-  </div></div></div>
-</section>
-
-<nav class="progress-nav" id="progressNav"></nav>
-
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js"></script>
-<script>
-gsap.registerPlugin(Observer);
-const sections = document.querySelectorAll(".gsap-section");
-const outerWrappers = gsap.utils.toArray(".gsap-outer");
-const innerWrappers = gsap.utils.toArray(".gsap-inner");
-let currentIndex = -1;
-const wrap = gsap.utils.wrap(0, sections.length);
-let animating;
-const progressNav = document.getElementById("progressNav");
-sections.forEach((_, i) => {
-  const dot = document.createElement("button");
-  dot.className = "progress-dot";
-  dot.addEventListener("click", () => {
-    if (!animating && i !== currentIndex) gotoSection(i, i > currentIndex ? 1 : -1);
-  });
-  progressNav.appendChild(dot);
-});
-const dots = document.querySelectorAll(".progress-dot");
-gsap.set(outerWrappers, { yPercent: 100 });
-gsap.set(innerWrappers, { yPercent: -100 });
-function gotoSection(index, direction) {
-  index = wrap(index);
-  animating = true;
-  const dFactor = direction === -1 ? -1 : 1;
-  const tl = gsap.timeline({
-    defaults: { duration: 1.25, ease: "power1.inOut" },
-    onComplete: () => (animating = false)
-  });
-  if (currentIndex >= 0) {
-    gsap.set(sections[currentIndex], { zIndex: 0 });
-    tl.set(sections[currentIndex], { autoAlpha: 0 });
-  }
-  gsap.set(sections[index], { autoAlpha: 1, zIndex: 1 });
-  tl.fromTo([outerWrappers[index], innerWrappers[index]],
-    { yPercent: (i) => (i ? -100 * dFactor : 100 * dFactor) },
-    { yPercent: 0 }, 0);
-  dots.forEach((d, i) => d.classList.toggle("active", i === index));
-  currentIndex = index;
-}
-Observer.create({
-  type: "wheel,touch,pointer",
-  wheelSpeed: -1,
-  onDown: () => !animating && gotoSection(currentIndex - 1, -1),
-  onUp: () => !animating && gotoSection(currentIndex + 1, 1),
-  tolerance: 10,
-  preventDefault: true
-});
-function indexFromHash() {
-  var h = (location.hash || "").replace("#", "");
-  if (!h) return 0;
-  var el = document.getElementById(h);
-  if (!el) return 0;
-  var idx = Array.prototype.indexOf.call(sections, el);
-  return idx < 0 ? 0 : idx;
-}
-gotoSection(indexFromHash(), 1);
-window.addEventListener("hashchange", function () {
-  var idx = indexFromHash();
-  if (!animating && idx !== currentIndex) gotoSection(idx, idx > currentIndex ? 1 : -1);
-});
-</script>
 <script src="../js/nav.js?v=4"></script>
 
 </body>
