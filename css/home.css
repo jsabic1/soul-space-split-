@@ -1912,3 +1912,80 @@ h3,
 .for-you-grid { justify-items: center; }
 .for-you-item { text-align: center; }
 .for-you-text { margin-left: auto; margin-right: auto; }
+
+/* ============================================================
+   PRISTUP — naslov lijevo ostaje na mjestu, tri principa desno.
+   ============================================================ */
+/* Sekcija se klipa clip-pathom umjesto overflowom, jer overflow:hidden
+   stvara vlastiti okvir skrolanja i ljepljivi naslov prestane raditi. */
+.section-pristup {
+  overflow: visible;
+  clip-path: inset(0);
+}
+.pristup-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(3rem, 7vw, 7rem);
+  /* Stavke se rastezu po visini retka, inace ljepljivi naslov nema kuda kliziti. */
+  align-items: stretch;
+}
+/* Stupac se rasteze po visini retka, a naslov u njemu je ljepljiv,
+   pa ima kuda kliziti dok principi prolaze pored njega. */
+.pristup-head { grid-column: 1; align-self: stretch; }
+.section-pristup .section-head {
+  position: sticky;
+  top: 8rem;
+  text-align: left;
+  margin-bottom: 0;
+}
+.section-pristup .section-head h2 { max-width: 12ch; }
+.section-pristup .section-head .eyebrow { display: block; margin-bottom: 1rem; }
+.pristup-rule {
+  display: block;
+  width: 56px;
+  height: 1px;
+  margin-top: 1.8rem;
+  background: var(--accent-soft);
+  opacity: 0.6;
+}
+
+.principles-stairs {
+  grid-column: 2;
+  display: block;
+  max-width: none;
+  margin: 0;
+}
+.principle-stairs,
+.principle-stairs:first-child,
+.principle-stairs:nth-child(2),
+.principle-stairs:nth-child(3) {
+  margin-top: 0;
+  padding: 0 0 3.4rem;
+  border-left: none;
+}
+.principle-stairs:last-child { padding-bottom: 0; }
+.principle-stairs:hover { transform: none; }
+.principle-stairs .num-word-s { display: block; margin-bottom: 0.6rem; }
+.principle-stairs h3 { margin-bottom: 0; }
+.principle-stairs p { margin-top: 0.7rem; max-width: 46ch; }
+
+@media (max-width: 860px) {
+  .pristup-wrap { grid-template-columns: 1fr; gap: 2.6rem; }
+  .pristup-head,
+  .principles-stairs { grid-column: 1; }
+  .section-pristup .section-head { position: static; text-align: center; }
+  .section-pristup .section-head h2 { max-width: none; }
+  .pristup-rule { margin-left: auto; margin-right: auto; }
+  .principle-stairs { text-align: center; }
+  .principle-stairs p { margin-left: auto; margin-right: auto; }
+}
+
+/* Vise zraka izmedju sekcija koje su bile pretijesne. */
+.for-you { padding-bottom: 12rem; }      /* bilo 6rem */
+.cta-banner { padding-top: 12rem; }      /* bilo 6rem */
+@media (max-width: 860px) {
+  .for-you { padding-bottom: 9rem; }
+  .cta-banner { padding-top: 9rem; }
+}

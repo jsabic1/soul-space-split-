@@ -28,7 +28,10 @@
     if (!m) return;
 
     if (cs.position === 'static') el.style.position = 'relative';
-    el.style.overflow = 'hidden';
+    // Sekcije s ljepljivim sadrzajem ne smiju dobiti overflow:hidden,
+    // jer bi to napravilo vlastiti okvir skrolanja i pokvarilo sticky.
+    if (el.hasAttribute('data-sticky-safe')) el.style.clipPath = 'inset(0)';
+    else el.style.overflow = 'hidden';
     el.style.backgroundImage = 'none'; // slika ide u pomični sloj
 
     var layer = document.createElement('div');
