@@ -272,35 +272,221 @@ html, body { overflow-x: hidden; }
 .rit-close .rit-btn { margin-top: 2.6rem; }
 .rit-close .cta-note { margin: 1.1rem 0 0; text-align: left; }
 
-@media (max-width: 860px) {
-  /* Mobitel: slika stoji iza teksta, vidi se samo pri dnu
-     i bez ruba se gubi prema gore. Pocinje otprilike kod cjenika. */
-  .ritual {
-    position: relative;
-    display: block;
-    padding-bottom: clamp(5rem, 16vw, 7rem);
-  }
-  .rit-txt { position: relative; z-index: 1; text-align: center; }
-  .rit-ph {
-    position: absolute;
-    left: calc(-1 * var(--rit-pad));
-    right: calc(-1 * var(--rit-pad));
-    top: 50%;
-    transform: translateY(-50%);
-    height: clamp(340px, 92vw, 460px);
-    aspect-ratio: auto;
-    border-radius: 0;
-    opacity: 0.5;
-    z-index: 0;
-    pointer-events: none;
-    /* Vidi se po sredini, a gore i dolje se bez ruba gubi u pozadinu. */
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.55) 22%, #000 46%, #000 54%, rgba(0, 0, 0, 0.55) 78%, transparent 100%);
-            mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.55) 22%, #000 46%, #000 54%, rgba(0, 0, 0, 0.55) 78%, transparent 100%);
-  }
-  .rit-rates { max-width: 100%; }
-}
 @media (max-width: 420px) {
   .rit-btn { min-width: min(17.3rem, 100%); padding: 0.95rem 1.4rem; }
+}
+
+/* ============================================================
+   MOBILNA VERZIJA — carousel: svaki ritual je jedan "red" u
+   uspravnom swipeu (svajp dolje = iduci ritual), a unutar reda
+   dvije stranice vodoravno (slika s nazivom/gumbom, pa opis).
+   Desktop raspored (.ritual) ostaje netaknut, samo se sakriva.
+   ============================================================ */
+.rit-mob { display: none; }
+@media (max-width: 860px) {
+  .ritual { display: none; }
+  .rit-mob { display: block; }
+
+  .rit-mob-stage {
+    height: 100vh;
+    height: 100svh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+    margin: 0 calc(-1 * var(--rit-pad));
+  }
+  .rit-mob-stage::-webkit-scrollbar { display: none; }
+
+  .rit-mob-row {
+    height: 100%;
+    width: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .rit-mob-row::-webkit-scrollbar { display: none; }
+
+  .rit-mob-panel {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: clamp(5.5rem, 18vw, 7rem) var(--rit-pad) 2rem;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .rit-mob-card-wrap { position: relative; width: 100%; max-width: 320px; }
+  .rit-mob-card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 6px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  }
+  .rit-mob-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(120% 100% at 50% 50%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.45) 100%),
+      rgba(20, 9, 5, 0.38);
+  }
+  .rit-mob-card-in {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.6rem;
+  }
+  .rit-mob-card-in h2 {
+    font-family: var(--font-brand);
+    font-weight: 400;
+    font-size: 1.7rem;
+    line-height: 1.14;
+    color: #fff;
+    margin: 0;
+    white-space: normal;
+  }
+  .rit-mob-cap {
+    font-family: var(--font-brand-sub);
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    margin: 0.6rem 0 0;
+  }
+  .rit-mob-card-in .rit-btn {
+    margin-top: 1.1rem;
+    min-width: 0;
+    padding: 0.75rem 1.6rem;
+    font-size: 0.64rem;
+    letter-spacing: 0.24em;
+  }
+  .rit-mob-more {
+    margin-top: 0.9rem;
+    display: inline-block;
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--accent-soft);
+    font-family: var(--font-brand-sub);
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+  }
+
+  .rit-mob-arrow-right {
+    position: absolute;
+    right: -0.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    z-index: 2;
+    background: rgba(20, 9, 5, 0.55);
+    border: 1px solid rgba(244, 232, 214, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    animation: ritNudgeRight 1.8s ease-in-out infinite;
+  }
+  .rit-mob-arrow-down {
+    position: absolute;
+    left: 50%;
+    bottom: 4.7rem;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: var(--accent-soft);
+    font-size: 1.1rem;
+    line-height: 1;
+    opacity: 0.8;
+    animation: ritNudgeDown 1.8s ease-in-out infinite;
+  }
+  @keyframes ritNudgeRight {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-50%) translateX(5px); }
+  }
+  @keyframes ritNudgeDown {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(5px); }
+  }
+
+  .rit-mob-dots {
+    position: absolute;
+    bottom: 5.9rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+  }
+  .rit-mob-dots span { width: 5px; height: 5px; border-radius: 50%; background: var(--border); display: block; }
+  .rit-mob-dots span.on { background: var(--accent-soft); }
+
+  .rit-mob-peek {
+    position: absolute;
+    left: 2.4rem;
+    right: 2.4rem;
+    bottom: 0;
+    height: 64px;
+    border-radius: 10px 10px 0 0;
+    background-size: cover;
+    background-position: center top;
+    box-shadow: 0 -10px 24px rgba(0, 0, 0, 0.4);
+    opacity: 0.9;
+  }
+  .rit-mob-peek::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px 10px 0 0;
+    background: linear-gradient(rgba(20, 9, 5, 0.1), rgba(20, 9, 5, 0.55));
+  }
+  .rit-mob-peek span {
+    position: absolute;
+    top: 0.5rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: var(--font-brand-sub);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text);
+    opacity: 0.85;
+  }
+
+  .rit-mob-desc { align-items: flex-start; text-align: left; }
+  .rit-mob-desc .rit-script { margin: 0 0 0.9rem; }
+  .rit-mob-desc .rit-body { margin: 0 0 1.1rem; font-size: 0.98rem; }
+  .rit-mob-desc .rit-meta { margin: 0 0 1rem; }
+  .rit-mob-desc .rit-rates { margin: 1rem 0; max-width: 100%; }
 }
 
 /* --- podnaslov rituala i blokovi Za tebe / Poslije --- */
@@ -493,6 +679,128 @@ html, body { overflow-x: hidden; }
     </div>
   </article>
 
+  <div class="rit-mob">
+    <div class="rit-mob-stage" id="ritMobStage">
+
+      <div class="rit-mob-row">
+        <div class="rit-mob-panel">
+          <div class="rit-mob-card-wrap">
+            <div class="rit-mob-card" style="background-image: url('../wp-content/uploads/soul/ground-release.jpeg')">
+              <div class="rit-mob-card-in">
+                <h2>Ground &amp; Release</h2>
+                <p class="rit-mob-cap">duboki intuitivni ritual</p>
+                <a href="../kontakt/" class="rit-btn" data-reserve>Rezerviraj termin</a>
+                <button type="button" class="rit-mob-more">Pročitaj više</button>
+              </div>
+            </div>
+            <span class="rit-mob-arrow-right" aria-hidden="true">&#8250;</span>
+          </div>
+          <div class="rit-mob-dots"><span class="on"></span><span></span></div>
+          <span class="rit-mob-arrow-down" aria-hidden="true">&#8964;</span>
+          <div class="rit-mob-peek" style="background-image: url('../wp-content/uploads/soul/flow-harmony.jpeg')"><span>Flow &amp; Harmony</span></div>
+        </div>
+        <div class="rit-mob-panel rit-mob-desc">
+          <p class="rit-script">duboka masaža za napetosti koje se ne otpuštaju same</p>
+          <p class="rit-body">Duboka, intuitivna masaža koja čvrstim ali nikad grubim pritiskom i dugim, protočnim pokretima vodi tijelo prema otpuštanju. Ide tamo gdje napetost sjedi najdublje, u vratu, ramenima i leđima, ali polako, da je sustav stigne pratiti. Dodir koji te vraća u tijelo i u osjećaj uzemljenja.</p>
+          <div class="rit-meta"><span class="lb">Za tebe</span><p>kad dane provodiš za stolom i pred ekranom, a napetost se već udomaćila u vratu i ramenima</p></div>
+          <div class="rit-meta"><span class="lb">Poslije</span><p>odlaziš lakša, s tijelom koje je konačno spustilo obrane</p></div>
+          <div class="rit-rates">
+            <div><span class="t">65 min</span><span class="p">75 €</span></div>
+            <div><span class="t">90 min</span><span class="p">95 €</span></div>
+            <div><span class="t">120 min</span><span class="p">125 €</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rit-mob-row">
+        <div class="rit-mob-panel">
+          <div class="rit-mob-card-wrap">
+            <div class="rit-mob-card" style="background-image: url('../wp-content/uploads/soul/flow-harmony.jpeg')">
+              <div class="rit-mob-card-in">
+                <h2>Flow &amp; Harmony</h2>
+                <p class="rit-mob-cap">ritual za živčani sustav</p>
+                <a href="../kontakt/" class="rit-btn" data-reserve>Rezerviraj termin</a>
+                <button type="button" class="rit-mob-more">Pročitaj više</button>
+              </div>
+            </div>
+            <span class="rit-mob-arrow-right" aria-hidden="true">&#8250;</span>
+          </div>
+          <div class="rit-mob-dots"><span class="on"></span><span></span></div>
+          <span class="rit-mob-arrow-down" aria-hidden="true">&#8964;</span>
+          <div class="rit-mob-peek" style="background-image: url('../wp-content/uploads/soul/deep-rest.jpeg')"><span>Deep Rest</span></div>
+        </div>
+        <div class="rit-mob-panel rit-mob-desc">
+          <p class="rit-script">polagana masaža za živčani sustav koji ne staje</p>
+          <p class="rit-body">Polagana masaža koja dugim, povezanim pokretima dopušta tijelu da se spusti samo od sebe. Ništa se ne probija ni ne forsira, dodir umiruje živčani sustav i otvara prostor za ravnotežu. Vrijeme u kojem ne moraš nikamo, osim natrag k sebi.</p>
+          <div class="rit-meta"><span class="lb">Za tebe</span><p>kad "držiš sve" i ne znaš se isključiti, kad spavaš ali se ne odmaraš</p></div>
+          <div class="rit-meta"><span class="lb">Poslije</span><p>odlaziš sporija, s dubljim dahom i tišom glavom</p></div>
+          <div class="rit-rates">
+            <div><span class="t">65 min</span><span class="p">75 €</span></div>
+            <div><span class="t">90 min</span><span class="p">95 €</span></div>
+            <div><span class="t">120 min</span><span class="p">125 €</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rit-mob-row">
+        <div class="rit-mob-panel">
+          <div class="rit-mob-card-wrap">
+            <div class="rit-mob-card" style="background-image: url('../wp-content/uploads/soul/deep-rest.jpeg')">
+              <div class="rit-mob-card-in">
+                <h2>Deep Rest</h2>
+                <p class="rit-mob-cap">restorativni ritual</p>
+                <a href="../kontakt/" class="rit-btn" data-reserve>Rezerviraj termin</a>
+                <button type="button" class="rit-mob-more">Pročitaj više</button>
+              </div>
+            </div>
+            <span class="rit-mob-arrow-right" aria-hidden="true">&#8250;</span>
+          </div>
+          <div class="rit-mob-dots"><span class="on"></span><span></span></div>
+          <span class="rit-mob-arrow-down" aria-hidden="true">&#8964;</span>
+          <div class="rit-mob-peek" style="background-image: url('../wp-content/uploads/soul/inner-glow.jpeg')"><span>Inner Glow</span></div>
+        </div>
+        <div class="rit-mob-panel rit-mob-desc">
+          <p class="rit-script">restorativni ritual za povratak pravom snu</p>
+          <p class="rit-body">Tih, restorativan ritual s naglaskom na glavu, vrat i dekolte, dodirom koji tijelu daje dopuštenje da se preda. Umiruje mjesta gdje se skuplja umor i vodi te u duboku relaksaciju, ono stanje iz kojeg san dolazi lakše. Ništa naglo, ništa forsirano.</p>
+          <div class="rit-meta"><span class="lb">Za tebe</span><p>kad san ne dolazi lako i kad ti treba spustiti obrtaje</p></div>
+          <div class="rit-meta"><span class="lb">Poslije</span><p>odlaziš smirena, s glavom koja je utihnula i tijelom bez napetosti</p></div>
+          <div class="rit-rates">
+            <div><span class="t">30 min</span><span class="p">55 €</span></div>
+            <div><span class="t">45 min</span><span class="p">65 €</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rit-mob-row">
+        <div class="rit-mob-panel">
+          <div class="rit-mob-card-wrap">
+            <div class="rit-mob-card" style="background-image: url('../wp-content/uploads/soul/inner-glow.jpeg')">
+              <div class="rit-mob-card-in">
+                <h2>Inner Glow</h2>
+                <p class="rit-mob-cap">ritual za lice i limfu</p>
+                <a href="../kontakt/" class="rit-btn" data-reserve>Rezerviraj termin</a>
+                <button type="button" class="rit-mob-more">Pročitaj više</button>
+              </div>
+            </div>
+            <span class="rit-mob-arrow-right" aria-hidden="true">&#8250;</span>
+          </div>
+          <div class="rit-mob-dots"><span class="on"></span><span></span></div>
+        </div>
+        <div class="rit-mob-panel rit-mob-desc">
+          <p class="rit-script">ritual za lice i limfu, nježno i polako</p>
+          <p class="rit-body">Nježna masaža usmjerena na lice, koje pamti emocije i sve što danju držimo, te na vrat i dekolte. Restorativan dodir koji pokreće limfu, otpušta napetost i licu vraća mekoću. Sve polako, bez žurbe.</p>
+          <div class="rit-meta"><span class="lb">Za tebe</span><p>kad ti je lice umorno i stegnuto, a treba mu mir i malo vraćene vitalnosti</p></div>
+          <div class="rit-meta"><span class="lb">Poslije</span><p>odlaziš s budnijim, mekšim licem i odmornijim izrazom</p></div>
+          <div class="rit-rates">
+            <div><span class="t">30 min</span><span class="p">55 €</span></div>
+            <div><span class="t">45 min</span><span class="p">65 €</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <section class="rit-close">
     <h2>Već prvi put tijelo popusti. Svaki sljedeći ide korak dalje.</h2>
     <p class="rit-body">Ovo je proces, ne brzi popravak. Ali razliku osjetiš od prvog dolaska.</p>
@@ -541,6 +849,23 @@ html, body { overflow-x: hidden; }
   </footer>
 
 <script src="../js/nav.js?v=4"></script>
+<script>
+(function () {
+  var rows = document.querySelectorAll('.rit-mob-row');
+  rows.forEach(function (row) {
+    var dots = row.querySelectorAll('.rit-mob-dots span');
+    row.addEventListener('scroll', function () {
+      var i = Math.round(row.scrollLeft / row.clientWidth);
+      dots.forEach(function (d, idx) { d.classList.toggle('on', idx === i); });
+    });
+    row.querySelectorAll('.rit-mob-arrow-right, .rit-mob-more').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        row.scrollTo({ left: row.clientWidth, behavior: 'smooth' });
+      });
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
