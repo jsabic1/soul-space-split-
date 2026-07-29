@@ -2035,7 +2035,8 @@ h3,
     z-index: 0;
     opacity: 0.5;
     pointer-events: none;
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.55) 18%, #000 42%, #000 58%, rgba(0, 0, 0, 0.55) 82%, transparent 100%);
-            mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.55) 18%, #000 42%, #000 58%, rgba(0, 0, 0, 0.55) 82%, transparent 100%);
+    /* Elipsasti fade gubi sve cetiri strane, ne samo gore/dolje. */
+    -webkit-mask-image: radial-gradient(ellipse 62% 58% at center, #000 42%, rgba(0, 0, 0, 0.5) 70%, transparent 100%);
+            mask-image: radial-gradient(ellipse 62% 58% at center, #000 42%, rgba(0, 0, 0, 0.5) 70%, transparent 100%);
   }
 }
