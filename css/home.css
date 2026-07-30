@@ -177,6 +177,8 @@ p { color: var(--text-muted); }
   }
   /* Nize na mobitelu, manje prostora oko citata. */
   .section-testimonials { padding: 3rem 0; }
+  /* Vise zraka izmedju Pristupa i Rituala na mobitelu. */
+  .section-pristup + .section { margin-top: 18rem; }
 }
 
 /* ============================================
