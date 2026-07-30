@@ -656,7 +656,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .ritual-card:hover .ritual-link { gap: 1.2rem; }
 @media (max-width: 700px) {
   .rituali-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-  .ritual-card { aspect-ratio: 1 / 1; }
+  .ritual-card { aspect-ratio: 5 / 6; }
   .ritual-card .ritual-content { padding: 2rem 1.5rem; }
 }
 
