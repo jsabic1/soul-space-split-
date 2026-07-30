@@ -175,6 +175,8 @@ p { color: var(--text-muted); }
     background-attachment: scroll;
     padding: 5rem 0;
   }
+  /* Nize na mobitelu, manje prostora oko citata. */
+  .section-testimonials { padding: 3rem 0; }
 }
 
 /* ============================================
@@ -652,7 +654,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .ritual-card:hover .ritual-link { gap: 1.2rem; }
 @media (max-width: 700px) {
   .rituali-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-  .ritual-card { aspect-ratio: 3 / 4; }
+  .ritual-card { aspect-ratio: 1 / 1; }
   .ritual-card .ritual-content { padding: 2rem 1.5rem; }
 }
 
