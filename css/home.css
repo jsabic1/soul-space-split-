@@ -177,8 +177,8 @@ p { color: var(--text-muted); }
   }
   /* Nize na mobitelu, manje prostora oko citata. */
   .section-testimonials { padding: 3rem 0; }
-  /* Vise zraka izmedju svake sekcije na mobitelu. */
-  main > * + * { margin-top: 13rem; }
+  /* Vise zraka samo izmedju Pristupa i Rituala na mobitelu. */
+  .section-pristup + .section { margin-top: 13rem; }
 }
 
 /* ============================================
@@ -739,17 +739,6 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
     gap: 0;
     padding-top: 0;
     padding-left: 0;
-  }
-  .timeline-steps::before {
-    content: '';
-    position: absolute;
-    left: 6px;
-    top: 0.5rem;
-    bottom: 0.7rem;
-    width: 1px;
-    background: var(--accent-soft);
-    opacity: 0.7;
-    z-index: 1;
   }
   .timeline-step {
     padding-top: 0;
@@ -1479,21 +1468,9 @@ body.home .cta-banner h2 {
           mask-image: linear-gradient(to right, #000 calc(var(--tl) * 100%), transparent calc(var(--tl) * 100%));
 }
 
-/* Mobitel: koraci idu u stupac, pa se puni uspravna crta. */
+/* Mobitel: koraci idu u stupac, bez uspravne crte. */
 @media (max-width: 860px) {
   .tl-curve { display: none; }
-  .timeline-steps::before { opacity: 0.22; }
-  .timeline-steps::after {
-    content: '';
-    position: absolute;
-    left: 6px;
-    top: 0.5rem;
-    width: 1px;
-    height: calc(var(--tl) * (100% - 1.2rem));
-    background: linear-gradient(to bottom, rgba(216, 105, 52, 0.55), #FFC08A);
-    box-shadow: 0 0 6px 1px rgba(216, 105, 52, 0.35);
-    z-index: 2;
-  }
 }
 @media (prefers-reduced-motion: reduce) {
   .timeline-wrap { --tl: 1 !important; }
@@ -1665,6 +1642,11 @@ h3,
 .timeline-step h3 {
   font-size: clamp(1.35rem, 1.9vw, 1.7rem);
   line-height: 1.25;
+}
+@media (max-width: 700px) {
+  /* Naziv rituala vecim, cijena manjom, na mobilnim karticama. */
+  .ritual-card h3 { font-size: 1.85rem; }
+  .ritual-card .ritual-price { font-size: 1.7rem; }
 }
 
 /* Opisni tekst — svugdje Alegreya, ista velicina. */
@@ -1906,12 +1888,9 @@ h3,
 }
 
 @media (max-width: 860px) {
-  /* Mobitel: zaslon se zadrzi samo ako sadrzaj stane u kadar. */
-  .section-timeline { padding: 5rem 0; }
-  .tl-track { height: auto; }
-  .tl-stage { position: static; height: auto; padding: 0; overflow: visible; }
-  .tl-stage::before, .tl-stage::after { display: none; }
-  .section-timeline { background-image: url('../wp-content/uploads/soul/od-poruke-do-stola.jpeg'); }
+  /* Mobitel: isto zalijepljeno zadrzavanje kao na desktopu, koraci u stupcu. */
+  .tl-stage { padding: 88px 0 1.2rem; }
+  .timeline-steps { grid-template-columns: 1fr; gap: 2.2rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   .tl-track { height: auto; }
