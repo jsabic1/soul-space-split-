@@ -1899,6 +1899,8 @@ h3,
   }
   .timeline-step { opacity: 1; }
   .timeline-steps { grid-template-columns: 1fr; gap: 1.6rem; }
+  /* Slika i zatamnjenje ostaju mirni, ne panjaju se dok se skrola. */
+  .tl-stage::before { top: 0; height: 100%; transform: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .tl-track { height: auto; }
