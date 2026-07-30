@@ -1888,9 +1888,17 @@ h3,
 }
 
 @media (max-width: 860px) {
-  /* Mobitel: isto zalijepljeno zadrzavanje kao na desktopu, koraci u stupcu. */
-  .tl-stage { padding: 88px 0 1.2rem; }
-  .timeline-steps { grid-template-columns: 1fr; gap: 2.2rem; }
+  /* Mobitel: isto zalijepljeno zadrzavanje kao na desktopu, koraci u stupcu.
+     Sadrzaj pocinje od vrha (ne centriran) da naslov ne zavrsi iza headera,
+     a ako ipak ne stane u zaslon, unutar zalijepljenog dijela se moze skrolati. */
+  .tl-stage {
+    padding: 76px 0 1rem;
+    align-items: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .section-timeline .section-head { margin-bottom: 1.4rem; }
+  .timeline-steps { grid-template-columns: 1fr; gap: 1.4rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   .tl-track { height: auto; }
