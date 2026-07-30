@@ -1913,24 +1913,6 @@ h3,
   .tl-stage::before, .tl-stage::after { display: none; }
   .section-timeline { background-image: url('../wp-content/uploads/soul/od-poruke-do-stola.jpeg'); }
 }
-@media (max-width: 860px) and (min-height: 700px) {
-  /* Dovoljno visok ekran: zadrzavanje i pomicanje slike rade i ovdje. */
-  .section-timeline { padding: 0; background-image: none; }
-  .tl-track { height: 300vh; }
-  .tl-stage {
-    position: sticky;
-    height: 100vh;
-    padding: 88px 0 1.2rem;
-    overflow: hidden;
-  }
-  .tl-stage::before, .tl-stage::after { display: block; }
-  /* Koraci idu 2x2 da cijela sekcija stane u kadar. */
-  .timeline-steps { grid-template-columns: repeat(2, 1fr); gap: 1.2rem 1.2rem; }
-  .timeline-steps::before, .timeline-steps::after { display: none; }
-  /* Bez zlatne niti na mobitelu, tekst se i dalje otkriva skrolanjem. */
-  .tl-curve { display: none; }
-  .section-timeline .section-cta { margin-top: 2.2rem; }
-}
 @media (prefers-reduced-motion: reduce) {
   .tl-track { height: auto; }
   .tl-stage { position: static; height: auto; padding: 0; }
