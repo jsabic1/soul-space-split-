@@ -230,6 +230,8 @@ p { color: var(--text-muted); }
     background-attachment: scroll;
     padding: 5rem 0;
   }
+  /* Vise zraka izmedju svake sekcije na mobitelu. */
+  main > * + * { margin-top: 13rem; }
 }
 
 /* ============================================
