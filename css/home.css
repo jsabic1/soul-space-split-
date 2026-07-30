@@ -1888,14 +1888,17 @@ h3,
 }
 
 @media (max-width: 860px) {
-  /* Mobitel: isto zalijepljeno zadrzavanje kao na desktopu, koraci u stupcu.
-     Sadrzaj pocinje od vrha (ne centriran) da naslov ne zavrsi iza headera. */
+  /* Mobitel: bez zalijepljenog zadrzavanja i bez paljenja koraka,
+     samo tekst preko slike, normalno skrolanje, koraci u stupcu. */
+  .tl-track { height: auto; }
   .tl-stage {
-    padding: 76px 0 1rem;
+    position: static;
+    height: auto;
+    padding: 3.5rem 0 2.5rem;
     align-items: flex-start;
   }
-  .section-timeline .section-head { margin-bottom: 1.4rem; }
-  .timeline-steps { grid-template-columns: 1fr; gap: 1.1rem; }
+  .timeline-step { opacity: 1; }
+  .timeline-steps { grid-template-columns: 1fr; gap: 1.6rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   .tl-track { height: auto; }
@@ -1906,7 +1909,7 @@ h3,
 /* Vise zraka izmedju cetiri koraka i gumba. */
 .section-timeline .section-cta { margin-top: clamp(9rem, 14vw, 14rem); }
 @media (max-width: 860px) {
-  .section-timeline .section-cta { margin-top: 1.6rem; }
+  .section-timeline .section-cta { margin-top: 2rem; }
 }
 
 /* Pristup: bez uspravnih crta izmedju principa. */
