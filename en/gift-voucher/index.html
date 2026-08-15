@@ -171,12 +171,13 @@
       .gift-cert-title { font-size: 1.7rem; }
       .gift-cert-labels { display: none; }
       .gift-cert-row {
-        grid-template-columns: 3.6rem 1fr;
-        grid-template-areas: "min price" "desc desc" "btn btn";
-        row-gap: 0.6rem;
-        gap: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
       }
-      .gift-cert-min { grid-area: min; text-align: left; }
+      .gift-cert-min { text-align: center; }
       .gift-cert-min::after {
         content: 'min';
         font-family: var(--font-brand-sub);
@@ -186,9 +187,9 @@
         color: var(--accent-soft);
         margin-left: 0.35rem;
       }
-      .gift-cert-price { grid-area: price; text-align: left; }
-      .gift-cert-row .btn { grid-area: btn; justify-self: stretch; text-align: center; margin-top: 0.2rem; }
-      .gift-cert-desc { grid-area: desc; font-size: 0.92rem; }
+      .gift-cert-price { text-align: center; }
+      .gift-cert-row .btn { width: auto; margin-top: 0.3rem; }
+      .gift-cert-desc { font-size: 0.92rem; text-align: center; }
     }
   </style>
 </head>
