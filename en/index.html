@@ -19,10 +19,25 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Unicase:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
+  <link rel="preload" href="../fonts/TAN-PEARL.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../wp-content/uploads/soul/hero-2.jpg" as="image" fetchpriority="high">
 
-  <link rel="stylesheet" href="../css/home.css?v=69">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Unicase:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Unicase:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet"></noscript>
+
+  <style>
+    :root{--bg:#1F0F0A;--bg-alt:#2C1610;--text:#F4E8D6;--text-muted:#E8D4B8;--accent:#D86934;--accent-soft:#C8965C;--border:rgba(244,232,214,.18);--font-brand:'TAN Pearl','Cormorant Unicase',serif;--font-brand-sub:'Cormorant Unicase',serif;--font-body:'Alegreya',Georgia,serif;--font-script:'Petit Formal Script',cursive}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{overflow-x:hidden}
+    body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6}
+    img{max-width:100%;display:block}
+  </style>
+
+  <link rel="preload" as="style" href="../css/home.css?v=69" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="../css/home.css?v=69"></noscript>
+
+  <link rel="preload" as="style" href="https://unpkg.com/aos@2.3.1/dist/aos.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></noscript>
 
 </head>
 <body>
@@ -36,7 +51,7 @@
         <a href="gift-voucher/">Gift voucher</a>
       </nav>
       <a href="./" class="brand">
-        <img src="../wp-content/uploads/soul/logo.png" alt="Soul Space Split" class="brand-logo">
+        <img src="../wp-content/uploads/soul/logo.png" alt="Soul Space Split" class="brand-logo" width="951" height="212">
       </a>
       <nav class="main-nav nav-right">
         <a href="about/">About</a>
@@ -66,7 +81,7 @@
 
     <!-- HERO -->
     <section class="video-hero">
-      <img class="hero-video" src="../wp-content/uploads/soul/hero-2.jpg" alt="Soul Space Split — massage studio in Split">
+      <img class="hero-video" src="../wp-content/uploads/soul/hero-2.jpg" alt="Soul Space Split — massage studio in Split" width="1920" height="1280" fetchpriority="high" loading="eager" decoding="async">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <div class="container">
@@ -97,7 +112,7 @@
           <h2>this is for you if</h2>
         </div>
         <div class="for-you-pic" data-aos="fade-up">
-          <img src="../wp-content/uploads/soul/atmosfera-5.jpg" alt="Window with curtains in the studio" loading="lazy" decoding="async">
+          <img src="../wp-content/uploads/soul/atmosfera-5.jpg" alt="Window with curtains in the studio" width="930" height="1593" loading="lazy" decoding="async">
         </div>
         <div class="for-you-grid">
           <div class="for-you-item" data-aos="fade-up" data-aos-delay="0">
@@ -162,7 +177,7 @@
         </div>
         <div class="rituali-grid">
           <a href="rituals/#ground-release" class="ritual-card" data-aos="fade-up" data-aos-delay="0">
-            <img src="../wp-content/uploads/soul/ground-release.jpeg" alt="Ground & Release ritual" loading="lazy" decoding="async">
+            <img src="../wp-content/uploads/soul/ground-release.jpeg" alt="Ground & Release ritual" width="1365" height="2048" loading="lazy" decoding="async">
             <div class="ritual-content">
               <div class="ritual-duration">65 – 120 min</div>
               <h3>Ground &amp; <em>Release</em></h3>
@@ -174,7 +189,7 @@
             </div>
           </a>
           <a href="rituals/#flow-harmony" class="ritual-card" data-aos="fade-up" data-aos-delay="150">
-            <img src="../wp-content/uploads/soul/flow-harmony.jpeg" alt="Flow & Harmony ritual" loading="lazy" decoding="async">
+            <img src="../wp-content/uploads/soul/flow-harmony.jpeg" alt="Flow & Harmony ritual" width="1365" height="2048" loading="lazy" decoding="async">
             <div class="ritual-content">
               <div class="ritual-duration">65 – 120 min</div>
               <h3>Flow &amp; <em>Harmony</em></h3>
@@ -186,7 +201,7 @@
             </div>
           </a>
           <a href="rituals/#deep-rest" class="ritual-card" data-aos="fade-up" data-aos-delay="300">
-            <img src="../wp-content/uploads/soul/deep-rest.jpeg" alt="Deep Rest ritual" loading="lazy" decoding="async">
+            <img src="../wp-content/uploads/soul/deep-rest.jpeg" alt="Deep Rest ritual" width="1365" height="2048" loading="lazy" decoding="async">
             <div class="ritual-content">
               <div class="ritual-duration">30 – 45 min</div>
               <h3>Deep <em>Rest</em></h3>
@@ -198,7 +213,7 @@
             </div>
           </a>
           <a href="rituals/#inner-glow" class="ritual-card" data-aos="fade-up" data-aos-delay="450">
-            <img src="../wp-content/uploads/soul/inner-glow.jpeg" alt="Inner Glow ritual" loading="lazy" decoding="async">
+            <img src="../wp-content/uploads/soul/inner-glow.jpeg" alt="Inner Glow ritual" width="736" height="1030" loading="lazy" decoding="async">
             <div class="ritual-content">
               <div class="ritual-duration">30 – 45 min</div>
               <h3>Inner <em>Glow</em></h3>
@@ -257,7 +272,7 @@
     <!-- ABOUT PREVIEW -->
     <section class="about-preview" data-aos="fade-up">
       <div class="about-image">
-        <img src="../wp-content/uploads/soul/portret-2.JPG" alt="Portrait of Diana Lendić in the studio" loading="lazy" decoding="async">
+        <img src="../wp-content/uploads/soul/portret-2.JPG" alt="Portrait of Diana Lendić in the studio" width="1280" height="1920" loading="lazy" decoding="async">
       </div>
       <div class="about-text">
         <p class="eyebrow">About</p>
@@ -322,25 +337,25 @@
       <div class="atmosfera-slider-wrap" data-aos="fade-up">
         <div class="atmosfera-slider-track">
           <!-- Set 1 (original) -->
-          <div class="atmosfera-slide"><img src="../wp-content/uploads/soul/atmosfera-2.jpg" alt="Diana working in the studio" loading="lazy" decoding="async"></div>
-          <div class="atmosfera-slide"><img src="../wp-content/uploads/soul/tretman-3.jpg" alt="Hands during a massage beside a plant" loading="lazy" decoding="async"></div>
-          <div class="atmosfera-slide"><img src="../wp-content/uploads/soul/atmosfera-5.jpg" alt="Curtained window in the studio" loading="lazy" decoding="async"></div>
-          <div class="atmosfera-slide"><img src="../wp-content/uploads/soul/atmosfera-4.JPG" alt="Hands in natural light" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide"><img src="../wp-content/uploads/soul/atmosfera-2.jpg" alt="Diana working in the studio" width="1536" height="1920" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide"><img src="../wp-content/uploads/soul/tretman-3.jpg" alt="Hands during a massage beside a plant" width="1536" height="1920" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide"><img src="../wp-content/uploads/soul/atmosfera-5.jpg" alt="Curtained window in the studio" width="930" height="1593" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide"><img src="../wp-content/uploads/soul/atmosfera-4.JPG" alt="Hands in natural light" width="1067" height="1600" loading="lazy" decoding="async"></div>
           <!-- Set 2 (duplikat za infinity loop) -->
-          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/atmosfera-2.jpg" alt="" loading="lazy" decoding="async"></div>
-          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/tretman-3.jpg" alt="" loading="lazy" decoding="async"></div>
-          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/atmosfera-5.jpg" alt="" loading="lazy" decoding="async"></div>
-          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/atmosfera-4.JPG" alt="" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/atmosfera-2.jpg" alt="" width="1536" height="1920" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/tretman-3.jpg" alt="" width="1536" height="1920" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/atmosfera-5.jpg" alt="" width="930" height="1593" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/atmosfera-4.JPG" alt="" width="1067" height="1600" loading="lazy" decoding="async"></div>
           <!-- Set 3 (duplikat za infinity loop) -->
-          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/atmosfera-2.jpg" alt="" loading="lazy" decoding="async"></div>
-          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/tretman-3.jpg" alt="" loading="lazy" decoding="async"></div>
-          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/atmosfera-5.jpg" alt="" loading="lazy" decoding="async"></div>
-          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/atmosfera-4.JPG" alt="" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/atmosfera-2.jpg" alt="" width="1536" height="1920" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/tretman-3.jpg" alt="" width="1536" height="1920" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/atmosfera-5.jpg" alt="" width="930" height="1593" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/atmosfera-4.JPG" alt="" width="1067" height="1600" loading="lazy" decoding="async"></div>
           <!-- Set 4 (duplikat za infinity loop) -->
-          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/atmosfera-2.jpg" alt="" loading="lazy" decoding="async"></div>
-          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/tretman-3.jpg" alt="" loading="lazy" decoding="async"></div>
-          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/atmosfera-5.jpg" alt="" loading="lazy" decoding="async"></div>
-          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/atmosfera-4.JPG" alt="" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/atmosfera-2.jpg" alt="" width="1536" height="1920" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/tretman-3.jpg" alt="" width="1536" height="1920" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/atmosfera-5.jpg" alt="" width="930" height="1593" loading="lazy" decoding="async"></div>
+          <div class="atmosfera-slide" aria-hidden="true"><img src="../wp-content/uploads/soul/atmosfera-4.JPG" alt="" width="1067" height="1600" loading="lazy" decoding="async"></div>
         </div>
       </div>
     </section>
@@ -388,8 +403,8 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script defer>
     if (window.AOS) AOS.init({ duration: 900, once: true, easing: 'ease-out-cubic', offset: 100 });
 
     let currentTestimonial = 0;
@@ -414,8 +429,8 @@
       updateTestimonial();
     }
   </script>
-  <script src="../js/nav.js?v=4"></script>
-  <script src="../js/parallax.js?v=11"></script>
-  <script src="../js/tl-fill.js?v=4"></script>
+  <script src="../js/nav.js?v=4" defer></script>
+  <script src="../js/parallax.js?v=11" defer></script>
+  <script src="../js/tl-fill.js?v=4" defer></script>
 </body>
 </html>
