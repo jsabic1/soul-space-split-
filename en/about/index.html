@@ -108,7 +108,6 @@
     }
     @media (max-width: 900px) {
       .parallax-tall { min-height: 88vh; padding: 7rem 0; }
-      .section.praksa { padding-top: 7rem; padding-bottom: 9rem; }
       /* Na mobitelu pomakni kadar udesno da tijelo bude po sredini */
       .quote-zena { background-position: 45% 4% !important; }
     }
@@ -192,7 +191,6 @@
       z-index: -1;
       white-space: nowrap;
     }
-    .section.praksa .story-num { color: rgba(200, 150, 92, 0.13); }
     .story-hair { display: none; }
     @media (max-width: 900px) {
       .story-num { top: 1rem; font-size: clamp(9rem, 34vw, 13rem); }
@@ -210,30 +208,6 @@
     .about-preview.reverse { align-items: center; }
     /* Seamless transitions: uniform dark bg + fade image sections into it */
     .section-alt { background: var(--bg); }
-    /* Praksa: tekst nad blago utopljenom fotografijom studija (parallax preko JS-a) */
-    .section.praksa {
-      position: relative;
-      overflow: hidden;
-      background-image: url('../../wp-content/uploads/soul/portret-2.JPG');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      padding-top: 11rem;
-      padding-bottom: 14rem;
-    }
-    .section.praksa::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: rgba(31,15,10,0.45);
-    }
-    .section.praksa .text-block { position: relative; z-index: 2; }
-    @media (min-width: 901px) {
-      /* Image slightly right, text left-aligned so it doesn't cross the face */
-      .section.praksa { background-position: center 60%; }
-      .section.praksa .text-block { margin: 0 auto 0 6%; }
-    }
     .parallax-tall::before {
       background: rgba(31,15,10,0.42);
     }
@@ -387,13 +361,19 @@
     </section>
 
     <!-- TEKST 3 -->
-    <section class="section section-alt praksa" data-parallax-extra="0.03">
-      <div class="text-block" data-aos="fade-up">
-        <div class="story-num">05</div>
-        <div class="story-hair"></div>
-        <p class="eyebrow story-heading">How I work <em>today</em></p>        <p class="body">Today I see touch as a form of communication. I believe bodies speak to each other before we say a single word. Sometimes touch can convey what words struggle to explain: that we are seen, supported, that we don't have to prove anything, and that we can rest for a moment.</p>
-        <p class="body">In my work I want every woman to feel that here she doesn't have to be "good", resilient or constantly in control. I want her to feel safe, free to say what suits her and what doesn't, and for her body to receive the kind of attention it may not have received in a long time.</p>
-        <p class="body">Today I work exactly the way I wish someone had worked with me many years ago. With full presence, respect for boundaries, and trust that the body knows its own rhythm when we give it enough time, attention and a safe space.</p>
+    <section class="section">
+      <div class="about-preview reverse" data-aos="fade-up">
+        <div class="about-image">
+          <img src="../../wp-content/uploads/soul/portret-2.JPG" alt="Diana today, in her approach to the work">
+        </div>
+        <div class="about-text">
+          <div class="story-num">05</div>
+          <div class="story-hair"></div>
+          <p class="eyebrow story-heading">How I work <em>today</em></p>
+          <p>Today I see touch as a form of communication. I believe bodies speak to each other before we say a single word. Sometimes touch can convey what words struggle to explain: that we are seen, supported, that we don't have to prove anything, and that we can rest for a moment.</p>
+          <p>In my work I want every woman to feel that here she doesn't have to be "good", resilient or constantly in control. I want her to feel safe, free to say what suits her and what doesn't, and for her body to receive the kind of attention it may not have received in a long time.</p>
+          <p>Today I work exactly the way I wish someone had worked with me many years ago. With full presence, respect for boundaries, and trust that the body knows its own rhythm when we give it enough time, attention and a safe space.</p>
+        </div>
       </div>
     </section>
 

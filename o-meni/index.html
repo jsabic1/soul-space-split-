@@ -108,7 +108,6 @@
     }
     @media (max-width: 900px) {
       .parallax-tall { min-height: 88vh; padding: 7rem 0; }
-      .section.praksa { padding-top: 7rem; padding-bottom: 9rem; }
       /* Na mobitelu pomakni kadar udesno da tijelo bude po sredini */
       .quote-zena { background-position: 45% 4% !important; }
     }
@@ -192,7 +191,6 @@
       z-index: -1;
       white-space: nowrap;
     }
-    .section.praksa .story-num { color: rgba(200, 150, 92, 0.13); }
     .story-hair { display: none; }
     @media (max-width: 900px) {
       .story-num { top: 1rem; font-size: clamp(9rem, 34vw, 13rem); }
@@ -210,30 +208,6 @@
     .about-preview.reverse { align-items: center; }
     /* Seamless transitions: uniform dark bg + fade image sections into it */
     .section-alt { background: var(--bg); }
-    /* Praksa: tekst nad blago utopljenom fotografijom studija (parallax preko JS-a) */
-    .section.praksa {
-      position: relative;
-      overflow: hidden;
-      background-image: url('../wp-content/uploads/soul/portret-2.JPG');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      padding-top: 11rem;
-      padding-bottom: 14rem;
-    }
-    .section.praksa::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: rgba(31,15,10,0.45);
-    }
-    .section.praksa .text-block { position: relative; z-index: 2; }
-    @media (min-width: 901px) {
-      /* Slika malo udesno, tekst poravnat lijevo da ne prelazi preko lica */
-      .section.praksa { background-position: center 60%; }
-      .section.praksa .text-block { margin: 0 auto 0 6%; }
-    }
     .parallax-tall::before {
       background: rgba(31,15,10,0.42);
     }
@@ -387,13 +361,19 @@
     </section>
 
     <!-- TEKST 3 -->
-    <section class="section section-alt praksa" data-parallax-extra="0.03">
-      <div class="text-block" data-aos="fade-up">
-        <div class="story-num">05</div>
-        <div class="story-hair"></div>
-        <p class="eyebrow story-heading">Kako radim <em>danas</em></p>        <p class="body">Danas na dodir gledam kao na oblik komunikacije. Vjerujem da tijela međusobno razgovaraju i prije nego što izgovorimo ijednu riječ. Ponekad dodir može prenijeti ono što je riječima teško objasniti: da smo viđeni, podržani, da ne moramo ništa dokazivati i da se možemo na trenutak odmoriti.</p>
-        <p class="body">U svom radu želim da svaka žena osjeti kako ovdje ne mora biti "dobra", izdržljiva ili stalno pod kontrolom. Želim da osjeti sigurnost, da ima slobodu reći što joj odgovara, a što ne, i da njezino tijelo dobije pažnju kakvu možda dugo nije dobilo.</p>
-        <p class="body">Danas radim upravo onako kako bih i sama voljela da je netko radio sa mnom prije mnogo godina. S puno prisutnosti, poštovanja prema granicama i povjerenja da tijelo zna svoj ritam kada mu damo dovoljno vremena, pažnje i siguran prostor.</p>
+    <section class="section">
+      <div class="about-preview reverse" data-aos="fade-up">
+        <div class="about-image">
+          <img src="../wp-content/uploads/soul/portret-2.JPG" alt="Diana danas, u svom pristupu radu">
+        </div>
+        <div class="about-text">
+          <div class="story-num">05</div>
+          <div class="story-hair"></div>
+          <p class="eyebrow story-heading">Kako radim <em>danas</em></p>
+          <p>Danas na dodir gledam kao na oblik komunikacije. Vjerujem da tijela međusobno razgovaraju i prije nego što izgovorimo ijednu riječ. Ponekad dodir može prenijeti ono što je riječima teško objasniti: da smo viđeni, podržani, da ne moramo ništa dokazivati i da se možemo na trenutak odmoriti.</p>
+          <p>U svom radu želim da svaka žena osjeti kako ovdje ne mora biti "dobra", izdržljiva ili stalno pod kontrolom. Želim da osjeti sigurnost, da ima slobodu reći što joj odgovara, a što ne, i da njezino tijelo dobije pažnju kakvu možda dugo nije dobilo.</p>
+          <p>Danas radim upravo onako kako bih i sama voljela da je netko radio sa mnom prije mnogo godina. S puno prisutnosti, poštovanja prema granicama i povjerenja da tijelo zna svoj ritam kada mu damo dovoljno vremena, pažnje i siguran prostor.</p>
+        </div>
       </div>
     </section>
 
