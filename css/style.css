@@ -1739,7 +1739,7 @@ body.home .cta-banner h2 {
   color: var(--accent-soft);
   margin-bottom: 1.4rem;
 }
-.footer-col h4 {
+.footer-col-title {
   font-family: var(--font-brand-sub);
   font-size: 0.7rem;
   font-weight: 500;
