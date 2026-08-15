@@ -113,7 +113,23 @@
       gap: 1.4rem;
       padding: 1.1rem 0;
     }
-    .gift-cert-row:hover .btn { border-color: var(--accent); color: var(--accent); }
+    .gift-cert-row .btn {
+      background: transparent;
+      color: var(--text);
+      border: none;
+      min-width: 0;
+      padding: 0.5rem 0.25rem;
+      letter-spacing: 0.22em;
+    }
+    .gift-cert-row .btn::after {
+      content: "\203A";
+      display: inline-block;
+      margin-left: 8px;
+      font-family: Georgia, serif;
+      transition: margin-left 0.3s ease;
+    }
+    .gift-cert-row .btn:hover { color: var(--accent); }
+    .gift-cert-row .btn:hover::after { margin-left: 14px; }
     .gift-cert-min {
       font-family: var(--font-brand-sub);
       font-size: 2rem;
