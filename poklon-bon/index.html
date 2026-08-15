@@ -124,7 +124,7 @@
       margin-bottom: 2rem;
       min-height: 3.2em;
     }
-    .gift-card .btn { width: 100%; }
+    .gift-card .btn { width: 100%; min-width: 0; padding: 0.9rem 0.8rem; letter-spacing: 0.14em; white-space: normal; }
 
     .gift-notes {
       display: flex;
@@ -145,6 +145,9 @@
       color: var(--accent-soft);
     }
 
+    @media (max-width: 1200px) {
+      .gift-grid { grid-template-columns: repeat(2, 1fr); max-width: 700px; }
+    }
     @media (max-width: 900px) {
       .gift-grid { grid-template-columns: 1fr; max-width: 460px; gap: 1.6rem; }
       .gift-desc { min-height: 0; }
