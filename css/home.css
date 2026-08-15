@@ -890,10 +890,11 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 /* ============================================
    ATMOSFERA — Auto-slider infinity loop (bez skoka)
    ============================================ */
+.section-alt .section-head { margin-bottom: 1.8rem; }
 .atmosfera-slider-wrap {
   overflow: hidden;
   position: relative;
-  padding: 2rem 0;
+  padding: 0.5rem 0 2rem;
   mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
 }
