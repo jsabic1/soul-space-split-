@@ -172,6 +172,8 @@ html, body { overflow-x: hidden; }
   .rit-txt .rit-btn { display: none; }
   .rit-script-mobile { display: none; }
   .rit-script-desktop { display: block; }
+  /* Slika ne smije biti visa od teksta uz nju, dno slike prati dno teksta. */
+  .rit-ph { align-self: stretch; aspect-ratio: auto; }
 }
 .ritual h2 {
   font-family: var(--font-brand);
