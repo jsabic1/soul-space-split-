@@ -1565,7 +1565,6 @@ h2 { font-size: clamp(1.9rem, 3.8vw, 3.1rem); }
   background: transparent;
   color: #E0C79F;
   border: none;
-  border-bottom: 1px solid rgba(214, 168, 106, 0.5);
   border-radius: 0;
   padding: 0.5rem 0.25rem;
   letter-spacing: 0.22em;
@@ -1579,7 +1578,6 @@ h2 { font-size: clamp(1.9rem, 3.8vw, 3.1rem); }
 }
 .btn-ghost:hover {
   color: #F4E8D6;
-  border-bottom-color: #E0B575;
 }
 .btn-ghost:hover::after { margin-left: 14px; }
 @media (max-width: 420px) {
