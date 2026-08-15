@@ -377,7 +377,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   width: 100%;
   text-align: center;
 }
-.hero-text h1 { margin-bottom: 1.5rem; }
+.hero-text h1 { line-height: 1.28; margin-bottom: 1.5rem; }
 .hero-text .script { display: block; margin: 1rem 0; }
 .hero-eyebrow {
   font-family: var(--font-brand-sub);
