@@ -34,16 +34,21 @@
     else el.style.overflow = 'hidden';
     el.style.backgroundImage = 'none'; // slika ide u pomični sloj
 
+    // Sekcija moze traziti manji/veci pomak od zajednickog (npr. portret gdje
+    // veliki sloj previse zumira i odsijeca lice).
+    var attrExtra = parseFloat(el.getAttribute('data-parallax-extra'));
+    var elExtra = isNaN(attrExtra) ? EXTRA : attrExtra;
+
     var layer = document.createElement('div');
     layer.className = 'parallax-layer';
     layer.style.cssText =
       'position:absolute;left:0;right:0;' +
-      'top:' + (-EXTRA * 50) + '%;height:' + (100 + EXTRA * 100) + '%;' +
+      'top:' + (-elExtra * 50) + '%;height:' + (100 + elExtra * 100) + '%;' +
       'background-image:url("' + m[2] + '");background-size:cover;' +
       'background-position:' + cs.backgroundPosition + ';background-repeat:no-repeat;' +
       'z-index:0;will-change:transform;transform:translate3d(0,0,0);pointer-events:none;';
     el.insertBefore(layer, el.firstChild);
-    items.push({ el: el, layer: layer, last: null, extra: EXTRA });
+    items.push({ el: el, layer: layer, last: null, extra: elExtra });
   });
 
   // Obicne <img> slike (npr. pregled O meni na naslovnici): jaci, izrazeniji
