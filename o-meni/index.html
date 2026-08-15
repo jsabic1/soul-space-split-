@@ -112,11 +112,6 @@
       /* Na mobitelu pomakni kadar udesno da tijelo bude po sredini */
       .quote-zena { background-position: 45% 4% !important; }
     }
-    @media (min-width: 901px) {
-      /* Slika malo udesno, tekst poravnat lijevo da ne prelazi preko lica */
-      .section.praksa { background-position: 68% center; }
-      .section.praksa .text-block { margin: 0 auto 0 6%; }
-    }
     /* Half-image split: reverse variant (image on the right) */
     .about-preview.reverse .about-image { order: 2; }
     .about-preview.reverse .about-text { order: 1; }
@@ -234,6 +229,11 @@
       background: rgba(31,15,10,0.45);
     }
     .section.praksa .text-block { position: relative; z-index: 2; }
+    @media (min-width: 901px) {
+      /* Slika malo udesno, tekst poravnat lijevo da ne prelazi preko lica */
+      .section.praksa { background-position: center 60%; }
+      .section.praksa .text-block { margin: 0 auto 0 6%; }
+    }
     .parallax-tall::before {
       background: rgba(31,15,10,0.42);
     }
@@ -386,7 +386,7 @@
     </section>
 
     <!-- TEKST 3 -->
-    <section class="section section-alt praksa" data-parallax-extra="0.15">
+    <section class="section section-alt praksa" data-parallax-extra="0.03">
       <div class="text-block" data-aos="fade-up">
         <div class="story-num">05</div>
         <div class="story-hair"></div>
