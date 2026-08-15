@@ -72,15 +72,15 @@
     .hero-content-left { position: relative; z-index: 2; max-width: 100%; margin: 0; padding: 0 2rem; text-align: center; }
     .hero-content-left h1 { margin: 0; line-height: 1.06; font-size: clamp(2.8rem, 6.5vw, 5.5rem); white-space: nowrap; }
     .hero-content-left .eyebrow { display: block; margin-top: 0; margin-bottom: 1.2rem; font-size: clamp(1.05rem, 1.5vw, 1.25rem); letter-spacing: 0.18em; }
-    .hero-content-left .hero-sub-left { text-align: center; max-width: none; white-space: nowrap; margin: 1.2rem 0 0; }
+    .hero-content-left .eyebrow-mobile { display: none; }
     @media (max-width: 900px) {
       .parallax-hero { min-height: 100vh; padding: 80px 0 3rem; align-items: center; }
       .hero-photo { width: 100%; object-position: center; -webkit-mask-image: none; mask-image: none; }
       .parallax-hero::before { background: linear-gradient(rgba(31,15,10,0.5), rgba(31,15,10,0.82)); }
       .hero-content-left { padding: 0 1.5rem; max-width: 100%; text-align: center; }
-      .hero-content-left h1 { white-space: normal; font-size: clamp(2.8rem, 6.5vw, 5.5rem); }
-      .hero-content-left .eyebrow { font-size: 0.95rem; margin-top: 0; margin-bottom: 1.2rem; }
-      .hero-content-left .hero-sub-left { white-space: normal; text-align: center; margin-left: auto; margin-right: auto; margin-top: 1rem; }
+      .hero-content-left h1 { white-space: normal; font-size: 1.85rem; line-height: 1.28; }
+      .hero-content-left .eyebrow-desktop { display: none; }
+      .hero-content-left .eyebrow-mobile { display: block; font-size: 0.95rem; margin-top: 1.2rem; margin-bottom: 0; }
       /* Centered intro blocks: add side padding so text doesn't touch edges */
       .intro-num { padding-left: 1.5rem; padding-right: 1.5rem; }
       /* Reverse split: image on top (consistent with the other split) on mobile */
@@ -308,8 +308,9 @@
     <section class="parallax-hero">
       <img class="hero-photo" src="../wp-content/uploads/soul/atmosfera-4.JPG" alt="Diana Lendić u studiju">
       <div class="hero-content-left" data-aos="fade-up">
-        <p class="eyebrow">Diana Lendić · Certificirana maserka · Split</p>
+        <p class="eyebrow eyebrow-desktop">Diana Lendić · Certificirana maserka · Split</p>
         <h1>Tamo gdje riječi<br>stanu, tijelo<br>nastavlja govoriti</h1>
+        <p class="eyebrow eyebrow-mobile">Certificirana maserka<br>Diana Lendić · Split</p>
       </div>
     </section>
 
