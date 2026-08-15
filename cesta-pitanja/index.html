@@ -17,6 +17,22 @@
   <meta property="og:image" content="https://jsabic1.github.io/soul-space-split-/wp-content/uploads/soul/hero-2.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Kako rezerviram termin?", "acceptedAnswer": { "@type": "Answer", "text": "Najjednostavnije je kliknuti na gumb \"Rezerviraj termin\" bilo gdje na stranici i otvorit će ti se WhatsApp s već upisanom porukom. Možeš mi se javiti i porukom na Instagram ili na email. Javljam se u roku od 24 sata i dogovaramo termin." } },
+      { "@type": "Question", "name": "Ne znam koji ritual odabrati. Što da radim?", "acceptedAnswer": { "@type": "Answer", "text": "Ne brini ako nisi sigurna što odabrati. Kroz uvodni razgovor zajedno ćemo prepoznati potrebe tvog tijela i odabrati ritual koji u tom trenutku ima najviše smisla." } },
+      { "@type": "Question", "name": "Kako da se pripremim za dolazak?", "acceptedAnswer": { "@type": "Answer", "text": "Gotovo ništa posebno. Jedina mala priprema je topli tuš prije dolaska, koža tada najljepše prima ulje i dodir, a tijelo se brže opusti. Sve ostalo dogovaramo na licu mjesta, u tvom ritmu. A stigneš li koju minutu ranije, imat ćeš vremena spustiti se s dana prije nego što krenemo." } },
+      { "@type": "Question", "name": "Je li masaža bolna?", "acceptedAnswer": { "@type": "Answer", "text": "Ne. Pritisak je čvrst kad tijelo to traži, ali nikad grub, radim tempom koji tvoj živčani sustav može pratiti. Ako tijelo nije spremno otvoriti neku zonu, ne idemo tamo. Ti imaš zadnju riječ, uvijek." } },
+      { "@type": "Question", "name": "Što ako moram otkazati ili pomaknuti termin?", "acceptedAnswer": { "@type": "Answer", "text": "Javi mi se porukom čim prije, najkasnije 12 sati prije termina, i bez problema dogovaramo novi. Otkazivanje unutar 12 sati naplaćuje se 50 % vrijednosti rituala, a nedolazak bez najave u punom iznosu. Više u uvjetima otkazivanja." } },
+      { "@type": "Question", "name": "Gdje se studio nalazi?", "acceptedAnswer": { "@type": "Answer", "text": "Na adresi Sinjska 5, 21000 Split. Klik na adresu otvara Google karte." } },
+      { "@type": "Question", "name": "Koliko traje ritual?", "acceptedAnswer": { "@type": "Answer", "text": "Između 65 i 120 minuta, ovisno o ritualu. Točno trajanje piše uz svaki ritual na stranici Rituali. Isplaniraj si nakon rituala malo prostora, najbolje je ne žuriti odmah dalje." } }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Unicase:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
@@ -53,9 +69,13 @@
     }
     .faq-item { border-bottom: 1px solid var(--border); }
     .faq-item:first-child { border-top: 1px solid var(--border); }
-    .faq-item summary {
+    .faq-item h2 { margin: 0; font-size: inherit; font-weight: inherit; line-height: inherit; }
+    .faq-toggle {
       cursor: pointer;
-      list-style: none;
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -67,9 +87,12 @@
       color: var(--text);
       transition: color .25s ease;
     }
-    .faq-item summary:hover { color: var(--accent); }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after {
+    .faq-toggle:hover { color: var(--accent); }
+    .faq-toggle:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+    .faq-toggle::after {
       content: '+';
       font-family: var(--font-body);
       font-size: 1.5rem;
@@ -78,7 +101,7 @@
       flex-shrink: 0;
       transition: transform .3s ease;
     }
-    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-toggle[aria-expanded="true"]::after { transform: rotate(45deg); }
     .faq-a {
       padding: 0 0 1.6rem;
       font-family: var(--font-body);
@@ -87,6 +110,7 @@
       color: var(--text-muted);
       max-width: 660px;
     }
+    .faq-a[hidden] { display: none; }
     .faq-a a { color: var(--accent-soft); text-decoration: none; transition: color .25s ease; }
     .faq-a a:hover { color: var(--accent); }
     .faq-cta {
@@ -145,54 +169,54 @@
 
     <section class="faq-wrap" data-aos="fade-up">
 
-      <details class="faq-item">
-        <summary>Kako rezerviram termin?</summary>
-        <div class="faq-a">
+      <div class="faq-item">
+        <h2><button type="button" class="faq-toggle" aria-expanded="false" aria-controls="faq-a-1" id="faq-q-1">Kako rezerviram termin?</button></h2>
+        <div class="faq-a" id="faq-a-1" role="region" aria-labelledby="faq-q-1" hidden>
           <p>Najjednostavnije je kliknuti na gumb "Rezerviraj termin" bilo gdje na stranici, i otvorit će ti se WhatsApp s već upisanom porukom. Možeš mi se javiti i porukom na <a href="https://ig.me/m/soul.space.split" target="_blank" rel="noopener">Instagram</a> ili na <a href="mailto:soul.space.split@gmail.com">email</a>. Javljam se u roku od 24 sata i dogovaramo termin.</p>
         </div>
-      </details>
+      </div>
 
-      <details class="faq-item">
-        <summary>Ne znam koji ritual odabrati. Što da radim?</summary>
-        <div class="faq-a">
-          <p>Ne brini ako nisi sigurna što odabrati. Kroz uvodni razgovor zajedno ćemo prepoznati potrebe tvog tijela i odabrati tretman koji u tom trenutku ima najviše smisla.</p>
+      <div class="faq-item">
+        <h2><button type="button" class="faq-toggle" aria-expanded="false" aria-controls="faq-a-2" id="faq-q-2">Ne znam koji ritual odabrati. Što da radim?</button></h2>
+        <div class="faq-a" id="faq-a-2" role="region" aria-labelledby="faq-q-2" hidden>
+          <p>Ne brini ako nisi sigurna što odabrati. Kroz uvodni razgovor zajedno ćemo prepoznati potrebe tvog tijela i odabrati ritual koji u tom trenutku ima najviše smisla.</p>
         </div>
-      </details>
+      </div>
 
-      <details class="faq-item">
-        <summary>Kako da se pripremim za dolazak?</summary>
-        <div class="faq-a">
+      <div class="faq-item">
+        <h2><button type="button" class="faq-toggle" aria-expanded="false" aria-controls="faq-a-3" id="faq-q-3">Kako da se pripremim za dolazak?</button></h2>
+        <div class="faq-a" id="faq-a-3" role="region" aria-labelledby="faq-q-3" hidden>
           <p>Gotovo ništa posebno. Jedina mala priprema je topli tuš prije dolaska, koža tada najljepše prima ulje i dodir, a tijelo se brže opusti. Sve ostalo dogovaramo na licu mjesta, u tvom ritmu. A stigneš li koju minutu ranije, imat ćeš vremena spustiti se s dana prije nego što krenemo.</p>
         </div>
-      </details>
+      </div>
 
-      <details class="faq-item">
-        <summary>Je li masaža bolna?</summary>
-        <div class="faq-a">
+      <div class="faq-item">
+        <h2><button type="button" class="faq-toggle" aria-expanded="false" aria-controls="faq-a-4" id="faq-q-4">Je li masaža bolna?</button></h2>
+        <div class="faq-a" id="faq-a-4" role="region" aria-labelledby="faq-q-4" hidden>
           <p>Ne. Pritisak je čvrst kad tijelo to traži, ali nikad grub, radim tempom koji tvoj živčani sustav može pratiti. Ako tijelo nije spremno otvoriti neku zonu, ne idemo tamo. Ti imaš zadnju riječ, uvijek.</p>
         </div>
-      </details>
+      </div>
 
-      <details class="faq-item">
-        <summary>Što ako moram otkazati ili pomaknuti termin?</summary>
-        <div class="faq-a">
+      <div class="faq-item">
+        <h2><button type="button" class="faq-toggle" aria-expanded="false" aria-controls="faq-a-5" id="faq-q-5">Što ako moram otkazati ili pomaknuti termin?</button></h2>
+        <div class="faq-a" id="faq-a-5" role="region" aria-labelledby="faq-q-5" hidden>
           <p>Javi mi se porukom čim prije, najkasnije <strong>12 sati prije termina</strong>, i bez problema dogovaramo novi. Otkazivanje unutar 12 sati naplaćuje se 50&nbsp;% vrijednosti rituala, a nedolazak bez najave u punom iznosu. Više u <a href="../uvjeti-otkazivanja/">uvjetima otkazivanja</a>.</p>
         </div>
-      </details>
+      </div>
 
-      <details class="faq-item">
-        <summary>Gdje se studio nalazi?</summary>
-        <div class="faq-a">
+      <div class="faq-item">
+        <h2><button type="button" class="faq-toggle" aria-expanded="false" aria-controls="faq-a-6" id="faq-q-6">Gdje se studio nalazi?</button></h2>
+        <div class="faq-a" id="faq-a-6" role="region" aria-labelledby="faq-q-6" hidden>
           <p>Na adresi <a href="https://www.google.com/maps/search/?api=1&query=Sinjska%205%2C%2021000%20Split%2C%20Hrvatska" target="_blank" rel="noopener">Sinjska 5, 21000 Split</a>, klik na adresu otvara Google karte.</p>
         </div>
-      </details>
+      </div>
 
-      <details class="faq-item">
-        <summary>Koliko traje ritual?</summary>
-        <div class="faq-a">
+      <div class="faq-item">
+        <h2><button type="button" class="faq-toggle" aria-expanded="false" aria-controls="faq-a-7" id="faq-q-7">Koliko traje ritual?</button></h2>
+        <div class="faq-a" id="faq-a-7" role="region" aria-labelledby="faq-q-7" hidden>
           <p>Između 65 i 120 minuta, ovisno o ritualu. Točno trajanje piše uz svaki ritual na stranici <a href="../rituali/">Rituali</a>. Isplaniraj si nakon rituala malo prostora, najbolje je ne žuriti odmah dalje.</p>
         </div>
-      </details>
+      </div>
 
     </section>
 
@@ -253,5 +277,15 @@
     });
   </script>
   <script src="../js/nav.js?v=4"></script>
+  <script>
+    document.querySelectorAll('.faq-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        var answer = document.getElementById(btn.getAttribute('aria-controls'));
+        if (answer) answer.hidden = expanded;
+      });
+    });
+  </script>
 </body>
 </html>
