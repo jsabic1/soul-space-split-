@@ -1778,7 +1778,7 @@ h3,
 .cta-card .eyebrow { display: block; margin-bottom: 1.4rem; }
 .cta-card h2 { margin-bottom: 2.2rem; }
 .cta-card .cta-sub {
-  max-width: 30ch;
+  max-width: 46ch;
   margin: 0 auto;
   color: var(--text-muted);
 }
