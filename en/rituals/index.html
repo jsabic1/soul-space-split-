@@ -172,8 +172,8 @@ html, body { overflow-x: hidden; }
   .rit-txt .rit-btn { display: none; }
   .rit-script-mobile { display: none; }
   .rit-script-desktop { display: block; }
-  /* Image must not be taller than the text beside it; its bottom follows the text's bottom. */
-  .rit-ph { align-self: stretch; aspect-ratio: auto; }
+  /* All ritual card images share the same size, regardless of the text length beside them. */
+  .rit-ph { aspect-ratio: 9 / 10; }
 }
 .ritual h2 {
   font-family: var(--font-brand);
