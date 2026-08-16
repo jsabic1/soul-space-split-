@@ -29,9 +29,11 @@
       /* Zaslon je zadržan: napredak je koliko smo prošli kroz visoku stazu. */
       p = -r.top / Math.max(1, r.height - vh);
     } else {
-      /* Mobitel: nit se puni dok sekcija prolazi kroz kadar. */
+      /* Mobitel: nit se puni dok sekcija prolazi kroz kadar. Zadnji
+         korak treba biti upaljen dok je jos udobno na ekranu, ne
+         tek kad skoro izadje iz kadra. */
       var start = vh * 1.05;
-      var end = vh * 0.05;
+      var end = vh * 0.75;
       p = (start - r.top) / Math.max(1, (r.height + start - end));
     }
 

@@ -1887,8 +1887,10 @@ h3,
 }
 
 @media (max-width: 860px) {
-  /* Mobitel: bez zalijepljenog zadrzavanja i bez paljenja koraka,
-     samo tekst preko slike, normalno skrolanje, koraci u stupcu. */
+  /* Mobitel: bez zalijepljenog zadrzavanja, samo tekst preko slike,
+     normalno skrolanje, koraci u stupcu. Koraci se i dalje pale
+     jedan po jedan kako sekcija prolazi kroz kadar (tl-fill.js vec
+     ima logiku za to, samo je CSS prije gasio efekt). */
   .tl-track { height: auto; }
   .tl-stage {
     position: static;
@@ -1896,7 +1898,6 @@ h3,
     padding: 3.5rem 0 2.5rem;
     align-items: flex-start;
   }
-  .timeline-step { opacity: 1; }
   .timeline-steps { grid-template-columns: 1fr; gap: 1.6rem; }
   /* Slika i zatamnjenje ostaju mirni, ne panjaju se dok se skrola. */
   .tl-stage::before { top: 0; height: 100%; transform: none; }
