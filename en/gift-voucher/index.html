@@ -146,6 +146,7 @@
       margin-left: 3.5rem;
     }
     .gift-cert-badge { display: none; }
+    .gift-cta-short { display: none; }
 
     /* Desktop: one featured card (most popular option) beside a compact
        list of the rest, instead of every row in a single column. */
@@ -270,6 +271,8 @@
         font-size: 0.62rem;
       }
       .gift-cert-desc { grid-area: desc; font-size: 1rem; text-align: left; margin-left: 0; }
+      .gift-cta-full { display: none; }
+      .gift-cta-short { display: inline; }
     }
   </style>
   <link rel="preload" as="font" type="font/woff2" href="../../fonts/TAN-PEARL.woff2" crossorigin>
@@ -354,7 +357,7 @@
             <div class="gift-cert-min">90<span class="gift-cert-min-unit">min</span></div>
             <div class="gift-cert-price">55 €</div>
             <p class="gift-cert-desc">The full experience, unhurried</p>
-            <a href="../contact/" class="btn btn-primary" data-gift="90">Buy gift voucher</a>
+            <a href="../contact/" class="btn btn-primary gift-cert-cta" data-gift="90"><span class="gift-cta-full">Buy gift voucher</span><span class="gift-cta-short">Buy</span></a>
           </div>
 
           <div class="gift-cert-row" data-aos="fade-up" data-aos-delay="300">
