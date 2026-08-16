@@ -334,6 +334,30 @@
       .gift-cert-desc { grid-area: desc; font-size: 1rem; text-align: left; margin-left: 0; }
       .gift-cta-full { display: none; }
       .gift-cta-short { display: inline; }
+
+      .gift-cert-featured {
+        grid-template-areas: "badge badge" "min price" "desc btn";
+        margin: 0.9rem -1.3rem;
+        padding: 1rem 1.3rem 1.1rem;
+        background: linear-gradient(160deg, rgba(216, 105, 52, 0.1), rgba(244, 232, 214, 0.02));
+        border: 1px solid rgba(200, 150, 92, 0.5);
+        border-radius: 8px;
+      }
+      .gift-cert-featured .gift-cert-badge {
+        grid-area: badge;
+        display: inline-block;
+        width: fit-content;
+        font-family: var(--font-brand-sub);
+        font-size: 0.62rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--accent);
+        background: rgba(216, 105, 52, 0.12);
+        border: 1px solid rgba(200, 150, 92, 0.4);
+        padding: 0.3rem 0.7rem;
+        border-radius: 20px;
+        margin-bottom: 0.5rem;
+      }
     }
   </style>
   <link rel="preload" as="font" type="font/woff2" href="../../fonts/TAN-PEARL.woff2" crossorigin>
