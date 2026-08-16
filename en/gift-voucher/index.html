@@ -67,6 +67,9 @@
       margin: 3rem auto 0;
       padding: 0 2rem 7rem;
     }
+    @media (min-width: 901px) {
+      .gift-cert-wrap { max-width: 1240px; }
+    }
     .gift-cert {
       position: relative;
       border: 1px solid rgba(200, 150, 92, 0.45);
@@ -149,7 +152,8 @@
     .gift-cta-short { display: none; }
 
     /* Desktop: one featured card (most popular option) beside a compact
-       list of the rest, instead of every row in a single column. */
+       list of the rest. Rows share grid columns (subgrid) so min/price/
+       description/buy line up exactly across all three rows. */
     @media (min-width: 901px) {
       .gift-cert {
         border: none;
@@ -158,20 +162,26 @@
       }
       .gift-cert-grid {
         display: grid;
-        grid-template-columns: 1.1fr 1fr;
+        grid-template-columns: 0.86fr 0.75rem max-content max-content 1fr max-content;
         grid-template-rows: repeat(3, 1fr);
-        gap: 0.9rem 2rem;
+        column-gap: 1.3rem;
+        row-gap: 0.65rem;
       }
       .gift-cert-grid .gift-cert-row { margin-bottom: 0; }
-      .gift-cert-row:nth-child(1) { grid-column: 2; grid-row: 1; }
-      .gift-cert-row:nth-child(2) { grid-column: 2; grid-row: 2; }
-      .gift-cert-row:nth-child(4) { grid-column: 2; grid-row: 3; }
+      .gift-cert-row:nth-child(1) { grid-column: 3 / 7; grid-row: 1; }
+      .gift-cert-row:nth-child(2) { grid-column: 3 / 7; grid-row: 2; }
+      .gift-cert-row:nth-child(4) { grid-column: 3 / 7; grid-row: 3; }
 
       .gift-cert-row:not(.gift-cert-featured) {
-        grid-template-columns: max-content 1fr max-content max-content;
-        column-gap: 1rem;
+        display: grid;
+        grid-template-columns: subgrid;
+        gap: normal;
+        padding: 0.9rem 1.4rem;
       }
       .gift-cert-row:not(.gift-cert-featured) .gift-cert-desc { margin-left: 0; }
+      .gift-cert-row:not(.gift-cert-featured) .gift-cert-min,
+      .gift-cert-row:not(.gift-cert-featured) .gift-cert-price { font-size: 1.7rem; }
+      .gift-cert-row:not(.gift-cert-featured) .gift-cert-desc { font-size: 1.03rem; }
 
       .gift-cert-featured {
         grid-column: 1;
@@ -183,7 +193,7 @@
         text-align: center;
         border-color: rgba(200, 150, 92, 0.5);
         background: linear-gradient(160deg, rgba(216, 105, 52, 0.1), rgba(244, 232, 214, 0.02));
-        padding: 3rem 2rem;
+        padding: 2rem 1.8rem;
       }
       .gift-cert-featured .gift-cert-badge {
         display: block;
@@ -192,14 +202,14 @@
         letter-spacing: 0.2em;
         text-transform: uppercase;
         color: var(--accent);
-        margin-bottom: 0.9rem;
+        margin-bottom: 0.8rem;
       }
-      .gift-cert-featured .gift-cert-min { font-size: 3.2rem; }
-      .gift-cert-featured .gift-cert-price { font-size: 2.1rem; margin: 0.4rem 0 1.1rem; }
-      .gift-cert-featured .gift-cert-desc { font-size: 1.08rem; margin: 0 0 1.8rem; }
+      .gift-cert-featured .gift-cert-min { font-size: 2.7rem; }
+      .gift-cert-featured .gift-cert-price { font-size: 1.85rem; margin: 0.3rem 0 0.9rem; }
+      .gift-cert-featured .gift-cert-desc { font-size: 1.02rem; margin: 0 0 1.2rem; }
       .gift-cert-featured .btn {
         border: 1px solid var(--text);
-        padding: 0.95rem 2.4rem;
+        padding: 0.8rem 2rem;
         width: auto;
       }
       .gift-cert-featured .btn:hover { border-color: var(--accent); }
