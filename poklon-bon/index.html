@@ -166,10 +166,11 @@
       }
       .gift-cert-grid {
         display: grid;
-        grid-template-columns: 0.86fr 0.75rem max-content max-content 1fr max-content;
+        grid-template-columns: 0.86fr 0.75rem max-content max-content minmax(0, 14.5rem) max-content;
         grid-template-rows: repeat(3, 1fr);
         column-gap: 1.3rem;
         row-gap: 0.65rem;
+        justify-content: start;
       }
       .gift-cert-grid .gift-cert-row { margin-bottom: 0; }
       .gift-cert-row:nth-child(1) { grid-column: 3 / 7; grid-row: 1; }
