@@ -153,6 +153,8 @@
     }
     .gift-cert-badge { display: none; }
     .gift-cta-short { display: none; }
+    .gift-cert-hero-row { display: contents; }
+    .gift-cert-dot { display: none; }
 
     /* Desktop: jedna istaknuta kartica (najtrazenija opcija) uz kompaktnu
        listu ostalih, umjesto svih redaka u jednoj koloni. Redci dijele
@@ -166,7 +168,7 @@
       }
       .gift-cert-grid {
         display: grid;
-        grid-template-columns: 0.86fr 0.75rem max-content max-content minmax(0, 14.5rem) max-content;
+        grid-template-columns: 0.68fr 0.75rem max-content max-content minmax(0, 14.5rem) max-content;
         grid-template-rows: repeat(3, 1fr);
         column-gap: 1.3rem;
         row-gap: 0.65rem;
@@ -210,14 +212,26 @@
         letter-spacing: 0.2em;
         text-transform: uppercase;
         color: var(--accent);
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.9rem;
       }
-      .gift-cert-featured .gift-cert-min { font-size: 2.7rem; }
-      .gift-cert-featured .gift-cert-price { font-size: 1.85rem; margin: 0.3rem 0 0.9rem; }
-      .gift-cert-featured .gift-cert-desc { font-size: 1.02rem; margin: 0 0 1.2rem; }
+      .gift-cert-featured .gift-cert-hero-row {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      .gift-cert-featured .gift-cert-dot {
+        display: inline;
+        color: var(--accent-soft);
+        font-size: 1.2rem;
+      }
+      .gift-cert-featured .gift-cert-min { font-size: 1.7rem; }
+      .gift-cert-featured .gift-cert-price { font-size: 1.7rem; }
+      .gift-cert-featured .gift-cert-desc { font-size: 0.98rem; margin: 0 0 1.2rem; }
       .gift-cert-featured .btn {
         border: 1px solid var(--text);
-        padding: 0.8rem 2rem;
+        padding: 0.75rem 1.9rem;
         width: auto;
       }
       .gift-cert-featured .btn:hover { border-color: var(--accent); }
@@ -372,8 +386,11 @@
 
           <div class="gift-cert-row gift-cert-featured" data-aos="fade-up" data-aos-delay="200">
             <span class="gift-cert-badge">Najtraženije</span>
-            <div class="gift-cert-min">90<span class="gift-cert-min-unit">min</span></div>
-            <div class="gift-cert-price">55 €</div>
+            <div class="gift-cert-hero-row">
+              <div class="gift-cert-min">90<span class="gift-cert-min-unit">min</span></div>
+              <span class="gift-cert-dot">·</span>
+              <div class="gift-cert-price">55 €</div>
+            </div>
             <p class="gift-cert-desc">Vrijeme za potpuno iskustvo</p>
             <a href="../kontakt/" class="btn btn-primary gift-cert-cta" data-gift="90"><span class="gift-cta-full">Kupi poklon bon</span><span class="gift-cta-short">Kupi</span></a>
           </div>
