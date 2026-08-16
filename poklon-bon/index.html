@@ -88,29 +88,19 @@
       color: var(--text);
       margin-top: 0.4rem;
     }
-    .gift-cert-labels {
-      display: grid;
-      grid-template-columns: 5rem 6rem 1fr auto;
-      gap: 1.4rem;
-      padding-bottom: 0.5rem;
-    }
-    .gift-cert-labels span {
-      font-family: var(--font-brand-sub);
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent-soft);
-      text-align: center;
-    }
-    .gift-cert-labels span:nth-child(3),
-    .gift-cert-labels span:nth-child(4) { visibility: hidden; }
+    .gift-cert-labels { display: none; }
     .gift-cert-row {
       display: grid;
-      grid-template-columns: 5rem 6rem 1fr auto;
+      grid-template-columns: 5rem 6rem minmax(0, 20.5rem) auto;
       align-items: center;
-      gap: 1.4rem;
-      padding: 1.1rem 0;
+      gap: 2.6rem;
+      padding: 1.3rem 1.5rem;
+      background: rgba(244, 232, 214, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-bottom: 0.9rem;
     }
+    .gift-cert-row:last-child { margin-bottom: 0; }
     .gift-cert-row .btn {
       background: transparent;
       color: var(--text);
@@ -134,6 +124,13 @@
       color: var(--text);
       text-align: center;
     }
+    .gift-cert-min-unit {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-soft);
+      margin-left: 0.3rem;
+    }
     .gift-cert-price {
       font-family: var(--font-brand-sub);
       font-size: 2rem;
@@ -145,6 +142,7 @@
       font-size: 1.15rem;
       line-height: 1.5;
       color: var(--text-muted);
+      margin-left: 3.5rem;
     }
 
     .gift-notes {
@@ -181,9 +179,13 @@
         row-gap: 0.5rem;
         column-gap: 0.3rem;
         padding: 3.3rem 0;
-        border-top: none;
+        background: none;
+        border: none;
+        border-radius: 0;
+        margin-bottom: 0;
       }
       .gift-cert-min { grid-area: min; text-align: center; }
+      .gift-cert-min-unit { display: none; }
       .gift-cert-min::after {
         content: 'min';
         font-family: var(--font-brand-sub);
@@ -195,7 +197,7 @@
       }
       .gift-cert-price { grid-area: price; text-align: center; }
       .gift-cert-row .btn { grid-area: btn; width: auto; margin-top: 0.3rem; }
-      .gift-cert-desc { grid-area: desc; font-size: 1.02rem; text-align: center; }
+      .gift-cert-desc { grid-area: desc; font-size: 1.02rem; text-align: center; margin-left: 0; }
     }
   </style>
   <link rel="preload" as="font" type="font/woff2" href="../fonts/TAN-PEARL.woff2" crossorigin>
@@ -261,30 +263,30 @@
         </div>
 
         <div class="gift-cert-row">
-          <div class="gift-cert-min">45</div>
+          <div class="gift-cert-min">45<span class="gift-cert-min-unit">min</span></div>
           <div class="gift-cert-price">30 €</div>
-          <p class="gift-cert-desc">Vrijeme predaha.</p>
+          <p class="gift-cert-desc">Vrijeme predaha</p>
           <a href="../kontakt/" class="btn btn-primary" data-gift="45">Kupi poklon bon</a>
         </div>
 
         <div class="gift-cert-row">
-          <div class="gift-cert-min">65</div>
+          <div class="gift-cert-min">65<span class="gift-cert-min-unit">min</span></div>
           <div class="gift-cert-price">40 €</div>
-          <p class="gift-cert-desc">Dublji rad i više prostora.</p>
+          <p class="gift-cert-desc">Dublji rad i više prostora</p>
           <a href="../kontakt/" class="btn btn-primary" data-gift="65">Kupi poklon bon</a>
         </div>
 
         <div class="gift-cert-row">
-          <div class="gift-cert-min">90</div>
+          <div class="gift-cert-min">90<span class="gift-cert-min-unit">min</span></div>
           <div class="gift-cert-price">55 €</div>
-          <p class="gift-cert-desc">Potpuno iskustvo bez žurbe.</p>
+          <p class="gift-cert-desc">Potpuno iskustvo bez žurbe</p>
           <a href="../kontakt/" class="btn btn-primary" data-gift="90">Kupi poklon bon</a>
         </div>
 
         <div class="gift-cert-row">
-          <div class="gift-cert-min">120</div>
+          <div class="gift-cert-min">120<span class="gift-cert-min-unit">min</span></div>
           <div class="gift-cert-price">90 €</div>
-          <p class="gift-cert-desc">Najduže i najpotpunije iskustvo.</p>
+          <p class="gift-cert-desc">Najduže i najpotpunije iskustvo</p>
           <a href="../kontakt/" class="btn btn-primary" data-gift="120">Kupi poklon bon</a>
         </div>
       </div>
