@@ -155,6 +155,7 @@
     .gift-cta-short { display: none; }
     .gift-cert-hero-row { display: contents; }
     .gift-cert-dot { display: none; }
+    .gift-cert-photo-half, .gift-cert-panel { display: contents; }
 
     /* Desktop: one featured card (most popular option) beside a compact
        list of the rest. Rows share grid columns (subgrid) so min/price/
@@ -194,43 +195,63 @@
         grid-row: 1 / 4;
         display: flex;
         flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        border-color: rgba(200, 150, 92, 0.5);
+        overflow: hidden;
+        padding: 0;
+      }
+      .gift-cert-photo-half {
+        display: block;
+        flex: 0 0 52%;
+        position: relative;
+        background-image: linear-gradient(160deg, rgba(31, 15, 10, 0.05) 0%, rgba(31, 15, 10, 0.3) 100%), url('../../wp-content/uploads/soul/poklon-bon-najtrazenije-bg.jpg');
+        background-size: cover;
+        background-position: 42% 38%;
+        background-repeat: no-repeat;
+      }
+      .gift-cert-panel {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
-        border-color: rgba(200, 150, 92, 0.5);
-        background-image: linear-gradient(160deg, rgba(31, 15, 10, 0.55) 0%, rgba(31, 15, 10, 0.75) 60%, rgba(31, 15, 10, 0.9) 100%), url('../../wp-content/uploads/soul/poklon-bon-najtrazenije-bg.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        padding: 2rem 1.8rem;
+        background: #241109;
+        padding: 0.4rem 1.6rem;
       }
       .gift-cert-featured .gift-cert-badge {
         display: block;
+        position: absolute;
+        top: 1.2rem;
+        left: 1.4rem;
         font-family: var(--font-brand-sub);
         font-size: 0.65rem;
         letter-spacing: 0.2em;
         text-transform: uppercase;
         color: var(--accent);
-        margin-bottom: 0.9rem;
+        background: rgba(31, 15, 10, 0.55);
+        padding: 0.35rem 0.8rem;
+        border-radius: 20px;
       }
       .gift-cert-featured .gift-cert-hero-row {
         display: flex;
         align-items: baseline;
         justify-content: center;
         gap: 0.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.2rem;
       }
       .gift-cert-featured .gift-cert-dot {
         display: inline;
         color: var(--accent-soft);
         font-size: 1.2rem;
       }
-      .gift-cert-featured .gift-cert-min { font-size: 1.7rem; }
-      .gift-cert-featured .gift-cert-price { font-size: 1.7rem; }
-      .gift-cert-featured .gift-cert-desc { font-size: 0.98rem; margin: 0 0 1.2rem; }
+      .gift-cert-featured .gift-cert-min { font-size: 1.45rem; }
+      .gift-cert-featured .gift-cert-price { font-size: 1.45rem; }
+      .gift-cert-featured .gift-cert-desc { font-size: 0.82rem; margin: 0 0 0.35rem; }
       .gift-cert-featured .btn {
         border: 1px solid var(--text);
-        padding: 0.75rem 1.9rem;
+        padding: 0.4rem 1.4rem;
         width: auto;
       }
       .gift-cert-featured .btn:hover { border-color: var(--accent); }
@@ -384,14 +405,18 @@
           </div>
 
           <div class="gift-cert-row gift-cert-featured" data-aos="fade-up" data-aos-delay="200">
-            <span class="gift-cert-badge">Most popular</span>
-            <div class="gift-cert-hero-row">
-              <div class="gift-cert-min">90<span class="gift-cert-min-unit">min</span></div>
-              <span class="gift-cert-dot">·</span>
-              <div class="gift-cert-price">55 €</div>
+            <div class="gift-cert-photo-half">
+              <span class="gift-cert-badge">Most popular</span>
             </div>
-            <p class="gift-cert-desc">The full experience, unhurried</p>
-            <a href="../contact/" class="btn btn-primary gift-cert-cta" data-gift="90"><span class="gift-cta-full">Buy gift voucher</span><span class="gift-cta-short">Buy</span></a>
+            <div class="gift-cert-panel">
+              <div class="gift-cert-hero-row">
+                <div class="gift-cert-min">90<span class="gift-cert-min-unit">min</span></div>
+                <span class="gift-cert-dot">·</span>
+                <div class="gift-cert-price">55 €</div>
+              </div>
+              <p class="gift-cert-desc">The full experience, unhurried</p>
+              <a href="../contact/" class="btn btn-primary gift-cert-cta" data-gift="90"><span class="gift-cta-full">Buy gift voucher</span><span class="gift-cta-short">Buy</span></a>
+            </div>
           </div>
 
           <div class="gift-cert-row" data-aos="fade-up" data-aos-delay="300">
