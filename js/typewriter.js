@@ -13,7 +13,7 @@
   Array.prototype.forEach.call(text, function (ch, i) {
     var span = document.createElement('span');
     span.className = 'tw-char';
-    span.style.transitionDelay = (i * 26) + 'ms';
+    span.style.transitionDelay = (i * 55) + 'ms';
     span.textContent = ch;
     frag.appendChild(span);
   });
