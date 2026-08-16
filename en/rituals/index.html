@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="../../css/fonts-local.css">
 
 <link rel="stylesheet" href="../../css/style.css?v=96">
+<link href="../../vendor/aos/aos.css" rel="stylesheet">
 
 <style>
 /* ============================================================
@@ -442,12 +443,12 @@ html, body { overflow-x: hidden; }
 </div>
 
 <main class="rit-wrap">
-  <header class="rit-hero">
+  <header class="rit-hero" data-aos="fade-up">
     <h1>Your body chooses</h1>
     <p class="rit-lede">Every ritual adapts to your body and your tempo</p>
   </header>
 
-  <article class="ritual" id="ground-release">
+  <article class="ritual" id="ground-release" data-aos="fade-up">
     <div class="rit-txt">
       <h2>Ground &amp; Release</h2>
       <p class="rit-script rit-script-mobile">deep massage for tension that won't release on its own</p>
@@ -471,7 +472,7 @@ html, body { overflow-x: hidden; }
     </div>
   </article>
 
-  <article class="ritual" id="flow-harmony">
+  <article class="ritual" id="flow-harmony" data-aos="fade-up">
     <div class="rit-txt">
       <h2>Flow &amp; Harmony</h2>
       <p class="rit-script rit-script-mobile">slow massage for a nervous system<br>that never stops</p>
@@ -495,7 +496,7 @@ html, body { overflow-x: hidden; }
     </div>
   </article>
 
-  <article class="ritual" id="deep-rest">
+  <article class="ritual" id="deep-rest" data-aos="fade-up">
     <div class="rit-txt">
       <h2>Deep Rest</h2>
       <p class="rit-script rit-script-mobile">a restorative ritual<br>to bring back real sleep</p>
@@ -518,7 +519,7 @@ html, body { overflow-x: hidden; }
     </div>
   </article>
 
-  <article class="ritual" id="inner-glow">
+  <article class="ritual" id="inner-glow" data-aos="fade-up">
     <div class="rit-txt">
       <h2>Inner Glow</h2>
       <p class="rit-script rit-script-mobile">a ritual for face and lymph,<br>gentle and slow</p>
@@ -543,7 +544,7 @@ html, body { overflow-x: hidden; }
 
   <div class="rit-mob">
 
-    <div class="rit-mob-item" id="m-ground-release">
+    <div class="rit-mob-item" id="m-ground-release" data-aos="fade-up">
       <div class="rit-mob-card-wrap">
         <div class="rit-mob-card" style="background-image: url('../../wp-content/uploads/soul/ground-release.jpeg')">
           <div class="rit-mob-card-in">
@@ -566,7 +567,7 @@ html, body { overflow-x: hidden; }
       </div>
     </div>
 
-    <div class="rit-mob-item" id="m-flow-harmony">
+    <div class="rit-mob-item" id="m-flow-harmony" data-aos="fade-up">
       <div class="rit-mob-card-wrap">
         <div class="rit-mob-card" style="background-image: url('../../wp-content/uploads/soul/flow-harmony.jpeg')">
           <div class="rit-mob-card-in">
@@ -589,7 +590,7 @@ html, body { overflow-x: hidden; }
       </div>
     </div>
 
-    <div class="rit-mob-item" id="m-deep-rest">
+    <div class="rit-mob-item" id="m-deep-rest" data-aos="fade-up">
       <div class="rit-mob-card-wrap">
         <div class="rit-mob-card" style="background-image: url('../../wp-content/uploads/soul/deep-rest.jpeg')">
           <div class="rit-mob-card-in">
@@ -611,7 +612,7 @@ html, body { overflow-x: hidden; }
       </div>
     </div>
 
-    <div class="rit-mob-item" id="m-inner-glow">
+    <div class="rit-mob-item" id="m-inner-glow" data-aos="fade-up">
       <div class="rit-mob-card-wrap">
         <div class="rit-mob-card" style="background-image: url('../../wp-content/uploads/soul/inner-glow.jpeg')">
           <div class="rit-mob-card-in">
@@ -635,7 +636,7 @@ html, body { overflow-x: hidden; }
 
   </div>
 
-  <section class="rit-close">
+  <section class="rit-close" data-aos="fade-up">
     <h2>Your body lets go the very first time. Every session after goes one step further.</h2>
     <p class="rit-body">This is a process, not a quick fix. But you feel the difference from your very first visit.</p>
     <a href="../contact/" class="rit-btn" data-reserve>Book a session</a>
@@ -682,6 +683,15 @@ html, body { overflow-x: hidden; }
     </div>
   </footer>
 
+<script src="../../vendor/aos/aos.js"></script>
+<script>
+  if (window.AOS) AOS.init({
+    duration: 900,
+    once: true,
+    easing: 'ease-out-cubic',
+    offset: 100
+  });
+</script>
 <script src="../../js/nav.js?v=4"></script>
 <script>
 (function () {
