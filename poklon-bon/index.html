@@ -168,32 +168,35 @@
         background: none;
       }
       .gift-cert-grid {
-        display: grid;
-        grid-template-columns: 0.68fr 0.75rem max-content max-content minmax(0, 14.5rem) max-content;
-        grid-template-rows: repeat(3, 1fr);
-        column-gap: 1.3rem;
-        row-gap: 0.65rem;
-        justify-content: start;
+        display: flex;
+        align-items: stretch;
+        column-gap: 1.75rem;
       }
       .gift-cert-grid .gift-cert-row { margin-bottom: 0; }
-      .gift-cert-row:nth-child(1) { grid-column: 3 / 7; grid-row: 1; }
-      .gift-cert-row:nth-child(2) { grid-column: 3 / 7; grid-row: 2; }
-      .gift-cert-row:nth-child(4) { grid-column: 3 / 7; grid-row: 3; }
 
-      .gift-cert-row:not(.gift-cert-featured) {
+      .gift-cert-side {
+        flex: 0 0 auto;
+        display: grid;
+        grid-template-columns: max-content max-content minmax(0, 14.5rem) max-content;
+        grid-template-rows: repeat(3, 1fr);
+        column-gap: 1.2rem;
+        row-gap: 0.65rem;
+      }
+      .gift-cert-side .gift-cert-row {
+        grid-column: 1 / 5;
         display: grid;
         grid-template-columns: subgrid;
         gap: normal;
-        padding: 0.9rem 1.4rem;
+        align-items: center;
+        padding: 1.75rem 1.4rem;
       }
-      .gift-cert-row:not(.gift-cert-featured) .gift-cert-desc { margin-left: 0; }
-      .gift-cert-row:not(.gift-cert-featured) .gift-cert-min,
-      .gift-cert-row:not(.gift-cert-featured) .gift-cert-price { font-size: 1.7rem; }
-      .gift-cert-row:not(.gift-cert-featured) .gift-cert-desc { font-size: 1.03rem; }
+      .gift-cert-side .gift-cert-desc { margin-left: 0; }
+      .gift-cert-side .gift-cert-min,
+      .gift-cert-side .gift-cert-price { font-size: 1.7rem; }
+      .gift-cert-side .gift-cert-desc { font-size: 1.03rem; }
 
       .gift-cert-featured {
-        grid-column: 1;
-        grid-row: 1 / 4;
+        flex: 1;
         display: flex;
         flex-direction: column;
         align-items: stretch;
@@ -219,7 +222,7 @@
         justify-content: center;
         text-align: center;
         background: #241109;
-        padding: 0.4rem 1.6rem;
+        padding: 0.8rem 1.6rem;
       }
       .gift-cert-featured .gift-cert-badge {
         display: block;
@@ -240,19 +243,19 @@
         align-items: baseline;
         justify-content: center;
         gap: 0.5rem;
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.5rem;
       }
       .gift-cert-featured .gift-cert-dot {
         display: inline;
         color: var(--accent-soft);
         font-size: 1.2rem;
       }
-      .gift-cert-featured .gift-cert-min { font-size: 1.45rem; }
-      .gift-cert-featured .gift-cert-price { font-size: 1.45rem; }
-      .gift-cert-featured .gift-cert-desc { font-size: 0.82rem; margin: 0 0 0.35rem; }
+      .gift-cert-featured .gift-cert-min { font-size: 1.7rem; }
+      .gift-cert-featured .gift-cert-price { font-size: 1.7rem; }
+      .gift-cert-featured .gift-cert-desc { font-size: 1.03rem; margin: 0 0 0.9rem; }
       .gift-cert-featured .btn {
         border: 1px solid var(--text);
-        padding: 0.4rem 1.4rem;
+        padding: 0.7rem 1.9rem;
         width: auto;
       }
       .gift-cert-featured .btn:hover { border-color: var(--accent); }
@@ -283,6 +286,12 @@
       .gift-cert { padding: 1.6rem 1.3rem; }
       .gift-cert-title { font-size: 1.7rem; }
       .gift-cert-labels { display: none; }
+      .gift-cert-grid { display: flex; flex-direction: column; }
+      .gift-cert-side { display: contents; }
+      .gift-cert-featured { order: 3; }
+      .gift-cert-side > .gift-cert-row:nth-child(1) { order: 1; }
+      .gift-cert-side > .gift-cert-row:nth-child(2) { order: 2; }
+      .gift-cert-side > .gift-cert-row:nth-child(3) { order: 4; }
       .gift-cert-row {
         display: grid;
         grid-template-columns: 1fr auto;
@@ -391,20 +400,6 @@
         </div>
 
         <div class="gift-cert-grid">
-          <div class="gift-cert-row" data-aos="fade-up" data-aos-delay="0">
-            <div class="gift-cert-min">45<span class="gift-cert-min-unit">min</span></div>
-            <div class="gift-cert-price">30 €</div>
-            <p class="gift-cert-desc">Vrijeme predaha</p>
-            <a href="../kontakt/" class="btn btn-primary" data-gift="45">Kupi</a>
-          </div>
-
-          <div class="gift-cert-row" data-aos="fade-up" data-aos-delay="100">
-            <div class="gift-cert-min">65<span class="gift-cert-min-unit">min</span></div>
-            <div class="gift-cert-price">40 €</div>
-            <p class="gift-cert-desc">Dublji rad i više prostora</p>
-            <a href="../kontakt/" class="btn btn-primary" data-gift="65">Kupi</a>
-          </div>
-
           <div class="gift-cert-row gift-cert-featured" data-aos="fade-up" data-aos-delay="200">
             <div class="gift-cert-photo-half">
               <span class="gift-cert-badge">Najtraženije</span>
@@ -420,11 +415,27 @@
             </div>
           </div>
 
-          <div class="gift-cert-row" data-aos="fade-up" data-aos-delay="300">
-            <div class="gift-cert-min">120<span class="gift-cert-min-unit">min</span></div>
-            <div class="gift-cert-price">90 €</div>
-            <p class="gift-cert-desc">Najduže i najpotpunije iskustvo</p>
-            <a href="../kontakt/" class="btn btn-primary" data-gift="120">Kupi</a>
+          <div class="gift-cert-side">
+            <div class="gift-cert-row" data-aos="fade-up" data-aos-delay="0">
+              <div class="gift-cert-min">45<span class="gift-cert-min-unit">min</span></div>
+              <div class="gift-cert-price">30 €</div>
+              <p class="gift-cert-desc">Vrijeme predaha</p>
+              <a href="../kontakt/" class="btn btn-primary" data-gift="45">Kupi</a>
+            </div>
+
+            <div class="gift-cert-row" data-aos="fade-up" data-aos-delay="100">
+              <div class="gift-cert-min">65<span class="gift-cert-min-unit">min</span></div>
+              <div class="gift-cert-price">40 €</div>
+              <p class="gift-cert-desc">Dublji rad i više prostora</p>
+              <a href="../kontakt/" class="btn btn-primary" data-gift="65">Kupi</a>
+            </div>
+
+            <div class="gift-cert-row" data-aos="fade-up" data-aos-delay="300">
+              <div class="gift-cert-min">120<span class="gift-cert-min-unit">min</span></div>
+              <div class="gift-cert-price">90 €</div>
+              <p class="gift-cert-desc">Najduže i najpotpunije iskustvo</p>
+              <a href="../kontakt/" class="btn btn-primary" data-gift="120">Kupi</a>
+            </div>
           </div>
         </div>
       </div>
