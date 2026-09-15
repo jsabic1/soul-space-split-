@@ -293,6 +293,10 @@
             <blockquote>"The stress that builds up in my shoulders and neck just melts away. Talking through boundaries and preferences beforehand prepares you for what's next. I've already recommended you to my colleagues."</blockquote>
             <figcaption>Ana B.</figcaption>
           </figure>
+          <figure class="testimonial-slide">
+            <blockquote>"I have never felt so relaxed during a massage that I even fell asleep in the middle!"</blockquote>
+            <figcaption>Ying Ting O.</figcaption>
+          </figure>
 
           <div class="testimonial-nav">
             <button class="arrow-btn" onclick="prevTestimonial()" aria-label="Previous">←</button>
@@ -302,6 +306,7 @@
               <button class="testimonial-dot" onclick="goToTestimonial(2)" aria-label="3"></button>
               <button class="testimonial-dot" onclick="goToTestimonial(3)" aria-label="4"></button>
               <button class="testimonial-dot" onclick="goToTestimonial(4)" aria-label="5"></button>
+              <button class="testimonial-dot" onclick="goToTestimonial(5)" aria-label="6"></button>
             </div>
             <button class="arrow-btn" onclick="nextTestimonial()" aria-label="Next">→</button>
           </div>
@@ -401,7 +406,7 @@
     if (window.AOS) AOS.init({ duration: 900, once: true, easing: 'ease-out-cubic', offset: 100 });
 
     let currentTestimonial = 0;
-    const totalTestimonials = 5;
+    const totalTestimonials = 6;
 
     function updateTestimonial() {
       const slides = document.querySelectorAll('.testimonial-slide');
