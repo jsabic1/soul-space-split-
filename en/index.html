@@ -275,16 +275,24 @@
         </div>
         <div class="testimonial-slider" id="testimonialSlider">
           <figure class="testimonial-slide active">
-            <blockquote>"My shoulder didn't hurt for the first time in three years. There was no 'wow' moment during the ritual, my body simply knew."</blockquote>
-            <figcaption>Ana, 38</figcaption>
+            <blockquote>"I could feel it really mattered to you that the massage was tailored to me, not just routine. One of the best massages in Split, and I've tried quite a few."</blockquote>
+            <figcaption>Josipa Š.</figcaption>
           </figure>
           <figure class="testimonial-slide">
-            <blockquote>"For the first time in years, someone was truly present in the room with me. That mattered more than technique."</blockquote>
-            <figcaption>Marina, 41</figcaption>
+            <blockquote>"None of the tension I usually carry in my back and neck, like a heavy backpack lifted off my spine. I feel like I've been on holiday."</blockquote>
+            <figcaption>Ana V.</figcaption>
           </figure>
           <figure class="testimonial-slide">
-            <blockquote>"It's like I have no body, it's so relaxed, like floating on dry land. Warmly recommended."</blockquote>
-            <figcaption>Frankolinna</figcaption>
+            <blockquote>"I slept deeply, which is rare since I usually struggle with bursts of agitation. This time, after the massage, I just drifted in calm."</blockquote>
+            <figcaption>Ivana R.</figcaption>
+          </figure>
+          <figure class="testimonial-slide">
+            <blockquote>"A short conversation before and after created a real sense of safety. Tea at the end and five minutes of talking, those small things make the massage different."</blockquote>
+            <figcaption>Josipa U.</figcaption>
+          </figure>
+          <figure class="testimonial-slide">
+            <blockquote>"The stress that builds up in my shoulders and neck just melts away. Talking through boundaries and preferences beforehand prepares you for what's next. I've already recommended you to my colleagues."</blockquote>
+            <figcaption>Ana B.</figcaption>
           </figure>
 
           <div class="testimonial-nav">
@@ -293,6 +301,8 @@
               <button class="testimonial-dot active" onclick="goToTestimonial(0)" aria-label="1"></button>
               <button class="testimonial-dot" onclick="goToTestimonial(1)" aria-label="2"></button>
               <button class="testimonial-dot" onclick="goToTestimonial(2)" aria-label="3"></button>
+              <button class="testimonial-dot" onclick="goToTestimonial(3)" aria-label="4"></button>
+              <button class="testimonial-dot" onclick="goToTestimonial(4)" aria-label="5"></button>
             </div>
             <button class="arrow-btn" onclick="nextTestimonial()" aria-label="Next">→</button>
           </div>
@@ -392,7 +402,7 @@
     if (window.AOS) AOS.init({ duration: 900, once: true, easing: 'ease-out-cubic', offset: 100 });
 
     let currentTestimonial = 0;
-    const totalTestimonials = 3;
+    const totalTestimonials = 5;
 
     function updateTestimonial() {
       const slides = document.querySelectorAll('.testimonial-slide');

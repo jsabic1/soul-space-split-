@@ -275,16 +275,24 @@
         </div>
         <div class="testimonial-slider" id="testimonialSlider">
           <figure class="testimonial-slide active">
-            <blockquote>"Rame me nije boljelo prvi put u tri godine. Nije bilo 'wow' trenutka tijekom rituala, ali tijelo je samo znalo."</blockquote>
-            <figcaption>Ana, 38</figcaption>
+            <blockquote>"Osjetila sam da ti je stvarno bitno da masaža bude prilagođena meni, a ne rutinski odrađena. Jedna od najboljih masaža u Splitu, a probala sam ih dosta."</blockquote>
+            <figcaption>Josipa Š.</figcaption>
           </figure>
           <figure class="testimonial-slide">
-            <blockquote>"Prvi put u godinama mi je netko stvarno bio prisutan u sobi sa mnom. To je bilo važnije od tehnike."</blockquote>
-            <figcaption>Marina, 41</figcaption>
+            <blockquote>"Nema napetosti koja mi je inače u leđima i vratu, ko da mi je veliki ruksak skinut s kičme. Imam osjećaj kao da sam bila na godišnjem odmoru."</blockquote>
+            <figcaption>Ana V.</figcaption>
           </figure>
           <figure class="testimonial-slide">
-            <blockquote>"Tijelo kao da nemam, toliko je opušteno, osjećaj kao da plutam na suho. Svaka preporuka."</blockquote>
-            <figcaption>Frankolinna</figcaption>
+            <blockquote>"Duboko sam spavala, a inače imam napade agresije. Ovaj put sam nakon masaže samo plovila u miru."</blockquote>
+            <figcaption>Ivana R.</figcaption>
+          </figure>
+          <figure class="testimonial-slide">
+            <blockquote>"Kratak razgovor prije i nakon stvorio je osjećaj sigurnosti. Čaj na kraju i pet minuta razgovora, te naizgled sitnice čine masažu drugačijom."</blockquote>
+            <figcaption>Josipa U.</figcaption>
+          </figure>
+          <figure class="testimonial-slide">
+            <blockquote>"Makne mi se stres koji se skuplja u ramenima i vratu. Razgovor o granicama i preferencijama pripremi za ono što slijedi. Već sam te preporučila kolegicama."</blockquote>
+            <figcaption>Ana B.</figcaption>
           </figure>
 
           <div class="testimonial-nav">
@@ -293,6 +301,8 @@
               <button class="testimonial-dot active" onclick="goToTestimonial(0)" aria-label="1"></button>
               <button class="testimonial-dot" onclick="goToTestimonial(1)" aria-label="2"></button>
               <button class="testimonial-dot" onclick="goToTestimonial(2)" aria-label="3"></button>
+              <button class="testimonial-dot" onclick="goToTestimonial(3)" aria-label="4"></button>
+              <button class="testimonial-dot" onclick="goToTestimonial(4)" aria-label="5"></button>
             </div>
             <button class="arrow-btn" onclick="nextTestimonial()" aria-label="Sljedeći">→</button>
           </div>
@@ -392,7 +402,7 @@
     if (window.AOS) AOS.init({ duration: 900, once: true, easing: 'ease-out-cubic', offset: 100 });
 
     let currentTestimonial = 0;
-    const totalTestimonials = 3;
+    const totalTestimonials = 5;
 
     function updateTestimonial() {
       const slides = document.querySelectorAll('.testimonial-slide');
