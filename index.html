@@ -297,6 +297,14 @@
             <blockquote>"Makne mi se stres koji se skuplja u ramenima i vratu. Razgovor o granicama i preferencijama pripremi za ono što slijedi. Već sam te preporučila kolegicama."</blockquote>
             <figcaption>Ana B.</figcaption>
           </figure>
+          <figure class="testimonial-slide">
+            <blockquote>"Dijana je čarobnica. Nitko me ne opusti kao ona. Njezine ruke kao da čitaju moje tijelo. Odlazak kod nje mi napuni baterije kao wellness vikend."</blockquote>
+            <figcaption>Lidija</figcaption>
+          </figure>
+          <figure class="testimonial-slide">
+            <blockquote>"Diana me uvijek srdačno dočeka, razgovara sa mnom o prošloj masaži i svim novim problemima, te se zajedno dogovaramo kako će masaža proći."</blockquote>
+            <figcaption>Anita P.</figcaption>
+          </figure>
 
           <div class="testimonial-nav">
             <button class="arrow-btn" onclick="prevTestimonial()" aria-label="Prošli">←</button>
@@ -398,7 +406,7 @@
     if (window.AOS) AOS.init({ duration: 900, once: true, easing: 'ease-out-cubic', offset: 100 });
 
     let currentTestimonial = 0;
-    const totalTestimonials = 6;
+    const totalTestimonials = 8;
 
     function updateTestimonial() {
       const slides = document.querySelectorAll('.testimonial-slide');
