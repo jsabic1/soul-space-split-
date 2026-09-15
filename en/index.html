@@ -18,7 +18,7 @@
 
   <link rel="stylesheet" href="../css/fonts-local.css">
 
-  <link rel="stylesheet" href="../css/home.css?v=73">
+  <link rel="stylesheet" href="../css/home.css?v=74">
   <link href="../vendor/aos/aos.css" rel="stylesheet">
 
   <link rel="preload" as="font" type="font/woff2" href="../fonts/TAN-PEARL.woff2" crossorigin>
@@ -294,20 +294,12 @@
             <figcaption>Ana B.</figcaption>
           </figure>
           <figure class="testimonial-slide">
-            <blockquote>"I have never felt so relaxed during a massage that I even fell asleep in the middle!"</blockquote>
+            <blockquote>"I have never felt so relaxed during a massage that I even fell asleep in the middle! If you are looking for a massage that heals both body and soul, I cannot recommend Diana highly enough."</blockquote>
             <figcaption>Ying Ting O.</figcaption>
           </figure>
 
           <div class="testimonial-nav">
             <button class="arrow-btn" onclick="prevTestimonial()" aria-label="Previous">←</button>
-            <div class="testimonial-dots">
-              <button class="testimonial-dot active" onclick="goToTestimonial(0)" aria-label="1"></button>
-              <button class="testimonial-dot" onclick="goToTestimonial(1)" aria-label="2"></button>
-              <button class="testimonial-dot" onclick="goToTestimonial(2)" aria-label="3"></button>
-              <button class="testimonial-dot" onclick="goToTestimonial(3)" aria-label="4"></button>
-              <button class="testimonial-dot" onclick="goToTestimonial(4)" aria-label="5"></button>
-              <button class="testimonial-dot" onclick="goToTestimonial(5)" aria-label="6"></button>
-            </div>
             <button class="arrow-btn" onclick="nextTestimonial()" aria-label="Next">→</button>
           </div>
         </div>
@@ -410,9 +402,7 @@
 
     function updateTestimonial() {
       const slides = document.querySelectorAll('.testimonial-slide');
-      const dots = document.querySelectorAll('.testimonial-dot');
       slides.forEach((s, i) => s.classList.toggle('active', i === currentTestimonial));
-      dots.forEach((d, i) => d.classList.toggle('active', i === currentTestimonial));
     }
     function nextTestimonial() {
       currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
