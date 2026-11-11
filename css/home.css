@@ -2012,3 +2012,12 @@ h3,
   .for-you-num { margin-bottom: 1.1rem; }
   .for-you-text { margin-left: 0; margin-right: 0; }
 }
+
+/* ============================================================
+   "Ovo je za tebe ako" na mobitelu: jedan stupac, naglasena
+   rijec u svakoj recenici kurzivom u zlatnoj boji.
+   ============================================================ */
+@media (max-width: 860px) {
+  .for-you-grid { grid-template-columns: 1fr; gap: 3.2rem; }
+  .for-you-text em { font-style: italic; color: var(--accent-soft); }
+}
