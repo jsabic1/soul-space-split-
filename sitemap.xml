@@ -1,67 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.soulspace-split.com/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.soulspace-split.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.soulspace-split.com/en/"/>
   </url>
   <url>
     <loc>https://www.soulspace-split.com/rituali/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.soulspace-split.com/rituali/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.soulspace-split.com/en/rituals/"/>
   </url>
   <url>
     <loc>https://www.soulspace-split.com/poklon-bon/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.soulspace-split.com/poklon-bon/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.soulspace-split.com/en/gift-voucher/"/>
   </url>
   <url>
     <loc>https://www.soulspace-split.com/o-meni/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.soulspace-split.com/o-meni/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.soulspace-split.com/en/about/"/>
   </url>
   <url>
     <loc>https://www.soulspace-split.com/cesta-pitanja/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.soulspace-split.com/cesta-pitanja/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.soulspace-split.com/en/faq/"/>
   </url>
   <url>
     <loc>https://www.soulspace-split.com/kontakt/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.soulspace-split.com/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.soulspace-split.com/en/contact/"/>
   </url>
   <url>
     <loc>https://www.soulspace-split.com/politika-privatnosti/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.soulspace-split.com/politika-privatnosti/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.soulspace-split.com/en/privacy-policy/"/>
   </url>
   <url>
     <loc>https://www.soulspace-split.com/uvjeti-otkazivanja/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.soulspace-split.com/uvjeti-otkazivanja/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.soulspace-split.com/en/cancellation-policy/"/>
   </url>
   <url>
     <loc>https://www.soulspace-split.com/en/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.soulspace-split.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.soulspace-split.com/en/"/>
   </url>
   <url>
     <loc>https://www.soulspace-split.com/en/rituals/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.soulspace-split.com/rituali/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.soulspace-split.com/en/rituals/"/>
   </url>
   <url>
     <loc>https://www.soulspace-split.com/en/gift-voucher/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.soulspace-split.com/poklon-bon/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.soulspace-split.com/en/gift-voucher/"/>
   </url>
   <url>
     <loc>https://www.soulspace-split.com/en/about/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.soulspace-split.com/o-meni/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.soulspace-split.com/en/about/"/>
   </url>
   <url>
     <loc>https://www.soulspace-split.com/en/faq/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.soulspace-split.com/cesta-pitanja/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.soulspace-split.com/en/faq/"/>
   </url>
   <url>
     <loc>https://www.soulspace-split.com/en/contact/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.soulspace-split.com/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.soulspace-split.com/en/contact/"/>
   </url>
   <url>
     <loc>https://www.soulspace-split.com/en/privacy-policy/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.soulspace-split.com/politika-privatnosti/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.soulspace-split.com/en/privacy-policy/"/>
   </url>
   <url>
     <loc>https://www.soulspace-split.com/en/cancellation-policy/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.soulspace-split.com/uvjeti-otkazivanja/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.soulspace-split.com/en/cancellation-policy/"/>
   </url>
 </urlset>

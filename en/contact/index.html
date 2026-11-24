@@ -1,474 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — Soul Space Split</title>
-  <meta name="description" content="Book a session, WhatsApp, Instagram or email. Soul Space, massage studio, Sinjska 5, Split.">
-
-  <!-- Open Graph (WhatsApp/Facebook/Viber link preview) -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Soul Space Split">
-  <meta property="og:locale" content="en">
-  <meta property="og:title" content="Contact — Soul Space Split">
-  <meta property="og:description" content="Book a session, WhatsApp, Instagram or email. Soul Space, massage studio, Sinjska 5, Split.">
-  <meta property="og:url" content="https://jsabic1.github.io/soul-space-split-/en/contact/">
-  <meta property="og:image" content="https://jsabic1.github.io/soul-space-split-/wp-content/uploads/soul/atmosfera-2-og.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="stylesheet" href="../../css/fonts-local.min.css">
-
-  <link rel="stylesheet" href="../../css/style.min.css?v=96">
-  <link rel="preload" href="../../vendor/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="../../vendor/aos/aos.css"></noscript>
-  <style>
-    /* Contact hero */
-    .contact-hero {
-      position: relative;
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-      padding: 8rem 0 4rem;
-      background-size: cover;
-      background-position: center 8%;
-    }
-    .contact-hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(31,15,10,0.5) 0%, rgba(31,15,10,0.7) 100%);
-    }
-    .contact-hero .container {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-    }
-    .contact-hero .eyebrow {
-      font-family: var(--font-brand-sub);
-      font-size: 0.85rem;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--accent-soft);
-      margin-bottom: 1rem;
-    }
-    .contact-hero h1 {
-      font-family: var(--font-brand);
-      font-size: clamp(3rem, 7vw, 5rem);
-      color: var(--text);
-      line-height: 1.4;
-      font-weight: 400;
-      margin: 0;
-    }
-    .contact-hero h1 em { font-style: normal; color: var(--accent); }
-
-    /* Contact main - info + forma */
-    .contact-main {
-      padding: 6rem 0;
-      background: var(--bg);
-    }
-    .contact-main-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      max-width: 900px;
-      margin: 0 auto;
-      align-items: center;
-    }
-
-    /* Uokvirene ploče (V3) */
-    .contact-info,
-    /* Napomena preuzima boju teksta oko sebe. */
-    .contact-info .cta-note { color: var(--text-muted); margin: 1.4rem 0 0.4rem; }
-
-    .contact-form-wrapper {
-      padding: 2rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-    }
-    .contact-info .eyebrow,
-    .contact-form-wrapper .eyebrow {
-      font-family: var(--font-brand-sub);
-      font-size: 0.72rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--accent-soft);
-      margin-bottom: 0.6rem;
-    }
-    .contact-info h2,
-    .contact-form-wrapper h2 {
-      font-family: var(--font-brand);
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
-      color: var(--text);
-      line-height: 1.05;
-      margin: 0 0 1.2rem;
-      font-weight: 400;
-    }
-    .contact-info h2 em,
-    .contact-form-wrapper h2 em { font-style: normal; color: var(--accent); }
-    .contact-logo { height: clamp(2.2rem, 3.6vw, 3rem); width: auto; max-width: 220px; object-fit: contain; display: block; margin: 0 0 1.2rem; }
-    .contact-info .intro {
-      font-family: var(--font-body);
-      color: var(--text-muted);
-      line-height: 1.75;
-      margin-bottom: 2rem;
-      max-width: 420px;
-    }
-    /* Hairline akcent ispod naslova */
-    .contact-rule {
-      width: 40px;
-      height: 1px;
-      background: var(--accent);
-      margin: 0.4rem 0 2.6rem;
-    }
-    .contact-note {
-      font-family: var(--font-body);
-      font-size: 1.15rem;
-      font-style: italic;
-      color: var(--text-muted);
-      line-height: 1.6;
-      max-width: 380px;
-      margin: 0 0 2.6rem;
-    }
-    /* Ugravirana kartica, ikone i podaci na istoj osi */
-    .contact-items {
-      display: inline-grid;
-      grid-template-columns: max-content max-content;
-      gap: 1.7rem 0.7rem;
-      align-items: center;
-      text-align: left;
-      margin: 0;
-    }
-    .contact-icon {
-      width: 24px;
-      height: 24px;
-      display: grid;
-      place-items: center;
-      color: var(--accent);
-    }
-    .contact-icon svg {
-      width: 21px;
-      height: 21px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 1.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .contact-item-content a {
-      font-family: var(--font-body);
-      font-size: 1.1rem;
-      color: var(--text);
-      line-height: 1.35;
-      letter-spacing: 0.01em;
-      margin: 0;
-      text-decoration: none;
-      transition: color .25s ease;
-    }
-    .contact-item-content a:hover { color: var(--accent); }
-    .contact-info { text-align: left; }
-    /* WhatsApp ikona je ispunjeni glif */
-    .contact-icon.wa-icon svg { fill: currentColor; stroke: none; }
-
-    /* Forma */
-    .contact-form-new {
-      display: flex;
-      flex-direction: column;
-      gap: 1.4rem;
-    }
-    .form-row-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.4rem;
-    }
-    .contact-form-new .field { display: flex; flex-direction: column; gap: 0.5rem; }
-    .contact-form-new .field label {
-      font-family: var(--font-brand-sub);
-      font-size: 0.7rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--accent-soft);
-    }
-    .contact-form-new input,
-    .contact-form-new textarea {
-      width: 100%;
-      font-family: var(--font-body);
-      font-size: 1rem;
-      color: var(--text);
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid var(--border);
-      padding: 0.6rem 0;
-      transition: border-color .2s ease;
-      outline: none;
-    }
-    .contact-form-new input:focus,
-    .contact-form-new textarea:focus {
-      border-bottom-color: var(--accent);
-    }
-    .contact-form-new textarea {
-      resize: vertical;
-      min-height: 110px;
-      line-height: 1.6;
-    }
-    .contact-form-new button {
-      width: 100%;
-      margin-top: 0.8rem;
-      background: var(--accent);
-      color: var(--bg);
-      padding: 1.15rem 2rem;
-      font-family: var(--font-brand-sub);
-      font-size: 0.75rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      font-weight: 500;
-      border: 1px solid var(--accent);
-      cursor: pointer;
-      transition: all .3s ease;
-    }
-    .contact-form-new button:hover {
-      background: transparent;
-      color: var(--accent);
-    }
-
-    /* Google form */
-    .contact-form-section { padding: 0 0 6rem; background: var(--bg); }
-    .contact-form-inner { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; text-align: center; }
-    .contact-form-section .eyebrow {
-      font-family: var(--font-brand-sub);
-      font-size: 0.72rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--accent-soft);
-      margin-bottom: 0.6rem;
-    }
-    .contact-form-section h2 {
-      font-family: var(--font-brand);
-      font-weight: 400;
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
-      color: var(--text);
-      margin: 0 0 0.6rem;
-    }
-    .contact-form-section .form-intro {
-      font-family: var(--font-body);
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin: 0 auto 2.2rem;
-      max-width: 480px;
-    }
-    .contact-form-frame {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 34px 80px -34px rgba(0, 0, 0, 0.65);
-    }
-    .contact-form-frame iframe { width: 100%; height: 1050px; border: none; display: block; }
-
-    /* Map */
-    .contact-map-section {
-      padding: 0 0 6rem;
-      background: var(--bg);
-    }
-    .contact-map-wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 3rem;
-    }
-    .contact-map-wrapper iframe {
-      width: 100%;
-      height: 480px;
-      border: none;
-      display: block;
-      filter: grayscale(60%) brightness(0.9);
-      border: 1px solid var(--border);
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .contact-main-grid {
-        grid-template-columns: 1fr;
-        gap: 4rem;
-      }
-      .contact-info { text-align: center; }
-      .contact-logo { margin: 0 auto 1.2rem; }
-      .contact-info .intro { margin-left: auto; margin-right: auto; }
-      .contact-rule { margin: 0.4rem auto 2.6rem; }
-      .contact-note { margin: 0 auto 2.6rem; }
-      .contact-items { margin: 0 auto; }
-      .form-row-2 { grid-template-columns: 1fr; gap: 1rem; }
-      .contact-hero { min-height: 55vh; padding: 6rem 0 3rem; background-position: center 0%; }
-      .contact-map-wrapper { padding: 0 1.5rem; }
-      .contact-map-wrapper iframe { height: 320px; }
-    }
-  </style>
-  <link rel="preload" as="font" type="font/woff2" href="../../fonts/TAN-PEARL.woff2" crossorigin>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Soul Space Split</title>
+<meta name="description" content="Book a session, WhatsApp, Instagram or email. Soul Space, massage studio, Sinjska 5, Split.">
+<link rel="canonical" href="https://www.soulspace-split.com/en/contact/">
+<link rel="alternate" hreflang="hr" href="https://www.soulspace-split.com/kontakt/">
+<link rel="alternate" hreflang="en" href="https://www.soulspace-split.com/en/contact/">
+<link rel="alternate" hreflang="x-default" href="https://www.soulspace-split.com/kontakt/">
+<!-- Open Graph (WhatsApp/Facebook/Viber link preview) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Soul Space Split">
+<meta property="og:locale" content="en">
+<meta property="og:title" content="Contact — Soul Space Split">
+<meta property="og:description" content="Book a session, WhatsApp, Instagram or email. Soul Space, massage studio, Sinjska 5, Split.">
+<meta property="og:url" content="https://www.soulspace-split.com/en/contact/">
+<meta property="og:image" content="https://www.soulspace-split.com/assets/og/kontakt-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="font" type="font/woff2" href="../../assets/fonts/imbue-latin-200.woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=1">
 </head>
 <body>
+<div id="site" data-theme="dark">
 
-  <header class="site-header">
-    <div class="lang-switch"><a href="../../kontakt/" aria-label="Prebaci na hrvatski">HR</a></div>
-    <div class="header-inner">
-      <nav class="main-nav nav-left">
-        <a href="../">Home</a>
-        <a href="../rituals/">Rituals</a>
-        <a href="../gift-voucher/">Gift voucher</a>
-      </nav>
-      <a href="../" class="brand">
-        <img src="../../wp-content/uploads/soul/logo.png" alt="Soul Space Split" class="brand-logo" fetchpriority="high" width="318" height="71">
-      </a>
-      <nav class="main-nav nav-right">
-        <a href="../about/">About</a>
-        <a href="../faq/">FAQ</a>
-        <a href="./" class="active">Contact</a>
-      </nav>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+<header class="hdr" id="hdr">
+  <a class="lang" href="../../kontakt/" lang="hr" hreflang="hr" aria-label="Prebaci na hrvatski">HR</a>
+  <nav class="l" aria-label="Main menu"><a href="../../en/">home</a><a href="../../en/rituals/">rituals</a><a href="../../en/gift-voucher/">gift voucher</a></nav>
+  <a class="logo oldlogo" href="../../en/" aria-label="Soul Space, home"><img src="../../assets/img/logo.png" alt="Soul Space"></a>
+  <button class="menu-btn" type="button" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span><span></span></button>
+  <nav class="r" aria-label="Secondary menu"><a href="../../en/about/">about</a><a href="../../en/faq/">faq</a><a href="../../en/contact/" aria-current="page">contact</a><a class="btn onphoto" href="https://wa.me/385955363341?text=Hello%21%20I%20would%20like%20to%20book%20a%20massage%20at%20Soul%20Space." data-wa="book" target="_blank" rel="noopener">book a session</a></nav>
+</header>
+<div class="mmenu" id="mmenu" aria-hidden="true">
+  <button class="mmenu-x" type="button" id="menuX" aria-label="Close menu"></button>
+  <p class="small">Menu</p>
+  <nav aria-label="Mobile menu"><a href="../../en/">Home</a><a href="../../en/rituals/">Rituals</a><a href="../../en/gift-voucher/">Gift voucher</a><a href="../../en/about/">About</a><a href="../../en/faq/">FAQ</a><a href="../../en/contact/" aria-current="page">Contact</a></nav>
+</div>
 
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <button class="mobile-menu-close" aria-label="Close menu"></button>
-    <p class="m-eyebrow">Menu</p>
-    <nav class="mobile-menu-nav">
-      <a href="../">Home</a>
-      <a href="../rituals/">Rituals</a>
-      <a href="../gift-voucher/">Gift voucher</a>
-      <a href="../about/">About</a>
-      <a href="../faq/">FAQ</a>
-      <a href="./" class="active">Contact</a>
-    </nav>
+<main id="p-kontakt">
+<section class="split rev chap kontakt">
+  <div class="ph"><div class="pin half"><img class="kb" src="../../assets/img/hero3.jpg" alt="The Soul Space studio with a massage table, plants and warm light"></div></div>
+  <div class="tx">
+    <h1 class="rv keep">Write to me</h1>
+    <p class="d rv">Massage studio in Split</p>
+    <p class="d rv">I work on my own and the number of sessions each week is limited. For a wider choice of times I recommend booking a week or two ahead.</p>
+    <dl class="klist rv">
+      <div><dt>WhatsApp</dt><dd><a href="https://wa.me/385955363341" target="_blank" rel="noopener">+385 95 536 3341</a></dd></div>
+      <div><dt>Instagram</dt><dd><a href="https://ig.me/m/soul.space.split" target="_blank" rel="noopener">@soul.space.split</a></dd></div>
+      <div><dt>Email</dt><dd><a href="mailto:soul.space.split@gmail.com">soul.space.split@gmail.com</a></dd></div>
+      <div><dt>Address</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Sinjska%205%2C%2021000%20Split%2C%20Hrvatska" target="_blank" rel="noopener">Sinjska 5, 21000 Split</a></dd></div>
+      <div><dt>Opening hours</dt><dd>Mon – Fri: by appointment</dd></div>
+    </dl>
+    <a class="btn fill rv" href="https://wa.me/385955363341" target="_blank" rel="noopener">book a session</a>
   </div>
+</section>
+<section class="kform">
+  <p class="small rv">Booking request</p>
+  <h2 class="rv">Send a message</h2>
+  <p class="kform-i rv">A few lines about how you feel and what you're looking for. I'll get back to you with a ritual suggestion and available times.</p>
+  <div class="kform-in rv"><iframe src="https://forms.gle/hEfwF3WTqRZCiXkY8" loading="lazy" title="Contact form, Soul Space Split">Loading…</iframe></div>
+  <p class="kform-fb rv"><a href="https://forms.gle/hEfwF3WTqRZCiXkY8" target="_blank" rel="noopener">open the form in a new tab</a></p>
+</section>
+<section class="kmap">
+  <div class="kmap-in rv">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1447.5!2d16.4402!3d43.5081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSinjska%205%2C%2021000%2C%20Split!5e0!3m2!1shr!2shr!4v1700000000000" title="Map: Sinjska 5, 21000 Split" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <a class="kmap-fb" href="https://www.google.com/maps/search/?api=1&amp;query=Sinjska%205%2C%2021000%20Split%2C%20Hrvatska" target="_blank" rel="noopener">Sinjska 5, 21000 Split · open in Google Maps</a>
+  </div>
+</section>
+</main>
 
-  <main>
-
-    <section class="contact-hero" style="background-image: url('../../wp-content/uploads/soul/atmosfera-2.jpg');">
-      <div class="container">
-        <h1 data-aos="fade-up" data-aos-delay="150">Write to me</h1>
-      </div>
-    </section>
-
-    <section class="contact-main">
-      <div class="contact-main-grid">
-        <div class="contact-info" data-aos="fade-up">
-          <img src="../../wp-content/uploads/soul/logo.png" alt="Soul Space" class="contact-logo">
-          <p class="intro">A massage studio in Split</p>
-          <div class="contact-rule" aria-hidden="true"></div>
-          <p class="contact-note">I work independently, so the number of weekly slots is limited. For a wider choice of times, I recommend booking a week or two in advance.</p>
-        </div>
-
-        <div class="contact-items" data-aos="fade-up">
-            <span class="contact-icon wa-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2m0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.24-8.22 8.24m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29"/>
-              </svg>
-            </span>
-            <span class="contact-item-content">
-              <a href="https://wa.me/385955363341" target="_blank" rel="noopener">+385 95 536 3341</a>
-            </span>
-
-            <span class="contact-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="2" width="20" height="20" rx="5"/>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-              </svg>
-            </span>
-            <span class="contact-item-content">
-              <a href="https://ig.me/m/soul.space.split" target="_blank" rel="noopener">@soul.space.split</a>
-            </span>
-
-            <span class="contact-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
-            </span>
-            <span class="contact-item-content">
-              <a href="mailto:soul.space.split@gmail.com">soul.space.split@gmail.com</a>
-            </span>
-
-            <span class="contact-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-            </span>
-            <span class="contact-item-content">
-              <a href="https://www.google.com/maps/search/?api=1&query=Sinjska%205%2C%2021000%20Split%2C%20Hrvatska" target="_blank" rel="noopener">Sinjska 5, 21000 Split</a>
-            </span>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="contact-form-section" data-aos="fade-up">
-      <div class="contact-form-inner">
-        <p class="eyebrow">Booking request</p>
-        <h2>Send a message</h2>
-        <p class="form-intro">A few lines about how you feel and what you're looking for — I'll get back to you with a ritual suggestion and available times.</p>
-        <div class="contact-form-frame">
-          <iframe src="https://forms.gle/hEfwF3WTqRZCiXkY8" loading="lazy" title="Contact form — Soul Space Split">Loading…</iframe>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-map-section" data-aos="fade-up">
-      <div class="contact-map-wrapper">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1447.5!2d16.4402!3d43.5081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSinjska%205%2C%2021000%2C%20Split!5e0!3m2!1shr!2shr!4v1700000000000" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <p class="footer-brand-title">Soul Space</p>
-        <address>
-          Obrt za usluge<br>
-          OIB: 27660814727<br>
-          <a href="https://www.google.com/maps/search/?api=1&query=Sinjska%205%2C%2021000%20Split%2C%20Hrvatska" target="_blank" rel="noopener">Sinjska 5, 21000 Split</a><br>
-          <a href="mailto:soul.space.split@gmail.com">soul.space.split@gmail.com</a><br>
-          <a href="tel:+385955363341">+385 95 536 3341</a>
-        </address>
-      </div>
-      <div class="footer-col">
-        <p class="footer-col-title">Opening hours</p>
-        <ul class="footer-hours">
-          <li>Mon – Sat: 10:00 – 21:00</li>
-          <li>Sun: by arrangement</li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <div class="footer-icons">
-          <a href="https://wa.me/385955363341" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <svg class="wa" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2m0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.24-8.22 8.24m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29"/></svg>
-          </a>
-          <a href="https://instagram.com/soul.space.split" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a href="mailto:soul.space.split@gmail.com" aria-label="Email">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p>© 2026 Soul Space · <a href="../privacy-policy/">Privacy policy</a> · <a href="../cancellation-policy/">Cancellation policy</a></p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="../../vendor/aos/aos.js"></script>
-  <script>
-    if (window.AOS) AOS.init({
-      duration: 900,
-      once: true,
-      easing: 'ease-out-cubic',
-      offset: 100
-    });
-  </script>
-  <script src="../../js/nav.js?v=4"></script>
+<footer class="ftr">
+  <div class="cols">
+    <div><a class="logo oldlogo" href="../../en/" aria-label="Soul Space"><img src="../../assets/img/logo.png" alt="Soul Space"></a><p>Massage studio · Split</p><p class="mute">Sole proprietorship · OIB: 27660814727</p></div>
+    <div><p class="small">Menu</p><a href="../../en/">home</a><a href="../../en/rituals/">rituals</a><a href="../../en/gift-voucher/">gift voucher</a><a href="../../en/about/">about</a><a href="../../en/faq/">faq</a><a href="../../en/contact/" aria-current="page">contact</a></div>
+    <div><p class="small">Contact</p><p>Sinjska 5, 21000 Split</p><p>soul.space.split@gmail.com</p><p>+385 95 536 3341</p><p>Instagram · WhatsApp</p></div>
+    <div><p class="small">Opening hours</p><p>Mon – Fri: by appointment</p></div>
+  </div>
+  <div class="legal"><span>© 2026 Soul Space</span><span><a href="../../en/privacy-policy/">Privacy policy</a> · <a href="../../en/cancellation-policy/">Cancellation policy</a></span></div>
+</footer>
+</div>
+<svg width='0' height='0' style='position:absolute' aria-hidden='true'><filter id='rgh' x='-5%' y='-5%' width='110%' height='110%'><feTurbulence type='fractalNoise' baseFrequency='0.035' numOctaves='3' seed='4' result='n'/><feDisplacementMap in='SourceGraphic' in2='n' scale='16' xChannelSelector='R' yChannelSelector='G'/></filter><filter id='wob' x='-5%' y='-5%' width='110%' height='110%'><feTurbulence type='fractalNoise' baseFrequency='0.012' numOctaves='2' seed='9' result='n'/><feDisplacementMap in='SourceGraphic' in2='n' scale='9' xChannelSelector='R' yChannelSelector='G'/></filter><filter id='wob3' x='-20%' y='-5%' width='140%' height='110%'><feTurbulence type='fractalNoise' baseFrequency='0.03' numOctaves='2' seed='5' result='n'/><feDisplacementMap in='SourceGraphic' in2='n' scale='4' xChannelSelector='R' yChannelSelector='G'/></filter><filter id='wobs' x='-5%' y='-400%' width='110%' height='900%'><feTurbulence type='fractalNoise' baseFrequency='0.03' numOctaves='2' seed='3' result='n'/><feDisplacementMap in='SourceGraphic' in2='n' scale='5' xChannelSelector='R' yChannelSelector='G'/></filter></svg>
+<script src="../../assets/site.js?v=1" defer></script>
 </body>
 </html>

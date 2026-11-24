@@ -1,514 +1,164 @@
 <!DOCTYPE html>
 <html lang="hr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Poklon bon — Soul Space Split</title>
-  <meta name="description" content="Pokloni nekome sat vremena za sebe. Poklon bonovi Soul Space studija za masažu u Splitu.">
-
-  <!-- Open Graph (WhatsApp/Facebook/Viber link preview) -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Soul Space Split">
-  <meta property="og:locale" content="hr_HR">
-  <meta property="og:title" content="Poklon bon — Soul Space Split">
-  <meta property="og:description" content="Pokloni nekome sat vremena za sebe. Poklon bonovi Soul Space studija za masažu u Splitu.">
-  <meta property="og:url" content="https://jsabic1.github.io/soul-space-split-/poklon-bon/">
-  <meta property="og:image" content="https://jsabic1.github.io/soul-space-split-/wp-content/uploads/soul/poklon-bon-hero-og.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="stylesheet" href="../css/fonts-local.min.css">
-
-  <link rel="stylesheet" href="../css/style.min.css?v=96">
-  <link rel="preload" href="../vendor/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="../vendor/aos/aos.css"></noscript>
-  <style>
-    .gift-hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 70px 1.5rem;
-      text-align: center;
-      background-image: linear-gradient(to bottom, rgba(31,15,10,0.35) 0%, rgba(31,15,10,0.55) 60%, rgba(31,15,10,0.85) 100%), url('../wp-content/uploads/soul/poklon-bon-hero.jpg');
-      background-size: cover;
-      background-position: center bottom;
-      background-repeat: no-repeat;
-    }
-    .gift-hero .eyebrow {
-      font-family: var(--font-brand-sub);
-      font-size: 0.85rem;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--accent-soft);
-      margin-bottom: 1rem;
-    }
-    .gift-hero h1 {
-      font-family: var(--font-brand);
-      font-size: clamp(2.4rem, 6vw, 4.2rem);
-      color: var(--text);
-      line-height: 1.4;
-      font-weight: 400;
-      margin: 0 0 1.4rem;
-    }
-    .gift-hero .gift-lead {
-      font-family: var(--font-body);
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: var(--text-muted);
-      max-width: 620px;
-      margin: 0 auto;
-    }
-
-    .gift-cert-wrap {
-      max-width: 1140px;
-      margin: 3rem auto 0;
-      padding: 0 2rem 7rem;
-    }
-    @media (min-width: 901px) {
-      .gift-cert-wrap { max-width: 1240px; }
-    }
-    .gift-cert {
-      position: relative;
-      border: 1px solid rgba(200, 150, 92, 0.45);
-      border-radius: 6px;
-      padding: 2.4rem 3.4rem;
-      background: var(--bg-alt);
-    }
-    .gift-cert-head { text-align: center; margin-bottom: 2rem; }
-    @media (min-width: 901px) {
-      .gift-cert-head { margin-bottom: 7.2rem; }
-    }
-    .gift-cert-eyebrow {
-      font-family: var(--font-brand-sub);
-      font-size: 0.8rem;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--accent-soft);
-    }
-    .gift-cert-title {
-      font-family: var(--font-brand);
-      font-size: 2.2rem;
-      color: var(--text);
-      margin-top: 0.4rem;
-    }
-    .gift-cert-labels { display: none; }
-    .gift-cert-row {
-      display: grid;
-      grid-template-columns: 5rem 6rem minmax(0, 20.5rem) max-content;
-      align-items: center;
-      gap: 2.6rem;
-      padding: 1.3rem 1.5rem;
-      background: rgba(244, 232, 214, 0.03);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      margin-bottom: 0.9rem;
-    }
-    .gift-cert-row:last-child { margin-bottom: 0; }
-    .gift-cert-row .btn {
-      background: transparent;
-      color: var(--text);
-      border: none;
-      min-width: 0;
-      padding: 0.5rem 0.25rem;
-      letter-spacing: 0.22em;
-    }
-    .gift-cert-row .btn::after {
-      content: "\203A";
-      display: inline-block;
-      margin-left: 8px;
-      font-family: Georgia, serif;
-      transition: margin-left 0.3s ease;
-    }
-    .gift-cert-row .btn:hover { color: var(--accent); }
-    .gift-cert-row .btn:hover::after { margin-left: 14px; }
-    .gift-cert-min {
-      font-family: var(--font-brand-sub);
-      font-size: 2rem;
-      color: var(--text);
-      text-align: center;
-    }
-    .gift-cert-min-unit {
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent-soft);
-      margin-left: 0.3rem;
-    }
-    .gift-cert-price {
-      font-family: var(--font-brand-sub);
-      font-size: 2rem;
-      color: var(--accent);
-      text-align: center;
-      white-space: nowrap;
-    }
-    .gift-cert-desc {
-      font-family: var(--font-body);
-      font-size: 1.15rem;
-      line-height: 1.5;
-      color: var(--text-muted);
-      margin-left: 3.5rem;
-    }
-    .gift-cert-badge { display: none; }
-    .gift-cta-short { display: none; }
-    .gift-cert-hero-row { display: contents; }
-    .gift-cert-dot { display: none; }
-    .gift-cert-photo-half, .gift-cert-panel { display: contents; }
-
-    /* Desktop: jedna istaknuta kartica (najtrazenija opcija) uz kompaktnu
-       listu ostalih, umjesto svih redaka u jednoj koloni. Redci dijele
-       stupce (subgrid) da se min/cijena/opis/kupi poravnaju točno jedni
-       ispod drugih. */
-    @media (min-width: 901px) {
-      .gift-cert {
-        border: none;
-        padding: 0;
-        background: none;
-      }
-      .gift-cert-grid {
-        display: flex;
-        align-items: stretch;
-        column-gap: 1.75rem;
-      }
-      .gift-cert-grid .gift-cert-row { margin-bottom: 0; }
-
-      .gift-cert-side {
-        flex: 0 0 auto;
-        display: grid;
-        grid-template-columns: max-content max-content minmax(0, 14.5rem) max-content;
-        grid-template-rows: repeat(3, 1fr);
-        column-gap: 1.2rem;
-        row-gap: 0.65rem;
-      }
-      .gift-cert-side .gift-cert-row {
-        grid-column: 1 / 5;
-        display: grid;
-        grid-template-columns: subgrid;
-        gap: normal;
-        align-items: center;
-        padding: 3.1rem 1.4rem;
-      }
-      .gift-cert-side .gift-cert-desc { margin-left: 0; }
-      .gift-cert-side .gift-cert-min,
-      .gift-cert-side .gift-cert-price { font-size: 1.7rem; }
-      .gift-cert-side .gift-cert-desc { font-size: 1.03rem; }
-
-      .gift-cert-featured {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        border-color: rgba(200, 150, 92, 0.5);
-        overflow: hidden;
-        padding: 0;
-      }
-      .gift-cert-photo-half {
-        display: block;
-        flex: 1;
-        position: relative;
-        background-image: linear-gradient(160deg, rgba(31, 15, 10, 0.22) 0%, rgba(31, 15, 10, 0.5) 100%), url('../wp-content/uploads/soul/poklon-bon-najtrazenije-bg.jpg');
-        background-size: cover;
-        background-position: 42% 38%;
-        background-repeat: no-repeat;
-      }
-      .gift-cert-panel {
-        flex: 0 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        background: #241109;
-        padding: 0.8rem 1.6rem;
-      }
-      .gift-cert-featured .gift-cert-badge {
-        display: block;
-        position: absolute;
-        top: 1.2rem;
-        left: 1.4rem;
-        font-family: var(--font-brand-sub);
-        font-size: 0.65rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--accent);
-        background: rgba(31, 15, 10, 0.55);
-        padding: 0.35rem 0.8rem;
-        border-radius: 20px;
-      }
-      .gift-cert-featured .gift-cert-hero-row {
-        display: flex;
-        align-items: baseline;
-        justify-content: center;
-        gap: 0.5rem;
-        margin-bottom: 0.5rem;
-      }
-      .gift-cert-featured .gift-cert-dot {
-        display: inline;
-        color: var(--accent-soft);
-        font-size: 1.2rem;
-      }
-      .gift-cert-featured .gift-cert-min { font-size: 1.7rem; }
-      .gift-cert-featured .gift-cert-price { font-size: 1.7rem; }
-      .gift-cert-featured .gift-cert-desc { font-size: 1.03rem; margin: 0 0 0.9rem; }
-      .gift-cert-featured .btn {
-        border: 1px solid var(--text);
-        padding: 0.7rem 1.9rem;
-        width: auto;
-      }
-      .gift-cert-featured .btn:hover { border-color: var(--accent); }
-    }
-
-    .gift-notes {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      max-width: 700px;
-      margin: 1.8rem auto 0;
-    }
-    .gift-notes span {
-      font-family: var(--font-brand-sub);
-      font-size: 0.8rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #FFF3E5;
-      background: transparent;
-      border: 1.5px solid #FFF3E5;
-      border-radius: 24px;
-      padding: 0.75rem 1.5rem;
-    }
-
-    @media (max-width: 900px) {
-      .gift-cert-wrap { padding: 0 1rem 5rem; }
-      .gift-cert { padding: 1.6rem 1.3rem; }
-      .gift-cert-title { font-size: 1.7rem; }
-      .gift-cert-labels { display: none; }
-      .gift-cert-grid { display: flex; flex-direction: column; }
-      .gift-cert-side { display: contents; }
-      .gift-cert-featured { order: 3; }
-      .gift-cert-side > .gift-cert-row:nth-child(1) { order: 1; }
-      .gift-cert-side > .gift-cert-row:nth-child(2) { order: 2; }
-      .gift-cert-side > .gift-cert-row:nth-child(3) { order: 4; }
-      .gift-cert-row {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        grid-template-areas: "min price" "desc btn";
-        align-items: center;
-        column-gap: 1rem;
-        row-gap: 0.3rem;
-        padding: 1.1rem 0;
-        background: none;
-        border: none;
-        border-bottom: 1px solid var(--border);
-        border-radius: 0;
-        margin-bottom: 0;
-      }
-      .gift-cert-row:last-of-type { border-bottom: none; }
-      .gift-cert-min {
-        grid-area: min;
-        text-align: left;
-        font-size: 0.85rem;
-        color: var(--text-muted);
-      }
-      .gift-cert-min-unit { display: none; }
-      .gift-cert-min::after {
-        content: 'min';
-        font-family: var(--font-brand-sub);
-        font-size: 0.6rem;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--accent-soft);
-        margin-left: 0.3rem;
-      }
-      .gift-cert-price { grid-area: price; text-align: right; font-size: 1.5rem; }
-      .gift-cert-row .btn {
-        grid-area: btn;
-        justify-self: end;
-        width: auto;
-        min-width: 0;
-        padding: 0.2rem 0.1rem;
-        font-size: 0.62rem;
-      }
-      .gift-cert-desc { grid-area: desc; font-size: 1rem; text-align: left; margin-left: 0; }
-      .gift-cta-full { display: none; }
-      .gift-cta-short { display: inline; }
-
-      .gift-cert-featured {
-        grid-template-areas: "badge badge" "min price" "desc btn";
-      }
-      .gift-cert-featured .gift-cert-badge {
-        grid-area: badge;
-        display: inline-block;
-        width: fit-content;
-        font-family: var(--font-brand-sub);
-        font-size: 0.62rem;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--accent);
-        background: rgba(216, 105, 52, 0.12);
-        border: 1px solid rgba(200, 150, 92, 0.4);
-        padding: 0.3rem 0.7rem;
-        border-radius: 20px;
-        margin-bottom: 0.5rem;
-      }
-    }
-  </style>
-  <link rel="preload" as="font" type="font/woff2" href="../fonts/TAN-PEARL.woff2" crossorigin>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poklon bon — Soul Space Split</title>
+<meta name="description" content="Pokloni nekome sat vremena za sebe. Poklon bonovi Soul Space studija za masažu u Splitu.">
+<link rel="canonical" href="https://www.soulspace-split.com/poklon-bon/">
+<link rel="alternate" hreflang="hr" href="https://www.soulspace-split.com/poklon-bon/">
+<link rel="alternate" hreflang="en" href="https://www.soulspace-split.com/en/gift-voucher/">
+<link rel="alternate" hreflang="x-default" href="https://www.soulspace-split.com/poklon-bon/">
+<!-- Open Graph (WhatsApp/Facebook/Viber link preview) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Soul Space Split">
+<meta property="og:locale" content="hr_HR">
+<meta property="og:title" content="Poklon bon — Soul Space Split">
+<meta property="og:description" content="Pokloni nekome sat vremena za sebe. Poklon bonovi Soul Space studija za masažu u Splitu.">
+<meta property="og:url" content="https://www.soulspace-split.com/poklon-bon/">
+<meta property="og:image" content="https://www.soulspace-split.com/assets/og/poklon-bon-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/imbue-latin-200.woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css?v=1">
 </head>
 <body>
+<div id="site" data-theme="dark">
 
-  <header class="site-header">
-    <div class="lang-switch"><a href="../en/gift-voucher/" aria-label="Switch to English">EN</a></div>
-    <div class="header-inner">
-      <nav class="main-nav nav-left">
-        <a href="../">Naslovna</a>
-        <a href="../rituali/">Rituali</a>
-        <a href="./" class="active">Poklon bon</a>
-      </nav>
-      <a href="../" class="brand">
-        <img src="../wp-content/uploads/soul/logo.png" alt="Soul Space Split" class="brand-logo" fetchpriority="high" width="318" height="71">
-      </a>
-      <nav class="main-nav nav-right">
-        <a href="../o-meni/">O meni</a>
-        <a href="../cesta-pitanja/">Česta pitanja</a>
-        <a href="../kontakt/">Kontakt</a>
-      </nav>
-      <button class="nav-toggle" aria-label="Otvori izbornik" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+<header class="hdr" id="hdr">
+  <a class="lang" href="../en/gift-voucher/" lang="en" hreflang="en" aria-label="Switch to English">EN</a>
+  <nav class="l" aria-label="Glavni izbornik"><a href="../">naslovna</a><a href="../rituali/">rituali</a><a href="../poklon-bon/" aria-current="page">poklon bon</a></nav>
+  <a class="logo oldlogo" href="../" aria-label="Soul Space, naslovna"><img src="../assets/img/logo.png" alt="Soul Space"></a>
+  <button class="menu-btn" type="button" id="menuBtn" aria-label="Otvori izbornik" aria-expanded="false" aria-controls="mmenu"><span></span><span></span><span></span></button>
+  <nav class="r" aria-label="Dodatni izbornik"><a href="../o-meni/">o meni</a><a href="../cesta-pitanja/">česta pitanja</a><a href="../kontakt/">kontakt</a><a class="btn onphoto" href="https://wa.me/385955363341?text=Pozdrav%21%20%C5%BDeljela%20bih%20rezervirati%20termin%20za%20masa%C5%BEu%20u%20Soul%20Space." data-wa="book" target="_blank" rel="noopener">rezerviraj termin</a></nav>
+</header>
+<div class="mmenu" id="mmenu" aria-hidden="true">
+  <button class="mmenu-x" type="button" id="menuX" aria-label="Zatvori izbornik"></button>
+  <p class="small">Izbornik</p>
+  <nav aria-label="Mobilni izbornik"><a href="../">Naslovna</a><a href="../rituali/">Rituali</a><a href="../poklon-bon/" aria-current="page">Poklon bon</a><a href="../o-meni/">O meni</a><a href="../cesta-pitanja/">Česta pitanja</a><a href="../kontakt/">Kontakt</a></nav>
+</div>
 
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <button class="mobile-menu-close" aria-label="Zatvori izbornik"></button>
-    <p class="m-eyebrow">Izbornik</p>
-    <nav class="mobile-menu-nav">
-      <a href="../">Naslovna</a>
-      <a href="../rituali/">Rituali</a>
-      <a href="./" class="active">Poklon bon</a>
-      <a href="../o-meni/">O meni</a>
-      <a href="../cesta-pitanja/">Česta pitanja</a>
-      <a href="../kontakt/">Kontakt</a>
-    </nav>
+<main id="p-poklon-bon">
+<section class="hero hero-c">
+  <div class="pin"><img class="kb" src="../assets/img/bon-hero.jpg" alt="Zavjese obasjane svjetlom i pripremljen masažni stol"></div>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="hero-txt">
+    <h1 class="rv keep">Poklon bon</h1>
+    <p class="script big rv">vrijeme samo za nju</p>
+    <p class="hero-sub rv">Daruješ joj ritual, a ona sama odlučuje <br class="brd">kada će doći i koji će odabrati.</p>
+    <a class="btn onphoto rv" href="#bonovi">odaberi poklon bon</a>
+    <p class="note rv">( vrijedi 3 mjeseca · tiskani ili PDF )</p>
   </div>
+</section>
 
-  <main>
-
-    <section class="gift-hero">
-      <h1 data-aos="fade-up" data-aos-delay="100">Poklon bon</h1>
-      <p class="gift-lead" data-aos="fade-up" data-aos-delay="200">Pokloni nekome ono što se ne može kupiti, vrijeme samo za sebe</p>
-      <div class="gift-notes" data-aos="fade-up" data-aos-delay="300">
-        <span>Vrijedi 3 mjeseca</span>
-        <span>Dogovor s osobom koja dolazi</span>
-        <span>Fizički ili PDF</span>
-      </div>
-    </section>
-
-    <section class="gift-cert-wrap">
-      <div class="gift-cert">
-        <div class="gift-cert-head" data-aos="fade-up" data-aos-delay="0">
-          <div class="gift-cert-eyebrow">Ritual po izboru</div>
-        </div>
-
-        <div class="gift-cert-labels">
-          <span>Min</span><span>Cijena</span><span>·</span><span>·</span>
-        </div>
-
-        <div class="gift-cert-grid">
-          <div class="gift-cert-row gift-cert-featured" data-aos="fade-up" data-aos-delay="200">
-            <div class="gift-cert-photo-half">
-              <span class="gift-cert-badge">Najtraženije</span>
-            </div>
-            <div class="gift-cert-panel">
-              <div class="gift-cert-hero-row">
-                <div class="gift-cert-min">90<span class="gift-cert-min-unit">min</span></div>
-                <span class="gift-cert-dot">·</span>
-                <div class="gift-cert-price">55 €</div>
-              </div>
-              <p class="gift-cert-desc">Vrijeme za potpuno iskustvo</p>
-              <a href="../kontakt/" class="btn btn-primary gift-cert-cta" data-gift="90"><span class="gift-cta-full">Kupi poklon bon</span><span class="gift-cta-short">Kupi</span></a>
-            </div>
-          </div>
-
-          <div class="gift-cert-side">
-            <div class="gift-cert-row" data-aos="fade-up" data-aos-delay="0">
-              <div class="gift-cert-min">45<span class="gift-cert-min-unit">min</span></div>
-              <div class="gift-cert-price">30 €</div>
-              <p class="gift-cert-desc">Vrijeme predaha</p>
-              <a href="../kontakt/" class="btn btn-primary" data-gift="45">Kupi</a>
-            </div>
-
-            <div class="gift-cert-row" data-aos="fade-up" data-aos-delay="100">
-              <div class="gift-cert-min">65<span class="gift-cert-min-unit">min</span></div>
-              <div class="gift-cert-price">40 €</div>
-              <p class="gift-cert-desc">Dublji rad i više prostora</p>
-              <a href="../kontakt/" class="btn btn-primary" data-gift="65">Kupi</a>
-            </div>
-
-            <div class="gift-cert-row" data-aos="fade-up" data-aos-delay="300">
-              <div class="gift-cert-min">120<span class="gift-cert-min-unit">min</span></div>
-              <div class="gift-cert-price">90 €</div>
-              <p class="gift-cert-desc">Najduže i najpotpunije iskustvo</p>
-              <a href="../kontakt/" class="btn btn-primary" data-gift="120">Kupi</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <p class="footer-brand-title">Soul Space</p>
-        <address>
-          Obrt za usluge<br>
-          OIB: 27660814727<br>
-          <a href="https://www.google.com/maps/search/?api=1&query=Sinjska%205%2C%2021000%20Split%2C%20Hrvatska" target="_blank" rel="noopener">Sinjska 5, 21000 Split</a><br>
-          <a href="mailto:soul.space.split@gmail.com">soul.space.split@gmail.com</a><br>
-          <a href="tel:+385955363341">+385 95 536 3341</a>
-        </address>
-      </div>
-      <div class="footer-col">
-        <p class="footer-col-title">Radno vrijeme</p>
-        <ul class="footer-hours">
-          <li>Pon – Sub: 10:00 – 21:00</li>
-          <li>Ned: po dogovoru</li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <div class="footer-icons">
-          <a href="https://wa.me/385955363341" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <svg class="wa" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2m0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.24-8.22 8.24m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29"/></svg>
-          </a>
-          <a href="https://instagram.com/soul.space.split" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a href="mailto:soul.space.split@gmail.com" aria-label="Email">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </a>
-        </div>
-      </div>
+<section class="bonintro">
+  <div class="bi">
+    <h2 class="script rv">pokloni joj ono što si <br>sama nikad <br>ne priušti</h2>
+    <div class="txt">
+      <p class="rv">Takvu ženu sigurno poznaješ, možda ti je majka, sestra, prijateljica ili partnerica. Sama si to neće priuštiti, ali poklon neće odbiti, pa je ovo način da i ona konačno dođe na red.</p>
+      <p class="rv">Na tebi je samo da odabereš trajanje. Kad dođe, nas dvije ćemo se dogovoriti što joj taj dan najviše odgovara.</p>
+      <a class="btn onpanel rv" href="#bonovi">odaberi poklon bon</a>
     </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p>© 2026 Soul Space · <a href="../politika-privatnosti/">Politika privatnosti</a> · <a href="../uvjeti-otkazivanja/">Uvjeti otkazivanja</a></p>
-      </div>
-    </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="../vendor/aos/aos.js"></script>
-  <script>
-    if (window.AOS) AOS.init({
-      duration: 900,
-      once: true,
-      easing: 'ease-out-cubic',
-      offset: 100
-    });
-  </script>
-  <script src="../js/nav.js?v=4"></script>
+<section class="quote stmt-band">
+  <div class="pin"><img class="kb" src="../assets/img/hero1.jpg" alt="Ruke maserke na leđima klijentice u toplom svjetlu"></div>
+  <div class="scrim cover" aria-hidden="true"></div>
+  <div class="in"><h2 class="rv">poklon koji se<br><span class="script">ne odlaže</span><br>u ladicu</h2></div>
+</section>
+
+<section class="lead bonlead">
+  <h2 class="rv">nešto što će pamtiti</h2>
+  <div class="txt">
+    <p class="rv">Cvijeće uvene, a čokolada se pojede isti dan. Masaža ostane u ramenima i u raspoloženju još danima, a s njom i sjećanje na osobu koja se toga sjetila.</p>
+    <p class="rv">Lijepo je i to što ne moraš pogađati veličinu ni ukus, jer ritual bira ona kad dođe.</p>
+  </div>
+  <a class="lnk rv" href="../rituali/">pogledaj rituale <svg class="sym-s" viewBox="0 0 80 84" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 49.6C12.7 49.4 19.5 49.0 24.3 48.7C29.1 48.4 34.3 47.9 39.3 47.7C44.3 47.6 49.4 47.6 54.3 47.8C59.1 48.0 66.0 48.7 68.3 48.9"/><path d="M14.9 52.8C15.1 53.3 15.6 54.8 16.0 55.7C16.4 56.7 16.9 57.6 17.4 58.5C17.9 59.5 18.5 60.4 19.1 61.2C19.7 62.1 20.3 62.9 21.0 63.7C21.7 64.4 22.4 65.2 23.2 65.8C23.9 66.5 24.7 67.1 25.5 67.7C26.4 68.3 27.3 68.8 28.2 69.3C29.1 69.7 30.0 70.1 31.0 70.4C32.0 70.8 33.0 71.0 34.0 71.3C35.1 71.5 36.1 71.6 37.2 71.7C38.3 71.8 39.4 71.8 40.4 71.7C41.5 71.7 42.6 71.6 43.7 71.4C44.8 71.2 45.8 71.0 46.9 70.7C48.0 70.4 49.0 70.1 50.0 69.7C51.1 69.3 52.1 68.9 53.0 68.4C54.0 67.9 54.9 67.3 55.8 66.7C56.7 66.1 57.6 65.5 58.3 64.8C59.1 64.1 59.9 63.4 60.5 62.6C61.2 61.8 61.8 61.0 62.3 60.2C62.7 59.3 63.2 58.5 63.5 57.6C63.8 56.7 64.0 55.7 64.2 54.8C64.4 53.8 64.4 52.4 64.5 51.9"/><path d="M29.3 77.2C31.2 77.0 36.7 76.2 40.3 76.0C44.0 75.9 49.5 76.3 51.3 76.4"/><path d="M40.7 12.2C40.7 12.3 40.7 12.3 40.8 12.5C40.9 12.7 41.0 13.0 41.2 13.4C41.4 13.8 41.6 14.3 41.9 14.9C42.1 15.5 42.4 16.2 42.7 16.9C43.0 17.6 43.3 18.5 43.7 19.3C44.0 20.2 44.4 21.1 44.7 22.0C45.0 23.0 45.4 24.1 45.6 25.0C45.9 25.9 46.2 26.8 46.4 27.6C46.5 28.4 46.7 29.0 46.7 29.7C46.7 30.4 46.7 31.1 46.5 31.7C46.4 32.3 46.2 32.9 45.9 33.5C45.6 34.0 45.2 34.5 44.7 35.0C44.3 35.4 43.8 35.8 43.2 36.1C42.7 36.4 42.0 36.7 41.4 36.8C40.8 37.0 39.8 37.1 39.5 37.2"/><path d="M39.5 37.2C39.2 37.1 38.2 37.1 37.6 37.0C37.0 36.9 36.4 36.7 35.9 36.4C35.4 36.2 34.9 35.8 34.5 35.4C34.1 35.0 33.8 34.5 33.5 34.0C33.2 33.5 33.1 32.9 32.9 32.3C32.8 31.6 32.8 31.0 32.8 30.3C32.9 29.6 33.0 28.9 33.2 28.1C33.3 27.3 33.6 26.4 33.9 25.5C34.2 24.5 34.5 23.4 34.9 22.5C35.3 21.5 35.8 20.5 36.2 19.6C36.7 18.8 37.2 17.9 37.6 17.1C38.1 16.4 38.5 15.7 38.9 15.1C39.3 14.4 39.6 13.9 39.9 13.5C40.2 13.1 40.4 12.8 40.5 12.5C40.6 12.3 40.7 12.3 40.7 12.2"/></svg></a>
+</section>
+
+<section class="quote one">
+  <div class="pin"><img class="kb" src="../assets/img/sjene.jpg" alt="Sjene lišća na toplom zidu"></div>
+  <div class="scrim cover" aria-hidden="true"></div>
+  <div class="in">
+    <svg class="sym rv" viewBox="0 0 80 84" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M40.8 63.7C40.3 63.2 38.7 61.8 37.7 60.8C36.8 59.7 35.9 58.7 35.0 57.6C34.1 56.5 33.3 55.4 32.6 54.2C31.9 53.1 31.2 51.9 30.7 50.7C30.1 49.5 29.7 48.2 29.4 47.0C29.0 45.7 28.9 44.4 28.8 43.1C28.7 41.9 28.8 40.5 28.9 39.2C29.0 37.9 29.2 36.6 29.5 35.2C29.7 33.9 30.0 32.5 30.3 31.2C30.6 29.8 31.0 28.4 31.4 27.0C31.9 25.7 32.4 24.3 33.0 22.9C33.6 21.6 34.3 20.2 35.1 18.8C35.9 17.5 36.9 16.1 37.8 14.7C38.8 13.4 40.3 11.4 40.8 10.7"/><path d="M40.8 10.7C41.2 11.3 42.4 13.2 43.0 14.5C43.7 15.8 44.3 17.1 44.9 18.4C45.5 19.7 46.0 21.0 46.6 22.4C47.1 23.7 47.6 25.0 48.1 26.4C48.5 27.7 48.9 29.1 49.2 30.4C49.5 31.7 49.7 33.1 49.8 34.4C49.9 35.8 49.9 37.1 49.9 38.4C49.9 39.7 49.7 41.0 49.6 42.3C49.4 43.6 49.2 44.9 49.0 46.2C48.8 47.5 48.6 48.7 48.3 50.0C48.0 51.2 47.7 52.4 47.3 53.6C46.9 54.8 46.4 56.0 45.8 57.1C45.2 58.3 44.5 59.4 43.7 60.5C42.8 61.6 41.3 63.2 40.8 63.7"/><path d="M35.8 65.0C35.2 64.8 33.5 64.4 32.4 64.1C31.3 63.8 30.3 63.4 29.2 62.9C28.2 62.4 27.2 61.9 26.2 61.4C25.2 60.8 24.2 60.2 23.2 59.5C22.3 58.8 21.3 58.1 20.4 57.3C19.5 56.5 18.6 55.7 17.7 54.8C16.8 53.9 16.0 53.0 15.2 52.0C14.4 51.0 13.7 50.0 13.1 48.9C12.4 47.8 11.8 46.7 11.4 45.6C10.9 44.4 10.5 43.2 10.2 42.0C9.9 40.7 9.6 39.5 9.4 38.2C9.2 36.9 9.1 35.5 9.0 34.1C8.9 32.8 8.8 31.4 8.7 29.9C8.7 28.5 8.7 26.3 8.8 25.5"/><path d="M8.8 25.5C9.1 25.7 10.3 26.1 11.0 26.5C11.8 26.8 12.5 27.2 13.2 27.5C13.9 27.9 14.6 28.3 15.3 28.7C15.9 29.1 16.6 29.5 17.2 29.9C17.8 30.3 18.4 30.8 19.0 31.2C19.6 31.6 20.2 32.1 20.7 32.6C21.2 33.0 21.7 33.5 22.2 34.0C22.7 34.5 23.1 35.0 23.6 35.5C24.0 36.0 24.4 36.5 24.8 37.0C25.2 37.5 25.6 38.1 25.9 38.6C26.2 39.1 26.6 39.7 26.9 40.2C27.2 40.8 27.4 41.3 27.7 41.9C28.0 42.4 28.2 43.0 28.5 43.5C28.7 44.1 29.0 44.9 29.2 45.2"/><path d="M45.8 64.5C46.3 64.3 48.0 63.8 49.1 63.4C50.2 63.0 51.3 62.5 52.3 62.0C53.3 61.5 54.3 61.0 55.2 60.4C56.2 59.8 57.1 59.1 57.9 58.5C58.7 57.8 59.5 57.0 60.2 56.3C61.0 55.5 61.6 54.7 62.2 53.8C62.9 53.0 63.4 52.1 64.0 51.2C64.5 50.2 65.0 49.2 65.5 48.2C66.0 47.2 66.5 46.1 67.0 45.0C67.4 43.9 67.9 42.8 68.3 41.6C68.7 40.5 69.2 39.3 69.5 38.0C69.9 36.8 70.2 35.5 70.4 34.2C70.6 32.9 70.7 31.5 70.8 30.2C70.9 28.8 70.8 26.7 70.8 26.0"/><path d="M70.8 26.0C70.4 26.1 69.2 26.5 68.5 26.7C67.7 27.0 67.0 27.3 66.3 27.6C65.6 27.9 64.9 28.3 64.2 28.6C63.6 29.0 62.9 29.3 62.3 29.7C61.7 30.1 61.1 30.5 60.5 30.9C59.9 31.3 59.3 31.7 58.8 32.1C58.2 32.5 57.7 33.0 57.2 33.4C56.7 33.9 56.2 34.4 55.7 34.8C55.2 35.3 54.7 35.8 54.3 36.3C53.8 36.8 53.4 37.3 53.0 37.8C52.6 38.4 52.2 38.9 51.8 39.4C51.4 39.9 51.1 40.5 50.8 41.0C50.5 41.6 50.2 42.1 49.9 42.7C49.6 43.3 49.3 44.1 49.2 44.4"/><path d="M39.9 53.7C39.9 53.2 39.6 51.7 39.4 50.7C39.3 49.7 39.2 48.7 39.1 47.7C39.1 46.7 39.1 45.7 39.1 44.7C39.1 43.6 39.2 42.6 39.2 41.6C39.3 40.6 39.4 39.5 39.5 38.5C39.6 37.4 39.7 36.4 39.8 35.3C39.8 34.2 39.9 33.1 39.9 32.0C39.9 30.9 39.8 29.3 39.8 28.7"/><path d="M29.3 57.2C28.9 56.9 27.7 56.0 26.9 55.4C26.1 54.7 25.3 54.0 24.5 53.3C23.7 52.6 23.0 51.8 22.3 51.1C21.6 50.3 20.9 49.5 20.3 48.7C19.7 47.8 19.1 47.0 18.6 46.1C18.1 45.2 17.6 44.3 17.2 43.4C16.8 42.5 16.5 41.5 16.2 40.5C15.9 39.6 15.7 38.1 15.5 37.6"/><path d="M51.3 56.4C51.7 56.1 52.7 55.1 53.3 54.4C53.9 53.8 54.5 53.0 55.1 52.3C55.6 51.6 56.2 50.8 56.7 50.1C57.3 49.3 57.8 48.5 58.3 47.7C58.8 46.9 59.3 46.1 59.8 45.3C60.2 44.5 60.7 43.6 61.2 42.8C61.6 41.9 62.0 41.1 62.4 40.2C62.8 39.4 63.3 38.1 63.5 37.6"/><path d="M17.5 71.6C18.0 71.9 19.5 72.7 20.6 73.2C21.7 73.6 22.9 74.0 24.1 74.4C25.3 74.7 26.6 75.0 27.9 75.2C29.2 75.5 30.6 75.7 31.9 75.8C33.3 75.9 34.7 76.0 36.1 76.0C37.5 76.1 38.9 76.0 40.3 76.0C41.7 75.9 43.2 75.8 44.6 75.7C46.0 75.5 47.4 75.3 48.7 75.1C50.1 74.9 51.5 74.6 52.8 74.3C54.1 74.0 55.4 73.7 56.6 73.3C57.9 73.0 59.1 72.6 60.2 72.1C61.4 71.6 62.9 70.8 63.5 70.6"/></svg>
+    <blockquote class="rv">Dijana je čarobnica. Nitko me ne opusti kao ona. Njezine ruke kao da čitaju moje tijelo. Odlazak kod nje mi napuni baterije kao wellness vikend.</blockquote>
+    <cite class="rv">Lidija</cite>
+  </div>
+</section>
+
+<section class="bon" id="bonovi">
+  <div class="card-img rv"><img src="../assets/img/tretman4.jpg" alt="Diana masira klijenticu uz toplo svjetlo lampe"></div>
+  <div class="tx">
+    <div class="segwrap"><h2 class="rv">odaberi <span class="script">trajanje</span></h2>
+    <div class="seg rv" role="radiogroup" aria-label="Trajanje"><button type="button" role="radio" aria-checked="false" data-p="40 €">45<small>min</small><svg class="ring" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" aria-hidden="true"><path pathLength="1" d="M50 2A48 48 0 1 1 49.99 2"/></svg></button><button type="button" role="radio" aria-checked="false" data-p="50 €">65<small>min</small><svg class="ring" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" aria-hidden="true"><path pathLength="1" d="M50 2A48 48 0 1 1 49.99 2"/></svg></button><button type="button" role="radio" aria-checked="true" class="on" data-p="65 €">90<small>min</small><svg class="ring" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" aria-hidden="true"><path pathLength="1" d="M50 2A48 48 0 1 1 49.99 2"/></svg></button><button type="button" role="radio" aria-checked="false" data-p="100 €">120<small>min</small><svg class="ring" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" aria-hidden="true"><path pathLength="1" d="M50 2A48 48 0 1 1 49.99 2"/></svg></button></div>
+    <div class="segp rv"><b class="segpr" aria-live="polite">65<span class="eu"> €</span></b><a class="btn fill" href="https://wa.me/385955363341?text=Pozdrav%21%20%C5%BDeljela%20bih%20kupiti%20poklon%20bon." data-wa="bon" target="_blank" rel="noopener">kupi</a></div></div>
+  </div>
+</section>
+
+<section class="proc">
+  <h2 class="script rv">od kupnje do njezinog termina</h2>
+  <div class="plist">
+    <div class="prow rv"><span class="script n">01</span><div class="pt"><p>Odabereš trajanje: 45, 65, 90 ili 120 minuta. Ritual ne trebaš birati, to ostavi njoj.</p></div></div>
+    <div class="prow rv"><span class="script n">02</span><div class="pt"><p>Javiš mi se porukom pa dogovorimo želiš li tiskani bon ili PDF.</p></div></div>
+    <div class="prow rv"><span class="script n">03</span><div class="pt"><p>Bon vrijedi tri mjeseca, tako da ima dovoljno vremena odabrati dan koji joj odgovara.</p></div></div>
+    <div class="prow rv"><span class="script n">04</span><div class="pt"><p>Kad dođe, zajedno odaberemo ritual, a tvoj je posao tu gotov.</p></div></div>
+  </div>
+</section>
+
+<section class="split rev offer bonwho">
+  <div class="ph"><div class="pin half"><img class="kb" src="../assets/img/hero2.jpg" alt="Diana masira klijenticu u studiju obasjanom toplim svjetlom"></div></div>
+  <div class="tx">
+    <h2 class="script rv">za ženu…</h2>
+    <ul class="rv">
+      <li>koja prva ustaje i zadnja liježe</li>
+      <li>koja svima pamti rođendane, a svoj bi najradije preskočila</li>
+      <li>koja na pitanje što želi odgovara da joj ništa ne treba</li>
+      <li>koja godišnji potroši na tuđe potrebe</li>
+      <li>koja je nedavno prošla nešto teško i treba joj malo nježnosti</li>
+      <li>koju jednostavno voliš i želiš da to zna</li>
+    </ul>
+    <a class="btn rv" href="#bonovi">kupi joj poklon bon</a>
+  </div>
+</section>
+
+<section class="panel bonfaq">
+  <div class="bq">
+    <div class="bq-img rv"><img src="../assets/img/bon-studio2.jpg" alt="Masažni stol s ručnicima i dekom u studiju obasjanom toplim svjetlom"></div>
+    <div class="bq-list">
+      <div class="q rv"><svg class="sym-q" viewBox="0 0 80 84" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19.6 13.6C20.8 13.5 24.3 13.5 26.6 13.4C29.0 13.3 31.3 13.2 33.6 13.1C36.0 12.9 38.3 12.8 40.6 12.7C43.0 12.6 45.3 12.5 47.6 12.5C50.0 12.4 52.3 12.4 54.6 12.4C57.0 12.4 60.5 12.5 61.6 12.5"/><path d="M19.5 71.6C20.6 71.5 24.1 71.5 26.5 71.4C28.8 71.3 31.1 71.2 33.5 71.1C35.8 70.9 38.1 70.8 40.5 70.7C42.8 70.6 45.1 70.5 47.5 70.5C49.8 70.4 52.1 70.4 54.5 70.4C56.8 70.4 60.3 70.5 61.5 70.5"/><path d="M24.5 14.4C24.5 15.1 24.3 16.9 24.3 18.1C24.3 19.2 24.4 20.3 24.6 21.3C24.8 22.3 25.0 23.3 25.3 24.2C25.6 25.1 26.0 25.9 26.4 26.7C26.8 27.5 27.2 28.3 27.6 29.0C28.1 29.7 28.6 30.3 29.0 30.9C29.5 31.5 30.0 32.1 30.5 32.7C31.0 33.2 31.5 33.7 31.9 34.2C32.4 34.7 32.9 35.2 33.4 35.6C33.8 36.1 34.3 36.5 34.7 36.9C35.1 37.3 35.5 37.7 35.9 38.1C36.3 38.5 36.6 38.9 36.9 39.3C37.2 39.7 37.5 40.1 37.7 40.5C37.9 40.9 38.2 41.3 38.2 41.8C38.2 42.2 37.8 42.6 37.6 43.0C37.3 43.5 37.0 43.9 36.7 44.3C36.4 44.8 36.0 45.2 35.6 45.6C35.2 46.1 34.8 46.5 34.4 47.0C33.9 47.4 33.5 47.9 33.0 48.4C32.6 48.9 32.1 49.4 31.7 50.0C31.2 50.5 30.8 51.1 30.4 51.7C29.9 52.3 29.5 52.9 29.1 53.5C28.7 54.2 28.4 54.9 28.0 55.6C27.7 56.4 27.3 57.2 27.0 58.0C26.7 58.8 26.5 59.7 26.2 60.6C26.0 61.5 25.7 62.5 25.5 63.5C25.3 64.6 25.1 65.6 24.9 66.8C24.8 67.9 24.6 69.8 24.5 70.4"/><path d="M56.5 13.4C56.4 14.0 56.2 15.9 55.9 17.1C55.7 18.2 55.4 19.3 55.2 20.3C54.9 21.3 54.6 22.3 54.2 23.2C53.9 24.1 53.5 25.0 53.1 25.8C52.7 26.6 52.3 27.3 51.9 28.1C51.4 28.8 51.0 29.5 50.5 30.1C50.0 30.7 49.5 31.3 49.0 31.9C48.5 32.5 47.9 33.1 47.4 33.6C46.9 34.1 46.4 34.6 45.9 35.1C45.4 35.6 44.9 36.0 44.4 36.5C43.9 37.0 43.4 37.4 43.0 37.8C42.6 38.3 42.2 38.7 41.8 39.1C41.5 39.5 41.1 40.0 40.9 40.4C40.6 40.8 40.2 41.3 40.2 41.7C40.2 42.1 40.5 42.5 40.8 42.9C41.0 43.3 41.3 43.7 41.6 44.1C41.9 44.5 42.3 44.9 42.7 45.3C43.1 45.7 43.6 46.1 44.1 46.6C44.5 47.0 45.0 47.4 45.5 47.9C46.1 48.3 46.6 48.8 47.2 49.3C47.7 49.8 48.3 50.4 48.9 50.9C49.4 51.5 50.0 52.1 50.6 52.7C51.1 53.4 51.7 54.0 52.2 54.7C52.8 55.5 53.3 56.2 53.8 57.0C54.3 57.8 54.7 58.7 55.1 59.6C55.5 60.5 55.8 61.5 56.0 62.5C56.3 63.5 56.4 64.6 56.5 65.8C56.6 66.9 56.5 68.8 56.5 69.4"/><path d="M31.7 66.2C32.0 65.7 32.9 64.2 33.5 63.4C34.2 62.7 34.9 62.0 35.7 61.5C36.4 60.9 37.2 60.5 38.1 60.2C38.9 59.9 39.8 59.8 40.6 59.7C41.5 59.7 42.4 59.8 43.3 60.0C44.1 60.2 45.0 60.5 45.8 61.0C46.6 61.5 47.4 62.1 48.0 62.8C48.7 63.6 49.4 65.0 49.7 65.4"/></svg><div><h3>koliko dugo vrijedi poklon bon?</h3><p>Tri mjeseca, dovoljno vremena da pronađe svoj trenutak.</p></div></div>
+      <div class="q rv"><svg class="sym-q" viewBox="0 0 80 84" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.8 25.6C12.0 25.6 15.6 25.6 18.0 25.6C20.4 25.6 22.8 25.5 25.3 25.4C27.7 25.3 30.1 25.2 32.5 25.1C34.9 25.0 37.3 24.8 39.8 24.7C42.2 24.6 44.6 24.5 47.0 24.5C49.4 24.4 51.8 24.4 54.3 24.4C56.7 24.4 59.1 24.5 61.5 24.6C63.9 24.6 67.5 23.6 68.8 24.9C70.0 26.1 68.8 29.8 68.7 32.3C68.7 34.7 68.4 37.2 68.4 39.7C68.3 42.1 68.1 44.6 68.2 47.1C68.3 49.5 68.8 52.0 69.0 54.5C69.3 56.9 70.8 60.7 69.7 61.9C68.7 63.0 64.9 61.6 62.5 61.6C60.1 61.5 57.7 61.4 55.2 61.4C52.8 61.4 50.4 61.4 48.0 61.5C45.6 61.5 43.2 61.6 40.7 61.7C38.3 61.8 35.9 62.0 33.5 62.1C31.1 62.2 28.7 62.3 26.2 62.4C23.8 62.5 21.4 62.6 19.0 62.6C16.6 62.6 13.1 63.8 11.7 62.6C10.4 61.3 11.3 57.6 11.0 55.2C10.8 52.7 10.3 50.2 10.2 47.8C10.1 45.3 10.3 42.8 10.4 40.4C10.4 37.9 10.7 35.4 10.7 33.0C10.8 30.5 10.8 26.8 10.8 25.6"/><path d="M11.8 27.6C12.6 28.3 15.2 30.8 16.7 32.2C18.3 33.6 19.7 34.9 21.1 36.1C22.4 37.3 23.6 38.4 24.8 39.4C26.0 40.4 27.1 41.3 28.2 42.1C29.3 42.9 30.4 43.6 31.4 44.2C32.4 44.8 33.3 45.3 34.2 45.7C35.1 46.0 36.0 46.3 36.8 46.5C37.7 46.7 38.4 46.8 39.2 46.7C40.0 46.7 40.7 46.5 41.5 46.3C42.4 46.0 43.2 45.7 44.1 45.2C45.0 44.8 45.9 44.2 47.0 43.6C48.0 42.9 49.1 42.1 50.2 41.3C51.4 40.4 52.6 39.5 54.0 38.4C55.3 37.4 56.7 36.3 58.2 35.1C59.6 33.9 61.2 32.6 62.8 31.2C64.4 29.8 66.9 27.5 67.8 26.8"/></svg><div><h3>u kojem obliku dobivam bon?</h3><p>Kao tiskani bon ili kao PDF, kako ti je lakše pokloniti.</p></div></div>
+      <div class="q rv"><svg class="sym-q" viewBox="0 0 80 84" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M40.4 73.7C40.3 73.0 40.2 70.7 40.2 69.2C40.2 67.7 40.2 66.1 40.2 64.6C40.2 63.0 40.2 61.4 40.1 59.8C40.0 58.2 39.8 56.6 39.7 55.0C39.5 53.4 39.3 51.7 39.2 50.0C39.1 48.4 39.1 46.7 39.2 45.0C39.2 43.3 39.4 41.5 39.6 39.8C39.7 38.0 40.0 36.2 40.1 34.4C40.2 32.6 40.3 30.8 40.3 29.0C40.4 27.1 40.3 25.3 40.3 23.4C40.4 21.5 40.4 19.6 40.5 17.6C40.6 15.7 40.7 12.7 40.7 11.7"/><path d="M40.5 57.7C41.1 57.5 42.9 57.0 44.0 56.6C45.2 56.2 46.3 55.6 47.4 55.1C48.4 54.5 49.5 53.9 50.4 53.3C51.4 52.6 52.3 51.9 53.1 51.2C54.0 50.4 54.8 49.6 55.5 48.8C56.2 48.0 56.9 47.1 57.5 46.2C58.1 45.3 58.6 44.4 59.1 43.4C59.6 42.5 60.7 40.9 60.3 40.5C59.9 40.2 57.8 41.0 56.6 41.4C55.4 41.7 54.2 42.1 53.1 42.6C52.0 43.1 50.9 43.7 49.9 44.3C48.9 44.9 47.9 45.6 47.1 46.3C46.2 47.1 45.4 47.9 44.7 48.7C44.0 49.6 43.3 50.5 42.8 51.4C42.2 52.4 41.8 53.4 41.4 54.4C41.0 55.5 40.6 57.2 40.5 57.7"/><path d="M39.2 45.7C38.6 45.6 36.7 45.3 35.5 44.9C34.3 44.6 33.1 44.2 32.0 43.7C30.8 43.2 29.7 42.7 28.7 42.1C27.7 41.5 26.7 40.8 25.9 40.1C25.0 39.4 24.1 38.6 23.4 37.8C22.7 37.0 22.0 36.2 21.4 35.3C20.8 34.4 20.2 33.4 19.8 32.5C19.4 31.5 18.3 29.9 18.8 29.6C19.2 29.2 21.2 30.1 22.4 30.4C23.6 30.8 24.7 31.2 25.8 31.6C26.9 32.1 28.0 32.6 29.0 33.1C30.0 33.7 30.9 34.3 31.8 35.0C32.6 35.6 33.5 36.4 34.2 37.2C34.9 38.0 35.6 38.8 36.2 39.7C36.8 40.6 37.3 41.5 37.8 42.5C38.3 43.5 39.0 45.2 39.2 45.7"/><path d="M39.7 33.7C40.3 33.5 42.2 33.0 43.4 32.6C44.6 32.2 45.8 31.6 47.0 31.1C48.1 30.5 49.2 29.9 50.3 29.3C51.3 28.6 52.3 27.9 53.3 27.2C54.2 26.4 55.1 25.6 55.9 24.8C56.7 24.0 57.4 23.1 58.1 22.2C58.7 21.3 59.4 20.4 59.9 19.4C60.4 18.5 61.6 16.9 61.2 16.5C60.8 16.2 58.7 17.0 57.5 17.4C56.2 17.7 55.1 18.1 53.9 18.6C52.8 19.1 51.7 19.7 50.6 20.3C49.6 20.9 48.6 21.6 47.7 22.3C46.7 23.1 45.9 23.9 45.1 24.7C44.3 25.6 43.6 26.5 42.9 27.4C42.2 28.4 41.6 29.4 41.1 30.4C40.6 31.5 39.9 33.2 39.7 33.7"/><path d="M39.8 23.7C39.2 23.6 37.3 23.3 36.1 22.9C34.9 22.6 33.7 22.2 32.6 21.7C31.5 21.2 30.4 20.7 29.4 20.1C28.4 19.5 27.5 18.8 26.6 18.1C25.8 17.4 25.0 16.6 24.3 15.8C23.6 15.0 22.9 14.2 22.4 13.3C21.8 12.4 21.4 11.4 21.0 10.5C20.6 9.5 19.6 7.9 20.0 7.6C20.4 7.2 22.5 8.1 23.6 8.4C24.8 8.8 25.9 9.2 27.0 9.6C28.1 10.1 29.1 10.6 30.1 11.1C31.0 11.7 31.9 12.3 32.8 13.0C33.6 13.6 34.4 14.4 35.1 15.2C35.8 16.0 36.4 16.8 37.0 17.7C37.6 18.6 38.1 19.5 38.5 20.5C39.0 21.5 39.6 23.2 39.8 23.7"/></svg><div><h3>moram li unaprijed odabrati ritual?</h3><p>Ne. Ti biraš samo trajanje, a ritual biramo zajedno s njom kroz uvodni razgovor, prema onome što njezino tijelo tog dana treba.</p></div></div>
+      <div class="q rv"><svg class="sym-q" viewBox="0 0 80 84" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M40.5 69.7C39.8 69.2 37.6 67.6 36.2 66.5C34.8 65.5 33.4 64.4 32.1 63.4C30.8 62.4 29.4 61.3 28.2 60.3C26.9 59.3 25.6 58.2 24.4 57.2C23.2 56.2 22.1 55.1 21.0 54.1C19.9 53.1 18.9 52.1 18.0 51.0C17.0 50.0 16.2 49.0 15.5 48.0C14.7 47.0 14.1 45.9 13.6 44.9C13.0 43.9 12.6 42.9 12.2 41.9C11.9 41.0 11.6 40.0 11.4 39.0C11.2 38.0 11.0 37.0 11.0 36.1C10.9 35.1 10.8 34.2 10.9 33.2C10.9 32.3 11.0 31.3 11.1 30.4C11.3 29.4 11.5 28.5 11.8 27.6C12.0 26.7 12.4 25.8 12.8 25.0C13.2 24.2 13.8 23.5 14.3 22.8C14.9 22.1 15.5 21.5 16.2 20.9C16.8 20.4 17.5 19.9 18.3 19.5C19.0 19.1 19.8 18.7 20.6 18.4C21.4 18.1 22.2 17.9 23.0 17.8C23.8 17.6 24.6 17.5 25.4 17.5C26.3 17.5 27.1 17.6 27.9 17.7C28.7 17.8 29.5 18.0 30.3 18.3C31.0 18.6 31.8 19.0 32.5 19.4C33.2 19.9 33.9 20.4 34.6 21.0C35.3 21.6 35.9 22.3 36.6 23.0C37.2 23.8 37.8 24.7 38.3 25.6C38.8 26.6 39.5 28.2 39.8 28.7"/><path d="M39.8 28.7C40.0 28.2 40.7 26.5 41.2 25.5C41.8 24.5 42.4 23.6 43.0 22.8C43.7 21.9 44.4 21.2 45.1 20.5C45.9 19.9 46.7 19.3 47.5 18.8C48.3 18.3 49.1 17.9 49.9 17.6C50.8 17.2 51.6 17.0 52.4 16.8C53.3 16.6 54.1 16.5 54.9 16.5C55.8 16.5 56.6 16.6 57.4 16.7C58.1 16.9 58.9 17.1 59.7 17.4C60.4 17.7 61.1 18.0 61.8 18.5C62.4 18.9 63.1 19.4 63.7 20.0C64.3 20.5 64.8 21.2 65.3 21.9C65.8 22.6 66.3 23.3 66.7 24.2C67.1 25.0 67.5 25.9 67.8 26.8C68.0 27.7 68.3 28.7 68.4 29.6C68.5 30.6 68.6 31.5 68.6 32.5C68.6 33.4 68.5 34.4 68.3 35.3C68.1 36.3 67.8 37.3 67.5 38.2C67.2 39.2 66.7 40.2 66.3 41.1C65.8 42.1 65.3 43.1 64.7 44.0C64.2 45.0 63.6 46.0 63.0 47.0C62.4 48.0 61.7 49.0 61.0 50.0C60.3 51.0 59.6 52.0 58.8 53.0C58.0 54.1 57.1 55.1 56.2 56.2C55.2 57.2 54.2 58.3 53.1 59.4C52.0 60.5 50.8 61.6 49.5 62.7C48.2 63.8 46.7 65.0 45.2 66.1C43.8 67.3 41.3 69.1 40.5 69.7"/></svg><div><h3>kako kupujem poklon bon?</h3><p>Klikni „kupi” uz trajanje koje želiš ili mi se javi porukom. Javljam se u roku od 24 sata i dogovaramo sve ostalo.</p></div></div>
+      <div class="q rv"><svg class="sym-q" viewBox="0 0 80 84" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M27.3 40.3C27.3 41.3 27.1 44.3 27.2 46.3C27.2 48.3 27.5 50.3 27.7 52.3C27.9 54.3 28.3 56.3 28.5 58.3C28.6 60.3 28.8 62.3 28.8 64.3C28.8 66.3 27.8 69.3 28.5 70.3C29.3 71.3 31.7 70.1 33.3 70.1C34.9 70.0 36.5 69.9 38.1 69.8C39.7 69.8 41.3 69.7 42.9 69.6C44.5 69.6 46.1 69.5 47.7 69.5C49.3 69.4 51.7 70.4 52.5 69.4C53.4 68.4 52.8 65.4 52.8 63.4C52.8 61.4 52.6 59.4 52.5 57.4C52.3 55.4 51.9 53.4 51.7 51.4C51.5 49.4 51.2 47.4 51.2 45.4C51.1 43.4 52.1 40.4 51.3 39.4C50.6 38.4 48.1 39.4 46.5 39.5C44.9 39.5 43.3 39.6 41.7 39.6C40.1 39.7 38.5 39.8 36.9 39.8C35.3 39.9 33.7 40.0 32.1 40.1C30.5 40.1 28.1 40.3 27.3 40.3"/><path d="M39.7 31.7C39.5 31.5 38.5 30.9 38.0 30.5C37.5 30.0 37.1 29.5 36.7 29.1C36.3 28.6 35.9 28.1 35.6 27.6C35.4 27.0 35.1 26.5 34.9 26.0C34.8 25.4 34.6 24.9 34.5 24.3C34.5 23.7 34.4 23.1 34.4 22.5C34.5 21.9 34.5 21.3 34.6 20.7C34.7 20.1 34.9 19.5 35.1 18.9C35.3 18.2 35.5 17.6 35.8 17.0C36.0 16.4 36.3 15.7 36.6 15.1C36.9 14.5 37.3 13.8 37.6 13.2C38.0 12.6 38.4 12.0 38.7 11.3C39.1 10.7 39.5 10.1 39.9 9.5C40.2 8.9 40.6 7.7 41.0 7.7C41.3 7.7 41.7 8.8 42.0 9.4C42.3 10.0 42.6 10.6 42.8 11.2C43.1 11.8 43.3 12.4 43.6 13.0C43.8 13.6 44.0 14.2 44.2 14.8C44.3 15.4 44.5 16.0 44.6 16.6C44.8 17.2 44.9 17.8 45.0 18.4C45.0 19.1 45.1 19.7 45.1 20.3C45.2 20.9 45.2 21.5 45.2 22.1C45.1 22.7 45.1 23.3 45.0 23.8C44.9 24.4 44.7 25.0 44.6 25.6C44.4 26.1 44.2 26.7 43.9 27.2C43.6 27.7 43.3 28.3 42.9 28.8C42.5 29.3 42.0 29.8 41.5 30.3C41.0 30.8 40.0 31.5 39.7 31.7"/><path d="M39.7 32.7C39.7 33.1 39.7 34.1 39.6 34.7C39.6 35.4 39.6 36.1 39.5 36.7C39.5 37.4 39.4 38.4 39.4 38.7"/><path d="M17.4 74.6C18.3 74.6 21.2 74.5 23.1 74.5C25.0 74.4 26.9 74.4 28.9 74.3C30.8 74.2 32.7 74.1 34.6 74.0C36.5 73.9 38.4 73.8 40.4 73.7C42.3 73.6 44.2 73.6 46.1 73.5C48.0 73.5 49.9 73.4 51.9 73.4C53.8 73.4 55.7 73.4 57.6 73.4C59.5 73.5 62.4 73.6 63.4 73.6"/></svg><div><h3>kako ona rezervira termin?</h3><p>Javi mi se porukom na WhatsApp, Instagram ili email. Javljam se u roku od 24 sata i dogovaramo termin.</p></div></div>
+      <div class="q rv"><svg class="sym-q" viewBox="0 0 80 84" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M40.4 73.7C39.9 73.1 38.5 71.3 37.6 70.1C36.7 68.9 35.8 67.8 35.0 66.6C34.1 65.5 33.3 64.4 32.4 63.3C31.5 62.2 30.6 61.2 29.8 60.1C28.9 59.1 28.0 58.1 27.1 57.1C26.2 56.1 25.4 55.1 24.6 54.1C23.8 53.1 23.0 52.2 22.3 51.2C21.6 50.3 20.9 49.4 20.3 48.4C19.7 47.5 19.2 46.6 18.7 45.7C18.2 44.8 17.9 43.9 17.5 43.0C17.2 42.1 16.9 41.2 16.7 40.4C16.4 39.5 16.3 38.6 16.1 37.8C16.0 36.9 15.9 36.0 15.8 35.2C15.8 34.3 15.7 33.6 15.7 32.6C15.8 31.6 15.8 30.4 15.9 29.3C16.1 28.3 16.2 27.2 16.5 26.3C16.7 25.3 17.0 24.4 17.3 23.5C17.7 22.6 18.1 21.8 18.6 21.0C19.0 20.2 19.6 19.5 20.1 18.8C20.7 18.1 21.3 17.4 22.0 16.7C22.6 16.1 23.3 15.5 24.0 15.0C24.7 14.4 25.4 13.9 26.2 13.4C26.9 12.9 27.7 12.5 28.5 12.1C29.2 11.7 30.0 11.3 30.8 11.0C31.6 10.6 32.5 10.3 33.3 10.1C34.1 9.8 35.0 9.6 35.8 9.4C36.7 9.2 37.5 9.1 38.4 8.9C39.2 8.8 40.1 8.8 41.0 8.7C41.8 8.7 42.7 8.7 43.5 8.7C44.4 8.8 45.2 8.8 46.0 9.0C46.9 9.1 47.7 9.2 48.5 9.4C49.3 9.6 50.1 9.9 50.9 10.2C51.6 10.5 52.4 10.8 53.1 11.2C53.8 11.5 54.5 12.0 55.1 12.4C55.8 12.9 56.4 13.4 57.0 13.9C57.6 14.5 58.1 15.1 58.6 15.7C59.1 16.3 59.6 17.0 60.0 17.7C60.5 18.4 60.9 19.2 61.2 20.0C61.6 20.8 62.0 21.6 62.3 22.5C62.6 23.4 62.8 24.3 63.1 25.3C63.3 26.3 63.5 27.3 63.6 28.3C63.7 29.4 63.8 30.7 63.7 31.6C63.7 32.6 63.7 33.3 63.5 34.2C63.4 35.1 63.2 35.9 62.9 36.8C62.7 37.6 62.4 38.5 62.0 39.4C61.7 40.2 61.3 41.1 60.9 42.0C60.5 42.9 60.1 43.7 59.6 44.6C59.2 45.5 58.7 46.5 58.2 47.4C57.7 48.3 57.3 49.2 56.8 50.2C56.3 51.1 55.8 52.1 55.2 53.1C54.7 54.1 54.1 55.1 53.5 56.1C52.9 57.2 52.2 58.2 51.5 59.3C50.8 60.4 50.0 61.5 49.2 62.6C48.3 63.8 47.4 64.9 46.4 66.1C45.5 67.3 44.5 68.6 43.5 69.8C42.4 71.1 40.9 73.1 40.4 73.7"/><path d="M47.8 34.0C47.6 34.3 47.2 35.3 46.8 35.9C46.4 36.5 45.9 37.1 45.4 37.6C44.8 38.1 44.2 38.6 43.6 38.9C42.9 39.3 42.2 39.6 41.6 39.8C40.9 40.0 40.1 40.2 39.4 40.2C38.7 40.3 38.0 40.2 37.3 40.1C36.7 39.9 36.0 39.7 35.4 39.4C34.8 39.1 34.2 38.7 33.7 38.3C33.2 37.8 32.8 37.3 32.4 36.7C32.1 36.1 31.8 35.5 31.6 34.8C31.4 34.2 31.3 33.5 31.3 32.8C31.2 32.1 31.3 31.3 31.4 30.6C31.5 29.9 31.7 29.2 32.0 28.6C32.3 27.9 32.7 27.3 33.1 26.7C33.6 26.1 34.1 25.6 34.7 25.2C35.2 24.7 35.9 24.3 36.5 24.0C37.2 23.7 37.9 23.5 38.6 23.4C39.3 23.2 40.0 23.2 40.7 23.2C41.4 23.3 42.1 23.4 42.8 23.6C43.4 23.9 44.1 24.2 44.7 24.6C45.2 25.0 45.8 25.5 46.2 26.0C46.7 26.5 47.1 27.1 47.4 27.7C47.7 28.4 48.0 29.0 48.1 29.7C48.2 30.4 48.3 31.2 48.2 31.9C48.2 32.6 48.0 33.3 47.8 34.0C47.6 34.6 47.0 35.6 46.8 35.9"/></svg><div><h3>gdje se studio nalazi?</h3><p>Na adresi Sinjska 5, 21000 Split.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="close">
+  <div class="pin"><img class="kb" src="../assets/img/atm4.jpg" alt="Dvije ruke koje se pružaju jedna prema drugoj u mekom svjetlu"></div>
+  <div class="scrim cover" aria-hidden="true"></div>
+  <div class="in">
+    <h2 class="rv">neka ovaj put ona dođe na red</h2>
+    <p class="rv">Javi mi se porukom, javljam se u roku od 24 sata i dogovaramo sve ostalo.</p>
+    <a class="btn onphoto fill rv" href="#bonovi">kupi poklon bon</a>
+  </div>
+</section>
+</main>
+
+<footer class="ftr">
+  <div class="cols">
+    <div><a class="logo oldlogo" href="../" aria-label="Soul Space"><img src="../assets/img/logo.png" alt="Soul Space"></a><p>Studio za masažu · Split</p><p class="mute">Obrt za usluge · OIB: 27660814727</p></div>
+    <div><p class="small">Izbornik</p><a href="../">naslovna</a><a href="../rituali/">rituali</a><a href="../poklon-bon/" aria-current="page">poklon bon</a><a href="../o-meni/">o meni</a><a href="../cesta-pitanja/">česta pitanja</a><a href="../kontakt/">kontakt</a></div>
+    <div><p class="small">Kontakt</p><p>Sinjska 5, 21000 Split</p><p>soul.space.split@gmail.com</p><p>+385 95 536 3341</p><p>Instagram · WhatsApp</p></div>
+    <div><p class="small">Radno vrijeme</p><p>Pon – pet: po dogovoru</p></div>
+  </div>
+  <div class="legal"><span>© 2026 Soul Space</span><span><a href="../politika-privatnosti/">Politika privatnosti</a> · <a href="../uvjeti-otkazivanja/">Uvjeti otkazivanja</a></span></div>
+</footer>
+</div>
+<svg width='0' height='0' style='position:absolute' aria-hidden='true'><filter id='rgh' x='-5%' y='-5%' width='110%' height='110%'><feTurbulence type='fractalNoise' baseFrequency='0.035' numOctaves='3' seed='4' result='n'/><feDisplacementMap in='SourceGraphic' in2='n' scale='16' xChannelSelector='R' yChannelSelector='G'/></filter><filter id='wob' x='-5%' y='-5%' width='110%' height='110%'><feTurbulence type='fractalNoise' baseFrequency='0.012' numOctaves='2' seed='9' result='n'/><feDisplacementMap in='SourceGraphic' in2='n' scale='9' xChannelSelector='R' yChannelSelector='G'/></filter><filter id='wob3' x='-20%' y='-5%' width='140%' height='110%'><feTurbulence type='fractalNoise' baseFrequency='0.03' numOctaves='2' seed='5' result='n'/><feDisplacementMap in='SourceGraphic' in2='n' scale='4' xChannelSelector='R' yChannelSelector='G'/></filter><filter id='wobs' x='-5%' y='-400%' width='110%' height='900%'><feTurbulence type='fractalNoise' baseFrequency='0.03' numOctaves='2' seed='3' result='n'/><feDisplacementMap in='SourceGraphic' in2='n' scale='5' xChannelSelector='R' yChannelSelector='G'/></filter></svg>
+<script src="../assets/site.js?v=1" defer></script>
 </body>
 </html>
