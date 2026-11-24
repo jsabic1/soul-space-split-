@@ -1724,6 +1724,9 @@ button.btn{background-color:transparent;font-family:var(--f-ui);cursor:pointer}
 
 #site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site #p-rituali .princ h3 .rq{margin-left:-.2em}
 
+/* odabir trajanja (tablet i računalo): jednak razmak između svih trajanja */
+@media (min-width:701px){#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site #p-poklon-bon .bon .segwrap>.seg{width:max-content!important;min-width:0!important;max-width:none!important;gap:clamp(26px,2.6vw,38px)!important;justify-content:center!important;justify-self:center!important;position:relative;margin-left:0!important;margin-right:0!important}#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site #p-poklon-bon .bon .seg button{flex:0 0 auto!important;padding:14px 0!important;white-space:nowrap}}
+
 /* prebacivanje jezika na računalu: gore lijevo u zaglavlju, kao na dosadašnjoj stranici */
 @media (min-width:901px){.hdr .lang{display:block;position:absolute;left:1.2rem;top:50%;transform:translateY(-50%);padding:6px 0;font-family:var(--f-ui);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);text-decoration:none;z-index:3}.hdr .lang:hover{color:var(--ink)}}
 .hdr .lang{text-transform:uppercase}
