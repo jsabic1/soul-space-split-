@@ -1751,5 +1751,5 @@ button.btn{background-color:transparent;font-family:var(--f-ui);cursor:pointer}
 #site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site .mmenu nav a{transition:color .2s}
 #site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site .mmenu nav a:active,#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site .mmenu nav a[aria-current]{font-weight:400!important;-webkit-text-stroke:.4px currentColor}
 #site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site .mmenu nav a:active{color:var(--accent)!important}
-/* mobitel: „Split” u novom redu, bez točke */
-@media (max-width:900px){#site .dsep{display:none}#site#site#site p.small br.mbr{display:inline}}
+/* mobitel: uz „Certificirana maserka” se ne prikazuje „· Split” */
+@media (max-width:900px){#site .dsep{display:none}}
