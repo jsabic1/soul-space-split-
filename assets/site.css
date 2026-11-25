@@ -1761,4 +1761,7 @@ button.btn{background-color:transparent;font-family:var(--f-ui);cursor:pointer}
 @media (max-width:600px){#site#site#site#site .ftr .legal{font-size:13px;justify-content:space-between;align-items:baseline;gap:6px 12px}#site#site#site#site .ftr .legal span{display:contents}#site#site#site#site .ftr .legal a{white-space:nowrap}}
 /* podnožje: Instagram i WhatsApp kao poveznice u istom redu */
 #site#site#site .ftr .cols a.fsoc{display:inline;color:inherit}
-#site#site#site .ftr .cols a.fsoc:hover{color:var(--accent)}
+@media (hover:hover){#site#site#site .ftr .cols a.fsoc:hover{color:var(--accent)}}
+@media (hover:none){#site#site#site .ftr .cols a.fsoc:hover{color:inherit}}
+/* podnožje: manji prazan prostor ispod zadnjeg reda */
+#site#site#site .ftr .legal{padding-bottom:36px}
