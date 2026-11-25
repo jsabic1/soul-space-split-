@@ -1764,4 +1764,4 @@ button.btn{background-color:transparent;font-family:var(--f-ui);cursor:pointer}
 @media (hover:hover){#site#site#site .ftr .cols a.fsoc:hover{color:var(--accent)}}
 @media (hover:none){#site#site#site .ftr .cols a.fsoc:hover{color:inherit}}
 /* podnožje: manji prazan prostor ispod zadnjeg reda */
-#site#site#site .ftr .legal{padding-bottom:36px}
+#site#site#site .ftr .legal{padding-top:12px;padding-bottom:36px}
