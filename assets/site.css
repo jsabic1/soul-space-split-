@@ -1753,5 +1753,5 @@ button.btn{background-color:transparent;font-family:var(--f-ui);cursor:pointer}
 #site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site .mmenu nav a:active{color:var(--accent)!important}
 
 /* podnožje (mobitel): © i pravne poveznice u istom redu */
-@media (max-width:600px){#site#site#site .ftr .legal{flex-wrap:nowrap;justify-content:space-between;align-items:baseline;gap:10px;font-size:12px;white-space:nowrap}}
-@media (max-width:340px){#site#site#site .ftr .legal{font-size:11px;gap:8px}}
+@media (max-width:600px){#site#site#site .ftr .legal{flex-wrap:nowrap;justify-content:space-between;align-items:baseline;gap:8px;font-size:13px;white-space:nowrap}}
+@media (max-width:345px){#site#site#site .ftr .legal{font-size:12px;gap:8px}}
