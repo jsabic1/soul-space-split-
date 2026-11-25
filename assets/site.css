@@ -1765,3 +1765,15 @@ button.btn{background-color:transparent;font-family:var(--f-ui);cursor:pointer}
 @media (hover:none){#site#site#site .ftr .cols a.fsoc:hover{color:inherit}}
 /* podnožje: manji prazan prostor ispod zadnjeg reda */
 #site#site#site .ftr .legal{padding-top:12px;padding-bottom:36px}
+/* podnožje: ikone Instagram i WhatsApp (samo mobitel), pravne poveznice centrirano, © zadnji i izblijedjelo */
+#site#site#site#site#site .ftr .legal .soc{display:none}
+@media (max-width:600px){
+#site#site#site#site#site .ftr .cols p.fsoc-t{display:none}
+#site#site#site#site#site .ftr .legal{flex-direction:column;flex-wrap:nowrap;align-items:center;justify-content:center;gap:14px;text-align:center;font-size:13px;padding-top:26px}
+#site#site#site#site#site .ftr .legal .soc{display:flex;gap:10px;order:1;margin-bottom:0}
+#site#site#site#site#site .ftr .legal a.ic{display:flex;align-items:center;justify-content:center;width:44px;height:44px;color:var(--ink)}
+#site#site#site#site#site .ftr .legal a.ic svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+#site#site#site#site#site .ftr .legal a.ic svg .d{fill:currentColor}
+#site#site#site#site#site .ftr .legal span:last-child{order:2;display:flex;flex-wrap:wrap;justify-content:center;gap:4px 22px}
+#site#site#site#site#site .ftr .legal span:nth-child(2){order:3;font-size:12px;opacity:.55}
+}
