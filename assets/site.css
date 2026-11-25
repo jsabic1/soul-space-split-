@@ -1752,9 +1752,8 @@ button.btn{background-color:transparent;font-family:var(--f-ui);cursor:pointer}
 #site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site .mmenu nav a:active,#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site .mmenu nav a[aria-current]{font-weight:400!important;-webkit-text-stroke:.4px currentColor}
 #site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site .mmenu nav a:active{color:var(--accent)!important}
 
-/* podnožje (mobitel): © i pravne poveznice u istom redu */
-@media (max-width:600px){#site#site#site .ftr .legal{flex-wrap:nowrap;justify-content:space-between;align-items:baseline;gap:8px;font-size:13px;white-space:nowrap}}
-@media (max-width:345px){#site#site#site .ftr .legal{font-size:12px;gap:8px}}
+/* podnožje: pravne poveznice bez točke između, s razmakom */
+#site#site#site .ftr .legal span:last-child{display:flex;flex-wrap:wrap;gap:6px 24px}
 /* podnožje: pravne poveznice bez crte ispod (crta samo kad se prijeđe mišem) */
 #site#site#site#site .ftr .legal a{text-decoration:none;border-bottom:0;background-image:none}
 #site#site#site#site .ftr .legal a:hover{text-decoration:underline;text-underline-offset:3px}
