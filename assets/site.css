@@ -1777,3 +1777,5 @@ button.btn{background-color:transparent;font-family:var(--f-ui);cursor:pointer}
 #site#site#site#site#site .ftr .legal span:last-child{order:2;display:flex;flex-wrap:wrap;justify-content:center;gap:4px 22px}
 #site#site#site#site#site .ftr .legal span:nth-child(2){order:3;font-size:12px;opacity:.55}
 }
+/* uvjeti otkazivanja: zahvala svijetlim slovima (ne narančasto) */
+#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site .canc p.ch{color:var(--ink)!important}
