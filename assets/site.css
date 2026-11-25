@@ -1757,3 +1757,5 @@ button.btn{background-color:transparent;font-family:var(--f-ui);cursor:pointer}
 /* podnožje: pravne poveznice bez crte ispod (crta samo kad se prijeđe mišem) */
 #site#site#site#site .ftr .legal a{text-decoration:none;border-bottom:0;background-image:none}
 #site#site#site#site .ftr .legal a:hover{text-decoration:underline;text-underline-offset:3px}
+/* podnožje (mobitel): © i dvije pravne poveznice u jednom redu, 13 px, s jednakim razmakom */
+@media (max-width:600px){#site#site#site#site .ftr .legal{font-size:13px;justify-content:space-between;align-items:baseline;gap:6px 12px}#site#site#site#site .ftr .legal span{display:contents}#site#site#site#site .ftr .legal a{white-space:nowrap}}
