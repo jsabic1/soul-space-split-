@@ -1779,3 +1779,7 @@ button.btn{background-color:transparent;font-family:var(--f-ui);cursor:pointer}
 }
 /* uvjeti otkazivanja: zahvala svijetlim slovima (ne narančasto) */
 #site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site .canc p.ch{color:var(--ink)!important}
+/* rituali: bez retka "cijena – od", cijene po trajanju veće i odvojene, više zraka iznad gumba */
+#site#site#site#site#site#site#site#site #p-rituali .offer li.pr{font-size:calc(var(--fs-body)*1.22);letter-spacing:.02em;line-height:1.5}
+#site#site#site#site#site#site#site#site #p-rituali .offer li:not(.pr)+li.pr{margin-top:14px}
+#site#site#site#site#site#site#site#site #p-rituali .offer .btn{margin-top:26px}
