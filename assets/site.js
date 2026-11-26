@@ -46,7 +46,7 @@
 (function(){var g=document.querySelector('#p-poklon-bon .bon .seg');if(!g)return;var pr=document.querySelector('#p-poklon-bon .bon .segpr');
 g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
 [].forEach.call(g.querySelectorAll('button'),function(x){var on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-checked',on?'true':'false');});
-if(pr){var t=b.getAttribute('data-p')||'';pr.textContent=t.replace(/\s*€/,'');var e=document.createElement('span');e.className='eu';e.textContent=' €';pr.appendChild(e)}var bz=document.querySelector('#p-poklon-bon .bon .segbzv');if(bz&&b.getAttribute('data-b'))bz.textContent=b.getAttribute('data-b');});})();
+if(pr){var t=b.getAttribute('data-p')||'';pr.textContent=t.replace(/\s*€/,'');var e=document.createElement('span');e.className='eu';e.textContent=' €';pr.appendChild(e)}var bz=document.querySelector('#p-poklon-bon .bon .segbzv');if(bz){var bb=b.getAttribute('data-b');if(bb)bz.textContent=bb;bz.parentNode.style.visibility=bb?'':'hidden';}});})();
 (function(){var sec=document.querySelector('#p-cesta-pitanja .faqpage');if(!sec)return;
 [].forEach.call(sec.querySelectorAll('.prow'),function(row,i){var pt=row.querySelector('.pt'),h=pt&&pt.querySelector('h3');if(!h)return;
 var a=document.createElement('div'),inn=document.createElement('div');a.className='ans';inn.className='ans-in';a.id='faq-a'+i;
