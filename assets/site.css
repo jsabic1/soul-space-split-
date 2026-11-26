@@ -1783,3 +1783,10 @@ button.btn{background-color:transparent;font-family:var(--f-ui);cursor:pointer}
 #site#site#site#site#site#site#site#site #p-rituali .offer li.pr{font-size:calc(var(--fs-body)*1.22);letter-spacing:.02em;line-height:1.5}
 #site#site#site#site#site#site#site#site #p-rituali .offer li:not(.pr)+li.pr{margin-top:14px}
 #site#site#site#site#site#site#site#site #p-rituali .offer .btn{margin-top:26px}
+/* rituali: bazna cijena (10. 9. 2026.) uz svaku cijenu, tiše i manje */
+#site#site#site#site#site#site#site#site #p-rituali .offer li.pr .bz{font-size:14px;letter-spacing:.03em;opacity:.62;white-space:nowrap;margin-left:8px}
+/* poklon bon: bazna cijena ispod odabrane cijene */
+#site#site#site#site#site#site#site#site #p-poklon-bon .bon .segbz{font-size:14px;letter-spacing:.03em;opacity:.62;margin:10px 0 0}
+/* poklon bon (mobitel): pet trajanja u jednom redu, s razmakom između */
+@media (max-width:700px){#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site #p-poklon-bon .bon .segwrap>.seg{width:max-content!important;min-width:0!important;max-width:none!important;gap:14px!important;justify-self:center!important}
+#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site #p-poklon-bon .bon .seg button{flex:0 0 auto!important}}
