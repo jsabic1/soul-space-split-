@@ -1844,4 +1844,7 @@ button.btn{background-color:transparent;font-family:var(--f-ui);cursor:pointer}
 
 /* naslovna hero: podnaslov odvojen od naslova, na desktopu u dva reda */#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site .hero-home .hero-sub br.hsb{display:none}
 @media (min-width:1201px){#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site .hero-home .hero-sub br.hsb{display:inline}
-#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site main .hero-home .hero-sub{margin-top:clamp(22px,1.9vw,36px)!important;margin-bottom:clamp(20px,1.6vw,30px)!important;line-height:1.5!important;text-wrap:initial!important}}
+#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site main .hero-home .hero-sub{margin-top:clamp(34px,2.8vw,52px)!important;margin-bottom:clamp(12px,.95vw,18px)!important;line-height:1.5!important;text-wrap:initial!important}}
+
+/* rituali hero: naslov u dva reda na desktopu */#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site .rhero h1 br.hb{display:none}
+@media (min-width:901px){#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site .rhero h1 br.hb{display:inline}}
