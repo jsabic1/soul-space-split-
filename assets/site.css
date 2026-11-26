@@ -1790,3 +1790,29 @@ button.btn{background-color:transparent;font-family:var(--f-ui);cursor:pointer}
 /* poklon bon (mobitel): pet trajanja u jednom redu, s razmakom između */
 @media (max-width:700px){#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site #p-poklon-bon .bon .segwrap>.seg{width:max-content!important;min-width:0!important;max-width:none!important;gap:14px!important;justify-self:center!important}
 #site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site #p-poklon-bon .bon .seg button{flex:0 0 auto!important}}
+
+/* cjenik */
+.pg-cjenik .cj{position:relative;padding:clamp(72px,8vw,120px) clamp(22px,5vw,60px) clamp(80px,9vw,130px);overflow:hidden}
+.pg-cjenik .cj-bg{position:absolute;inset:0;background:linear-gradient(rgba(27,15,9,.55),rgba(27,15,9,.72)),url(img/cjenik-ruke.jpg) center top/cover no-repeat;z-index:0}
+@media(min-width:901px){.pg-cjenik .cj-bg{background-attachment:scroll,fixed}}
+.pg-cjenik .cj-in{position:relative;z-index:1;max-width:900px;margin:0 auto}
+.pg-cjenik .cj-h{text-align:center;margin:0 0 clamp(56px,7vw,96px)}
+#site#site#site .pg-cjenik h1{font-family:'Imbue SS',sans-serif!important;font-weight:300!important;text-transform:uppercase!important;letter-spacing:.05em!important;font-size:clamp(46px,6vw,72px)!important;line-height:1.05!important;margin:0 0 18px}
+.pg-cjenik .cj-h .small{color:var(--accent);margin:0}
+.pg-cjenik .cj-i{padding:clamp(30px,3.6vw,44px) 0;border-bottom:1px solid rgba(244,232,214,.26)}
+.pg-cjenik .cj-i:first-of-type{padding-top:0}
+#site#site#site .pg-cjenik .cj-i h2{font-family:'Imbue SS',sans-serif!important;font-weight:300!important;text-transform:uppercase!important;letter-spacing:.05em!important;font-size:clamp(29px,3vw,38px)!important;line-height:1.1!important;margin:0 0 16px;text-align:left}
+.pg-cjenik .cj-r{display:grid;grid-template-columns:1fr auto;gap:18px 56px;align-items:start}
+.pg-cjenik .cj-t p{margin:0;max-width:520px;text-wrap:balance}
+.pg-cjenik .cj-t .a{font-size:19px;line-height:1.45;color:var(--ink)}
+.pg-cjenik .cj-t .s{font-size:16.5px;line-height:1.5;color:var(--mute);margin-top:8px}
+.pg-cjenik .cj-p{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:auto auto auto auto;gap:9px 12px;align-items:baseline}
+.pg-cjenik .cj-p li{display:contents}
+.pg-cjenik .cj-p span{font-family:var(--f-ui);text-transform:uppercase;letter-spacing:.2em;font-size:14.5px;white-space:nowrap;color:var(--ink)}
+.pg-cjenik .cj-p .m{text-align:right}.pg-cjenik .cj-p .p{text-align:right}.pg-cjenik .cj-p .d{opacity:.6}
+.pg-cjenik .cj-p .b{font-size:11px;letter-spacing:.12em;opacity:.62;padding-left:10px;min-width:150px}
+.pg-cjenik .cj-f{text-align:center;padding-top:clamp(40px,5vw,64px)}
+.pg-cjenik .cj-f p{font-size:15.5px;line-height:1.6;color:var(--mute);max-width:520px;margin:0 auto 26px;text-wrap:balance}
+.pg-cjenik .cj-dl{font-family:var(--f-ui);text-transform:uppercase;letter-spacing:.22em;font-size:13px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:6px}
+@media(max-width:760px){.pg-cjenik .cj-r{grid-template-columns:1fr;gap:20px}#site#site#site .pg-cjenik .cj-i h2{text-align:left}.pg-cjenik .cj-p{justify-content:start;grid-template-columns:auto auto auto 1fr}.pg-cjenik .cj-p .b{min-width:0}.pg-cjenik .cj-p span{font-size:14px;letter-spacing:.16em}.pg-cjenik .cj-p .b{font-size:10.5px;letter-spacing:.08em}}
+.pg-cjenik .cj-old{display:block;margin-top:22px;font-size:13px;color:var(--mute)}.pg-cjenik .cj-old a{color:inherit;text-decoration:underline;text-underline-offset:3px}

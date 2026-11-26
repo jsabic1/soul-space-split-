@@ -96,4 +96,16 @@
     <xhtml:link rel="alternate" hreflang="hr" href="https://www.soulspace-split.com/uvjeti-otkazivanja/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.soulspace-split.com/en/cancellation-policy/"/>
   </url>
+  <url>
+    <loc>https://www.soulspace-split.com/cjenik/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.soulspace-split.com/cjenik/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.soulspace-split.com/en/price-list/"/>
+  </url>
+  <url>
+    <loc>https://www.soulspace-split.com/en/price-list/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.soulspace-split.com/cjenik/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.soulspace-split.com/en/price-list/"/>
+  </url>
 </urlset>
