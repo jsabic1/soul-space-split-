@@ -1816,3 +1816,5 @@ button.btn{background-color:transparent;font-family:var(--f-ui);cursor:pointer}
 .pg-cjenik .cj-dl{font-family:var(--f-ui);text-transform:uppercase;letter-spacing:.22em;font-size:13px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:6px}
 @media(max-width:760px){.pg-cjenik .cj-r{grid-template-columns:1fr;gap:20px}#site#site#site .pg-cjenik .cj-i h2{text-align:left}.pg-cjenik .cj-p{justify-content:start;grid-template-columns:auto auto auto 1fr}.pg-cjenik .cj-p .b{min-width:0}.pg-cjenik .cj-p span{font-size:14px;letter-spacing:.16em}.pg-cjenik .cj-p .b{font-size:10.5px;letter-spacing:.08em}}
 .pg-cjenik .cj-old{display:block;margin-top:22px;font-size:13px;color:var(--mute)}.pg-cjenik .cj-old a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+
+#site .pg-cjenik .cj-f .cj-ann{color:var(--ink);font-size:17px;margin:0 auto 14px}
