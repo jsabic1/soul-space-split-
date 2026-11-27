@@ -1848,3 +1848,11 @@ button.btn{background-color:transparent;font-family:var(--f-ui);cursor:pointer}
 
 /* rituali hero: naslov u dva reda na desktopu */#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site .rhero h1 br.hb{display:none}
 @media (min-width:901px){#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site#site .rhero h1 br.hb{display:inline}}
+
+/* cjenik: sve centrirano */
+#site#site#site .pg-cjenik .cj-i h2{text-align:center!important}
+#site .pg-cjenik .cj-r{grid-template-columns:1fr;justify-items:center;gap:22px}
+#site .pg-cjenik .cj-t{text-align:center}
+#site .pg-cjenik .cj-t p{margin-left:auto;margin-right:auto}
+#site .pg-cjenik .cj-p{grid-template-columns:auto auto auto auto;justify-content:center}
+#site .pg-cjenik .cj-p .b{min-width:0}
